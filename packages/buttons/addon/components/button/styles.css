@@ -1,0 +1,6 @@
+@component matagi.buttons.button;
+
+.button {
+  background: cfg();
+  border: 1px solid #000;
+}

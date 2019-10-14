@@ -1,0 +1,12 @@
+{
+  "name": "@matagi/theme-moana",
+  "version": "0.0.0",
+  "description": "Moana theme for matagi",
+  "license": "MIT",
+  "keywords": [
+    "ember-makeup-theme"
+  ],
+  "makeup": {
+    "name": "moana"
+  }
+}

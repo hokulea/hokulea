@@ -39,8 +39,8 @@
     "@matagi/buttons": "^0.0.0",
     "@matagi/modifiers": "^0.0.0",
     "@matagi/theme-moana": "^0.0.0",
-    "@storybook/addon-actions": "^5.2.3",
-    "@storybook/ember": "^5.2.3",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/ember": "^5.2.5",
     "@storybook/ember-cli-storybook": "^0.1.0",
     "@types/ember": "^3.1.1",
     "@types/ember-qunit": "^3.4.7",
@@ -70,6 +70,7 @@
     "ember-try": "^1.2.1",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.4",
+    "storybook-addon-designs": "^5.1.1",
     "typescript": "^3.6.4"
   },
   "engines": {

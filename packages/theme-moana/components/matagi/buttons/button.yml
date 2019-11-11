@@ -1,1 +1,16 @@
-background: $matagi.buttons.button.background
+normal:
+  background: $matagi.colors.light.interactive0
+  border-color: $matagi.colors.light.interactive0
+  typo: $matagi.colors.typo.light
+active:
+  background: $matagi.colors.light.interactive-1
+  border-color: $matagi.colors.light.interactive-1
+  typo: $matagi.colors.typo.light
+pressed:
+  background: $matagi.colors.light.interactive-2
+  border-color: $matagi.colors.light.interactive-2
+  typo: $matagi.colors.typo.light
+hover:
+  background: $matagi.colors.light.interactive+1
+  border-color: $matagi.colors.light.interactive+1
+  typo: $matagi.colors.typo.light

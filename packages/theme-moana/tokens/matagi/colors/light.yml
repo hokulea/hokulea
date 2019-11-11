@@ -1,0 +1,15 @@
+layout:
+  brand: '#18B2F4'
+  background: '#F2F2F2'
+  lc: '#E5E5E5'
+  hc: '#595959'
+  reduced: '#6E6E6E'
+denotive:
+  error: '#'
+  success: '#'
+  disabled: '#'
+interactive-2: '#0773A1'
+interactive-1: '#0A96D2'
+interactive0: '#18B2F4'
+interactive+1: '#4BC3F7'
+interactive+2: '#7BD3F9'

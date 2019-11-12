@@ -23,6 +23,7 @@
     "postpublish": "ember ts:clean"
   },
   "dependencies": {
+    "@clark/ember-css-modules-config": "^0.4.2",
     "ember-cli-babel": "^7.12.0",
     "ember-cli-htmlbars": "^3.1.0",
     "ember-cli-typescript": "^3.0.0",
@@ -30,7 +31,6 @@
     "ember-makeup": "^0.0.1-alpha.9"
   },
   "devDependencies": {
-    "@clark/ember-css-modules-config": "^0.4.2",
     "@ember/edition-utils": "^1.1.1",
     "@ember/optional-features": "^1.0.0",
     "@glimmer/component": "^0.14.0-alpha.13",

@@ -1,9 +1,14 @@
-@component hokulea.buttons.button.normal;
+@component hokulea.buttons.button;
 
 .button {
   background: cfg();
   border-width: 1px;
   border-style: solid;
   border-color: cfg();
-  color: cfg('typo');
+  color: cfg("typo");
+
+  &:hover {
+    @component hover;
+    background: cfg();
+  }
 }

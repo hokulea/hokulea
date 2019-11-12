@@ -1,7 +1,6 @@
-normal:
-  background: $hokulea.colors.light.interactive0
-  border-color: $hokulea.colors.light.interactive0
-  typo: $hokulea.colors.typo.light
+background: $hokulea.colors.light.interactive0
+border-color: $hokulea.colors.light.interactive0
+typo: $hokulea.colors.typo.light
 active:
   background: $hokulea.colors.light.interactive-1
   border-color: $hokulea.colors.light.interactive-1

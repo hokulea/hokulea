@@ -1,4 +1,4 @@
-matagi
+hokulea
 ==============================================================================
 
 [Short description of the addon.]
@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install matagi
+ember install hokulea
 ```
 
 

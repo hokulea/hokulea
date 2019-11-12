@@ -1,1 +1,1 @@
-export { default } from '@matagi/buttons/components/base-button/template';
+export { default } from '@hokulea/buttons/components/base-button/template';

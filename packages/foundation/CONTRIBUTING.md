@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd @matagi/foundation`
+* `cd @hokulea/foundation`
 * `yarn install`
 
 ## Linting

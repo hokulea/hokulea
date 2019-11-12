@@ -1,4 +1,4 @@
-@matagi/modifiers
+@hokulea/modifiers
 ==============================================================================
 
 [Short description of the addon.]
@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install @matagi/modifiers
+ember install @hokulea/modifiers
 ```
 
 

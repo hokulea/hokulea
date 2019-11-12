@@ -1,7 +1,7 @@
 {
-  "name": "matagi",
+  "name": "@hokulea/explorer",
   "version": "0.0.0",
-  "description": "Small description for matagi goes here",
+  "description": "Small description for hokulea goes here",
   "keywords": [
     "ember-addon"
   ],
@@ -36,9 +36,9 @@
     "@ember/edition-utils": "^1.1.1",
     "@ember/optional-features": "^1.0.0",
     "@glimmer/component": "^0.14.0-alpha.13",
-    "@matagi/buttons": "^0.0.0",
-    "@matagi/modifiers": "^0.0.0",
-    "@matagi/theme-moana": "^0.0.0",
+    "@hokulea/buttons": "^0.0.0",
+    "@hokulea/modifiers": "^0.0.0",
+    "@hokulea/theme-moana": "^0.0.0",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/ember": "^5.2.5",
     "@storybook/ember-cli-storybook": "^0.1.0",

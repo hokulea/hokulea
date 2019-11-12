@@ -1,7 +1,7 @@
 {
-  "name": "@matagi/modifiers",
+  "name": "@hokulea/modifiers",
   "version": "0.0.0",
-  "description": "Small description for @matagi/modifiers goes here",
+  "description": "Small description for @hokulea/modifiers goes here",
   "keywords": [
     "ember-addon"
   ],

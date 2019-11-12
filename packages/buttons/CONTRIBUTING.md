@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd @matagi/buttons`
+* `cd @hokulea/buttons`
 * `yarn install`
 
 ## Linting

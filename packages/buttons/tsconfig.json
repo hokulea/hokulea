@@ -28,16 +28,16 @@
         "tests/dummy/app/*",
         "app/*"
       ],
-      "@matagi/buttons": [
+      "@hokulea/buttons": [
         "addon"
       ],
-      "@matagi/buttons/*": [
+      "@hokulea/buttons/*": [
         "addon/*"
       ],
-      "@matagi/buttons/test-support": [
+      "@hokulea/buttons/test-support": [
         "addon-test-support"
       ],
-      "@matagi/buttons/test-support/*": [
+      "@hokulea/buttons/test-support/*": [
         "addon-test-support/*"
       ],
       "*": [

@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd matagi`
+* `cd hokulea`
 * `yarn install`
 
 ## Linting

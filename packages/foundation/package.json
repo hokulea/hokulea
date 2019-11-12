@@ -1,7 +1,7 @@
 {
-  "name": "@matagi/foundation",
+  "name": "@hokulea/foundation",
   "version": "0.0.0",
-  "description": "Small description for @matagi/foundation goes here",
+  "description": "Foundation for Hokulea",
   "keywords": [
     "ember-addon"
   ],

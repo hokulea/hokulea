@@ -1,4 +1,4 @@
-@matagi/buttons
+@hokulea/buttons
 ==============================================================================
 
 [Short description of the addon.]
@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install @matagi/buttons
+ember install @hokulea/buttons
 ```
 
 

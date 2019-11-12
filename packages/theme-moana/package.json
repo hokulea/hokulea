@@ -1,7 +1,7 @@
 {
-  "name": "@matagi/theme-moana",
+  "name": "@hokulea/theme-moana",
   "version": "0.0.0",
-  "description": "Moana theme for matagi",
+  "description": "Moana theme for hokulea",
   "license": "MIT",
   "keywords": [
     "ember-makeup-theme"

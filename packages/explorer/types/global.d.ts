@@ -1,5 +1,5 @@
 // Types for compiled templates
-declare module 'matagi/templates/*' { 
+declare module 'hokulea/templates/*' { 
   import { TemplateFactory } from 'htmlbars-inline-precompile';
   const tmpl: TemplateFactory;
   export default tmpl;

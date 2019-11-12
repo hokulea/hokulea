@@ -28,16 +28,16 @@
         "tests/dummy/app/*",
         "app/*"
       ],
-      "@matagi/modifiers": [
+      "@hokulea/modifiers": [
         "addon"
       ],
-      "@matagi/modifiers/*": [
+      "@hokulea/modifiers/*": [
         "addon/*"
       ],
-      "@matagi/modifiers/test-support": [
+      "@hokulea/modifiers/test-support": [
         "addon-test-support"
       ],
-      "@matagi/modifiers/test-support/*": [
+      "@hokulea/modifiers/test-support/*": [
         "addon-test-support/*"
       ],
       "*": [

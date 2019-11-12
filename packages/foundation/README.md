@@ -1,4 +1,4 @@
-@matagi/foundation
+@hokulea/foundation
 ==============================================================================
 
 [Short description of the addon.]
@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install @matagi/foundation
+ember install @hokulea/foundation
 ```
 
 

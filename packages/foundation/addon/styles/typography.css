@@ -1,0 +1,37 @@
+:root {
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.8 * var(--ratio));
+
+  line-height: var(--line-height);
+  font-size: calc(0.333vw + 1em);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--line-height-small);
+  hyphens: auto;
+}
+
+:global {
+  .t1,
+  h1 {
+    font-size: var(--s4);
+  }
+
+  .t2,
+  h2 {
+    font-size: var(--s3);
+  }
+
+  .t3,
+  h3 {
+    font-size: var(--s2);
+  }
+
+  .t4,
+  h4 {
+    font-size: var(--s1);
+  }
+}

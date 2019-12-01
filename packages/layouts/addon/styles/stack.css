@@ -1,0 +1,35 @@
+:global {
+  .stack {
+    --space: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .stack > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .stack > * + * {
+    margin-top: var(--space);
+  }
+
+  .stack-recursive * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .stack-recursive * + * {
+    margin-top: var(--space);
+  }
+
+  /* Pushing an element to the bottom */
+  .stack:only-child {
+    height: 100%;
+  }
+
+  .stack-end {
+    margin-bottom: auto;
+  }
+}

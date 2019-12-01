@@ -1,0 +1,6 @@
+:global {
+  .box {
+    --padding: var(--s1);
+    padding: var(--padding);
+  }
+}

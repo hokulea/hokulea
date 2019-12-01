@@ -1,4 +1,4 @@
-import Modifier from 'ember-class-based-modifier';
+import Modifier from 'ember-modifier';
 import { action } from '@ember/object';
 
 interface InvokeArgs {
@@ -6,9 +6,23 @@ interface InvokeArgs {
   named: {}
 }
 
+/**
+ * Invoke modifier:
+ *
+ * ```hbs
+ * <div {{invoke this.interactWithDiv}}
+ * ```
+ *
+ * "click" is not reliable, given on which element it is attached and what kind
+ * of attributes are available it behaves totally different.
+ *
+ * What we want is a reliable way to activate a UI element in an a11y fashion
+ *
+ * @see https://www.w3.org/TR/WCAG20-TECHS/SCR35.html
+ */
 export default class InvokeModifier extends Modifier<InvokeArgs> {
-  private mouseEvent: MouseEvent;
-  private touchEvent: TouchEvent;
+  private mouseEvent?: MouseEvent;
+  private touchEvent?: TouchEvent;
 
   get action() {
     return this.args.positional[0];
@@ -42,10 +56,7 @@ export default class InvokeModifier extends Modifier<InvokeArgs> {
 
   @action
   handleMouseEnd(event: MouseEvent) {
-    if (this.mouseEvent.target === event.target) {
-      console.log('mouse', this.mouseEvent === event, event);
-      this.invoke();
-    }
+    this.finishEvent(this.mouseEvent, event);
   }
 
   @action
@@ -55,7 +66,11 @@ export default class InvokeModifier extends Modifier<InvokeArgs> {
 
   @action
   handleTouchEnd(event: TouchEvent) {
-    if (this.touchEvent.target === event.target) {
+    this.finishEvent(this.touchEvent, event);
+  }
+
+  private finishEvent(originalEvent: Event | undefined, event: Event) {
+    if (originalEvent && originalEvent.target === event.target) {
       this.invoke();
     }
   }

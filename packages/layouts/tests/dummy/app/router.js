@@ -10,5 +10,6 @@ Router.map(function() {
   this.route("demo", function() {
     this.route("stack");
     this.route("center");
+    this.route("cluster");
   });
 });

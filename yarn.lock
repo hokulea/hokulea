@@ -7842,7 +7842,7 @@ ember-maybe-import-regenerator@^0.1.6:
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
 
-ember-modifier-manager-polyfill@^1.2.0:
+ember-modifier-manager-polyfill@^1.0.3, ember-modifier-manager-polyfill@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-modifier-manager-polyfill/-/ember-modifier-manager-polyfill-1.2.0.tgz#cf4444e11a42ac84f5c8badd85e635df57565dda"
   integrity sha512-bnaKF1LLKMkBNeDoetvIJ4vhwRPKIIumWr6dbVuW6W6p4QV8ZiO+GdF8J7mxDNlog9CeL9Z/7wam4YS86G8BYA==
@@ -7957,6 +7957,14 @@ ember-source@^3.13.3, ember-source@~3.14.2:
     resolve "^1.11.1"
     semver "^6.1.1"
     silent-error "^1.1.1"
+
+ember-style-modifier@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/ember-style-modifier/-/ember-style-modifier-0.4.1.tgz#05b04b137b69133d142c82cbf1c955b67dcf5a7b"
+  integrity sha512-5IXQzg8Ritnj8Ym6lYMgylmlWVZ6I0X2NE+HWvsOIfIvHwAa4mKiNuFUF1to4K4BX8VTQEsrQYxgf8bbQ21QfA==
+  dependencies:
+    ember-cli-babel "^7.1.2"
+    ember-modifier-manager-polyfill "^1.0.3"
 
 ember-template-lint@^1.1.0:
   version "1.8.2"

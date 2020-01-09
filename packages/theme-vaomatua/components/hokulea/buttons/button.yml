@@ -1,0 +1,11 @@
+focus:
+  background:
+    $dark: $colors.layout.brand.§dark
+    $light: $colors.layout.brand.§light
+hover:
+  typo: $colors.typo.dark
+  border: $colors.interactive.i+1
+  background: $colors.interactive.i+1
+typo: $colors.typo.dark
+border: $colors.interactive.i-0
+background: $colors.interactive.i-0

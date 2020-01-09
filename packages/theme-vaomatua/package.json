@@ -1,0 +1,18 @@
+{
+  "name": "@hokulea/theme-vaomatua",
+  "version": "0.0.0",
+  "description": "Vaomatua theme for hokulea",
+  "license": "MIT",
+  "keywords": [
+    "ember-makeup-theme"
+  ],
+  "makeup": {
+    "name": "moana"
+  },
+  "scripts": {
+    "sync": "yarn ember-makeup-sync-figma"
+  },
+  "devDependencies": {
+    "ember-makeup-sync-figma": "^0.0.0"
+  }
+}

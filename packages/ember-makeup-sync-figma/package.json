@@ -1,0 +1,37 @@
+{
+  "name": "ember-makeup-sync-figma",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "gossi",
+  "main": "dist/index.js",
+  "module": "dist/ember-makeup-sync-figma.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint"
+  },
+  "bin": {
+    "ember-makeup-sync-figma": "bin/ember-makeup-sync-figma.js"
+  },
+  "dependencies": {
+    "color-converter": "^1.4.1",
+    "dotenv": "^8.2.0",
+    "esm": "3.2.25",
+    "figma-api": "^1.5.5",
+    "js-yaml": "^3.13.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/js-yaml": "^3.12.1",
+    "@types/node-fetch": "^2.5.4",
+    "tsdx": "^0.12.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4"
+  }
+}

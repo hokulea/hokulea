@@ -17,7 +17,7 @@ const loadStories = () => {
 
   return [
     // require.context('../node_modules/@hokulea/buttons/stories', true, /\.js$/)
-    // require.context('../../buttons/stories', true, /\.js$/)
+    // ...require.context("../../buttons/stories", true, /\.js$/),
     ...req
       .keys()
       .map(name => req(name))

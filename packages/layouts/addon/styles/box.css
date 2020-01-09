@@ -1,11 +1,9 @@
-@component hokulea.layouts.box;
-
 :global {
   .box {
     --space: var(--s1);
     padding: var(--space);
     border-style: solid;
     border-width: 1px;
-    border-color: cfg();
+    border-color: cfg("hokulea.layouts.box.border-color");
   }
 }

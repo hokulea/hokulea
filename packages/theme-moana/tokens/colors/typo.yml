@@ -1,0 +1,6 @@
+normal:
+  §dark: '#f2f2f2'
+  §light: '#595959'
+inverse:
+  §dark: '#595959'
+  §light: '#f2f2f2'

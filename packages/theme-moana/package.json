@@ -8,5 +8,11 @@
   ],
   "makeup": {
     "name": "moana"
+  },
+  "scripts": {
+    "sync": "yarn ember-makeup-sync-figma"
+  },
+  "devDependencies": {
+    "ember-makeup-sync-figma": "^0.0.0"
   }
 }

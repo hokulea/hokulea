@@ -4,22 +4,20 @@ import cc from 'color-converter';
 import yaml from 'js-yaml';
 import path from 'path';
 import fs from 'fs';
+import { SyncOptions } from './package';
 
-interface Options {
+interface WriterOptions extends SyncOptions {
   directory: string,
-  contextPrefix?: string;
-  color?: string;
-  colorAlpha?: string;
 }
 
 export default class Writer {
   private entities: Map<string, Entity>;
-  private options: Options;
+  private options: WriterOptions;
 
   private tokens: Entity[];
   private components: Entity[];
 
-  constructor(entites: Map<string, Entity>, options: Options) {
+  constructor(entites: Map<string, Entity>, options: WriterOptions) {
     this.entities = entites;
     this.tokens = Array.from(this.entities.values()).filter(entity => entity.type === 'token');
     this.components = Array.from(this.entities.values()).filter(entity => entity.type === 'component');
@@ -84,7 +82,12 @@ export default class Writer {
 
   private getValue(entity: Entity): string {
     if (entity.type === 'token' && entity.reference) {
-      return this.getValue(this.entities.get(entity.reference)!);
+      const ref = this.entities.get(entity.reference);
+      if (ref) {
+        return this.getValue(ref);
+      }
+      console.log('Reference does not exist:', entity.reference);
+      return '';
     }
 
     if (entity.reference) {

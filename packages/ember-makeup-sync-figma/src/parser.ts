@@ -2,6 +2,7 @@ import Entity from 'entity';
 import { Node, StylesMap } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
 import { References, RefNode, StyleRef } from './references';
+import { SyncOptions } from './package';
 
 type CompositeNode = Node & {
   children: Node[];
@@ -11,17 +12,21 @@ function isCompositeNode(node: Node) {
   return ['DOCUMENT', 'FRAME', 'GROUP', 'CANVAS', 'BOOLEAN', ' BOOLEAN_OPERATION', 'COMPONENT'].includes(node.type);
 }
 
-type LayerNode = Node<'RECTANGLE'>;
+function isVectorNode(node: Node) {
+  return ['VECTOR', 'BOOLEAN', 'BOOLEAN_OPERATION', 'STAR', 'LINE', 'ELLIPSE', 'REGULAR_POLYGON', 'RECTANGLE', 'TEXT'].includes(node.type);
+}
 
 export default class Parser {
   entities: Map<string, Entity> = new Map();
 
   private file: GetFileResult;
   private references: References;
+  private options: SyncOptions;
 
-  constructor(file: GetFileResult, references: References) {
+  constructor(file: GetFileResult, references: References, options: SyncOptions) {
     this.file = file;
     this.references = references;
+    this.options = options;
   }
 
   parse() {
@@ -29,15 +34,12 @@ export default class Parser {
   }
 
   private parseNode(node: Node) {
-    switch (node.type) {
-      case 'TEXT':
-        this.parseTextNode(node as Node<'TEXT'>);
-        break;
+    if (node.type === 'TEXT') {
+      this.parseTextNode(node as Node<'TEXT'>);
+    }
 
-      case 'RECTANGLE':
-      case 'ELLIPSE':
-        this.parseLayerNode(node as LayerNode);
-        break;
+    if (isVectorNode(node)) {
+      this.parseVectorNode(node as Node<'VECTOR'>);
     }
 
     if (isCompositeNode(node)) {
@@ -57,7 +59,7 @@ export default class Parser {
     }
   }
 
-  private parseLayerNode(node: LayerNode) {
+  private parseVectorNode(node: Node<'VECTOR'>) {
     if (node.styles) {
       for (const type of Object.keys(node.styles)) {
         const id = node.styles[type as keyof StylesMap];
@@ -69,12 +71,12 @@ export default class Parser {
 
           // see if we have a reference
           if (reference) {
-            entity.reference = reference;
+            entity.reference = this.getEntityName(reference);
           }
 
           // anyway look for the value
           else {
-            const key = `${type.toLowerCase()}s` as keyof LayerNode;
+            const key = `${type.toLowerCase()}s` as keyof Node<'VECTOR'>;
             if (key === 'fills' && node[key]) {
               entity.color = node[key][0].color;
             }
@@ -104,6 +106,7 @@ export default class Parser {
   }
 
   private createEntity(id: string): Entity {
+    id = this.getEntityName(id);
     const type = id.startsWith('t.') ? 'token' : 'component';
     const name = id.replace(/^(c|t)\./, '');
     const index = name.indexOf('/');
@@ -118,7 +121,18 @@ export default class Parser {
     };
   }
 
+  private getEntityName(name: string) {
+    if (this.options.transforms) {
+      for (const [key, value] of Object.entries(this.options.transforms)) {
+        name = name.replace(key, value);
+      }
+    }
+
+    return name;
+  }
+
   private isEntityName(name: string) {
+    name = this.getEntityName(name);
     return (name.startsWith('c.') || name.startsWith('t.')) && name.includes('/');
   }
 }

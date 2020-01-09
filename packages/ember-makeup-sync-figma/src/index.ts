@@ -1,10 +1,14 @@
 import dotenv from 'dotenv';
 import { Api as FigmaClient } from 'figma-api';
-import Parser from './parser';
+import importCwd from 'import-cwd';
 import fetch from 'node-fetch';
+import { Package, SyncOptions } from './package';
+import Parser from './parser';
 import Writer from './writer';
 
 dotenv.config();
+
+const theme = importCwd('./package') as Package;
 
 main();
 
@@ -24,10 +28,13 @@ async function main() {
   });
   const references = await response.json();
 
-  const parser = new Parser(file, references);
+  const options: SyncOptions = theme.makeup.sync ?? {};
+
+  const parser = new Parser(file, references, options);
   parser.parse();
 
   const writer = new Writer(parser.entities, {
+    ...options,
     directory: process.cwd()
   });
 

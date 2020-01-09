@@ -7,7 +7,15 @@
     "ember-makeup-theme"
   ],
   "makeup": {
-    "name": "moana"
+    "name": "moana",
+    "sync": {
+      "transforms": {
+        "t.c.": "t.colors.",
+        "c.h.f.": "c.hokulea.foundation.",
+        "c.h.b.": "c.hokulea.buttons.",
+        "c.h.": "c.hokulea."
+      }
+    }
   },
   "scripts": {
     "sync": "yarn ember-makeup-sync-figma"

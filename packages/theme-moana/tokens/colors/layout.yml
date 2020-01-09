@@ -1,13 +1,13 @@
 background:
   §dark: '#595959'
   §light: '#ffffff'
+low-contrast:
+  §light: '#dfdfdf'
+  §dark: '#6e6e6e'
 reduced:
   §dark: '#dfdfdf'
   §light: '#6e6e6e'
 high-contrast:
   §dark: '#f2f2f2'
   §light: '#595959'
-low-contrast:
-  §dark: '#6e6e6e'
-  §light: '#dfdfdf'
 brand: '#18b2f4'

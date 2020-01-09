@@ -1,0 +1,9 @@
+disabled:
+  §dark: '#9e9e9e'
+  §light: '#b2b2b2'
+success:
+  §dark: ''
+  §light: ''
+error:
+  §dark: ''
+  §light: ''

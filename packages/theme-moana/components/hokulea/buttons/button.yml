@@ -1,15 +1,24 @@
-background: $hokulea.colors.light.interactive0
-border-color: $hokulea.colors.light.interactive0
-typo: $hokulea.colors.typo.light
+disabled:
+  typo:
+    $dark: $colors.denotive.disabled.§dark
+    $light: $colors.denotive.disabled.§light
+  border:
+    $light: $colors.layout.low-contrast.§light
+    $dark: $colors.layout.low-contrast.§dark
+  background:
+    $light: $colors.layout.low-contrast.§light
+    $dark: $colors.layout.low-contrast.§dark
 active:
-  background: $hokulea.colors.light.interactive-1
-  border-color: $hokulea.colors.light.interactive-1
-  typo: $hokulea.colors.typo.light
-pressed:
-  background: $hokulea.colors.light.interactive-2
-  border-color: $hokulea.colors.light.interactive-2
-  typo: $hokulea.colors.typo.light
+  typo: $buttons.button.pressed.typo
+  border: $colors.interactive.i-2
+  focus: $colors.interactive.i-2
+  background: $colors.interactive.i-2
+typo: $colors.typo.light
 hover:
-  background: $hokulea.colors.light.interactive+1
-  border-color: $hokulea.colors.light.interactive+1
-  typo: $hokulea.colors.typo.light
+  typo: $colors.typo.light
+  border: $colors.interactive.i+1
+  focus: $colors.interactive.i+1
+  background: $colors.interactive.i+1
+focus: $colors.interactive.i-0
+border: $colors.interactive.i-0
+background: $colors.interactive.i-0

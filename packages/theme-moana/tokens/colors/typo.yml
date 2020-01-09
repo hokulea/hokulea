@@ -4,3 +4,5 @@ normal:
 inverse:
   §dark: '#595959'
   §light: '#f2f2f2'
+light: '#f2f2f2'
+dark: '#595959'

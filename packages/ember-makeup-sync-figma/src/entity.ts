@@ -18,6 +18,7 @@ export default interface Entity {
     r: number,
     g: number,
     b: number,
-    a: number
+    a: number,
+    visible: boolean
   }
 }

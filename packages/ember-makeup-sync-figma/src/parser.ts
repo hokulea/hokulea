@@ -78,7 +78,8 @@ export default class Parser {
           else {
             const key = `${type.toLowerCase()}s` as keyof Node<'VECTOR'>;
             if (key === 'fills' && node[key]) {
-              entity.color = node[key][0].color;
+              // @ts-ignore
+              entity.color = { ...node[key][0].color, visible: node[key][0].visible ?? true };
             }
           }
 

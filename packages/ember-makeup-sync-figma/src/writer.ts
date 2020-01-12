@@ -21,7 +21,7 @@ export default class Writer {
     this.entities = entites;
     this.tokens = Array.from(this.entities.values()).filter(entity => entity.type === 'token');
     this.components = Array.from(this.entities.values()).filter(entity => entity.type === 'component');
-    this.options = { color: 'hex', colorAlpha: 'rgb', contextPrefix: '§', ...options };
+    this.options = { color: 'hex', colorAlpha: 'rgb', contextPrefix: '$', ...options };
   }
 
   save() {
@@ -47,10 +47,10 @@ export default class Writer {
         const contexts = this.getContexts(entry);
         if (contexts.length > 0) {
           for (const context of contexts) {
-            set(contents, [...entry.key.split('.'), `$${context}`], `${this.getRefName(entry)}.${this.options.contextPrefix}${context}`);
+            set(contents, [...entry.key.split('.'), `$${context}`], `${this.getRefName(entry)}.${context}`);
           }
         } else {
-          set(contents, entry.key.split('.'), this.getValue(entry));
+          set(contents, entry.key.split('.').map(name => name.replace(this.options.contextPrefix ?? '', '')), this.getValue(entry));
         }
       }
 
@@ -98,7 +98,11 @@ export default class Writer {
       const c = entity.color;
       const color = cc.fromRGBA(c.r * 255, c.g * 255, c.b * 255, c.a);
 
-      if (color.alpha === 1) {
+      if (c.visible === false) {
+        return 'transparent';
+      }
+
+      else if (color.alpha === 1) {
         switch (this.options.color) {
           case 'hex':
             return color.toHex();
@@ -140,5 +144,8 @@ function set(obj: object, keyPath: string[], value: any) {
   }
 
   // @ts-ignore
-  obj[keyPath[lastKeyIndex]] = value;
+  if (typeof obj[keyPath[lastKeyIndex]] !== 'object') {
+    // @ts-ignore
+    obj[keyPath[lastKeyIndex]] = value;
+  }
 }

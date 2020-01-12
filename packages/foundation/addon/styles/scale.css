@@ -1,5 +1,6 @@
 :root {
   --ratio: var(--ember-makeup\/cfg\/hokulea\.foundation\.scale\.ratio, 1.4);
+
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));

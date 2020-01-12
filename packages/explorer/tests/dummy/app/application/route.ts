@@ -6,6 +6,8 @@ export default class ApplicationRoute extends Route {
   @service makeup!: MakeupService;
 
   beforeModel() {
+    console.log('set theme');
+
     this.makeup.setTheme('moana');
 
     window.makeup = this.makeup;

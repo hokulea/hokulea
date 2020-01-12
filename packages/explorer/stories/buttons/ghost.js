@@ -9,9 +9,9 @@ export default {
 
 const invokeHandler = action("button invoked");
 
-export const button = () => {
+export const ghost = () => {
   return {
-    template: hbs`<Button {{invoke this.invokeButton}}>Button</Button> <Button disabled={{true}}>Disabled Button</Button>`,
+    template: hbs`<GhostButton {{invoke this.invokeButton}}>Ghost Button</GhostButton> <GhostButton disabled={{true}}>Disabled Ghost Button</GhostButton>`,
     context: {
       invokeButton() {
         invokeHandler();
@@ -20,13 +20,13 @@ export const button = () => {
   };
 };
 
-button.story = {
+ghost.story = {
   decorators: [withDesign],
   parameters: {
     design: {
       type: "figma",
       url:
-        "https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=106%3A9"
+        "https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=123%3A9"
     }
   }
 };

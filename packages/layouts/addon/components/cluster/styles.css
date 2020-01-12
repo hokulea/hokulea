@@ -1,0 +1,16 @@
+.cluster {
+  --cluster-space: var(--s1);
+  overflow: hidden;
+}
+
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--cluster-space) / 2 * -1);
+}
+
+.cluster > * > * {
+  margin: calc(var(--cluster-space) / 2);
+}

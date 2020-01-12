@@ -1,6 +1,6 @@
-@component hokulea.buttons.button;
+@component hokulea.buttons.secondary;
 
-.button {
+.ghost-button {
   color: cfg("typo");
 
   > span {

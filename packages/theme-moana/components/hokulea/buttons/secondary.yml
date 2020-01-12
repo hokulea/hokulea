@@ -5,20 +5,20 @@ disabled:
   border-color:
     $light: $colors.layout.low-contrast.light
     $dark: $colors.layout.low-contrast.dark
-  background:
-    $light: $colors.layout.low-contrast.light
-    $dark: $colors.layout.low-contrast.dark
+  background: transparent
 active:
   typo: $colors.typo.light
   border-color: $colors.interactive.i-2
   focus: $colors.interactive.i-2
   background: $colors.interactive.i-2
-typo: $colors.typo.light
+focus: $colors.interactive.i-0
 hover:
   typo: $colors.typo.light
-  border-color: $colors.interactive.i+1
+  border-color: $colors.interactive.i-0
   focus: $colors.interactive.i-0
-  background: $colors.interactive.i+1
-focus: $colors.interactive.i-0
+  background: $colors.interactive.i-0
+typo:
+  $dark: $colors.layout.brand.dark
+  $light: $colors.layout.brand.light
 border-color: $colors.interactive.i-0
-background: $colors.interactive.i-0
+background: transparent

@@ -1,0 +1,15 @@
+background:
+  $dark: $colors.layout.background.dark
+  $light: $colors.layout.background.light
+low-contrast:
+  $light: $colors.layout.low-contrast.light
+  $dark: $colors.layout.low-contrast.dark
+brand:
+  $dark: $colors.layout.brand.dark
+  $light: $colors.layout.brand.light
+high-contrast:
+  $dark: $colors.layout.high-contrast.dark
+  $light: $colors.layout.high-contrast.light
+reduced:
+  $dark: $colors.layout.reduced.dark
+  $light: $colors.layout.reduced.light

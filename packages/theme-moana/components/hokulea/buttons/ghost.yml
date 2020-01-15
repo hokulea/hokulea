@@ -11,7 +11,6 @@ active:
   border-color: $colors.interactive.i-2
   focus: $colors.interactive.i-2
   background: $colors.interactive.i-2
-focus: $colors.interactive.i-0
 hover:
   typo: $colors.typo.light
   border-color: $colors.interactive.i-0
@@ -20,5 +19,6 @@ hover:
 typo:
   $dark: $colors.layout.brand.dark
   $light: $colors.layout.brand.light
+focus: $colors.interactive.i-0
 border-color: $colors.interactive.i-0
 background: transparent

@@ -13,6 +13,7 @@
         "t.c.": "t.colors.",
         "c.h.f.": "c.hokulea.foundation.",
         "c.h.b.": "c.hokulea.buttons.",
+        "c.h.l.": "c.hokulea.layout.",
         "c.h.": "c.hokulea."
       }
     }

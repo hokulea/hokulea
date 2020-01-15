@@ -1,9 +1,0 @@
-@component context;
-
-.light {
-  @context light;
-}
-
-.dark {
-  @context dark;
-}

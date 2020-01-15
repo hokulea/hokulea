@@ -1,6 +1,6 @@
-import hbs from 'htmlbars-inline-precompile';
+import hbs from "htmlbars-inline-precompile";
 
-export default { title: 'Demo' };
+export default { title: "Demo" };
 
 export const heading = () => hbs`<h1>Hello World</h1>`;
 

@@ -1,0 +1,37 @@
+.affix {
+  padding: 0 var(--s-1);
+  box-sizing: border-box;
+}
+
+.bordered {
+  border-color: inherit;
+  border-width: 0;
+  border-style: solid;
+}
+
+.prefix {
+  composes: bordered;
+  border-right-width: inherit;
+}
+
+.suffix {
+  composes: bordered;
+  border-left-width: inherit;
+}
+
+.row-builder {
+  display: flex;
+
+  & > * {
+    display: flex;
+
+    & > .affix + .content,
+    & > .content + .affix {
+      padding-left: 0;
+    }
+  }
+}
+
+.content {
+  padding: 0 var(--s-1);
+}

@@ -3,7 +3,7 @@
 .ghost-button {
   color: cfg("typo");
 
-  > span {
+  > div {
     background-color: cfg("background");
     border-color: cfg();
   }
@@ -16,7 +16,7 @@
     @component hover;
     color: cfg("typo");
 
-    & > span {
+    & > div {
       background-color: cfg("background");
       border-color: cfg();
     }
@@ -30,7 +30,7 @@
     @component active;
     color: cfg("typo");
 
-    & > span {
+    & > div {
       background-color: cfg("background");
       border-color: cfg();
     }
@@ -44,7 +44,7 @@
     @component disabled;
     color: cfg("typo");
 
-    & > span {
+    & > div {
       background-color: cfg("background");
       border-color: cfg();
     }

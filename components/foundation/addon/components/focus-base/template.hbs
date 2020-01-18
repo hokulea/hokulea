@@ -1,5 +1,7 @@
 {{#let (element (or @tagName 'div')) as |Tag|}}
-  <Tag ...attributes>
-    <span local-class="content">{{yield}}</span>
+  <Tag local-class="base" ...attributes>
+    <div local-class="rim">
+      {{yield}}
+    </div>
   </Tag>
 {{/let}}

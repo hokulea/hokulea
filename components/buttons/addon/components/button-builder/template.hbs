@@ -1,3 +1,9 @@
-<FocusBase @tagName="button" local-class="base-button" ...attributes>
-  {{yield}}
-</FocusBase>
+<RowBuilder @tagName="button" ...attributes as |builder|>
+  {{#if (has-block-params)}}
+    {{yield builder}}
+  {{else}}
+    <builder.Content>
+      {{yield}}
+    </builder.Content>
+  {{/if}}
+</RowBuilder>

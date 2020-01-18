@@ -1,1 +1,7 @@
-<ButtonBuilder local-class="ghost-button" ...attributes>{{yield}}</ButtonBuilder>
+<ButtonBuilder local-class="ghost-button" ...attributes as |builder|>
+  {{#if (has-block-params)}}
+    {{yield builder}}
+  {{else}}
+    <builder.Content>{{yield}}</builder.Content>
+  {{/if}}
+</ButtonBuilder>

@@ -1,10 +1,10 @@
 <ThemeSwitcher />
 
-<h2 id="title">Welcome to Ember</h2>
+<h2>Hokulea Test Page</h2>
 
-<Center>
-  <Stack>
-    <Cluster>
+<CenterLayout>
+  <StackLayout>
+    <ClusterLayout>
       <Button>Button</Button>
 
       <Button as |b|>
@@ -20,9 +20,9 @@
       </Button>
 
       <Button disabled=true>Button</Button>
-    </Cluster>
+    </ClusterLayout>
 
-    <Cluster>
+    <ClusterLayout>
       <GhostButton>Button</GhostButton>
 
       <GhostButton as |b|>
@@ -38,8 +38,8 @@
       </GhostButton>
 
       <GhostButton disabled=true>Button</GhostButton>
-    </Cluster>
-  </Stack>
-</Center>
+    </ClusterLayout>
+  </StackLayout>
+</CenterLayout>
 
 {{outlet}}

@@ -1,0 +1,5 @@
+{{#let (element (or @tagName 'div')) as |Tag|}}
+  <Tag ...attributes>
+    <span local-class="content">{{yield}}</span>
+  </Tag>
+{{/let}}

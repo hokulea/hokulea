@@ -10,7 +10,10 @@
     "test": "yarn lerna-run test"
   },
   "workspaces": [
-    "packages/*"
+    "explorer",
+    "components/*",
+    "themes/*",
+    "libraries/*"
   ],
   "devDependencies": {
     "lerna": "^3.13.1"

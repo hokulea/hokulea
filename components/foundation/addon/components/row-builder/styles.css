@@ -6,7 +6,7 @@
 .bordered {
   border-color: inherit;
   border-width: 0;
-  border-style: solid;
+  border-style: inherit;
 }
 
 .prefix {
@@ -26,7 +26,8 @@
     display: flex;
 
     & > .affix + .content,
-    & > .content + .affix {
+    & > .content + .affix,
+    & > .affix:not(.suffix):not(.prefix) + .affix:not(.suffix):not(.prefix) {
       padding-left: 0;
     }
   }

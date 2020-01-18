@@ -6,8 +6,8 @@
 .cluster > * {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: var(--cluster-justify, flex-start);
+  align-items: var(--cluster-align, center);
   margin: calc(var(--cluster-space) / 2 * -1);
 }
 

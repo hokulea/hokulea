@@ -1,7 +1,8 @@
 <div local-class="cluster" ...attributes>
   <div {{style
-    justifyContent=(if @justify @justify 'flex-start')
-    alignItems=(if @align @align 'center')}}>
+      --clusterJustify=(if @justify @justify '')
+      --clusterAlign=(if @align @align '')
+    }}>
     {{yield}}
   </div>
 </div>

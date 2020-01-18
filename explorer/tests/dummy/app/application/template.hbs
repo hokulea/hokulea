@@ -2,44 +2,11 @@
 
 <h2>Hokulea Test Page</h2>
 
-<CenterLayout>
-  <StackLayout>
-    <ClusterLayout>
-      <Button>Button</Button>
+<nav>
+  <LinkTo @route="buttons">Buttons</LinkTo>
+  <LinkTo @route="cards">Cards</LinkTo>
+</nav>
 
-      <Button as |b|>
-        <b.Prefix>Prefix</b.Prefix>
-        <b.Prefix>Prefix</b.Prefix>
-        <b.Affix>affix</b.Affix>
-        <b.Affix>affix</b.Affix>
-        <b.Content>Button</b.Content>
-        <b.Affix>affix</b.Affix>
-        <b.Affix>affix</b.Affix>
-        <b.Suffix>Suffix</b.Suffix>
-        <b.Suffix>Suffix</b.Suffix>
-      </Button>
 
-      <Button disabled=true>Button</Button>
-    </ClusterLayout>
-
-    <ClusterLayout>
-      <GhostButton>Button</GhostButton>
-
-      <GhostButton as |b|>
-        <b.Prefix>Prefix</b.Prefix>
-        <b.Prefix>Prefix</b.Prefix>
-        <b.Affix>affix</b.Affix>
-        <b.Affix>affix</b.Affix>
-        <b.Content>Button</b.Content>
-        <b.Affix>affix</b.Affix>
-        <b.Affix>affix</b.Affix>
-        <b.Suffix>Suffix</b.Suffix>
-        <b.Suffix>Suffix</b.Suffix>
-      </GhostButton>
-
-      <GhostButton disabled=true>Button</GhostButton>
-    </ClusterLayout>
-  </StackLayout>
-</CenterLayout>
 
 {{outlet}}

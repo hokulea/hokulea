@@ -1,0 +1,15 @@
+@component hokulea.cards.card;
+
+.card {
+  & > div {
+    background-color: cfg("background");
+    border-width: 2px;
+    border-style: solid;
+    border-color: cfg();
+    padding: var(--s0);
+  }
+
+  &:focus {
+    border-color: cfg("focus");
+  }
+}

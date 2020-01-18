@@ -1,0 +1,5 @@
+focus: $colors.interactive.i-0
+border-color:
+  $light: $colors.layout.low-contrast.light
+  $dark: $colors.layout.low-contrast.dark
+background: transparent

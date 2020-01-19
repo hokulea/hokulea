@@ -1,9 +1,19 @@
+@import url("https://rsms.me/inter/inter.css");
+
 :root {
+  --font-normal: "Inter", sans-serif;
   --line-height: var(--ratio);
   --line-height-small: calc(0.8 * var(--ratio));
 
   line-height: var(--line-height);
   font-size: calc(0.333vw + 1em);
+  font-family: var(--font-normal);
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-normal: "Inter var", sans-serif;
+  }
 }
 
 h1,

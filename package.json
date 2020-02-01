@@ -13,7 +13,7 @@
     "explorer",
     "components/*",
     "themes/*",
-    "libraries/*"
+    "tooling/*"
   ],
   "devDependencies": {
     "lerna": "^3.13.1"

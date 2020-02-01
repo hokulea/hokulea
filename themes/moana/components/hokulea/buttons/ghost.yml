@@ -8,9 +8,9 @@ disabled:
   background: transparent
 active:
   typo: $colors.typo.light
-  border-color: $colors.interactive.i-2
-  focus: $colors.interactive.i-2
-  background: $colors.interactive.i-2
+  border-color: $colors.interactive.i-1
+  focus: $colors.interactive.i-1
+  background: $colors.interactive.i-1
 hover:
   typo: $colors.typo.light
   border-color: $colors.interactive.i-0

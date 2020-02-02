@@ -1,11 +1,24 @@
-focus:
+disabled:
+  typo:
+    $dark: $colors.denotive.disabled.dark
+    $light: $colors.denotive.disabled.light
+  border-color:
+    $light: $colors.layout.low-contrast.light
+    $dark: $colors.layout.low-contrast.dark
   background:
-    $dark: $colors.layout.brand.§dark
-    $light: $colors.layout.brand.§light
+    $light: $colors.layout.low-contrast.light
+    $dark: $colors.layout.low-contrast.dark
+active:
+  typo: $colors.typo.light
+  border-color: $colors.interactive.i-1
+  focus: $colors.interactive.i-1
+  background: $colors.interactive.i-1
 hover:
-  typo: $colors.typo.dark
-  border: $colors.interactive.i+1
+  typo: $colors.typo.light
+  border-color: $colors.interactive.i+1
+  focus: $colors.interactive.i-0
   background: $colors.interactive.i+1
-typo: $colors.typo.dark
-border: $colors.interactive.i-0
+typo: $colors.typo.light
+focus: $colors.interactive.i-0
+border-color: $colors.interactive.i-0
 background: $colors.interactive.i-0

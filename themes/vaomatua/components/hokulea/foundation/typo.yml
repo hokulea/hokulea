@@ -1,0 +1,6 @@
+inverse:
+  $dark: $colors.typo.inverse.dark
+  $light: $colors.typo.inverse.light
+normal:
+  $dark: $colors.typo.normal.dark
+  $light: $colors.typo.normal.light

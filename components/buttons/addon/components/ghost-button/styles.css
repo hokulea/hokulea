@@ -1,4 +1,4 @@
-@component hokulea.buttons.secondary;
+@component hokulea.buttons.ghost;
 
 .ghost-button {
   color: cfg("typo");

@@ -1,0 +1,18 @@
+disabled:
+  typo: '#9e9e9e'
+  border-color: '#6e6e6e'
+  background: transparent
+active:
+  typo: '#f2f2f2'
+  border-color: '#3baa5b'
+  focus: '#3baa5b'
+  background: '#3baa5b'
+hover:
+  typo: '#f2f2f2'
+  border-color: '#53c373'
+  focus: '#53c373'
+  background: '#53c373'
+typo: '#53c373'
+focus: '#53c373'
+border-color: '#53c373'
+background: transparent

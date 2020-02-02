@@ -1,4 +1,5 @@
-import hbs from "htmlbars-inline-precompile";
+// import hbs from "htmlbars-inline-precompile";
+import { hbs } from "ember-cli-htmlbars";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 
 export default {

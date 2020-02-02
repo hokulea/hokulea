@@ -7,35 +7,35 @@ export default {
 export const normal = () => {
   return {
     template: hbs`
-      <Cluster>
-        <Box>Tag 1</Box>
-        <Box>Tag 2</Box>
-        <Box>Tag 3</Box>
-      </Cluster>`
+      <ClusterLayout>
+        <BoxLayout>Tag 1</BoxLayout>
+        <BoxLayout>Tag 2</BoxLayout>
+        <BoxLayout>Tag 3</BoxLayout>
+      </ClusterLayout>`
   };
 };
 
 export const centered = () => {
   return {
     template: hbs`
-      <Cluster @justify="center">
-        <Box>Tag 1</Box>
-        <Box>Tag 2</Box>
-        <Box>Tag 3</Box>
-      </Cluster>`
+      <ClusterLayout @justify="center">
+        <BoxLayout>Tag 1</BoxLayout>
+        <BoxLayout>Tag 2</BoxLayout>
+        <BoxLayout>Tag 3</BoxLayout>
+      </ClusterLayout>`
   };
 };
 
 export const navbar = () => {
   return {
     template: hbs`
-      <Cluster @justify="space-between">
+      <ClusterLayout @justify="space-between">
         <p>BRAND</p>
-        <Cluster>
-          <Box>Idea</Box>
-          <Box>Pricing</Box>
-          <Box>About</Box>
-        </Cluster>
-      </Cluster>`
+        <ClusterLayout>
+          <BoxLayout>Idea</BoxLayout>
+          <BoxLayout>Pricing</BoxLayout>
+          <BoxLayout>About</BoxLayout>
+        </ClusterLayout>
+      </ClusterLayout>`
   };
 };

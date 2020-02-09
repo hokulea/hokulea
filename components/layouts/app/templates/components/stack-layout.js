@@ -1,1 +1,1 @@
-export { default } from "@hokulea/layouts/components/stack-layout/template";
+export { default } from '@hokulea/layouts/components/stack-layout/template';

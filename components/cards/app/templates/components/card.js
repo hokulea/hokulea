@@ -1,1 +1,1 @@
-export { default } from "@hokulea/cards/components/card/template";
+export { default } from '@hokulea/cards/components/card/template';

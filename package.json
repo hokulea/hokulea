@@ -7,7 +7,11 @@
     "reinstall": "yarn clean && yarn bootstrap",
     "fresh-install": "rm yarn.lock; yarn clean; yarn install && yarn lerna bootstrap",
     "lerna-run": "FORCE_COLOR=1 yarn lerna --concurrency 1 run --stream",
-    "test": "yarn lerna-run test"
+    "test": "yarn lerna-run test",
+    "lint:hbs": "yarn lerna-run lint:hbs",
+    "lint:js": "yarn lerna-run lint:js",
+    "lint:types": "yarn lerna-run lint:types",
+    "lint": "yarn lerna-run lint:js; yarn lerna-run lint:types; yarn lerna-run lint:hbs"
   },
   "workspaces": [
     "explorer",
@@ -16,10 +20,10 @@
     "tooling/*"
   ],
   "devDependencies": {
-    "lerna": "^3.13.1"
+    "lerna": "^3.20.2"
   },
   "resolutions": {
     "broccoli-persistent-filter": "github:gossi/broccoli-persistent-filter#use-with-ember-makeup",
-    "ember-cli-htmlbars": "^4.2.0"
+    "ember-cli-htmlbars": "^4.2.2"
   }
 }

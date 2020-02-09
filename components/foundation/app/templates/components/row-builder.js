@@ -1,1 +1,1 @@
-export { default } from "@hokulea/foundation/components/row-builder/template";
+export { default } from '@hokulea/foundation/components/row-builder/template';

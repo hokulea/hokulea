@@ -1,1 +1,1 @@
-export { default } from "@hokulea/layouts/components/center-layout/template";
+export { default } from '@hokulea/layouts/components/center-layout/template';

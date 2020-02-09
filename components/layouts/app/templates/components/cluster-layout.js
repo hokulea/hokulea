@@ -1,1 +1,1 @@
-export { default } from "@hokulea/layouts/components/cluster-layout/template";
+export { default } from '@hokulea/layouts/components/cluster-layout/template';

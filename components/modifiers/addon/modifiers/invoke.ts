@@ -1,9 +1,10 @@
-import Modifier from 'ember-modifier';
 import { action } from '@ember/object';
 
+import Modifier from 'ember-modifier';
+
 interface InvokeArgs {
-  positional: [() => void],
-  named: {}
+  positional: [() => void];
+  named: {};
 }
 
 /**

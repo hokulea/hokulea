@@ -1,1 +1,1 @@
-export { default } from "@hokulea/buttons/components/ghost-button/template";
+export { default } from '@hokulea/buttons/components/ghost-button/template';

@@ -1,1 +1,1 @@
-export { default } from "@hokulea/layouts/components/box-layout/template";
+export { default } from '@hokulea/layouts/components/box-layout/template';

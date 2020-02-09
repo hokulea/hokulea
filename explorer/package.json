@@ -17,8 +17,6 @@
     "_lint:hbs": "ember-template-lint .",
     "_lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test",
-    "test:all": "ember try:each",
     "build-storybook": "ember build && build-storybook -s dist",
     "storybook": "start-storybook -p 9001 -s dist",
     "prepublishOnly": "ember ts:precompile",

@@ -27,7 +27,7 @@
       "@hokulea/layouts/*": ["addon/*"],
       "@hokulea/layouts/test-support": ["addon-test-support"],
       "@hokulea/layouts/test-support/*": ["addon-test-support/*"],
-      "*": ["types/*"]
+      "*": ["../../types/*", "types/*"]
     }
   },
   "include": [

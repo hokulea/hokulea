@@ -1,7 +1,7 @@
-<ButtonBuilder local-class="ghost-button" ...attributes as |builder|>
+<ButtonBuilder local-class="ghost-button" data-test-ghost-button ...attributes as |builder|>
   {{#if (has-block-params)}}
     {{yield builder}}
   {{else}}
-    <builder.Content>{{yield}}</builder.Content>
+    <builder.Content data-test-ghost-button-content>{{yield}}</builder.Content>
   {{/if}}
 </ButtonBuilder>

@@ -1,7 +1,7 @@
-<ButtonBuilder local-class="button" ...attributes as |builder|>
+<ButtonBuilder local-class="button" data-test-button ...attributes as |builder|>
   {{#if (has-block-params)}}
     {{yield builder}}
   {{else}}
-    <builder.Content>{{yield}}</builder.Content>
+    <builder.Content data-test-button-content>{{yield}}</builder.Content>
   {{/if}}
 </ButtonBuilder>

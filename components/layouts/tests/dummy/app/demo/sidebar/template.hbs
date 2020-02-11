@@ -1,0 +1,51 @@
+<h2>
+  Sidebar
+</h2>
+
+<CenterLayout>
+  <SidebarLayout as |s|>
+    <s.Content>
+      Only Content
+    </s.Content>
+  </SidebarLayout>
+
+  <SidebarLayout as |s|>
+    <s.Side>
+      On the left
+    </s.Side>
+    <s.Content>
+      Only Content
+    </s.Content>
+  </SidebarLayout>
+
+  <SidebarLayout as |s|>
+    <s.Side @base="300px">
+      On the left [300px base]
+    </s.Side>
+    <s.Content>
+      Only Content
+    </s.Content>
+  </SidebarLayout>
+
+  <SidebarLayout as |s|>
+    <s.Content>
+      Only Content
+    </s.Content>
+    <s.Side>
+      On the right
+    </s.Side>
+  </SidebarLayout>
+</CenterLayout>
+
+<CenterLayout>
+  <div local-class="sidebar">
+    <div>
+      <span>
+        side
+      </span>
+      <p local-class="content">
+        We go right
+      </p>
+    </div>
+  </div>
+</CenterLayout>

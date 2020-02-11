@@ -1,0 +1,10 @@
+@value sidebar, content from '@hokulea/layouts/components/sidebar-layout/styles';
+
+.sidebar {
+  --sidebar-min: 75%;
+  composes: sidebar;
+}
+
+.content {
+  composes: content;
+}

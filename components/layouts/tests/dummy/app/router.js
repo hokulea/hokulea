@@ -12,5 +12,6 @@ Router.map(function() {
     this.route('stack');
     this.route('center');
     this.route('cluster');
+    this.route('sidebar');
   });
 });

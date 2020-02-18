@@ -1,0 +1,13 @@
+<div
+  local-class="switcher {{if @limit (concat "limit-" @limit)}}"
+  ...attributes
+>
+  <div
+    {{style
+      --switcherThreshold=(if @min @threshold "")
+      --switcherSpace=(if @space @space "")
+    }}
+  >
+    {{yield}}
+  </div>
+</div>

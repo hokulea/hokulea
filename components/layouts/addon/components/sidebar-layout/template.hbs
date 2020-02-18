@@ -1,11 +1,15 @@
 <div local-class="sidebar" ...attributes>
-  <div {{style
+  <div
+    {{style
       --sidebarMin=(if @min @min "")
       --sidebarSpace=(if @space @space "")
-    }}>
-    {{yield (hash
-      Side=(component "sidebar-layout/side")
-      Content=(component "sidebar-layout/content")
-    )}}
+    }}
+  >
+    {{yield
+      (hash
+        Side=(component "sidebar-layout/side")
+        Content=(component "sidebar-layout/content")
+      )
+    }}
   </div>
 </div>

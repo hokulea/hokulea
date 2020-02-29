@@ -1,4 +1,4 @@
-{{#let (element (or @tagName "div")) as |Tag|}}
+{{#let (if @element @element (element "div")) as |Tag|}}
   <Tag local-class="base" ...attributes>
     <div local-class="rim">
       {{yield}}

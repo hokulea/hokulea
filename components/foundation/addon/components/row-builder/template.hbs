@@ -1,8 +1,10 @@
-<FocusBase local-class="row-builder" @tagName={{@tagName}} ...attributes>
-  {{yield (hash
-    Content=(component "row-builder/content")
-    Affix=(component "row-builder/affix")
-    Prefix=(component "row-builder/affix" class=(local-class "prefix"))
-    Suffix=(component "row-builder/affix" class=(local-class "suffix"))
-  )}}
+<FocusBase local-class="row-builder" @element={{@element}} ...attributes>
+  {{yield
+    (hash
+      Content=(component "row-builder/content")
+      Affix=(component "row-builder/affix")
+      Prefix=(component "row-builder/affix" class=(local-class "prefix"))
+      Suffix=(component "row-builder/affix" class=(local-class "suffix"))
+    )
+  }}
 </FocusBase>

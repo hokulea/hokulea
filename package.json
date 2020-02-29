@@ -24,7 +24,7 @@
   },
   "resolutions": {
     "broccoli-persistent-filter": "github:gossi/broccoli-persistent-filter#use-with-ember-makeup",
-    "ember-cli-htmlbars": "^4.2.2"
+    "ember-element-helper": "gossi/ember-element-helper#use-as-primitive"
   },
   "dependencies": {
     "broccoli-persistent-filter": "github:gossi/broccoli-persistent-filter#use-with-ember-makeup"

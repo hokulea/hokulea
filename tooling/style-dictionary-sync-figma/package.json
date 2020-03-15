@@ -1,0 +1,41 @@
+{
+  "name": "style-dictionary-sync-figma",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "gossi",
+  "main": "dist/index.js",
+  "module": "dist/style-dictionary-sync-figma.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch --target node",
+    "build": "tsdx build --target node",
+    "_test": "tsdx test",
+    "lint": "tsdx lint"
+  },
+  "bin": {
+    "style-dictionary-sync-figma": "bin/style-dictionary-sync-figma.js"
+  },
+  "dependencies": {
+    "color-converter": "^1.4.1",
+    "dotenv": "^8.2.0",
+    "esm": "3.2.25",
+    "figma-api": "^1.5.5",
+    "import-cwd": "^3.0.0",
+    "js-yaml": "^3.13.1",
+    "node-fetch": "^2.6.0",
+    "figma-token-reader": "^0.0.0",
+    "style-dictionary": "^2.8.3"
+  },
+  "devDependencies": {
+    "@clark/eslint-config-typescript": "^1.23.0",
+    "@types/jest": "^24.0.25",
+    "@types/js-yaml": "^3.12.1",
+    "@types/node-fetch": "^2.5.4",
+    "tsdx": "^0.12.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4"
+  }
+}

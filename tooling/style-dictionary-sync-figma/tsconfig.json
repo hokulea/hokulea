@@ -1,0 +1,43 @@
+{
+  "include": [
+    "src",
+    "types",
+    "test",
+    "../figma-token-reader/src/**/*"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "importHelpers": false,
+    "downlevelIteration": true,
+    "declaration": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "figma-token-reader": [
+        "../figma-token-reader/src"
+      ],
+      "figma-token-reader/*": [
+        "../figma-token-reader/src/*"
+      ],
+      "*": [
+        "src/*",
+        "node_modules/*",
+        "types/*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "color": {
+    "action": {
+      "active": {
+        "border": {
+          "value": "#054661",
+          "description": "",
+          "context": "base"
+        },
+        "background": {
+          "value": "#054661",
+          "description": "",
+          "context": "base"
+        }
+      },
+      "hover": {
+        "border": {
+          "value": "#087aaa",
+          "description": "",
+          "context": "base"
+        },
+        "background": {
+          "value": "#087aaa",
+          "description": "",
+          "context": "base"
+        }
+      },
+      "base": {
+        "background": {
+          "value": "#0caef3",
+          "description": "",
+          "context": "base"
+        }
+      }
+    }
+  }
+}

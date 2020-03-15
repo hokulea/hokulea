@@ -1,0 +1,26 @@
+{
+  "color": {
+    "layout": {
+      "background": {
+        "value": "#595959",
+        "description": "",
+        "context": "dark"
+      },
+      "low-contrast": {
+        "value": "#6e6e6e",
+        "description": "",
+        "context": "dark"
+      },
+      "high-contrast": {
+        "value": "#f2f2f2",
+        "description": "",
+        "context": "dark"
+      },
+      "reduced": {
+        "value": "#dfdfdf",
+        "description": "",
+        "context": "dark"
+      }
+    }
+  }
+}

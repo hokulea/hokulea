@@ -1,0 +1,44 @@
+{
+  "color": {
+    "action": {
+      "disabled": {
+        "text": {
+          "value": "#828282",
+          "description": "",
+          "context": "light"
+        },
+        "border": {
+          "value": "#dfdfdf",
+          "description": "",
+          "context": "light"
+        },
+        "background": {
+          "value": "#dfdfdf",
+          "description": "",
+          "context": "light"
+        }
+      },
+      "active": {
+        "text": {
+          "value": "#595959",
+          "description": "",
+          "context": "light"
+        }
+      },
+      "hover": {
+        "text": {
+          "value": "#595959",
+          "description": "",
+          "context": "light"
+        }
+      },
+      "base": {
+        "text": {
+          "value": "#595959",
+          "description": "",
+          "context": "light"
+        }
+      }
+    }
+  }
+}

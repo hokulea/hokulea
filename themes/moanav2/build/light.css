@@ -1,0 +1,15 @@
+:root {
+  --color-action-disabled-text: #828282;
+  --color-action-disabled-border: #dfdfdf;
+  --color-action-disabled-background: #dfdfdf;
+  --color-action-active-text: #595959;
+  --color-action-hover-text: #595959;
+  --color-action-base-text: #595959;
+  --color-layout-background: #ffffff;
+  --color-layout-low-contrast: #dfdfdf;
+  --color-layout-high-contrast: #595959;
+  --color-layout-reduced: #6e6e6e;
+  --color-text-normal: #595959;
+  --color-text-disabled: #828282;
+  --color-text-inverse: #f2f2f2;
+}

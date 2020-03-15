@@ -1,0 +1,21 @@
+{
+  "color": {
+    "text": {
+      "disabled": {
+        "value": "#cecece",
+        "description": "",
+        "context": "dark"
+      },
+      "inverse": {
+        "value": "#595959",
+        "description": "",
+        "context": "dark"
+      },
+      "normal": {
+        "value": "#f2f2f2",
+        "description": "",
+        "context": "dark"
+      }
+    }
+  }
+}

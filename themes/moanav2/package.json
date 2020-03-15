@@ -1,0 +1,13 @@
+{
+  "name": "@hokulea/theme-moanav2",
+  "version": "0.0.0",
+  "description": "Moana theme for hokulea",
+  "license": "MIT",
+  "scripts": {
+    "sync": "yarn style-dictionary-sync-figma",
+    "build": "yarn style-dictionary build"
+  },
+  "devDependencies": {
+    "style-dictionary-sync-figma": "^0.0.0"
+  }
+}

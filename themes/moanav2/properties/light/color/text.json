@@ -1,20 +1,24 @@
 {
   "color": {
-    "text": {
-      "normal": {
+    "normal": {
+      "$light": {
         "value": "#595959",
         "description": "",
-        "context": "light"
-      },
-      "disabled": {
+        "colorScheme": "light"
+      }
+    },
+    "disabled": {
+      "$light": {
         "value": "#828282",
         "description": "",
-        "context": "light"
-      },
-      "inverse": {
+        "colorScheme": "light"
+      }
+    },
+    "inverse": {
+      "$light": {
         "value": "#f2f2f2",
         "description": "",
-        "context": "light"
+        "colorScheme": "light"
       }
     }
   }

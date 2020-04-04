@@ -1,20 +1,24 @@
 {
   "color": {
-    "text": {
-      "disabled": {
+    "disabled": {
+      "$dark": {
         "value": "#cecece",
         "description": "",
-        "context": "dark"
-      },
-      "inverse": {
+        "colorScheme": "dark"
+      }
+    },
+    "inverse": {
+      "$dark": {
         "value": "#595959",
         "description": "",
-        "context": "dark"
-      },
-      "normal": {
+        "colorScheme": "dark"
+      }
+    },
+    "normal": {
+      "$dark": {
         "value": "#f2f2f2",
         "description": "",
-        "context": "dark"
+        "colorScheme": "dark"
       }
     }
   }

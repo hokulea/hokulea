@@ -1,42 +1,52 @@
 {
   "color": {
-    "action": {
-      "disabled": {
-        "text": {
+    "disabled": {
+      "text": {
+        "$dark": {
           "value": "#cecece",
           "description": "",
-          "context": "dark"
-        },
-        "border": {
+          "colorScheme": "dark"
+        }
+      },
+      "border": {
+        "$dark": {
           "value": "#6e6e6e",
           "description": "",
-          "context": "dark"
-        },
-        "background": {
+          "colorScheme": "dark"
+        }
+      },
+      "background": {
+        "$dark": {
           "value": "#6e6e6e",
           "description": "",
-          "context": "dark"
+          "colorScheme": "dark"
         }
-      },
-      "active": {
-        "text": {
+      }
+    },
+    "active": {
+      "text": {
+        "$dark": {
           "value": "#f2f2f2",
           "description": "",
-          "context": "dark"
+          "colorScheme": "dark"
         }
-      },
-      "hover": {
-        "text": {
+      }
+    },
+    "hover": {
+      "text": {
+        "$dark": {
           "value": "#f2f2f2",
           "description": "",
-          "context": "dark"
+          "colorScheme": "dark"
         }
-      },
-      "base": {
-        "text": {
+      }
+    },
+    "base": {
+      "text": {
+        "$dark": {
           "value": "#f2f2f2",
           "description": "",
-          "context": "dark"
+          "colorScheme": "dark"
         }
       }
     }

@@ -1,0 +1,78 @@
+:root, .moana {
+  --color-active-border: #054661;
+  --color-active-background: #054661;
+  --color-hover-border: #087aaa;
+  --color-hover-background: #087aaa;
+  --color-base-background: #0caef3;
+  --color-brand: #0caef3;
+}
+
+/* Color Scheme: light */
+@media (prefers-color-scheme: light), (prefers-color-scheme: none) {
+:root {
+  --color-active-text: #595959;
+  --color-hover-text: #595959;
+  --color-base-text: #595959;
+  --color-disabled-text: #828282;
+  --color-disabled-border: #dfdfdf;
+  --color-disabled-background: #dfdfdf;
+  --color-disabled: #828282;
+  --color-background: #ffffff;
+  --color-low-contrast: #dfdfdf;
+  --color-high-contrast: #595959;
+  --color-reduced: #6e6e6e;
+  --color-inverse: #f2f2f2;
+  --color-normal: #595959;
+}
+}
+
+.moana-light {
+  --color-active-text: #595959;
+  --color-hover-text: #595959;
+  --color-base-text: #595959;
+  --color-disabled-text: #828282;
+  --color-disabled-border: #dfdfdf;
+  --color-disabled-background: #dfdfdf;
+  --color-disabled: #828282;
+  --color-background: #ffffff;
+  --color-low-contrast: #dfdfdf;
+  --color-high-contrast: #595959;
+  --color-reduced: #6e6e6e;
+  --color-inverse: #f2f2f2;
+  --color-normal: #595959;
+}
+
+/* Color Scheme: dark */
+@media (prefers-color-scheme: dark) {
+:root {
+  --color-active-text: #f2f2f2;
+  --color-hover-text: #f2f2f2;
+  --color-base-text: #f2f2f2;
+  --color-disabled-text: #cecece;
+  --color-disabled-border: #6e6e6e;
+  --color-disabled-background: #6e6e6e;
+  --color-disabled: #cecece;
+  --color-background: #595959;
+  --color-low-contrast: #6e6e6e;
+  --color-high-contrast: #f2f2f2;
+  --color-reduced: #dfdfdf;
+  --color-inverse: #595959;
+  --color-normal: #f2f2f2;
+}
+}
+
+.moana-dark {
+  --color-active-text: #f2f2f2;
+  --color-hover-text: #f2f2f2;
+  --color-base-text: #f2f2f2;
+  --color-disabled-text: #cecece;
+  --color-disabled-border: #6e6e6e;
+  --color-disabled-background: #6e6e6e;
+  --color-disabled: #cecece;
+  --color-background: #595959;
+  --color-low-contrast: #6e6e6e;
+  --color-high-contrast: #f2f2f2;
+  --color-reduced: #dfdfdf;
+  --color-inverse: #595959;
+  --color-normal: #f2f2f2;
+}

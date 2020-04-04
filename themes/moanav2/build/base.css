@@ -1,8 +1,8 @@
 :root {
-  --color-action-active-border: #054661;
-  --color-action-active-background: #054661;
-  --color-action-hover-border: #087aaa;
-  --color-action-hover-background: #087aaa;
-  --color-action-base-background: #0caef3;
-  --color-layout-brand: #0caef3;
+  --color-active-border: #054661;
+  --color-active-background: #054661;
+  --color-hover-border: #087aaa;
+  --color-hover-background: #087aaa;
+  --color-base-background: #0caef3;
+  --color-brand: #0caef3;
 }

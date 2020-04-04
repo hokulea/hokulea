@@ -3,11 +3,25 @@
   "version": "0.0.0",
   "description": "Moana theme for hokulea",
   "license": "MIT",
+  "theemo": {
+    "name": "moana",
+    "colorSchemes": [
+      "light",
+      "dark"
+    ],
+    "file": "dist/moana.css"
+  },
   "scripts": {
-    "sync": "yarn style-dictionary-sync-figma",
-    "build": "yarn style-dictionary build"
+    "sync": "yarn theemo sync",
+    "build": "yarn theemo build",
+    "generate": "yarn theemo generate",
+    "magic": "yarn sync && yarn build && yarn generate"
   },
   "devDependencies": {
-    "style-dictionary-sync-figma": "^0.0.0"
-  }
+    "style-dictionary": "2.8.3",
+    "theemo": "^0.0.4"
+  },
+  "keywords": [
+    "theemo-theme"
+  ]
 }

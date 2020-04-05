@@ -8,8 +8,12 @@ import MakeupService from 'ember-makeup/services/makeup';
 // @ts-ignore
 import styles from './styles';
 
+// import TheemoService from 'ember-theemo/services/theemo';
+
 
 export default class ThemeSwitcherComponent extends Component {
+
+  @service theemo!;
 
   @service makeup!: MakeupService;
 
@@ -56,7 +60,17 @@ export default class ThemeSwitcherComponent extends Component {
   }
 
   @action
-  selectTheme(theme: string) {
+  selectMakeupTheme(theme: string) {
     this.makeup.setTheme(theme);
+  }
+
+  @action
+  selectTheemoTheme(theme: string) {
+    this.theemo.setTheme(theme);
+  }
+
+  @action
+  selectTheemoScheme(scheme: string | undefined) {
+    this.theemo.setColorScheme(scheme);
   }
 }

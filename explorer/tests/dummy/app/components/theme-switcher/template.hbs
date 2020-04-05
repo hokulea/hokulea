@@ -1,9 +1,43 @@
 <div local-class="theme-switcher">
-  <input type="checkbox" checked={{eq this.context 'dark'}} {{on "change" this.switchContext}}>
+  Makeup:
+  <input
+    type="checkbox"
+    checked={{eq this.context "dark"}}
+    {{on "change" this.switchContext}}
+  />
 
   {{#each this.themeNames as |theme|}}
-    <button {{on "click" (fn this.selectTheme theme)}}>{{theme}}</button>
+    <button {{on "click" (fn this.selectMakeupTheme theme)}}>
+      {{theme}}
+    </button>
   {{/each}}
 
-  <div {{did-insert this.setupDummy}} local-class="{{this.context}}"></div>
+  <div local-class="{{this.context}}" {{did-insert this.setupDummy}}></div>
+
+  Theemo:
+
+  {{#each this.theemo.themes as |theme|}}
+    <button {{on "click" (fn this.selectTheemoTheme theme)}}>
+      {{theme}}{{#if (eq this.theemo.activeTheme scheme)~}}
+        *
+      {{~/if}}
+    </button>
+  {{/each}}
+
+  Available Color schemes:
+
+  <button {{on "click" (fn this.selectTheemoScheme undefined)}}>
+    system
+    {{#unless this.theemo.activeColorScheme~}}
+      *
+    {{~/unless}}
+  </button>
+
+  {{#each this.theemo.colorSchemes as |scheme|}}
+    <button {{on "click" (fn this.selectTheemoScheme scheme)}}>
+      {{scheme}}{{#if (eq this.theemo.activeColorScheme scheme)~}}
+        *
+      {{~/if}}
+    </button>
+  {{/each}}
 </div>

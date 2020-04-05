@@ -29,7 +29,8 @@
     "ember-cli-htmlbars": "^4.2.0",
     "ember-cli-typescript": "^3.1.2",
     "ember-css-modules": "^1.2.1",
-    "ember-makeup": "^0.0.1-alpha.9"
+    "ember-makeup": "^0.0.1-alpha.9",
+    "ember-theemo": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -42,9 +43,11 @@
     "@hokulea/cards": "^0.0.0",
     "@hokulea/foundation": "^0.0.0",
     "@hokulea/layouts": "^0.0.0",
-    "@hokulea/modifiers": "^0.0.0",
+    "ember-invoke-modifier": "^0.0.0",
     "@hokulea/theme-moana": "^0.0.0",
+    "@hokulea/theme-moanav2": "^0.0.0",
     "@hokulea/theme-vaomatua": "^0.0.0",
+    "@hokulea/theme-vaomatuav2": "^0.0.0",
     "@storybook/addon-a11y": "next",
     "@storybook/addon-actions": "next",
     "@storybook/addon-docs": "next",

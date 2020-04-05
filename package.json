@@ -16,7 +16,7 @@
   "workspaces": [
     "explorer",
     "addons/*",
-    "components/*",
+    "packages/*",
     "themes/*",
     "tooling/*"
   ],

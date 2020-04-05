@@ -1,0 +1,27 @@
+{
+  "name": "@hokulea/theme-vaomatuav2",
+  "version": "0.0.0",
+  "description": "Vaomatua theme for hokulea",
+  "license": "MIT",
+  "theemo": {
+    "name": "vaomatua",
+    "colorSchemes": [
+      "light",
+      "dark"
+    ],
+    "file": "dist/vaomatua.css"
+  },
+  "scripts": {
+    "sync": "yarn theemo sync",
+    "build": "yarn theemo build",
+    "generate": "yarn theemo generate",
+    "magic": "yarn sync && yarn build && yarn generate"
+  },
+  "devDependencies": {
+    "style-dictionary": "2.8.3",
+    "theemo": "^0.0.4"
+  },
+  "keywords": [
+    "theemo-theme"
+  ]
+}

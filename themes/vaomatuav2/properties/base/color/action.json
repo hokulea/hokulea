@@ -3,27 +3,27 @@
     "action": {
       "active": {
         "border": {
-          "value": "#054661",
+          "value": "#2e8447",
           "description": ""
         },
         "background": {
-          "value": "#054661",
+          "value": "#2e8447",
           "description": ""
         }
       },
       "hover": {
         "border": {
-          "value": "#087aaa",
+          "value": "#3baa5b",
           "description": ""
         },
         "background": {
-          "value": "#087aaa",
+          "value": "#3baa5b",
           "description": ""
         }
       },
       "base": {
         "background": {
-          "value": "#0caef3",
+          "value": "#53c373",
           "description": ""
         }
       }

@@ -1,10 +1,10 @@
-:root, .moana {
-  --color-action-active-border: #054661;
-  --color-action-active-background: #054661;
-  --color-action-hover-border: #087aaa;
-  --color-action-hover-background: #087aaa;
-  --color-action-base-background: #0caef3;
-  --color-layout-brand: #0caef3;
+:root, .vaomatua {
+  --color-action-active-border: #2e8447;
+  --color-action-active-background: #2e8447;
+  --color-action-hover-border: #3baa5b;
+  --color-action-hover-background: #3baa5b;
+  --color-action-base-background: #53c373;
+  --color-layout-brand: #53c373;
 }
 
 /* Color Scheme: light */
@@ -26,7 +26,7 @@
 }
 }
 
-.moana-light {
+.vaomatua-light {
   --color-action-active-text: #595959;
   --color-action-hover-text: #595959;
   --color-action-base-text: #595959;
@@ -61,7 +61,7 @@
 }
 }
 
-.moana-dark {
+.vaomatua-dark {
   --color-action-active-text: #f2f2f2;
   --color-action-hover-text: #f2f2f2;
   --color-action-base-text: #f2f2f2;

@@ -1,20 +1,20 @@
 :root, .moana {
+  --color-action-active-text: #f2f2f2;
   --color-action-active-border: #087aaa;
   --color-action-active-background: #087aaa;
+  --color-action-hover-text: #333333;
   --color-action-hover-border: #55c6f7;
   --color-action-hover-background: #55c6f7;
+  --color-action-base-text: #333333;
   --color-action-base-border: #9edffa;
   --color-action-base-background: #9edffa;
+  --color-action-disabled-text: #cecece;
   --color-layout-brand: #0caef3;
 }
 
 /* Color Scheme: light */
 @media (prefers-color-scheme: light), (prefers-color-scheme: none) {
 :root {
-  --color-action-active-text: #f2f2f2;
-  --color-action-hover-text: #595959;
-  --color-action-base-text: #595959;
-  --color-action-disabled-text: #828282;
   --color-action-disabled-border: #dfdfdf;
   --color-action-disabled-background: #dfdfdf;
   --color-layout-background: #ffffff;
@@ -23,15 +23,11 @@
   --color-layout-reduced: #6e6e6e;
   --color-text-disabled: #828282;
   --color-text-inverse: #f2f2f2;
-  --color-text-normal: #595959;
+  --color-text-normal: #333333;
 }
 }
 
 .moana-light {
-  --color-action-active-text: #f2f2f2;
-  --color-action-hover-text: #595959;
-  --color-action-base-text: #595959;
-  --color-action-disabled-text: #828282;
   --color-action-disabled-border: #dfdfdf;
   --color-action-disabled-background: #dfdfdf;
   --color-layout-background: #ffffff;
@@ -40,16 +36,12 @@
   --color-layout-reduced: #6e6e6e;
   --color-text-disabled: #828282;
   --color-text-inverse: #f2f2f2;
-  --color-text-normal: #595959;
+  --color-text-normal: #333333;
 }
 
 /* Color Scheme: dark */
 @media (prefers-color-scheme: dark) {
 :root {
-  --color-action-active-text: #595959;
-  --color-action-hover-text: #f2f2f2;
-  --color-action-base-text: #f2f2f2;
-  --color-action-disabled-text: #cecece;
   --color-action-disabled-border: #6e6e6e;
   --color-action-disabled-background: #6e6e6e;
   --color-layout-background: #595959;
@@ -63,10 +55,6 @@
 }
 
 .moana-dark {
-  --color-action-active-text: #595959;
-  --color-action-hover-text: #f2f2f2;
-  --color-action-base-text: #f2f2f2;
-  --color-action-disabled-text: #cecece;
   --color-action-disabled-border: #6e6e6e;
   --color-action-disabled-background: #6e6e6e;
   --color-layout-background: #595959;

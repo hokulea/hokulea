@@ -1,1 +1,1 @@
-export { default } from '@hokulea/modifiers/modifiers/invoke';
+export { default } from 'ember-invoke-modifier/modifiers/invoke';

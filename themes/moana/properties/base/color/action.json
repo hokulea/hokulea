@@ -2,6 +2,10 @@
   "color": {
     "action": {
       "active": {
+        "text": {
+          "value": "#f2f2f2",
+          "description": ""
+        },
         "border": {
           "value": "#087aaa",
           "description": ""
@@ -12,6 +16,10 @@
         }
       },
       "hover": {
+        "text": {
+          "value": "#333333",
+          "description": ""
+        },
         "border": {
           "value": "#55c6f7",
           "description": ""
@@ -22,12 +30,22 @@
         }
       },
       "base": {
+        "text": {
+          "value": "#333333",
+          "description": ""
+        },
         "border": {
           "value": "#9edffa",
           "description": ""
         },
         "background": {
           "value": "#9edffa",
+          "description": ""
+        }
+      },
+      "disabled": {
+        "text": {
+          "value": "#cecece",
           "description": ""
         }
       }

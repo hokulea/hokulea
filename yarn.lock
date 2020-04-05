@@ -46,7 +46,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.2.2", "@babel/core@^7.3.4", "@babel/core@^7.6.2", "@babel/core@^7.7.2", "@babel/core@^7.7.5", "@babel/core@^7.7.7", "@babel/core@^7.8.3", "@babel/core@^7.8.4", "@babel/core@^7.9.0":
+"@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.2.2", "@babel/core@^7.3.4", "@babel/core@^7.6.2", "@babel/core@^7.7.2", "@babel/core@^7.7.5", "@babel/core@^7.8.3", "@babel/core@^7.8.4", "@babel/core@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.9.0.tgz#ac977b538b77e132ff706f3b8a4dbad09c03c56e"
   integrity sha512-kWc7L0fw1xwvI0zi8OKVBuxRVefwGOrKSQMvrQ3dW+bIIavBY3/NpXmpjMy7bQnLgwgzWQZ8TlM57YHpHNHz4w==
@@ -8891,7 +8891,7 @@ ember-cli-version-checker@^4.1.0:
     semver "^6.3.0"
     silent-error "^1.1.1"
 
-ember-cli@^3.13.1, ember-cli@^3.15.1:
+ember-cli@^3.13.1, ember-cli@^3.15.1, ember-cli@^3.17.0:
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.17.0.tgz#d846027c01f1835c7903b6bff073c2a80885202e"
   integrity sha512-0GVer7AyV/g8hclbD64FmsNkULQ0N1pEQytB+utuJl8c6NFU4EUMJL7NyM/NRd7rzupMMR1jwzhxYTCY50ZRcg==
@@ -9351,7 +9351,7 @@ ember-source-channel-url@^2.0.1:
   dependencies:
     got "^8.0.1"
 
-ember-source@^3.13.3, ember-source@^3.15.0:
+ember-source@^3.13.3, ember-source@^3.15.0, ember-source@^3.17.3:
   version "3.17.3"
   resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.17.3.tgz#315b198848bcc1699928579b2d7fc2d607ebf63e"
   integrity sha512-mZ2a4MRJm+QsZ61q7p4Ulq+07IERgEF7mEzOPmqES+J4PpeXyWHAYh1MnSWHz3W5jQhwHQAPs6WTZE0TbAsS2Q==
@@ -18319,7 +18319,7 @@ store2@^2.7.1:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.11.0.tgz#307636a239014ef4d8f1c8b47afe903509484fc8"
   integrity sha512-WeIZ5+c/KzBSutSqOjUCAkk1qTLVBcYUuvrhNx8ndjLZKdZRfP6Vv7AOxlynuL6tVU/6zt6e2CTHwWI5KE+fKg==
 
-storybook-addon-designs@^5.1.1:
+storybook-addon-designs@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/storybook-addon-designs/-/storybook-addon-designs-5.2.0.tgz#999c99b37de20714bc45fa3ac9320422db1005e3"
   integrity sha512-53+d15uqoAaNQffbpvuSkcgubZh7cKNC+44azS+aDMzQubgHj9hQZ255XSmtXGxfyVsngGpK1QnHCCZ+13KH/Q==

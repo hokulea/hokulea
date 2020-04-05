@@ -3,7 +3,7 @@
     "text": {
       "normal": {
         "$light": {
-          "value": "#595959",
+          "value": "#333333",
           "description": "",
           "colorScheme": "light"
         }

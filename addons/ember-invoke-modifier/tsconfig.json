@@ -21,13 +21,29 @@
     "module": "es6",
     "experimentalDecorators": true,
     "paths": {
-      "dummy/tests/*": ["tests/*"],
-      "dummy/*": ["tests/dummy/app/*", "app/*"],
-      "@hokulea/modifiers": ["addon"],
-      "@hokulea/modifiers/*": ["addon/*"],
-      "@hokulea/modifiers/test-support": ["addon-test-support"],
-      "@hokulea/modifiers/test-support/*": ["addon-test-support/*"],
-      "*": ["../../types/*", "types/*"]
+      "dummy/tests/*": [
+        "tests/*"
+      ],
+      "dummy/*": [
+        "tests/dummy/app/*",
+        "app/*"
+      ],
+      "ember-invoke-modifier": [
+        "addon"
+      ],
+      "ember-invoke-modifier/*": [
+        "addon/*"
+      ],
+      "ember-invoke-modifier/test-support": [
+        "addon-test-support"
+      ],
+      "ember-invoke-modifier/test-support/*": [
+        "addon-test-support/*"
+      ],
+      "*": [
+        "../../types/*",
+        "types/*"
+      ]
     }
   },
   "include": [

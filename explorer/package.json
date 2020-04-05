@@ -24,16 +24,17 @@
   },
   "dependencies": {
     "@clark/ember-css-modules-config": "^0.4.2",
-    "broccoli-persistent-filter": "github:gossi/broccoli-persistent-filter#use-with-ember-makeup",
     "ember-cli-babel": "^7.13.2",
     "ember-cli-htmlbars": "^4.2.0",
-    "ember-cli-typescript": "^3.1.2",
+    "ember-cli-typescript": "^3.1.3",
     "ember-css-modules": "^1.2.1",
-    "ember-makeup": "^0.0.1-alpha.9",
-    "ember-theemo": "^0.0.2"
+    "ember-theemo": "^0.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@clark/eslint-config-ember": "^1.24.1",
+    "@clark/eslint-config-ember-typescript": "^1.24.1",
+    "@clark/eslint-config-node": "^1.24.1",
     "@ember/edition-utils": "^1.2.0",
     "@ember/optional-features": "^1.3.0",
     "@ember/render-modifiers": "^1.0.2",
@@ -43,11 +44,8 @@
     "@hokulea/cards": "^0.0.0",
     "@hokulea/foundation": "^0.0.0",
     "@hokulea/layouts": "^0.0.0",
-    "ember-invoke-modifier": "^0.0.0",
     "@hokulea/theme-moana": "^0.0.0",
-    "@hokulea/theme-moanav2": "^0.0.0",
     "@hokulea/theme-vaomatua": "^0.0.0",
-    "@hokulea/theme-vaomatuav2": "^0.0.0",
     "@storybook/addon-a11y": "next",
     "@storybook/addon-actions": "next",
     "@storybook/addon-docs": "next",
@@ -73,6 +71,7 @@
     "ember-cli-uglify": "^3.0.0",
     "ember-disable-prototype-extensions": "^1.1.3",
     "ember-export-application-global": "^2.0.1",
+    "ember-invoke-modifier": "^0.0.0",
     "ember-load-initializers": "^2.1.1",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^4.6.0",
@@ -81,13 +80,14 @@
     "ember-source-channel-url": "^2.0.1",
     "ember-truth-helpers": "^2.1.0",
     "ember-try": "^1.4.0",
+    "eslint": "^6.8.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^1.0.0",
     "react": "^16.12.0",
     "react-is": "^16.12.0",
     "storybook-addon-designs": "^5.1.1",
     "ts-node": "^8.5.4",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.5"
   },
   "engines": {
     "node": "8.* || >= 10.*"

@@ -1,0 +1,56 @@
+{
+  "color": {
+    "action": {
+      "disabled": {
+        "text": {
+          "$dark": {
+            "value": "#cecece",
+            "description": "",
+            "colorScheme": "dark"
+          }
+        },
+        "border": {
+          "$dark": {
+            "value": "#6e6e6e",
+            "description": "",
+            "colorScheme": "dark"
+          }
+        },
+        "background": {
+          "$dark": {
+            "value": "#6e6e6e",
+            "description": "",
+            "colorScheme": "dark"
+          }
+        }
+      },
+      "active": {
+        "text": {
+          "$dark": {
+            "value": "#595959",
+            "description": "",
+            "colorScheme": "dark"
+          }
+        }
+      },
+      "hover": {
+        "text": {
+          "$dark": {
+            "value": "#f2f2f2",
+            "description": "",
+            "colorScheme": "dark"
+          }
+        }
+      },
+      "base": {
+        "text": {
+          "$dark": {
+            "value": "#f2f2f2",
+            "description": "",
+            "colorScheme": "dark"
+          }
+        }
+      }
+    }
+  }
+}

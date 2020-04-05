@@ -11,23 +11,19 @@
     "lint:hbs": "yarn lerna-run lint:hbs",
     "lint:js": "yarn lerna-run lint:js",
     "lint:types": "yarn lerna-run lint:types",
-    "lint": "yarn lerna-run lint:js; yarn lerna-run lint:types; yarn lerna-run lint:hbs"
+    "lint": "yarn lerna-run lint:js && yarn lerna-run lint:types && yarn lerna-run lint:hbs"
   },
   "workspaces": [
     "explorer",
     "addons/*",
     "packages/*",
-    "themes/*",
-    "tooling/*"
+    "themes/*"
   ],
   "devDependencies": {
     "lerna": "^3.20.2"
   },
   "resolutions": {
-    "broccoli-persistent-filter": "github:gossi/broccoli-persistent-filter#use-with-ember-makeup",
-    "ember-element-helper": "gossi/ember-element-helper#use-as-primitive"
-  },
-  "dependencies": {
-    "broccoli-persistent-filter": "github:gossi/broccoli-persistent-filter#use-with-ember-makeup"
+    "ember-element-helper": "gossi/ember-element-helper#use-as-primitive",
+    "typescript": "3.7.5"
   }
 }

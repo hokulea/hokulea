@@ -3,25 +3,25 @@
   "version": "0.0.0",
   "description": "Vaomatua theme for hokulea",
   "license": "MIT",
-  "keywords": [
-    "ember-makeup-theme"
-  ],
-  "makeup": {
+  "theemo": {
     "name": "vaomatua",
-    "sync": {
-      "transforms": {
-        "t.c.": "t.colors.",
-        "c.h.f.": "c.hokulea.foundation.",
-        "c.h.b.": "c.hokulea.buttons.",
-        "c.h.c.": "c.hokulea.cards.",
-        "c.h.": "c.hokulea."
-      }
-    }
+    "colorSchemes": [
+      "light",
+      "dark"
+    ],
+    "file": "dist/vaomatua.css"
   },
   "scripts": {
-    "sync": "yarn ember-makeup-sync-figma"
+    "sync": "yarn theemo sync",
+    "build": "yarn theemo build",
+    "generate": "yarn theemo generate",
+    "magic": "yarn sync && yarn build && yarn generate"
   },
   "devDependencies": {
-    "ember-makeup-sync-figma": "^0.0.0"
-  }
+    "style-dictionary": "2.8.3",
+    "theemo": "^0.0.4"
+  },
+  "keywords": [
+    "theemo-theme"
+  ]
 }

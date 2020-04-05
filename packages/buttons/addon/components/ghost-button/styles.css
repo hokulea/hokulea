@@ -1,52 +1,48 @@
-@component hokulea.buttons.ghost;
-
 .ghost-button {
-  color: cfg("typo");
+  color: var(--color-action-text);
 
   > div {
-    background-color: cfg("background");
-    border-color: cfg();
+    background-color: transparent;
+    border-color: var(--color-action-border);
   }
 
   &:focus {
-    border-color: cfg("focus");
+    /* TODO: Focus color ! */
+    border-color: var(--color-action-text);
   }
 
   &:hover {
-    @component hover;
-    color: cfg("typo");
+    color: var(--color-action-hover-text);
 
     & > div {
-      background-color: cfg("background");
-      border-color: cfg();
+      background-color: var(--color-action-hover-background);
+      border-color: var(--color-action-hover-border);
     }
 
     &:focus {
-      border-color: cfg("focus");
+      border-color: var(--color-action-hover-border);
     }
   }
 
   &:active {
-    @component active;
-    color: cfg("typo");
+    color: var(--color-action-active-text);
 
     & > div {
-      background-color: cfg("background");
-      border-color: cfg();
+      background-color: var(--color-action-active-background);
+      border-color: var(--color-action-active-border);
     }
 
     &:focus {
-      border-color: cfg("focus");
+      border-color: var(--color-action-active-border);
     }
   }
 
   &:disabled {
-    @component disabled;
-    color: cfg("typo");
+    color: var(--color-action-disabled-text);
 
     & > div {
-      background-color: cfg("background");
-      border-color: cfg();
+      background-color: var(--color-action-disabled-background);
+      border-color: var(--color-action-disabled-border);
     }
   }
 }

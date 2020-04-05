@@ -1,24 +1,7 @@
 <div local-class="theme-switcher">
-  Makeup:
-  <input
-    type="checkbox"
-    checked={{eq this.context "dark"}}
-    {{on "change" this.switchContext}}
-  />
-
-  {{#each this.themeNames as |theme|}}
-    <button {{on "click" (fn this.selectMakeupTheme theme)}}>
-      {{theme}}
-    </button>
-  {{/each}}
-
-  <div local-class="{{this.context}}" {{did-insert this.setupDummy}}></div>
-
-  Theemo:
-
   {{#each this.theemo.themes as |theme|}}
     <button {{on "click" (fn this.selectTheemoTheme theme)}}>
-      {{theme}}{{#if (eq this.theemo.activeTheme scheme)~}}
+      {{theme}}{{#if (eq this.theemo.activeTheme theme)~}}
         *
       {{~/if}}
     </button>

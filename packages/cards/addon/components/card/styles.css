@@ -1,8 +1,6 @@
-@component hokulea.cards.card;
-
 .card {
   & > div {
-    background-color: cfg("background");
+    background-color: var(--color-layout-low-contrast);
     border-width: 2px;
     border-style: solid;
     border-color: cfg();
@@ -10,6 +8,7 @@
   }
 
   &:focus {
-    border-color: cfg("focus");
+    /** TODO: Focus */
+    border-color: var(--color-layout-high-contrast);
   }
 }

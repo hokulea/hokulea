@@ -1,9 +1,0 @@
-disabled:
-  dark: '#9e9e9e'
-  light: '#b2b2b2'
-success:
-  dark: '#31d4b7'
-  light: '#31d4b7'
-error:
-  dark: '#e35858'
-  light: '#e35858'

@@ -1,7 +1,0 @@
-# dependencies
-/node_modules/
-
-# misc
-/.env*
-/.pnp*
-/yarn-error.log

@@ -1,9 +1,9 @@
-// import hbs from "htmlbars-inline-precompile";
-import { hbs } from "ember-cli-htmlbars";
-import { boolean, withKnobs } from "@storybook/addon-knobs";
+import { hbs } from 'ember-cli-htmlbars';
+
+import { boolean, withKnobs } from '@storybook/addon-knobs';
 
 export default {
-  title: "Components|Layouts/Center"
+  title: 'Components|Layouts/Center'
 };
 
 export const basic = () => {
@@ -14,11 +14,11 @@ export const basic = () => {
       </CenterLayout>`,
     context: {
       get intrinsic() {
-        return boolean("intrinsic", false);
+        return boolean('intrinsic', false);
       },
 
       get text() {
-        return boolean("text", false);
+        return boolean('text', false);
       }
     }
   };

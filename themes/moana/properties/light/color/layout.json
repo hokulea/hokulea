@@ -4,28 +4,28 @@
       "background": {
         "$light": {
           "value": "#ffffff",
-          "description": "Background color for layouts",
+          "comment": "Background color for layouts",
           "colorScheme": "light"
         }
       },
       "low-contrast": {
         "$light": {
           "value": "#dfdfdf",
-          "description": "",
+          "comment": "",
           "colorScheme": "light"
         }
       },
       "high-contrast": {
         "$light": {
           "value": "#595959",
-          "description": "",
+          "comment": "",
           "colorScheme": "light"
         }
       },
       "reduced": {
         "$light": {
           "value": "#6e6e6e",
-          "description": "",
+          "comment": "",
           "colorScheme": "light"
         }
       }

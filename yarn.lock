@@ -18949,6 +18949,19 @@ theemo@^0.0.4:
     node-fetch "^2.6.0"
     style-dictionary "^2.8.3"
 
+theemo@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/theemo/-/theemo-0.0.5.tgz#e71ca77fd483de1331795d85fb29899504cd5881"
+  integrity sha512-5AkV9lda3cjGH63QljjUbYy8wFDn/nRx4ViBG3lNQ10f1Gu0UGyku4BfydPqklqoRXxfvFDtm74zDXAZuN6vVA==
+  dependencies:
+    color-converter "1.4.1"
+    commander "^5.0.0"
+    dotenv "^8.2.0"
+    esm "3.2.25"
+    figma-api "^1.5.5"
+    node-fetch "^2.6.0"
+    style-dictionary "^2.8.3"
+
 thenify-all@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/thenify-all/-/thenify-all-1.6.0.tgz#1a1918d402d8fc3f98fbf234db0bcc8cc10e9726"

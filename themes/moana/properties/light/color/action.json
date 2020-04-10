@@ -4,22 +4,22 @@
       "disabled": {
         "text": {
           "$light": {
-            "value": "#828282",
-            "description": "",
+            "value": "#737373",
+            "comment": "",
             "colorScheme": "light"
           }
         },
         "border": {
           "$light": {
             "value": "#dfdfdf",
-            "description": "",
+            "comment": "",
             "colorScheme": "light"
           }
         },
         "background": {
           "$light": {
             "value": "#dfdfdf",
-            "description": "",
+            "comment": "",
             "colorScheme": "light"
           }
         }

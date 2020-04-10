@@ -1,5 +1,5 @@
 :root {
-  --ratio: var(--ember-makeup\/cfg\/hokulea\.foundation\.scale\.ratio, 1.4);
+  --ratio: var(--scale-ratio, 1.4);
 
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
@@ -7,7 +7,7 @@
   --s-2: calc(var(--s-1) / var(--ratio));
   --s-1: calc(var(--s0) / var(--ratio));
 
-  --s0: var(--ember-makeup\/cfg\/hokulea\.foundation\.scale\.base, 0.8rem);
+  --s0: var(--scale-base, 0.8rem);
   --s1: calc(var(--s0) * var(--ratio));
   --s2: calc(var(--s1) * var(--ratio));
   --s3: calc(var(--s2) * var(--ratio));
@@ -15,7 +15,7 @@
   --s5: calc(var(--s4) * var(--ratio));
 
   --measure: var(
-    --ember-makeup\/cfg\/hokulea\.foundation\.scale\.measure,
+    --scale-measure,
     65ch
   );
 }

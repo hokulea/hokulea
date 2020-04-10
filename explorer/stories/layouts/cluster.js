@@ -1,8 +1,7 @@
-// import hbs from "htmlbars-inline-precompile";
-import { hbs } from "ember-cli-htmlbars";
+import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: "Components|Layouts/Cluster"
+  title: 'Components|Layouts/Cluster'
 };
 
 export const normal = () => {

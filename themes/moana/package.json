@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "style-dictionary": "2.8.3",
-    "theemo": "^0.0.4"
+    "theemo": "^0.0.5"
   },
   "keywords": [
     "theemo-theme"

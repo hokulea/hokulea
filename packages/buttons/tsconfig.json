@@ -14,20 +14,35 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noEmitOnError": false,
-    "noEmit": true,
     "inlineSourceMap": true,
     "inlineSources": true,
     "baseUrl": ".",
     "module": "es6",
     "experimentalDecorators": true,
     "paths": {
-      "dummy/tests/*": ["tests/*"],
-      "dummy/*": ["tests/dummy/app/*", "app/*"],
-      "@hokulea/buttons": ["addon"],
-      "@hokulea/buttons/*": ["addon/*"],
-      "@hokulea/buttons/test-support": ["addon-test-support"],
-      "@hokulea/buttons/test-support/*": ["addon-test-support/*"],
-      "*": ["../../types/*", "types/*"]
+      "dummy/tests/*": [
+        "tests/*"
+      ],
+      "dummy/*": [
+        "tests/dummy/app/*",
+        "app/*"
+      ],
+      "@hokulea/buttons": [
+        "addon"
+      ],
+      "@hokulea/buttons/*": [
+        "addon/*"
+      ],
+      "@hokulea/buttons/test-support": [
+        "addon-test-support"
+      ],
+      "@hokulea/buttons/test-support/*": [
+        "addon-test-support/*"
+      ],
+      "*": [
+        "../../types/*",
+        "types/*"
+      ]
     }
   },
   "include": [

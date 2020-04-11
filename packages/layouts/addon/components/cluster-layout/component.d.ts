@@ -8,6 +8,9 @@ export interface ClusterLayoutArgs {
   align: string;
 }
 
+/**
+ * Cluster Layout Component
+ */
 export default class ClusterLayoutComponent extends Component<
   ClusterLayoutArgs
 > {}

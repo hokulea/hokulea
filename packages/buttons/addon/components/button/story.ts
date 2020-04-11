@@ -11,7 +11,10 @@ const invokeHandler = action('button invoked');
 
 export const button = () => {
   return {
-    template: hbs`<Button {{invoke this.invokeButton}}>Button</Button> <Button disabled={{true}}>Disabled Button</Button>`,
+    template: hbs`
+      <Button {{invoke this.invokeButton}}>Button</Button>
+      <Button disabled={{true}}>Disabled Button</Button>
+    `,
     context: {
       invokeButton() {
         invokeHandler();

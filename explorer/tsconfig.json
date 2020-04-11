@@ -17,9 +17,9 @@
     "noEmit": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "baseUrl": ".",
     "module": "es6",
     "experimentalDecorators": true,
+    "baseUrl": ".",
     "paths": {
       "dummy/tests/*": [
         "tests/*"
@@ -51,6 +51,7 @@
     "tests/**/*",
     "types/**/*",
     "test-support/**/*",
-    "addon-test-support/**/*"
+    "addon-test-support/**/*",
+    "..packages/*/addon/**/*"
   ]
 }

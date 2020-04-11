@@ -1,7 +1,10 @@
 import { hbs } from 'ember-cli-htmlbars';
 
+// import ClusterLayoutComponent from './component';
+
 export default {
   title: 'Components|Layouts/Cluster'
+  // component: ClusterLayoutComponent
 };
 
 export const normal = () => {

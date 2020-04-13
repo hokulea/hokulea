@@ -1,9 +1,9 @@
-const createCompiler = require("@storybook/addon-docs/mdx-compiler-plugin");
+// const createCompiler = require("@storybook/addon-docs/mdx-compiler-plugin");
 const path = require('path');
 const { precompile } = require('ember-source/dist/ember-template-compiler');
 
 module.exports = {
-  stories: ["../stories/**/*.(js|ts|mdx)", "../../packages/**/story.(js|ts)"],
+  stories: ["../stories/**/*.(js|ts|md)", "../../packages/**/story.(js|ts)"],
   addons: [
     "@storybook/addon-knobs/register",
     "storybook-addon-designs/register",
@@ -14,40 +14,45 @@ module.exports = {
       name: '@storybook/addon-storysource',
       options: {
         rule: {
-          test: [/story\.(j|t)s$/, /stories\/.+\.(js|mdx)$/],
+          test: [/story\.(j|t)s$/],
           include: [
-            path.resolve(__dirname, '..'),
-            path.resolve(__dirname, '..', '..', 'packages')
+            path.resolve(__dirname, '../../packages')
           ]
         }
       }
     }
   ],
   webpack: async config => {
+    // config.module.rules.push({
+    //   test: /\.mdx$/,
+    //   use: [
+    //     {
+    //       loader: "babel-loader",
+    //       // may or may not need this line depending on your app's setup
+    //       options: {
+    //         plugins: ["@babel/plugin-transform-react-jsx"]
+    //       }
+    //     },
+    //     {
+    //       loader: "@mdx-js/loader",
+    //       options: {
+    //         compilers: [createCompiler({})]
+    //       }
+    //     }
+    //   ]
+    // });
     config.module.rules.push({
-      test: /\.mdx$/,
-      use: [
-        {
-          loader: "babel-loader",
-          // may or may not need this line depending on your app's setup
-          options: {
-            plugins: ["@babel/plugin-transform-react-jsx"]
-          }
-        },
-        {
-          loader: "@mdx-js/loader",
-          options: {
-            compilers: [createCompiler({})]
-          }
-        }
-      ]
+      test: /\.md$/,
+      use: [path.resolve(__dirname, 'gmd-loader')]
     });
+
     config.module.rules.push({
       test: /\.ts$/,
       use: [
         {
           loader: "babel-loader",
           options: {
+            presets: ['@babel/preset-env', '@babel/preset-typescript'],
             plugins: [
               [
                 require.resolve('babel-plugin-htmlbars-inline-precompile'),

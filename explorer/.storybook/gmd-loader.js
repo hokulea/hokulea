@@ -46,9 +46,6 @@ const loader = function (source) {
     };
   };`;
 
-  console.log(code);
-
-
   return code;
 }
 

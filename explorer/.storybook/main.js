@@ -23,6 +23,13 @@ module.exports = {
     }
   ],
   webpack: async config => {
+    // remove sb *.md loader
+    for (const rule of config.module.rules) {
+      if (rule.test.toString().includes('md')) {
+        config.module.rules.splice(config.module.rules.indexOf(rule), 1);
+      }
+    }
+
     // config.module.rules.push({
     //   test: /\.mdx$/,
     //   use: [
@@ -43,7 +50,27 @@ module.exports = {
     // });
     config.module.rules.push({
       test: /\.md$/,
-      use: [path.resolve(__dirname, 'gmd-loader')]
+      use: [
+        {
+          loader: "babel-loader",
+          options: {
+            plugins: [
+              [
+                require.resolve('babel-plugin-htmlbars-inline-precompile'),
+                {
+                  precompile,
+                  modules: {
+                    'ember-cli-htmlbars': 'hbs',
+                    'ember-cli-htmlbars-inline-precompile': 'default',
+                    'htmlbars-inline-precompile': 'default',
+                  }
+                }
+              ]
+            ]
+          }
+        },
+        path.resolve(__dirname, 'gmd-loader')
+      ]
     });
 
     config.module.rules.push({
@@ -70,6 +97,7 @@ module.exports = {
         }
       ],
     });
+
     config.resolve.extensions.push('.ts');
     // config.module.rules.push({
     //   test: /stories\/.+\.js?$/,

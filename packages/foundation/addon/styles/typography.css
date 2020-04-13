@@ -2,8 +2,8 @@
 
 :root {
   --font-normal: "Inter", sans-serif;
-  --line-height: var(--ratio);
-  --line-height-small: calc(0.8 * var(--ratio));
+  --line-height: var(--scale-ratio);
+  --line-height-small: calc(0.8 * var(--scale-ratio));
 
   line-height: var(--line-height);
   font-size: calc(0.333vw + 1em);

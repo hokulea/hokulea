@@ -41,7 +41,8 @@
         "addon-test-support/*"
       ],
       "*": [
-        "types/*"
+        "types/*",
+        "../types/*"
       ]
     }
   },

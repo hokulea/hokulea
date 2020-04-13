@@ -1,10 +1,10 @@
 :root {
+  --color-action-hover-background: #55c6f7;
+  --color-action-hover-text: #333333;
+  --color-action-hover-border: #55c6f7;
   --color-action-active-text: #f5f5f5;
   --color-action-active-border: #054661;
   --color-action-active-background: #054661;
-  --color-action-hover-text: #333333;
-  --color-action-hover-border: #55c6f7;
-  --color-action-hover-background: #55c6f7;
   --color-action-base-text: #333333;
   --color-action-base-border: #9edffa;
   --color-action-base-background: #9edffa;
@@ -12,4 +12,5 @@
   --scale-measure: 65ch;
   --scale-ratio: 1.4;
   --scale-base: 0.8rem;
+  --shadow-action-focus: 0 0 4 #55c6f7;
 }

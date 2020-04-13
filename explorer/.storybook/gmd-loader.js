@@ -17,7 +17,10 @@ const config = {
   ],
   format(data) {
     const result = { ...data };
-    result.html = `<Page @title="${data.attributes.title}">${data.html}</Page>`;
+    const title = data.attributes.title
+      ? data.attributes.title
+      : data.attributes.id.replace('|', '/').split('/').pop();
+    result.html = `<Page @title="${title}">${data.html}</Page>`;
     return result;
   }
 };
@@ -31,7 +34,16 @@ const loader = function (source) {
   const code = `import { hbs } from 'ember-cli-htmlbars';
 
   export default {
-    title: '${result.attributes.key}',
+    title: '${result.attributes.id}'
+  };
+
+  export const Doc = () => {
+    return {
+      template: hbs\`${result.html}\`
+    };
+  };
+
+  Doc.story = {
     parameters: {
       options: {
         showPanel: false,
@@ -39,12 +51,7 @@ const loader = function (source) {
       }
     }
   };
-
-  export const intro = () => {
-    return {
-      template: hbs\`${result.html}\`
-    };
-  };`;
+  `;
 
   return code;
 }

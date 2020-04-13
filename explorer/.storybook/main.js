@@ -3,7 +3,7 @@ const path = require('path');
 const { precompile } = require('ember-source/dist/ember-template-compiler');
 
 module.exports = {
-  stories: ["../stories/**/*.(js|ts|md)", "../../packages/**/story.(js|ts)"],
+  stories: ['../../documentation/**/*.md', '../../packages/**/story.(js|ts)'],
   addons: [
     "@storybook/addon-knobs/register",
     "storybook-addon-designs/register",

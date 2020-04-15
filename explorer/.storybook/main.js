@@ -3,7 +3,7 @@ const path = require('path');
 const { precompile } = require('ember-source/dist/ember-template-compiler');
 
 module.exports = {
-  stories: ['../../documentation/**/*.md', '../../packages/**/story.(js|ts)'],
+  stories: ['../stories/*.md', '../../packages/**/story.(js|ts)'],
   addons: [
     "@storybook/addon-knobs/register",
     "storybook-addon-designs/register",
@@ -30,26 +30,8 @@ module.exports = {
       }
     }
 
-    // config.module.rules.push({
-    //   test: /\.mdx$/,
-    //   use: [
-    //     {
-    //       loader: "babel-loader",
-    //       // may or may not need this line depending on your app's setup
-    //       options: {
-    //         plugins: ["@babel/plugin-transform-react-jsx"]
-    //       }
-    //     },
-    //     {
-    //       loader: "@mdx-js/loader",
-    //       options: {
-    //         compilers: [createCompiler({})]
-    //       }
-    //     }
-    //   ]
-    // });
     config.module.rules.push({
-      test: /\.md$/,
+      test: /stories\/.+\.md$/,
       use: [
         {
           loader: "babel-loader",
@@ -69,7 +51,26 @@ module.exports = {
             ]
           }
         },
-        path.resolve(__dirname, 'gmd-loader')
+        {
+          loader: path.resolve(__dirname, 'doc-loader'),
+          options: {
+            compiler: {
+              plugins: [
+                'markdown-it-abbr',
+                'markdown-it-anchor',
+                'markdown-it-deflist',
+                'markdown-it-highlightjs',
+                'markdown-it-ins',
+                'markdown-it-mark',
+                'markdown-it-sub',
+                'markdown-it-sup'
+              ],
+              format(doc) {
+                return `<Page @title="${doc.attributes.title}">${doc.html}</Page>`;
+              }
+            }
+          }
+        }
       ]
     });
 

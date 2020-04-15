@@ -1,5 +1,5 @@
 ---
-id: Documentation|Guides/Workflow
+title: Workflow
 ---
 
 

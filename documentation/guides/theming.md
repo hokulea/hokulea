@@ -1,5 +1,5 @@
 ---
-id: Documentation|Guides/Theming
+title: Theming
 ---
 
 

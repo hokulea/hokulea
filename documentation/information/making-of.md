@@ -1,5 +1,5 @@
 ---
-id: Documentation|Information/Making Of Hokulea
+title: Making Of Hokulea
 ---
 
 

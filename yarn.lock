@@ -6898,6 +6898,11 @@ case-sensitive-paths-webpack-plugin@^2.2.0:
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.3.0.tgz#23ac613cc9a856e4f88ff8bb73bbb5e989825cf7"
   integrity sha512-/4YgnZS8y1UXXmC02xD5rRrBEu6T5ub+mQHLNRj0fzTRbgdBYhsNo2V5EqwgqrExjxsjtF/OpAKAMkKsxbD5XQ==
 
+case@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
+  integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -10802,7 +10807,7 @@ from2@^2.1.0, from2@^2.1.1:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
-front-matter@^3.0.2:
+front-matter@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/front-matter/-/front-matter-3.1.0.tgz#a0b758c3c6c39ce43e107dd0909a57d42964c2de"
   integrity sha512-RFEK8N6waWTdwBZOPNEtvwMjZ/hUfpwXkYUYkmmOhQGdhSulXhWrFwiUhdhkduLDiIwbROl/faF1X/PC/GGRMw==
@@ -13754,13 +13759,13 @@ markdown-it-anchor@^5.2.7:
   resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.2.7.tgz#ec740f6bd03258a582cd0c65b9644b9f9852e5a3"
   integrity sha512-REFmIaSS6szaD1bye80DMbp7ePwsPNvLTR5HunsUcZ0SG0rWJQ+Pz24R4UlTKtjKBPhxo0v0tOBDYjZQQknW8Q==
 
-markdown-it-compiler@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/markdown-it-compiler/-/markdown-it-compiler-0.0.1.tgz#b86b287cbdaed4991f04edda0c259ebfe35785c7"
-  integrity sha512-Nz4ZXYEDUx6sW/ijRzOFT4LSzVyAiAQMd91x5tV0DQbcP96NsUMQ+6dTicDKXFAvyuuDiMVb0qsBIvCTdbNKog==
+markdown-it-compiler@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-compiler/-/markdown-it-compiler-0.1.0.tgz#0bed7496fe35fd11ab9b7a7529a210ff4f53b1c4"
+  integrity sha512-qJsYPtkOk3jk9TV3O1dICgJgOyFrBUNz7/dbZKGUtwSCbETakIXWgSq090ld//hPPtRbv3NrzvKpr6RFv6Qoow==
   dependencies:
-    front-matter "^3.0.2"
-    markdown-it "^9.1.0"
+    front-matter "^3.1.0"
+    markdown-it "^10.0.0"
     markdown-toc "^1.2.0"
 
 markdown-it-deflist@^2.0.3:

@@ -1,5 +1,4 @@
 ---
-id: Documentation|Getting Started/Introduction
 title: Hokulea
 ---
 

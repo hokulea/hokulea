@@ -1,5 +1,5 @@
 ---
-id: Documentation|Information/Research
+title: Research
 ---
 
 

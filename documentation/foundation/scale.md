@@ -1,5 +1,4 @@
 ---
-id: Documentation|Foundation/Scale
 title: Scaling System
 ---
 

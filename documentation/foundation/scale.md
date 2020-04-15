@@ -13,21 +13,20 @@ browsers default font size (usually `16px`).
 `scale-ratio`
 : The exponent at which the values scale. Default is `1.4`
 
-Formulae are:
+Formula is:
 
 ```txt
-pos(n) = scale-base * scale-ratio ^ n
-neg(n) = scale-base * scale-ratio ^ (1/n)
+val(n) = scale-base * scale-ratio ^ n
 ```
 
 Hokulea ships with custom CSS properties for positive and negative scaling:
 
-- `--s-4: neg(4)`
-- `--s-3: neg(3)`
-- `--s-2: neg(2)`
-- `--s-1: neg(1)`
-- `--s0: pos(0)` - the default value
-- `--s1: pos(1)`
-- `--s2: pos(2)`
-- `--s3: pos(3)`
-- `--s4: pos(4)`
+- `--s-4: val(-4)`
+- `--s-3: val(-3)`
+- `--s-2: val(-2)`
+- `--s-1: val(-1)`
+- `--s0: val(0)` - the default value
+- `--s1: val(1)`
+- `--s2: val(2)`
+- `--s3: val(3)`
+- `--s4: val(4)`

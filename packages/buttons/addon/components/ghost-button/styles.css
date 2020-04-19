@@ -1,48 +1,24 @@
 .ghost-button {
+  composes: action from '@hokulea/foundation/utils/focus';
   color: var(--color-action-text);
-
-  > div {
-    background-color: transparent;
-    border-color: var(--color-action-border);
-  }
-
-  &:focus {
-    /* TODO: Focus color ! */
-    border-color: var(--color-action-text);
-  }
+  background-color: transparent;
+  border-color: var(--color-action-border);
 
   &:hover {
     color: var(--color-action-hover-text);
-
-    & > div {
-      background-color: var(--color-action-hover-background);
-      border-color: var(--color-action-hover-border);
-    }
-
-    &:focus {
-      border-color: var(--color-action-hover-border);
-    }
+    background-color: var(--color-action-hover-background);
+    border-color: var(--color-action-hover-border);
   }
 
   &:active {
     color: var(--color-action-active-text);
-
-    & > div {
-      background-color: var(--color-action-active-background);
-      border-color: var(--color-action-active-border);
-    }
-
-    &:focus {
-      border-color: var(--color-action-active-border);
-    }
+    background-color: var(--color-action-active-background);
+    border-color: var(--color-action-active-border);
   }
 
   &:disabled {
     color: var(--color-action-disabled-text);
-
-    & > div {
-      background-color: var(--color-action-disabled-background);
-      border-color: var(--color-action-disabled-border);
-    }
+    background-color: var(--color-action-disabled-background);
+    border-color: var(--color-action-disabled-border);
   }
 }

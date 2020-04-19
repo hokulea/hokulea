@@ -12,7 +12,7 @@
   --scale-measure: 65ch;
   --scale-ratio: 1.4;
   --scale-base: 0.8rem;
-  --shadow-action-focus: 0 0 4 #55c6f7;
+  --shadow-action-focus: 0 0 4px #087aaa;
 }
 
 /* Color Scheme: light */

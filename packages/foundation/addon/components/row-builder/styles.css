@@ -20,16 +20,15 @@
 }
 
 .row-builder {
-  display: flex;
+  display: inline-flex;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 2px;
 
-  & > * {
-    display: flex;
-
-    & > .affix + .content,
-    & > .content + .affix,
-    & > .affix:not(.suffix):not(.prefix) + .affix:not(.suffix):not(.prefix) {
-      padding-left: 0;
-    }
+  & > .affix + .content,
+  & > .content + .affix,
+  & > .affix:not(.suffix):not(.prefix) + .affix:not(.suffix):not(.prefix) {
+    padding-left: 0;
   }
 }
 

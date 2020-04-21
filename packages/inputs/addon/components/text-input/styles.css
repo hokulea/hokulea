@@ -1,0 +1,7 @@
+@value action-padding from '@hokulea/foundation/utils/padding';
+
+.input {
+  composes: border-shape from '@hokulea/foundation/utils/border';
+  composes: action-focus from '@hokulea/foundation/utils/focus';
+  padding: action-padding;
+}

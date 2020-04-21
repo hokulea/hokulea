@@ -1,0 +1,13 @@
+.rim {
+  composes: action-focus from '@hokulea/foundation/utils/focus';
+  border-color: var(--color-layout-low-contrast);
+
+  & > input {
+    border: 0;
+    box-shadow: none !important;
+
+    /* &:focus {
+      outline: 0;
+    } */
+  }
+}

@@ -46,6 +46,7 @@
     "@hokulea/buttons": "^0.0.0",
     "@hokulea/cards": "^0.0.0",
     "@hokulea/foundation": "^0.0.0",
+    "@hokulea/inputs": "^0.0.0",
     "@hokulea/layouts": "^0.0.0",
     "@hokulea/theme-moana": "^0.0.0",
     "@hokulea/theme-vaomatua": "^0.0.0",

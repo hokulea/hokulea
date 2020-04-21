@@ -8558,6 +8558,13 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+ember-assign-helper@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ember-assign-helper/-/ember-assign-helper-0.2.0.tgz#02d1b5ee6b4f9cb68036b7d19db47f2a9d74f148"
+  integrity sha512-WO6K24m6Wk+G1PBOMaXUtOMkzCTtt9z67SPIcAFxOVqc95hUU62wDRUdDiPa/854T5rroq5CJ7Ey4LgxorCsgg==
+  dependencies:
+    ember-cli-babel "^6.6.0"
+
 ember-assign-polyfill@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/ember-assign-polyfill/-/ember-assign-polyfill-2.6.0.tgz#07847e3357ee35b33f886a0b5fbec6873f6860eb"
@@ -9259,7 +9266,7 @@ ember-disable-prototype-extensions@^1.1.3:
   resolved "https://registry.yarnpkg.com/ember-disable-prototype-extensions/-/ember-disable-prototype-extensions-1.1.3.tgz#1969135217654b5e278f9fe2d9d4e49b5720329e"
   integrity sha1-GWkTUhdlS14nj5/i2dTkm1cgMp4=
 
-ember-element-helper@0.2.0, ember-element-helper@^0.2.0, ember-element-helper@gossi/ember-element-helper#use-as-primitive:
+ember-element-helper@0.2.0, ember-element-helper@^0.2.0:
   version "0.2.0"
   resolved "https://codeload.github.com/gossi/ember-element-helper/tar.gz/189f0a32f627793c5ea20730b0faafb6c397f63b"
   dependencies:
@@ -19590,7 +19597,7 @@ typescript-memoize@^1.0.0-alpha.3:
   dependencies:
     core-js "2.4.1"
 
-typescript@3.7.5, typescript@^3.7.5:
+typescript@^3.7.5:
   version "3.7.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.5.tgz#0692e21f65fd4108b9330238aac11dd2e177a1ae"
   integrity sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==

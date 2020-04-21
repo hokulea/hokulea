@@ -54,6 +54,8 @@ module.exports = {
         {
           loader: path.resolve(__dirname, 'doc-loader'),
           options: {
+            root: 'Documentation',
+            dir: path.resolve(__dirname, '../../documentation'),
             compiler: {
               plugins: [
                 'markdown-it-abbr',
@@ -68,7 +70,13 @@ module.exports = {
               format(doc) {
                 const title = doc.attributes.title
                   ? doc.attributes.title
-                  : doc.attributes.id.split('/').pop();
+                  : doc.toc[0].content;
+
+                // strip first <h1> off of html
+                if (!doc.attributes.title) {
+                  doc.html = doc.html.replace(/<h1(.+)>(.+)<\/h1>/, '');
+                }
+
                 return `<Page @title="${title}">${doc.html}</Page>`;
               }
             }

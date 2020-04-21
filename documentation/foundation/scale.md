@@ -1,7 +1,4 @@
----
-id: Documentation|Foundation/Scale
-title: Scaling System
----
+# Scaling System
 
 Hokulea uses [modular scale](https://every-layout.dev/rudiments/modular-scale/)
 which is explained excellently on [every-layout.dev](https://every-layout.dev).

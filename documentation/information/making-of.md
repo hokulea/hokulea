@@ -1,6 +1,1 @@
----
-id: Documentation|Information/Making Of
-title: Making Of Hokulea
----
-
-
+# Making Of Hokulea

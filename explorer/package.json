@@ -54,6 +54,7 @@
     "@storybook/addon-actions": "next",
     "@storybook/addon-docs": "next",
     "@storybook/addon-knobs": "next",
+    "@storybook/addon-links": "next",
     "@storybook/addon-storysource": "next",
     "@storybook/ember": "next",
     "@storybook/ember-cli-storybook": "^0.2.0",

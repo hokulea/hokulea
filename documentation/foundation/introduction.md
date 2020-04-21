@@ -1,7 +1,4 @@
----
-id: Documentation|Foundation/Introduction
-title: Foundation
----
+# Foundation
 
 This is the foundation layer of hokulea. It contains:
 

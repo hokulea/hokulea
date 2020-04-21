@@ -1,5 +1,3 @@
----
-id: Documentation|Guides/Theming
----
+# Theming
 
-
+[test link](../foundation/introduction.md)

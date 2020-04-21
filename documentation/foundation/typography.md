@@ -1,6 +1,4 @@
----
-id: Documentation|Foundation/Typography
----
+# Typography
 
 This talks about typography
 

@@ -1,7 +1,4 @@
----
-id: Documentation|Getting Started/Introduction
-title: Hokulea
----
+# Hokulea
 
 Welcome to **Hokulea** the _Design System_ for _Ember_ that doesn't make you
 think!

@@ -1,5 +1,3 @@
----
-id: Documentation|Getting Started/Installation
----
+# Installation
 
 Hokulea currently is still under development and has no public releases.

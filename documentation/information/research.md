@@ -1,6 +1,4 @@
----
-id: Documentation|Information/Research
----
+# Research
 
 Here are two pens that describe two research topics:
 

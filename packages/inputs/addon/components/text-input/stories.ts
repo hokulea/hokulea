@@ -31,15 +31,15 @@ export const basic = () => {
 //   }
 // };
 
-export const compound = () => {
+export const builder = () => {
   return {
     template: hbs`
-    <InputBuilder @input="text-input" as |b|>
+    <InputBuilder as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
       <b.Affix>affix</b.Affix>
-      <b.Input/>
+      <TextInput @update={{this.type}} class={{b.contentClass}}/>
       <b.Affix>affix</b.Affix>
       <b.Affix>affix</b.Affix>
       <b.Suffix>Suffix</b.Suffix>

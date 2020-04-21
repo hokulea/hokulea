@@ -34,7 +34,7 @@ basic.story = {
   }
 };
 
-export const compound = () => {
+export const builder = () => {
   return {
     template: hbs`
     <Button {{invoke this.invokeButton}} as |b|>

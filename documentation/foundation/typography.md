@@ -1,5 +1,5 @@
 ---
-title: Typography
+id: Documentation|Foundation/Typography
 ---
 
 This talks about typography

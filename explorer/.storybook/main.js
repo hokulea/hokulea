@@ -3,7 +3,7 @@ const path = require('path');
 const { precompile } = require('ember-source/dist/ember-template-compiler');
 
 module.exports = {
-  stories: ['../stories/*.md', '../../packages/**/stor(y|ies).ts'],
+  stories: ['../../documentation/**/*.md', '../../packages/**/stor(y|ies).ts'],
   addons: [
     "@storybook/addon-knobs/register",
     "storybook-addon-designs/register",
@@ -31,7 +31,7 @@ module.exports = {
     }
 
     config.module.rules.push({
-      test: /stories\/.+\.md$/,
+      test: /\.md$/,
       use: [
         {
           loader: "babel-loader",
@@ -66,7 +66,10 @@ module.exports = {
                 'markdown-it-sup'
               ],
               format(doc) {
-                return `<Page @title="${doc.attributes.title}">${doc.html}</Page>`;
+                const title = doc.attributes.title
+                  ? doc.attributes.title
+                  : doc.attributes.id.split('/').pop();
+                return `<Page @title="${title}">${doc.html}</Page>`;
               }
             }
           }

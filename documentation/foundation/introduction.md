@@ -1,4 +1,5 @@
 ---
+id: Documentation|Foundation/Introduction
 title: Foundation
 ---
 

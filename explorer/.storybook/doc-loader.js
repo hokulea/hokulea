@@ -1,8 +1,5 @@
 const { getOptions } = require('loader-utils');
 const MarkdownItCompiler = require('markdown-it-compiler');
-const fm = require('front-matter');
-const fs = require('fs');
-const path = require('path');
 const Case = require('case');
 
 let compiler;
@@ -29,51 +26,34 @@ const loader = function (source) {
     compiler = getCompiler(options.compiler || {});
   }
 
-  // load story information
-  const info = fm(source);
+  const doc = compiler.compile(source);
 
-  // load stories
-  const stories = {};
-
-  const dir = path.join(path.dirname(this.resourcePath), info.attributes.source);
-  if (fs.existsSync(dir)) {
-    for (const name of info.attributes.stories) {
-      const file = path.join(dir, `${name}.md`);
-
-      if (fs.existsSync(file)) {
-        const content = fs.readFileSync(file, { encoding: 'utf-8' });
-        stories[Case.camel(name)] = compiler.compile(content);
-      }
-    }
-  }
-
-  const lines = Object.entries(stories).map(([name, story]) => {
-    return `
-      export const ${name} = () => {
-        return {
-          template: hbs\`${story.html}\`
-        };
-      };
-
-      ${name}.story = {
-        title: '${story.attributes.title}',
-        parameters: {
-          options: {
-            showPanel: false,
-            isToolshown: false
-          }
-        }
-      };
-    `;
-  });
+  const parts = doc.attributes.id.split('/');
+  const id = parts.pop();
+  const name = Case.camel(id);
+  const title = doc.attributes.title ? doc.attributes.title : id;
 
   const code = `import { hbs } from 'ember-cli-htmlbars';
 
   export default {
-    title: '${info.attributes.id}'
+    title: '${parts.join('/')}'
   };
 
-  ${lines.join('\n\n')}
+  export const ${name} = () => {
+    return {
+      template: hbs\`${doc.html}\`
+    };
+  };
+
+  ${name}.story = {
+    title: '${title}',
+    parameters: {
+      options: {
+        showPanel: false,
+        isToolshown: false
+      }
+    }
+  };
   `;
 
   return code;

@@ -20,13 +20,17 @@ const sortOrder = [
 addParameters({
   options: {
     storySort: (a, b) => {
+      console.log('sort', a, b);
+      const idA = `${a[1].kind}/${a[1].name}`;
+      const idB = `${b[1].kind}/${b[1].name}`;
+
       // special order
       for (const name of sortOrder) {
-        if (a[1].kind.startsWith(name)) {
+        if (idA.startsWith(name)) {
           return -1;
         }
 
-        if (b[1].kind.startsWith(name)) {
+        if (idB.startsWith(name)) {
           return 1;
         }
       }

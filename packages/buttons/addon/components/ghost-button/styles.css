@@ -1,8 +1,8 @@
 .ghost-button {
-  composes: action from '@hokulea/foundation/utils/focus';
-  color: var(--color-action-text);
+  composes: action-focus from '@hokulea/foundation/utils/focus';
+  color: var(--color-action-base-text);
   background-color: transparent;
-  border-color: var(--color-action-border);
+  border-color: var(--color-action-base-text);
 
   &:hover {
     color: var(--color-action-hover-text);

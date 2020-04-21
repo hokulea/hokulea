@@ -1,5 +1,7 @@
+@value action-padding from '../../utils/padding';
+
 .affix {
-  padding: 0 var(--s-1);
+  padding: action-padding;
   box-sizing: border-box;
 }
 
@@ -20,8 +22,14 @@
 }
 
 .row-builder {
-  composes: border from '../utils/border';
+  composes: border-shape from '../../utils/border';
+
   display: inline-flex;
+  align-items: center;
+
+  & > * {
+    display: inline-block;
+  }
 
   & > .affix + .content,
   & > .content + .affix,
@@ -31,5 +39,5 @@
 }
 
 .content {
-  padding: 0 var(--s-1);
+  padding: action-padding;
 }

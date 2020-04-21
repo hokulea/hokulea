@@ -70,7 +70,7 @@ module.exports = {
               format(doc) {
                 const title = doc.attributes.title
                   ? doc.attributes.title
-                  : doc.toc[0].content;
+                  : doc.toc && doc.toc.length > 0 ? doc.toc[0].content : '';
 
                 // strip first <h1> off of html
                 if (!doc.attributes.title) {

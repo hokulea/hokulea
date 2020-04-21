@@ -103,7 +103,7 @@ addParameters({
         ? 0
         : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     }
-  },
+  }
 });
 
 addDecorator(withA11y);

@@ -10,11 +10,11 @@ export default {
 export const basic = () => {
   return {
     template: hbs`
-      <TextInput {{on "input" this.type}} />
+      <TextInput @update={{this.type}} />
     `,
     context: {
-      type(event: KeyboardEvent) {
-        action('type')((event.target as HTMLInputElement).value);
+      type(value: string) {
+        action('type')(value);
       }
     }
   };
@@ -47,8 +47,8 @@ export const builder = () => {
     </InputBuilder>
     `,
     context: {
-      type(event: KeyboardEvent) {
-        action('type')((event.target as HTMLInputElement).value);
+      type(value: string) {
+        action('type')(value);
       }
     }
   };

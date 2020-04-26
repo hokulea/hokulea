@@ -7,17 +7,15 @@ export default {
   title: 'Components|Buttons/Button'
 };
 
-const invokeHandler = action('button invoked');
-
 export const basic = () => {
   return {
     template: hbs`
-      <Button {{invoke this.invokeButton}}>Button</Button>
+      <Button {{invoke this.invoke}}>Button</Button>
       <Button disabled={{true}}>Disabled Button</Button>
     `,
     context: {
-      invokeButton() {
-        invokeHandler();
+      get invoke() {
+        return action('button invoked');
       }
     }
   };
@@ -37,7 +35,7 @@ basic.story = {
 export const builder = () => {
   return {
     template: hbs`
-    <Button {{invoke this.invokeButton}} as |b|>
+    <Button {{invoke this.invoke}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
@@ -62,8 +60,8 @@ export const builder = () => {
     </Button>
     `,
     context: {
-      invokeButton() {
-        invokeHandler();
+      get invoke() {
+        return action('button invoked');
       }
     }
   };

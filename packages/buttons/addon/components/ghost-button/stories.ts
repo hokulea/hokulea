@@ -7,17 +7,15 @@ export default {
   title: 'Components|Buttons/Ghost'
 };
 
-const invokeHandler = action('button invoked');
-
 export const basic = () => {
   return {
     template: hbs`
-      <GhostButton {{invoke this.invokeButton}}>Ghost Button</GhostButton>
+      <GhostButton {{invoke this.invoke}}>Ghost Button</GhostButton>
       <GhostButton disabled={{true}}>Disabled Ghost Button</GhostButton>
     `,
     context: {
-      invokeButton() {
-        invokeHandler();
+      get invoke() {
+        return action('button invoked');
       }
     }
   };
@@ -37,7 +35,7 @@ basic.story = {
 export const builder = () => {
   return {
     template: hbs`
-    <GhostButton {{invoke this.invokeButton}} as |b|>
+    <GhostButton {{invoke this.invoke}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
@@ -62,8 +60,8 @@ export const builder = () => {
     </GhostButton>
     `,
     context: {
-      invokeButton() {
-        invokeHandler();
+      get invoke() {
+        return action('button invoked');
       }
     }
   };

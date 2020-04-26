@@ -10,11 +10,11 @@ export default {
 export const basic = () => {
   return {
     template: hbs`
-      <TextInput @update={{this.type}} />
+      <TextInput @update={{fn this.type}} />
     `,
     context: {
-      type(value: string) {
-        action('type')(value);
+      get type() {
+        return action('type');
       }
     }
   };

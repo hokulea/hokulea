@@ -5,11 +5,11 @@ const { precompile } = require('ember-source/dist/ember-template-compiler');
 module.exports = {
   stories: ['../../documentation/**/*.md', '../../packages/**/stor(y|ies).ts'],
   addons: [
-    "@storybook/addon-knobs/register",
-    "storybook-addon-designs/register",
-    "@storybook/addon-a11y/register",
-    "@storybook/addon-actions/register",
-    "@storybook/addon-docs/register",
+    "@storybook/addon-knobs",
+    "storybook-addon-designs",
+    "@storybook/addon-a11y",
+    "@storybook/addon-actions",
+    "@storybook/addon-toolbars",
     {
       name: '@storybook/addon-storysource',
       options: {

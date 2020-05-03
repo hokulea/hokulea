@@ -108,17 +108,59 @@ addParameters({
 
 addDecorator(withA11y);
 
-// storybook wrapper
-addDecorator(storyFn => {
+export const globalArgTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'cog',
+      items: [
+        { value: 'moana', title: 'Moana' },
+        { value: 'vaomatua', title: 'Vaomatua' }
+      ]
+    },
+  },
+  scheme: {
+    name: 'Color Scheme',
+    description: 'Color scheme for selected Theme',
+    defaultValue: 'system',
+    toolbar: {
+      icon: 'eye',
+      items: [
+        { value: 'system', title: 'System' },
+        { value: 'light', title: 'Light' },
+        { value: 'dark', title: 'Dark' }
+      ]
+    },
+  },
+};
+
+addDecorator((storyFn, { globalArgs }) => {
   const { template, context } = storyFn();
 
   return {
     context: {
       template,
-      context,
+      context: Object.assign(context || {}, { globals: globalArgs || {} }),
       get layout() {
         return hbs`<Storybook @parent={{this}}/>`;
-      }
-    }
+      },
+    },
   };
 });
+
+// // storybook wrapper
+// addDecorator(storyFn => {
+//   const { template, context } = storyFn();
+
+//   return {
+//     context: {
+//       template,
+//       context,
+//       get layout() {
+//         return hbs`<Storybook @parent={{this}}/>`;
+//       }
+//     }
+//   };
+// });

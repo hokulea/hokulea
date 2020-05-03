@@ -1,4 +1,3 @@
-// const createCompiler = require("@storybook/addon-docs/mdx-compiler-plugin");
 const path = require('path');
 const { precompile } = require('ember-source/dist/ember-template-compiler');
 
@@ -10,6 +9,7 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-actions",
     "@storybook/addon-toolbars",
+    "@storybook/addon-viewport",
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -23,7 +23,7 @@ module.exports = {
     }
   ],
   webpack: async config => {
-    // remove sb *.md loader
+    // remove storybook *.md loader
     for (const rule of config.module.rules) {
       if (rule.test.toString().includes('md')) {
         config.module.rules.splice(config.module.rules.indexOf(rule), 1);
@@ -111,12 +111,6 @@ module.exports = {
     });
 
     config.resolve.extensions.push('.ts');
-    // config.module.rules.push({
-    //   test: /stories\/.+\.js?$/,
-    //   loader: require.resolve("@storybook/source-loader"),
-    //   exclude: [/node_modules/],
-    //   enforce: "pre"
-    // });
     return config;
   }
 };

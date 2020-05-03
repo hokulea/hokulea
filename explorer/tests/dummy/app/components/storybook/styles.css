@@ -1,5 +1,4 @@
 .story {
   padding: 20px;
-  background-color: cfg("hokulea.foundation.layout.background");
   height: 100vh;
 }

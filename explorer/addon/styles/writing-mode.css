@@ -1,0 +1,13 @@
+:global {
+  .wm-horizontal-tb {
+    writing-mode: horizontal-tb;
+  }
+
+  .wm-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .wm-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+}

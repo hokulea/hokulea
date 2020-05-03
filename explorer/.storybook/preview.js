@@ -1,15 +1,6 @@
 import { addParameters, addDecorator } from "@storybook/ember";
-import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
 import { withA11y } from "@storybook/addon-a11y";
 import { hbs } from 'ember-cli-htmlbars';
-
-addParameters({
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
-    iframeHeight: "auto"
-  }
-});
 
 const sortOrder = {
   'documentation': {
@@ -112,7 +103,7 @@ export const globalArgTypes = {
   theme: {
     name: 'Theme',
     description: 'Global theme for components',
-    defaultValue: 'light',
+    defaultValue: 'moana',
     toolbar: {
       icon: 'cog',
       items: [
@@ -134,6 +125,32 @@ export const globalArgTypes = {
       ]
     },
   },
+  direction: {
+    name: 'Direction',
+    description: 'direction for text',
+    defaultValue: 'auto',
+    toolbar: {
+      icon: 'transfer',
+      items: [
+        'auto',
+        'ltr',
+        'rtl'
+      ]
+    },
+  },
+  writingMode: {
+    name: 'Writing Mode',
+    description: 'Writing Mode',
+    defaultValue: 'horizontal-tb',
+    toolbar: {
+      icon: 'paragraph',
+      items: [
+        'horizontal-tb',
+        'vertical-rl',
+        'vertical-lr'
+      ]
+    },
+  },
 };
 
 addDecorator((storyFn, { globalArgs }) => {
@@ -149,18 +166,3 @@ addDecorator((storyFn, { globalArgs }) => {
     },
   };
 });
-
-// // storybook wrapper
-// addDecorator(storyFn => {
-//   const { template, context } = storyFn();
-
-//   return {
-//     context: {
-//       template,
-//       context,
-//       get layout() {
-//         return hbs`<Storybook @parent={{this}}/>`;
-//       }
-//     }
-//   };
-// });

@@ -4,20 +4,20 @@ import { module, test } from 'qunit';
 
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Rendering | Buttons | <Button>', function (hooks) {
+module('Rendering | Buttons | <AccentButton>', function (hooks) {
   setupRenderingTest(hooks);
 
   test('basic use-case', async function (assert) {
-    await render(hbs`<Button>click me!</Button>`);
+    await render(hbs`<AccentButton>click me!</AccentButton>`);
 
     assert.dom('[data-test-button-content]').hasText('click me!');
   });
 
   test('basic composition use-case', async function (assert) {
     await render(hbs`
-      <Button as |b|>
+      <AccentButton as |b|>
         <b.Content data-test-button-content>click me!</b.Content>
-      </Button>
+      </AccentButton>
     `);
 
     assert.dom('[data-test-button-content]').hasText('click me!');
@@ -25,13 +25,13 @@ module('Rendering | Buttons | <Button>', function (hooks) {
 
   test('full composition use-case', async function (assert) {
     await render(hbs`
-      <Button as |b|>
+      <AccentButton as |b|>
         <b.Prefix data-test-button-prefix>pre</b.Prefix>
         <b.Affix data-test-button-affix1>af1</b.Affix>
         <b.Content data-test-button-content>click me!</b.Content>
         <b.Affix data-test-button-affix2>af2</b.Affix>
         <b.Suffix data-test-button-suffix>suf</b.Suffix>
-      </Button>
+      </AccentButton>
     `);
 
     assert.dom('[data-test-button-prefix]').hasText('pre');

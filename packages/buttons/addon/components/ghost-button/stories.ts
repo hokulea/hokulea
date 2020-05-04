@@ -10,13 +10,11 @@ export default {
 export const basic = () => {
   return {
     template: hbs`
-      <GhostButton {{invoke this.invoke}}>Ghost Button</GhostButton>
+      <GhostButton {{invoke (fn this.invoke)}}>Ghost Button</GhostButton>
       <GhostButton disabled={{true}}>Disabled Ghost Button</GhostButton>
     `,
     context: {
-      get invoke() {
-        return action('button invoked');
-      }
+      invoke: action('button invoked')
     }
   };
 };
@@ -46,7 +44,7 @@ export const sizing = () => {
 export const builder = () => {
   return {
     template: hbs`
-    <GhostButton {{invoke this.invoke}} as |b|>
+    <GhostButton {{invoke (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
@@ -71,9 +69,7 @@ export const builder = () => {
     </GhostButton>
     `,
     context: {
-      get invoke() {
-        return action('button invoked');
-      }
+      invoke: action('button invoked')
     }
   };
 };

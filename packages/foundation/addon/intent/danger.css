@@ -1,0 +1,26 @@
+.danger-focus {
+  outline: 0;
+
+  &:focus,
+  &:focus-within {
+    box-shadow: var(--shadow-danger-focus);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--shadow-danger-focus);
+    }
+  }
+
+  &:active {
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--shadow-danger-focus);
+    }
+  }
+}

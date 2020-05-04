@@ -1,0 +1,26 @@
+.accent-focus {
+  outline: 0;
+
+  &:focus,
+  &:focus-within {
+    box-shadow: var(--shadow-accent-focus);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--shadow-accent-focus);
+    }
+  }
+
+  &:active {
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--shadow-accent-focus);
+    }
+  }
+}

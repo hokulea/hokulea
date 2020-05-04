@@ -17,7 +17,8 @@ module('Rendering | Buttons | <GhostButton>', function (hooks) {
     await render(hbs`
       <GhostButton as |b|>
         <b.Content data-test-ghost-button-content>click me!</b.Content>
-      </GhostButton>`);
+      </GhostButton>
+    `);
 
     assert.dom('[data-test-ghost-button-content]').hasText('click me!');
   });
@@ -30,7 +31,8 @@ module('Rendering | Buttons | <GhostButton>', function (hooks) {
         <b.Content data-test-ghost-button-content>click me!</b.Content>
         <b.Affix data-test-ghost-button-affix2>af2</b.Affix>
         <b.Suffix data-test-ghost-button-suffix>suf</b.Suffix>
-      </GhostButton>`);
+      </GhostButton>
+    `);
 
     assert.dom('[data-test-ghost-button-prefix]').hasText('pre');
     assert.dom('[data-test-ghost-button-affix1]').hasText('af1');

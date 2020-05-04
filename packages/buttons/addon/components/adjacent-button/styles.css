@@ -1,0 +1,24 @@
+.adjacent-button {
+  composes: adjacent-focus from '@hokulea/foundation/intent/adjacent';
+  color: var(--color-adjacent-base-text);
+  background-color: var(--color-adjacent-base-background);
+  border-color: var(--color-adjacent-base-border);
+
+  &:hover {
+    color: var(--color-adjacent-hover-text);
+    background-color: var(--color-adjacent-hover-background);
+    border-color: var(--color-adjacent-hover-border);
+  }
+
+  &:active {
+    color: var(--color-adjacent-active-text);
+    background-color: var(--color-adjacent-active-background);
+    border-color: var(--color-adjacent-active-border);
+  }
+
+  &:disabled {
+    color: var(--color-adjacent-disabled-text);
+    background-color: var(--color-adjacent-disabled-background);
+    border-color: var(--color-adjacent-disabled-border);
+  }
+}

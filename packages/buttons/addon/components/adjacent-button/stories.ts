@@ -4,14 +4,14 @@ import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Buttons/Button'
+  title: 'Components|Buttons/Adjacent'
 };
 
 export const basic = () => {
   return {
     template: hbs`
-      <Button {{invoke (fn this.invoke)}}>Button</Button>
-      <Button disabled={{true}}>Disabled Button</Button>
+      <AdjacentButton {{invoke (fn this.invoke)}}>Adjacent Button</AdjacentButton>
+      <AdjacentButton disabled={{true}}>Disabled Adjacent Button</AdjacentButton>
     `,
     context: {
       invoke: action('button invoked')
@@ -33,10 +33,10 @@ basic.story = {
 export const sizing = () => {
   return {
     template: hbs`
-      <Button {{style fontSize="80%"}}>80% Font Size</Button>
-      <Button>Normal</Button>
-      <Button {{style fontSize="120%"}}>120% Font Size</Button>
-      <Button {{style fontSize="150%"}}>150% Font Size</Button>
+      <AdjacentButton {{style fontSize="80%"}}>80% Font Size</AdjacentButton>
+      <AdjacentButton>Normal</AdjacentButton>
+      <AdjacentButton {{style fontSize="120%"}}>120% Font Size</AdjacentButton>
+      <AdjacentButton {{style fontSize="150%"}}>150% Font Size</AdjacentButton>
     `
   };
 };
@@ -44,19 +44,19 @@ export const sizing = () => {
 export const builder = () => {
   return {
     template: hbs`
-    <Button {{invoke (fn this.invoke)}} as |b|>
+    <AdjacentButton {{invoke (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
       <b.Affix>affix</b.Affix>
-      <b.Content>Button</b.Content>
+      <b.Content>Adjacent Button</b.Content>
       <b.Affix>affix</b.Affix>
       <b.Affix>affix</b.Affix>
       <b.Suffix>Suffix</b.Suffix>
       <b.Suffix>Suffix</b.Suffix>
-    </Button>
+    </AdjacentButton>
 
-    <Button disabled={{true}} as |b|>
+    <AdjacentButton disabled={{true}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
@@ -66,7 +66,7 @@ export const builder = () => {
       <b.Affix>affix</b.Affix>
       <b.Suffix>Suffix</b.Suffix>
       <b.Suffix>Suffix</b.Suffix>
-    </Button>
+    </AdjacentButton>
     `,
     context: {
       invoke: action('button invoked')

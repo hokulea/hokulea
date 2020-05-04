@@ -1,5 +1,5 @@
 .rim {
-  composes: action-focus from '@hokulea/foundation/utils/focus';
+  composes: action-focus from '@hokulea/foundation/intent/action';
   border-color: var(--color-layout-low-contrast);
 
   & > input {

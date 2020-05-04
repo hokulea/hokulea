@@ -1,8 +1,8 @@
 .center {
   --center-max-width: var(--measure);
   box-sizing: content-box;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   max-width: var(--center-max-width);
 }
 

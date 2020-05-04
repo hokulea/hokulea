@@ -1,6 +1,7 @@
 :root {
   --ratio: var(--scale-ratio, 1.4);
 
+  /* Global Scaling */
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
@@ -13,6 +14,20 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+
+  /* Locale scaling for sizes controlled by font-size, e.g. padding */
+  --ls-5: calc(var(--ls-4) / var(--ratio));
+  --ls-4: calc(var(--ls-3) / var(--ratio));
+  --ls-3: calc(var(--ls-2) / var(--ratio));
+  --ls-2: calc(var(--ls-1) / var(--ratio));
+  --ls-1: calc(var(--ls0) / var(--ratio));
+
+  --ls0: var(--local-scale-base, 0.8em);
+  --ls1: calc(var(--ls0) * var(--ratio));
+  --ls2: calc(var(--ls1) * var(--ratio));
+  --ls3: calc(var(--ls2) * var(--ratio));
+  --ls4: calc(var(--ls3) * var(--ratio));
+  --ls5: calc(var(--ls4) * var(--ratio));
 
   --measure: var(
     --scale-measure,

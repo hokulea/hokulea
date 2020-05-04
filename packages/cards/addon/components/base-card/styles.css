@@ -1,2 +1,3 @@
 .base-card {
+  composes: border-shape from '@hokulea/foundation/structure/border';
 }

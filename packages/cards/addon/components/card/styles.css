@@ -1,14 +1,7 @@
 .card {
-  & > div {
-    background-color: var(--color-layout-low-contrast);
-    border-width: 2px;
-    border-style: solid;
-    border-color: cfg();
-    padding: var(--s0);
-  }
+  composes: action-focus from '@hokulea/foundation/intent/action';
 
-  &:focus {
-    /** TODO: Focus */
-    border-color: var(--color-layout-high-contrast);
-  }
+  border-color: var(--color-layout-high-contrast);
+  background-color: var(--color-layout-low-contrast);
+  padding: var(--s0);
 }

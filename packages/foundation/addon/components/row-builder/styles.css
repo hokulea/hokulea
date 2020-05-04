@@ -1,7 +1,5 @@
-@value action-padding from '../../utils/padding';
-
 .affix {
-  padding: action-padding;
+  composes: padding-block from '../../structure/padding';
   box-sizing: border-box;
 }
 
@@ -13,16 +11,17 @@
 
 .prefix {
   composes: bordered;
-  border-right-width: inherit;
+  border-right-width: 0;
+  border-inline-end-width: inherit;
 }
 
 .suffix {
   composes: bordered;
-  border-left-width: inherit;
+  border-inline-start-width: inherit;
 }
 
 .row-builder {
-  composes: border-shape from '../../utils/border';
+  composes: border-shape from '../../structure/border';
 
   display: inline-flex;
   align-items: center;
@@ -34,10 +33,10 @@
   & > .affix + .content,
   & > .content + .affix,
   & > .affix:not(.suffix):not(.prefix) + .affix:not(.suffix):not(.prefix) {
-    padding-left: 0;
+    padding-inline-start: 0;
   }
 }
 
 .content {
-  padding: action-padding;
+  composes: padding-block from '../../structure/padding';
 }

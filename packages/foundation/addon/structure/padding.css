@@ -1,0 +1,7 @@
+.padding-block {
+  padding-block-start: var(--ls-3);
+  padding-block-end: var(--ls-3);
+
+  padding-inline-start: var(--ls-1);
+  padding-inline-end: var(--ls-1);
+}

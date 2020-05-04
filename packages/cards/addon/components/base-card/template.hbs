@@ -1,3 +1,5 @@
-<FocusBase local-class="base-card" ...attributes>
-  {{yield}}
-</FocusBase>
+{{#let (if @element @element (element "div")) as |Tag|}}
+  <Tag local-class="base-card" ...attributes>
+    {{yield}}
+  </Tag>
+{{/let}}

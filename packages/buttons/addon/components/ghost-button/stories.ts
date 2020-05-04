@@ -32,6 +32,17 @@ basic.story = {
   }
 };
 
+export const sizing = () => {
+  return {
+    template: hbs`
+      <GhostButton {{style fontSize="80%"}}>80% Font Size</GhostButton>
+      <GhostButton>Normal</GhostButton>
+      <GhostButton {{style fontSize="120%"}}>120% Font Size</GhostButton>
+      <GhostButton {{style fontSize="150%"}}>150% Font Size</GhostButton>
+    `
+  };
+};
+
 export const builder = () => {
   return {
     template: hbs`

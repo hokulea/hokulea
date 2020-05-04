@@ -1,13 +1,6 @@
 {
   "color": {
     "text": {
-      "normal": {
-        "$light": {
-          "value": "#333333",
-          "comment": "Regular text color",
-          "colorScheme": "light"
-        }
-      },
       "inverse": {
         "disabled": {
           "$light": {
@@ -19,6 +12,13 @@
         "$light": {
           "value": "#f5f5f5",
           "comment": "Text color for more contrast (e.g. high-contrast or reduced)",
+          "colorScheme": "light"
+        }
+      },
+      "normal": {
+        "$light": {
+          "value": "#333333",
+          "comment": "Regular text color",
           "colorScheme": "light"
         }
       },

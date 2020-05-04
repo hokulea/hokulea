@@ -1,0 +1,29 @@
+{
+  "color": {
+    "adjacent": {
+      "disabled": {
+        "text": {
+          "$light": {
+            "value": "#737373",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        },
+        "border": {
+          "$light": {
+            "value": "#dfdfdf",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        },
+        "background": {
+          "$light": {
+            "value": "#dfdfdf",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        }
+      }
+    }
+  }
+}

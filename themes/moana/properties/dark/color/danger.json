@@ -1,0 +1,22 @@
+{
+  "color": {
+    "danger": {
+      "disabled": {
+        "border": {
+          "$dark": {
+            "value": "#6e6e6e",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        },
+        "background": {
+          "$dark": {
+            "value": "#6e6e6e",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        }
+      }
+    }
+  }
+}

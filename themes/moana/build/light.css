@@ -1,7 +1,15 @@
 :root {
+  --color-accent-disabled-text: #737373;
+  --color-accent-disabled-border: #dfdfdf;
+  --color-accent-disabled-background: #dfdfdf;
   --color-action-disabled-text: #737373;
   --color-action-disabled-border: #dfdfdf;
   --color-action-disabled-background: #dfdfdf;
+  --color-adjacent-disabled-text: #737373;
+  --color-adjacent-disabled-border: #dfdfdf;
+  --color-adjacent-disabled-background: #dfdfdf;
+  --color-danger-disabled-border: #dfdfdf;
+  --color-danger-disabled-background: #dfdfdf;
   --color-layout-background: #ffffff; /* Background color for layouts */
   --color-layout-low-contrast: #dfdfdf;
   --color-layout-high-contrast: #595959;

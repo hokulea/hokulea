@@ -1,0 +1,22 @@
+{
+  "color": {
+    "danger": {
+      "disabled": {
+        "border": {
+          "$light": {
+            "value": "#dfdfdf",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        },
+        "background": {
+          "$light": {
+            "value": "#dfdfdf",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        }
+      }
+    }
+  }
+}

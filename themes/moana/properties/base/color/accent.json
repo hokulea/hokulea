@@ -1,9 +1,9 @@
 {
   "color": {
-    "action": {
+    "accent": {
       "area": {
         "background": {
-          "value": "#9edffa",
+          "value": "#fff599",
           "comment": ""
         },
         "border": {
@@ -11,21 +11,21 @@
           "comment": ""
         },
         "text": {
-          "value": "#054661",
+          "value": "#665c00",
           "comment": ""
         }
       },
       "active": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#333333",
           "comment": ""
         },
         "border": {
-          "value": "#054661",
+          "value": "#b2a000",
           "comment": ""
         },
         "background": {
-          "value": "#054661",
+          "value": "#b2a000",
           "comment": ""
         }
       },
@@ -35,11 +35,11 @@
           "comment": ""
         },
         "border": {
-          "value": "#55c6f7",
+          "value": "#ffed4c",
           "comment": ""
         },
         "background": {
-          "value": "#55c6f7",
+          "value": "#ffed4c",
           "comment": ""
         }
       },
@@ -49,11 +49,11 @@
           "comment": ""
         },
         "background": {
-          "value": "#9edffa",
+          "value": "#fff599",
           "comment": ""
         },
         "border": {
-          "value": "#9edffa",
+          "value": "#fff599",
           "comment": ""
         }
       }

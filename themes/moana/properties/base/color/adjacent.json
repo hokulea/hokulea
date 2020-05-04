@@ -1,9 +1,9 @@
 {
   "color": {
-    "action": {
+    "adjacent": {
       "area": {
         "background": {
-          "value": "#9edffa",
+          "value": "#abede2",
           "comment": ""
         },
         "border": {
@@ -11,7 +11,7 @@
           "comment": ""
         },
         "text": {
-          "value": "#054661",
+          "value": "#125449",
           "comment": ""
         }
       },
@@ -21,11 +21,11 @@
           "comment": ""
         },
         "border": {
-          "value": "#054661",
+          "value": "#1f947f",
           "comment": ""
         },
         "background": {
-          "value": "#054661",
+          "value": "#1f947f",
           "comment": ""
         }
       },
@@ -35,11 +35,11 @@
           "comment": ""
         },
         "border": {
-          "value": "#55c6f7",
+          "value": "#6be0cb",
           "comment": ""
         },
         "background": {
-          "value": "#55c6f7",
+          "value": "#6be0cb",
           "comment": ""
         }
       },
@@ -49,11 +49,11 @@
           "comment": ""
         },
         "background": {
-          "value": "#9edffa",
+          "value": "#abede2",
           "comment": ""
         },
         "border": {
-          "value": "#9edffa",
+          "value": "#abede2",
           "comment": ""
         }
       }

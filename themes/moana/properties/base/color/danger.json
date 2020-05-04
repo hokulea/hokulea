@@ -1,9 +1,9 @@
 {
   "color": {
-    "action": {
+    "danger": {
       "area": {
         "background": {
-          "value": "#9edffa",
+          "value": "#f5c6c6",
           "comment": ""
         },
         "border": {
@@ -11,7 +11,7 @@
           "comment": ""
         },
         "text": {
-          "value": "#054661",
+          "value": "#8c1717",
           "comment": ""
         }
       },
@@ -21,39 +21,45 @@
           "comment": ""
         },
         "border": {
-          "value": "#054661",
+          "value": "#8c1717",
           "comment": ""
         },
         "background": {
-          "value": "#054661",
+          "value": "#8c1717",
           "comment": ""
         }
       },
       "hover": {
         "text": {
-          "value": "#333333",
+          "value": "#f5f5f5",
           "comment": ""
         },
         "border": {
-          "value": "#55c6f7",
+          "value": "#cd2222",
           "comment": ""
         },
         "background": {
-          "value": "#55c6f7",
+          "value": "#cd2222",
           "comment": ""
         }
       },
       "base": {
         "text": {
-          "value": "#333333",
+          "value": "#f5f5f5",
           "comment": ""
         },
         "background": {
-          "value": "#9edffa",
+          "value": "#e35858",
           "comment": ""
         },
         "border": {
-          "value": "#9edffa",
+          "value": "#e35858",
+          "comment": ""
+        }
+      },
+      "disabled": {
+        "text": {
+          "value": "#8c1717",
           "comment": ""
         }
       }

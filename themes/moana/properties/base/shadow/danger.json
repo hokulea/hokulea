@@ -1,8 +1,8 @@
 {
   "shadow": {
-    "action": {
+    "danger": {
       "focus": {
-        "value": "0 0 6px #0caef3",
+        "value": "0 0 6px #cd2222",
         "comment": ""
       }
     }

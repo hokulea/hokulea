@@ -20,6 +20,8 @@
     "themes/*"
   ],
   "devDependencies": {
+    "els-a11y-addon": "^1.0.4",
+    "els-addon-typed-templates": "^2.2.16",
     "lerna": "^3.20.2"
   },
   "resolutions": {

@@ -1,5 +1,5 @@
 .adjacent-button {
-  composes: adjacent-focus from '@hokulea/foundation/intent/adjacent';
+  composes: adjacent-focus from '@hokulea/foundation/intents/adjacent';
   color: var(--color-adjacent-base-text);
   background-color: var(--color-adjacent-base-background);
   border-color: var(--color-adjacent-base-border);

@@ -1,5 +1,5 @@
 .button {
-  composes: action-focus from '@hokulea/foundation/intent/action';
+  composes: action-focus from '@hokulea/foundation/intents/action';
   color: var(--color-action-base-text);
   background-color: var(--color-action-base-background);
   border-color: var(--color-action-base-border);

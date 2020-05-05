@@ -1,5 +1,5 @@
 .danger-button {
-  composes: danger-focus from '@hokulea/foundation/intent/danger';
+  composes: danger-focus from '@hokulea/foundation/intents/danger';
   color: var(--color-danger-base-text);
   background-color: var(--color-danger-base-background);
   border-color: var(--color-danger-base-border);

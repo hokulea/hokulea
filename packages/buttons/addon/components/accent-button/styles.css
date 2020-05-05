@@ -1,5 +1,5 @@
 .accent-button {
-  composes: accent-focus from '@hokulea/foundation/intent/accent';
+  composes: accent-focus from '@hokulea/foundation/intents/accent';
   color: var(--color-accent-base-text);
   background-color: var(--color-accent-base-background);
   border-color: var(--color-accent-base-border);

@@ -7,7 +7,7 @@ export default {
   title: 'Components|Buttons/Button'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <Button {{invoke (fn this.invoke)}}>Button</Button>
@@ -19,7 +19,7 @@ export const basic = () => {
   };
 };
 
-basic.story = {
+Default.story = {
   decorators: [withDesign],
   parameters: {
     design: {
@@ -30,7 +30,7 @@ basic.story = {
   }
 };
 
-export const sizing = () => {
+export const Sizing = () => {
   return {
     template: hbs`
       <Button {{style fontSize="80%"}}>80% Font Size</Button>
@@ -41,7 +41,7 @@ export const sizing = () => {
   };
 };
 
-export const builder = () => {
+export const Builder = () => {
   return {
     template: hbs`
     <Button {{invoke (fn this.invoke)}} as |b|>

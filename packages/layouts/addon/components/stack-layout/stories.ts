@@ -4,7 +4,7 @@ export default {
   title: 'Components|Layouts/Stack'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <StackLayout>
@@ -16,7 +16,7 @@ export const basic = () => {
   };
 };
 
-export const recursive = () => {
+export const Recursive = () => {
   return {
     template: hbs`
       <StackLayout @recursive={{true}}>

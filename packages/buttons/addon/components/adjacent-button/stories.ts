@@ -7,7 +7,7 @@ export default {
   title: 'Components|Buttons/Adjacent'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <AdjacentButton {{invoke (fn this.invoke)}}>Adjacent Button</AdjacentButton>
@@ -19,7 +19,7 @@ export const basic = () => {
   };
 };
 
-basic.story = {
+Default.story = {
   decorators: [withDesign],
   parameters: {
     design: {
@@ -30,7 +30,7 @@ basic.story = {
   }
 };
 
-export const sizing = () => {
+export const Sizing = () => {
   return {
     template: hbs`
       <AdjacentButton {{style fontSize="80%"}}>80% Font Size</AdjacentButton>
@@ -41,7 +41,7 @@ export const sizing = () => {
   };
 };
 
-export const builder = () => {
+export const Builder = () => {
   return {
     template: hbs`
     <AdjacentButton {{invoke (fn this.invoke)}} as |b|>

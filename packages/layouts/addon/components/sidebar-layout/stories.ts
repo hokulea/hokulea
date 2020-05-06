@@ -6,7 +6,7 @@ export default {
   title: 'Components|Layouts/Sidebar'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <SidebarLayout @min={{this.min}} as |s|>
@@ -53,6 +53,6 @@ export const basic = () => {
   };
 };
 
-basic.story = {
+Default.story = {
   decorators: [withKnobs]
 };

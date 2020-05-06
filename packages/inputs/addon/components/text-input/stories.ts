@@ -7,7 +7,7 @@ export default {
   title: 'Components|Inputs/Text'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <TextInput @update={{fn this.type}} />
@@ -20,7 +20,7 @@ export const basic = () => {
   };
 };
 
-// basic.story = {
+// Default.story = {
 //   decorators: [withDesign],
 //   parameters: {
 //     design: {
@@ -31,7 +31,7 @@ export const basic = () => {
 //   }
 // };
 
-export const builder = () => {
+export const Builder = () => {
   return {
     template: hbs`
     <InputBuilder as |b|>

@@ -7,7 +7,7 @@ export default {
   title: 'Components|Buttons/Danger'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <DangerButton {{invoke (fn this.invoke)}}>Danger Button</DangerButton>
@@ -19,7 +19,7 @@ export const basic = () => {
   };
 };
 
-basic.story = {
+Default.story = {
   decorators: [withDesign],
   parameters: {
     design: {
@@ -30,7 +30,7 @@ basic.story = {
   }
 };
 
-export const sizing = () => {
+export const Sizing = () => {
   return {
     template: hbs`
       <DangerButton {{style fontSize="80%"}}>80% Font Size</DangerButton>
@@ -41,7 +41,7 @@ export const sizing = () => {
   };
 };
 
-export const builder = () => {
+export const Builder = () => {
   return {
     template: hbs`
     <DangerButton {{invoke (fn this.invoke)}} as |b|>

@@ -6,7 +6,7 @@ export default {
   title: 'Components|Layouts/Center'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <CenterLayout @intrinsic={{this.intrinsic}} @text={{this.text}}>
@@ -24,6 +24,6 @@ export const basic = () => {
   };
 };
 
-basic.story = {
+Default.story = {
   decorators: [withKnobs]
 };

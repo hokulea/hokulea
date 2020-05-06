@@ -7,7 +7,7 @@ export default {
   // component: ClusterLayoutComponent
 };
 
-export const normal = () => {
+export const Foo = () => {
   return {
     template: hbs`
       <ClusterLayout>
@@ -18,7 +18,7 @@ export const normal = () => {
   };
 };
 
-export const centered = () => {
+export const Centered = () => {
   return {
     template: hbs`
       <ClusterLayout @justify="center">
@@ -29,7 +29,7 @@ export const centered = () => {
   };
 };
 
-export const navbar = () => {
+export const Navbar = () => {
   return {
     template: hbs`
       <ClusterLayout @justify="space-between">
@@ -41,4 +41,8 @@ export const navbar = () => {
         </ClusterLayout>
       </ClusterLayout>`
   };
+};
+
+Navbar.story = {
+  name: 'Example: Navbar'
 };

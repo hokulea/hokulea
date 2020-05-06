@@ -6,7 +6,7 @@ export default {
   title: 'Components|Layouts/Switcher'
 };
 
-export const basic = () => {
+export const Default = () => {
   return {
     template: hbs`
       <SwitcherLayout @limit={{if this.useLimit this.limit}}>
@@ -35,6 +35,6 @@ export const basic = () => {
   };
 };
 
-basic.story = {
+Default.story = {
   decorators: [withKnobs]
 };

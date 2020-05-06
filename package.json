@@ -25,6 +25,7 @@
     "lerna": "^3.20.2"
   },
   "resolutions": {
-    "typescript": "3.7.5"
+    "typescript": "3.7.5",
+    "ember-cli-htmlbars": "^5.1.0"
   }
 }

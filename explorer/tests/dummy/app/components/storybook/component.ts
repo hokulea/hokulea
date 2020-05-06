@@ -5,20 +5,19 @@ import { Owner } from '@glimmer/di';
 
 import TheemoService from 'ember-theemo/services/theemo';
 
-interface StorybookArgs {
-  parent: {
-    template: unknown;
-    context: object & {
-      globals: object;
-    };
-  };
-}
-
 interface Globals {
   theme: string;
   scheme: string;
   writingMode: string;
   direction: string;
+}
+
+interface StorybookArgs {
+  story: {
+    template: unknown;
+    context: object;
+  };
+  globals: Globals;
 }
 
 export default class StorybookComponent extends Component<StorybookArgs> {
@@ -33,13 +32,13 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     owner.register(
       'component:story',
       EmberComponent.extend({
-        layout: args.parent.template,
-        ...args.parent.context
+        layout: args.story.template,
+        ...args.story.context
       })
     );
 
     // handle globals
-    const globals = args.parent.context.globals as Globals;
+    const { globals } = args;
 
     this.theemo.setTheme(globals.theme);
     this.theemo.setColorScheme(

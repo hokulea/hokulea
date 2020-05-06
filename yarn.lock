@@ -6047,6 +6047,15 @@ broccoli-babel-transpiler@^7.3.0, broccoli-babel-transpiler@^7.4.0:
     rsvp "^4.8.4"
     workerpool "^3.1.1"
 
+broccoli-bridge@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/broccoli-bridge/-/broccoli-bridge-1.0.0.tgz#6223fd64b62062c31333539f0f3c42d0acd92fb1"
+  integrity sha1-YiP9ZLYgYsMTM1OfDzxC0KzZL7E=
+  dependencies:
+    broccoli-plugin "^1.3.0"
+    fs-extra "^7.0.0"
+    symlink-or-copy "^1.2.0"
+
 broccoli-builder@^0.18.14:
   version "0.18.14"
   resolved "https://registry.yarnpkg.com/broccoli-builder/-/broccoli-builder-0.18.14.tgz#4b79e2f844de11a4e1b816c3f49c6df4776c312d"
@@ -6129,21 +6138,21 @@ broccoli-config-replace@^1.1.2:
     debug "^2.2.0"
     fs-extra "^0.24.0"
 
-broccoli-css-modules@^0.6.2:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/broccoli-css-modules/-/broccoli-css-modules-0.6.4.tgz#d7eb5cbe85012851d5483367fb29f57258d47c3d"
-  integrity sha512-658fuRT91tX73oSDQP+cy9guEfbmbxlMjnpEa7s/8vh4euTkjI+i7BGY5mXBM8cgDmvFZ9/pFbq0Y5DFzp/KMA==
+broccoli-css-modules@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/broccoli-css-modules/-/broccoli-css-modules-0.7.0.tgz#2afaf3c24bc5258ef2ed5f6829b0ebbad7e04817"
+  integrity sha512-Svaj4zZsL2rhotK6hbV/NoEIuNu/Sda4OdqvRLsvV55GjRMol/rLTo2Lm3uVdkh5wmsjL3VwWdPM77+4IJAqcQ==
   dependencies:
     broccoli-caching-writer "^3.0.3"
-    ensure-posix-path "^1.0.2"
+    ensure-posix-path "^1.1.1"
     icss-replace-symbols "^1.0.2"
     mkdirp "^0.5.1"
-    postcss "^6.0.1"
+    postcss "^6.0.0 || ^7.0.18"
     postcss-modules-extract-imports "^1.2.0"
     postcss-modules-local-by-default "^1.2.0"
     postcss-modules-scope "^1.1.0"
     postcss-modules-values "^1.3.0"
-    rsvp "^3.2.1"
+    rsvp "^4.8.5"
     symlink-or-copy "^1.1.6"
 
 broccoli-debug@^0.6.4, broccoli-debug@^0.6.5:
@@ -8756,6 +8765,16 @@ ember-cli-htmlbars-inline-precompile@^2.1.0:
     heimdalljs-logger "^0.1.9"
     silent-error "^1.1.0"
 
+ember-cli-htmlbars@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-3.1.0.tgz#87806c2a0bca2ab52d4fb8af8e2215c1ca718a99"
+  integrity sha512-cgvRJM73IT0aePUG7oQ/afB7vSRBV3N0wu9BrWhHX2zkR7A7cUBI7KC9VPk6tbctCXoM7BRGsCC4aIjF7yrfXA==
+  dependencies:
+    broccoli-persistent-filter "^2.3.1"
+    hash-for-dep "^1.5.1"
+    json-stable-stringify "^1.0.1"
+    strip-bom "^3.0.0"
+
 ember-cli-htmlbars@^4.2.2, ember-cli-htmlbars@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-4.3.1.tgz#4af8adc21ab3c4953f768956b7f7d207782cb175"
@@ -9303,19 +9322,21 @@ ember-compatibility-helpers@^1.2.1:
     ember-cli-version-checker "^2.1.1"
     semver "^5.4.1"
 
-ember-css-modules@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/ember-css-modules/-/ember-css-modules-1.2.1.tgz#2aa68f14ab656d6a1259ce6da5d329078a8f03ad"
-  integrity sha512-s4pAcRUOESbDb5vk5y4KXYA1wPh36hvYBMYPyqx2ZeBfJIVhG1ZCsJ8ADLYyG+MCYD7B+0EqL/hUAStdz3ApZA==
+ember-css-modules@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/ember-css-modules/-/ember-css-modules-1.3.0.tgz#f279a3c069bd1e00d1cf7ad6c741a9694a974d49"
+  integrity sha512-aaVp3QiYE1TpWjBD8xPNMG2rQ+kxZpu5PA1KuX3krMydDExhA2JFGImIFIaHOEzCmDhN26MLxANHPecWpAwzkQ==
   dependencies:
+    broccoli-bridge "^1.0.0"
     broccoli-concat "^3.2.2"
-    broccoli-css-modules "^0.6.2"
+    broccoli-css-modules "^0.7.0"
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
     broccoli-postcss "^4.0.1"
     calculate-cache-key-for-tree "^1.1.0"
     debug "^3.1.0"
     ember-cli-babel "^7.7.3"
+    ember-cli-htmlbars "^3.0.0"
     ember-cli-version-checker "^2.1.0"
     ensure-posix-path "^1.0.2"
     hash-string "^1.0.0"
@@ -9740,7 +9761,7 @@ enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
     memory-fs "^0.5.0"
     tapable "^1.0.0"
 
-ensure-posix-path@^1.0.0, ensure-posix-path@^1.0.1, ensure-posix-path@^1.0.2, ensure-posix-path@^1.1.0:
+ensure-posix-path@^1.0.0, ensure-posix-path@^1.0.1, ensure-posix-path@^1.0.2, ensure-posix-path@^1.1.0, ensure-posix-path@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ensure-posix-path/-/ensure-posix-path-1.1.1.tgz#3c62bdb19fa4681544289edb2b382adc029179ce"
   integrity sha512-VWU0/zXzVbeJNXvME/5EmLuEj2TauvoaTz6aFYK1Z92JCBlDlZ3Gu0tuGR42kpW1754ywTs+QB0g5TP0oj9Zaw==
@@ -16007,6 +16028,15 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.14, postcss@^6.0.19, postcss@^6.0.2
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
+"postcss@^6.0.0 || ^7.0.18":
+  version "7.0.29"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.29.tgz#d3a903872bd52280b83bce38cdc83ce55c06129e"
+  integrity sha512-ba0ApvR3LxGvRMMiUa9n0WR4HjzcYm7tS+ht4/2Nd0NLtHpPIH77fuB9Xh1/yJVz9O/E/95Y/dn8ygWsyffXtw==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
 postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.17, postcss@^7.0.18, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.27"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.27.tgz#cc67cdc6b0daa375105b7c424a85567345fc54d9"
@@ -17390,7 +17420,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0, rsvp@^3.2.1:
+rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
   integrity sha512-OfWGQTb9vnwRjwtA2QwpG2ICclHC3pgXZO5xt8H2EfgDquO0qVdSb5T88L4qJVAEugbS56pAuV4XZM58UX8ulw==

@@ -25,10 +25,6 @@
     "lerna": "^3.20.2"
   },
   "resolutions": {
-    "ember-element-helper": "gossi/ember-element-helper#use-as-primitive",
     "typescript": "3.7.5"
-  },
-  "dependencies": {
-    "ember-element-helper": "gossi/ember-element-helper#use-as-primitive"
   }
 }

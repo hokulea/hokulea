@@ -25,7 +25,7 @@ Default.story = {
     design: {
       type: 'figma',
       url:
-        'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=106%3A9'
+        'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=404%3A152'
     }
   }
 };

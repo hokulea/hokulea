@@ -34,12 +34,12 @@ export const Default = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <InputBuilder as |b|>
+    <InputBuilder @control="text-input" as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>
       <b.Affix>affix</b.Affix>
-      <TextInput @update={{this.type}} class={{b.contentClass}}/>
+      <b.Input @update={{this.type}} class={{b.contentClass}}/>
       <b.Affix>affix</b.Affix>
       <b.Affix>affix</b.Affix>
       <b.Suffix>Suffix</b.Suffix>

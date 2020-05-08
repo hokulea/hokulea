@@ -1,7 +1,5 @@
 import Component from '@glimmer/component';
 
-interface TextInputArgs {
-  update: (value: string) => void;
-}
+import { InputControl } from '@hokulea/inputs/components/input-builder';
 
-export default class TextInputComponent extends Component<TextInputArgs> {}
+export default class TextInputComponent extends Component<InputControl> {}

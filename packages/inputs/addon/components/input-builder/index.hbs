@@ -1,3 +1,13 @@
 <RowBuilder local-class="rim" as |builder|>
-  {{yield builder}}
+  {{
+    yield
+    (assign
+      builder
+      (hash
+        Input=(component
+          "input-builder/input" control=@control class=builder.contentClass
+        )
+      )
+    )
+  }}
 </RowBuilder>

@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from '@storybook/addon-actions';
-// import { withDesign } from 'storybook-addon-designs';
+import { withDesign } from 'storybook-addon-designs';
 
 export default {
   title: 'Components|Inputs/Number'
@@ -20,16 +20,16 @@ export const Default = () => {
   };
 };
 
-// Default.story = {
-//   decorators: [withDesign],
-//   parameters: {
-//     design: {
-//       type: 'figma',
-//       url:
-//         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=106%3A9'
-//     }
-//   }
-// };
+Default.story = {
+  decorators: [withDesign],
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=404%3A369'
+    }
+  }
+};
 
 export const Sizing = () => {
   return {

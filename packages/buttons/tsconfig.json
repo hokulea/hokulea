@@ -53,5 +53,9 @@
     "test-support/**/*",
     "addon-test-support/**/*",
     "../../types/**/*"
+  ],
+  "exclude": [
+    "**/stories.ts",
+    "**/*-test.ts"
   ]
 }

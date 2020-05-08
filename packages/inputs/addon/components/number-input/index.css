@@ -1,4 +1,7 @@
 .input {
   composes: input from '../input-builder/index';
   composes: padding-block from '@hokulea/foundation/structure/padding';
+
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
 }

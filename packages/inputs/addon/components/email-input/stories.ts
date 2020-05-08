@@ -4,13 +4,13 @@ import { action } from '@storybook/addon-actions';
 // import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Inputs/Text'
+  title: 'Components|Inputs/Email'
 };
 
 export const Default = () => {
   return {
     template: hbs`
-      <TextInput @update={{fn this.type}} />
+      <EmailInput @update={{fn this.type}} />
     `,
     context: {
       get type() {
@@ -31,10 +31,13 @@ export const Default = () => {
 //   }
 // };
 
-export const Area = () => {
+export const Decorated = () => {
   return {
     template: hbs`
-      <TextArea @update={{fn this.type}} />
+    <InputBuilder @control="email-input" as |b|>
+      <b.Affix>📧</b.Affix>
+      <b.Input @update={{fn this.type}} />
+    </InputBuilder>
     `,
     context: {
       get type() {
@@ -47,10 +50,10 @@ export const Area = () => {
 export const Sizing = () => {
   return {
     template: hbs`
-      <TextInput {{style fontSize="80%"}} @value="80% Font Size"/>
-      <TextInput @value="Normal"/>
-      <TextInput {{style fontSize="120%"}} @value="120% Font Size"/>
-      <TextInput {{style fontSize="150%"}} @value="150% Font Size"/>
+      <EmailInput {{style fontSize="80%"}} @value="80% Font Size"/>
+      <EmailInput @value="Normal"/>
+      <EmailInput {{style fontSize="120%"}} @value="120% Font Size"/>
+      <EmailInput {{style fontSize="150%"}} @value="150% Font Size"/>
     `
   };
 };
@@ -58,7 +61,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <InputBuilder @control="text-input" as |b|>
+    <InputBuilder @control="email-input" as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

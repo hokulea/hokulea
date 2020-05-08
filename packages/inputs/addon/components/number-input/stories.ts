@@ -4,13 +4,13 @@ import { action } from '@storybook/addon-actions';
 // import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Inputs/Text'
+  title: 'Components|Inputs/Number'
 };
 
 export const Default = () => {
   return {
     template: hbs`
-      <TextInput @update={{fn this.type}} />
+      <NumberInput @update={{fn this.type}} />
     `,
     context: {
       get type() {
@@ -31,26 +31,13 @@ export const Default = () => {
 //   }
 // };
 
-export const Area = () => {
-  return {
-    template: hbs`
-      <TextArea @update={{fn this.type}} />
-    `,
-    context: {
-      get type() {
-        return action('type');
-      }
-    }
-  };
-};
-
 export const Sizing = () => {
   return {
     template: hbs`
-      <TextInput {{style fontSize="80%"}} @value="80% Font Size"/>
-      <TextInput @value="Normal"/>
-      <TextInput {{style fontSize="120%"}} @value="120% Font Size"/>
-      <TextInput {{style fontSize="150%"}} @value="150% Font Size"/>
+      <NumberInput {{style fontSize="80%"}} @value="80"/>
+      <NumberInput @value="100"/>
+      <NumberInput {{style fontSize="120%"}} @value="120"/>
+      <NumberInput {{style fontSize="150%"}} @value="150"/>
     `
   };
 };
@@ -58,7 +45,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <InputBuilder @control="text-input" as |b|>
+    <InputBuilder @control="number-input" as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

@@ -1,6 +1,7 @@
-<input
+<textarea
   local-class="input"
-  value={{@value}}
   ...attributes
   {{on "input" (target-value @update)}}
-/>
+>
+  {{~@value~}}
+</textarea>

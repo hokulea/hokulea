@@ -1,0 +1,10 @@
+@value border-style from '@hokulea/foundation/structure/border';
+
+.header {
+  composes: item from '../index';
+
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: border-style;
+  border-color: var(--color-layout-low-contrast);
+}

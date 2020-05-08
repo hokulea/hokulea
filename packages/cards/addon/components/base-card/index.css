@@ -1,3 +1,7 @@
+@value border-style, border-radius from '@hokulea/foundation/structure/border';
+
 .base-card {
-  composes: border-shape from '@hokulea/foundation/structure/border';
+  border-style: border-style;
+  border-radius: border-radius;
+  border-wdith: 1px;
 }

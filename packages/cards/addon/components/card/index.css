@@ -1,7 +1,11 @@
 .card {
   composes: action-focus from '@hokulea/foundation/intents/action';
 
-  border-color: var(--color-layout-high-contrast);
-  background-color: var(--color-layout-low-contrast);
+  border-width: 1px;
+  border-color: var(--color-layout-low-contrast);
+  background-color: var(--color-layout-background);
+}
+
+.item {
   padding: var(--s0);
 }

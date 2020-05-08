@@ -1,0 +1,3 @@
+.content {
+  composes: item from '../index';
+}

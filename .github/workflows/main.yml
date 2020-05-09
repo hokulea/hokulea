@@ -13,8 +13,8 @@ jobs:
 
     - name: Setup node with volta
       uses: volta-cli/action@v1
-        with:
-          node-version: 12.x
+      with:
+        node-version: 12.x
 
     - name: install
       run: yarn

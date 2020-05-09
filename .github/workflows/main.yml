@@ -11,10 +11,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup node with volta
-      uses: volta-cli/action@v1
+    - name: Setup node
+      uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 12
 
     - name: install
       run: yarn

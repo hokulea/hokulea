@@ -10,15 +10,13 @@ export default {
 export const Default = () => {
   return {
     template: hbs`
-      <Checkbox/>
+      <Checkbox @update={{fn this.update}}/>
       <Checkbox disabled={{true}}/>
-      <Checkbox @value={{true}}/>
+      <Checkbox @value={{true}} @update={{fn this.update}}/>
       <Checkbox @value={{true}} disabled={{true}}/>
     `,
     context: {
-      get type() {
-        return action('type');
-      }
+      update: action('checked')
     }
   };
 };
@@ -38,7 +36,7 @@ export const Labelled = () => {
   return {
     template: hbs`
       <label>
-        <Checkbox/>
+        <Checkbox @update={{fn this.update}}/>
         Default
       </label>
 
@@ -48,7 +46,7 @@ export const Labelled = () => {
       </label>
 
       <label>
-        <Checkbox @value={{true}}/>
+        <Checkbox @value={{true}} @update={{fn this.update}}/>
         Default + Checked
       </label>
 
@@ -58,9 +56,7 @@ export const Labelled = () => {
       </label>
     `,
     context: {
-      get type() {
-        return action('type');
-      }
+      update: action('checked')
     }
   };
 };
@@ -69,7 +65,7 @@ export const Sizing = () => {
   return {
     template: hbs`
       <label {{style fontSize="80%"}}>
-        <Checkbox/>
+        <Checkbox @update={{fn this.update}}/>
         80%
       </label>
 
@@ -79,7 +75,7 @@ export const Sizing = () => {
       </label>
 
       <label {{style fontSize="120%"}}>
-        <Checkbox @value={{true}}/>
+        <Checkbox @value={{true}} @update={{fn this.update}}/>
         120%
       </label>
 
@@ -89,9 +85,7 @@ export const Sizing = () => {
       </label>
     `,
     context: {
-      get type() {
-        return action('type');
-      }
+      update: action('checked')
     }
   };
 };

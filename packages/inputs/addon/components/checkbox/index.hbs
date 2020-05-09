@@ -1,5 +1,11 @@
 <span local-class="boundary">
-  <input type="checkbox" checked={{@value}} local-class="input" ...attributes />
+  <input
+    type="checkbox"
+    checked={{@value}}
+    local-class="input"
+    ...attributes
+    {{on "input" (target-prop @update "checked")}}
+  />
 
   <svg
     width="16"

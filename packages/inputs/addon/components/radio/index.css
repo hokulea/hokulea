@@ -1,0 +1,88 @@
+@value border-style, border-width, border-radius from '@hokulea/foundation/structure/border';
+
+.boundary {
+  position: relative;
+}
+
+.input {
+  appearance: none;
+  background: none;
+	opacity: .00001;
+	z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  & + .svg {
+    border-style: border-style;
+    border-radius: 50%;
+    border-width: border-width;
+
+    border-color: var(--color-action-base-border);
+    background-color: var(--color-layout-background);
+    height: 1em;
+    width: 1em;
+    transform: translateY(0.155em);
+  }
+
+  &:hover + .svg {
+    border-color: var(--color-action-hover-border);
+  }
+
+  &:active + .svg {
+    border-color: var(--color-action-active-border);
+  }
+
+  &:focus + .svg {
+    box-shadow: var(--shadow-action-focus);
+  }
+
+  &:disabled + .svg {
+    border-color: var(--color-action-disabled-border);
+  }
+}
+
+.input:checked {
+  & + .svg {
+    border-color: var(--color-action-base-border);
+    background-color: var(--color-action-base-background);
+
+    & > .symbol {
+      fill: var(--color-action-base-text);
+    }
+  }
+
+  &:hover + .svg {
+    border-color: var(--color-action-hover-border);
+    background-color: var(--color-action-hover-background);
+
+    & > .symbol {
+      fill: var(--color-action-hover-text);
+    }
+  }
+
+  &:focus + .svg {
+    box-shadow: var(--shadow-action-focus);
+  }
+
+  &:active + .svg {
+    border-color: var(--color-action-active-border);
+    background-color: var(--color-action-active-background);
+
+    & > .symbol {
+      fill: var(--color-action-active-text);
+    }
+  }
+
+  &:disabled + .svg {
+    border-color: var(--color-action-disabled-border);
+    background-color: var(--color-layout-background);
+
+    & > .symbol {
+      fill: var(--color-action-disabled-text);
+    }
+  }
+}

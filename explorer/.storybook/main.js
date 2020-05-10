@@ -60,6 +60,7 @@ module.exports = {
               plugins: [
                 'markdown-it-abbr',
                 'markdown-it-anchor',
+                'markdown-it-ember',
                 'markdown-it-deflist',
                 'markdown-it-highlightjs',
                 'markdown-it-ins',
@@ -67,6 +68,16 @@ module.exports = {
                 'markdown-it-sub',
                 'markdown-it-sup'
               ],
+              configure(md) {
+                const wrap = render =>
+                  function (...args) {
+                    return render.apply(this, args)
+                      .replace('<code class="', '<code class="hljs ')
+                      .replace('<code>', '<code class="hljs">')
+                  };
+
+                md.renderer.rules.code_inline = wrap(md.renderer.rules.code_inline)
+              },
               format(doc) {
                 const title = doc.attributes.title
                   ? doc.attributes.title

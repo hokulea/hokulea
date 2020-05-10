@@ -37,6 +37,11 @@ const translateLinks = function (options, file, html) {
     return link.replace('>', ' target="_blank">');
   });
 
+  // // anchor link
+  // output = output.replace(/<a href="#(.+)">/g, (link, target) => {
+  //   return link.replace('>', ` data-jump="${target}">`);
+  // });
+
   return output;
 }
 

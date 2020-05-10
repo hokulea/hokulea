@@ -13507,10 +13507,10 @@ markdown-it-deflist@^2.0.3:
   resolved "https://registry.yarnpkg.com/markdown-it-deflist/-/markdown-it-deflist-2.0.3.tgz#5727db04184d3cb2bc6ee4a9641e3a1091d5fd6f"
   integrity sha512-/BNZ8ksW42bflm1qQLnRI09oqU2847Z7MVavrR0MORyKLtiUYOMpwtlAfMSZAQU9UCvaUZMpgVAqoS3vpToJxw==
 
-markdown-it-ember@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/markdown-it-ember/-/markdown-it-ember-0.0.2.tgz#463fd99bec89d8bd42007ca73b8badfb0349f4a5"
-  integrity sha512-i5LvNN7QVCVP8hFMu2flDNz5fjRpTLHKaelO+PlzAokK4xB7/Yxp4zoWjJNwI8TPDv5+iFSetjno9BSg9YC+qQ==
+markdown-it-ember@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/markdown-it-ember/-/markdown-it-ember-0.0.3.tgz#4e55c3e56d6d82f1ea1d41787c2a3ab2d5ebb9e5"
+  integrity sha512-S8uYugCl5TY8JrLrChdIciDduyGVB2ogp2SPV3AikyV9gb0F53QQn4FTbKNBuZ8SfEtly1XoUqkWoQ62LLhQwQ==
 
 markdown-it-highlightjs@^3.1.0:
   version "3.1.0"

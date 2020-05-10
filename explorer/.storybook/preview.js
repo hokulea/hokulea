@@ -154,21 +154,11 @@ export const globalArgTypes = {
 };
 
 addDecorator((storyFn, { globalArgs }) => {
-  // const { template, context } = storyFn();
-
-  console.log('DECO GLOBAL ARGS', globalArgs);
-
-
   return {
     template: hbs`<Storybook @globals={{this.globals}} @story={{this.story}}/>`,
     context: {
-      // template,
       globals: globalArgs,
       story: storyFn()
-      // story: template
-      // get layout() {
-      //   return hbs``;
-      // },
     },
   };
 });

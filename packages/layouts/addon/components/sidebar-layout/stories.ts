@@ -3,7 +3,13 @@ import { hbs } from 'ember-cli-htmlbars';
 import { radios, text, withKnobs } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Layouts/Sidebar'
+  title: 'Components|Layouts/Sidebar',
+  parameters: {
+    options: {
+      showPanel: true,
+      isToolshown: true
+    }
+  }
 };
 
 export const Default = () => {

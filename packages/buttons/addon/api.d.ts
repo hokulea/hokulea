@@ -1,5 +1,5 @@
 /**
- * Hokulea buttons package
+ * Buttons for users to trigger actions
  *
  * @packageDocumentation
  */

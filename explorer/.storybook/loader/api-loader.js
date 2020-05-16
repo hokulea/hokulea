@@ -14,6 +14,11 @@ const translateLinks = function (html) {
     return `<a href="#" data-sb-kind="api-hokulea-${kind}" data-sb-story="${story}">`;
   });
 
+  // external links
+  output = output.replace(/<a href="[^#]+">/g, (link) => {
+    return link.replace('>', ' target="_blank">');
+  });
+
   return output;
 }
 
@@ -26,7 +31,7 @@ const generateStoryCode = (name, title, html) => {
     };
 
     ${name}.story = {
-      title: '${title}',
+      name: '${title}',
       parameters: {
         options: {
           showPanel: false,

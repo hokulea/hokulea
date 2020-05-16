@@ -1,7 +1,13 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components|Layouts/Stack'
+  title: 'Components|Layouts/Stack',
+  parameters: {
+    options: {
+      showPanel: true,
+      isToolshown: true
+    }
+  }
 };
 
 export const Default = () => {

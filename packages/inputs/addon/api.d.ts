@@ -1,3 +1,9 @@
+/**
+ * Inputs for users to enter data
+ *
+ * @packageDocumentation
+ */
+
 export {
   default as CheckboxComponent,
   CheckboxArgs

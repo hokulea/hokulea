@@ -61,7 +61,7 @@ const loader = function (source) {
   };
 
   ${name}.story = {
-    title: '${title}',
+    name: '${title}',
     parameters: {
       options: {
         showPanel: false,

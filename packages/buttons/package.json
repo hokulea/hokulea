@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "",
   "scripts": {
+    "api:prepare": "yarn api-extractor run --local --verbose",
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint --ext ts,js .",

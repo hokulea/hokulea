@@ -9,6 +9,4 @@ import Component from '@glimmer/component';
  * <AccentButton>Click me</AccentButton>
  * ```
  */
-export default class AccentButtonComponent extends Component {
-  foo(): void;
-}
+export default class AccentButtonComponent extends Component {}

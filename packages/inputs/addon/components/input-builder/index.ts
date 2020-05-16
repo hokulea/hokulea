@@ -5,7 +5,7 @@ export interface InputControl {
   update: (value: unknown) => void;
 }
 
-interface InputBuilderArgs {
+export interface InputBuilderArgs {
   control: Component<InputControl>;
 }
 

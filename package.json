@@ -2,6 +2,10 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "api:prepare": "yarn lerna-run api:prepare",
+    "api:doc": "yarn api-documenter markdown -i temp/ -o api/",
+    "api:cleanup": "mv temp/* api/ && rm -rf temp",
+    "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
     "bootstrap": "yarn install --frozen-lockfile --non-interactive && yarn lerna bootstrap",
     "clean": "yarn lerna clean -y && rm -rf node_modules",
     "reinstall": "yarn clean && yarn bootstrap",
@@ -20,6 +24,7 @@
     "themes/*"
   ],
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.8.0",
     "els-a11y-addon": "^1.0.4",
     "els-addon-typed-templates": "^2.2.16",
     "lerna": "^3.20.2"

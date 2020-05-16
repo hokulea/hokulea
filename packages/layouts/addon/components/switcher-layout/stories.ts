@@ -3,7 +3,13 @@ import { hbs } from 'ember-cli-htmlbars';
 import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Layouts/Switcher'
+  title: 'Components|Layouts/Switcher',
+  parameters: {
+    options: {
+      showPanel: true,
+      isToolshown: true
+    }
+  }
 };
 
 export const Default = () => {

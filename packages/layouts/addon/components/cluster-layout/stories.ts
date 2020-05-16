@@ -3,7 +3,13 @@ import { hbs } from 'ember-cli-htmlbars';
 // import ClusterLayoutComponent from './component';
 
 export default {
-  title: 'Components|Layouts/Cluster'
+  title: 'Components|Layouts/Cluster',
+  parameters: {
+    options: {
+      showPanel: true,
+      isToolshown: true
+    }
+  }
   // component: ClusterLayoutComponent
 };
 

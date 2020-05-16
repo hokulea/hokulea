@@ -6,15 +6,24 @@ const sortOrder = {
   'documentation': {
     top: ['getting started'],
     bottom: ['backstage']
+  },
+  'components': {},
+  'api': {
+    top: ['@hokulea／buttons', '@hokulea／inputs']
   }
-}
+};
 
-const storyTop = ['introduction'];
+const storyTop = ['introduction', 'overview'];
 const storyBottom = [];
 
 addParameters({
   options: {
     storySort: (a, b) => {
+      // homoglyph renaming here
+      a[1].kind = a[1].kind.replace(/@hokulea-(.+)/gi, '@hokulea／$1');
+      b[1].kind = b[1].kind.replace(/@hokulea-(.+)/gi, '@hokulea／$1');
+
+      // sorting starts here
       const rootA = a[1].kind.split('|')[0].toLowerCase();
       const rootB = b[1].kind.split('|')[0].toLowerCase();
 

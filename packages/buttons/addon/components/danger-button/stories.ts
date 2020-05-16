@@ -4,7 +4,13 @@ import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Buttons/Danger'
+  title: 'Components|Buttons/Danger',
+  parameters: {
+    options: {
+      showPanel: true,
+      isToolshown: true
+    }
+  }
 };
 
 export const Default = () => {
@@ -28,6 +34,20 @@ Default.story = {
         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=404%3A251'
     }
   }
+};
+
+export const Accessibility = () => {
+  return {
+    template: hbs`
+      <DangerButton aria-label="Go Tomster!">
+        <span aria-hidden="true">🐹</span>
+      </DangerButton>
+    `
+  };
+};
+
+Accessibility.story = {
+  name: 'A11y'
 };
 
 export const Sizing = () => {

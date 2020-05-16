@@ -4,7 +4,13 @@ import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Inputs/Text'
+  title: 'Components|Inputs/Text',
+  parameters: {
+    options: {
+      showPanel: true,
+      isToolshown: true
+    }
+  }
 };
 
 export const Default = () => {

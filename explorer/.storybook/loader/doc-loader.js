@@ -1,30 +1,13 @@
 const { getOptions } = require('loader-utils');
-const MarkdownItCompiler = require('markdown-it-compiler');
+const { compileMarkdown } = require('./md-compiler');
 const Case = require('case');
 const path = require('path');
 
-let compiler;
-
-const getCompiler = function (config) {
-  const options = {
-    ...{
-      options: {
-        linkify: true,
-        html: true,
-        typographer: true
-      }
-    },
-    ...config
-  };
-
-  return new MarkdownItCompiler(options);
-}
-
-const translateLinks = function (options, file, html) {
-  const baseDir = path.dirname(file);
+const translateLinks = function (html, options) {
+  const baseDir = path.dirname(options.file);
 
   // internal links
-  let output = html.replace(/<a href="(.+)\.md">/g, (_match, target) => {
+  let output = html.replace(/<a href="([^"]+)\.md">/g, (_match, target) => {
     const nav = path.relative(options.dir, path.normalize(`${baseDir}/${target}`));
     const parts = nav.split('/');
     const name = parts.pop();
@@ -47,12 +30,11 @@ const translateLinks = function (options, file, html) {
 
 const loader = function (source) {
   const options = getOptions(this);
-
-  if (!compiler) {
-    compiler = getCompiler(options.compiler || {});
-  }
-
-  const doc = compiler.compile(source);
+  const doc = compileMarkdown(source, {
+    ...options,
+    file: this.resourcePath,
+    translateLinks
+  });
 
   // parse story identifiers
   const nav = path.relative(options.dir, this.resourcePath).replace('.md', '')
@@ -63,9 +45,6 @@ const loader = function (source) {
   const id = parts.pop();
   const name = Case.camel(id);
   const title = doc.attributes.title ? doc.attributes.title : id;
-
-  // translate urls to storybook links
-  doc.html = translateLinks(options, this.resourcePath, doc.html);
 
   const code = `import { hbs } from 'ember-cli-htmlbars';
   import { withLinks } from '@storybook/addon-links';
@@ -82,7 +61,7 @@ const loader = function (source) {
   };
 
   ${name}.story = {
-    title: '${title}',
+    name: '${title}',
     parameters: {
       options: {
         showPanel: false,

@@ -37,34 +37,67 @@ element and adjust them to your semantics.
 
 To create the most enjoyable DX, hokulea aims to stick to HTML as much
 as possible. Thanks to ember and its HTML first approach this is goal is
-achieveable quite straight forward. As such elements that are native available
+achieveable straight forward. As such elements that are available
 in HTML will be wrapped by hokulea and decorated with its own styling but APIs
-mostly stay as they are (no need to learn anything new). Some additions go on
-top. That also means that accessibility can be implemented as learned and also
-no need to learn anything on top. E.g. `aria-*` attributes as you already do in
-HTML.
+mostly stay as they are (no need to learn anything new). Hokulea provides a thin
+layer on top, where it can to bring even more joy when working with it.
+That also means that accessibility can be implemented as learned and also
+no need to learn anything on top. For example, use `aria-*` attributes as
+you already do in HTML.
+
+### Use HTML as You Already Do
 
 For example, the `<Button>` components are really just `<button>` with
 additional styling:
 
 ```hbs
-<Button disabled={{true}} aria-labelledby="my-button-label">
+<Button>Hello</Button>
+```
+
+will render as
+
+```html
+<button class="...">Hello</Button>
+```
+
+Here is an example for accessibility. Well... you already know how to do this:
+
+```hbs
+<Button aria-label="Go Tomster">
   <span aria-hidden="true">🐹</span>
 </Button>
 ```
 
-will render a `<button>` with additional CSS `class` on top. HTML API continues
-to work. Same goes for inputs:
+will render as:
+
+```html
+<button class="..." aria-label="Go Tomster">
+  <span aria-hidden="true">🐹</span>
+</button>
+```
+
+And the last example with an input:
 
 ```hbs
 <TextInput value="foo" {{on "input" this.handleTyping}}/>
 ```
 
-!!! Note: `<Input>` and `<Textarea>` are taken by ember itself
+!!! Note: `<Input>` and `<Textarea>` are taken by ember itself.
+
+Use hokulea components as if it where native HTML elements, like so:
+
+```hbs
+<TextInput id="input-1234" readonly disabled/>
+```
+
+!!! Note: Due to some bugs in glimmer you might need to use `readonly={{true}}` and `disabled={{true}}`
+
+### More Productivity With the Joy-Layer on Top
 
 For inputs, there is a common interface that hokulea puts on top, to create a
 consistency between them all and use it in combination with the [builder
-construction component](#construction-components). All inputs implement this interface:
+construction component](#construction-components). All inputs implement this
+generic interface:
 
 ```ts
 interface InputControl {
@@ -73,17 +106,10 @@ interface InputControl {
 }
 ```
 
-Each respective input declares what type `@value` is and `@update` is a shortcut
+Each respective input declares its type for `@value` and `@update` is a shortcut
 version to not handle the event but receive the value directly. The example from
 above can also be written as this (and is basically also a preferred way):
 
 ```hbs
 <TextInput @value={{this.value}} @update={{set this.value}}/>
-```
-
-Despite this layer on top, you can use hokulea components as if it where native
-HTML elements, like so:
-
-```hbs
-<TextInput id="input-1234" readonly/>
 ```

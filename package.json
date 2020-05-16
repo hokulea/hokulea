@@ -15,7 +15,8 @@
     "lint:hbs": "yarn lerna-run lint:hbs",
     "lint:js": "yarn lerna-run lint:js",
     "lint:types": "yarn lerna-run lint:types",
-    "lint": "yarn lerna-run lint:js && yarn lerna-run lint:types && yarn lerna-run lint:hbs"
+    "lint": "yarn lerna-run lint:js && yarn lerna-run lint:types && yarn lerna-run lint:hbs",
+    "storybook:build": "yarn api && yarn lerna-run --scope @hokulea/explorer build-storybook"
   },
   "workspaces": [
     "explorer",

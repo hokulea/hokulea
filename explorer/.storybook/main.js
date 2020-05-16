@@ -33,16 +33,16 @@ const markdownCompilerConfig = {
     'markdown-it-sub',
     'markdown-it-sup'
   ],
-  configure(md) {
-    const wrap = render =>
-      function (...args) {
-        return render.apply(this, args)
-          .replace('<code class="', '<code class="hljs ')
-          .replace('<code>', '<code class="hljs">')
-      };
+  // configure(md) {
+  //   const wrap = render =>
+  //     function (...args) {
+  //       return render.apply(this, args)
+  //         .replace('<code class="', '<code class="hljs ')
+  //         .replace('<code>', '<code class="hljs">')
+  //     };
 
-    md.renderer.rules.code_inline = wrap(md.renderer.rules.code_inline)
-  },
+  //   md.renderer.rules.code_inline = wrap(md.renderer.rules.code_inline)
+  // },
   format(doc) {
     const title = doc.attributes.title
       ? doc.attributes.title

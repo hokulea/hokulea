@@ -1,12 +1,26 @@
 :global {
-  code.hljs {
+  code {
     display: inline;
     padding: 0.22em;
     border-radius: 4px;
+    background: var(--color-layout-low-contrast);
   }
 
   pre > code.hljs {
     display: block;
     padding: 0.5em;
   }
+}
+
+dt {
+  font-weight: 600;
+  margin-block-end: var(--s-4);
+}
+
+dd {
+  padding-inline-start: var(--s0);
+}
+
+dd + dt {
+  margin-block-start: var(--s0);
 }

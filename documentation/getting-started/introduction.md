@@ -13,3 +13,5 @@ Highlights:
 - Toolchain for fast productivity included
 - Theming support
 - Research driven
+
+[Hokulea on Github](https://github.com/gossi/hokulea)

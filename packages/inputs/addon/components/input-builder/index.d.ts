@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
 
 export interface InputControl {
   value: unknown;

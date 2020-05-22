@@ -1,15 +1,21 @@
 <BaseCard local-class="card" ...attributes>
-  {{#if (has-block-params)}}
-    {{yield
-      (hash
-        Header=(component "card/header")
-        Content=(component "card/content")
-        Footer=(component "card/footer")
-      )
-    }}
-  {{else}}
-    <Card::Content>
+  {{#if (has-block "header")}}
+    <div local-class="header">
+      {{yield to="header"}}
+    </div>
+  {{/if}}
+
+  <div local-class="content">
+    {{#if (has-block "content")}}
+      {{yield to="content"}}
+    {{else}}
       {{yield}}
-    </Card::Content>
+    {{/if}}
+  </div>
+
+  {{#if (has-block "footer")}}
+    <div local-class="footer">
+      {{yield to="footer"}}
+    </div>
   {{/if}}
 </BaseCard>

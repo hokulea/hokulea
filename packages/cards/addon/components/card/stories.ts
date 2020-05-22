@@ -23,10 +23,10 @@ export const Default = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <Card as |c|>
-      <c.Header>Card Title</c.Header>
-      <c.Content>Sample Card Content</c.Content>
-      <c.Footer>Footer</c.Footer>
+    <Card>
+      {{!--<:header>Card Title</:header>
+      <:content>Sample Card Content</:content>
+      <:footer>Footer</:footer>--}}
     </Card>
     `
   };

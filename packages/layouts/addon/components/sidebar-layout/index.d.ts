@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
 
 export interface SidebarArgs {
   /** Minimum value vor the content, default is 50% */

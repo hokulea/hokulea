@@ -1,4 +1,9 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
+
+import {
+  ButtonArgs,
+  ButtonYield
+} from '@hokulea/buttons/components/button-builder';
 
 /**
  * The main button to use
@@ -41,4 +46,7 @@ import Component from '@glimmer/component';
  * </Button>
  * ```
  */
-export default class ButtonComponent extends Component {}
+export default class ButtonComponent extends Component<
+  ButtonArgs,
+  ButtonYield
+> {}

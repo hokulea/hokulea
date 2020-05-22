@@ -55,7 +55,7 @@ const getPackageObject = (package, path) => {
   while (path.length > 0) {
     const entity = path.shift();
     for (const item of node.members) {
-      if (item.name.toLowerCase() === entity) {
+      if (item.name && item.name.toLowerCase() === entity) {
         node = item;
         if (path.length === 0) {
           return node;

@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
 
 export interface ClusterLayoutArgs {
   /** A CSS `justify-content` value */

@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
 
 import { InputControl } from '@hokulea/inputs/components/input-builder';
 

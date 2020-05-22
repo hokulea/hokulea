@@ -9,3 +9,25 @@
 .item {
   padding: var(--s0);
 }
+
+.content {
+  composes: item;
+}
+
+.footer {
+  composes: item;
+
+  border-width: 0;
+  border-block-start-width: 1px;
+  border-style: border-style;
+  border-color: var(--color-layout-low-contrast);
+}
+
+.header {
+  composes: item;
+
+  border-width: 0;
+  border-block-end-width: 1px;
+  border-style: border-style;
+  border-color: var(--color-layout-low-contrast);
+}

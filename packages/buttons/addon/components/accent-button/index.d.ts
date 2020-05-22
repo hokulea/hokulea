@@ -1,4 +1,9 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
+
+import {
+  ButtonArgs,
+  ButtonYield
+} from '@hokulea/buttons/components/button-builder';
 
 /**
  * A button with accent color
@@ -15,4 +20,7 @@ import Component from '@glimmer/component';
  * <AccentButton>Click me</AccentButton>
  * ```
  */
-export default class AccentButtonComponent extends Component {}
+export default class AccentButtonComponent extends Component<
+  ButtonArgs,
+  ButtonYield
+> {}

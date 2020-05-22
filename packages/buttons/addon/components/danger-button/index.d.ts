@@ -1,4 +1,9 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
+
+import {
+  ButtonYield,
+  ButtonArgs
+} from '@hokulea/buttons/components/button-builder';
 
 /**
  * A button for dangerous situations
@@ -15,4 +20,7 @@ import Component from '@glimmer/component';
  * <DangerButton>Click me</DangerButton>
  * ```
  */
-export default class DangerButtonComponent extends Component {}
+export default class DangerButtonComponent extends Component<
+  ButtonArgs,
+  ButtonYield
+> {}

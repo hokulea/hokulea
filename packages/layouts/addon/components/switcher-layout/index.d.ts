@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
 
 export interface SwitcherLayoutArgs {
   /** Threshold at which the it wraps from horizontal to vertical, default is var(--measure) */

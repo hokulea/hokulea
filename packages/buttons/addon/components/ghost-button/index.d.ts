@@ -1,4 +1,9 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
+
+import {
+  ButtonArgs,
+  ButtonYield
+} from '@hokulea/buttons/components/button-builder';
 
 /**
  * A spooky button
@@ -15,4 +20,7 @@ import Component from '@glimmer/component';
  * <GhostButton>Click me</GhostButton>
  * ```
  */
-export default class GhostButtonComponent extends Component {}
+export default class GhostButtonComponent extends Component<
+  ButtonArgs,
+  ButtonYield
+> {}

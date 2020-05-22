@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
 
 import { TextInputArgs } from '@hokulea/inputs/components/text-input';
 

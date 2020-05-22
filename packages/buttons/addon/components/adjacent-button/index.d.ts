@@ -1,4 +1,9 @@
-import Component from '@glimmer/component';
+import Component from '@hokulea/component';
+
+import {
+  ButtonArgs,
+  ButtonYield
+} from '@hokulea/buttons/components/button-builder';
 
 /**
  * A button with adjacent color
@@ -15,4 +20,7 @@ import Component from '@glimmer/component';
  * <AdjacentButton>Click me</AdjacentButton>
  * ```
  */
-export default class AdjacentButtonComponent extends Component {}
+export default class AdjacentButtonComponent extends Component<
+  ButtonArgs,
+  ButtonYield
+> {}

@@ -33,7 +33,7 @@
   },
   "resolutions": {
     "typescript": "3.7.5",
-    "ember-cli-htmlbars": "^5.1.0",
+    "ember-cli-htmlbars": "^5.1.2",
     "postcss-values-parser": "^3.2.1"
   }
 }

@@ -24,9 +24,9 @@ export const Builder = () => {
   return {
     template: hbs`
     <Card>
-      {{!--<:header>Card Title</:header>
+      <:header>Card Title</:header>
       <:content>Sample Card Content</:content>
-      <:footer>Footer</:footer>--}}
+      <:footer>Footer</:footer>
     </Card>
     `
   };

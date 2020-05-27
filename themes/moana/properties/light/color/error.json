@@ -1,0 +1,22 @@
+{
+  "color": {
+    "error": {
+      "outline": {
+        "text": {
+          "$light": {
+            "value": "#cd2222",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        },
+        "border": {
+          "$light": {
+            "value": "#cd2222",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        }
+      }
+    }
+  }
+}

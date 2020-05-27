@@ -1,20 +1,6 @@
 {
   "color": {
     "danger": {
-      "area": {
-        "background": {
-          "value": "#f5c6c6",
-          "comment": ""
-        },
-        "border": {
-          "value": "",
-          "comment": ""
-        },
-        "text": {
-          "value": "#8c1717",
-          "comment": ""
-        }
-      },
       "active": {
         "text": {
           "value": "#f5f5f5",
@@ -62,6 +48,10 @@
           "value": "#8c1717",
           "comment": ""
         }
+      },
+      "emphasize": {
+        "value": "#e35858",
+        "comment": ""
       }
     }
   }

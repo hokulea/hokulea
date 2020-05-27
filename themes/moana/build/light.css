@@ -10,10 +10,18 @@
   --color-adjacent-disabled-background: #dfdfdf;
   --color-danger-disabled-border: #dfdfdf;
   --color-danger-disabled-background: #dfdfdf;
+  --color-error-outline-text: #cd2222;
+  --color-error-outline-border: #cd2222;
+  --color-info-outline-text: #054661;
+  --color-info-outline-border: #054661;
   --color-layout-background: #ffffff; /* Background color for layouts */
   --color-layout-low-contrast: #dfdfdf;
   --color-layout-high-contrast: #595959;
   --color-layout-reduced: #6e6e6e;
+  --color-success-outline-text: #125449;
+  --color-success-outline-border: #125449;
+  --color-warning-outline-text: #b28000;
+  --color-warning-outline-border: #b28000;
   --color-text-inverse-disabled: #cecece;
   --color-text-inverse: #f5f5f5; /* Text color for more contrast (e.g. high-contrast or reduced) */
   --color-text-disabled: #737373;

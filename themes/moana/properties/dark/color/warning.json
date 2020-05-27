@@ -1,0 +1,22 @@
+{
+  "color": {
+    "warning": {
+      "outline": {
+        "text": {
+          "$dark": {
+            "value": "#ffcc4c",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        },
+        "border": {
+          "$dark": {
+            "value": "#ffcc4c",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        }
+      }
+    }
+  }
+}

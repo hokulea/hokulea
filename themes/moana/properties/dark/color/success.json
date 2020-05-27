@@ -1,0 +1,22 @@
+{
+  "color": {
+    "success": {
+      "outline": {
+        "text": {
+          "$dark": {
+            "value": "#6be0cb",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        },
+        "border": {
+          "$dark": {
+            "value": "#6be0cb",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        }
+      }
+    }
+  }
+}

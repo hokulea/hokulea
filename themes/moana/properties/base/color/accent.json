@@ -1,20 +1,6 @@
 {
   "color": {
     "accent": {
-      "area": {
-        "background": {
-          "value": "#fff599",
-          "comment": ""
-        },
-        "border": {
-          "value": "",
-          "comment": ""
-        },
-        "text": {
-          "value": "#665c00",
-          "comment": ""
-        }
-      },
       "active": {
         "text": {
           "value": "#333333",
@@ -56,6 +42,10 @@
           "value": "#fff599",
           "comment": ""
         }
+      },
+      "emphasize": {
+        "value": "#ffe500",
+        "comment": ""
       }
     }
   }

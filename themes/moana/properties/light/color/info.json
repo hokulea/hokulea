@@ -4,14 +4,14 @@
       "outline": {
         "text": {
           "$light": {
-            "value": "#054661",
+            "value": "#0caef3",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "border": {
           "$light": {
-            "value": "#054661",
+            "value": "#0caef3",
             "comment": "",
             "colorScheme": "light"
           }

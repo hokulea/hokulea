@@ -3,7 +3,7 @@
     "success": {
       "box": {
         "background": {
-          "value": "#abede2",
+          "value": "#2cd3b5",
           "comment": ""
         },
         "border": {
@@ -11,13 +11,13 @@
           "comment": ""
         },
         "text": {
-          "value": "#125449",
+          "value": "#2cd3b5",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#125449",
+          "value": "#2cd3b5",
           "comment": ""
         },
         "border": {

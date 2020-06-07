@@ -1,31 +1,41 @@
 {
   "color": {
-    "danger": {
+    "adjacent": {
       "box": {
         "background": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         },
         "border": {
-          "value": "#cc2222",
+          "value": "#a85d06",
           "comment": ""
         },
         "text": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         },
         "border": {
-          "value": "#cc2222",
+          "value": "#a85d06",
           "comment": ""
         },
         "text": {
           "value": "#f5f5f5",
+          "comment": ""
+        }
+      },
+      "outline": {
+        "border": {
+          "value": "#fcce98",
+          "comment": ""
+        },
+        "text": {
+          "value": "#fcce98",
           "comment": ""
         }
       },
@@ -45,40 +55,40 @@
       },
       "hover": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#333333",
           "comment": ""
         },
         "border": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         },
         "background": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         }
       },
       "base": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#333333",
           "comment": ""
         },
         "background": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         },
         "border": {
-          "value": "#e35858",
+          "value": "#f9aa4e",
           "comment": ""
         }
       },
       "disabled": {
         "text": {
-          "value": "",
+          "value": "#cecece",
           "comment": ""
         }
       },
       "emphasize": {
-        "value": "#e35858",
+        "value": "#f9aa4e",
         "comment": ""
       }
     }

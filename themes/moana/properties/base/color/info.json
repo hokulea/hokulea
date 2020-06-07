@@ -3,7 +3,7 @@
     "info": {
       "box": {
         "background": {
-          "value": "#9edffa",
+          "value": "#0caef3",
           "comment": ""
         },
         "border": {
@@ -11,13 +11,13 @@
           "comment": ""
         },
         "text": {
-          "value": "#054661",
+          "value": "#0caef3",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#054661",
+          "value": "#0caef3",
           "comment": ""
         },
         "border": {

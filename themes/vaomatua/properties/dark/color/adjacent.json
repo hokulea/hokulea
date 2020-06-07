@@ -1,17 +1,17 @@
 {
   "color": {
-    "accent": {
+    "adjacent": {
       "outline": {
         "text": {
           "$dark": {
-            "value": "#ffed4c",
+            "value": "#f9aa4e",
             "comment": "",
             "colorScheme": "dark"
           }
         },
         "border": {
           "$dark": {
-            "value": "#ffed4c",
+            "value": "#f9aa4e",
             "comment": "",
             "colorScheme": "dark"
           }

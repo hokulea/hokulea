@@ -1,31 +1,41 @@
 {
   "color": {
-    "warning": {
+    "info": {
       "box": {
         "background": {
-          "value": "#ffb700",
+          "value": "#0cb5f3",
           "comment": ""
         },
         "border": {
-          "value": "#b28000",
+          "value": "#087faa",
           "comment": ""
         },
         "text": {
-          "value": "#ffb700",
+          "value": "#0cb5f3",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#ffb700",
+          "value": "#0cb5f3",
           "comment": ""
         },
         "border": {
-          "value": "#b28000",
+          "value": "#054861",
           "comment": ""
         },
         "text": {
           "value": "#f5f5f5",
+          "comment": ""
+        }
+      },
+      "outline": {
+        "border": {
+          "value": "#55cbf7",
+          "comment": ""
+        },
+        "text": {
+          "value": "#55cbf7",
           "comment": ""
         }
       }

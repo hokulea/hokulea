@@ -1,17 +1,17 @@
 {
   "color": {
-    "accent": {
+    "adjacent": {
       "outline": {
         "text": {
           "$light": {
-            "value": "#665c00",
+            "value": "#f9aa4e",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "border": {
           "$light": {
-            "value": "#665c00",
+            "value": "#f9aa4e",
             "comment": "",
             "colorScheme": "light"
           }

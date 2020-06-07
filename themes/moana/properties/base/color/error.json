@@ -3,25 +3,25 @@
     "error": {
       "box": {
         "background": {
-          "value": "#f5c6c6",
+          "value": "#e35858",
           "comment": ""
         },
         "border": {
-          "value": "#cd2222",
+          "value": "#cc2222",
           "comment": ""
         },
         "text": {
-          "value": "#cd2222",
+          "value": "#e35858",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#cd2222",
+          "value": "#e35858",
           "comment": ""
         },
         "border": {
-          "value": "#cd2222",
+          "value": "#cc2222",
           "comment": ""
         },
         "text": {

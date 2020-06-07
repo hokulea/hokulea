@@ -1,84 +1,94 @@
 {
   "color": {
-    "danger": {
+    "accent": {
       "box": {
         "background": {
-          "value": "#e35858",
+          "value": "#fff599",
           "comment": ""
         },
         "border": {
-          "value": "#cc2222",
+          "value": "#665c00",
           "comment": ""
         },
         "text": {
-          "value": "#e35858",
+          "value": "#665c00",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#e35858",
+          "value": "#665c00",
           "comment": ""
         },
         "border": {
-          "value": "#cc2222",
+          "value": "#665c00",
           "comment": ""
         },
         "text": {
           "value": "#f5f5f5",
+          "comment": ""
+        }
+      },
+      "outline": {
+        "border": {
+          "value": "#ffed4c",
+          "comment": ""
+        },
+        "text": {
+          "value": "#ffed4c",
           "comment": ""
         }
       },
       "active": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#333333",
           "comment": ""
         },
         "border": {
-          "value": "",
+          "value": "#b2a000",
           "comment": ""
         },
         "background": {
-          "value": "",
+          "value": "#b2a000",
           "comment": ""
         }
       },
       "hover": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#333333",
           "comment": ""
         },
         "border": {
-          "value": "#e35858",
+          "value": "#ffed4c",
           "comment": ""
         },
         "background": {
-          "value": "#e35858",
+          "value": "#ffed4c",
           "comment": ""
         }
       },
       "base": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#333333",
           "comment": ""
         },
         "background": {
-          "value": "#e35858",
+          "value": "#fff599",
           "comment": ""
         },
         "border": {
-          "value": "#e35858",
+          "value": "#fff599",
           "comment": ""
         }
       },
       "disabled": {
         "text": {
-          "value": "",
+          "value": "#cecece",
           "comment": ""
         }
       },
       "emphasize": {
-        "value": "#e35858",
+        "value": "#f3de21",
         "comment": ""
       }
     }

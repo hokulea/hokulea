@@ -1,17 +1,45 @@
 {
   "color": {
     "adjacent": {
+      "box": {
+        "background": {
+          "value": "#2cd3b5",
+          "comment": ""
+        },
+        "border": {
+          "value": "#125449",
+          "comment": ""
+        },
+        "text": {
+          "value": "#2cd3b5",
+          "comment": ""
+        }
+      },
+      "fill": {
+        "background": {
+          "value": "#2cd3b5",
+          "comment": ""
+        },
+        "border": {
+          "value": "#125449",
+          "comment": ""
+        },
+        "text": {
+          "value": "#f5f5f5",
+          "comment": ""
+        }
+      },
       "active": {
         "text": {
           "value": "#f5f5f5",
           "comment": ""
         },
         "border": {
-          "value": "#1f947f",
+          "value": "",
           "comment": ""
         },
         "background": {
-          "value": "#1f947f",
+          "value": "",
           "comment": ""
         }
       },
@@ -21,11 +49,11 @@
           "comment": ""
         },
         "border": {
-          "value": "#6be0cb",
+          "value": "#2cd3b5",
           "comment": ""
         },
         "background": {
-          "value": "#6be0cb",
+          "value": "#2cd3b5",
           "comment": ""
         }
       },
@@ -35,11 +63,11 @@
           "comment": ""
         },
         "background": {
-          "value": "#abede2",
+          "value": "#2cd3b5",
           "comment": ""
         },
         "border": {
-          "value": "#abede2",
+          "value": "#2cd3b5",
           "comment": ""
         }
       },

@@ -3,17 +3,17 @@
     "success": {
       "outline": {
         "text": {
-          "$dark": {
-            "value": "#2cd3b5",
+          "$light": {
+            "value": "#53c373",
             "comment": "",
-            "colorScheme": "dark"
+            "colorScheme": "light"
           }
         },
         "border": {
-          "$dark": {
-            "value": "#2cd3b5",
+          "$light": {
+            "value": "#53c373",
             "comment": "",
-            "colorScheme": "dark"
+            "colorScheme": "light"
           }
         }
       }

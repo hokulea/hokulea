@@ -1,6 +1,22 @@
 {
   "color": {
     "adjacent": {
+      "outline": {
+        "text": {
+          "$light": {
+            "value": "#2cd3b5",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        },
+        "border": {
+          "$light": {
+            "value": "#2cd3b5",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        }
+      },
       "disabled": {
         "text": {
           "$light": {

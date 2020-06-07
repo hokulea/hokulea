@@ -1,52 +1,41 @@
 {
   "color": {
     "action": {
+      "outline": {
+        "text": {
+          "$light": {
+            "value": "#53c373",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        },
+        "border": {
+          "$light": {
+            "value": "#53c373",
+            "comment": "",
+            "colorScheme": "light"
+          }
+        }
+      },
       "disabled": {
         "text": {
           "$light": {
-            "value": "#828282",
-            "description": "",
+            "value": "#737373",
+            "comment": "",
             "colorScheme": "light"
           }
         },
         "border": {
           "$light": {
             "value": "#dfdfdf",
-            "description": "",
+            "comment": "",
             "colorScheme": "light"
           }
         },
         "background": {
           "$light": {
             "value": "#dfdfdf",
-            "description": "",
-            "colorScheme": "light"
-          }
-        }
-      },
-      "active": {
-        "text": {
-          "$light": {
-            "value": "#595959",
-            "description": "",
-            "colorScheme": "light"
-          }
-        }
-      },
-      "hover": {
-        "text": {
-          "$light": {
-            "value": "#595959",
-            "description": "",
-            "colorScheme": "light"
-          }
-        }
-      },
-      "base": {
-        "text": {
-          "$light": {
-            "value": "#595959",
-            "description": "",
+            "comment": "",
             "colorScheme": "light"
           }
         }

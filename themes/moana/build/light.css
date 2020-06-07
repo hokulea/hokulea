@@ -1,27 +1,35 @@
 :root {
+  --color-accent-outline-text: #665c00;
+  --color-accent-outline-border: #665c00;
   --color-accent-disabled-text: #737373;
   --color-accent-disabled-border: #dfdfdf;
   --color-accent-disabled-background: #dfdfdf;
+  --color-action-outline-text: #0caef3;
+  --color-action-outline-border: #0caef3;
   --color-action-disabled-text: #737373;
   --color-action-disabled-border: #dfdfdf;
   --color-action-disabled-background: #dfdfdf;
+  --color-adjacent-outline-text: #2cd3b5;
+  --color-adjacent-outline-border: #2cd3b5;
   --color-adjacent-disabled-text: #737373;
   --color-adjacent-disabled-border: #dfdfdf;
   --color-adjacent-disabled-background: #dfdfdf;
   --color-danger-disabled-border: #dfdfdf;
   --color-danger-disabled-background: #dfdfdf;
-  --color-error-outline-text: #cd2222;
-  --color-error-outline-border: #cd2222;
-  --color-info-outline-text: #054661;
-  --color-info-outline-border: #054661;
+  --color-danger-outline-text: #e35858;
+  --color-danger-outline-border: #e35858;
+  --color-error-outline-text: #e35858;
+  --color-error-outline-border: #e35858;
+  --color-info-outline-text: #0caef3;
+  --color-info-outline-border: #0caef3;
   --color-layout-background: #ffffff; /* Background color for layouts */
   --color-layout-low-contrast: #dfdfdf;
   --color-layout-high-contrast: #595959;
   --color-layout-reduced: #6e6e6e;
-  --color-success-outline-text: #125449;
-  --color-success-outline-border: #125449;
-  --color-warning-outline-text: #b28000;
-  --color-warning-outline-border: #b28000;
+  --color-success-outline-text: #2cd3b5;
+  --color-success-outline-border: #2cd3b5;
+  --color-warning-outline-text: #ffb700;
+  --color-warning-outline-border: #ffb700;
   --color-text-inverse-disabled: #cecece;
   --color-text-inverse: #f5f5f5; /* Text color for more contrast (e.g. high-contrast or reduced) */
   --color-text-disabled: #737373;

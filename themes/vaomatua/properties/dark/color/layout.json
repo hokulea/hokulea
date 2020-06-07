@@ -4,28 +4,28 @@
       "background": {
         "$dark": {
           "value": "#595959",
-          "description": "",
+          "comment": "",
           "colorScheme": "dark"
         }
       },
       "low-contrast": {
         "$dark": {
           "value": "#6e6e6e",
-          "description": "",
+          "comment": "",
           "colorScheme": "dark"
         }
       },
       "high-contrast": {
         "$dark": {
           "value": "#f2f2f2",
-          "description": "",
+          "comment": "",
           "colorScheme": "dark"
         }
       },
       "reduced": {
         "$dark": {
           "value": "#dfdfdf",
-          "description": "",
+          "comment": "",
           "colorScheme": "dark"
         }
       }

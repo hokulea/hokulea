@@ -1,17 +1,17 @@
 {
   "color": {
-    "success": {
+    "info": {
       "outline": {
         "text": {
           "$dark": {
-            "value": "#2cd3b5",
+            "value": "#0cb5f3",
             "comment": "",
             "colorScheme": "dark"
           }
         },
         "border": {
           "$dark": {
-            "value": "#2cd3b5",
+            "value": "#0cb5f3",
             "comment": "",
             "colorScheme": "dark"
           }

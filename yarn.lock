@@ -18449,10 +18449,10 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
   integrity sha512-49WtAWS+tcsy93dRt6P0P3AMD2m5PvXRhuEA0kaXos5ZLlujtYmpmFsB+QvWUSxE1ZsstmYXfQ7L40+EcQgpAQ==
 
-theemo@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/theemo/-/theemo-0.0.7.tgz#e6fff39d74214b43442c7232a73f6196488d19ea"
-  integrity sha512-2mXe3RDqOBfbCeyiYOb7mMh7BAScoCMrQyZymEgQq5Rc8wy4izsHwB/edFNbNFciwz9FOnTW3jIxJVsePdlFEQ==
+theemo@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/theemo/-/theemo-0.0.8.tgz#ec42c65f73a2c62399b7299f79dcda5a82d075f8"
+  integrity sha512-yxRYv4xrCCUjT4s6wQPebr/VuOtt3XBEE7aqHbkbJnHmqnAEPGDhHl3UIti1B6uvN3I/GnwEBdOkpZzUT2+rbw==
   dependencies:
     color-converter "1.4.1"
     commander "^5.0.0"

@@ -8,7 +8,7 @@ module.exports = {
       // referencer
       referencer: {
         type: 'figma-plugin',
-        plugin: 'style-referencer',
+        plugin: 'theemo',
         pluginOptions: {
           jsonbinFile: process.env.JSONBIN_FILE,
           jsonbinSecret: process.env.JSONBIN_SECRET

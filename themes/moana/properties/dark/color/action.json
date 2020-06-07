@@ -1,6 +1,22 @@
 {
   "color": {
     "action": {
+      "outline": {
+        "text": {
+          "$dark": {
+            "value": "#0caef3",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        },
+        "border": {
+          "$dark": {
+            "value": "#0caef3",
+            "comment": "",
+            "colorScheme": "dark"
+          }
+        }
+      },
       "disabled": {
         "text": {
           "$dark": {

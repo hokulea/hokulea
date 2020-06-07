@@ -1,17 +1,17 @@
 {
   "color": {
-    "error": {
+    "info": {
       "outline": {
         "text": {
           "$light": {
-            "value": "#e35858",
+            "value": "#0cb5f3",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "border": {
           "$light": {
-            "value": "#e35858",
+            "value": "#0cb5f3",
             "comment": "",
             "colorScheme": "light"
           }

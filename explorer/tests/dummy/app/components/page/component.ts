@@ -15,7 +15,11 @@ interface TocItem {
 
 export default class PageComponent extends Component<PageArgs> {
   get toc(): TocItem[] {
-    return JSON.parse(decodeURIComponent(this.args.toc ? this.args.toc : '[]'));
+    const items = JSON.parse(
+      decodeURIComponent(this.args.toc ? this.args.toc : '[]')
+    );
+
+    return items.length > 1 ? items : [];
   }
 
   @action

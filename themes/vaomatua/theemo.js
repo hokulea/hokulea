@@ -18,6 +18,14 @@ module.exports = {
       // parser
       isTokenByStyle(style) {
         return style.name.includes('.') && style.name.includes('/');
+      },
+
+      isTokenByText(node) {
+        return node.name.includes('[token]');
+      },
+
+      getNameFromText(node) {
+        return node.name.replace('[token]', '').trim();
       }
     },
   
@@ -35,8 +43,11 @@ module.exports = {
         
         return t;
       },
-      filterToken(token) {
-        return token.type === 'purpose';
+      filterToken(token, tokens) {
+        const hasColorSchemes = Boolean(tokens.classified.find(t => t.colorScheme && t.name === token.name));
+        const isReference = !token.colorScheme && hasColorSchemes;
+        
+        return Boolean(token.type === 'purpose' && !isReference);
       },
       groupForToken(token) {
         return token.colorScheme ? token.colorScheme : 'base';

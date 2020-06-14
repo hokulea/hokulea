@@ -29,16 +29,6 @@
           "comment": ""
         }
       },
-      "outline": {
-        "border": {
-          "value": "#fcce98",
-          "comment": ""
-        },
-        "text": {
-          "value": "#fcce98",
-          "comment": ""
-        }
-      },
       "active": {
         "text": {
           "value": "#f5f5f5",
@@ -78,12 +68,6 @@
         },
         "border": {
           "value": "#f9aa4e",
-          "comment": ""
-        }
-      },
-      "disabled": {
-        "text": {
-          "value": "#cecece",
           "comment": ""
         }
       },

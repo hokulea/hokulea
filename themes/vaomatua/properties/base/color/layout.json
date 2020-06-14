@@ -4,22 +4,6 @@
       "brand": {
         "value": "#53c373",
         "comment": ""
-      },
-      "low-contrast": {
-        "value": "#6e6e6e",
-        "comment": ""
-      },
-      "high-contrast": {
-        "value": "#f2f2f2",
-        "comment": ""
-      },
-      "reduced": {
-        "value": "#dfdfdf",
-        "comment": ""
-      },
-      "background": {
-        "value": "#595959",
-        "comment": ""
       }
     }
   }

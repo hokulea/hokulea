@@ -28,16 +28,6 @@
           "value": "#f5f5f5",
           "comment": ""
         }
-      },
-      "outline": {
-        "border": {
-          "value": "#ffcc4d",
-          "comment": ""
-        },
-        "text": {
-          "value": "#ffcc4d",
-          "comment": ""
-        }
       }
     }
   }

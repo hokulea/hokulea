@@ -1,0 +1,16 @@
+{
+  "scale": {
+    "measure": {
+      "value": "65ch"
+    },
+    "ratio": {
+      "value": "1.4"
+    },
+    "base": {
+      "value": "0.8rem"
+    },
+    "base-local": {
+      "value": "0.8em"
+    }
+  }
+}

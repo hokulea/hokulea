@@ -1,11 +1,37 @@
 :root {
-  --color-accent-disabled-border: #dfdfdf;
-  --color-accent-disabled-background: #dfdfdf;
-  --color-action-disabled-border: #dfdfdf;
-  --color-action-disabled-background: #dfdfdf;
-  --color-adjacent-disabled-border: #dfdfdf;
-  --color-adjacent-disabled-background: #dfdfdf;
-  --color-danger-disabled-border: #dfdfdf;
-  --color-danger-disabled-background: #dfdfdf;
+  --color-accent-outline-text: #665c00;
+  --color-accent-outline-border: #665c00;
+  --color-accent-disabled-text: #737373;
+  --color-accent-disabled-border: #f2f2f2;
+  --color-accent-disabled-background: #f2f2f2;
+  --color-action-outline-text: #53c373;
+  --color-action-outline-border: #53c373;
+  --color-action-disabled-text: #737373;
+  --color-action-disabled-border: #f2f2f2;
+  --color-action-disabled-background: #f2f2f2;
+  --color-adjacent-outline-text: #f9aa4e;
+  --color-adjacent-outline-border: #f9aa4e;
+  --color-adjacent-disabled-text: #737373;
+  --color-adjacent-disabled-border: #f2f2f2;
+  --color-adjacent-disabled-background: #f2f2f2;
+  --color-danger-disabled-border: #f2f2f2;
+  --color-danger-disabled-background: #f2f2f2;
+  --color-danger-outline-text: #e35858;
+  --color-danger-outline-border: #e35858;
+  --color-error-outline-text: #e35858;
+  --color-error-outline-border: #e35858;
+  --color-info-outline-text: #0cb5f3;
+  --color-info-outline-border: #0cb5f3;
+  --color-layout-background: #ffffff; /* Background color for layouts */
+  --color-layout-low-contrast: #f2f2f2;
+  --color-layout-high-contrast: #595959;
+  --color-layout-reduced: #6e6e6e;
+  --color-success-outline-text: #53c373;
+  --color-success-outline-border: #53c373;
+  --color-warning-outline-text: #ffb700;
+  --color-warning-outline-border: #ffb700;
+  --color-text-inverse-disabled: #cecece;
   --color-text-inverse: #f5f5f5; /* Text color for more contrast (e.g. high-contrast or reduced) */
+  --color-text-disabled: #737373;
+  --color-text-normal: #333333; /* Regular text color */
 }

@@ -29,16 +29,6 @@
           "comment": ""
         }
       },
-      "outline": {
-        "border": {
-          "value": "#ee9a9a",
-          "comment": ""
-        },
-        "text": {
-          "value": "#ee9a9a",
-          "comment": ""
-        }
-      },
       "active": {
         "text": {
           "value": "#f5f5f5",

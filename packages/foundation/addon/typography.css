@@ -1,0 +1,69 @@
+.typo-heading {
+  font-family: var(--typo-heading-family);
+
+  font-weight: var(--typo-heading-weight);
+  font-style: var(--typo-heading-style);
+  font-synthesis: var(--typo-heading-synthesis);
+  font-stretch: var(--typo-heading-stretch);
+  font-optical-sizing: var(--typo-heading-optical-sizing);
+
+  font-variant-alternates: var(--typo-heading-variant-alternates);
+  font-variant-caps: var(--typo-heading-variant-caps);
+  font-variant-east-asian: var(--typo-heading-variant-east-asian);
+  font-variant-ligatures: var(--typo-heading-variant-ligatures);
+  font-variant-numeric: var(--typo-heading-variant-numeric);
+  font-variant-position: var(--typo-heading-variant-position);
+
+  font-variation-settings: var(--typo-heading-variation-settings);
+  font-feature-settings: var(--typo-heading-feature-settings);
+
+  font-kerning: var(--typo-heading-kerning);
+  letter-spacing: var(--typo-heading-tracking);
+}
+
+.typo-display {
+  font-family: var(--typo-display-family);
+
+  font-weight: var(--typo-display-weight);
+  font-style: var(--typo-display-style);
+  font-synthesis: var(--typo-display-synthesis);
+  font-stretch: var(--typo-display-stretch);
+  font-optical-sizing: var(--typo-display-optical-sizing);
+
+  font-variant-alternates: var(--typo-display-variant-alternates);
+  font-variant-caps: var(--typo-display-variant-caps);
+  font-variant-east-asian: var(--typo-display-variant-east-asian);
+  font-variant-ligatures: var(--typo-display-variant-ligatures);
+  font-variant-numeric: var(--typo-display-variant-numeric);
+  font-variant-position: var(--typo-display-variant-position);
+
+  font-variation-settings: var(--typo-display-variation-settings);
+  font-feature-settings: var(--typo-display-feature-settings);
+
+  font-kerning: var(--typo-display-kerning);
+  letter-spacing: var(--typo-display-tracking);
+}
+
+.t1, .t2, .t3, .t4 {
+  composes: typo-heading;
+}
+
+.d1, .d2, .d3, .d4 {
+  composes: typo-display;
+}
+
+.t1, .d1 {
+  font-size: var(--s4);
+}
+
+.t2, .d2 {
+  font-size: var(--s3);
+}
+
+.t3, .d3 {
+  font-size: var(--s2);
+}
+
+.t4, .d4 {
+  font-size: var(--s1);
+}

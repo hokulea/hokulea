@@ -1,47 +1,95 @@
-@import url("https://rsms.me/inter/inter.css");
-
 :root {
-  --font-normal: "Inter", sans-serif;
   --line-height: var(--scale-ratio);
-  --line-height-small: calc(0.8 * var(--scale-ratio));
+  --font-family: var(--typo-prosa-family);
 
-  line-height: var(--line-height);
-  font-size: calc(0.333vw + 1em);
-  font-family: var(--font-normal);
+  --font-kerning: var(--typo-prosa-kerning);
+  --font-tracking: var(--typo-prosa-tracking);
+  --font-weight: var(--typo-prosa-weight);
+  --font-style: var(--typo-prosa-style);
+  --font-synthesis: var(--typo-prosa-synthesis);
+  --font-stretch: var(--typo-prosa-stretch);
+  --font-optical-sizing: var(--typo-prosa-optical-sizing);
+
+  --font-variant-alternates: var(--typo-prosa-variant-alternates);
+  --font-variant-caps: var(--typo-prosa-variant-caps);
+  --font-variant-east-asian: var(--typo-prosa-variant-east-asian);
+  --font-variant-ligatures: var(--typo-prosa-variant-ligatures);
+  --font-variant-numeric: var(--typo-prosa-variant-numeric);
+  --font-variant-position: var(--typo-prosa-variant-position);
+
+  --font-variation-settings: var(--typo-prosa-variation-settings);
+  --font-feature-settings: var(--typo-prosa-feature-settings);
 }
 
-@supports (font-variation-settings: normal) {
-  :root {
-    --font-normal: "Inter var", sans-serif;
-  }
+body {
+  /** Apply Font **/
+  font-size: calc(0.333vw + 1em);
+  line-height: var(--line-height);
+  font-family: var(--font-family, system-ui, sans-serif);
+
+  /* Regular Axis */
+  font-weight: var(--font-weight, normal);
+  font-style: var(--font-style, normal);
+  font-synthesis: var(--font-synthesis, weight style);
+  font-stretch: var(--font-stretch, normal);
+  font-optical-sizing: var(--font-optical-sizing, auto);
+
+  font-variant-alternates: var(--font-variant-alternates, normal);
+  font-variant-caps: var(--font-variant-caps, normal);
+  font-variant-east-asian: var(--font-variant-east-asian, normal);
+  font-variant-ligatures: var(--font-variant-ligatures, normal);
+  font-variant-numeric: var(--font-variant-numeric, normal);
+  font-variant-position: var(--font-variant-position, normal);
+
+  font-variation-settings: var(--font-variation-settings, normal);
+  font-feature-settings: var(--font-feature-settings, normal);
+
+  font-kerning: var(--font-variant-kerning, auto);
+  letter-spacing: var(--font-tracking, normal);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  line-height: var(--line-height-small);
+  line-height: calc(0.8 * var(--line-height));
   hyphens: auto;
+
+  /* This is were I'm hoping to use --font-* insteadof font-* */
+  font-family: var(--typo-heading-family);
+
+  font-weight: var(--typo-heading-weight);
+  font-style: var(--typo-heading-style);
+  font-synthesis: var(--typo-heading-synthesis);
+  font-stretch: var(--typo-heading-stretch);
+  font-optical-sizing: var(--typo-heading-optical-sizing);
+
+  font-variant-alternates: var(--typo-heading-variant-alternates);
+  font-variant-caps: var(--typo-heading-variant-caps);
+  font-variant-east-asian: var(--typo-heading-variant-east-asian);
+  font-variant-ligatures: var(--typo-heading-variant-ligatures);
+  font-variant-numeric: var(--typo-heading-variant-numeric);
+  font-variant-position: var(--typo-heading-variant-position);
+
+  font-variation-settings: var(--typo-heading-variation-settings);
+  font-feature-settings: var(--typo-heading-feature-settings);
+
+  font-kerning: var(--typo-heading-kerning);
+  letter-spacing: var(--typo-heading-tracking);
 }
 
-:global {
-  .t1,
-  h1 {
-    font-size: var(--s4);
-  }
+h1 {
+  font-size: var(--s4);
+}
 
-  .t2,
-  h2 {
-    font-size: var(--s3);
-  }
+h2 {
+  font-size: var(--s3);
+}
 
-  .t3,
-  h3 {
-    font-size: var(--s2);
-  }
+h3 {
+  font-size: var(--s2);
+}
 
-  .t4,
-  h4 {
-    font-size: var(--s1);
-  }
+h4 {
+  font-size: var(--s1);
 }

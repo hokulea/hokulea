@@ -3,5 +3,5 @@
   local-class="input"
   value={{@value}}
   ...attributes
-  {{on "input" (target-value @update)}}
+  {{on "input" (target-prop @update "value")}}
 />

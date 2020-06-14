@@ -1,7 +1,7 @@
 <textarea
   local-class="input"
   ...attributes
-  {{on "input" (target-value @update)}}
+  {{on "input" (target-prop @update "value")}}
 >
   {{~@value~}}
 </textarea>

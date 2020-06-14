@@ -20,14 +20,14 @@
       "disabled": {
         "border": {
           "$light": {
-            "value": "#dfdfdf",
+            "value": "#f2f2f2",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "background": {
           "$light": {
-            "value": "#dfdfdf",
+            "value": "#f2f2f2",
             "comment": "",
             "colorScheme": "light"
           }

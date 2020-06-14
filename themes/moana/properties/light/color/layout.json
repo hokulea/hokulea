@@ -10,7 +10,7 @@
       },
       "low-contrast": {
         "$light": {
-          "value": "#dfdfdf",
+          "value": "#f2f2f2",
           "comment": "",
           "colorScheme": "light"
         }

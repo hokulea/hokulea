@@ -53,7 +53,7 @@ const markdownCompilerConfig = {
       doc.html = doc.html.replace(/<h1(.+)>(.+)<\/h1>/, '');
     }
 
-    return `<Page @title="${title}">${doc.html}</Page>`;
+    return `<Page @title="${title}" @toc="${encodeURIComponent(JSON.stringify(doc.toc))}">${doc.html}</Page>`;
   }
 };
 

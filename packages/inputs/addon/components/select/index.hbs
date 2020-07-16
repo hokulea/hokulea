@@ -1,0 +1,34 @@
+<div local-class="extrinsic">
+  <div local-class="select">
+    <DropdownBuilder @opened={{this.handleExpansion}} as |ddb|>
+      <button
+        type="button"
+        local-class="trigger"
+        {{dropdown-trigger ddb}}
+        {{widget-remote-control for=ddb.id}}
+      >
+        <span>
+          Let's open this one here
+        </span>
+        <svg
+          width="18"
+          height="11"
+          viewBox="0 0 18 11"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M1 1L9 9L17 1" stroke="#DFDFDF" stroke-width="2"></path>
+        </svg>
+      </button>
+      <List
+        local-class="options"
+        @items={{@options}}
+        @select={{this.select}}
+        {{dropdown-popup ddb}}
+        {{did-insert this.setupList}} as |option|
+      >
+        {{yield option}}
+      </List>
+    </DropdownBuilder>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+@value border-width from '@hokulea/foundation/structure/border';
+
+.extrinsic {
+  display: inline-block;
+}
+
+.select {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.trigger {
+  composes: action-focus from '@hokulea/foundation/intents/action';
+  composes: border-shape from '@hokulea/foundation/structure/border';
+  composes: padding-block from '@hokulea/foundation/structure/padding';
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border-color: var(--color-structure-border);
+
+  display: flex;
+  justify-content: space-between;
+
+  /* &:hover {
+    color: var(--color-action-hover-text);
+    background-color: var(--color-action-hover-background);
+    border-color: var(--color-action-hover-border);
+  } */
+
+  /* &:active {
+    color: var(--color-action-active-text);
+    background-color: var(--color-action-active-background);
+    border-color: var(--color-action-active-border);
+  } */
+
+  /* &:disabled {
+    color: var(--color-action-disabled-text);
+    background-color: var(--color-action-disabled-background);
+    border-color: var(--color-action-disabled-border);
+  } */
+
+  & svg {
+    margin-inline-start: auto;
+    align-self: center;
+    margin-inline-start: var(--ls-1);
+  }
+
+  &[aria-expanded="true"] {
+    /* border-block-end-color: var(--color-layout-background); */
+    /* border-block-end-width: 0; */
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+    /* margin-block-end: border-width; */
+
+    /* border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; */
+
+    /* &::after {
+      content: ' ';
+      height: border-width;
+    } */
+  }
+}
+
+.options {
+  position: absolute;
+  border-block-start: 0;
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  [aria-expanded="true"] + & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}

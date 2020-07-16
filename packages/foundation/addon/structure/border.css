@@ -7,3 +7,11 @@
   border-radius: border-radius;
   border-width: border-width;
 }
+
+/* Temp, soon to come from tokens itself */
+:root {
+  --color-structure-border: #DFDFDF;
+  --structure-border-style: border-style;
+  --structure-border-width: border-width;
+  --structure-border-radius: border-radius;
+}

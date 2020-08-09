@@ -50,7 +50,7 @@ const loader = function (source) {
   import { withLinks } from '@storybook/addon-links';
 
   export default {
-    title: '${options.root}|${parts.join('/')}',
+    title: '${options.root}/${parts.join('/')}',
     decorators: [withLinks]
   };
 

@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components|Cards/Card',
+  title: 'Components/Cards/Card',
   parameters: {
     options: {
       showPanel: true,

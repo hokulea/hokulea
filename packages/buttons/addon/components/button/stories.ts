@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Buttons/Button',
+  title: 'Components/Buttons/Button',
   parameters: {
     options: {
       showPanel: true,

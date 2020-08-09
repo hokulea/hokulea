@@ -1,5 +1,4 @@
 import { addParameters, addDecorator } from "@storybook/ember";
-import { withA11y } from "@storybook/addon-a11y";
 import { hbs } from 'ember-cli-htmlbars';
 
 const sortOrder = {
@@ -13,19 +12,15 @@ const sortOrder = {
   }
 };
 
-const storyTop = ['introduction', 'overview'];
+const storyTop = ['introduction', 'overview', 'default'];
 const storyBottom = [];
 
 addParameters({
   options: {
     storySort: (a, b) => {
-      // homoglyph renaming here
-      a[1].kind = a[1].kind.replace(/@hokulea-(.+)/gi, '@hokulea／$1');
-      b[1].kind = b[1].kind.replace(/@hokulea-(.+)/gi, '@hokulea／$1');
-
       // sorting starts here
-      const rootA = a[1].kind.split('|')[0].toLowerCase();
-      const rootB = b[1].kind.split('|')[0].toLowerCase();
+      const rootA = a[1].kind.split('/')[0].toLowerCase();
+      const rootB = b[1].kind.split('/')[0].toLowerCase();
 
       // sort by root
       if (rootA !== rootB) {
@@ -42,8 +37,8 @@ addParameters({
 
       // sort by first level
       if (sortOrder[rootA]) {
-        const folderA = a[1].kind.split('|').pop().toLowerCase();
-        const folderB = b[1].kind.split('|').pop().toLowerCase();
+        const folderA = a[1].kind.split('/').slice(1).join('/').toLowerCase();
+        const folderB = b[1].kind.split('/').slice(1).join('/').toLowerCase();
 
         if (folderA !== folderB) {
           // top
@@ -99,16 +94,13 @@ addParameters({
       }
 
       // alphabetical order
-      return a[1].kind === b[1].kind
-        ? 0
-        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+      return a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     }
   }
 });
 
-addDecorator(withA11y);
 
-export const globalArgTypes = {
+export const globalTypes = {
   theme: {
     name: 'Theme',
     description: 'Global theme for components',
@@ -162,11 +154,11 @@ export const globalArgTypes = {
   },
 };
 
-addDecorator((storyFn, { globalArgs }) => {
+addDecorator((storyFn, { globals }) => {
   return {
     template: hbs`<Storybook @globals={{this.globals}} @story={{this.story}}/>`,
     context: {
-      globals: globalArgs,
+      globals,
       story: storyFn()
     },
   };

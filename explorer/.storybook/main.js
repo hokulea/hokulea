@@ -4,6 +4,7 @@ const { precompile } = require('ember-source/dist/ember-template-compiler');
 const hbsBabelLoader = {
   loader: "babel-loader",
   options: {
+    // remove presets when solved: https://github.com/storybookjs/storybook/issues/11853
     presets: ['@babel/preset-env', '@babel/preset-typescript'],
     plugins: [
       [
@@ -60,12 +61,12 @@ const markdownCompilerConfig = {
 module.exports = {
   stories: ['../../documentation/**/*.md', '../../api/*.md', '../../packages/**/stories.ts'],
   addons: [
-    "@storybook/addon-knobs",
-    "storybook-addon-designs",
-    "@storybook/addon-a11y",
-    "@storybook/addon-actions",
-    "@storybook/addon-toolbars",
-    "@storybook/addon-viewport",
+    '@storybook/addon-knobs',
+    'storybook-addon-designs',
+    '@storybook/addon-a11y',
+    '@storybook/addon-actions',
+    '@storybook/addon-toolbars',
+    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -116,6 +117,7 @@ module.exports = {
       ]
     });
 
+    // remove when solved: https://github.com/storybookjs/storybook/issues/11853
     config.module.rules.push({
       test: /\.ts$/,
       use: [
@@ -123,7 +125,6 @@ module.exports = {
       ],
     });
 
-    config.resolve.extensions.push('.ts');
     return config;
   }
 };

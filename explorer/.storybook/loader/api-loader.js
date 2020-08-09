@@ -106,9 +106,7 @@ const loader = function (source) {
   // Forward slash is used in storybook for creating hierarchy
   // hack: use homoglyph, e.g. ／
   // https://www.irongeek.com/homoglyph-attack-generator.php
-  // here, we gonna replace the slash with a dash and use the sorter to replace
-  // our dash with the homoglyph
-  const packageName = package.name.replace('/', '-');
+  const packageName = package.name.replace('/', '／');
 
   // package overview
   if (segments.length === 1) {
@@ -117,7 +115,7 @@ const loader = function (source) {
     import { withLinks } from '@storybook/addon-links';
 
     export default {
-      title: '${options.root}|${packageName}',
+      title: '${options.root}/${packageName}',
       decorators: [withLinks]
     };
 
@@ -133,7 +131,7 @@ const loader = function (source) {
     import { withLinks } from '@storybook/addon-links';
 
     export default {
-      title: '${options.root}|${packageName}/${entity.name}',
+      title: '${options.root}/${packageName}/${entity.name}',
       decorators: [withLinks]
     };
 
@@ -149,7 +147,7 @@ const loader = function (source) {
     import { withLinks } from '@storybook/addon-links';
 
     export default {
-      title: '${options.root}|${packageName}/${entity.name}',
+      title: '${options.root}/${packageName}/${entity.name}',
       decorators: [withLinks]
     };
 

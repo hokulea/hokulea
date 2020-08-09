@@ -3,7 +3,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components|Layouts/Center',
+  title: 'Components/Layouts/Center',
   parameters: {
     options: {
       showPanel: true,

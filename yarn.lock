@@ -1793,26 +1793,12 @@
   dependencies:
     "@clark/eslint-config" "^1.24.1"
 
-"@clark/eslint-config-browser@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-browser/-/eslint-config-browser-1.24.4.tgz#2b5200e3e77d08ac16de2c256b7ba13dfa7ae175"
-  integrity sha512-ghzmZcgDKeRX+bCNj5CDLtnx16ck15PLGDknGToRc6eMHzeh5ryxdmRHG0bNXuMnkBUKT2aFbzh+j3266ZU1kg==
-  dependencies:
-    "@clark/eslint-config" "^1.24.4"
-
 "@clark/eslint-config-ember-order-imports@^1.24.1":
   version "1.24.1"
   resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember-order-imports/-/eslint-config-ember-order-imports-1.24.1.tgz#42c4b546e426d8ba6c5073c21a65a6edc25b9847"
   integrity sha512-n9HWvX3HllHzT5lvU0BPQnOpE4Z0LfmPstkjAE6T674ysk7jVbnEQA6n9vc4yRP7RJY6rWvNd9jIJ9MYtUIcug==
   dependencies:
     "@clark/eslint-plugin-import-helpers-with-package" "^1.24.1"
-
-"@clark/eslint-config-ember-order-imports@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember-order-imports/-/eslint-config-ember-order-imports-1.24.4.tgz#67c2a4c79010bf85e384e085a0ff65be40ba78d9"
-  integrity sha512-dIfh9APmqs2FB9Q5EJwWM4IbQwnFNkYICpKzTqMh9YPQi987upm31c1am96gKHqyouQ1cuZjOnkGxygoGNUBOg==
-  dependencies:
-    "@clark/eslint-plugin-import-helpers-with-package" "^1.24.4"
 
 "@clark/eslint-config-ember-typescript@^1.20.0", "@clark/eslint-config-ember-typescript@^1.24.1":
   version "1.24.1"
@@ -1835,19 +1821,6 @@
     eslint-plugin-qunit "^4.0.0"
     lodash.merge "^4.6.2"
 
-"@clark/eslint-config-ember@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember/-/eslint-config-ember-1.24.4.tgz#996c517dc8e1b6891b71299fc940cacafda93df0"
-  integrity sha512-JZF7Ph/PAPeTu+v1tn0YqP+0jXQERzR8Ps/5Oj91aLbaLPMmSDzAoeMvUX+gzgvKnqTAwnZPi1i8auyvFCnpTg==
-  dependencies:
-    "@clark/eslint-config" "^1.24.4"
-    "@clark/eslint-config-browser" "^1.24.4"
-    "@clark/eslint-config-ember-order-imports" "^1.24.4"
-    eslint-plugin-ember "^8.4.0"
-    eslint-plugin-ember-best-practices "^1.1.2"
-    eslint-plugin-qunit "^4.0.0"
-    lodash.merge "^4.6.2"
-
 "@clark/eslint-config-node-order-imports@^1.19.0":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@clark/eslint-config-node-order-imports/-/eslint-config-node-order-imports-1.19.0.tgz#2fb3d7a3f1c4df6db6c21733722c3c10e684aec3"
@@ -1861,16 +1834,6 @@
   integrity sha512-gzcQmue7nYsG2wV3nwuzx70j+DUrF8FqqVsItEVWd0/1KyB/seziBqtsE5MTfDFf+Kl9+CblYoGT4/4v2iMFRg==
   dependencies:
     "@clark/eslint-config" "^1.24.1"
-    "@clark/eslint-config-node-order-imports" "^1.19.0"
-    eslint-plugin-node "^11.1.0"
-    lodash.merge "^4.6.2"
-
-"@clark/eslint-config-node@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-node/-/eslint-config-node-1.24.4.tgz#6b08b20f6d93a75e61960c40b7a86cdf72a77bea"
-  integrity sha512-F7pjOCMRR/LVOhDNvXZJt2M+SgOmg9SUIbvQnCDPnfm1Dfxuzj/30Iyp0o3eCraUXUA/rrOLqjpMLpxQ5EOg5Q==
-  dependencies:
-    "@clark/eslint-config" "^1.24.4"
     "@clark/eslint-config-node-order-imports" "^1.19.0"
     eslint-plugin-node "^11.1.0"
     lodash.merge "^4.6.2"
@@ -1898,20 +1861,6 @@
     eslint-plugin-unicorn "^18.0.1"
     prettier "^2.0.2"
 
-"@clark/eslint-config@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config/-/eslint-config-1.24.4.tgz#a178f3c4ad5528c594ebc36de647e519223a709d"
-  integrity sha512-khC7bJ8NWhA96JQuhMaHOQOOqGcMKwv5RPVhkvMY2toRjwqV1nmnhu8J1EQiSOQffrgaPnuE1MZh/P4w3weSaA==
-  dependencies:
-    eslint-config-airbnb-base "^14.1.0"
-    eslint-config-prettier "^6.10.1"
-    eslint-config-xo-space "^0.24.0"
-    eslint-plugin-import "^2.20.2"
-    eslint-plugin-node "^11.1.0"
-    eslint-plugin-prettier "^3.1.3"
-    eslint-plugin-unicorn "^18.0.1"
-    prettier "^2.0.4"
-
 "@clark/eslint-plugin-import-helpers-with-package@^1.24.1":
   version "1.24.1"
   resolved "https://registry.yarnpkg.com/@clark/eslint-plugin-import-helpers-with-package/-/eslint-plugin-import-helpers-with-package-1.24.1.tgz#88f409bdc03b071aaff5affee8a8fbf072d0ee84"
@@ -1920,25 +1869,10 @@
     "@clark/eslint-util-get-package" "^1.24.1"
     eslint-plugin-import-helpers "^1.0.2"
 
-"@clark/eslint-plugin-import-helpers-with-package@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-plugin-import-helpers-with-package/-/eslint-plugin-import-helpers-with-package-1.24.4.tgz#1290dc10f9f09c533aacde949736fc89568d322f"
-  integrity sha512-9jRiFYX4RX3qSZtyk+9vTUixdL768qgOSf9eLbcGMv48/iRneNdKt43MyhH9nRacGLCoy1SV1Z/q+USQNb1IdQ==
-  dependencies:
-    "@clark/eslint-util-get-package" "^1.24.4"
-    eslint-plugin-import-helpers "^1.0.2"
-
 "@clark/eslint-util-get-package@^1.24.1":
   version "1.24.1"
   resolved "https://registry.yarnpkg.com/@clark/eslint-util-get-package/-/eslint-util-get-package-1.24.1.tgz#b7be3047f60fbcd807db588936d424543a6172b9"
   integrity sha512-n1QPty/+FUDBvLh3SMOYyIv7u7ASNpUtjMQGafgHewZ0qbHXQQiCx5DyBP0oZWNh9c1qL8/qmH4/x60FcHlGOw==
-  dependencies:
-    find-up "^4.1.0"
-
-"@clark/eslint-util-get-package@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-util-get-package/-/eslint-util-get-package-1.24.4.tgz#48861c06b1d228cd5529a5d6f68e8d2184131b8b"
-  integrity sha512-xTNjw6jWW3ViEXbGLYQzeTGeP4NBZpcWmGrQkl1udzRL05mdoQPmZth8wTIaK5RagkX5WLvX0Axwk8ahsU4Hug==
   dependencies:
     find-up "^4.1.0"
 
@@ -2398,6 +2332,14 @@
   dependencies:
     "@glimmer/interfaces" "^0.44.0"
     "@glimmer/util" "^0.44.0"
+
+"@hokulea/ember-css-modules-config@^0.0.0", "@hokulea/ember-css-modules-config@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@hokulea/ember-css-modules-config/-/ember-css-modules-config-0.0.1.tgz#d0f40da0422d4874c302f7906c8e7ee21f4d5723"
+  integrity sha512-lK23jVrWwai4KkpcUb06W3jHHbeSevi8ka9UeET4pzSrXqnXr5RnXMnHL47Y0T8IVHCMSg7hxBTMbtZYUjP8Dw==
+  dependencies:
+    postcss-nested "^4.2.1"
+    postcss-preset-env "^6.7.0"
 
 "@icons/material@^0.2.4":
   version "0.2.4"
@@ -5697,7 +5639,7 @@ babel-core@^6.26.0, babel-core@^6.26.3:
     slash "^1.0.0"
     source-map "^0.5.7"
 
-babel-eslint@^10.0.3, babel-eslint@^10.1.0:
+babel-eslint@^10.0.3:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.1.0.tgz#6968e568a910b78fb3779cdd8b6ac2f479943232"
   integrity sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==
@@ -9755,15 +9697,6 @@ ember-cli-version-checker@^4.1.0:
     semver "^6.3.0"
     silent-error "^1.1.1"
 
-ember-cli-version-checker@^5.0.2:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-5.1.1.tgz#3185c526c14671609cbd22ab0d0925787fc84f3d"
-  integrity sha512-YziSW1MgOuVdJSyUY2CKSC4vXrGQIHF6FgygHkJOxYGjZNQYwf5MK0sbliKatvJf7kzDSnXs+r8JLrD74W/A8A==
-  dependencies:
-    resolve-package-path "^2.0.0"
-    semver "^7.3.2"
-    silent-error "^1.1.1"
-
 ember-cli@~3.18.0:
   version "3.18.0"
   resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.18.0.tgz#fdee530b156f752a97e75b832d97a8616f1cab4d"
@@ -10021,27 +9954,10 @@ ember-resolver@^7.0.0:
     ember-cli-version-checker "^3.1.3"
     resolve "^1.14.0"
 
-ember-resolver@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/ember-resolver/-/ember-resolver-8.0.0.tgz#cc48682c1e2f5d208499b1ecdcac1e43839683bd"
-  integrity sha512-M0P1++26h9KuEpg14VDrg37daneXrj9Hv9kuM0Xzsm38guma9JzO1+BvJcL/u5EGiJSUjtLtYvakk/6feFlo6A==
-  dependencies:
-    babel-plugin-debug-macros "^0.3.3"
-    broccoli-funnel "^3.0.2"
-    broccoli-merge-trees "^4.2.0"
-    ember-cli-babel "^7.18.0"
-    ember-cli-version-checker "^5.0.2"
-    resolve "^1.15.1"
-
 ember-rfc176-data@^0.3.12:
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.12.tgz#90d82878e69e2ac9a5438e8ce14d12c6031c5bd2"
   integrity sha512-g9HeZj/gU5bfIIrGXkP7MhS2b3Vu5DfNUrYr14hy99TgIvtZETO+96QF4WOEUXGjIJdfTRjerVnQlqngPQSv1g==
-
-ember-rfc176-data@^0.3.13:
-  version "0.3.13"
-  resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.13.tgz#ed1712a26e65fec703655f35410414aa1982cf3b"
-  integrity sha512-m9JbwQlT6PjY7x/T8HslnXP7Sz9bx/pz3FrNfNi2NesJnbNISly0Lix6NV1fhfo46572cpq4jrM+/6yYlMefTQ==
 
 ember-router-generator@^2.0.0:
   version "2.0.0"
@@ -10531,15 +10447,6 @@ eslint-plugin-ember@^8.1.0:
     ember-rfc176-data "^0.3.12"
     snake-case "^3.0.3"
 
-eslint-plugin-ember@^8.4.0:
-  version "8.5.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-8.5.2.tgz#9e0c0e43f74e8fe3d5e35903f33edd043f86dec3"
-  integrity sha512-dLA3W2GpPYRszKL9smw/S0aj0KxUiL1vlvQMDWsiuvcCCwgE/fGZ2FbdmicR/ssMnW5elRfNVPKQdS2B91AMxA==
-  dependencies:
-    "@ember-data/rfc395-data" "^0.0.4"
-    ember-rfc176-data "^0.3.13"
-    snake-case "^3.0.3"
-
 eslint-plugin-es@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-es/-/eslint-plugin-es-3.0.0.tgz#98cb1bc8ab0aa807977855e11ad9d1c9422d014b"
@@ -10583,7 +10490,7 @@ eslint-plugin-node@^11.1.0:
     resolve "^1.10.1"
     semver "^6.1.0"
 
-eslint-plugin-prettier@^3.1.2, eslint-plugin-prettier@^3.1.3:
+eslint-plugin-prettier@^3.1.2:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.3.tgz#ae116a0fc0e598fdae48743a4430903de5b4e6ca"
   integrity sha512-+HG5jmu/dN3ZV3T6eCD7a4BlAySdN7mLIbJYo0z1cFQuI+r2DiTJEFeF68ots93PsnrMxbzIZ2S/ieX+mkrBeQ==
@@ -14571,11 +14478,6 @@ memory-streams@^0.1.3:
   dependencies:
     readable-stream "~1.0.2"
 
-memorystream@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/memorystream/-/memorystream-0.3.1.tgz#86d7090b30ce455d63fbae12dda51a47ddcaf9b2"
-  integrity sha1-htcJCzDORV1j+64S3aUaR93K+bI=
-
 meow@^3.3.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
@@ -15256,21 +15158,6 @@ npm-pick-manifest@^3.0.0:
     figgy-pudding "^3.5.1"
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
-
-npm-run-all@^4.1.5:
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/npm-run-all/-/npm-run-all-4.1.5.tgz#04476202a15ee0e2e214080861bff12a51d98fba"
-  integrity sha512-Oo82gJDAVcaMdi3nuoKFavkIHBRVqQ1qvMb+9LHk/cF4P6B2m8aP04hGf7oL6wZ9BuGwX1onlLhpuoofSyoQDQ==
-  dependencies:
-    ansi-styles "^3.2.1"
-    chalk "^2.4.1"
-    cross-spawn "^6.0.5"
-    memorystream "^0.3.1"
-    minimatch "^3.0.4"
-    pidtree "^0.3.0"
-    read-pkg "^3.0.0"
-    shell-quote "^1.6.1"
-    string.prototype.padend "^3.0.0"
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -16006,11 +15893,6 @@ picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
 
-pidtree@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/pidtree/-/pidtree-0.3.1.tgz#ef09ac2cc0533df1f3250ccf2c4d366b0d12114a"
-  integrity sha512-qQbW94hLHEqCg7nhby4yRC7G2+jYHY4Rguc2bjw7Uug4GIJuu1tvf2uHaZv5Q8zdt+WKJ6qK1FOI6amaWUo5FA==
-
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
@@ -16590,7 +16472,7 @@ prettier@^2.0.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.4.tgz#2d1bae173e355996ee355ec9830a7a1ee05457ef"
   integrity sha512-SVJIQ51spzFDvh4fIbCLvciiDMCrRhlN3mbZvv/+ycjvmF5E73bKdGfU8QDLNmjYJf+lsGnDBC4UUnvTe5OO0w==
 
-prettier@^2.0.4, prettier@^2.0.5:
+prettier@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
   integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
@@ -16885,7 +16767,7 @@ qunit-dom@^0.8.4:
     broccoli-funnel "^2.0.2"
     broccoli-merge-trees "^3.0.1"
 
-qunit-dom@^1.0.0, qunit-dom@^1.2.0:
+qunit-dom@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/qunit-dom/-/qunit-dom-1.2.0.tgz#464cca19e9976c4cee4b14b06da6645c03026880"
   integrity sha512-8UqSimcDIo19nokb3eh+Z5hov07xDeLnwsWAgCYPFGcpUF/eiZAIHbLDPCixH0SM1YqCm4YGCLVCojY6sJD5xQ==
@@ -18254,7 +18136,7 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shell-quote@1.7.2, shell-quote@^1.6.1:
+shell-quote@1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==

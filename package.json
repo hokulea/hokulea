@@ -21,7 +21,6 @@
   "workspaces": [
     "explorer",
     "addons/*",
-    "configs/*",
     "packages/*",
     "themes/*"
   ],

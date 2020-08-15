@@ -2333,7 +2333,7 @@
     "@glimmer/interfaces" "^0.44.0"
     "@glimmer/util" "^0.44.0"
 
-"@hokulea/ember-css-modules-config@^0.0.0", "@hokulea/ember-css-modules-config@^0.0.1":
+"@hokulea/ember-css-modules-config@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@hokulea/ember-css-modules-config/-/ember-css-modules-config-0.0.1.tgz#d0f40da0422d4874c302f7906c8e7ee21f4d5723"
   integrity sha512-lK23jVrWwai4KkpcUb06W3jHHbeSevi8ka9UeET4pzSrXqnXr5RnXMnHL47Y0T8IVHCMSg7hxBTMbtZYUjP8Dw==

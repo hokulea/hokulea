@@ -28,7 +28,7 @@ import Component from '@glimmer/component';
  * @example Builder
  *
  * ```hbs
- * <Button {{on "click (fn this.invoke)}} as |b|>
+ * <Button {{on "click" (fn this.invoke)}} as |b|>
  *   <b.Prefix>Prefix</b.Prefix>
  *   <b.Prefix>Prefix</b.Prefix>
  *   <b.Affix>affix</b.Affix>

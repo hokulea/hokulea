@@ -64,7 +64,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <AdjacentButton {{on "click (fn this.invoke)}} as |b|>
+    <AdjacentButton {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

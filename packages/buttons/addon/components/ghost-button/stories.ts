@@ -16,7 +16,7 @@ export default {
 export const Default = () => {
   return {
     template: hbs`
-      <GhostButton {{on "click (fn this.invoke)}}>Ghost Button</GhostButton>
+      <GhostButton {{on "click" (fn this.invoke)}}>Ghost Button</GhostButton>
       <GhostButton disabled={{true}}>Disabled Ghost Button</GhostButton>
     `,
     context: {
@@ -64,7 +64,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <GhostButton {{on "click (fn this.invoke)}} as |b|>
+    <GhostButton {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

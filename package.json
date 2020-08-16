@@ -20,7 +20,6 @@
   },
   "workspaces": [
     "explorer",
-    "addons/*",
     "packages/*",
     "themes/*"
   ],

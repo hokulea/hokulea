@@ -16,7 +16,7 @@ export default {
 export const Default = () => {
   return {
     template: hbs`
-      <DangerButton {{invoke (fn this.invoke)}}>Danger Button</DangerButton>
+      <DangerButton {{on "click" (fn this.invoke)}}>Danger Button</DangerButton>
       <DangerButton disabled={{true}}>Disabled Danger Button</DangerButton>
     `,
     context: {
@@ -64,7 +64,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <DangerButton {{invoke (fn this.invoke)}} as |b|>
+    <DangerButton {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

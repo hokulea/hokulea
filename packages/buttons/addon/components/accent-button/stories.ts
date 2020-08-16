@@ -16,7 +16,7 @@ export default {
 export const Default = () => {
   return {
     template: hbs`
-      <AccentButton {{invoke (fn this.invoke)}}>Accent Button</AccentButton>
+      <AccentButton {{on "click" (fn this.invoke)}}>Accent Button</AccentButton>
       <AccentButton disabled={{true}}>Disabled Accent Button</AccentButton>
     `,
     context: {
@@ -64,7 +64,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <AccentButton {{invoke (fn this.invoke)}} as |b|>
+    <AccentButton {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

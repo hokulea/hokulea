@@ -16,7 +16,7 @@ export default {
 export const Default = () => {
   return {
     template: hbs`
-      <AdjacentButton {{invoke (fn this.invoke)}}>Adjacent Button</AdjacentButton>
+      <AdjacentButton {{on "click" (fn this.invoke)}}>Adjacent Button</AdjacentButton>
       <AdjacentButton disabled={{true}}>Disabled Adjacent Button</AdjacentButton>
     `,
     context: {
@@ -64,7 +64,7 @@ export const Sizing = () => {
 export const Builder = () => {
   return {
     template: hbs`
-    <AdjacentButton {{invoke (fn this.invoke)}} as |b|>
+    <AdjacentButton {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
       <b.Affix>affix</b.Affix>

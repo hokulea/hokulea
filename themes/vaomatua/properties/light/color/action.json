@@ -4,14 +4,14 @@
       "outline": {
         "text": {
           "$light": {
-            "value": "#53c373",
+            "value": "#205D32",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "border": {
           "$light": {
-            "value": "#53c373",
+            "value": "#205D32",
             "comment": "",
             "colorScheme": "light"
           }
@@ -27,14 +27,14 @@
         },
         "border": {
           "$light": {
-            "value": "#f2f2f2",
+            "value": "#F2F2F2",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "background": {
           "$light": {
-            "value": "#f2f2f2",
+            "value": "#F2F2F2",
             "comment": "",
             "colorScheme": "light"
           }

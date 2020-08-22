@@ -10,21 +10,21 @@
       },
       "low-contrast": {
         "$dark": {
-          "value": "#6e6e6e",
+          "value": "#6E6E6E",
           "comment": "",
           "colorScheme": "dark"
         }
       },
       "high-contrast": {
         "$dark": {
-          "value": "#f2f2f2",
+          "value": "#F2F2F2",
           "comment": "",
           "colorScheme": "dark"
         }
       },
       "reduced": {
         "$dark": {
-          "value": "#dfdfdf",
+          "value": "#DFDFDF",
           "comment": "",
           "colorScheme": "dark"
         }

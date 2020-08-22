@@ -3,7 +3,7 @@
     "adjacent": {
       "box": {
         "background": {
-          "value": "#2cd3b5",
+          "value": "#ABEDE1",
           "comment": ""
         },
         "border": {
@@ -11,13 +11,13 @@
           "comment": ""
         },
         "text": {
-          "value": "#2cd3b5",
+          "value": "#125448",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#2cd3b5",
+          "value": "#125448",
           "comment": ""
         },
         "border": {
@@ -25,13 +25,13 @@
           "comment": ""
         },
         "text": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": ""
         }
       },
       "active": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": ""
         },
         "border": {
@@ -49,11 +49,11 @@
           "comment": ""
         },
         "border": {
-          "value": "#2cd3b5",
+          "value": "#6BE0CB",
           "comment": ""
         },
         "background": {
-          "value": "#2cd3b5",
+          "value": "#6BE0CB",
           "comment": ""
         }
       },
@@ -63,16 +63,16 @@
           "comment": ""
         },
         "background": {
-          "value": "#2cd3b5",
+          "value": "#ABEDE1",
           "comment": ""
         },
         "border": {
-          "value": "#2cd3b5",
+          "value": "#ABEDE1",
           "comment": ""
         }
       },
       "emphasize": {
-        "value": "#2cd3b5",
+        "value": "#2CD3B5",
         "comment": ""
       }
     }

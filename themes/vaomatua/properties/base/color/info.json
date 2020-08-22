@@ -3,21 +3,21 @@
     "info": {
       "box": {
         "background": {
-          "value": "#0cb5f3",
+          "value": "#9EE1FA",
           "comment": ""
         },
         "border": {
-          "value": "#087faa",
+          "value": "#087FAA",
           "comment": ""
         },
         "text": {
-          "value": "#0cb5f3",
+          "value": "#054861",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#0cb5f3",
+          "value": "#054861",
           "comment": ""
         },
         "border": {
@@ -25,7 +25,7 @@
           "comment": ""
         },
         "text": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": ""
         }
       }

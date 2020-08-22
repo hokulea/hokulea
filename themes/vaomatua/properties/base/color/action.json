@@ -3,43 +3,43 @@
     "action": {
       "box": {
         "background": {
-          "value": "#53c373",
+          "value": "#C4EBCF",
           "comment": ""
         },
         "border": {
-          "value": "#205d32",
+          "value": "#205D32",
           "comment": ""
         },
         "text": {
-          "value": "#53c373",
+          "value": "#205D32",
           "comment": ""
         }
       },
       "fill": {
         "background": {
-          "value": "#53c373",
+          "value": "#205D32",
           "comment": ""
         },
         "border": {
-          "value": "#205d32",
+          "value": "#205D32",
           "comment": ""
         },
         "text": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": ""
         }
       },
       "active": {
         "text": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": ""
         },
         "border": {
-          "value": "#53c373",
+          "value": "#205D32",
           "comment": ""
         },
         "background": {
-          "value": "#53c373",
+          "value": "#205D32",
           "comment": ""
         }
       },
@@ -49,11 +49,11 @@
           "comment": ""
         },
         "border": {
-          "value": "#53c373",
+          "value": "#8CD7A1",
           "comment": ""
         },
         "background": {
-          "value": "#53c373",
+          "value": "#8CD7A1",
           "comment": ""
         }
       },
@@ -63,16 +63,16 @@
           "comment": ""
         },
         "background": {
-          "value": "#53c373",
+          "value": "#C4EBCF",
           "comment": ""
         },
         "border": {
-          "value": "#53c373",
+          "value": "#C4EBCF",
           "comment": ""
         }
       },
       "emphasize": {
-        "value": "#53c373",
+        "value": "#53C373",
         "comment": ""
       }
     }

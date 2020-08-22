@@ -4,14 +4,14 @@
       "outline": {
         "text": {
           "$dark": {
-            "value": "#e35858",
+            "value": "#EE9A9A",
             "comment": "",
             "colorScheme": "dark"
           }
         },
         "border": {
           "$dark": {
-            "value": "#e35858",
+            "value": "#EE9A9A",
             "comment": "",
             "colorScheme": "dark"
           }

@@ -4,13 +4,13 @@
       "inverse": {
         "disabled": {
           "$light": {
-            "value": "#cecece",
+            "value": "#CECECE",
             "comment": "",
             "colorScheme": "light"
           }
         },
         "$light": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": "Text color for more contrast (e.g. high-contrast or reduced)",
           "colorScheme": "light"
         }

@@ -4,14 +4,14 @@
       "outline": {
         "text": {
           "$dark": {
-            "value": "#f9aa4e",
+            "value": "#FCCE98",
             "comment": "",
             "colorScheme": "dark"
           }
         },
         "border": {
           "$dark": {
-            "value": "#f9aa4e",
+            "value": "#FCCE98",
             "comment": "",
             "colorScheme": "dark"
           }
@@ -20,21 +20,21 @@
       "disabled": {
         "text": {
           "$dark": {
-            "value": "#cecece",
+            "value": "#CECECE",
             "comment": "",
             "colorScheme": "dark"
           }
         },
         "border": {
           "$dark": {
-            "value": "#6e6e6e",
+            "value": "#6E6E6E",
             "comment": "",
             "colorScheme": "dark"
           }
         },
         "background": {
           "$dark": {
-            "value": "#6e6e6e",
+            "value": "#6E6E6E",
             "comment": "",
             "colorScheme": "dark"
           }

@@ -17,14 +17,14 @@
       },
       "disabled": {
         "$dark": {
-          "value": "#cecece",
+          "value": "#CECECE",
           "comment": "",
           "colorScheme": "dark"
         }
       },
       "normal": {
         "$dark": {
-          "value": "#f5f5f5",
+          "value": "#F5F5F5",
           "comment": "",
           "colorScheme": "dark"
         }

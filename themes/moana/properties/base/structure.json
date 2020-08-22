@@ -1,0 +1,13 @@
+{
+  "structure": {
+    "border-style": {
+      "value": "solid"
+    },
+    "border-radius": {
+      "value": "2px"
+    },
+    "border-width": {
+      "value": "4px"
+    }
+  }
+}

@@ -1,24 +1,24 @@
 :root {
   --line-height: var(--scale-ratio);
-  --font-family: var(--typo-prosa-family);
+  --font-family: var(--typo-prose-family);
 
-  --font-kerning: var(--typo-prosa-kerning);
-  --font-tracking: var(--typo-prosa-tracking);
-  --font-weight: var(--typo-prosa-weight);
-  --font-style: var(--typo-prosa-style);
-  --font-synthesis: var(--typo-prosa-synthesis);
-  --font-stretch: var(--typo-prosa-stretch);
-  --font-optical-sizing: var(--typo-prosa-optical-sizing);
+  --font-kerning: var(--typo-prose-kerning);
+  --font-tracking: var(--typo-prose-tracking);
+  --font-weight: var(--typo-prose-weight);
+  --font-style: var(--typo-prose-style);
+  --font-synthesis: var(--typo-prose-synthesis);
+  --font-stretch: var(--typo-prose-stretch);
+  --font-optical-sizing: var(--typo-prose-optical-sizing);
 
-  --font-variant-alternates: var(--typo-prosa-variant-alternates);
-  --font-variant-caps: var(--typo-prosa-variant-caps);
-  --font-variant-east-asian: var(--typo-prosa-variant-east-asian);
-  --font-variant-ligatures: var(--typo-prosa-variant-ligatures);
-  --font-variant-numeric: var(--typo-prosa-variant-numeric);
-  --font-variant-position: var(--typo-prosa-variant-position);
+  --font-variant-alternates: var(--typo-prose-variant-alternates);
+  --font-variant-caps: var(--typo-prose-variant-caps);
+  --font-variant-east-asian: var(--typo-prose-variant-east-asian);
+  --font-variant-ligatures: var(--typo-prose-variant-ligatures);
+  --font-variant-numeric: var(--typo-prose-variant-numeric);
+  --font-variant-position: var(--typo-prose-variant-position);
 
-  --font-variation-settings: var(--typo-prosa-variation-settings);
-  --font-feature-settings: var(--typo-prosa-feature-settings);
+  --font-variation-settings: var(--typo-prose-variation-settings);
+  --font-feature-settings: var(--typo-prose-feature-settings);
 }
 
 body {

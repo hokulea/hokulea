@@ -8,7 +8,7 @@ Typography is done with the following scheme:
 --typo-{flavor}-{prop}
 ```
 
-Flavors are: `prosa`, `heading` and `display`
+Flavors are: `prose`, `heading` and `display`
 
 With this list of properties:
 
@@ -145,7 +145,7 @@ documentation of the font to turn those on or off.
 ### Best Practices
 
 At best try to make use of modern variable fonts and control it through
-variations and features to create various styles for prosa, headings and
+variations and features to create various styles for prose, headings and
 display.
 
 In order to do this, when defining the font in your tokens, prefer to use

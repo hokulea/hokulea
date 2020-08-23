@@ -32,5 +32,8 @@
   "resolutions": {
     "typescript": "^3.9.5",
     "postcss-values-parser": "^3.2.1"
+  },
+  "volta": {
+    "node": "12.18.3"
   }
 }

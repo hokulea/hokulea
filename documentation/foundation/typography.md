@@ -2,8 +2,8 @@
 
 Hokulea supports typography in three flavors:
 
-Prosa
-: Prosa is used for 99% of the text, the one you are reading at the moment.
+Prose
+: Prose is used for 99% of the text, the one you are reading at the moment.
 
 Headings
 : Use for all headings (`h1` - `h4`) and provided utilities (`.t1` - `.t4`).

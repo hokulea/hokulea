@@ -15,8 +15,8 @@
 }
 
 :root {
-  --typo-prosa-family: 'Inter', system-ui, sans-serif;
-  --typo-prosa-feature-settings: 'case' 1, 'frac' 1, 'ss03' 1, 'cv05' 1, 'cv07', 'kern' 1;
+  --typo-prose-family: 'Inter', system-ui, sans-serif;
+  --typo-prose-feature-settings: 'case' 1, 'frac' 1, 'ss03' 1, 'cv05' 1, 'cv07', 'kern' 1;
 
   --typo-heading-feature-settings: 'liga' 1, 'calt' 1, 'cv05' 1, 'kern' 1;
   --typo-heading-tracking: -0.018em;

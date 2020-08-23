@@ -3,8 +3,8 @@ import { hbs } from 'ember-cli-htmlbars';
 
 const sortOrder = {
   'documentation': {
-    top: ['getting started'],
-    bottom: ['backstage']
+    top: ['getting started', 'foundation', 'guides'],
+    bottom: ['development', 'backstage']
   },
   'components': {},
   'api': {

@@ -1,5 +1,6 @@
 const path = require('path');
 const { precompile } = require('ember-source/dist/ember-template-compiler');
+const customBlock = require('markdown-it-custom-block')
 
 const hbsBabelLoader = {
   loader: "babel-loader",
@@ -34,7 +35,16 @@ const markdownCompilerConfig = {
     'markdown-it-sub',
     'markdown-it-sup'
   ],
-  // configure(md) {
+  configure(md) {
+    md.use(customBlock, {
+      figma(url) {
+        return `<iframe
+          style="width: 100%; min-height: 400px; resize: both;"
+          src="https://www.figma.com/embed?embed_host=share&url=${url}"
+          allowfullscreen
+        />`;
+      },
+    });
   //   const wrap = render =>
   //     function (...args) {
   //       return render.apply(this, args)
@@ -43,7 +53,7 @@ const markdownCompilerConfig = {
   //     };
 
   //   md.renderer.rules.code_inline = wrap(md.renderer.rules.code_inline)
-  // },
+  },
   format(doc) {
     const title = doc.attributes.title
       ? doc.attributes.title

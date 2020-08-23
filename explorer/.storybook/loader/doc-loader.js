@@ -7,12 +7,16 @@ const translateLinks = function (html, options) {
   const baseDir = path.dirname(options.file);
 
   // internal links
-  let output = html.replace(/<a href="([^"]+)\.md">/g, (_match, target) => {
+  let output = html.replace(/<a href="([^"]+)\.md#?(.+)?">/g, (_match, target, _hash) => {
     const nav = path.relative(options.dir, path.normalize(`${baseDir}/${target}`));
     const parts = nav.split('/');
     const name = parts.pop();
 
-    return `<a href="#" data-sb-kind="${Case.lower(options.root)}-${parts.join('-')}" data-sb-story="${name}">`;
+    return `<a
+      href="#"
+      data-sb-kind="${Case.lower(options.root)}-${parts.join('-')}"
+      data-sb-story="${name}"
+    >`;
   });
 
   // external links

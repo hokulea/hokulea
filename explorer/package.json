@@ -92,6 +92,7 @@
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^5.2.7",
     "markdown-it-compiler": "^0.1.0",
+    "markdown-it-custom-block": "^0.1.1",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-ember": "^0.0.3",
     "markdown-it-highlightjs": "^3.1.0",

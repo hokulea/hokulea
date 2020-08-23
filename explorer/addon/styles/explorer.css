@@ -12,6 +12,10 @@
   }
 }
 
+h3, h4 {
+  --typo-heading-weight: 500;
+}
+
 dt {
   font-weight: 600;
   margin-block-end: var(--s-4);
@@ -23,4 +27,12 @@ dd {
 
 dd + dt {
   margin-block-start: var(--s0);
+}
+
+th {
+  text-align: left;
+}
+
+tr > td:not(:last-child) {
+  padding-inline-end: var(--ls-1);
 }

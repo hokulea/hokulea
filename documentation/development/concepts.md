@@ -113,3 +113,22 @@ above can also be written as this (and is basically also a preferred way):
 ```hbs
 <TextInput @value={{this.value}} @update={{set this.value}}/>
 ```
+
+## Single Element Pattern
+
+With the [construction components](#construction-components) it is super easy to
+create variants of each base as its own component. As such, in hokulea you will
+not find `@intent`, `@appearance`, `@indicator` or similar arguments to control
+the variant of a component. Instead those will be available as direct component,
+e.g. `<AccentButton>` and `<WarningBadge>`. This way the coherence of these
+component is kept high, mainteneance is reduced to the minimum and side-effects
+are lowered to a minimum if not cleared away completely.
+
+More of this benefits are, that the arguments for a developer to remember will
+be reduced to only the minimum (or at best none at all). Developers do not have
+to find themselves in re-occuring failing recall scenarios of misspelled
+argument names. (Almost) zero-arguments for components greatly adds to the
+joy-layer hokulea is about.
+
+This is referred to as the [single element
+pattern](https://www.freecodecamp.org/news/introducing-the-single-element-pattern-dfbd2c295c5d/).

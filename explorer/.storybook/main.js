@@ -6,7 +6,7 @@ const hbsBabelLoader = {
   loader: "babel-loader",
   options: {
     // remove presets when solved: https://github.com/storybookjs/storybook/issues/11853
-    presets: ['@babel/preset-env', '@babel/preset-typescript'],
+    presets: ['@babel/preset-typescript'],
     plugins: [
       [
         require.resolve('babel-plugin-htmlbars-inline-precompile'),

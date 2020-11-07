@@ -36,11 +36,25 @@ Default.story = {
   }
 };
 
-export const Accessibility = () => {
+export const Japanese = () => {
   return {
     template: hbs`
       <AccentButton aria-label="Go Tomster!">
         <span aria-hidden="true">とむすた</span>
+      </AccentButton>
+    `
+  };
+};
+
+Japanese.story = {
+  name: 'A11y'
+};
+
+export const Accessibility = () => {
+  return {
+    template: hbs`
+      <AccentButton aria-label="Go Tomster!">
+        <span aria-hidden="true">🐹</span>
       </AccentButton>
     `
   };

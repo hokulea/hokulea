@@ -27,6 +27,7 @@
     "@microsoft/api-documenter": "^7.9.25",
     "els-a11y-addon": "^1.0.4",
     "els-addon-typed-templates": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "lerna": "^3.22.1"
   },
   "resolutions": {

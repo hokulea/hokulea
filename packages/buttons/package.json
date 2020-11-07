@@ -22,8 +22,8 @@
     "postpublish": "ember ts:clean"
   },
   "dependencies": {
-    "@hokulea/ember-css-modules-config": "^0.0.1",
     "@glimmer/component": "^1.0.2",
+    "@hokulea/ember-css-modules-config": "^0.0.1",
     "@hokulea/foundation": "^0.0.0",
     "ember-cli-babel": "^7.23.0",
     "ember-cli-htmlbars": "^5.3.1",

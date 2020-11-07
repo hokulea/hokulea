@@ -4,8 +4,6 @@ import { module, test } from 'qunit';
 
 import { hbs } from 'ember-cli-htmlbars';
 
-const foo = hbs`🐹`;
-
 module('Rendering | Buttons | <AccentButton>', function (hooks) {
   setupRenderingTest(hooks);
 
@@ -13,12 +11,6 @@ module('Rendering | Buttons | <AccentButton>', function (hooks) {
     await render(hbs`<AccentButton>click me!</AccentButton>`);
 
     assert.dom('[data-test-button-content]').hasText('click me!');
-  });
-
-  test('a11y use-case', async function (assert) {
-    await render(hbs`<AccentButton>🐹</AccentButton>`);
-
-    assert.dom('[data-test-button-content]').hasText(foo);
   });
 
   test('basic composition use-case', async function (assert) {

@@ -4,7 +4,7 @@
     checked={{@value}}
     local-class="input"
     ...attributes
-    {{on "input" (target-prop @update "checked")}}
+    {{on "input" (pick "target.checked" @update)}}
   />
 
   <svg

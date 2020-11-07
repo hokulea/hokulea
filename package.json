@@ -24,14 +24,17 @@
     "themes/*"
   ],
   "devDependencies": {
-    "@microsoft/api-documenter": "^7.8.0",
+    "@microsoft/api-documenter": "^7.9.25",
     "els-a11y-addon": "^1.0.4",
-    "els-addon-typed-templates": "^2.2.16",
-    "lerna": "^3.20.2"
+    "els-addon-typed-templates": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "lerna": "^3.22.1"
   },
   "resolutions": {
-    "typescript": "3.7.5",
-    "ember-cli-htmlbars": "^5.1.2",
     "postcss-values-parser": "^3.2.1"
+  },
+  "volta": {
+    "node": "14.15.0",
+    "yarn": "1.22.5"
   }
 }

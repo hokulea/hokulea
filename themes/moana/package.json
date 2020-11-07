@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Moana theme for hokulea",
   "license": "MIT",
+  "keywords": [
+    "theemo-theme"
+  ],
   "theemo": {
     "name": "moana",
     "colorSchemes": [
@@ -18,10 +21,10 @@
     "magic": "yarn sync && yarn build && yarn generate"
   },
   "devDependencies": {
-    "style-dictionary": "2.8.3",
+    "style-dictionary": "^2.10.2",
     "theemo": "^0.0.9"
   },
-  "keywords": [
-    "theemo-theme"
-  ]
+  "volta": {
+    "extends": "../../package.json"
+  }
 }

@@ -24,16 +24,16 @@
     "themes/*"
   ],
   "devDependencies": {
-    "@microsoft/api-documenter": "^7.8.33",
+    "@microsoft/api-documenter": "^7.9.25",
     "els-a11y-addon": "^1.0.4",
     "els-addon-typed-templates": "^3.0.0",
-    "lerna": "^3.20.2"
+    "lerna": "^3.22.1"
   },
   "resolutions": {
     "postcss-values-parser": "^3.2.1"
   },
   "volta": {
-    "node": "12.18.3",
-    "yarn": "1.22.4"
+    "node": "14.15.0",
+    "yarn": "1.22.5"
   }
 }

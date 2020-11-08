@@ -61,6 +61,14 @@ module.exports = {
       ]
     });
 
+    // ref: https://github.com/storybookjs/storybook/issues/11853
+    config.module.rules.push({
+      test: /\.ts$/,
+      use: [
+        hbsBabelLoader
+      ],
+    });
+
     return config;
   }
 };

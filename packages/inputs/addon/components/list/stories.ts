@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 // import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Inputs/List',
+  title: 'Components/Inputs/List',
   parameters: {
     options: {
       showPanel: true,
@@ -27,6 +27,17 @@ export const Default = () => {
   };
 };
 
+// Default.story = {
+//   decorators: [withDesign],
+//   parameters: {
+//     design: {
+//       type: 'figma',
+//       url:
+//         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Hokulea?node-id=575%3A9'
+//     }
+//   }
+// };
+
 export const MultiSelect = () => {
   return {
     template: hbs`
@@ -45,14 +56,3 @@ export const MultiSelect = () => {
     }
   };
 };
-
-// Default.story = {
-//   decorators: [withDesign],
-//   parameters: {
-//     design: {
-//       type: 'figma',
-//       url:
-//         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Hokulea?node-id=575%3A9'
-//     }
-//   }
-// };

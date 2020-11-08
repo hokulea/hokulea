@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components|Inputs/Select',
+  title: 'Components/Inputs/Select',
   parameters: {
     options: {
       showPanel: true,

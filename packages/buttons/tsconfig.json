@@ -1,24 +1,7 @@
 {
+  "extends": "../../configs/tsconfig",
   "compilerOptions": {
-    "target": "es2017",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noEmitOnError": false,
-    "inlineSourceMap": true,
-    "inlineSources": true,
     "baseUrl": ".",
-    "module": "es6",
-    "experimentalDecorators": true,
     "paths": {
       "dummy/tests/*": [
         "tests/*"

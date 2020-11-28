@@ -1,33 +1,31 @@
 {
+  "extends": "../../configs/tsconfig",
   "compilerOptions": {
-    "target": "es2017",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noEmitOnError": false,
-    "noEmit": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
     "baseUrl": ".",
-    "module": "es6",
-    "experimentalDecorators": true,
     "paths": {
-      "dummy/tests/*": ["tests/*"],
-      "dummy/*": ["tests/dummy/app/*", "app/*"],
-      "@hokulea/foundation": ["addon"],
-      "@hokulea/foundation/*": ["addon/*"],
-      "@hokulea/foundation/test-support": ["addon-test-support"],
-      "@hokulea/foundation/test-support/*": ["addon-test-support/*"],
-      "*": ["../../types/*", "types/*"]
+      "dummy/tests/*": [
+        "tests/*"
+      ],
+      "dummy/*": [
+        "tests/dummy/app/*",
+        "app/*"
+      ],
+      "@hokulea/foundation": [
+        "addon"
+      ],
+      "@hokulea/foundation/*": [
+        "addon/*"
+      ],
+      "@hokulea/foundation/test-support": [
+        "addon-test-support"
+      ],
+      "@hokulea/foundation/test-support/*": [
+        "addon-test-support/*"
+      ],
+      "*": [
+        "../../types/*",
+        "types/*"
+      ]
     }
   },
   "include": [

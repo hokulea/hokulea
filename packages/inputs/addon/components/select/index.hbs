@@ -1,6 +1,6 @@
 <div local-class="extrinsic">
   <div local-class="select">
-    <DropdownBuilder @opened={{this.handleExpansion}} as |ddb|>
+    <DropdownBuilder as |ddb|>
       <button
         type="button"
         local-class="trigger"
@@ -8,7 +8,19 @@
         {{widget-remote-control for=ddb.id}}
       >
         <span>
-          Let's open this one here
+          {{#if @value}}
+            {{#if @multiple}}
+              {{#each @value as |value|}}
+                <span local-class="selected-value">
+                  {{yield value}}
+                </span>
+              {{/each}}
+            {{else}}
+              {{yield @value}}
+            {{/if}}
+          {{else}}
+            {{@placeholder}}
+          {{/if}}
         </span>
         <svg
           width="18"
@@ -22,10 +34,10 @@
       </button>
       <List
         local-class="options"
+        aria-multiselectable={{if @multiple "true"}}
         @items={{@options}}
         @select={{this.select}}
-        {{dropdown-popup ddb}}
-        {{did-insert this.setupList}} as |option|
+        {{dropdown-popup ddb}} as |option|
       >
         {{yield option}}
       </List>

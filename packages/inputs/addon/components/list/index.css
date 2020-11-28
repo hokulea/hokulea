@@ -29,4 +29,9 @@
       }
     }
   }
+
+  [role="option"]:hover {
+    color: var(--color-action-base-text);
+    background-color: var(--color-action-base-background);
+  }
 }

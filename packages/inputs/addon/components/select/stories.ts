@@ -1,6 +1,9 @@
+/* eslint-disable max-classes-per-file */
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+
 import { hbs } from 'ember-cli-htmlbars';
 
-import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
@@ -32,9 +35,7 @@ export const Default = () => {
       </select>
       <p>Some text under the select</p>
     `,
-    context: {
-      update: action('checked')
-    }
+    context: {}
   };
 };
 
@@ -47,4 +48,36 @@ Default.story = {
         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Hokulea?node-id=575%3A9'
     }
   }
+};
+
+class MultipleContext {
+  @tracked value: string[] = [];
+
+  @action
+  update(selection: string[]) {
+    this.value = selection;
+  }
+}
+
+export const Multiple = () => {
+  return {
+    template: hbs`
+      <Select @multiple={{true}} @options={{array "Banana" "Apple" "Pear"}} as |option|>
+        {{option}}
+      </Select> this text is supposed to be next to the select
+      <p>Some text under the select</p>
+      <p>Some text under the select</p>
+      <p>Some text under the select</p>
+      <p>Some text under the select</p>
+      <p>Some text under the select</p>
+      <p>Some text under the select</p>
+      <p>Some text under the select</p>
+      <select>
+        <option>foo</option>
+        <option>bar</option>
+      </select>
+      <p>Some text under the select</p>
+    `,
+    context: new MultipleContext()
+  };
 };

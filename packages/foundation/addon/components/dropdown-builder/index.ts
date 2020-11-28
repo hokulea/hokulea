@@ -1,3 +1,4 @@
+import { assert } from '@ember/debug';
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
@@ -22,10 +23,26 @@ export default class DropdownBuilderComponent extends Component<
 
   registerTrigger(trigger: DropdownTriggerModifier) {
     this.triggerPart = trigger;
+    this.setAriaPopupOnTrigger();
   }
 
   registerPopup(popup: DropdownPopupModifier) {
     this.popupPart = popup;
+    this.setAriaPopupOnTrigger();
+  }
+
+  private setAriaPopupOnTrigger() {
+    if (this.triggerPart && this.popupPart) {
+      assert(
+        'Please set `role` on popup for dropdown',
+        this.popupPart.element.hasAttribute('role')
+      );
+
+      this.triggerPart.element.setAttribute(
+        'aria-haspopup',
+        this.popupPart.element.getAttribute('role') as string
+      );
+    }
   }
 
   @action
@@ -47,7 +64,7 @@ export default class DropdownBuilderComponent extends Component<
     this.expanded = expanded;
 
     this.triggerPart?.updateExpanded(expanded);
-    this.popupPart?.updateExpanded(expanded);
+    // this.popupPart?.updateExpanded(expanded);
 
     if (expanded) {
       this.args.opened?.();

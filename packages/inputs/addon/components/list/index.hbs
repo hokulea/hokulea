@@ -2,10 +2,10 @@
   role="listbox"
   local-class="list"
   ...attributes
-  {{widget-control selectionChanged=this.select}}
+  {{control items=@items selection=@selection select=this.select}}
 >
   {{#each @items as |item|}}
-    <li role="option" aria-selected={{contains item @selection}}>
+    <li role="option">
       {{yield item}}
     </li>
   {{/each}}

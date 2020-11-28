@@ -1,6 +1,7 @@
 {
   "extends": "../../configs/tsconfig",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "dummy/tests/*": [
         "tests/*"

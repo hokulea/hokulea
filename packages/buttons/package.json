@@ -77,6 +77,21 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
+  "typesVersions": {
+    "*": {
+      "test-support": [
+        "addon-test-support/index"
+      ],
+      "test-support/*": [
+        "addon-test-support/*",
+        "addon-test-support/*/index"
+      ],
+      "*": [
+        "addon/*",
+        "addon/*/index"
+      ]
+    }
+  },
   "volta": {
     "extends": "../../package.json"
   }

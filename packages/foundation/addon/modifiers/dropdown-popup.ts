@@ -3,23 +3,23 @@ import Modifier from 'ember-modifier';
 import DropdownBuilderComponent from '../components/dropdown-builder';
 
 interface DropdownPopupArgs {
-  positional: [{ parent: DropdownBuilderComponent }];
-  named: {};
+  positional: [DropdownBuilderComponent];
+  named: Record<string, unknown>;
 }
 
 export default class DropdownPopupModifier extends Modifier<DropdownPopupArgs> {
-  get parent() {
-    return this.args.positional[0].parent;
+  get ddb() {
+    return this.args.positional[0];
   }
 
   didInstall() {
-    this.parent?.registerPopup(this);
+    this.ddb?.registerPopup(this);
 
     if (this.element) {
       // this.element.addEventListener('click', () => {
       //   this.parent.trigger();
       // });
-      this.element.id = this.parent.id;
+      this.element.id = this.ddb.id;
 
       // move to body
       // this.element.parentElement?.removeChild(this.element);

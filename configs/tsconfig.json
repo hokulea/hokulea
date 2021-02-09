@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2017",
     "allowJs": true,
+    "target": "es2017",
+    "module": "es6",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
@@ -16,7 +17,6 @@
     "noEmitOnError": false,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "module": "es6",
     "experimentalDecorators": true
   }
 }

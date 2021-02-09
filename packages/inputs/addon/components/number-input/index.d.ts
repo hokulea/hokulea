@@ -5,17 +5,7 @@ import { InputControl } from '@hokulea/inputs/components/input-builder';
 /**
  * Arguments for the `<NumberInput>` component
  */
-export interface NumberInputArgs extends InputControl {
-  /**
-   * The value passed into the component
-   */
-  value: string;
-
-  /**
-   * A callback that receives the updated value
-   */
-  update: (value: string) => void;
-}
+export type NumberInputArgs = InputControl<number>;
 
 /**
  * `<NumberInput>` is for numeric inputs

@@ -12,23 +12,47 @@ interface DropdownBuilderArgs {
   closed: () => void;
 }
 
+export interface DropdownBuilderBlocks {
+  default: [DropdownBuilderComponent];
+}
+
 export default class DropdownBuilderComponent extends Component<
   DropdownBuilderArgs
 > {
+  // eslint-disable-next-line @typescript-eslint/no-invalid-this
   id = guidFor(this);
   @tracked expanded = false;
 
-  private triggerPart?: DropdownTriggerModifier;
-  private popupPart?: DropdownPopupModifier;
+  triggerPart?: DropdownTriggerModifier;
+  popupPart?: DropdownPopupModifier;
 
   registerTrigger(trigger: DropdownTriggerModifier) {
     this.triggerPart = trigger;
+    this.registerCloseListener();
     this.setAriaPopupOnTrigger();
   }
 
   registerPopup(popup: DropdownPopupModifier) {
     this.popupPart = popup;
+    this.registerCloseListener();
     this.setAriaPopupOnTrigger();
+  }
+
+  private registerCloseListener() {
+    if (this.triggerPart && this.popupPart) {
+      document.body.addEventListener('click', (event: MouseEvent) => {
+        const path = event.composedPath();
+
+        if (
+          path.includes((this.popupPart as DropdownTriggerModifier).element) ||
+          path.includes((this.triggerPart as DropdownPopupModifier).element)
+        ) {
+          return;
+        }
+
+        this.close();
+      });
+    }
   }
 
   private setAriaPopupOnTrigger() {
@@ -46,7 +70,12 @@ export default class DropdownBuilderComponent extends Component<
   }
 
   @action
-  trigger() {
+  isExpanded() {
+    return this.expanded;
+  }
+
+  @action
+  toggle() {
     this.updateExpanded(!this.expanded);
   }
 

@@ -26,6 +26,8 @@ export default class IndexEmitStrategy implements EmitStrategy {
   }
 
   protected getSelectionIndices(selection: Item[]) {
-    return selection.map(i => this.control.items.indexOf(i));
+    return selection
+      .map(i => this.control.items.indexOf(i))
+      .filter(i => i !== -1);
   }
 }

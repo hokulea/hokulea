@@ -2,7 +2,12 @@
   role="listbox"
   local-class="list"
   ...attributes
-  {{control items=@items selection=@selection select=this.select}}
+  {{control
+    items=@items
+    selection=@selection
+    select=this.select
+    activateItem=this.activateItem
+  }}
 >
   {{#each @items as |item|}}
     <li role="option">

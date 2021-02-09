@@ -5,17 +5,7 @@ import { InputControl } from '@hokulea/inputs/components/input-builder';
 /**
  * Arguments for the `<Checkbox>` component
  */
-interface CheckboxArgs extends InputControl {
-  /**
-   * The value passed into the component
-   */
-  value: boolean;
-
-  /**
-   * A callback that receives the updated value
-   */
-  update: (value: boolean) => void;
-}
+type CheckboxArgs = InputControl<boolean>;
 
 /**
  * `<Checkbox>` to toggle values on and off

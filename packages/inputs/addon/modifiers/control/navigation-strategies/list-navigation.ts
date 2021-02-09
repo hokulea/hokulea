@@ -39,6 +39,8 @@ export default class ListNavigationStrategy {
   }
 
   private navigateWithKeyboard(event: KeyboardEvent) {
+    console.log('navigateWithKeyboard', event);
+
     if (event.type === 'keydown') {
       this.handleKeyNavigation(event);
       this.handleKeyCombinations(event);
@@ -54,7 +56,7 @@ export default class ListNavigationStrategy {
   private handleKeyNavigation(event: KeyboardEvent) {
     // prev
     if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-      this.navigatePrev(event);
+      this.navigatePrevious(event);
     }
 
     // next
@@ -73,7 +75,7 @@ export default class ListNavigationStrategy {
     }
   }
 
-  private navigatePrev(event: KeyboardEvent) {
+  navigatePrevious(event: KeyboardEvent) {
     // determine previous item
     let previous;
     if (this.control.activeItem) {
@@ -97,10 +99,12 @@ export default class ListNavigationStrategy {
       } else {
         this.select(previous);
       }
+    } else {
+      this.navigateEnd(event);
     }
   }
 
-  private navigateNext(event: KeyboardEvent) {
+  navigateNext(event: KeyboardEvent) {
     // determine next item
     let next;
     if (this.control.activeItem) {
@@ -125,10 +129,12 @@ export default class ListNavigationStrategy {
       } else {
         this.select(next);
       }
+    } else {
+      this.navigateHome(event);
     }
   }
 
-  private navigateHome(event: KeyboardEvent) {
+  navigateHome(event: KeyboardEvent) {
     if (this.control.activeItem) {
       this.shiftItem = this.control.activeItem;
     }
@@ -144,7 +150,7 @@ export default class ListNavigationStrategy {
     this.control.activateItem(this.control.items[0]);
   }
 
-  private navigateEnd(event: KeyboardEvent) {
+  navigateEnd(event: KeyboardEvent) {
     const lastOffset = this.control.items.length - 1;
     if (this.control.activeItem) {
       this.shiftItem = this.control.activeItem;
@@ -166,7 +172,7 @@ export default class ListNavigationStrategy {
    * and cmd/ctrl + a
    */
   private handleKeyCombinations(event: KeyboardEvent) {
-    if (event.key === ' ' && this.control.activeItem) {
+    if (event.key === ' ' && this.control.activeItem && this.control.multiple) {
       // handle select and active item
       if (this.control.selection.includes(this.control.activeItem)) {
         this.deselect(this.control.activeItem);

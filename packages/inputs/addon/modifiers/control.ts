@@ -3,7 +3,7 @@ import { associateDestroyableChild } from '@ember/destroyable';
 import Modifier from 'ember-modifier';
 
 import Control from './control/controls/control';
-import Listbox from './control/controls/listbox';
+import ControlFactory from './control/controls/control-factory';
 import EmitStrategy, {
   PersistResult
 } from './control/emit-strategies/emit-strategy';
@@ -171,9 +171,11 @@ export default class ControlControlModifier<T> extends Modifier<
 
   setup() {
     if (this.element) {
-      this.element.setAttribute('tabindex', '0');
+      if (!this.element.hasAttribute('tabindex')) {
+        this.element.setAttribute('tabindex', '0');
+      }
 
-      this.control = this.createControl(this.element as HTMLElement);
+      this.control = ControlFactory.createControl(this.element as HTMLElement);
       this.emitStrategy = this.createOrUpdateEmitStrategy(this.control);
       this.updateStrategy = this.createOrUpdateUpdateStrategy(this.control);
 
@@ -196,24 +198,12 @@ export default class ControlControlModifier<T> extends Modifier<
   }
 
   teardown() {
-    if (this.control && this.element) {
-      this.element.removeEventListener('mousedown', this.control.navigate);
-      this.element.removeEventListener('keydown', this.control.navigate);
-      this.element.removeEventListener('keyup', this.control.navigate);
-      this.element.removeEventListener('focusin', this.control.focus);
+    if (this.control) {
+      this.control.teardown();
     }
   }
 
   // factories
-
-  private createControl(element: HTMLElement) {
-    const role = element.getAttribute('role');
-    if (role === 'listbox') {
-      return new Listbox(element);
-    }
-
-    return new Control(element);
-  }
 
   private createOrUpdateUpdateStrategy(widget: Control) {
     const args = this.args.named;

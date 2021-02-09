@@ -30,6 +30,18 @@ export default class Control {
     this.readOptions();
   }
 
+  teardown() {
+    // implements this
+  }
+
+  installRemote(_element: HTMLElement) {
+    // implement this
+  }
+
+  uninstallRemote(_element: HTMLElement) {
+    // implement this
+  }
+
   setEmitter(emitter: EmitStrategy) {
     this.emitter = emitter;
   }

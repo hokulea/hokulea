@@ -10,8 +10,13 @@ export interface ListArgs {
 
 export default class ListComponent extends Component<ListArgs> {
   @action
-  select(indices: number[]) {
-    const selection = indices.map(idx => this.args.items[idx]);
+  select(selection: unknown[]) {
+    console.log('List.select', selection);
+
+    // const selection = indices.map(idx => this.args.items[idx]);
     this.args.select?.(selection);
   }
+
+  @action
+  activateItem(_item: unknown) {}
 }

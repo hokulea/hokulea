@@ -4,8 +4,8 @@
       <button
         type="button"
         local-class="trigger"
-        {{dropdown-trigger ddb}}
-        {{widget-remote-control for=ddb.id}}
+        {{dropdown-trigger ddb installListener=this.installTriggerListener}}
+        {{!-- {{did-insert (fn this.installRemoteControl ddb)}} --}}
       >
         <span>
           {{#if @value}}
@@ -18,8 +18,10 @@
             {{else}}
               {{yield @value}}
             {{/if}}
-          {{else}}
+          {{else if @placeholder}}
             {{@placeholder}}
+          {{else}}
+            &nbsp;
           {{/if}}
         </span>
         <svg
@@ -33,10 +35,13 @@
         </svg>
       </button>
       <List
+        tabindex="-1"
         local-class="options"
         aria-multiselectable={{if @multiple "true"}}
         @items={{@options}}
         @select={{this.select}}
+        {{on "mouseup" (fn this.close ddb.close)}}
+        {{did-insert this.setupList}}
         {{dropdown-popup ddb}} as |option|
       >
         {{yield option}}

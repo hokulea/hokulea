@@ -9,6 +9,7 @@
   display: inline-flex;
   flex-direction: column;
   width: 100%;
+  min-width: 75px;
 }
 
 .trigger {
@@ -62,6 +63,10 @@
       content: ' ';
       height: border-width;
     } */
+
+    & + .options {
+      z-index: 50;
+    }
   }
 }
 
@@ -83,5 +88,12 @@
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+  }
+
+  [role="option"] {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
   }
 }

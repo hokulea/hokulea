@@ -1,35 +1,49 @@
 import Modifier from 'ember-modifier';
 
-import DropdownBuilderComponent from 'dummy/components/dropdown-builder';
+import DropdownBuilderComponent from '../components/dropdown-builder';
 
 interface DropdownTriggerArgs {
-  positional: [{ parent: DropdownBuilderComponent }];
-  named: {};
+  positional: [DropdownBuilderComponent];
+  named: {
+    installListener: (element: Element, ddb: DropdownBuilderComponent) => void;
+  };
 }
 
 export default class DropdownTriggerModifier extends Modifier<
   DropdownTriggerArgs
 > {
-  get parent() {
-    return this.args.positional[0].parent;
+  get ddb() {
+    return this.args.positional[0];
+  }
+
+  get installListener() {
+    return this.args.named.installListener;
   }
 
   didInstall() {
-    this.parent?.registerTrigger(this);
+    this.ddb?.registerTrigger(this);
 
     if (this.element) {
-      this.element.addEventListener('click', () => {
-        this.parent.trigger();
-      });
-      this.element.setAttribute('aria-owns', this.parent.id);
-      this.element.setAttribute('aria-controls', this.parent.id);
+      const { installListener } = this;
+      if (installListener) {
+        installListener(this.element, this.ddb);
+      } else {
+        this.installDefaultListener();
+      }
+      this.element.setAttribute('aria-owns', this.ddb.id);
+      this.element.setAttribute('aria-controls', this.ddb.id);
     }
+  }
+
+  private installDefaultListener() {
+    this.element.addEventListener('click', () => {
+      this.ddb.toggle();
+    });
   }
 
   updateExpanded(expanded: boolean) {
     if (this.element) {
       this.element.setAttribute('aria-expanded', `${expanded}`);
-      // this.element.setAttribute('')
     }
   }
 }

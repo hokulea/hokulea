@@ -10,7 +10,7 @@
 
 /* Temp, soon to come from tokens itself */
 :root {
-  --color-structure-border: #DFDFDF;
+  --color-structure-border: var(--color-layout-low-contrast);
   --structure-border-style: border-style;
   --structure-border-width: border-width;
   --structure-border-radius: border-radius;

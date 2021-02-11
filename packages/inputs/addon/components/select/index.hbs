@@ -1,9 +1,10 @@
-<div local-class="extrinsic">
+<div local-class="extrinsic" data-test-select>
   <div local-class="select">
     <DropdownBuilder as |ddb|>
       <button
         type="button"
         local-class="trigger"
+        data-test-select="trigger"
         {{dropdown-trigger ddb installListener=this.installTriggerListener}}
         {{!-- {{did-insert (fn this.installRemoteControl ddb)}} --}}
       >
@@ -38,6 +39,7 @@
         tabindex="-1"
         local-class="options"
         aria-multiselectable={{if @multiple "true"}}
+        data-test-select="list"
         @items={{@options}}
         @select={{this.select}}
         {{on "mouseup" (fn this.close ddb.close)}}

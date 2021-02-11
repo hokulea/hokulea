@@ -22,6 +22,7 @@
     "postpublish": "ember ts:clean"
   },
   "dependencies": {
+    "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^1.0.2",
     "@hokulea/ember-css-modules-config": "^0.0.1",
     "@hokulea/foundation": "^0.0.0",

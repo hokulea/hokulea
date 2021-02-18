@@ -32,6 +32,7 @@ export default class DropdownTriggerModifier extends Modifier<
       }
       this.element.setAttribute('aria-owns', this.ddb.id);
       this.element.setAttribute('aria-controls', this.ddb.id);
+      this.element.setAttribute('aria-expanded', 'false');
     }
   }
 

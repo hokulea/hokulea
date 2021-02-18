@@ -4,16 +4,16 @@ import { module, test } from 'qunit';
 
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Rendering | Buttons | <AccentButton>', function (hooks) {
+module('Rendering | Buttons | <AccentButton>', hooks => {
   setupRenderingTest(hooks);
 
-  test('basic use-case', async function (assert) {
+  test('basic use-case', async assert => {
     await render(hbs`<AccentButton>click me!</AccentButton>`);
 
     assert.dom('[data-test-button-content]').hasText('click me!');
   });
 
-  test('basic composition use-case', async function (assert) {
+  test('basic composition use-case', async assert => {
     await render(hbs`
       <AccentButton as |b|>
         <b.Content data-test-button-content>click me!</b.Content>
@@ -23,7 +23,7 @@ module('Rendering | Buttons | <AccentButton>', function (hooks) {
     assert.dom('[data-test-button-content]').hasText('click me!');
   });
 
-  test('full composition use-case', async function (assert) {
+  test('full composition use-case', async assert => {
     await render(hbs`
       <AccentButton as |b|>
         <b.Prefix data-test-button-prefix>pre</b.Prefix>

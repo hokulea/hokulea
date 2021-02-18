@@ -13,18 +13,16 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <NumberInput @update={{fn this.type}} />
     `,
-    context: {
-      get type() {
-        return action('type');
-      }
+  context: {
+    get type() {
+      return action('type');
     }
-  };
-};
+  }
+});
 
 Default.story = {
   decorators: [withDesign],
@@ -37,20 +35,17 @@ Default.story = {
   }
 };
 
-export const Sizing = () => {
-  return {
-    template: hbs`
+export const Sizing = () => ({
+  template: hbs`
       <NumberInput {{style fontSize="80%"}} @value="80"/>
       <NumberInput @value="100"/>
       <NumberInput {{style fontSize="120%"}} @value="120"/>
       <NumberInput {{style fontSize="150%"}} @value="150"/>
     `
-  };
-};
+});
 
-export const Builder = () => {
-  return {
-    template: hbs`
+export const Builder = () => ({
+  template: hbs`
     <InputBuilder @control="number-input" as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
@@ -63,10 +58,9 @@ export const Builder = () => {
       <b.Suffix>Suffix</b.Suffix>
     </InputBuilder>
     `,
-    context: {
-      type(value: string) {
-        action('type')(value);
-      }
+  context: {
+    type(value: string) {
+      action('type')(value);
     }
-  };
-};
+  }
+});

@@ -13,17 +13,15 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <AccentButton {{on "click" (fn this.invoke)}}>Accent Button</AccentButton>
       <AccentButton disabled={{true}}>Disabled Accent Button</AccentButton>
     `,
-    context: {
-      invoke: action('button invoked')
-    }
-  };
-};
+  context: {
+    invoke: action('button invoked')
+  }
+});
 
 Default.story = {
   decorators: [withDesign],
@@ -36,34 +34,29 @@ Default.story = {
   }
 };
 
-export const Accessibility = () => {
-  return {
-    template: hbs`
+export const Accessibility = () => ({
+  template: hbs`
       <AccentButton aria-label="Go Tomster!">
         <span aria-hidden="true">🐹</span>
       </AccentButton>
     `
-  };
-};
+});
 
 Accessibility.story = {
   name: 'A11y'
 };
 
-export const Sizing = () => {
-  return {
-    template: hbs`
+export const Sizing = () => ({
+  template: hbs`
       <AccentButton {{style fontSize="80%"}}>80% Font Size</AccentButton>
       <AccentButton>Normal</AccentButton>
       <AccentButton {{style fontSize="120%"}}>120% Font Size</AccentButton>
       <AccentButton {{style fontSize="150%"}}>150% Font Size</AccentButton>
     `
-  };
-};
+});
 
-export const Builder = () => {
-  return {
-    template: hbs`
+export const Builder = () => ({
+  template: hbs`
     <AccentButton {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
@@ -88,8 +81,7 @@ export const Builder = () => {
       <b.Suffix>Suffix</b.Suffix>
     </AccentButton>
     `,
-    context: {
-      invoke: action('button invoked')
-    }
-  };
-};
+  context: {
+    invoke: action('button invoked')
+  }
+});

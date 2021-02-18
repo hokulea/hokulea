@@ -12,23 +12,21 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <CenterLayout @intrinsic={{this.intrinsic}} @text={{this.text}}>
         <p>Hello text</p>
       </CenterLayout>`,
-    context: {
-      get intrinsic() {
-        return boolean('intrinsic', false);
-      },
+  context: {
+    get intrinsic() {
+      return boolean('intrinsic', false);
+    },
 
-      get text() {
-        return boolean('text', false);
-      }
+    get text() {
+      return boolean('text', false);
     }
-  };
-};
+  }
+});
 
 Default.story = {
   decorators: [withKnobs]

@@ -13,31 +13,26 @@ export default {
   // component: ClusterLayoutComponent
 };
 
-export const Foo = () => {
-  return {
-    template: hbs`
+export const Foo = () => ({
+  template: hbs`
       <ClusterLayout>
         <BoxLayout>Tag 1</BoxLayout>
         <BoxLayout>Tag 2</BoxLayout>
         <BoxLayout>Tag 3</BoxLayout>
       </ClusterLayout>`
-  };
-};
+});
 
-export const Centered = () => {
-  return {
-    template: hbs`
+export const Centered = () => ({
+  template: hbs`
       <ClusterLayout @justify="center">
         <BoxLayout>Tag 1</BoxLayout>
         <BoxLayout>Tag 2</BoxLayout>
         <BoxLayout>Tag 3</BoxLayout>
       </ClusterLayout>`
-  };
-};
+});
 
-export const Navbar = () => {
-  return {
-    template: hbs`
+export const Navbar = () => ({
+  template: hbs`
       <ClusterLayout @justify="space-between">
         <p>BRAND</p>
         <ClusterLayout>
@@ -46,8 +41,7 @@ export const Navbar = () => {
           <BoxLayout>About</BoxLayout>
         </ClusterLayout>
       </ClusterLayout>`
-  };
-};
+});
 
 Navbar.story = {
   name: 'Example: Navbar'

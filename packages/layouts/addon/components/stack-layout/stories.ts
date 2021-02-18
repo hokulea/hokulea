@@ -10,21 +10,18 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <StackLayout>
         <BoxLayout>Hello text</BoxLayout>
         <BoxLayout>Hello another</BoxLayout>
         <BoxLayout>Looks like a box?</BoxLayout>
         <BoxLayout>Yes indeed!</BoxLayout>
       </StackLayout>`
-  };
-};
+});
 
-export const Recursive = () => {
-  return {
-    template: hbs`
+export const Recursive = () => ({
+  template: hbs`
       <StackLayout @recursive={{true}}>
         <BoxLayout>Hello text</BoxLayout>
         <BoxLayout>Hello another</BoxLayout>
@@ -35,5 +32,4 @@ export const Recursive = () => {
         </BoxLayout>
         <BoxLayout>Yes indeed!</BoxLayout>
       </StackLayout>`
-  };
-};
+});

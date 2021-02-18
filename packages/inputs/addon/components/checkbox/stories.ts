@@ -13,19 +13,17 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <Checkbox @update={{fn this.update}}/>
       <Checkbox disabled={{true}}/>
       <Checkbox @value={{true}} @update={{fn this.update}}/>
       <Checkbox @value={{true}} disabled={{true}}/>
     `,
-    context: {
-      update: action('checked')
-    }
-  };
-};
+  context: {
+    update: action('checked')
+  }
+});
 
 Default.story = {
   decorators: [withDesign],
@@ -38,9 +36,8 @@ Default.story = {
   }
 };
 
-export const Labelled = () => {
-  return {
-    template: hbs`
+export const Labelled = () => ({
+  template: hbs`
       <label>
         <Checkbox @update={{fn this.update}}/>
         Default
@@ -61,15 +58,13 @@ export const Labelled = () => {
         Disabled + Checked
       </label>
     `,
-    context: {
-      update: action('checked')
-    }
-  };
-};
+  context: {
+    update: action('checked')
+  }
+});
 
-export const Sizing = () => {
-  return {
-    template: hbs`
+export const Sizing = () => ({
+  template: hbs`
       <label {{style fontSize="80%"}}>
         <Checkbox @update={{fn this.update}}/>
         80%
@@ -90,8 +85,7 @@ export const Sizing = () => {
         150%
       </label>
     `,
-    context: {
-      update: action('checked')
-    }
-  };
-};
+  context: {
+    update: action('checked')
+  }
+});

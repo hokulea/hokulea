@@ -13,17 +13,15 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <Button {{on "click" (fn this.invoke)}}>Button</Button>
       <Button disabled={{true}}>Disabled Button</Button>
     `,
-    context: {
-      invoke: action('button invoked')
-    }
-  };
-};
+  context: {
+    invoke: action('button invoked')
+  }
+});
 
 Default.story = {
   decorators: [withDesign],
@@ -36,34 +34,29 @@ Default.story = {
   }
 };
 
-export const Accessibility = () => {
-  return {
-    template: hbs`
+export const Accessibility = () => ({
+  template: hbs`
       <Button aria-label="Go Tomster!">
         <span aria-hidden="true">🐹</span>
       </Button>
     `
-  };
-};
+});
 
 Accessibility.story = {
   name: 'A11y'
 };
 
-export const Sizing = () => {
-  return {
-    template: hbs`
+export const Sizing = () => ({
+  template: hbs`
       <Button {{style fontSize="80%"}}>80% Font Size</Button>
       <Button>Normal</Button>
       <Button {{style fontSize="120%"}}>120% Font Size</Button>
       <Button {{style fontSize="150%"}}>150% Font Size</Button>
     `
-  };
-};
+});
 
-export const Builder = () => {
-  return {
-    template: hbs`
+export const Builder = () => ({
+  template: hbs`
     <Button {{on "click" (fn this.invoke)}} as |b|>
       <b.Prefix>Prefix</b.Prefix>
       <b.Prefix>Prefix</b.Prefix>
@@ -88,8 +81,7 @@ export const Builder = () => {
       <b.Suffix>Suffix</b.Suffix>
     </Button>
     `,
-    context: {
-      invoke: action('button invoked')
-    }
-  };
-};
+  context: {
+    invoke: action('button invoked')
+  }
+});

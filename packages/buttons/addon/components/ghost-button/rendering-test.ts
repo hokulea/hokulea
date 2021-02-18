@@ -4,16 +4,16 @@ import { module, test } from 'qunit';
 
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Rendering | Buttons | <GhostButton>', function (hooks) {
+module('Rendering | Buttons | <GhostButton>', hooks => {
   setupRenderingTest(hooks);
 
-  test('basic use-case', async function (assert) {
+  test('basic use-case', async assert => {
     await render(hbs`<GhostButton>click me!</GhostButton>`);
 
     assert.dom('[data-test-ghost-button-content]').hasText('click me!');
   });
 
-  test('basic composition use-case', async function (assert) {
+  test('basic composition use-case', async assert => {
     await render(hbs`
       <GhostButton as |b|>
         <b.Content data-test-ghost-button-content>click me!</b.Content>
@@ -23,7 +23,7 @@ module('Rendering | Buttons | <GhostButton>', function (hooks) {
     assert.dom('[data-test-ghost-button-content]').hasText('click me!');
   });
 
-  test('full composition use-case', async function (assert) {
+  test('full composition use-case', async assert => {
     await render(hbs`
       <GhostButton as |b|>
         <b.Prefix data-test-ghost-button-prefix>pre</b.Prefix>

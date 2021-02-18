@@ -12,9 +12,8 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <SidebarLayout @min={{this.min}} as |s|>
         {{#if this.left}}
           <BoxLayout {{style flexBasis=(if this.base this.base "")}}>
@@ -30,34 +29,33 @@ export const Default = () => {
           </BoxLayout>
         {{/if}}
       </SidebarLayout>`,
-    context: {
-      get base() {
-        return text('base', '300px');
-      },
+  context: {
+    get base() {
+      return text('base', '300px');
+    },
 
-      get min() {
-        return text('min', '50%');
-      },
+    get min() {
+      return text('min', '50%');
+    },
 
-      get left() {
-        return (
-          radios(
-            'position',
-            {
-              left: 'left',
-              right: 'right'
-            },
-            'left'
-          ) === 'left'
-        );
-      },
+    get left() {
+      return (
+        radios(
+          'position',
+          {
+            left: 'left',
+            right: 'right'
+          },
+          'left'
+        ) === 'left'
+      );
+    },
 
-      get right() {
-        return !this.left;
-      }
+    get right() {
+      return !this.left;
     }
-  };
-};
+  }
+});
 
 Default.story = {
   decorators: [withKnobs]

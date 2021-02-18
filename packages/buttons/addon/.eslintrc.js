@@ -13,6 +13,12 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      files: '**/*index.d.ts',
+      rules: {
+        'ember/no-empty-glimmer-component-classes': 0
+      }
     }
   ]
 };

@@ -1,15 +1,18 @@
 import { render } from '@ember/test-helpers';
-import { SelectPageObject } from '@hokulea/inputs/test-support/page-objects';
+import { setupRenderingTest } from 'ember-qunit';
+import { module, test } from 'qunit';
+
+import { hbs } from 'ember-cli-htmlbars';
+import { TestContext as BaseTestContext } from 'ember-test-helpers';
+
+import sinon from 'sinon';
+
 import {
   testSelecKeyboardNavigation,
   testSelectKeyboardSelection,
   testSelectKeyboardOpenAndClose
 } from '@hokulea/inputs/test-support/a11y';
-import { hbs } from 'ember-cli-htmlbars';
-import { setupRenderingTest } from 'ember-qunit';
-import { TestContext as BaseTestContext } from 'ember-test-helpers';
-import { module, test } from 'qunit';
-import sinon from 'sinon';
+import { SelectPageObject } from '@hokulea/inputs/test-support/page-objects';
 
 interface TestContext extends BaseTestContext {
   options: string[];

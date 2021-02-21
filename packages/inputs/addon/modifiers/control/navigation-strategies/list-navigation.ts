@@ -46,10 +46,8 @@ export default class ListNavigationStrategy {
       this.handleKeyCombinations(event);
       // prevent default when scrolling keys are used
       this.preventScrolling(event);
-    } else if (event.type === 'keyup') {
-      if (!event.shiftKey) {
-        this.shiftItem = undefined;
-      }
+    } else if (event.type === 'keyup' && !event.shiftKey) {
+      this.shiftItem = undefined;
     }
   }
 

@@ -13,19 +13,17 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <List @items={{array "apple" "banana" "orange"}} @select={{this.select}} as |item|>
         {{item}}
       </List>
     `,
-    context: {
-      update: action('checked'),
-      select: action('select')
-    }
-  };
-};
+  context: {
+    update: action('checked'),
+    select: action('select')
+  }
+});
 
 // Default.story = {
 //   decorators: [withDesign],
@@ -38,9 +36,8 @@ export const Default = () => {
 //   }
 // };
 
-export const MultiSelect = () => {
-  return {
-    template: hbs`
+export const MultiSelect = () => ({
+  template: hbs`
       <List
         @items={{array "apple" "banana" "orange"}}
         @selection={{array "banana"}}
@@ -50,9 +47,8 @@ export const MultiSelect = () => {
         {{item}}
       </List>
     `,
-    context: {
-      update: action('checked'),
-      select: action('select')
-    }
-  };
-};
+  context: {
+    update: action('checked'),
+    select: action('select')
+  }
+});

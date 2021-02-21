@@ -50,14 +50,22 @@ export const Default = () => ({
   context: {
     fruit: undefined,
     city: undefined,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     updateFruit: action(function (selection: string[]) {
-      console.log('Select Story.updateFruit', selection, this);
       withAction('updateFruit')(selection);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-invalid-this
       this.set('fruit', selection);
     }),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     updateCity: action(function (selection: string[]) {
-      console.log('Select Story.updateCity', selection, this);
       withAction('updateCity')(selection);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-invalid-this
       this.set('city', selection);
     })
   }
@@ -98,9 +106,13 @@ export const Multiple = () => ({
     `,
   context: {
     selection: [],
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     update: action(function (selection: string[]) {
-      console.log('Select Story.update', selection, this);
       withAction('update')(selection);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-invalid-this
       this.set('selection', selection);
     })
   }

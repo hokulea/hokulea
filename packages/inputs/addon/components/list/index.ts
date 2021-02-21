@@ -2,10 +2,11 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
 export interface ListArgs {
+  multiselect?: boolean;
   items: unknown[];
   selection: unknown[];
   select: (selection: unknown[]) => void;
-  multiselect?: boolean;
+  activateItem: (item: unknown) => void;
 }
 
 export default class ListComponent extends Component<ListArgs> {
@@ -18,5 +19,7 @@ export default class ListComponent extends Component<ListArgs> {
   }
 
   @action
-  activateItem(_item: unknown) {}
+  activateItem(item: unknown) {
+    this.args.activateItem?.(item);
+  }
 }

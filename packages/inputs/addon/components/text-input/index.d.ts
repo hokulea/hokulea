@@ -5,17 +5,7 @@ import { InputControl } from '@hokulea/inputs/components/input-builder';
 /**
  * Arguments for `<TextInput>` and `<TextArea>` components
  */
-export interface TextInputArgs extends InputControl {
-  /**
-   * The value passed into the component
-   */
-  value: string;
-
-  /**
-   * A callback that receives the updated value
-   */
-  update: (value: string) => void;
-}
+export type TextInputArgs = InputControl<string>;
 
 /**
  * `<TextInput>` is for single-line text input

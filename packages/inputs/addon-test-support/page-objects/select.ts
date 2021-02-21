@@ -1,5 +1,6 @@
 import { click, getRootElement } from '@ember/test-helpers';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const SelectPageObject = {
   root: '[data-test-select]',
   trigger: '[data-test-select="trigger"]',

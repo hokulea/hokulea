@@ -24,15 +24,15 @@ export default class DropdownTriggerModifier extends Modifier<
     this.ddb?.registerTrigger(this);
 
     if (this.element) {
-      const { installListener } = this;
+      const { installListener, element, ddb } = this;
       if (installListener) {
-        installListener(this.element, this.ddb);
+        installListener(element, ddb);
       } else {
         this.installDefaultListener();
       }
-      this.element.setAttribute('aria-owns', this.ddb.id);
-      this.element.setAttribute('aria-controls', this.ddb.id);
-      this.element.setAttribute('aria-expanded', 'false');
+      element.setAttribute('aria-owns', ddb.id);
+      element.setAttribute('aria-controls', ddb.id);
+      element.setAttribute('aria-expanded', 'false');
     }
   }
 

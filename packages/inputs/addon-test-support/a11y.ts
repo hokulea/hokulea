@@ -137,22 +137,18 @@ async function testSelecForKeyboardMultiSelection(
   await triggerKeyEvent(trigger, 'keydown', 'Escape');
   await triggerKeyEvent(trigger, 'keydown', ' ');
   assert.dom(trigger).hasAria('expanded', 'true', 'SPACE key expands the list');
-  assert.dom(first).doesNotHaveAria('selected', '... and first option not selected');
-
-  await triggerKeyEvent(trigger, 'keydown', ' ');
   assert
     .dom(first)
-    .hasAria('selected', 'true', 'SPACE selects first option');
+    .doesNotHaveAria('selected', '... and first option not selected');
 
   await triggerKeyEvent(trigger, 'keydown', ' ');
-  assert
-    .dom(first)
-    .doesNotHaveAria('selected', 'SPACE deselects first option');
+  assert.dom(first).hasAria('selected', 'true', 'SPACE selects first option');
 
   await triggerKeyEvent(trigger, 'keydown', ' ');
-  assert
-    .dom(first)
-    .hasAria('selected', 'true', 'SPACE selects first option');
+  assert.dom(first).doesNotHaveAria('selected', 'SPACE deselects first option');
+
+  await triggerKeyEvent(trigger, 'keydown', ' ');
+  assert.dom(first).hasAria('selected', 'true', 'SPACE selects first option');
 
   await triggerKeyEvent(trigger, 'keydown', 'ArrowDown');
   await triggerKeyEvent(trigger, 'keydown', ' ');
@@ -165,7 +161,9 @@ async function testSelecForKeyboardMultiSelection(
 
   await triggerKeyEvent(trigger, 'keydown', 'End');
   await triggerKeyEvent(trigger, 'keydown', ' ');
-  assert.dom(last).hasAria('selected', 'true', 'End + SPACE selects last option');
+  assert
+    .dom(last)
+    .hasAria('selected', 'true', 'End + SPACE selects last option');
   assert
     .dom(first)
     .hasAria('selected', 'true', '... and first option still selected');
@@ -176,7 +174,9 @@ async function testSelecForKeyboardMultiSelection(
   await triggerKeyEvent(trigger, 'keydown', 'Home');
   await triggerKeyEvent(trigger, 'keydown', ' ');
 
-  assert.dom(first).doesNotHaveAria('selected', 'Home + SPACE deselects first option');
+  assert
+    .dom(first)
+    .doesNotHaveAria('selected', 'Home + SPACE deselects first option');
   assert
     .dom(second)
     .hasAria('selected', 'true', '... and second option still selected');
@@ -186,7 +186,9 @@ async function testSelecForKeyboardMultiSelection(
 
   await triggerKeyEvent(trigger, 'keydown', 'ArrowDown');
   await triggerKeyEvent(trigger, 'keydown', ' ');
-  assert.dom(second).doesNotHaveAria('selected', 'ArrowDown + SPACE deselects second option');
+  assert
+    .dom(second)
+    .doesNotHaveAria('selected', 'ArrowDown + SPACE deselects second option');
 
   await triggerKeyEvent(trigger, 'keydown', 'ArrowDown');
   await triggerKeyEvent(trigger, 'keydown', ' ');
@@ -196,34 +198,23 @@ async function testSelecForKeyboardMultiSelection(
 
   await triggerKeyEvent(trigger, 'keydown', 'KeyA', { metaKey: true });
   assert.dom(first).hasAria('selected', 'true', 'Meta + A selects all');
-  assert
-    .dom(second)
-    .hasAria('selected', 'true', '... second option selected');
-  assert
-    .dom(last)
-    .hasAria('selected', 'true', '... last option selected');
+  assert.dom(second).hasAria('selected', 'true', '... second option selected');
+  assert.dom(last).hasAria('selected', 'true', '... last option selected');
 }
 
 export async function testSelectKeyboardSelection(
   assert: Assert,
   selectors: Partial<Selectors> = DEFAULT_SELECTORS
 ) {
-  const { elements, selectors: allSelectors } = setupSelectTest(assert, selectors);
+  const { elements, selectors: allSelectors } = setupSelectTest(
+    assert,
+    selectors
+  );
   const multi = elements.list.getAttribute('aria-multiselectable');
 
-  if (multi) {
-    await testSelecForKeyboardMultiSelection(
-      assert,
-      elements,
-      allSelectors
-    );
-  } else {
-    await testSelecForKeyboardSingleSelection(
-      assert,
-      elements,
-      allSelectors
-    );
-  }
+  await (multi
+    ? testSelecForKeyboardMultiSelection(assert, elements, allSelectors)
+    : testSelecForKeyboardSingleSelection(assert, elements, allSelectors));
 }
 
 export async function testSelectKeyboardOpenAndClose(

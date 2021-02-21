@@ -16,9 +16,8 @@ export default {
   }
 };
 
-export const Default = () => {
-  return {
-    template: hbs`
+export const Default = () => ({
+  template: hbs`
       <Select
         @options={{array "Banana" "Apple" "Pear"}}
         @value={{this.fruit}}
@@ -48,22 +47,21 @@ export const Default = () => {
       </select>
       <p>Some text under the select</p>
     `,
-    context: {
-      fruit: undefined,
-      city: undefined,
-      updateFruit: action(function (selection: string[]) {
-        console.log('Select Story.updateFruit', selection, this);
-        withAction('updateFruit')(selection);
-        this.set('fruit', selection);
-      }),
-      updateCity: action(function (selection: string[]) {
-        console.log('Select Story.updateCity', selection, this);
-        withAction('updateCity')(selection);
-        this.set('city', selection);
-      })
-    }
-  };
-};
+  context: {
+    fruit: undefined,
+    city: undefined,
+    updateFruit: action(function (selection: string[]) {
+      console.log('Select Story.updateFruit', selection, this);
+      withAction('updateFruit')(selection);
+      this.set('fruit', selection);
+    }),
+    updateCity: action(function (selection: string[]) {
+      console.log('Select Story.updateCity', selection, this);
+      withAction('updateCity')(selection);
+      this.set('city', selection);
+    })
+  }
+});
 
 Default.decorators = [withDesign];
 Default.parameters = {
@@ -74,9 +72,8 @@ Default.parameters = {
   }
 };
 
-export const Multiple = () => {
-  return {
-    template: hbs`
+export const Multiple = () => ({
+  template: hbs`
       <Select
         @multiple={{true}}
         @options={{array "Banana" "Apple" "Pear"}}
@@ -99,13 +96,12 @@ export const Multiple = () => {
       </select>
       <p>Some text under the select</p>
     `,
-    context: {
-      selection: [],
-      update: action(function (selection: string[]) {
-        console.log('Select Story.update', selection, this);
-        withAction('update')(selection);
-        this.set('selection', selection);
-      })
-    }
-  };
-};
+  context: {
+    selection: [],
+    update: action(function (selection: string[]) {
+      console.log('Select Story.update', selection, this);
+      withAction('update')(selection);
+      this.set('selection', selection);
+    })
+  }
+});

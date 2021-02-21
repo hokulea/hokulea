@@ -182,9 +182,10 @@ export default class ListNavigationStrategy {
     }
 
     // ctrl+a
-    else if (event.key === 'a' && event.metaKey) {
+    else if ((event.key === 'KeyA' || event.key === 'a') && event.metaKey) {
       this.selectAll();
       event.preventDefault();
+      event.stopPropagation();
     }
   }
 

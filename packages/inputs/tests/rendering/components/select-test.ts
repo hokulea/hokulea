@@ -1,23 +1,26 @@
 import { render } from '@ember/test-helpers';
-import { setupRenderingTest } from 'ember-qunit';
-import { module, test } from 'qunit';
-
-import { hbs } from 'ember-cli-htmlbars';
-import { TestContext as BaseTestContext } from 'ember-test-helpers';
-
-import sinon from 'sinon';
-
 import { SelectPageObject } from '@hokulea/inputs/test-support/page-objects';
+import {
+  testSelecKeyboardNavigation,
+  testSelectKeyboardSelection,
+  testSelectKeyboardOpenAndClose
+} from '@hokulea/inputs/test-support/a11y';
+import { hbs } from 'ember-cli-htmlbars';
+import { setupRenderingTest } from 'ember-qunit';
+import { TestContext as BaseTestContext } from 'ember-test-helpers';
+import { module, test } from 'qunit';
+import sinon from 'sinon';
 
 interface TestContext extends BaseTestContext {
   options: string[];
   select: sinon.SinonSpy;
 }
 
-module('Rendering | Component | <Select>', function (hooks) {
+module('Rendering | Component | <Select>', hooks => {
   setupRenderingTest(hooks);
 
-  test('it renders properly', async function (this: TestContext, assert) {
+  // eslint-disable-next-line qunit/require-expect
+  test('it renders properly', async function (assert) {
     await render(hbs`<Select></Select>`);
 
     assert.dom(SelectPageObject.root).exists();
@@ -30,6 +33,7 @@ module('Rendering | Component | <Select>', function (hooks) {
     });
   });
 
+  // eslint-disable-next-line qunit/require-expect
   test('it opens', async function (assert) {
     await render(hbs`<Select></Select>`);
     await SelectPageObject.open();
@@ -61,6 +65,7 @@ module('Rendering | Component | <Select>', function (hooks) {
     await render(hbs`
       <Select
         @options={{this.options}}
+        @update={{this.select}}
         as |option|
       >
         {{option}}
@@ -69,5 +74,44 @@ module('Rendering | Component | <Select>', function (hooks) {
     await SelectPageObject.select('apple');
 
     assert.ok(this.select.calledOnceWith('apple'));
+  });
+
+  // eslint-disable-next-line qunit/require-expect
+  test('it supports keyboard controls for open and close', async function (this: TestContext, assert) {
+    await render(hbs`<Select/>`);
+    await testSelectKeyboardOpenAndClose(assert, {
+      trigger: SelectPageObject.trigger,
+      list: SelectPageObject.list
+    });
+  });
+
+  // eslint-disable-next-line qunit/require-expect
+  test('it supports keyboard navigation', async function (this: TestContext, assert) {
+    this.options = ['apple', 'banana', 'pineapple'];
+    await render(hbs`<Select @options={{this.options}}/>`);
+    await testSelecKeyboardNavigation(assert, {
+      trigger: SelectPageObject.trigger,
+      list: SelectPageObject.list
+    });
+  });
+
+  // eslint-disable-next-line qunit/require-expect
+  test('it supports keyboard selection (single)', async function (this: TestContext, assert) {
+    this.options = ['apple', 'banana', 'pineapple'];
+    await render(hbs`<Select @options={{this.options}}/>`);
+    await testSelectKeyboardSelection(assert, {
+      trigger: SelectPageObject.trigger,
+      list: SelectPageObject.list
+    });
+  });
+
+  // eslint-disable-next-line qunit/require-expect
+  test('it supports keyboard selection (multi)', async function (this: TestContext, assert) {
+    this.options = ['apple', 'banana', 'pineapple'];
+    await render(hbs`<Select @multiple={{true}} @options={{this.options}}/>`);
+    await testSelectKeyboardSelection(assert, {
+      trigger: SelectPageObject.trigger,
+      list: SelectPageObject.list
+    });
   });
 });

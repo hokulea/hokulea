@@ -11,20 +11,20 @@ export const SelectPageObject = {
   },
 
   async select(text: string) {
-    const option = this._findOption(text);
+    const option = this.findOption(text);
 
     if (option) {
       await click(option);
     }
   },
 
-  _getOptions() {
-    return [...getRootElement().querySelectorAll(this.option)];
+  findOption(text: string) {
+    return this.getOptions().find(e =>
+      e.textContent ? e.textContent.trim().includes(text) : false
+    );
   },
 
-  _findOption(text: string) {
-    return this._getOptions().find(e => {
-      return e.textContent?.trim().indexOf(text) > -1;
-    });
+  getOptions() {
+    return [...getRootElement().querySelectorAll(this.option)];
   }
 };

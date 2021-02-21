@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  test:
+  install:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,9 +21,18 @@ jobs:
 
     - name: install
       run: yarn
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+
+    steps:
     - name: lint
       run: yarn lint
+  test:
+    runs-on: ubuntu-latest
+    needs: install
+
+    steps:
     - name: test
       run: yarn test
-        
 

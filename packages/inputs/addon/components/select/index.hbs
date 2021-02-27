@@ -12,12 +12,22 @@
             {{#if @multiple}}
               {{#each @value as |value|}}
                 <span local-class="selected-value">
-                  {{yield value}}
+                  {{#if (has-block "selected")}}
+                    {{yield value to="selected"}}
+                  {{else}}
+                    {{yield value}}
+                  {{/if}}
                 </span>
               {{/each}}
             {{else}}
-              {{yield @value}}
+              {{#if (has-block "selected")}}
+                {{yield @value to="selected"}}
+              {{else}}
+                {{yield @value}}
+              {{/if}}
             {{/if}}
+          {{else if (has-block "placeholder")}}
+            {{yield to="placeholder"}}
           {{else if @placeholder}}
             {{@placeholder}}
           {{else}}
@@ -45,7 +55,11 @@
         {{did-insert this.setupList}}
         {{dropdown-popup ddb}} as |option|
       >
-        {{yield option}}
+        {{#if (has-block "option")}}
+          {{yield option to="option"}}
+        {{else}}
+          {{yield option}}
+        {{/if}}
       </List>
     </DropdownBuilder>
   </div>

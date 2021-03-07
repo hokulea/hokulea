@@ -1,5 +1,7 @@
 import { click, getRootElement } from '@ember/test-helpers';
 
+import { activateItem, select } from './-private/listbox';
+
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const SelectPageObject = {
   root: '[data-test-select]',
@@ -7,25 +9,25 @@ export const SelectPageObject = {
   list: '[data-test-select="list"]',
   option: '[data-test-select="list"] [role="option"]',
 
-  async open() {
-    await click(this.trigger);
+  async select(text: string | string[]) {
+    await select({ option: this.option, list: this.list }, text);
   },
 
-  async select(text: string) {
-    const option = this.findOption(text);
+  async activateItem(text: string) {
+    await activateItem({ option: this.option, list: this.list }, text);
+  },
 
-    if (option) {
-      await click(option);
+  async open() {
+    if (!this.isOpen()) {
+      await click(this.trigger);
     }
   },
 
-  findOption(text: string) {
-    return this.getOptions().find(e =>
-      e.textContent ? e.textContent.trim().includes(text) : false
+  isOpen() {
+    return (
+      getRootElement()
+        .querySelector(this.trigger)
+        ?.getAttribute('aria-expanded') === 'true'
     );
-  },
-
-  getOptions() {
-    return [...getRootElement().querySelectorAll(this.option)];
   }
 };

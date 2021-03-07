@@ -14,6 +14,8 @@
                 <span local-class="selected-value">
                   {{#if (has-block "selected")}}
                     {{yield value to="selected"}}
+                    {{elseif (has-block)}}
+                    {{yield value}}
                   {{else}}
                     {{yield value}}
                   {{/if}}
@@ -22,8 +24,10 @@
             {{else}}
               {{#if (has-block "selected")}}
                 {{yield @value to="selected"}}
-              {{else}}
+              {{else if (has-block)}}
                 {{yield @value}}
+              {{else}}
+                {{@value}}
               {{/if}}
             {{/if}}
           {{else if (has-block "placeholder")}}
@@ -47,18 +51,20 @@
       <List
         tabindex="-1"
         local-class="options"
-        aria-multiselectable={{if @multiple "true"}}
         data-test-select="list"
-        @items={{@options}}
-        @select={{this.select}}
+        @multiple={{@multiple}}
+        @options={{@options}}
+        @update={{@update}}
         {{on "mouseup" (fn this.close ddb.close)}}
         {{did-insert this.setupList}}
         {{dropdown-popup ddb}} as |option|
       >
         {{#if (has-block "option")}}
           {{yield option to="option"}}
-        {{else}}
+        {{else if (has-block)}}
           {{yield option}}
+        {{else}}
+          {{option}}
         {{/if}}
       </List>
     </DropdownBuilder>

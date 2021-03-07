@@ -3,11 +3,10 @@ import Component from '@glimmer/component';
 
 import DropdownBuilderComponent from '@hokulea/foundation/components/dropdown-builder';
 
-import { InputControl } from '@hokulea/inputs/components/input-builder';
+import { Control, Multiple } from '../control';
 
-interface SelectArgs<T> extends InputControl<T | T[]> {
+interface SelectArgs<T> extends Control<T | T[]>, Multiple {
   options: T[];
-  multiple: boolean;
 }
 
 export default class SelectComponent<T> extends Component<SelectArgs<T>> {
@@ -25,8 +24,6 @@ export default class SelectComponent<T> extends Component<SelectArgs<T>> {
 
   @action
   select(options: T[]) {
-    console.log('Select.select', options, this.args.update);
-
     const value =
       !this.args.multiple && options.length > 0 ? options[0] : options;
     this.args.update?.(value);
@@ -88,7 +85,7 @@ export default class SelectComponent<T> extends Component<SelectArgs<T>> {
     element.addEventListener('mouseup', (event: MouseEvent) => {
       if (event.target === mousedownBuffer.target) {
         (element as HTMLElement).focus();
-        ddb.open();
+        ddb.toggle();
       }
     });
 
@@ -100,8 +97,6 @@ export default class SelectComponent<T> extends Component<SelectArgs<T>> {
   @action
   installRemoteControl(ddb: DropdownBuilderComponent, element: HTMLElement) {
     element.addEventListener('keydown', (event: KeyboardEvent) => {
-      console.log('event', event, ddb, ddb.isExpanded());
-
       if (ddb.expanded) {
         this.passthroughToList(event);
       }

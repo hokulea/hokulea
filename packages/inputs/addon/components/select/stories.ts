@@ -32,8 +32,10 @@ export const Default = () => ({
         @options={{array "London" "New York" "Tokio"}}
         @value={{this.city}}
         @update={{this.updateCity}}
-      as |option|>
-        {{option}}
+      >
+        <:placeholder>Please select city</:placeholder>
+        <:selected as |value|>🏛 {{value}}</:selected>
+        <:option as |option|>🏢 {{option}}</:option>
       </Select>
       <select></select>
       <p>Some text under the select</p>

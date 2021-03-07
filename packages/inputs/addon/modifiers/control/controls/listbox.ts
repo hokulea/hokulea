@@ -6,9 +6,6 @@ import Control from './control';
 export default class Listbox extends Control {
   private navigationStrategy;
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  static PASSTHROUGH_EVENTS = ['mousedown', 'keydown', 'keyup'];
-
   constructor(element: HTMLElement) {
     super(element);
     this.navigationStrategy = new ListNavigationStrategy(this);
@@ -36,8 +33,6 @@ export default class Listbox extends Control {
 
   @action
   navigate(event: MouseEvent | KeyboardEvent) {
-    console.log('listbox.navigate', event);
-
     this.navigationStrategy.navigate(event);
   }
 
@@ -62,6 +57,10 @@ export default class Listbox extends Control {
         this.navigationStrategy.navigateEnd(event.detail.originalEvent);
       } else if (event.detail.command === 'focus') {
         this.focus();
+      } else if (event.detail.command === 'select') {
+        this.select(event.detail.selection);
+      } else if (event.detail.command === 'activate-item') {
+        this.activateItem(event.detail.item);
       }
     }
   }

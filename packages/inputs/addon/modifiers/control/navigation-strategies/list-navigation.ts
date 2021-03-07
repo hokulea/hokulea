@@ -39,8 +39,6 @@ export default class ListNavigationStrategy {
   }
 
   private navigateWithKeyboard(event: KeyboardEvent) {
-    console.log('navigateWithKeyboard', event);
-
     if (event.type === 'keydown') {
       this.handleKeyNavigation(event);
       this.handleKeyCombinations(event);

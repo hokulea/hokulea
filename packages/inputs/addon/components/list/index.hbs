@@ -1,17 +1,23 @@
 <ul
   role="listbox"
   local-class="list"
+  aria-multiselectable={{if @multiple "true"}}
+  data-test-list
   ...attributes
   {{control
-    items=@items
-    selection=@selection
+    items=@options
+    selection=@value
     select=this.select
     activateItem=this.activateItem
   }}
 >
-  {{#each @items as |item|}}
+  {{#each @options as |option|}}
     <li role="option">
-      {{yield item}}
+      {{#if (has-block)}}
+        {{yield option}}
+      {{else}}
+        {{option}}
+      {{/if}}
     </li>
   {{/each}}
 </ul>

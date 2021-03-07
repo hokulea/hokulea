@@ -15,7 +15,7 @@ export default {
 
 export const Default = () => ({
   template: hbs`
-      <List @items={{array "apple" "banana" "orange"}} @select={{this.select}} as |item|>
+      <List @options={{array "apple" "banana" "orange"}} @update={{this.select}} as |item|>
         {{item}}
       </List>
     `,
@@ -39,9 +39,9 @@ export const Default = () => ({
 export const MultiSelect = () => ({
   template: hbs`
       <List
-        @items={{array "apple" "banana" "orange"}}
-        @selection={{array "banana"}}
-        @select={{this.select}}
+        @options={{array "apple" "banana" "orange"}}
+        @value={{array "banana"}}
+        @update={{this.select}}
         aria-multiselectable="true"
       as |item|>
         {{item}}

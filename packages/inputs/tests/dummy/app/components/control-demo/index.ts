@@ -22,8 +22,6 @@ export default class ControlTestComponent extends Component {
 
   @action
   selectByIndices(selection: number[]) {
-    console.log('selectByIndices', selection);
-
     this.selection = this.items.filter((_name, index) =>
       selection.includes(index)
     );
@@ -31,8 +29,6 @@ export default class ControlTestComponent extends Component {
 
   @action
   activateItemByIndex(item: number) {
-    console.log('activateItemByIndex', item);
-
     if (item !== undefined && item > -1 && item < this.items.length) {
       this.activeItem = this.items[item];
     }
@@ -40,15 +36,11 @@ export default class ControlTestComponent extends Component {
 
   @action
   select(selection: string[]) {
-    console.log('select', selection);
-
     this.selection = selection;
   }
 
   @action
   activateItem(item: string) {
-    console.log('activateItem', item);
-
     this.activeItem = item;
   }
 

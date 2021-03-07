@@ -27,11 +27,16 @@
         color: var(--color-action-base-text);
         background-color: var(--color-action-base-background);
       }
+
+      &:hover {
+        color: var(--color-action-hover-text);
+        background-color: var(--color-action-hover-background);
+      }
     }
   }
 
   [role="option"]:hover {
-    color: var(--color-action-base-text);
-    background-color: var(--color-action-base-background);
+    color: var(--color-action-hover-text);
+    background-color: var(--color-action-hover-background);
   }
 }

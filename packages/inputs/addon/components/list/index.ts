@@ -1,25 +1,28 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
-export interface ListArgs {
-  multiselect?: boolean;
-  items: unknown[];
-  selection: unknown[];
-  select: (selection: unknown[]) => void;
-  activateItem: (item: unknown) => void;
+import { Control, Multiple } from '../control';
+
+export interface ListArgs<T> extends Control<T | T[]>, Multiple {
+  options: T[];
+  activateItem: (item: T) => void;
+  update: (value: T | undefined | T[]) => void;
 }
 
-export default class ListComponent extends Component<ListArgs> {
+export default class ListComponent<T> extends Component<ListArgs<T>> {
   @action
-  select(selection: unknown[]) {
-    console.log('List.select', selection);
+  select(selection: T[]) {
+    const value = this.args.multiple
+      ? selection
+      : selection.length > 0
+      ? selection[0]
+      : undefined;
 
-    // const selection = indices.map(idx => this.args.items[idx]);
-    this.args.select?.(selection);
+    this.args.update?.(value);
   }
 
   @action
-  activateItem(item: unknown) {
+  activateItem(item: T) {
     this.args.activateItem?.(item);
   }
 }

@@ -3,7 +3,10 @@ import { getRootElement, focus } from '@ember/test-helpers';
 import {
   testListboxForKeyboardMultiSelection,
   testListboxForKeyboardSingleSelection,
-  testListboxKeyboardNavigation
+  testListboxForMouseSingleSelection,
+  testListboxForMouseMultiSelection,
+  testListboxKeyboardNavigation,
+  testListboxMouseNavigation
 } from '@hokulea/inputs/test-support/a11y/-private/listbox';
 
 type Selectors = {
@@ -42,10 +45,14 @@ function setupListTest(
   };
 }
 
+//
+// KEYBOARD
+//
+
 export async function testListKeyboardNavigation(
   assert: Assert,
   selectors: Partial<Selectors> = DEFAULT_SELECTORS
-) {
+): Promise<void> {
   const { elements, selectors: allSelectors } = setupListTest(
     assert,
     selectors
@@ -107,7 +114,7 @@ async function testListForKeyboardMultiSelection(
 export async function testListKeyboardSelection(
   assert: Assert,
   selectors: Partial<Selectors> = DEFAULT_SELECTORS
-) {
+): Promise<void> {
   const { elements, selectors: allSelectors } = setupListTest(
     assert,
     selectors
@@ -117,4 +124,80 @@ export async function testListKeyboardSelection(
   await (multi
     ? testListForKeyboardMultiSelection(assert, elements, allSelectors)
     : testListForKeyboardSingleSelection(assert, elements, allSelectors));
+}
+
+//
+// MOUSE
+//
+
+export async function testListMouseNavigation(
+  assert: Assert,
+  selectors: Partial<Selectors> = DEFAULT_SELECTORS
+): Promise<void> {
+  const { elements, selectors: allSelectors } = setupListTest(
+    assert,
+    selectors
+  );
+
+  const { list } = elements;
+  await testListboxMouseNavigation(
+    assert,
+    {
+      list
+    },
+    {
+      option: allSelectors.option
+    }
+  );
+}
+
+async function testListForMouseSingleSelection(
+  assert: Assert,
+  elements: Elements,
+  selectors: Selectors
+) {
+  const { trigger, list } = elements;
+  await testListboxForMouseSingleSelection(
+    assert,
+    {
+      target: trigger,
+      list
+    },
+    {
+      option: selectors.option
+    }
+  );
+}
+
+async function testListForMouseMultiSelection(
+  assert: Assert,
+  elements: Elements,
+  selectors: Selectors
+) {
+  const { trigger, list } = elements;
+  await testListboxForMouseMultiSelection(
+    assert,
+    {
+      target: trigger,
+      list
+    },
+    {
+      option: selectors.option
+    }
+  );
+}
+
+export async function testListMouseSelection(
+  assert: Assert,
+  selectors: Partial<Selectors> = DEFAULT_SELECTORS
+): Promise<void> {
+  const { elements, selectors: allSelectors } = setupListTest(
+    assert,
+    selectors
+  );
+  const multi = elements.list.getAttribute('aria-multiselectable');
+
+  await (multi
+    ? testListForMouseMultiSelection(assert, elements, allSelectors)
+    : testListForMouseSingleSelection(assert, elements, allSelectors));
 }

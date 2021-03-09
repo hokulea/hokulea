@@ -9,7 +9,9 @@ import sinon from 'sinon';
 
 import {
   testListKeyboardNavigation,
-  testListKeyboardSelection
+  testListKeyboardSelection,
+  testListMouseNavigation,
+  testListMouseSelection
 } from '@hokulea/inputs/test-support/a11y';
 import { ListPageObject } from '@hokulea/inputs/test-support/page-objects';
 
@@ -83,6 +85,22 @@ module('Rendering | Component | <List>', hooks => {
         list: ListPageObject.root
       });
     });
+
+    test('it supports mouse navigation', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<List @options={{this.options}}/>`);
+      await testListMouseNavigation(assert, {
+        list: ListPageObject.root
+      });
+    });
+
+    test('it supports mouse selection', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<List @options={{this.options}}/>`);
+      await testListMouseSelection(assert, {
+        list: ListPageObject.root
+      });
+    });
   });
 
   module('Multi Selection', () => {
@@ -111,6 +129,22 @@ module('Rendering | Component | <List>', hooks => {
       await render(hbs`<List @multiple={{true}} @options={{this.options}}/>`);
       await testListKeyboardSelection(assert, {
         trigger: ListPageObject.root,
+        list: ListPageObject.root
+      });
+    });
+
+    test('it supports mouse navigation', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<List @multiple={{true}} @options={{this.options}}/>`);
+      await testListMouseNavigation(assert, {
+        list: ListPageObject.root
+      });
+    });
+
+    test('it supports mouse selection', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<List @multiple={{true}} @options={{this.options}}/>`);
+      await testListMouseSelection(assert, {
         list: ListPageObject.root
       });
     });

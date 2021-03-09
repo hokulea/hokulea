@@ -30,8 +30,10 @@ export default class SelectComponent<T> extends Component<SelectArgs<T>> {
   }
 
   @action
-  close(close: () => void) {
-    if (!this.args.multiple) {
+  close(close: () => void, event: MouseEvent) {
+    if (this.args.multiple) {
+      event.stopPropagation();
+    } else {
       close();
     }
   }
@@ -82,12 +84,25 @@ export default class SelectComponent<T> extends Component<SelectArgs<T>> {
       mousedownBuffer = event;
     });
 
-    element.addEventListener('mouseup', (event: MouseEvent) => {
-      if (event.target === mousedownBuffer.target) {
-        (element as HTMLElement).focus();
-        ddb.toggle();
+    element.addEventListener(
+      'mouseup',
+      (event: MouseEvent) => {
+        if (event.target === mousedownBuffer.target) {
+          if (!ddb.expanded) {
+            (element as HTMLElement).focus();
+            ddb.open();
+          } else if (this.args.multiple) {
+            this.passthroughToList(event);
+          } else {
+            ddb.close();
+          }
+          event.stopPropagation();
+        }
+      },
+      {
+        capture: true
       }
-    });
+    );
 
     element.addEventListener('focusout', () => {
       ddb.close();
@@ -103,8 +118,12 @@ export default class SelectComponent<T> extends Component<SelectArgs<T>> {
     });
   }
 
-  private passthroughToList(event: KeyboardEvent) {
-    this.dispatchEventOnList(new KeyboardEvent(event.type, event));
+  private passthroughToList(event: Event) {
+    const newEvent =
+      event instanceof KeyboardEvent
+        ? new KeyboardEvent(event.type, event)
+        : new MouseEvent(event.type, event);
+    this.dispatchEventOnList(newEvent);
   }
 
   private sendCommand(command: string, details?: Record<string, unknown>) {

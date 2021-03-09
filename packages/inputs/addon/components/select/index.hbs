@@ -14,10 +14,10 @@
                 <span local-class="selected-value">
                   {{#if (has-block "selected")}}
                     {{yield value to="selected"}}
-                    {{elseif (has-block)}}
+                  {{else if (has-block)}}
                     {{yield value}}
                   {{else}}
-                    {{yield value}}
+                    {{value}}
                   {{/if}}
                 </span>
               {{/each}}

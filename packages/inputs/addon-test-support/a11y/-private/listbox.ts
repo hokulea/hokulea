@@ -1,8 +1,12 @@
-import { triggerKeyEvent } from '@ember/test-helpers';
+import { triggerKeyEvent, click } from '@ember/test-helpers';
 
 function getOptions(list: HTMLElement, selector: string) {
   return [...list.querySelectorAll(selector)];
 }
+
+//
+// KEYBOARD
+//
 
 export async function testListboxKeyboardNavigation(
   assert: Assert,
@@ -13,7 +17,7 @@ export async function testListboxKeyboardNavigation(
   selectors: {
     option: string;
   }
-) {
+): Promise<void> {
   const { target, list } = elements;
   const options = getOptions(list, selectors.option);
   const [first, second, last] = options;
@@ -51,7 +55,7 @@ export async function testListboxForKeyboardSingleSelection(
   selectors: {
     option: string;
   }
-) {
+): Promise<void> {
   const { target, list } = elements;
   const options = getOptions(list, selectors.option);
   const [first, second, last] = options;
@@ -86,7 +90,7 @@ export async function testListboxForKeyboardMultiSelection(
   selectors: {
     option: string;
   }
-) {
+): Promise<void> {
   const { target, list } = elements;
   const options = getOptions(list, selectors.option);
   const [first, second, last] = options;
@@ -153,4 +157,181 @@ export async function testListboxForKeyboardMultiSelection(
   assert.dom(first).hasAria('selected', 'true', 'Meta + A selects all');
   assert.dom(second).hasAria('selected', 'true', '... second option selected');
   assert.dom(last).hasAria('selected', 'true', '... last option selected');
+}
+
+//
+// MOUSE
+//
+
+export async function testListboxMouseNavigation(
+  assert: Assert,
+  elements: {
+    list: HTMLElement;
+  },
+  selectors: {
+    option: string;
+  }
+): Promise<void> {
+  const { list } = elements;
+  const options = getOptions(list, selectors.option);
+  const [first, second, last] = options;
+
+  await click(first);
+  assert
+    .dom(first)
+    .hasAria('current', 'true', 'Clicking first option activates it');
+
+  await click(second);
+  assert
+    .dom(second)
+    .hasAria('current', 'true', 'Clicking second option activates it');
+  assert
+    .dom(first)
+    .doesNotHaveAria('current', '... and deactivates first option');
+
+  await click(last);
+  assert
+    .dom(last)
+    .hasAria('current', 'true', 'Clicking last option activates it');
+  assert
+    .dom(second)
+    .doesNotHaveAria('current', '... and deactivates second option');
+}
+
+export async function testListboxForMouseSingleSelection(
+  assert: Assert,
+  elements: {
+    target: HTMLElement;
+    list: HTMLElement;
+  },
+  selectors: {
+    option: string;
+  }
+): Promise<void> {
+  const { list } = elements;
+  const options = getOptions(list, selectors.option);
+  const [first, second, last] = options;
+
+  await click(first);
+  assert
+    .dom(first)
+    .hasAria('selected', 'true', 'Clicking first option selects it');
+
+  await click(second);
+  assert
+    .dom(second)
+    .hasAria('selected', 'true', 'Clicking second option selects it');
+  assert
+    .dom(first)
+    .doesNotHaveAria('selected', '... and deselects first option');
+
+  await click(last);
+  assert
+    .dom(last)
+    .hasAria('selected', 'true', 'Clicking last option selects it');
+  assert
+    .dom(second)
+    .doesNotHaveAria('selected', '... and deselects second option');
+}
+
+export async function testListboxForMouseMultiSelection(
+  assert: Assert,
+  elements: {
+    target: HTMLElement;
+    list: HTMLElement;
+  },
+  selectors: {
+    option: string;
+  }
+): Promise<void> {
+  const { list } = elements;
+  const options = getOptions(list, selectors.option);
+  const [first, second, last] = options;
+
+  await click(first);
+  assert
+    .dom(first)
+    .hasAria('selected', 'true', 'Clicking first option selects it');
+
+  await click(first, { metaKey: true });
+  assert
+    .dom(first)
+    .doesNotHaveAria('selected', 'Clicking first option deselects it');
+
+  await click(first);
+  assert
+    .dom(first)
+    .hasAria('selected', 'true', 'Clicking first option selects it');
+
+  await click(second, { metaKey: true });
+  assert
+    .dom(second)
+    .hasAria(
+      'selected',
+      'true',
+      'Clicking second option (with meta) selects it'
+    );
+
+  assert
+    .dom(second)
+    .hasAria('selected', 'true', '... and first option still selected');
+
+  await click(last, { metaKey: true });
+
+  assert
+    .dom(last)
+    .hasAria('selected', 'true', 'Clicking last option (with meta) selects it');
+  assert
+    .dom(first)
+    .hasAria('selected', 'true', '... and first option still selected');
+  assert
+    .dom(second)
+    .hasAria('selected', 'true', '... and second option still selected');
+
+  await click(first, { metaKey: true });
+
+  assert
+    .dom(first)
+    .doesNotHaveAria(
+      'selected',
+      'Clicking first option (with meta) deselects it'
+    );
+  assert
+    .dom(second)
+    .hasAria('selected', 'true', '... and second option still selected');
+  assert
+    .dom(last)
+    .hasAria('selected', 'true', '... and last option still selected');
+
+  await click(second, { metaKey: true });
+  assert
+    .dom(second)
+    .doesNotHaveAria(
+      'selected',
+      'Clicking second option (with meta) deselects it'
+    );
+
+  await click(last, { metaKey: true });
+  assert
+    .dom(last)
+    .doesNotHaveAria(
+      'selected',
+      'Clicking last option (with meta) deselects it'
+    );
+
+  await click(first);
+  assert
+    .dom(first)
+    .hasAria('selected', 'true', 'Clicking first option selects it');
+
+  await click(last, { shiftKey: true });
+  assert
+    .dom(last)
+    .hasAria(
+      'selected',
+      'true',
+      'Clicking last option (with shift) selects it'
+    );
+
+  assert.dom(second).hasAria('selected', 'true', '... and second option, too');
 }

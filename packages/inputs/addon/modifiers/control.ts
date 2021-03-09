@@ -179,11 +179,6 @@ export default class ControlControlModifier<T> extends Modifier<
       this.emitStrategy = this.createOrUpdateEmitStrategy(this.control);
       this.updateStrategy = this.createOrUpdateUpdateStrategy(this.control);
 
-      this.element.addEventListener('mousedown', this.control.navigate);
-      this.element.addEventListener('keydown', this.control.navigate);
-      this.element.addEventListener('keyup', this.control.navigate);
-      this.element.addEventListener('focusin', this.control.focus);
-
       this.control.read();
     }
   }

@@ -10,7 +10,7 @@ export default class Listbox extends Control {
     super(element);
     this.navigationStrategy = new ListNavigationStrategy(this);
 
-    element.addEventListener('mousedown', this.navigate);
+    element.addEventListener('mouseup', this.navigate);
     element.addEventListener('keydown', this.navigate);
     element.addEventListener('keyup', this.navigate);
     element.addEventListener('focusin', this.focus);
@@ -18,7 +18,7 @@ export default class Listbox extends Control {
   }
 
   teardown() {
-    this.element.removeEventListener('mousedown', this.navigate);
+    this.element.removeEventListener('mouseup', this.navigate);
     this.element.removeEventListener('keydown', this.navigate);
     this.element.removeEventListener('keyup', this.navigate);
     this.element.removeEventListener('focusin', this.focus);

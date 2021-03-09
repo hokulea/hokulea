@@ -23,10 +23,11 @@ export default class ListNavigationStrategy {
     const item = event.target as HTMLElement;
     if (item !== null) {
       this.control.activateItem(item);
+      event.stopPropagation();
 
       if (event.shiftKey) {
         this.selectShift(item);
-      } else if (event.ctrlKey) {
+      } else if (event.metaKey) {
         if (this.control.selection.includes(item)) {
           this.deselect(item);
         } else {

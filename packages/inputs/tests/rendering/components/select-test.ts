@@ -10,7 +10,9 @@ import sinon from 'sinon';
 import {
   testSelectKeyboardNavigation,
   testSelectKeyboardSelection,
-  testSelectKeyboardOpenAndClose
+  testSelectKeyboardOpenAndClose,
+  testSelectMouseNavigation,
+  testSelectMouseSelection
 } from '@hokulea/inputs/test-support/a11y';
 import { SelectPageObject } from '@hokulea/inputs/test-support/page-objects';
 
@@ -144,6 +146,24 @@ module('Rendering | Component | <Select>', hooks => {
         list: SelectPageObject.list
       });
     });
+
+    test('it supports mouse navigation', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<Select @options={{this.options}}/>`);
+      await testSelectMouseNavigation(assert, {
+        trigger: SelectPageObject.trigger,
+        list: SelectPageObject.list
+      });
+    });
+
+    test('it supports mouse selection', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<Select @options={{this.options}}/>`);
+      await testSelectMouseSelection(assert, {
+        trigger: SelectPageObject.trigger,
+        list: SelectPageObject.list
+      });
+    });
   });
 
   module('Multi Selection', () => {
@@ -171,6 +191,24 @@ module('Rendering | Component | <Select>', hooks => {
       this.options = ['apple', 'banana', 'pineapple'];
       await render(hbs`<Select @multiple={{true}} @options={{this.options}}/>`);
       await testSelectKeyboardSelection(assert, {
+        trigger: SelectPageObject.trigger,
+        list: SelectPageObject.list
+      });
+    });
+
+    test('it supports mouse navigation', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<Select @multiple={{true}} @options={{this.options}}/>`);
+      await testSelectMouseNavigation(assert, {
+        trigger: SelectPageObject.trigger,
+        list: SelectPageObject.list
+      });
+    });
+
+    test('it supports mouse selection', async function (this: TestContext, assert) {
+      this.options = ['apple', 'banana', 'pineapple'];
+      await render(hbs`<Select @multiple={{true}} @options={{this.options}}/>`);
+      await testSelectMouseSelection(assert, {
         trigger: SelectPageObject.trigger,
         list: SelectPageObject.list
       });

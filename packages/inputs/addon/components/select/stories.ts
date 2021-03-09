@@ -25,9 +25,7 @@ export const Default = () => ({
       as |option|>
         {{option}}
       </Select>
-      <TextInput/> this text is supposed to be next to the select
-      <p>Some text under the select</p>
-      <p>Some text under the select</p>
+
       <Select
         @options={{array "London" "New York" "Tokio"}}
         @value={{this.city}}
@@ -37,17 +35,6 @@ export const Default = () => ({
         <:selected as |value|>🏛 {{value}}</:selected>
         <:option as |option|>🏢 {{option}}</:option>
       </Select>
-      <select></select>
-      <p>Some text under the select</p>
-      <p>Some text under the select</p>
-      <p>Some text under the select</p>
-      <p>Some text under the select</p>
-      <p>Some text under the select</p>
-      <select>
-        <option>foo</option>
-        <option>bar</option>
-      </select>
-      <p>Some text under the select</p>
     `,
   context: {
     fruit: undefined,
@@ -87,11 +74,56 @@ export const Multiple = () => ({
       <Select
         @multiple={{true}}
         @options={{array "Banana" "Apple" "Pear"}}
-        @value={{this.selection}}
-        @update={{this.update}}
+        @value={{this.fruites}}
+        @update={{this.updateFruites}}
       as |option|>
         {{option}}
-      </Select> this text is supposed to be next to the select
+      </Select>
+
+      <Select
+        @multiple={{true}}
+        @options={{array "London" "New York" "Tokio"}}
+        @value={{this.cities}}
+        @update={{this.updateCities}}
+      >
+        <:placeholder>Please select city</:placeholder>
+        <:selected as |value|>🏛 {{value}}</:selected>
+        <:option as |option|>🏢 {{option}}</:option>
+      </Select>
+    `,
+  context: {
+    fruites: [],
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    updateFruites: action(function (selection: string[]) {
+      withAction('updateFruit')(selection);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-invalid-this
+      this.set('fruites', selection);
+    }),
+    cities: [],
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    updateCities: action(function (selection: string[]) {
+      withAction('updateCity')(selection);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-invalid-this
+      this.set('cities', selection);
+    })
+  }
+});
+
+export const Showcase = () => ({
+  template: hbs`
+      <Select
+        @options={{array "Banana" "Apple" "Pear"}}
+        @value={{this.fruit}}
+        @update={{this.updateFruit}}
+      as |option|>
+        {{option}}
+      </Select> <TextInput/> this text is supposed to be next to the select
       <p>Some text under the select</p>
       <p>Some text under the select</p>
       <select></select>
@@ -100,22 +132,43 @@ export const Multiple = () => ({
       <p>Some text under the select</p>
       <p>Some text under the select</p>
       <p>Some text under the select</p>
+      <Select
+        @multiple={{true}}
+        @options={{array "London" "New York" "Tokio"}}
+        @value={{this.cities}}
+        @update={{this.updateCities}}
+      >
+        <:placeholder>Please select city</:placeholder>
+        <:selected as |value|>🏛 {{value}}</:selected>
+        <:option as |option|>🏢 {{option}}</:option>
+      </Select>
       <select>
         <option>foo</option>
         <option>bar</option>
+        <option>baz</option>
       </select>
       <p>Some text under the select</p>
     `,
   context: {
-    selection: [],
+    fruit: undefined,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    update: action(function (selection: string[]) {
-      withAction('update')(selection);
+    updateFruit: action(function (selection: string[]) {
+      withAction('updateFruit')(selection);
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       // eslint-disable-next-line @typescript-eslint/no-invalid-this
-      this.set('selection', selection);
+      this.set('fruit', selection);
+    }),
+    cities: [],
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    updateCities: action(function (selection: string[]) {
+      withAction('updateCities')(selection);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-invalid-this
+      this.set('cities', selection);
     })
   }
 });

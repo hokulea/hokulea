@@ -8,22 +8,47 @@ on:
       - main
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Setup node
+      uses: volta-cli/action@v1
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+    - name: install
+      run: yarn
+
+    - name: lint
+      run: yarn lint
+
   test:
     runs-on: ubuntu-latest
 
     steps:
 
-    - name: Checkout
-      uses: actions/checkout@v2
-
     - name: Setup node
       uses: volta-cli/action@v1
 
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
     - name: install
       run: yarn
-    - name: lint
-      run: yarn lint
+
     - name: test
       run: yarn test
-        
 

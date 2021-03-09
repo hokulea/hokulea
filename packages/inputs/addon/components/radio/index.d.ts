@@ -5,17 +5,7 @@ import { InputControl } from '@hokulea/inputs/components/input-builder';
 /**
  * Arguments for the `<Radio>` component
  */
-interface RadioArgs extends InputControl {
-  /**
-   * The value passed into the component
-   */
-  value: boolean;
-
-  /**
-   * A callback that receives the updated value
-   */
-  update: (value: boolean) => void;
-}
+type RadioArgs = InputControl<boolean>;
 
 /**
  * `<Radio>` is an option to select between multiple items

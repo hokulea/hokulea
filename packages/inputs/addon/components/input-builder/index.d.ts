@@ -1,12 +1,12 @@
 import Component from '@glimmer/component';
 
-export interface InputControl {
-  value: unknown;
-  update: (value: unknown) => void;
+export interface InputControl<T> {
+  value: T;
+  update: (value: T) => void;
 }
 
 export interface InputBuilderArgs {
-  control: Component<InputControl>;
+  control: Component<InputControl<unknown>>;
 }
 
 export default class InputBuilderComponent extends Component<

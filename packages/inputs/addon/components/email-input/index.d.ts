@@ -5,17 +5,7 @@ import { InputControl } from '@hokulea/inputs/components/input-builder';
 /**
  * Arguments for the `<EmailInput>` component
  */
-export interface EmailInputArgs extends InputControl {
-  /**
-   * The value passed into the component
-   */
-  value: string;
-
-  /**
-   * A callback that receives the updated value
-   */
-  update: (value: string) => void;
-}
+export type EmailInputArgs = InputControl<string>;
 
 /**
  * `<EmailInput>` is for email inputs

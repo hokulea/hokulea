@@ -3,6 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@ember/destroyable": [
+        "../../node_modules/ember-destroyable-polyfill"
+      ],
       "dummy/tests/*": [
         "tests/*"
       ],

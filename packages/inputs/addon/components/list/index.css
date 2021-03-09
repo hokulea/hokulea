@@ -1,0 +1,42 @@
+.list {
+  composes: border-shape from '@hokulea/foundation/structure/border';
+  background-color: var(--color-layout-background);
+  border-color: var(--color-structure-border);
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+
+  & [role="option"] {
+    padding-block: var(--s-2);
+    padding-inline: var(--s-1);
+
+    &[aria-selected], &[aria-selected="true"] {
+      background-color: var(--color-action-disabled-background);
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    [role="option"] {
+      &[aria-current="true"] {
+        outline: 2px dashed black;
+      }
+
+      &[aria-selected="true"] {
+        color: var(--color-action-base-text);
+        background-color: var(--color-action-base-background);
+      }
+
+      &:hover {
+        color: var(--color-action-hover-text);
+        background-color: var(--color-action-hover-background);
+      }
+    }
+  }
+
+  [role="option"]:hover {
+    color: var(--color-action-hover-text);
+    background-color: var(--color-action-hover-background);
+  }
+}

@@ -7,13 +7,13 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Rendering | Buttons | <GhostButton>', hooks => {
   setupRenderingTest(hooks);
 
-  test('basic use-case', async assert => {
+  test('basic use-case', async function (assert) {
     await render(hbs`<GhostButton>click me!</GhostButton>`);
 
     assert.dom('[data-test-ghost-button-content]').hasText('click me!');
   });
 
-  test('basic composition use-case', async assert => {
+  test('basic composition use-case', async function (assert) {
     await render(hbs`
       <GhostButton as |b|>
         <b.Content data-test-ghost-button-content>click me!</b.Content>
@@ -23,7 +23,7 @@ module('Rendering | Buttons | <GhostButton>', hooks => {
     assert.dom('[data-test-ghost-button-content]').hasText('click me!');
   });
 
-  test('full composition use-case', async assert => {
+  test('full composition use-case', async function (assert) {
     await render(hbs`
       <GhostButton as |b|>
         <b.Prefix data-test-ghost-button-prefix>pre</b.Prefix>

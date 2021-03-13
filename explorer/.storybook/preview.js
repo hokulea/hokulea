@@ -1,4 +1,3 @@
-import { addParameters, addDecorator } from "@storybook/ember";
 import { hbs } from 'ember-cli-htmlbars';
 
 const sortOrder = {
@@ -15,7 +14,7 @@ const sortOrder = {
 const storyTop = ['introduction', 'overview', 'default'];
 const storyBottom = [];
 
-addParameters({
+export const parameters = {
   options: {
     storySort: (a, b) => {
       // sorting starts here
@@ -96,9 +95,28 @@ addParameters({
       // alphabetical order
       return a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     }
-  }
-});
+  },
+  // // For: https://github.com/whitespace-se/storybook-addon-html
+  // html: {
+  //   root: '#story-output',
+  //   prettier: {
+  //     useTabs: false,
+  //     htmlWhitespaceSensitivity: 'strict',
+  //   }
+  // }
+};
 
+const decorators = [
+  (storyFn, { globals }) => {
+    return {
+      template: hbs`<Storybook @globals={{this.globals}} @story={{this.story}}/>`,
+      context: {
+        globals,
+        story: storyFn()
+      },
+    };
+  }
+];
 
 export const globalTypes = {
   theme: {
@@ -153,13 +171,3 @@ export const globalTypes = {
     },
   },
 };
-
-addDecorator((storyFn, { globals }) => {
-  return {
-    template: hbs`<Storybook @globals={{this.globals}} @story={{this.story}}/>`,
-    context: {
-      globals,
-      story: storyFn()
-    },
-  };
-});

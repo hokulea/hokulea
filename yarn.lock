@@ -12217,15 +12217,10 @@ heimdalljs@^0.2.0, heimdalljs@^0.2.1, heimdalljs@^0.2.3, heimdalljs@^0.2.5, heim
   dependencies:
     rsvp "~3.2.1"
 
-highlight.js@^10.1.1, highlight.js@~10.4.0:
+highlight.js@^10.1.1, highlight.js@^10.2.0, highlight.js@~10.4.0:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.4.0.tgz#ef3ce475e5dfa7a48484260b49ea242ddab823a0"
   integrity sha512-EfrUGcQ63oLJbj0J0RI9ebX6TAITbsDBLbsjr881L/X5fMO9+oadKzEF21C7R3ULKG6Gv3uoab2HiqVJa/4+oA==
-
-highlight.js@^10.2.0:
-  version "10.3.2"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.3.2.tgz#135fd3619a00c3cbb8b4cd6dbc78d56bfcbc46f1"
-  integrity sha512-3jRT7OUYsVsKvukNKZCtnvRcFyCJqSEIuIMsEybAXRiFSwpt65qjPd/Pr+UOdYt7WJlt+lj3+ypUsHiySBp/Jw==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -14287,9 +14282,9 @@ markdown-it-ember@^0.0.3:
   integrity sha512-S8uYugCl5TY8JrLrChdIciDduyGVB2ogp2SPV3AikyV9gb0F53QQn4FTbKNBuZ8SfEtly1XoUqkWoQ62LLhQwQ==
 
 markdown-it-highlightjs@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.3.0.tgz#7995ff7a35384e71231547490587654b925e2486"
-  integrity sha512-DTWpDXCEib9+Ap98Zw6N5HNxctlQh3hKHOPVvt6HJHl3XDDsRIogabnrCi29wa4U7PfKerO5wtva8H6eSI2tzw==
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.4.0.tgz#1a75edd02f9e564f800052eac2b5aefa8230f8d4"
+  integrity sha512-JES5P8ll3Vpf6a4C0FlsaO1opOaH53Rbvphj2IAON29v33cHNUiwXBSaC+bThUiLp6m3UEZ4vv579CHSElWSdw==
   dependencies:
     highlight.js "^10.2.0"
     lodash.flow "^3.5.0"
@@ -19264,9 +19259,9 @@ tinycolor2@^1.4.1:
   integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
 tlds@^1.203.0:
-  version "1.217.0"
-  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.217.0.tgz#194df180ab5ed41b439745991d4a84a93887cb7d"
-  integrity sha512-iRVizGqUFSBRwScghTSJyRkkEXqLAO17nFwlVcmsNHPDdpE+owH91wDUmZXZfJ4UdBYuVSm7kyAXZo0c4X7GFQ==
+  version "1.218.0"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.218.0.tgz#f31804891c650c136f88cb8ec2f043577b5f5afd"
+  integrity sha512-JpD3eSrYaIFlU/OvtI5WTEK+v5qXZSeUifz4hT2bJsJKx5ykjZvg6i5yXVBJNjoN3XbTCtryc7H5v8B16yHfMg==
 
 tmp@0.0.28:
   version "0.0.28"

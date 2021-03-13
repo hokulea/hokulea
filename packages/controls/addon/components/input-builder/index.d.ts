@@ -6,4 +6,6 @@ export interface InputBuilderArgs {
   control: Component<Control<unknown>>;
 }
 
-export default class InputBuilderComponent extends Component<InputBuilderArgs> {}
+export default class InputBuilderComponent extends Component<
+  InputBuilderArgs
+> {}

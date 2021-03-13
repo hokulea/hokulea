@@ -106,7 +106,7 @@ export const parameters = {
   // }
 };
 
-const decorators = [
+export const decorators = [
   (storyFn, { globals }) => {
     return {
       template: hbs`<Storybook @globals={{this.globals}} @story={{this.story}}/>`,

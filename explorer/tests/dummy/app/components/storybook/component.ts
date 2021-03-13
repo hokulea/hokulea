@@ -1,3 +1,4 @@
+// eslint-disable-next-line ember/no-classic-components
 import EmberComponent from '@ember/component';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
@@ -15,7 +16,7 @@ interface Globals {
 interface StorybookArgs {
   story: {
     template: unknown;
-    context: object;
+    context: Record<string, unknown>;
   };
   globals: Globals;
 }
@@ -27,10 +28,11 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     super(owner, args);
 
     // render original story
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     owner.register(
       'component:story',
+      // eslint-disable-next-line ember/no-classic-classes, ember/require-tagless-components
       EmberComponent.extend({
         layout: args.story.template,
         ...args.story.context

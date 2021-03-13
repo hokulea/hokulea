@@ -50,8 +50,4 @@ jobs:
       with:
         coverageCommand: yarn coverage
         coverageLocations: |
-          ${{github.workspace}}/packages/buttons/coverage/lcov.info:lcov
-          ${{github.workspace}}/packages/cards/coverage/lcov.info:lcov
-          ${{github.workspace}}/packages/foundation/coverage/lcov.info:lcov
-          ${{github.workspace}}/packages/inputs/coverage/lcov.info:lcov
-          ${{github.workspace}}/packages/layouts/coverage/lcov.info:lcov
+          ${{github.workspace}}/coverage/*.lcov:lcov

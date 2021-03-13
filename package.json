@@ -12,7 +12,7 @@
     "fresh-install": "rm yarn.lock; yarn clean; yarn install && yarn lerna bootstrap",
     "lerna-run": "FORCE_COLOR=1 yarn lerna --concurrency 1 run --stream",
     "test": "yarn lerna-run test",
-    "coverage": "yarn lerna-run coverage",
+    "coverage": "yarn lerna-run coverage && node ./scripts/merge-coverage.js",
     "lint:hbs": "yarn lerna-run lint:hbs",
     "lint:js": "yarn lerna-run lint:js",
     "lint:types": "yarn lerna-run lint:types",

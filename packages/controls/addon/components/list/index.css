@@ -7,7 +7,7 @@
   padding: 0;
 
   & [role="option"] {
-    padding-block: var(--s-2);
+    padding-primitive: var(--s-2);
     padding-inline: var(--s-1);
 
     &[aria-selected], &[aria-selected="true"] {

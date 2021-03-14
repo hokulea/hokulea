@@ -5,7 +5,7 @@
         type="button"
         local-class="trigger"
         data-test-select="trigger"
-        {{dropdown-trigger ddb installListener=this.installTriggerListener}}
+        {{ddb.trigger installListener=this.installTriggerListener}}
       >
         <span>
           {{#if @value}}
@@ -57,7 +57,7 @@
         @update={{@update}}
         {{on "mouseup" (fn this.close ddb.close)}}
         {{did-insert this.setupList}}
-        {{dropdown-popup ddb}} as |option|
+        {{ddb.popup}} as |option|
       >
         {{#if (has-block "option")}}
           {{yield option to="option"}}

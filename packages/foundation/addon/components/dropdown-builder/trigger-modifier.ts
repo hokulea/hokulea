@@ -1,19 +1,19 @@
 import Modifier from 'ember-modifier';
 
-import DropdownBuilderComponent from '../components/dropdown-builder';
+import DropdownBuilderComponent from './index';
 
-interface DropdownTriggerArgs {
-  positional: [DropdownBuilderComponent];
+interface TriggerArgs {
+  positional: unknown[];
   named: {
+    ddb: DropdownBuilderComponent;
+    register: (popup: TriggerModifier) => void;
     installListener: (element: Element, ddb: DropdownBuilderComponent) => void;
   };
 }
 
-export default class DropdownTriggerModifier extends Modifier<
-  DropdownTriggerArgs
-> {
+export default class TriggerModifier extends Modifier<TriggerArgs> {
   get ddb() {
-    return this.args.positional[0];
+    return this.args.named.ddb;
   }
 
   get installListener() {
@@ -21,7 +21,7 @@ export default class DropdownTriggerModifier extends Modifier<
   }
 
   didInstall() {
-    this.ddb?.registerTrigger(this);
+    this.args.named.register(this);
 
     if (this.element) {
       const { installListener, element, ddb } = this;

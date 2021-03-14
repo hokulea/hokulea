@@ -59,18 +59,21 @@
 }
 
 .options {
-  position: absolute;
-  border-block-start: 0;
-  border-start-start-radius: 0;
-  border-start-end-radius: 0;
+  /* Use trigger selector for higher specifity, rather than !important */
+  .trigger + & {
+    position: absolute;
+    border-block-start: 0;
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
 
-  top: 100%;
-  left: 0;
-  right: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
   [aria-expanded="true"] + & {
     opacity: 1;

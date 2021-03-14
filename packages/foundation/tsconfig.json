@@ -25,6 +25,9 @@
       "*": [
         "../../types/*",
         "types/*"
+      ],
+      "@ember/destroyable": [
+        "../../node_modules/ember-destroyable-polyfill"
       ]
     }
   },

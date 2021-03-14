@@ -1,0 +1,28 @@
+{
+  "color": {
+    "emphasize": {
+      "adjacent": {
+        "stronger": {
+          "value": "#A85D06",
+          "comment": ""
+        },
+        "strong": {
+          "value": "#F28608",
+          "comment": ""
+        },
+        "regular": {
+          "value": "#F9AA4E",
+          "comment": ""
+        },
+        "weak": {
+          "value": "#FCCE98",
+          "comment": ""
+        },
+        "weaker": {
+          "value": "#FEF1E2",
+          "comment": ""
+        }
+      }
+    }
+  }
+}

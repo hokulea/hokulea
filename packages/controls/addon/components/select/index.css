@@ -1,5 +1,3 @@
-@value border-width from '@hokulea/foundation/structure/border';
-
 .extrinsic {
   display: inline-block;
 }
@@ -15,7 +13,7 @@
 .trigger {
   composes: action-focus from '@hokulea/foundation/intents/action';
   composes: border-shape from '@hokulea/foundation/structure/border';
-  composes: padding-block from '@hokulea/foundation/structure/padding';
+  composes: padding-primitive from '@hokulea/foundation/structure/padding';
 
   color: var(--color-text);
   background-color: var(--color-background);
@@ -46,13 +44,13 @@
       }
 
       &[aria-selected="true"] {
-        color: var(--color-action-base-text);
-        background-color: var(--color-action-base-background);
+        color: var(--color-intent-action-base-text);
+        background-color: var(--color-intent-action-base-background);
       }
 
       &:hover {
-        color: var(--color-action-hover-text);
-        background-color: var(--color-action-hover-background);
+        color: var(--color-intent-action-hover-text);
+        background-color: var(--color-intent-action-hover-background);
       }
     }
   }

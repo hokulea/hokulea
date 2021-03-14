@@ -1,0 +1,31 @@
+{
+  "color": {
+    "intent": {
+      "accent": {
+        "disabled": {
+          "text": {
+            "$light": {
+              "value": "#737373",
+              "comment": "",
+              "colorScheme": "light"
+            }
+          },
+          "border": {
+            "$light": {
+              "value": "#F2F2F2",
+              "comment": "",
+              "colorScheme": "light"
+            }
+          },
+          "background": {
+            "$light": {
+              "value": "#F2F2F2",
+              "comment": "",
+              "colorScheme": "light"
+            }
+          }
+        }
+      }
+    }
+  }
+}

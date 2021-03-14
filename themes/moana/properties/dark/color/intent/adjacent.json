@@ -1,0 +1,31 @@
+{
+  "color": {
+    "intent": {
+      "adjacent": {
+        "disabled": {
+          "text": {
+            "$dark": {
+              "value": "#CECECE",
+              "comment": "",
+              "colorScheme": "dark"
+            }
+          },
+          "border": {
+            "$dark": {
+              "value": "#6E6E6E",
+              "comment": "",
+              "colorScheme": "dark"
+            }
+          },
+          "background": {
+            "$dark": {
+              "value": "#6E6E6E",
+              "comment": "",
+              "colorScheme": "dark"
+            }
+          }
+        }
+      }
+    }
+  }
+}

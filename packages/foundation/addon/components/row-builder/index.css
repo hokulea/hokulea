@@ -1,5 +1,5 @@
 .affix {
-  composes: padding-block from '../../structure/padding';
+  composes: padding-primitive from '../../structure/padding';
   box-sizing: border-box;
 }
 
@@ -38,5 +38,5 @@
 }
 
 .content {
-  composes: padding-block from '../../structure/padding';
+  composes: padding-primitive from '../../structure/padding';
 }

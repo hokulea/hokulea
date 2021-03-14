@@ -1,7 +1,5 @@
-@value border-style, border-radius from '@hokulea/foundation/structure/border';
-
 .base-card {
-  border-style: border-style;
-  border-radius: border-radius;
-  border-wdith: 1px;
+  border-style: var(--structure-border-style);
+  border-radius: var(--structure-border-radius);
+  border-wdith: var(--structure-border-width);
 }

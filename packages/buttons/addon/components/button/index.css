@@ -1,24 +1,24 @@
 .button {
   composes: action-focus from '@hokulea/foundation/intents/action';
-  color: var(--color-action-base-text);
-  background-color: var(--color-action-base-background);
-  border-color: var(--color-action-base-border);
+  color: var(--color-intent-action-base-text);
+  background-color: var(--color-intent-action-base-background);
+  border-color: var(--color-intent-action-base-border);
 
   &:hover {
-    color: var(--color-action-hover-text);
-    background-color: var(--color-action-hover-background);
-    border-color: var(--color-action-hover-border);
+    color: var(--color-intent-action-hover-text);
+    background-color: var(--color-intent-action-hover-background);
+    border-color: var(--color-intent-action-hover-border);
   }
 
   &:active {
-    color: var(--color-action-active-text);
-    background-color: var(--color-action-active-background);
-    border-color: var(--color-action-active-border);
+    color: var(--color-intent-action-active-text);
+    background-color: var(--color-intent-action-active-background);
+    border-color: var(--color-intent-action-active-border);
   }
 
   &:disabled {
-    color: var(--color-action-disabled-text);
-    background-color: var(--color-action-disabled-background);
-    border-color: var(--color-action-disabled-border);
+    color: var(--color-intent-action-disabled-text);
+    background-color: var(--color-intent-action-disabled-background);
+    border-color: var(--color-intent-action-disabled-border);
   }
 }

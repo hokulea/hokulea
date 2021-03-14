@@ -1,24 +1,24 @@
 .accent-button {
   composes: accent-focus from '@hokulea/foundation/intents/accent';
-  color: var(--color-accent-base-text);
-  background-color: var(--color-accent-base-background);
-  border-color: var(--color-accent-base-border);
+  color: var(--color-intent-accent-base-text);
+  background-color: var(--color-intent-accent-base-background);
+  border-color: var(--color-intent-accent-base-border);
 
   &:hover {
-    color: var(--color-accent-hover-text);
-    background-color: var(--color-accent-hover-background);
-    border-color: var(--color-accent-hover-border);
+    color: var(--color-intent-accent-hover-text);
+    background-color: var(--color-intent-accent-hover-background);
+    border-color: var(--color-intent-accent-hover-border);
   }
 
   &:active {
-    color: var(--color-accent-active-text);
-    background-color: var(--color-accent-active-background);
-    border-color: var(--color-accent-active-border);
+    color: var(--color-intent-accent-active-text);
+    background-color: var(--color-intent-accent-active-background);
+    border-color: var(--color-intent-accent-active-border);
   }
 
   &:disabled {
-    color: var(--color-accent-disabled-text);
-    background-color: var(--color-accent-disabled-background);
-    border-color: var(--color-accent-disabled-border);
+    color: var(--color-intent-accent-disabled-text);
+    background-color: var(--color-intent-accent-disabled-background);
+    border-color: var(--color-intent-accent-disabled-border);
   }
 }

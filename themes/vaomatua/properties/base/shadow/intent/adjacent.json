@@ -1,0 +1,12 @@
+{
+  "shadow": {
+    "intent": {
+      "adjacent": {
+        "focus": {
+          "value": "0 0 6px #FCCE98",
+          "comment": ""
+        }
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@
 
   &:focus,
   &:focus-within {
-    box-shadow: var(--shadow-accent-focus);
+    box-shadow: var(--shadow-intent-accent-focus);
   }
 
   &::-moz-focus-inner {
@@ -13,14 +13,14 @@
   &:hover {
     &:focus,
     &:focus-within {
-      box-shadow: var(--shadow-accent-focus);
+      box-shadow: var(--shadow-intent-accent-focus);
     }
   }
 
   &:active {
     &:focus,
     &:focus-within {
-      box-shadow: var(--shadow-accent-focus);
+      box-shadow: var(--shadow-intent-accent-focus);
     }
   }
 }

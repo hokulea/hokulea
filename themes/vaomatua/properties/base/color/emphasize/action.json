@@ -1,0 +1,28 @@
+{
+  "color": {
+    "emphasize": {
+      "action": {
+        "stronger": {
+          "value": "#205D32",
+          "comment": ""
+        },
+        "strong": {
+          "value": "#349550",
+          "comment": ""
+        },
+        "regular": {
+          "value": "#53C373",
+          "comment": ""
+        },
+        "weak": {
+          "value": "#8CD7A1",
+          "comment": ""
+        },
+        "weaker": {
+          "value": "#C4EBCF",
+          "comment": ""
+        }
+      }
+    }
+  }
+}

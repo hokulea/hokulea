@@ -1,0 +1,36 @@
+{
+  "color": {
+    "indicator": {
+      "info": {
+        "box": {
+          "background": {
+            "value": "#9EDFFA",
+            "comment": ""
+          },
+          "border": {
+            "value": "#087AAA",
+            "comment": ""
+          },
+          "text": {
+            "value": "#054661",
+            "comment": ""
+          }
+        },
+        "fill": {
+          "background": {
+            "value": "#054661",
+            "comment": ""
+          },
+          "border": {
+            "value": "#054661",
+            "comment": ""
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": ""
+          }
+        }
+      }
+    }
+  }
+}

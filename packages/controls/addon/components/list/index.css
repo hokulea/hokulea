@@ -11,7 +11,7 @@
     padding-inline: var(--s-1);
 
     &[aria-selected], &[aria-selected="true"] {
-      background-color: var(--color-action-disabled-background);
+      background-color: var(--color-intent-action-disabled-background);
     }
   }
 
@@ -24,19 +24,19 @@
       }
 
       &[aria-selected="true"] {
-        color: var(--color-action-base-text);
-        background-color: var(--color-action-base-background);
+        color: var(--color-intent-action-base-text);
+        background-color: var(--color-intent-action-base-background);
       }
 
       &:hover {
-        color: var(--color-action-hover-text);
-        background-color: var(--color-action-hover-background);
+        color: var(--color-intent-action-hover-text);
+        background-color: var(--color-intent-action-hover-background);
       }
     }
   }
 
   [role="option"]:hover {
-    color: var(--color-action-hover-text);
-    background-color: var(--color-action-hover-background);
+    color: var(--color-intent-action-hover-text);
+    background-color: var(--color-intent-action-hover-background);
   }
 }

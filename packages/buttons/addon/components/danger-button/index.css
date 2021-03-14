@@ -1,24 +1,24 @@
 .danger-button {
   composes: danger-focus from '@hokulea/foundation/intents/danger';
-  color: var(--color-danger-base-text);
-  background-color: var(--color-danger-base-background);
-  border-color: var(--color-danger-base-border);
+  color: var(--color-intent-danger-base-text);
+  background-color: var(--color-intent-danger-base-background);
+  border-color: var(--color-intent-danger-base-border);
 
   &:hover {
-    color: var(--color-danger-hover-text);
-    background-color: var(--color-danger-hover-background);
-    border-color: var(--color-danger-hover-border);
+    color: var(--color-intent-danger-hover-text);
+    background-color: var(--color-intent-danger-hover-background);
+    border-color: var(--color-intent-danger-hover-border);
   }
 
   &:active {
-    color: var(--color-danger-active-text);
-    background-color: var(--color-danger-active-background);
-    border-color: var(--color-danger-active-border);
+    color: var(--color-intent-danger-active-text);
+    background-color: var(--color-intent-danger-active-background);
+    border-color: var(--color-intent-danger-active-border);
   }
 
   &:disabled {
-    color: var(--color-danger-disabled-text);
-    background-color: var(--color-danger-disabled-background);
-    border-color: var(--color-danger-disabled-border);
+    color: var(--color-intent-danger-disabled-text);
+    background-color: var(--color-intent-danger-disabled-background);
+    border-color: var(--color-intent-danger-disabled-border);
   }
 }

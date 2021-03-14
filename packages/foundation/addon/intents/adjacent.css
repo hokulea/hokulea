@@ -3,7 +3,7 @@
 
   &:focus,
   &:focus-within {
-    box-shadow: var(--shadow-adjacent-focus);
+    box-shadow: var(--shadow-intent-adjacent-focus);
   }
 
   &::-moz-focus-inner {
@@ -13,14 +13,14 @@
   &:hover {
     &:focus,
     &:focus-within {
-      box-shadow: var(--shadow-adjacent-focus);
+      box-shadow: var(--shadow-intent-adjacent-focus);
     }
   }
 
   &:active {
     &:focus,
     &:focus-within {
-      box-shadow: var(--shadow-adjacent-focus);
+      box-shadow: var(--shadow-intent-adjacent-focus);
     }
   }
 }

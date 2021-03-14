@@ -1,0 +1,24 @@
+{
+  "color": {
+    "indicator": {
+      "info": {
+        "outline": {
+          "text": {
+            "$light": {
+              "value": "#054861",
+              "comment": "",
+              "colorScheme": "light"
+            }
+          },
+          "border": {
+            "$light": {
+              "value": "#054861",
+              "comment": "",
+              "colorScheme": "light"
+            }
+          }
+        }
+      }
+    }
+  }
+}

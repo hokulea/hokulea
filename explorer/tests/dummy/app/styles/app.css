@@ -33,10 +33,52 @@ h4 {
 }
 
 a, a:link a:visited {
-  color: var(--color-action-emphasize);
+  color: var(--color-emphasize-action-regular);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+em {
+  color: var(--color-emphasize-adjacent-regular);
+}
+
+code {
+  display: inline;
+  padding: 0.22em;
+  border-radius: 4px;
+  color: var(--color-emphasize-adjacent-regular);
+  background: var(--color-layout-low-contrast);
+}
+
+pre > code:global(.hljs) {
+  display: block;
+  padding: 0.5em;
+}
+
+h3, h4 {
+  --typo-heading-weight: 500;
+}
+
+dt {
+  font-weight: 600;
+  margin-block-end: var(--s-4);
+}
+
+dd {
+  padding-inline-start: var(--s0);
+}
+
+dd + dt {
+  margin-block-start: var(--s0);
+}
+
+th {
+  text-align: left;
+}
+
+tr > td:not(:last-child) {
+  padding-inline-end: var(--ls-1);
 }

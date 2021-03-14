@@ -1,0 +1,24 @@
+{
+  "color": {
+    "indicator": {
+      "info": {
+        "outline": {
+          "text": {
+            "$dark": {
+              "value": "#55CBF7",
+              "comment": "",
+              "colorScheme": "dark"
+            }
+          },
+          "border": {
+            "$dark": {
+              "value": "#55CBF7",
+              "comment": "",
+              "colorScheme": "dark"
+            }
+          }
+        }
+      }
+    }
+  }
+}

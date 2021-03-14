@@ -1,0 +1,50 @@
+{
+  "color": {
+    "intent": {
+      "accent": {
+        "active": {
+          "text": {
+            "value": "#333333",
+            "comment": ""
+          },
+          "border": {
+            "value": "#B2A000",
+            "comment": ""
+          },
+          "background": {
+            "value": "#B2A000",
+            "comment": ""
+          }
+        },
+        "hover": {
+          "text": {
+            "value": "#333333",
+            "comment": ""
+          },
+          "border": {
+            "value": "#FFED4C",
+            "comment": ""
+          },
+          "background": {
+            "value": "#FFED4C",
+            "comment": ""
+          }
+        },
+        "base": {
+          "text": {
+            "value": "#333333",
+            "comment": ""
+          },
+          "background": {
+            "value": "#FFF599",
+            "comment": ""
+          },
+          "border": {
+            "value": "#FFF599",
+            "comment": ""
+          }
+        }
+      }
+    }
+  }
+}

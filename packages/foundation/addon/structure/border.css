@@ -1,17 +1,5 @@
-@value border-width: 2px;
-@value border-radius: 4px;
-@value border-style: solid;
-
 .border-shape {
-  border-style: border-style;
-  border-radius: border-radius;
-  border-width: border-width;
-}
-
-/* Temp, soon to come from tokens itself */
-:root {
-  --color-structure-border: var(--color-layout-low-contrast);
-  --structure-border-style: border-style;
-  --structure-border-width: border-width;
-  --structure-border-radius: border-radius;
+  border-style: var(--structure-border-style);
+  border-radius: var(--structure-border-radius);
+  border-width: var(--structure-border-width);
 }

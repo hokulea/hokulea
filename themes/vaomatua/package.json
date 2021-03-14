@@ -15,10 +15,12 @@
     "file": "dist/vaomatua.css"
   },
   "scripts": {
+    "clean": "rm -rf build/ dist/ properties/",
     "sync": "yarn theemo sync",
     "build": "yarn theemo build",
     "generate": "yarn theemo generate",
-    "magic": "yarn sync && yarn build && yarn generate"
+    "magic": "yarn sync && yarn build && yarn generate",
+    "clean-magic": "yarn clean && yarn magic"
   },
   "devDependencies": {
     "style-dictionary": "^2.10.2",

@@ -158,15 +158,70 @@ export interface DropdownBuilderBlocks {
  *   }
  * }
  * ```
+ *
+ * @example Imperative Toggle API
+ *
+ * You can call `open()` and `close()` imperatively... well, kinda... hmm somewhat
+ * partially.
+ *
+ * ```hbs
+ * <DropdownBuilder as |ddb|>
+ *   <button {{ddb.trigger>Toggle Fruits</button>
+ *   <ul {{ddb.popup}} {{on "mouseup" (fn this.close ddb.close)}}>
+ *     <li>Apple</li>
+ *     <li>Banana</li>
+ *     <li>Orange</li>
+ *   </ul>
+ * </DropdownBuilder>
+ * ```
+ *
+ * Pass the `ddb.close` method on to a listener of yours:
+ *
+ * ```ts
+ * export default class BackingComponent extends Component {
+ *   @action
+ *   close(close: () => void, event: MouseEvent) {
+ *     if (this.someImportantConditionIsTrue) {
+ *       close();
+ *     } else {
+ *       event.stopPropagation();
+ *     }
+ *   }
+ * }
+ * ```
  */
 export default class DropdownBuilderComponent extends Component<
   DropdownBuilderArgs
 > {
   id = guidFor(this);
+
+  /** Whether the popup is expanded or not */
   @tracked expanded = false;
 
   private triggerPart?: TriggerModifier;
   private popupPart?: PopupModifier;
+
+  /**
+   * Modifier for the trigger element
+   */
+  get trigger(): TriggerModifier {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return this.curryModifier(TriggerModifier, {
+      register: this.registerTrigger
+    });
+  }
+
+  /**
+   * Modifier for the popup element
+   */
+  get popup(): PopupModifier {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return this.curryModifier(PopupModifier, {
+      register: this.registerPopup
+    });
+  }
 
   private curryModifier(
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -198,22 +253,6 @@ export default class DropdownBuilderComponent extends Component<
     );
   }
 
-  get popup() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return this.curryModifier(PopupModifier, {
-      register: this.registerPopup
-    });
-  }
-
-  get trigger() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return this.curryModifier(TriggerModifier, {
-      register: this.registerTrigger
-    });
-  }
-
   @action
   private registerTrigger(trigger: TriggerModifier) {
     this.triggerPart = trigger;
@@ -230,7 +269,7 @@ export default class DropdownBuilderComponent extends Component<
 
   private registerCloseListener() {
     if (this.triggerPart && this.popupPart) {
-      document.body.addEventListener('click', (event: MouseEvent) => {
+      const closePopup = (event: MouseEvent) => {
         const path = event.composedPath();
 
         if (
@@ -241,6 +280,12 @@ export default class DropdownBuilderComponent extends Component<
         }
 
         this.close();
+      };
+
+      document.body.addEventListener('click', closePopup);
+
+      registerDestructor(this, () => {
+        document.body.removeEventListener('click', closePopup);
       });
     }
   }
@@ -259,23 +304,27 @@ export default class DropdownBuilderComponent extends Component<
     }
   }
 
+  /**
+   * Toggles the popup
+   */
   @action
-  isExpanded() {
-    return this.expanded;
-  }
-
-  @action
-  toggle() {
+  toggle(): void {
     this.updateExpanded(!this.expanded);
   }
 
+  /**
+   * Opens the popup
+   */
   @action
-  open() {
+  open(): void {
     this.updateExpanded(true);
   }
 
+  /**
+   * Closes the popup
+   */
   @action
-  close() {
+  close(): void {
     this.updateExpanded(false);
   }
 

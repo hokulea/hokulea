@@ -158,6 +158,37 @@ export interface DropdownBuilderBlocks {
  *   }
  * }
  * ```
+ *
+ * @example Imperative Toggle API
+ *
+ * You can call `open()` and `close()` imperatively... well, kinda... hmm somewhat
+ * partially.
+ *
+ * ```hbs
+ * <DropdownBuilder as |ddb|>
+ *   <button {{ddb.trigger>Toggle Fruits</button>
+ *   <ul {{ddb.popup}} {{on "mouseup" (fn this.close ddb.close)}}>
+ *     <li>Apple</li>
+ *     <li>Banana</li>
+ *     <li>Orange</li>
+ *   </ul>
+ * </DropdownBuilder>
+ * ```
+ *
+ * Pass the `ddb.close` method on to a listener of yours:
+ *
+ * ```ts
+ * export default class BackingComponent extends Component {
+ *   @action
+ *   close(close: () => void, event: MouseEvent) {
+ *     if (this.someImportantConditionIsTrue) {
+ *       close();
+ *     } else {
+ *       event.stopPropagation();
+ *     }
+ *   }
+ * }
+ * ```
  */
 export default class DropdownBuilderComponent extends Component<
   DropdownBuilderArgs

@@ -1,5 +1,5 @@
 .base-card {
   border-style: var(--structure-border-style);
   border-radius: var(--structure-border-radius);
-  border-wdith: var(--structure-border-width);
+  border-width: var(--structure-border-width);
 }

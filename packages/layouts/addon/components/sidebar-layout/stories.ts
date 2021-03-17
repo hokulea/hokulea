@@ -1,7 +1,5 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { radios, text, withKnobs } from '@storybook/addon-knobs';
-
 export default {
   title: 'Components/Layouts/Sidebar',
   parameters: {
@@ -12,7 +10,7 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
       <SidebarLayout @min={{this.min}} as |s|>
         {{#if this.left}}
@@ -30,33 +28,27 @@ export const Default = () => ({
         {{/if}}
       </SidebarLayout>`,
   context: {
-    get base() {
-      return text('base', '300px');
-    },
-
-    get min() {
-      return text('min', '50%');
-    },
-
-    get left() {
-      return (
-        radios(
-          'position',
-          {
-            left: 'left',
-            right: 'right'
-          },
-          'left'
-        ) === 'left'
-      );
-    },
-
-    get right() {
-      return !this.left;
-    }
+    base: args.base,
+    min: args.min,
+    left: args.position === 'left',
+    right: args.position === 'right'
   }
 });
 
-Default.story = {
-  decorators: [withKnobs]
+Default.argTypes = {
+  base: {
+    defaultValue: '300px',
+    control: { type: 'text' }
+  },
+  min: {
+    defaultValue: '50%',
+    control: { type: 'text' }
+  },
+  position: {
+    defaultValue: 'left',
+    control: {
+      type: 'inline-radio',
+      options: ['left', 'right']
+    }
+  }
 };

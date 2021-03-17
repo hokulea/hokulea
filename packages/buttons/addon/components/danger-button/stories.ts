@@ -13,15 +13,31 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
-      <DangerButton {{on "click" (fn this.invoke)}}>Danger Button</DangerButton>
-      <DangerButton disabled={{true}}>Disabled Danger Button</DangerButton>
-    `,
+    <DangerButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</DangerButton>
+    <DangerButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</DangerButton>
+  `,
   context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
+
+Default.argTypes = {
+  label: {
+    control: { type: 'text' }
+  },
+  size: {
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
+
+Default.args = {
+  label: 'Danger Button',
+  size: 1
+};
 
 Default.story = {
   decorators: [withDesign],

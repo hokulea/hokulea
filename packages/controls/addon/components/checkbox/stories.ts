@@ -9,7 +9,8 @@ export default {
     options: {
       showPanel: true,
       isToolshown: true
-    }
+    },
+    controls: { hideNoControlsWarning: true }
   }
 };
 
@@ -38,26 +39,26 @@ Default.story = {
 
 export const Labelled = () => ({
   template: hbs`
-      <label>
-        <Checkbox @update={{fn this.update}}/>
-        Default
-      </label>
+    <label>
+      <Checkbox @update={{fn this.update}}/>
+      Default
+    </label>
 
-      <label>
-        <Checkbox disabled={{true}}/>
-        Disabled
-      </label>
+    <label>
+      <Checkbox disabled={{true}}/>
+      Disabled
+    </label>
 
-      <label>
-        <Checkbox @value={{true}} @update={{fn this.update}}/>
-        Default + Checked
-      </label>
+    <label>
+      <Checkbox @value={{true}} @update={{fn this.update}}/>
+      Default + Checked
+    </label>
 
-      <label>
-        <Checkbox @value={{true}} disabled={{true}}/>
-        Disabled + Checked
-      </label>
-    `,
+    <label>
+      <Checkbox @value={{true}} disabled={{true}}/>
+      Disabled + Checked
+    </label>
+  `,
   context: {
     update: action('checked')
   }
@@ -65,26 +66,26 @@ export const Labelled = () => ({
 
 export const Sizing = () => ({
   template: hbs`
-      <label {{style fontSize="80%"}}>
-        <Checkbox @update={{fn this.update}}/>
-        80%
-      </label>
+    <label {{style fontSize="80%"}}>
+      <Checkbox @update={{fn this.update}}/>
+      80%
+    </label>
 
-      <label>
-        <Checkbox disabled={{true}}/>
-        Normal
-      </label>
+    <label>
+      <Checkbox disabled={{true}}/>
+      Normal
+    </label>
 
-      <label {{style fontSize="120%"}}>
-        <Checkbox @value={{true}} @update={{fn this.update}}/>
-        120%
-      </label>
+    <label {{style fontSize="120%"}}>
+      <Checkbox @value={{true}} @update={{fn this.update}}/>
+      120%
+    </label>
 
-      <label {{style fontSize="150%"}}>
-        <Checkbox @value={{true}} disabled={{true}}/>
-        150%
-      </label>
-    `,
+    <label {{style fontSize="150%"}}>
+      <Checkbox @value={{true}} disabled={{true}}/>
+      150%
+    </label>
+  `,
   context: {
     update: action('checked')
   }

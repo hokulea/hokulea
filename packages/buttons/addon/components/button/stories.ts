@@ -13,12 +13,14 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
-      <Button {{on "click" (fn this.invoke)}}>Button</Button>
-      <Button disabled={{true}}>Disabled Button</Button>
-    `,
+    <Button {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</Button>
+    <Button disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</Button>
+  `,
   context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
@@ -32,6 +34,20 @@ Default.story = {
         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=106%3A9'
     }
   }
+};
+
+Default.argTypes = {
+  label: {
+    control: { type: 'text' }
+  },
+  size: {
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
+
+Default.args = {
+  label: 'Button',
+  size: 1
 };
 
 export const Accessibility = () => ({

@@ -25,6 +25,17 @@ export const Default = args => ({
   }
 });
 
+Default.argTypes = {
+  label: {
+    defaultValue: 'Button',
+    control: { type: 'text' }
+  },
+  size: {
+    defaultValue: 1,
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
+
 Default.story = {
   decorators: [withDesign],
   parameters: {
@@ -34,20 +45,6 @@ Default.story = {
         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Components?node-id=106%3A9'
     }
   }
-};
-
-Default.argTypes = {
-  label: {
-    control: { type: 'text' }
-  },
-  size: {
-    control: { type: 'range', min: -4, max: 4, step: 1 }
-  }
-};
-
-Default.args = {
-  label: 'Button',
-  size: 1
 };
 
 export const Accessibility = () => ({

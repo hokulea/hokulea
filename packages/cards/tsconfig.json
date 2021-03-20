@@ -35,5 +35,8 @@
     "types/**/*",
     "test-support/**/*",
     "addon-test-support/**/*"
+  ],
+  "exclude": [
+    "**/stories.ts"
   ]
 }

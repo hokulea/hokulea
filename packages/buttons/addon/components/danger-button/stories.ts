@@ -27,16 +27,13 @@ export const Default = args => ({
 
 Default.argTypes = {
   label: {
+    defaultValue: 'Danger Button',
     control: { type: 'text' }
   },
   size: {
+    defaultValue: 1,
     control: { type: 'range', min: -4, max: 4, step: 1 }
   }
-};
-
-Default.args = {
-  label: 'Danger Button',
-  size: 1
 };
 
 Default.story = {

@@ -13,15 +13,28 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
       <GhostButton {{on "click" (fn this.invoke)}}>Ghost Button</GhostButton>
       <GhostButton disabled={{true}}>Disabled Ghost Button</GhostButton>
     `,
   context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
+
+Default.argTypes = {
+  label: {
+    defaultValue: 'Ghost Button',
+    control: { type: 'text' }
+  },
+  size: {
+    defaultValue: 1,
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
 
 Default.story = {
   decorators: [withDesign],

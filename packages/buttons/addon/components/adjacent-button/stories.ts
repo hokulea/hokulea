@@ -13,15 +13,28 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
-      <AdjacentButton {{on "click" (fn this.invoke)}}>Adjacent Button</AdjacentButton>
-      <AdjacentButton disabled={{true}}>Disabled Adjacent Button</AdjacentButton>
-    `,
+    <AdjacentButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</AdjacentButton>
+    <AdjacentButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</AdjacentButton>
+  `,
   context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
+
+Default.argTypes = {
+  label: {
+    defaultValue: 'Adjacent Button',
+    control: { type: 'text' }
+  },
+  size: {
+    defaultValue: 1,
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
 
 Default.story = {
   decorators: [withDesign],

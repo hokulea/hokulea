@@ -13,15 +13,28 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
-      <AccentButton {{on "click" (fn this.invoke)}}>Accent Button</AccentButton>
-      <AccentButton disabled={{true}}>Disabled Accent Button</AccentButton>
-    `,
+    <AccentButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</AccentButton>
+    <AccentButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</AccentButton>
+  `,
   context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
+
+Default.argTypes = {
+  label: {
+    defaultValue: 'Accent Button',
+    control: { type: 'text' }
+  },
+  size: {
+    defaultValue: 1,
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
 
 Default.story = {
   decorators: [withDesign],

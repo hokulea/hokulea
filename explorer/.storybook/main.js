@@ -5,12 +5,6 @@ const hbsBabelLoader = require('./loader/hbs-loader');
 module.exports = {
   stories: ['../../documentation/**/*.md', '../../api/*.md', '../../packages/**/stories.ts'],
   addons: [
-    '@storybook/addon-knobs',
-    'storybook-addon-designs',
-    '@storybook/addon-a11y',
-    '@storybook/addon-actions',
-    '@storybook/addon-toolbars',
-    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -21,7 +15,13 @@ module.exports = {
           ]
         }
       }
-    }
+    },
+    '@storybook/addon-controls',
+    'storybook-addon-designs',
+    '@storybook/addon-a11y',
+    '@storybook/addon-actions',
+    '@storybook/addon-toolbars',
+    '@storybook/addon-viewport'
   ],
   webpack: async config => {
     // remove storybook *.md loader

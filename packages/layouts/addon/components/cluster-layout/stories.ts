@@ -9,7 +9,8 @@ export default {
       showPanel: true,
       isToolshown: true
     }
-  }
+  },
+  controls: { hideNoControlsWarning: true }
   // component: ClusterLayoutComponent
 };
 

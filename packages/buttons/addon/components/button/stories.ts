@@ -13,15 +13,28 @@ export default {
   }
 };
 
-export const Default = () => ({
+export const Default = args => ({
   template: hbs`
-      <Button {{on "click" (fn this.invoke)}}>Button</Button>
-      <Button disabled={{true}}>Disabled Button</Button>
-    `,
+    <Button {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</Button>
+    <Button disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</Button>
+  `,
   context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
+
+Default.argTypes = {
+  label: {
+    defaultValue: 'Button',
+    control: { type: 'text' }
+  },
+  size: {
+    defaultValue: 1,
+    control: { type: 'range', min: -4, max: 4, step: 1 }
+  }
+};
 
 Default.story = {
   decorators: [withDesign],

@@ -1,12 +1,11 @@
 import { associateDestroyableChild } from '@ember/destroyable';
+import { scheduleOnce } from '@ember/runloop';
 
 import Modifier from 'ember-modifier';
 
-import Control from './control/controls/control';
-import ControlFactory from './control/controls/control-factory';
-import EmitStrategy, {
-  PersistResult
-} from './control/emit-strategies/emit-strategy';
+import Control, { ControlOptions, Item } from '../controls/control';
+import ControlFactory from '../controls/control-factory';
+import EmitStrategy from './control/emit-strategies/emit-strategy';
 import IndexEmitStrategy from './control/emit-strategies/index-emit-strategy';
 import ItemEmitStrategy from './control/emit-strategies/item-emit-strategy';
 import NoopEmitStrategy from './control/emit-strategies/noop-emit-strategy';
@@ -15,17 +14,30 @@ import DomObserverUpdateStrategy from './control/update-strategies/dom-observer-
 import UpdateStrategy from './control/update-strategies/update-strategy';
 
 export interface ControlArgs<T = unknown> {
-  [key: string]: unknown;
   items?: T[];
   selection?: T[];
-  activeItem: T;
-  select?: (selection: number[] | T[]) => PersistResult;
-  activateItem?: (item: number | T) => PersistResult;
+  activeItem?: T;
+  select?: (selection: number[] | T[]) => void;
+  activateItem?: (item: number | T) => void;
+  /**
+   * Tells the modifier to persist the active item. Set it to falls to control
+   * this for yourself.
+   *
+   * @defaultValue true
+   */
+  persistActiveItem?: boolean;
+  /**
+   * Tells the modifier to persist the selection. Set it to falls to control
+   * this for yourself.
+   *
+   * @defaultValue true
+   */
+  persistSelection?: boolean;
 }
 
 interface AllControlArgs<T> {
   positional: [];
-  named: ControlArgs<T>;
+  named: ControlArgs<T> & Record<string, unknown>;
 }
 
 /**
@@ -152,6 +164,17 @@ export default class ControlControlModifier<T> extends Modifier<
 
   private emitStrategy?: EmitStrategy;
   private updateStrategy?: UpdateStrategy<T>;
+  private emitter: EmitStrategy = {
+    select(_selection: Item[]) {
+      // eslint-disable-next-line unicorn/no-useless-undefined
+      return undefined;
+    },
+
+    activateItem(_item: Item) {
+      // eslint-disable-next-line unicorn/no-useless-undefined
+      return undefined;
+    }
+  };
 
   // life-cycle hooks from `ember-modifier`
 
@@ -171,11 +194,38 @@ export default class ControlControlModifier<T> extends Modifier<
 
   setup() {
     if (this.element) {
-      if (!this.element.hasAttribute('tabindex')) {
-        this.element.setAttribute('tabindex', '0');
+      this.emitter.select = (selection: Item[]) => {
+        if (this.emitStrategy) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          // eslint-disable-next-line ember/no-incorrect-calls-with-inline-anonymous-functions
+          scheduleOnce('afterRender', () => {
+            this.emitStrategy?.select(selection);
+          });
+        }
+      };
+      this.emitter.activateItem = (item: Item) => {
+        if (this.emitStrategy) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          // eslint-disable-next-line ember/no-incorrect-calls-with-inline-anonymous-functions
+          scheduleOnce('afterRender', () => {
+            this.emitStrategy?.activateItem(item);
+          });
+        }
+      };
+      const options: Partial<ControlOptions> = {};
+      if (typeof this.args.named.persistActiveItem === 'boolean') {
+        options.persistActiveItem = this.args.named.persistActiveItem;
       }
-
-      this.control = ControlFactory.createControl(this.element as HTMLElement);
+      if (typeof this.args.named.persistSelection === 'boolean') {
+        options.persistSelection = this.args.named.persistSelection;
+      }
+      this.control = ControlFactory.createControl(
+        this.element as HTMLElement,
+        this.emitter,
+        options
+      );
       this.emitStrategy = this.createOrUpdateEmitStrategy(this.control);
       this.updateStrategy = this.createOrUpdateUpdateStrategy(this.control);
 
@@ -230,7 +280,6 @@ export default class ControlControlModifier<T> extends Modifier<
     const args = this.args.named;
     const canUseIndexStrategy =
       args.select !== undefined && args.activateItem !== undefined;
-
     const canUseItemStrategy = canUseIndexStrategy && args.items !== undefined;
 
     if (canUseItemStrategy) {
@@ -259,7 +308,7 @@ export default class ControlControlModifier<T> extends Modifier<
       return this.emitStrategy;
     }
 
-    const strategy = new NoopEmitStrategy(args, control);
+    const strategy = new NoopEmitStrategy();
     associateDestroyableChild(this, strategy);
     return strategy;
   }

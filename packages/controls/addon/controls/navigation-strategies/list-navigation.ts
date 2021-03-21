@@ -1,4 +1,4 @@
-import Control, { Item } from '../controls/control';
+import Control, { Item } from '../control';
 
 export default class ListNavigationStrategy {
   private control: Control;

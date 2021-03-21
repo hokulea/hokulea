@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from '@storybook/addon-actions';
-// import { withDesign } from 'storybook-addon-designs';
+import { withDesign } from 'storybook-addon-designs';
 
 export default {
   title: 'Components/Controls/List',
@@ -21,21 +21,20 @@ export const Default = () => ({
       </List>
     `,
   context: {
-    update: action('checked'),
     select: action('select')
   }
 });
 
-// Default.story = {
-//   decorators: [withDesign],
-//   parameters: {
-//     design: {
-//       type: 'figma',
-//       url:
-//         'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Hokulea?node-id=575%3A9'
-//     }
-//   }
-// };
+Default.story = {
+  decorators: [withDesign],
+  parameters: {
+    design: {
+      type: 'figma',
+      url:
+        'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Hokulea?node-id=2846%3A313'
+    }
+  }
+};
 
 export const MultiSelect = () => ({
   template: hbs`
@@ -43,13 +42,14 @@ export const MultiSelect = () => ({
         @options={{array "apple" "banana" "orange"}}
         @value={{array "banana"}}
         @update={{this.select}}
-        aria-multiselectable="true"
+        @multiple={{true}}
       as |item|>
         {{item}}
       </List>
     `,
   context: {
-    update: action('checked'),
-    select: action('select')
+    select(selection: string[]) {
+      action('select')(...selection);
+    }
   }
 });

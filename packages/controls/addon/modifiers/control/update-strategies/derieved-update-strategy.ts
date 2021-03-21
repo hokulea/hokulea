@@ -1,7 +1,7 @@
 import isEqual from 'lodash.isequal';
 
+import Control from '../../../controls/control';
 import { ControlArgs } from '../../control';
-import Control from '../controls/control';
 import UpdateStrategy from './update-strategy';
 
 export default class DerievedUpdateStrategy<T> implements UpdateStrategy<T> {
@@ -35,7 +35,7 @@ export default class DerievedUpdateStrategy<T> implements UpdateStrategy<T> {
 
     if (!isEqual(args.activeItem, this.activeItem)) {
       this.activeItem = args.activeItem as T;
-      const index = this.items?.indexOf(args.activeItem);
+      const index = this.items?.indexOf(this.activeItem);
       const activeItem =
         index !== undefined ? this.control.items[index] : undefined;
       this.control.activateItem(activeItem);

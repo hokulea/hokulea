@@ -1,9 +1,7 @@
-import { Item } from '../controls/control';
-
-export type PersistResult = boolean | undefined;
+import { Item } from '../../../controls/control';
 
 export default interface EmitStrategy {
-  select(selection: Item[]): PersistResult;
+  select(selection: Item[]): void;
 
-  activateItem(item?: Item): PersistResult;
+  activateItem(item?: Item): void;
 }

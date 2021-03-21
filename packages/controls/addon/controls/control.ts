@@ -1,9 +1,10 @@
 import { action } from '@ember/object';
-import { scheduleOnce } from '@ember/runloop';
 
 import isEqual from 'lodash.isequal';
 
-import EmitStrategy from '../emit-strategies/emit-strategy';
+import EmitStrategy from '../modifiers/control/emit-strategies/emit-strategy';
+
+export type Emitter = EmitStrategy;
 
 export type Item = HTMLElement;
 export type List = Item[];
@@ -13,19 +14,40 @@ export type TreeItem = {
   children: TreeItem[];
 };
 
+export interface ControlOptions {
+  persistActiveItem?: boolean;
+  persistSelection?: boolean;
+}
+
+const DEFAULT_OPTIONS: ControlOptions = {
+  persistActiveItem: true,
+  persistSelection: true
+};
+
 export default class Control {
   items: Item[] = [];
   selection: Item[] = [];
   activeItem?: Item;
-  prevActiveItem?: Item;
 
   multiple = false;
 
   element: HTMLElement;
   emitter?: EmitStrategy;
 
-  constructor(element: HTMLElement) {
+  private options: ControlOptions;
+  private prevActiveItem?: Item;
+
+  constructor(
+    element: HTMLElement,
+    emitter: Emitter,
+    options?: ControlOptions
+  ) {
     this.element = element;
+    this.emitter = emitter;
+    this.options = {
+      ...DEFAULT_OPTIONS,
+      ...options
+    };
 
     this.readOptions();
   }
@@ -40,10 +62,6 @@ export default class Control {
 
   uninstallRemote(_element: HTMLElement) {
     // implement this
-  }
-
-  setEmitter(emitter: EmitStrategy) {
-    this.emitter = emitter;
   }
 
   // read in from DOM
@@ -84,20 +102,34 @@ export default class Control {
 
   // mutate state
 
+  activateItem(item?: Item) {
+    if (item === this.activeItem) {
+      return;
+    }
+
+    this.prevActiveItem = this.activeItem;
+    this.activeItem = item;
+    this.emitter?.activateItem(this.activeItem);
+
+    if (this.options.persistActiveItem) {
+      this.persistActivateItem(this.activeItem);
+    }
+  }
+
+  private persistActivateItem(item?: Item) {
+    this.prevActiveItem?.removeAttribute('aria-current');
+    item?.setAttribute('aria-current', 'true');
+  }
+
   select(selection: Item[]) {
     if (isEqual(selection, this.selection)) {
       return;
     }
 
     this.selection = selection;
+    this.emitter?.select(this.selection);
 
-    scheduleOnce('afterRender', this, this.emitSelection);
-  }
-
-  private emitSelection() {
-    const persisted = this.emitter?.select(this.selection);
-
-    if (persisted !== true) {
+    if (this.options.persistSelection) {
       this.persistSelection(this.selection);
     }
   }
@@ -110,30 +142,6 @@ export default class Control {
         element.removeAttribute('aria-selected');
       }
     }
-  }
-
-  activateItem(item?: Item) {
-    if (item === this.activeItem) {
-      return;
-    }
-
-    this.prevActiveItem = this.activeItem;
-    this.activeItem = item;
-
-    scheduleOnce('afterRender', this, this.emitItemActivation);
-  }
-
-  private emitItemActivation() {
-    const persisted = this.emitter?.activateItem(this.activeItem);
-
-    if (persisted !== true) {
-      this.persistActivateItem(this.activeItem);
-    }
-  }
-
-  private persistActivateItem(item?: Item) {
-    this.prevActiveItem?.removeAttribute('aria-current');
-    item?.setAttribute('aria-current', 'true');
   }
 
   // event handlers

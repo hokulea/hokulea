@@ -1,7 +1,7 @@
 import { registerDestructor } from '@ember/destroyable';
 
+import Control from '../../../controls/control';
 import { ControlArgs } from '../../control';
-import Control from '../controls/control';
 import UpdateStrategy from './update-strategy';
 
 export default class DomObserverUpdateStrategy<T> implements UpdateStrategy<T> {
@@ -13,7 +13,6 @@ export default class DomObserverUpdateStrategy<T> implements UpdateStrategy<T> {
       control.read();
     });
 
-    // eslint-disable-next-line ember/no-observers
     observer.observe(control.element, {
       subtree: true,
       childList: true,
@@ -21,7 +20,6 @@ export default class DomObserverUpdateStrategy<T> implements UpdateStrategy<T> {
     });
 
     registerDestructor(this, () => {
-      // eslint-disable-next-line ember/no-observers
       observer.disconnect();
     });
   }

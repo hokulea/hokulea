@@ -1,5 +1,5 @@
+import Control, { Item } from '../../../controls/control';
 import { ControlArgs } from '../../control';
-import Control, { Item } from '../controls/control';
 import EmitStrategy from './emit-strategy';
 
 export default class IndexEmitStrategy implements EmitStrategy {
@@ -9,7 +9,6 @@ export default class IndexEmitStrategy implements EmitStrategy {
   constructor(args: ControlArgs, widget: Control) {
     this.args = args;
     this.control = widget;
-    this.control.setEmitter(this);
   }
 
   updateArguments(args: ControlArgs) {
@@ -17,12 +16,12 @@ export default class IndexEmitStrategy implements EmitStrategy {
   }
 
   select(items: Item[]) {
-    return this.args.select?.(this.getSelectionIndices(items));
+    this.args.select?.(this.getSelectionIndices(items));
   }
 
   activateItem(item: Item) {
     const index = this.control.items.indexOf(item);
-    return this.args.activateItem?.(index);
+    this.args.activateItem?.(index);
   }
 
   protected getSelectionIndices(selection: Item[]) {

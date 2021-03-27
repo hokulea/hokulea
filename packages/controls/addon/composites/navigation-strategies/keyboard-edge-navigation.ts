@@ -1,10 +1,10 @@
-import Control, { Item } from '../control';
+import Composite, { CompositeElement } from '../composite';
 import NavigationStrategy from './navigation-strategy';
 import { scrollDownwardsToItem, scrollUpwardsToItem } from './utils';
 
 export interface KeyboardEdgeNavigationNotifier {
-  navigateHome(item: Item, event: KeyboardEvent): void;
-  navigateEnd(item: Item, event: KeyboardEvent): void;
+  navigateHome(element: CompositeElement, event: KeyboardEvent): void;
+  navigateEnd(element: CompositeElement, event: KeyboardEvent): void;
 }
 
 /**
@@ -13,11 +13,11 @@ export interface KeyboardEdgeNavigationNotifier {
  */
 export default class KeyboardEdgeNavigationStrategy
   implements NavigationStrategy {
-  private control: Control;
+  private composite: Composite;
   private notifier?: KeyboardEdgeNavigationNotifier;
 
-  constructor(control: Control, notifier?: KeyboardEdgeNavigationNotifier) {
-    this.control = control;
+  constructor(control: Composite, notifier?: KeyboardEdgeNavigationNotifier) {
+    this.composite = control;
     this.notifier = notifier;
   }
 
@@ -41,14 +41,14 @@ export default class KeyboardEdgeNavigationStrategy
    * @param event
    */
   navigateHome(event: KeyboardEvent): void {
-    if (this.control.items.length === 0) {
+    if (this.composite.elements.length === 0) {
       return;
     }
 
-    const [item] = this.control.items;
-    this.control.activateItem(item);
+    const [item] = this.composite.elements;
+    this.composite.moveFocus(item);
 
-    scrollUpwardsToItem(this.control.element, item);
+    scrollUpwardsToItem(this.composite.element, item);
     event.preventDefault();
 
     this.notifier?.navigateHome(item, event);
@@ -60,15 +60,15 @@ export default class KeyboardEdgeNavigationStrategy
    * @param event
    */
   navigateEnd(event: KeyboardEvent): void {
-    if (this.control.items.length === 0) {
+    if (this.composite.elements.length === 0) {
       return;
     }
 
-    const lastOffset = this.control.items.length - 1;
-    const item = this.control.items[lastOffset];
-    this.control.activateItem(item);
+    const lastOffset = this.composite.elements.length - 1;
+    const item = this.composite.elements[lastOffset];
+    this.composite.moveFocus(item);
 
-    scrollDownwardsToItem(this.control.element, item);
+    scrollDownwardsToItem(this.composite.element, item);
     event.preventDefault();
 
     this.notifier?.navigateEnd(item, event);

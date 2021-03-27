@@ -1,19 +1,19 @@
 import { registerDestructor } from '@ember/destroyable';
 
-import Control from '../../../controls/control';
-import { ControlArgs } from '../../control';
+import Composite from '../../../composites/composite';
+import { CompositeArgs } from '../../composite';
 import UpdateStrategy from './update-strategy';
 
 export default class DomObserverUpdateStrategy<T> implements UpdateStrategy<T> {
-  constructor(control: Control) {
+  constructor(composite: Composite) {
     const observer = new MutationObserver(() => {
       // we could look for particular changes on relevant AT tree properties and
       // attributes to make it more performant - yes! Let's do this in the
       // future
-      control.read();
+      composite.read();
     });
 
-    observer.observe(control.element, {
+    observer.observe(composite.element, {
       subtree: true,
       childList: true,
       attributes: true
@@ -24,7 +24,7 @@ export default class DomObserverUpdateStrategy<T> implements UpdateStrategy<T> {
     });
   }
 
-  updateArguments(_args: ControlArgs<T>) {
+  updateArguments(_args: CompositeArgs<T>): void {
     // noop
   }
 }

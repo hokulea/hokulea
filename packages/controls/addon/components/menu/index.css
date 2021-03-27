@@ -1,0 +1,11 @@
+.menu {
+  --menu-border-color: var(--color-structure-border);
+  --menu-background-color: var(--color-layout-low-contrast);
+  composes: border-shape from '@hokulea/foundation/structure/border';
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+
+  border-color: var(--menu-border-color);
+  background-color: var(--menu-background-color);
+}

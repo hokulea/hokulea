@@ -1,6 +1,6 @@
 .padding-primitive {
-  padding-primitive-start: var(--ls-3);
-  padding-primitive-end: var(--ls-3);
+  padding-block-start: var(--ls-3);
+  padding-block-end: var(--ls-3);
 
   padding-inline-start: var(--ls-1);
   padding-inline-end: var(--ls-1);

@@ -4,11 +4,11 @@
   aria-multiselectable={{if @multiple "true"}}
   data-test-list
   ...attributes
-  {{control
-    items=@options
+  {{composite
+    objects=@options
     selection=@value
     select=this.select
-    activateItem=this.activateItem
+    moveFocus=this.activateItem
   }}
 >
   {{#each @options as |option|}}

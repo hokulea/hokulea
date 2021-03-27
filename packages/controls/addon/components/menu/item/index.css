@@ -1,0 +1,48 @@
+.menuitem-container {
+  padding: 0;
+  position: relative;
+}
+
+.menuitem {
+  composes: padding-primitive from '@hokulea/foundation/structure/padding';
+  display: flex;
+  align-items: center;
+
+  &:focus {
+    outline: 2px dashed black;
+  }
+
+  &:focus:not(:focus-visible) {
+    /* Remove the focus indicator on mouse-focus for browsers
+       that do support :focus-visible */
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px dashed black;
+  }
+
+  & > svg {
+    display: none;
+    margin-inline-start: auto;
+    height: 1em;
+    stroke: currentColor;
+    padding-inline-start: var(--s0);
+    opacity: 0.5;
+  }
+
+  &[aria-haspopup="true"] > svg {
+    display: inline-block;
+  }
+
+  & + .menu {
+    position: absolute;
+    inset-inline-start: 100%;
+    inset-block-start: 0;
+    display: none;
+  }
+
+  &[aria-expanded="true"] + .menu {
+    display: block;
+  }
+}

@@ -14,12 +14,12 @@ export default class KeyboardInlineNavigationStrategy
   navigate(event: Event): void {
     if (event instanceof KeyboardEvent && event.type === 'keydown') {
       // prev
-      if (event.key === 'ArrowUp') {
+      if (event.key === 'ArrowLeft') {
         this.navigatePrevious(event);
       }
 
       // next
-      else if (event.key === 'ArrowDown') {
+      else if (event.key === 'ArrowRight') {
         this.navigateNext(event);
       }
     }

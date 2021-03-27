@@ -1,0 +1,29 @@
+{{#let (if @element @element (element "span")) as |Item|}}
+  {{! template-lint-disable no-invalid-role }}
+  <li role="none" local-class="menuitem-container">
+    <Item
+      role="menuitem"
+      tabindex="-1"
+      local-class="menuitem"
+      aria-haspopup={{if (has-block "menu") "true"}}
+      aria-expanded={{if (has-block "menu") "false"}}
+      ...attributes
+    >
+      {{#if (has-block "label")}}
+        {{yield to="label"}}
+      {{else}}
+        {{yield}}
+      {{/if}}
+
+      <svg viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 17L9 9L1 1" stroke-width="2"></path>
+      </svg>
+    </Item>
+
+    {{#if (has-block "menu")}}
+      <Menu local-class="menu" as |menu|>
+        {{yield menu to="menu"}}
+      </Menu>
+    {{/if}}
+  </li>
+{{/let}}

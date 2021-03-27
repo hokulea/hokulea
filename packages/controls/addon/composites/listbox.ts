@@ -1,25 +1,34 @@
 import { action } from '@ember/object';
 
-import Control, { ControlOptions, Emitter } from './control';
+import AriaCurrentStrategy from './focus-management/aria-current-strategy';
 import KeyboardBlockNavigationStrategy from './navigation-strategies/keyboard-block-navigation';
 import KeyboardEdgeNavigationStrategy from './navigation-strategies/keyboard-edge-navigation';
 import NavigationDelegateStrategy from './navigation-strategies/navigation-delegate';
+import NavigationStrategy from './navigation-strategies/navigation-strategy';
 import SelectionNavigation from './navigation-strategies/selection-navigation';
+import SelectableComposite, {
+  SelectableCompositeOptions,
+  SelectEmitter
+} from './selectable-composite';
 
-export default class Listbox extends Control {
-  private navigationStrategy;
-
+export default class Listbox extends SelectableComposite {
   private collectionNavigation: KeyboardBlockNavigationStrategy;
   private edgeNavigation: KeyboardEdgeNavigationStrategy;
+  private navigationDelegate: NavigationDelegateStrategy;
+
+  protected focusStrategy = new AriaCurrentStrategy();
+  protected get navigationStrategy(): NavigationStrategy {
+    return this.navigationDelegate;
+  }
 
   constructor(
     element: HTMLElement,
-    emitter: Emitter,
-    options?: ControlOptions
+    emitter: SelectEmitter,
+    options?: SelectableCompositeOptions
   ) {
     super(element, emitter, options);
-    const selectionNavigation = new SelectionNavigation(this);
 
+    const selectionNavigation = new SelectionNavigation(this);
     this.edgeNavigation = new KeyboardEdgeNavigationStrategy(
       this,
       selectionNavigation
@@ -28,17 +37,12 @@ export default class Listbox extends Control {
       this,
       selectionNavigation
     );
-    this.navigationStrategy = new NavigationDelegateStrategy(this, [
+    this.navigationDelegate = new NavigationDelegateStrategy(this, [
       this.collectionNavigation,
       this.edgeNavigation,
       selectionNavigation
     ]);
 
-    element.addEventListener('mousedown', this.navigate);
-    element.addEventListener('mouseup', this.navigate);
-    element.addEventListener('keydown', this.navigate);
-    element.addEventListener('keyup', this.navigate);
-    element.addEventListener('focusin', this.focus);
     element.addEventListener('listbox', this.customHandler);
 
     if (!element.hasAttribute('tabindex')) {
@@ -46,36 +50,18 @@ export default class Listbox extends Control {
     }
   }
 
-  teardown() {
-    this.element.removeEventListener('mousedown', this.navigate);
-    this.element.removeEventListener('mouseup', this.navigate);
-    this.element.removeEventListener('keydown', this.navigate);
-    this.element.removeEventListener('keyup', this.navigate);
-    this.element.removeEventListener('focusin', this.focus);
+  teardown(): void {
     this.element.removeEventListener('listbox', this.customHandler);
   }
 
-  readItems() {
-    this.items = [
+  readElements(): void {
+    this.elements = [
       ...this.element.querySelectorAll('[role="option"]')
     ] as HTMLElement[];
   }
 
   @action
-  navigate(event: MouseEvent | KeyboardEvent) {
-    this.navigationStrategy.navigate(event);
-  }
-
-  // navigateHome(event: KeyboardEvent) {
-  //   this.edgeNavigation.navigateHome(event);
-  // }
-
-  // navigateEnd(event: KeyboardEvent) {
-  //   this.edgeNavigation.navigateEnd(event);
-  // }
-
-  @action
-  customHandler(event: CustomEvent) {
+  customHandler(event: CustomEvent): void {
     if (event.detail.command) {
       if (event.detail.command === 'navigate-next') {
         this.collectionNavigation.navigateNext(event.detail.originalEvent);
@@ -86,11 +72,11 @@ export default class Listbox extends Control {
       } else if (event.detail.command === 'navigate-end') {
         this.edgeNavigation.navigateEnd(event.detail.originalEvent);
       } else if (event.detail.command === 'focus') {
-        this.focus();
+        this.focusIn();
       } else if (event.detail.command === 'select') {
         this.select(event.detail.selection);
       } else if (event.detail.command === 'activate-item') {
-        this.activateItem(event.detail.item);
+        this.moveFocus(event.detail.item);
       }
     }
   }

@@ -1,0 +1,11 @@
+{{#let (if @element @element (element "ul")) as |Menu|}}
+  <Menu
+    id={{this.id}}
+    role="menu"
+    local-class="menu"
+    ...attributes
+    {{composite}}
+  >
+    {{yield (hash Item=(component "menu/item"))}}
+  </Menu>
+{{/let}}

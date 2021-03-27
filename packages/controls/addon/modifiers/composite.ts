@@ -179,8 +179,6 @@ export default class ControlControlModifier<T> extends Modifier<
     },
 
     focus(_element: CompositeElement) {
-      console.log('proxy emitter, focus');
-
       // eslint-disable-next-line unicorn/no-useless-undefined
       return undefined;
     }
@@ -188,21 +186,21 @@ export default class ControlControlModifier<T> extends Modifier<
 
   // life-cycle hooks from `ember-modifier`
 
-  didInstall() {
+  didInstall(): void {
     this.setup();
   }
 
-  didUpdateArguments() {
+  didUpdateArguments(): void {
     this.update();
   }
 
-  willDestroy() {
+  willDestroy(): void {
     this.teardown();
   }
 
   // what may be life-cycle hooks for modifiers, from `ember-could-get-used-to-this`
 
-  setup() {
+  setup(): void {
     if (this.element) {
       this.emitter.select = (selection: CompositeElement[]) => {
         if (this.emitStrategy) {
@@ -247,7 +245,7 @@ export default class ControlControlModifier<T> extends Modifier<
     }
   }
 
-  update() {
+  update(): void {
     if (this.composite) {
       this.emitStrategy = this.createOrUpdateEmitStrategy(this.composite);
       this.emitStrategy.updateArguments(this.args.named);
@@ -257,7 +255,7 @@ export default class ControlControlModifier<T> extends Modifier<
     }
   }
 
-  teardown() {
+  teardown(): void {
     if (this.composite) {
       this.composite.teardown();
     }

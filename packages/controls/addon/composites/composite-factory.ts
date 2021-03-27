@@ -20,5 +20,9 @@ export default class CompositeFactory {
     if (role === 'menu') {
       return new Menu(element, emitter, options);
     }
+
+    // no composite found
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   }
 }

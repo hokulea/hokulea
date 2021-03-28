@@ -3,50 +3,41 @@ import { scheduleOnce } from '@ember/runloop';
 
 import Modifier from 'ember-modifier';
 
+import { FocusManagementOptions } from '@hokulea/controls/composites/features/focus-management-feature';
+import { SelectionOptions } from '@hokulea/controls/composites/features/selection-feature';
 import EmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/emit-strategy';
-import SelectEmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/select-emit-strategy';
-import SelectIndexEmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/select-index-emit-strategy';
-import SelectObjectEmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/select-object-emit-strategy';
+import IndexEmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/index-emit-strategy';
+import ObjectEmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/object-emit-strategy';
 
 import Composite, {
+  CompositeElement,
   CompositeOptions,
-  CompositeElement
+  Emitter
 } from '../composites/composite';
 import CompositeFactory from '../composites/composite-factory';
-import SelectableComposite, {
-  SelectEmitter,
-  SelectableCompositeOptions
-} from '../composites/selectable-composite';
-import IndexEmitStrategy from './-composite/emit-strategies/index-emit-strategy';
 import NoopEmitStrategy from './-composite/emit-strategies/noop-emit-strategy';
-import ObjectEmitStrategy from './-composite/emit-strategies/object-emit-strategy';
 import DerievedUpdateStrategy from './-composite/update-strategies/derieved-update-strategy';
 import DomObserverUpdateStrategy from './-composite/update-strategies/dom-observer-update-strategy';
 import UpdateStrategy from './-composite/update-strategies/update-strategy';
 
-export interface CompositeArgs<T = unknown> extends CompositeOptions {
+export interface CompositeArgs<T = unknown>
+  extends FocusManagementOptions,
+    SelectionOptions {
   objects?: T[];
   focusObject?: T;
-  moveFocus?: (item?: number | T) => void;
-}
-
-export interface SelectCompositeArgs<T = unknown>
-  extends CompositeArgs<T>,
-    SelectableCompositeOptions {
+  focus?: (item?: number | T) => void;
   selection?: T[];
   select?: (selection: number[] | T[]) => void;
 }
 
 interface CompositeModifierArgs<T> {
   positional: [];
-  named: SelectCompositeArgs<T> & Record<string, unknown>;
+  named: CompositeArgs<T> & Record<string, unknown>;
 }
 
 interface Class<T> {
   new (...args: unknown[]): T;
 }
-
-type EmitterStrategy = EmitStrategy | SelectEmitStrategy;
 
 /**
  * Modifier to add controls to an aria widget
@@ -170,9 +161,9 @@ export default class ControlControlModifier<T> extends Modifier<
 > {
   private composite?: Composite;
 
-  private emitStrategy?: EmitterStrategy;
+  private emitStrategy?: EmitStrategy;
   private updateStrategy?: UpdateStrategy<T>;
-  private emitter: SelectEmitter = {
+  private emitter: Emitter = {
     select(_selection: CompositeElement[]) {
       // eslint-disable-next-line unicorn/no-useless-undefined
       return undefined;
@@ -202,6 +193,8 @@ export default class ControlControlModifier<T> extends Modifier<
 
   setup(): void {
     if (this.element) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       this.emitter.select = (selection: CompositeElement[]) => {
         if (this.emitStrategy) {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -214,6 +207,8 @@ export default class ControlControlModifier<T> extends Modifier<
           });
         }
       };
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       this.emitter.focus = (item: CompositeElement) => {
         if (this.emitStrategy) {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -267,7 +262,7 @@ export default class ControlControlModifier<T> extends Modifier<
     const args = this.args.named;
 
     const requiredArgsForDerieved = [args.objects, args.focusObject];
-    if (composite instanceof SelectableComposite) {
+    if (composite.selection) {
       requiredArgsForDerieved.push(args.selection);
     }
 
@@ -292,33 +287,32 @@ export default class ControlControlModifier<T> extends Modifier<
 
   private createOrUpdateEmitStrategy(composite: Composite) {
     const args = this.args.named;
-    const selectable = composite instanceof SelectableComposite;
-    const canUseIndexStrategy =
+    const selectable = Boolean(composite.selection);
+    const useIndexStrategy =
       (selectable ? args.select !== undefined : true) &&
-      args.moveFocus !== undefined;
-    const canUseItemStrategy =
-      canUseIndexStrategy && args.objects !== undefined;
+      args.focus !== undefined;
+    const useItemStrategy = useIndexStrategy && args.objects !== undefined;
 
-    if (canUseItemStrategy) {
-      return this.createOrContainStrategy<EmitterStrategy>(
-        this.updateStrategy,
-        selectable ? SelectObjectEmitStrategy : ObjectEmitStrategy,
-        this.args.named,
+    if (useItemStrategy) {
+      return this.createOrContainStrategy<EmitStrategy>(
+        this.emitStrategy,
+        ObjectEmitStrategy,
+        args,
         composite
       );
     }
 
-    if (canUseIndexStrategy) {
-      return this.createOrContainStrategy<EmitterStrategy>(
-        this.updateStrategy,
-        selectable ? SelectIndexEmitStrategy : IndexEmitStrategy,
-        this.args.named,
+    if (useIndexStrategy) {
+      return this.createOrContainStrategy<EmitStrategy>(
+        this.emitStrategy,
+        IndexEmitStrategy,
+        args,
         composite
       );
     }
 
-    return this.createOrContainStrategy<EmitterStrategy>(
-      this.updateStrategy,
+    return this.createOrContainStrategy<EmitStrategy>(
+      this.emitStrategy,
       NoopEmitStrategy,
       this.args.named,
       composite

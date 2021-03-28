@@ -1,10 +1,9 @@
-import { SelectCompositeArgs } from '@hokulea/controls/modifiers/composite';
-
 import { CompositeElement } from '../../../composites/composite';
-import SelectEmitStrategy from './select-emit-strategy';
+import { CompositeArgs } from '../../composite';
+import EmitStrategy from './emit-strategy';
 
-export default class NoopEmitStrategy implements SelectEmitStrategy {
-  updateArguments(_args: SelectCompositeArgs<unknown>): void {
+export default class NoopEmitStrategy implements EmitStrategy {
+  updateArguments(_args: CompositeArgs<unknown>): void {
     // noop
   }
 

@@ -1,47 +1,92 @@
 import { action } from '@ember/object';
 
+import { match } from 'ts-pattern';
+
+import {
+  scrollDownwardsToItem,
+  scrollUpwardsToItem
+} from '@hokulea/controls/composites/dom/scroll';
+import { KeyboardCollectionNavigationListener } from '@hokulea/controls/composites/navigation-strategies/keyboard-collection-navigation';
+
+import Composite, { Features, Selectors } from './composite';
+import {
+  FocusManagementEmitter,
+  FocusManagementOptions
+} from './features/focus-management-feature';
+import {
+  SelectionEmitter,
+  SelectionOptions
+} from './features/selection-feature';
 import AriaCurrentStrategy from './focus-management/aria-current-strategy';
 import KeyboardBlockNavigationStrategy from './navigation-strategies/keyboard-block-navigation';
-import KeyboardEdgeNavigationStrategy from './navigation-strategies/keyboard-edge-navigation';
-import NavigationDelegateStrategy from './navigation-strategies/navigation-delegate';
-import NavigationStrategy from './navigation-strategies/navigation-strategy';
-import SelectionNavigation from './navigation-strategies/selection-navigation';
-import SelectableComposite, {
-  SelectableCompositeOptions,
-  SelectEmitter
-} from './selectable-composite';
+import KeyboardEdgeNavigationStrategy, {
+  KeyboardEdgeNavigationListener
+} from './navigation-strategies/keyboard-edge-navigation';
+import MouseInvokeNavigationStrategy from './navigation-strategies/mouse-invoke-navigation';
 
-export default class Listbox extends SelectableComposite {
+export type ListboxEmitter = FocusManagementEmitter & SelectionEmitter;
+export type ListboxOptions = FocusManagementOptions & SelectionOptions;
+
+interface Config<E, O> {
+  emitter?: E;
+  options?: O;
+  selectors?: Selectors;
+}
+
+export enum Command {
+  NavigateNext = 'navigate-next',
+  NavigatePrevious = 'navigate-previous',
+  NavigateHome = 'navigate-home',
+  NavigateEnd = 'navigate-end',
+  Focus = 'focus',
+  Select = 'select',
+  FocusItem = 'activate-item'
+}
+
+type KeyboardEventCommands =
+  | Command.NavigateNext
+  | Command.NavigatePrevious
+  | Command.NavigateHome
+  | Command.NavigateEnd;
+
+type Commands =
+  | { command: KeyboardEventCommands; originalEvent: KeyboardEvent }
+  | { command: Command.Focus; originalEvent: FocusEvent }
+  | { command: Command.Select; selection: HTMLElement[] }
+  | { command: Command.FocusItem; item: HTMLElement };
+
+export default class Listbox<
+  E extends ListboxEmitter = ListboxEmitter,
+  O extends ListboxOptions = ListboxOptions
+> extends Composite<E, O>
+  implements
+    KeyboardCollectionNavigationListener,
+    KeyboardEdgeNavigationListener {
   private collectionNavigation: KeyboardBlockNavigationStrategy;
   private edgeNavigation: KeyboardEdgeNavigationStrategy;
-  private navigationDelegate: NavigationDelegateStrategy;
 
   protected focusStrategy = new AriaCurrentStrategy();
-  protected get navigationStrategy(): NavigationStrategy {
-    return this.navigationDelegate;
-  }
 
-  constructor(
-    element: HTMLElement,
-    emitter: SelectEmitter,
-    options?: SelectableCompositeOptions
-  ) {
-    super(element, emitter, options);
+  constructor(element: HTMLElement, config?: Config<E, O>) {
+    super(element, {
+      ...{ elements: ':scope > [role="option"]' },
+      ...config?.selectors
+    });
 
-    const selectionNavigation = new SelectionNavigation(this);
-    this.edgeNavigation = new KeyboardEdgeNavigationStrategy(
-      this,
-      selectionNavigation
-    );
-    this.collectionNavigation = new KeyboardBlockNavigationStrategy(
-      this,
-      selectionNavigation
-    );
-    this.navigationDelegate = new NavigationDelegateStrategy(this, [
+    this.edgeNavigation = new KeyboardEdgeNavigationStrategy(this);
+    this.edgeNavigation.addListener(this);
+    this.collectionNavigation = new KeyboardBlockNavigationStrategy(this);
+    this.collectionNavigation.addListener(this);
+    const navigations = [
       this.collectionNavigation,
       this.edgeNavigation,
-      selectionNavigation
-    ]);
+      new MouseInvokeNavigationStrategy()
+    ];
+
+    this.setup(navigations, [Features.FocusManagement, Features.Selection], {
+      emitter: config?.emitter,
+      options: config?.options
+    });
 
     element.addEventListener('listbox', this.customHandler);
 
@@ -62,22 +107,49 @@ export default class Listbox extends SelectableComposite {
 
   @action
   customHandler(event: CustomEvent): void {
-    if (event.detail.command) {
-      if (event.detail.command === 'navigate-next') {
-        this.collectionNavigation.navigateNext(event.detail.originalEvent);
-      } else if (event.detail.command === 'navigate-previous') {
-        this.collectionNavigation.navigatePrevious(event.detail.originalEvent);
-      } else if (event.detail.command === 'navigate-home') {
-        this.edgeNavigation.navigateHome(event.detail.originalEvent);
-      } else if (event.detail.command === 'navigate-end') {
-        this.edgeNavigation.navigateEnd(event.detail.originalEvent);
-      } else if (event.detail.command === 'focus') {
-        this.focusIn();
-      } else if (event.detail.command === 'select') {
-        this.select(event.detail.selection);
-      } else if (event.detail.command === 'activate-item') {
-        this.moveFocus(event.detail.item);
-      }
-    }
+    match(event.detail as Commands)
+      .with({ command: Command.NavigateNext }, ({ originalEvent }) => {
+        this.collectionNavigation.navigateNext(originalEvent);
+      })
+      .with({ command: Command.NavigatePrevious }, ({ originalEvent }) => {
+        this.collectionNavigation.navigatePrevious(originalEvent);
+      })
+      .with({ command: Command.NavigateHome }, ({ originalEvent }) => {
+        this.edgeNavigation.navigateHome(originalEvent);
+      })
+      .with({ command: Command.NavigateEnd }, ({ originalEvent }) => {
+        this.edgeNavigation.navigateEnd(originalEvent);
+      })
+      .with({ command: Command.Focus }, ({ originalEvent }) => {
+        this.focusIn(originalEvent);
+      })
+      .with({ command: Command.Select }, ({ selection }) => {
+        this.selection?.select(selection);
+      })
+      .with({ command: Command.FocusItem }, ({ item }) => {
+        this.focusManagement?.focus(item);
+      })
+      .run();
+  }
+
+  // implement scrolling. Externalize this!
+  navigatePrevious(element: HTMLElement, event: KeyboardEvent): void {
+    scrollUpwardsToItem(this.element, element);
+    event.preventDefault();
+  }
+
+  navigateNext(element: HTMLElement, event: KeyboardEvent): void {
+    scrollDownwardsToItem(this.element, element);
+    event.preventDefault();
+  }
+
+  navigateHome(element: HTMLElement, event: KeyboardEvent): void {
+    scrollUpwardsToItem(this.element, element);
+    event.preventDefault();
+  }
+
+  navigateEnd(element: HTMLElement, event: KeyboardEvent): void {
+    scrollDownwardsToItem(this.element, element);
+    event.preventDefault();
   }
 }

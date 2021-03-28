@@ -1,24 +1,26 @@
-import Composite, { CompositeOptions, Emitter } from './composite';
-import Listbox from './listbox';
-import Menu from './menu';
-import {
-  SelectableCompositeOptions,
-  SelectEmitter
-} from './selectable-composite';
+import Composite, { Options, Emitter } from './composite';
+import Listbox, { ListboxEmitter, ListboxOptions } from './listbox';
+import Menu, { MenuEmitter, MenuOptions } from './menu';
 
 export default class CompositeFactory {
   static createComposite(
     element: HTMLElement,
-    emitter: Emitter | SelectEmitter,
-    options: CompositeOptions | SelectableCompositeOptions
+    emitter: Emitter,
+    options: Options
   ): Composite | undefined {
     const role = element.getAttribute('role');
     if (role === 'listbox') {
-      return new Listbox(element, emitter as SelectEmitter, options);
+      return new Listbox(element, {
+        emitter: emitter as ListboxEmitter,
+        options: options as ListboxOptions
+      });
     }
 
     if (role === 'menu') {
-      return new Menu(element, emitter, options);
+      return new Menu(element, {
+        emitter: emitter as MenuEmitter,
+        options: options as MenuOptions
+      });
     }
 
     // no composite found

@@ -1,8 +1,7 @@
 import Composite, { CompositeElement } from '../composite';
 import NavigationStrategy from './navigation-strategy';
-import { scrollDownwardsToItem, scrollUpwardsToItem } from './utils';
 
-export interface KeyboardEdgeNavigationNotifier {
+export interface KeyboardEdgeNavigationListener {
   navigateHome(element: CompositeElement, event: KeyboardEvent): void;
   navigateEnd(element: CompositeElement, event: KeyboardEvent): void;
 }
@@ -14,11 +13,18 @@ export interface KeyboardEdgeNavigationNotifier {
 export default class KeyboardEdgeNavigationStrategy
   implements NavigationStrategy {
   private composite: Composite;
-  private notifier?: KeyboardEdgeNavigationNotifier;
+  private listener: Set<KeyboardEdgeNavigationListener> = new Set();
 
-  constructor(control: Composite, notifier?: KeyboardEdgeNavigationNotifier) {
+  constructor(control: Composite) {
     this.composite = control;
-    this.notifier = notifier;
+  }
+
+  addListener(listener: KeyboardEdgeNavigationListener): void {
+    this.listener.add(listener);
+  }
+
+  removeListener(listener: KeyboardEdgeNavigationListener): void {
+    this.listener.delete(listener);
   }
 
   navigate(event: Event): void {
@@ -46,12 +52,10 @@ export default class KeyboardEdgeNavigationStrategy
     }
 
     const [item] = this.composite.elements;
-    this.composite.moveFocus(item);
 
-    scrollUpwardsToItem(this.composite.element, item);
-    event.preventDefault();
-
-    this.notifier?.navigateHome(item, event);
+    for (const listener of this.listener) {
+      listener.navigateHome(item, event);
+    }
   }
 
   /**
@@ -66,11 +70,9 @@ export default class KeyboardEdgeNavigationStrategy
 
     const lastOffset = this.composite.elements.length - 1;
     const item = this.composite.elements[lastOffset];
-    this.composite.moveFocus(item);
 
-    scrollDownwardsToItem(this.composite.element, item);
-    event.preventDefault();
-
-    this.notifier?.navigateEnd(item, event);
+    for (const listener of this.listener) {
+      listener.navigateEnd(item, event);
+    }
   }
 }

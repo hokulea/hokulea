@@ -1,6 +1,6 @@
 import Composite, { CompositeElement } from '../composite';
 
-export interface KeyboardCollectionNavigationNotifier {
+export interface KeyboardCollectionNavigationListener {
   navigatePrevious(element: CompositeElement, event: KeyboardEvent): void;
   navigateNext(element: CompositeElement, event: KeyboardEvent): void;
 }
@@ -10,24 +10,18 @@ export interface KeyboardCollectionNavigationNotifier {
  */
 export default abstract class KeyboardCollectionNavigationStrategy {
   private composite: Composite;
-  private notifier?: KeyboardCollectionNavigationNotifier;
+  private listener: Set<KeyboardCollectionNavigationListener> = new Set();
 
-  protected abstract scrollTowardsPreviousItem: (
-    container: HTMLElement,
-    item: HTMLElement
-  ) => void;
+  constructor(composite: Composite) {
+    this.composite = composite;
+  }
 
-  protected abstract scrollTowardsNextItem: (
-    container: HTMLElement,
-    item: HTMLElement
-  ) => void;
+  addListener(listener: KeyboardCollectionNavigationListener): void {
+    this.listener.add(listener);
+  }
 
-  constructor(
-    control: Composite,
-    notifier?: KeyboardCollectionNavigationNotifier
-  ) {
-    this.composite = control;
-    this.notifier = notifier;
+  removeListener(listener: KeyboardCollectionNavigationListener): void {
+    this.listener.delete(listener);
   }
 
   navigatePrevious(event: KeyboardEvent): void {
@@ -38,9 +32,9 @@ export default abstract class KeyboardCollectionNavigationStrategy {
     // determine previous item
     // eslint-disable-next-line @typescript-eslint/init-declarations
     let previous;
-    if (this.composite.focusElement) {
+    if (this.composite.focusManagement?.focusElement) {
       const activeIndex = this.composite.elements.indexOf(
-        this.composite.focusElement
+        this.composite.focusManagement?.focusElement
       );
 
       if (activeIndex !== 0) {
@@ -52,14 +46,9 @@ export default abstract class KeyboardCollectionNavigationStrategy {
       previous = this.composite.elements[this.composite.elements.length - 1];
     }
 
-    this.composite.moveFocus(previous);
-    this.scrollTowardsPreviousItem(
-      this.composite.element,
-      previous as HTMLElement
-    );
-    event.preventDefault();
-
-    this.notifier?.navigatePrevious(previous as HTMLElement, event);
+    for (const listener of this.listener) {
+      listener.navigatePrevious(previous as CompositeElement, event);
+    }
   }
 
   navigateNext(event: KeyboardEvent): void {
@@ -70,9 +59,9 @@ export default abstract class KeyboardCollectionNavigationStrategy {
     // determine next item
     // eslint-disable-next-line @typescript-eslint/init-declarations
     let next;
-    if (this.composite.focusElement) {
+    if (this.composite.focusManagement?.focusElement) {
       const activeIndex = this.composite.elements.indexOf(
-        this.composite.focusElement
+        this.composite.focusManagement?.focusElement
       );
 
       // item is last;
@@ -85,10 +74,8 @@ export default abstract class KeyboardCollectionNavigationStrategy {
       [next] = this.composite.elements;
     }
 
-    this.composite.moveFocus(next);
-    this.scrollTowardsNextItem(this.composite.element, next as HTMLElement);
-    event.preventDefault();
-
-    this.notifier?.navigatePrevious(next as HTMLElement, event);
+    for (const listener of this.listener) {
+      listener.navigateNext(next as CompositeElement, event);
+    }
   }
 }

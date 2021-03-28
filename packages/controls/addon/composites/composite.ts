@@ -1,5 +1,13 @@
 import { action } from '@ember/object';
 
+import FocusManagementFeature, {
+  FocusManagementEmitter,
+  FocusManagementOptions
+} from './features/focus-management-feature';
+import SelectionFeature, {
+  SelectionEmitter,
+  SelectionOptions
+} from './features/selection-feature';
 import FocusStrategy from './focus-management/focus-strategy';
 import NavigationStrategy from './navigation-strategies/navigation-strategy';
 
@@ -11,41 +19,49 @@ export type CompositeElement = HTMLElement;
 //   children: TreeItem[];
 // };
 
-export interface Emitter {
-  focus(element?: CompositeElement): void;
-}
-
 export interface CompositeOptions {
   persistFocus?: boolean;
   persistSelection?: boolean;
 }
 
-const DEFAULT_OPTIONS: CompositeOptions = {
-  persistFocus: true,
-  persistSelection: true
-};
+export enum Features {
+  FocusManagement,
+  Selection,
+  Hierarchy
+}
 
-export default abstract class Composite {
+interface Config<E, O> {
+  emitter?: E;
+  options?: O;
+}
+
+export interface Selectors {
+  elements: string;
+}
+
+export type Emitter = SelectionEmitter | FocusManagementEmitter;
+export type Options = SelectionOptions | FocusManagementOptions;
+
+export default abstract class Composite<
+  E extends Emitter = Emitter,
+  O extends Options = Options
+> {
   element: HTMLElement;
   elements: CompositeElement[] = [];
-  focusElement?: CompositeElement;
+  protected selectors: {
+    elements: string;
+  };
 
-  protected options: CompositeOptions;
-  protected emitter: Emitter;
+  // features
+  selection?: SelectionFeature;
+  focusManagement?: FocusManagementFeature;
+
   protected abstract get focusStrategy(): FocusStrategy;
-  protected abstract get navigationStrategy(): NavigationStrategy;
+  protected navigationStrategies: NavigationStrategy[] = [];
 
-  constructor(
-    element: HTMLElement,
-    emitter: Emitter,
-    options?: CompositeOptions
-  ) {
+  constructor(element: HTMLElement, selectors: Selectors) {
     this.element = element;
-    this.emitter = emitter;
-    this.options = {
-      ...DEFAULT_OPTIONS,
-      ...options
-    };
+    this.selectors = selectors;
 
     element.addEventListener('mousedown', this.navigate);
     element.addEventListener('mouseup', this.navigate);
@@ -53,8 +69,6 @@ export default abstract class Composite {
     element.addEventListener('keyup', this.navigate);
     element.addEventListener('focusin', this.focusIn);
     element.addEventListener('focusout', this.focusOut);
-
-    this.readOptions();
   }
 
   teardown(): void {
@@ -66,41 +80,44 @@ export default abstract class Composite {
     this.element.removeEventListener('focusout', this.focusOut);
   }
 
+  protected setup(
+    navigation: NavigationStrategy[],
+    features: Features[],
+    config: Config<E, O>
+  ): void {
+    this.navigationStrategies = navigation;
+
+    if (features.includes(Features.FocusManagement)) {
+      this.focusManagement = new FocusManagementFeature(this, navigation, {
+        ...config,
+        focusStrategy: this.focusStrategy
+      } as Config<FocusManagementEmitter, FocusManagementOptions> & {
+        focusStrategy: FocusStrategy;
+      });
+    }
+
+    if (features.includes(Features.Selection)) {
+      this.selection = new SelectionFeature(
+        this,
+        navigation,
+        config as Config<SelectionEmitter, SelectionOptions>
+      );
+      this.navigationStrategies.push(this.selection);
+    }
+  }
+
   // read in from DOM
 
   public read(): void {
-    this.readOptions();
     this.readElements();
-    this.readFocusElement();
-  }
-
-  readOptions(): void {
-    // implement this
-  }
-
-  readFocusElement(): void {
-    const focusElement = this.focusStrategy.readFocus(this.element);
-
-    this.moveFocus(focusElement);
+    this.focusManagement?.read();
+    this.selection?.read();
   }
 
   readElements(): void {
-    this.elements = [];
-  }
-
-  // mutate state
-
-  moveFocus(element?: CompositeElement): void {
-    if (element === this.focusElement) {
-      return;
-    }
-
-    this.focusElement = element;
-    this.emitter.focus(this.focusElement);
-
-    if (this.options.persistFocus && this.focusElement && this.focusStrategy) {
-      this.focusStrategy.persistFocus(this.focusElement);
-    }
+    this.elements = [
+      ...this.element.querySelectorAll(this.selectors.elements)
+    ] as CompositeElement[];
   }
 
   // event handlers
@@ -111,8 +128,22 @@ export default abstract class Composite {
       return;
     }
 
-    if (!this.hasFocus(event)) {
-      this.moveFocus(this.elements[0]);
+    if (this.focusManagement) {
+      if (this.selection) {
+        const { selection, multiple } = this.selection;
+
+        if (selection.length > 0) {
+          this.focusManagement.focus(selection[0]);
+        } else {
+          this.focusManagement.focus(this.elements[0]);
+
+          if (!multiple) {
+            this.selection.select([this.elements[0]]);
+          }
+        }
+      } else if (!this.hasFocus(event)) {
+        this.focusManagement.focus(this.elements[0]);
+      }
     }
   }
 
@@ -123,8 +154,8 @@ export default abstract class Composite {
 
   @action
   navigate(event: MouseEvent | KeyboardEvent): void {
-    if (this.navigationStrategy) {
-      this.navigationStrategy.navigate(event);
+    for (const strategy of this.navigationStrategies) {
+      strategy.navigate(event);
     }
   }
 

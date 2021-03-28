@@ -1,35 +1,31 @@
-import Composite, {
-  CompositeElement,
-  Emitter
-} from '../../../composites/composite';
+import EmitStrategy from '@hokulea/controls/modifiers/-composite/emit-strategies/emit-strategy';
+import { getSelectionIndices } from '@hokulea/controls/modifiers/-composite/emit-strategies/selection';
+
+import Composite, { CompositeElement } from '../../../composites/composite';
 import { CompositeArgs } from '../../composite';
 
-export default class ObjectEmitStrategy<
-  A extends CompositeArgs<T>,
-  C extends Composite,
-  T = unknown
-> implements Emitter {
-  protected args: A;
-  protected composite: C;
+export default class ObjectEmitStrategy<T = unknown> implements EmitStrategy {
+  protected args: CompositeArgs<T>;
+  protected composite: Composite;
 
-  constructor(args: A, composite: C) {
+  constructor(args: CompositeArgs<T>, composite: Composite) {
     this.args = args;
     this.composite = composite;
   }
 
-  updateArguments(args: A) {
+  updateArguments(args: CompositeArgs<T>): void {
     this.args = args;
   }
 
-  focus(item: CompositeElement) {
+  focus(item: CompositeElement): void {
     const index = this.composite.elements.indexOf(item);
     const activeItem = this.args.objects?.[index];
-    this.args.moveFocus?.(activeItem);
+    this.args.focus?.(activeItem);
   }
 
-  protected getSelectionIndices(selection: CompositeElement[]): number[] {
-    return selection
-      .map(i => this.composite.elements.indexOf(i))
-      .filter(i => i !== -1);
+  select(selection: CompositeElement[]): void {
+    const indices = getSelectionIndices(this.composite.elements, selection);
+    const items = indices.map(i => this.args.objects?.[i]) as T[];
+    this.args.select?.(items);
   }
 }

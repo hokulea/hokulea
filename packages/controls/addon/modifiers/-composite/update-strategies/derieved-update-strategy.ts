@@ -1,8 +1,7 @@
 import isEqual from 'lodash.isequal';
 
 import Composite from '../../../composites/composite';
-import SelectableComposite from '../../../composites/selectable-composite';
-import { SelectCompositeArgs } from '../../composite';
+import { CompositeArgs } from '../../composite';
 import UpdateStrategy from './update-strategy';
 
 export default class DerievedUpdateStrategy<T> implements UpdateStrategy<T> {
@@ -16,16 +15,13 @@ export default class DerievedUpdateStrategy<T> implements UpdateStrategy<T> {
     this.composite = composite;
   }
 
-  updateArguments(args: SelectCompositeArgs<T>): void {
+  updateArguments(args: CompositeArgs<T>): void {
     if (!isEqual(args.objects, this.items)) {
       this.items = args.objects as T[];
       this.read();
     }
 
-    if (
-      this.composite instanceof SelectableComposite &&
-      !isEqual(args.selection, this.selection)
-    ) {
+    if (this.composite.selection && !isEqual(args.selection, this.selection)) {
       this.selection = args.selection as T[];
       const indices = new Set(
         (args.selection ?? []).map(i => (this.items ?? []).indexOf(i))
@@ -33,23 +29,26 @@ export default class DerievedUpdateStrategy<T> implements UpdateStrategy<T> {
       const selection = this.composite.elements.filter((_item, idx) =>
         indices.has(idx)
       );
-      this.composite.select(selection);
+      this.composite.selection.select(selection);
     }
 
-    if (!isEqual(args.focusObject, this.activeItem)) {
+    if (
+      this.composite.focusManagement &&
+      !isEqual(args.focusObject, this.activeItem)
+    ) {
       this.activeItem = args.focusObject as T;
       const index = this.items?.indexOf(this.activeItem);
       const activeItem =
         index !== undefined ? this.composite.elements[index] : undefined;
-      this.composite.moveFocus(activeItem);
+      this.composite.focusManagement.focus(activeItem);
     }
   }
 
   private read() {
     this.composite.readElements();
 
-    if (this.composite instanceof SelectableComposite) {
-      this.composite.readSelection();
+    if (this.composite.selection) {
+      this.composite.selection.read();
     }
   }
 }

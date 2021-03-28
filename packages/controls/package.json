@@ -37,7 +37,8 @@
     "ember-element-helper": "^0.3.1",
     "ember-event-helpers": "^0.1.1",
     "ember-modifier": "^2.1.1",
-    "lodash.isequal": "^4.5.0"
+    "lodash.isequal": "^4.5.0",
+    "ts-pattern": "^3.1.1"
   },
   "devDependencies": {
     "@clark/eslint-config-ember": "^2.2.0",
@@ -54,8 +55,8 @@
     "@types/ember__test-helpers": "^1.7.3",
     "@types/lodash.isequal": "^4.5.5",
     "@types/qunit": "^2.9.6",
-    "@types/sinon": "^9.0.10",
     "@types/rsvp": "^4.0.3",
+    "@types/sinon": "^9.0.10",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.7.0",
     "ember-cli": "~3.25.0",

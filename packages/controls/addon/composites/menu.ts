@@ -1,39 +1,48 @@
-import Composite, { CompositeOptions, Emitter } from './composite';
+import {
+  FocusManagementEmitter,
+  FocusManagementOptions
+} from '@hokulea/controls/composites/features/focus-management-feature';
+import FocusStrategy from '@hokulea/controls/composites/focus-management/focus-strategy';
+
+import Composite, { Features, Selectors } from './composite';
 import TabindexStrategy from './focus-management/tabindex-strategy';
 import KeyboardBlockNavigationStrategy from './navigation-strategies/keyboard-block-navigation';
 import KeyboardEdgeNavigationStrategy from './navigation-strategies/keyboard-edge-navigation';
-import NavigationDelegateStrategy from './navigation-strategies/navigation-delegate';
-import NavigationStrategy from './navigation-strategies/navigation-strategy';
 
-export default class Menu extends Composite {
+export type MenuEmitter = FocusManagementEmitter;
+export type MenuOptions = FocusManagementOptions;
+
+interface Config<E, O> {
+  emitter?: E;
+  options?: O;
+  selectors?: Selectors;
+}
+
+export default class Menu<
+  E extends MenuEmitter = MenuEmitter,
+  O extends MenuOptions = MenuOptions
+> extends Composite<E, O> {
   private collectionNavigation: KeyboardBlockNavigationStrategy;
   private edgeNavigation: KeyboardEdgeNavigationStrategy;
-  private navigationDelegate: NavigationDelegateStrategy;
 
-  protected focusStrategy = new TabindexStrategy(':scope > * > [tabindex="0"]');
-  protected get navigationStrategy(): NavigationStrategy {
-    return this.navigationDelegate;
-  }
+  protected focusStrategy: FocusStrategy;
 
-  constructor(
-    element: HTMLElement,
-    emitter: Emitter,
-    options?: CompositeOptions
-  ) {
-    super(element, emitter, options);
+  constructor(element: HTMLElement, config?: Config<E, O>) {
+    const selectors = {
+      ...{ elements: ':scope > * > [role="menuitem"]' },
+      ...config?.selectors
+    };
+    super(element, selectors);
 
+    this.focusStrategy = new TabindexStrategy(selectors.elements);
     this.edgeNavigation = new KeyboardEdgeNavigationStrategy(this);
     this.collectionNavigation = new KeyboardBlockNavigationStrategy(this);
-    this.navigationDelegate = new NavigationDelegateStrategy(this, [
-      this.collectionNavigation,
-      this.edgeNavigation
-    ]);
-  }
+    const navigations = [this.collectionNavigation, this.edgeNavigation];
 
-  readElements(): void {
-    this.elements = [
-      ...this.element.querySelectorAll(':scope > * > [role="menuitem"]')
-    ] as HTMLElement[];
+    this.setup(navigations, [Features.FocusManagement], {
+      emitter: config?.emitter,
+      options: config?.options
+    });
   }
 
   read(): void {

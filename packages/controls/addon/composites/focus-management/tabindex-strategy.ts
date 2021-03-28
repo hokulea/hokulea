@@ -5,8 +5,8 @@ export default class TabindexStrategy implements ActivationStrategy {
   private prevFocusElement?: CompositeElement;
   private selector: string;
 
-  constructor(selector = ':scope [tabindex="0"]') {
-    this.selector = selector;
+  constructor(elementsSelector = ':scope *') {
+    this.selector = `${elementsSelector}[tabindex="0"]`;
   }
 
   persistFocus(element: CompositeElement): void {

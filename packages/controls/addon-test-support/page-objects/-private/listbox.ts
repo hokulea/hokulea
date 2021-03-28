@@ -1,5 +1,7 @@
 import { getRootElement, settled } from '@ember/test-helpers';
 
+import { Command } from '@hokulea/controls/composites/listbox';
+
 function getOptions(selector: string): HTMLElement[] {
   return [...getRootElement().querySelectorAll(selector)] as HTMLElement[];
 }
@@ -27,7 +29,7 @@ export async function select(
     list?.dispatchEvent(
       new CustomEvent('listbox', {
         detail: {
-          command: 'select',
+          command: Command.Select,
           selection: options
         }
       })

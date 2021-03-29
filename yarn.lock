@@ -3785,9 +3785,9 @@
   integrity sha512-/JHkVHtx/REVG0VVToGRGH2+23hsYLHdyG+GrvoUGlGAd0ErauXDyvHtRI/7H7mzLm+tBCKA7pfcpkQ1lf58iQ==
 
 "@types/qunit@*", "@types/qunit@^2.9.6":
-  version "2.9.6"
-  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.9.6.tgz#5d6ba092920edf9dc7377f5091e36eb448743a02"
-  integrity sha512-FfKb3sBW9sdjj8mPzAXtsKn53sOHpzi4PZj0H7P5G24VruwaOmvi0L2kJpuYARQjOKRl/YVlZQ6JWPnspWOkZA==
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.11.1.tgz#3496d430d2bb0fa4761f00a27511f46020c6b410"
+  integrity sha512-vcM5+9O8LZuu5DYseaV4J7ehkYrhkv+aMIuxnF/OqMYlVEdv+odpCH1/5OVztiqxbCqTpQKWuELkMvG7OPycUQ==
 
 "@types/range-parser@*":
   version "1.2.3"
@@ -18556,9 +18556,9 @@ tinycolor2@^1.4.1:
   integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
 tlds@^1.203.0:
-  version "1.218.0"
-  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.218.0.tgz#f31804891c650c136f88cb8ec2f043577b5f5afd"
-  integrity sha512-JpD3eSrYaIFlU/OvtI5WTEK+v5qXZSeUifz4hT2bJsJKx5ykjZvg6i5yXVBJNjoN3XbTCtryc7H5v8B16yHfMg==
+  version "1.219.0"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.219.0.tgz#7e636062386a1f3c9184356de93d40842ffe91d9"
+  integrity sha512-o4g9c8kXCmTDwUnK/9HpTT9o/GNH85KCvs+S5SgUw5yILdECvMmTGzK7ngoWMp97P5tfYr8fZeF16YhgV/l90A==
 
 tmp@0.0.28:
   version "0.0.28"

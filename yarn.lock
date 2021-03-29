@@ -9109,9 +9109,9 @@ ember-composable-helpers@^4.3.0:
     resolve "^1.10.0"
 
 ember-css-modules@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/ember-css-modules/-/ember-css-modules-1.3.3.tgz#80d46db65f75e6c9053ade38625c578912dc8d23"
-  integrity sha512-Mdv/zl35EkPChCiOqQOtfAou+eObjPk7bBwAKgiiASCed3Y/Uyz5yJt4Cg/TWVvvmf1sBpuRsDTvkRX8ZFc5aw==
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/ember-css-modules/-/ember-css-modules-1.3.4.tgz#e4e5516a105b7c4662121363b370db5b230fcee8"
+  integrity sha512-WoPmG3CIydaMCiQigQ8dGUYgN7Fub56P37B55hE4+/pZM3/Qo6YPvyID/I+fmnVxR7IDVZMe5+DfDw6BxsaBpg==
   dependencies:
     broccoli-bridge "^1.0.0"
     broccoli-concat "^3.2.2"
@@ -18556,9 +18556,9 @@ tinycolor2@^1.4.1:
   integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
 tlds@^1.203.0:
-  version "1.218.0"
-  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.218.0.tgz#f31804891c650c136f88cb8ec2f043577b5f5afd"
-  integrity sha512-JpD3eSrYaIFlU/OvtI5WTEK+v5qXZSeUifz4hT2bJsJKx5ykjZvg6i5yXVBJNjoN3XbTCtryc7H5v8B16yHfMg==
+  version "1.219.0"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.219.0.tgz#7e636062386a1f3c9184356de93d40842ffe91d9"
+  integrity sha512-o4g9c8kXCmTDwUnK/9HpTT9o/GNH85KCvs+S5SgUw5yILdECvMmTGzK7ngoWMp97P5tfYr8fZeF16YhgV/l90A==
 
 tmp@0.0.28:
   version "0.0.28"

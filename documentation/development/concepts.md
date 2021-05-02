@@ -57,7 +57,7 @@ additional styling:
 will render as
 
 ```html
-<button class="...">Hello</Button>
+<button class="...">Hello</button>
 ```
 
 Here is an example for accessibility. Well... you already know how to do this:
@@ -120,7 +120,7 @@ With the [construction components](#construction-components) it is super easy to
 create variants of each base as its own component. As such, in hokulea you will
 not find `@intent`, `@appearance`, `@indicator` or similar arguments to control
 the variant of a component. Instead those will be available as direct component,
-e.g. `<AccentButton>` and `<WarningBadge>`. This way the coherence of these
+e.g. `<HighlightButton>` and `<WarningBadge>`. This way the coherence of these
 component is kept high, mainteneance is reduced to the minimum and side-effects
 are lowered to a minimum if not cleared away completely.
 

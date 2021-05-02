@@ -1,58 +1,79 @@
 # Scaling System
 
 Hokulea uses [modular scale](https://every-layout.dev/rudiments/modular-scale/)
-which is explained excellently on [every-layout.dev](https://every-layout.dev).
-Hokulea support global and local scaling systems. They are identical in the way
-they work, they hook into different bases.
+for achieving visual harmony. A modular scale is available globally and locally.
+They are identical in the way they work, they have different bases.
 
 Formula is:
 
 ```txt
-val(n) = base * scale-ratio ^ n
+scale(n) = base * ratio ^ n
 ```
 
-The logarithmic scaling can be controlled through design tokens by each
-theme. There is a `scale-ratio` and a `base` value for _global_ and _local_ scaling.
-
-`scale-ratio`
-: The exponent ratio at which the values scale. Default is `1.4`
+The logarithmic scaling can be controlled through a design token
+(`scale-ratio`). The base refers to different `font-size`, which means the
+sizing can be adjusted by only setting `font-size`.
 
 ## Global Scaling
 
-The global scaling system is the primer usage.
+The global scaling system is the primer usage. The _base_ is the `font-size`
+of `:root` - the browsers default font size (usually `16px`). A user may
+change this for better readability/accessibility reasons. This user preference
+is taken into account.
 
-`scale-base`
-: Base value for global scaling. Default value is `0.8rem` and is based on your
-browsers default font size (usually `16px`).
+The default `font-size` hokulea uses for `:root` is:
 
-Hokulea ships with custom CSS properties for positive and negative scaling:
+```css
+:root {
+  font-size: calc(0.5vw + 1em * var(--factor));
+}
+```
 
-- `--s-4: val(-4)`
-- `--s-3: val(-3)`
-- `--s-2: val(-2)`
-- `--s-1: val(-1)`
-- `--s0: val(0)` - the default value
-- `--s1: val(1)`
-- `--s2: val(2)`
-- `--s3: val(3)`
-- `--s4: val(4)`
+- `1em` respects the user preference
+- `0.5vw` adapts to the given viewport
+- `--factor` a factor for fine control (use `--scale-factor` to adjust it, default is
+  `0.8`)
+
+With `1em` as `16px`, here are some sample font sizes at given viewport widths:
+
+- `width: 576px` = `15.68px`
+- `width: 1200px` = `18.8px`
+- `width: 1400px` = `19.8px`
+
+Hokulea ships with computed tokens for positive and negative scaling:
+
+- `--s-4: scale(-4)`
+- `--s-3: scale(-3)`
+- `--s-2: scale(-2)`
+- `--s-1: scale(-1)`
+- `--s0: scale(0)` - the default value (see `font-size` mentinoed above)
+- `--s1: scale(1)`
+- `--s2: scale(2)`
+- `--s3: scale(3)`
+- `--s4: scale(4)`
+
+### Global Demo
+
+<Demo::GlobalScale/>
 
 ## Local Scaling
 
-Local scaling is used to size specific elements.
+Local scaling is used to size specific elements. The _base_ is the `font-size`
+of the respective element (`font-size` of the actual element, the parent element
+... all the way up to the body).
 
-`scale-base-local`
-: Base value for local scaling. Default value is `0.8em` and is based on the
-`font-size` if your current element.
+Also there are computed tokens available for local scaling:
 
-Also there are local scaling custom CSS properties ready:
+- `--ls-4: scale(-4)`
+- `--ls-3: scale(-3)`
+- `--ls-2: scale(-2)`
+- `--ls-1: scale(-1)`
+- `--ls0: scale(0)` - the default value
+- `--ls1: scale(1)`
+- `--ls2: scale(2)`
+- `--ls3: scale(3)`
+- `--ls4: scale(4)`
 
-- `--ls-4: val(-4)`
-- `--ls-3: val(-3)`
-- `--ls-2: val(-2)`
-- `--ls-1: val(-1)`
-- `--ls0: val(0)` - the default value
-- `--ls1: val(1)`
-- `--ls2: val(2)`
-- `--ls3: val(3)`
-- `--ls4: val(4)`
+### Local Demo
+
+<Demo::LocalScale/>

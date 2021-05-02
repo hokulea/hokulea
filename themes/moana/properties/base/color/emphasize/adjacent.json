@@ -3,11 +3,11 @@
     "emphasize": {
       "adjacent": {
         "stronger": {
-          "value": "#125448",
+          "value": "#125449",
           "comment": ""
         },
         "strong": {
-          "value": "",
+          "value": "#1F947F",
           "comment": ""
         },
         "regular": {
@@ -19,7 +19,7 @@
           "comment": ""
         },
         "weaker": {
-          "value": "#ABEDE1",
+          "value": "#ABEDE2",
           "comment": ""
         }
       }

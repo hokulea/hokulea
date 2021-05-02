@@ -1,0 +1,26 @@
+.alternative-focus {
+  outline: 0;
+
+  &:focus,
+  &:focus-within {
+    box-shadow: var(--shadow-intent-alternative-fill-focus);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--shadow-intent-alternative-fill-focus);
+    }
+  }
+
+  &:active {
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--shadow-intent-alternative-fill-focus);
+    }
+  }
+}

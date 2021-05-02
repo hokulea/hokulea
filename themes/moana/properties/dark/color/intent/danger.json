@@ -2,26 +2,28 @@
   "color": {
     "intent": {
       "danger": {
-        "disabled": {
-          "text": {
-            "$dark": {
-              "value": "#F9DBDB",
-              "comment": "",
-              "colorScheme": "dark"
-            }
-          },
-          "border": {
-            "$dark": {
-              "value": "#6E6E6E",
-              "comment": "",
-              "colorScheme": "dark"
-            }
-          },
-          "background": {
-            "$dark": {
-              "value": "#6E6E6E",
-              "comment": "",
-              "colorScheme": "dark"
+        "fill": {
+          "disabled": {
+            "text": {
+              "$dark": {
+                "value": "#F9DBDB",
+                "comment": "",
+                "colorScheme": "dark"
+              }
+            },
+            "border": {
+              "$dark": {
+                "value": "#6E6E6E",
+                "comment": "",
+                "colorScheme": "dark"
+              }
+            },
+            "background": {
+              "$dark": {
+                "value": "#6E6E6E",
+                "comment": "",
+                "colorScheme": "dark"
+              }
             }
           }
         }

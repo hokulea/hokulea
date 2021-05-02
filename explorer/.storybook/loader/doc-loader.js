@@ -1,28 +1,37 @@
 const { getOptions } = require('loader-utils');
+
 const { compileMarkdown } = require('./md-compiler');
+
 const Case = require('case');
+
 const path = require('path');
 
 const translateLinks = function (html, options) {
   const baseDir = path.dirname(options.file);
 
   // internal links
-  let output = html.replace(/<a href="([^"]+)\.md#?(.+)?">/g, (_match, target, _hash) => {
-    const nav = path.relative(options.dir, path.normalize(`${baseDir}/${target}`));
-    const parts = nav.split('/');
-    const name = parts.pop();
+  let output = html.replace(
+    /<a href="([^"]+)\.md#?(.+)?">/g,
+    (_match, target, _hash) => {
+      const nav = path.relative(
+        options.dir,
+        path.normalize(`${baseDir}/${target}`)
+      );
+      const parts = nav.split('/');
+      const name = parts.pop();
 
-    return `<a
+      return `<a
       href="#"
       data-sb-kind="${Case.lower(options.root)}-${parts.join('-')}"
       data-sb-story="${name}"
     >`;
-  });
+    }
+  );
 
   // external links
-  output = output.replace(/<a href="[^#]+">/g, (link) => {
-    return link.replace('>', ' target="_blank">');
-  });
+  output = output.replace(/<a href="[^#]+">/g, link =>
+    link.replace('>', ' target="_blank">')
+  );
 
   // // anchor link
   // output = output.replace(/<a href="#(.+)">/g, (link, target) => {
@@ -30,7 +39,7 @@ const translateLinks = function (html, options) {
   // });
 
   return output;
-}
+};
 
 const loader = function (source) {
   const options = getOptions(this);
@@ -41,7 +50,9 @@ const loader = function (source) {
   });
 
   // parse story identifiers
-  const nav = path.relative(options.dir, this.resourcePath).replace('.md', '')
+  const nav = path
+    .relative(options.dir, this.resourcePath)
+    .replace('.md', '')
     .split('/')
     .map(name => Case.capital(name))
     .join('/');
@@ -64,18 +75,16 @@ const loader = function (source) {
     };
   };
 
-  ${name}.story = {
-    name: '${title}',
-    parameters: {
-      options: {
-        showPanel: false,
-        isToolshown: false
-      }
+  ${name}.storyName = '${title}';
+  ${name}.parameters = {
+    options: {
+      showPanel: false,
+      isToolshown: false
     }
   };
   `;
 
   return code;
-}
+};
 
 module.exports = loader;

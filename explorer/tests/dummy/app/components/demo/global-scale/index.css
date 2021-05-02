@@ -1,0 +1,9 @@
+:global {
+  .demo-global-scale-static-12 {
+    font-size: 12px;
+  }
+
+  .demo-global-scale-minmax {
+    font-size: clamp(16px, calc(0.5vw + 1em * 0.8), 18px);
+  }
+}

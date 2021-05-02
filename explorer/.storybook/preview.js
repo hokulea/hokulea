@@ -6,13 +6,22 @@ const sortOrder = {
     bottom: ['development', 'backstage']
   },
   'components': {},
+  'components/buttons': {
+    top: ['button', 'alternative', 'highlight', 'danger']
+  },
   'api': {
     top: ['@hokulea／buttons', '@hokulea／inputs']
   }
 };
 
-const storyTop = ['introduction', 'overview', 'default'];
-const storyBottom = [];
+const globalTop = ['introduction', 'overview', 'default'];
+
+// components
+const insideButtonsTop = ['reduced', 'plain', 'a11y', 'sizing'];
+const insideButtonsBottom = ['builder'];
+
+const storyTop = [...globalTop, ...insideButtonsTop];
+const storyBottom = [...insideButtonsBottom];
 
 export const parameters = {
   options: {

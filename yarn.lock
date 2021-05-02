@@ -1936,12 +1936,13 @@
   resolved "https://registry.yarnpkg.com/@handlebars/parser/-/parser-1.1.0.tgz#d6dbc7574774b238114582410e8fee0dc3532bdf"
   integrity sha512-rR7tJoSwJ2eooOpYGxGGW95sLq6GXUaS1UtWvN7pei6n2/okYvCGld9vsUTvkl2migxbkszsycwtMf/GEc1k1A==
 
-"@hokulea/ember-css-modules-config@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@hokulea/ember-css-modules-config/-/ember-css-modules-config-0.0.1.tgz#d0f40da0422d4874c302f7906c8e7ee21f4d5723"
-  integrity sha512-lK23jVrWwai4KkpcUb06W3jHHbeSevi8ka9UeET4pzSrXqnXr5RnXMnHL47Y0T8IVHCMSg7hxBTMbtZYUjP8Dw==
+"@hokulea/ember-css-modules-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@hokulea/ember-css-modules-config/-/ember-css-modules-config-0.1.0.tgz#7fa57973f62dd98eeb6e45140327a2571404e8bc"
+  integrity sha512-QJPtlNIIAVb+5w75jRz6XaTzGwCMdTM0M1RiSsIzxh+Kc9JjWSbqohCucaeQd1tU3tSyeNau4Uzw+YCz+obueA==
   dependencies:
     postcss-nested "^4.2.1"
+    postcss-pow "^1.0.1"
     postcss-preset-env "^6.7.0"
 
 "@icons/material@^0.2.4":
@@ -3659,6 +3660,11 @@
     "@types/ember__debug" "*"
     "@types/ember__engine" "*"
     "@types/ember__object" "*"
+
+"@types/ember__destroyable@^3.22.0":
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/@types/ember__destroyable/-/ember__destroyable-3.22.0.tgz#2af2c27f5d8996694c3f0fe906e2536b2e4c5aca"
+  integrity sha512-T5wZGK1MwEelNIv1bbAvRQZPo9zvfjpGyyFPwjz+sakjImKVcQzb/yq1SgGyT0QTAQAT7l0L+kFru9+fSVVo5A==
 
 "@types/ember__engine@*":
   version "3.16.2"
@@ -7083,20 +7089,10 @@ can-symlink@^1.0.0:
   dependencies:
     tmp "0.0.28"
 
-caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001154:
-  version "1.0.30001156"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001156.tgz#75c20937b6012fe2b02ab58b30d475bf0718de97"
-  integrity sha512-z7qztybA2eFZTB6Z3yvaQBIoJpQtsewRD74adw2UbRWwsRq3jIPvgrQGawBMbfafekQaD21FWuXNcywtTDGGCw==
-
-caniuse-lite@^1.0.30001125:
-  version "1.0.30001199"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001199.tgz#062afccaad21023e2e647d767bac4274b8b8fd7f"
-  integrity sha512-ifbK2eChUCFUwGhlEzIoVwzFt1+iriSjyKKFYNfv6hN34483wyWpLLavYQXhnR036LhkdUYaSDpHg1El++VgHQ==
-
-caniuse-lite@^1.0.30001157:
-  version "1.0.30001161"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001161.tgz#64f7ffe79ee780b8c92843ff34feb36cea4651e0"
-  integrity sha512-JharrCDxOqPLBULF9/SPa6yMcBRTjZARJ6sc3cuKrPfyIk64JN6kuMINWqA99Xc8uElMFcROliwtz0n9pYej+g==
+caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001154, caniuse-lite@^1.0.30001157:
+  version "1.0.30001219"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001219.tgz"
+  integrity sha512-c0yixVG4v9KBc/tQ2rlbB3A/bgBFRvl8h8M4IeUbqCca4gsiCfvtaheUssbnux/Mb66Vjz7x8yYjDgYcNQOhyQ==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -9276,7 +9272,7 @@ ember-composable-helpers@^4.3.0:
     ember-cli-babel "^7.11.1"
     resolve "^1.10.0"
 
-ember-css-modules@^1.3.3:
+ember-css-modules@^1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ember-css-modules/-/ember-css-modules-1.3.4.tgz#e4e5516a105b7c4662121363b370db5b230fcee8"
   integrity sha512-WoPmG3CIydaMCiQigQ8dGUYgN7Fub56P37B55hE4+/pZM3/Qo6YPvyID/I+fmnVxR7IDVZMe5+DfDw6BxsaBpg==
@@ -9431,6 +9427,14 @@ ember-set-helper@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-set-helper/-/ember-set-helper-1.1.0.tgz#d24d7fc1824cab4f2a6e4984af6acd301695dd2a"
   integrity sha512-jDAxnhVJdU6Cjeh4JTbjaj8JJraepuoV6QRF+qU+FajelBdlZGPpEhwU3sEXMWJZOJT/nEuvgOFPb0odbP5DLw==
+  dependencies:
+    ember-cli-babel "^7.18.0"
+    ember-cli-htmlbars "^4.2.3"
+
+ember-set-helper@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-set-helper/-/ember-set-helper-2.0.0.tgz#afdb6cf2f5750f6f69e38a387f19615560f30a0f"
+  integrity sha512-cnKbQEkPi+plRI9eWj76zt4pjRKM/PsKIlYP2ZcSI7R83c1Zig5DLDUft+1PJI/1/fnPGLB8s3E6hjFBQo+T9g==
   dependencies:
     ember-cli-babel "^7.18.0"
     ember-cli-htmlbars "^4.2.3"
@@ -15925,6 +15929,13 @@ postcss-place@^4.0.1:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
+postcss-pow@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-pow/-/postcss-pow-1.0.1.tgz#d2a68e91e25cb423435058fb8614588cfcf03cb0"
+  integrity sha512-9MTpBXCNamMlx/9Z4rE1CtOwzJI6C1QGfgtasywsO8xEWwtPgiXfncFA15HZacM1fCqzvjQDEgn9xWllOzQUJg==
+  dependencies:
+    postcss "^7.0.16"
+
 postcss-preset-env@^6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/postcss-preset-env/-/postcss-preset-env-6.7.0.tgz#c34ddacf8f902383b35ad1e030f178f4cdf118a5"
@@ -16033,7 +16044,7 @@ postcss-values-parser@^2.0.0, postcss-values-parser@^2.0.1, postcss-values-parse
     postcss "^7.0.5"
     url-regex "^5.0.0"
 
-"postcss@^6.0.0 || ^7.0.18", postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
+"postcss@^6.0.0 || ^7.0.18", postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.35"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
   integrity sha512-3QT8bBJeX/S5zKTTjTCIjRF3If4avAT6kqxcASlTWEtAFCb9NH0OUxNDfgZSWdP5fJnBYCMEWkIFfWeugjzYMg==

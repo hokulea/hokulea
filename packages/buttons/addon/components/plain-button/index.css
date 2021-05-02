@@ -1,0 +1,18 @@
+.plain-button {
+  composes: action-focus from "@hokulea/foundation/intents/action";
+  color: var(--color-intent-action-plain-base-text);
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover {
+    color: var(--color-intent-action-plain-hover-text);
+  }
+
+  &:active {
+    color: var(--color-intent-action-plain-active-text);
+  }
+
+  &:disabled {
+    color: var(--color-intent-action-plain-disabled-text);
+  }
+}

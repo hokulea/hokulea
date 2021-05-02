@@ -1,0 +1,9 @@
+<ButtonBuilder local-class="danger-reduced-button" data-test-button ...attributes as |builder|>
+  {{#if (has-block-params)}}
+    {{yield builder}}
+  {{else}}
+    <builder.Content data-test-button-content>
+      {{yield}}
+    </builder.Content>
+  {{/if}}
+</ButtonBuilder>

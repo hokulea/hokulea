@@ -1,0 +1,36 @@
+.box {
+  border-color: var(--color-structure-border);
+  border-width: var(--structure-border-width);
+  border-style: var(--structure-border-style);
+  padding: var(--s-2);
+  background-color: var(--color-layout-low-contrast);
+
+  composes: flow from "@hokulea/layouts/flow";
+  --flow-space: var(--s-1);
+}
+
+.name {
+  font-weight: bold;
+  font-size: var(--s0);
+}
+
+.value {
+  font-size: var(--s-1);
+}
+
+.numeric {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-auto-rows: max-content;
+  grid-column-gap: var(--s-1);
+  grid-row-gap: 0;
+
+  .value {
+    grid-column: 2;
+  }
+
+  .demo {
+    background-color: var(--color-text-normal);
+    width: var(--value);
+  }
+}

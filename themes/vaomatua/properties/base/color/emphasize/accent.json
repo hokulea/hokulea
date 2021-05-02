@@ -3,11 +3,11 @@
     "emphasize": {
       "accent": {
         "stronger": {
-          "value": "#665C00",
+          "value": "#756A06",
           "comment": ""
         },
         "strong": {
-          "value": "#B2A000",
+          "value": "#BDAB0A",
           "comment": ""
         },
         "regular": {
@@ -15,11 +15,11 @@
           "comment": ""
         },
         "weak": {
-          "value": "#FFED4C",
+          "value": "#F7E96A",
           "comment": ""
         },
         "weaker": {
-          "value": "#FFF599",
+          "value": "#FBF4B2",
           "comment": ""
         }
       }

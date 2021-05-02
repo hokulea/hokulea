@@ -1,0 +1,136 @@
+{
+  "color": {
+    "intent": {
+      "alternative": {
+        "reduced": {
+          "base": {
+            "background": {
+              "value": "#FFFFFF",
+              "comment": ""
+            },
+            "text": {
+              "value": "#333333",
+              "comment": ""
+            },
+            "border": {
+              "value": "#FCCE98",
+              "comment": ""
+            }
+          },
+          "active": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": ""
+            },
+            "border": {
+              "value": "#A85D06",
+              "comment": ""
+            },
+            "background": {
+              "value": "#A85D06",
+              "comment": ""
+            }
+          },
+          "hover": {
+            "text": {
+              "value": "#333333",
+              "comment": ""
+            },
+            "border": {
+              "value": "#FCCE98",
+              "comment": ""
+            },
+            "background": {
+              "value": "#FCCE98",
+              "comment": ""
+            }
+          },
+          "disabled": {
+            "text": {
+              "value": "#737373",
+              "comment": ""
+            },
+            "border": {
+              "value": "#6E6E6E",
+              "comment": ""
+            },
+            "background": {
+              "value": "#FFFFFF",
+              "comment": ""
+            }
+          }
+        },
+        "fill": {
+          "active": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": ""
+            },
+            "border": {
+              "value": "#A85D06",
+              "comment": ""
+            },
+            "background": {
+              "value": "#A85D06",
+              "comment": ""
+            }
+          },
+          "hover": {
+            "text": {
+              "value": "#333333",
+              "comment": ""
+            },
+            "border": {
+              "value": "#FCCE98",
+              "comment": ""
+            },
+            "background": {
+              "value": "#FCCE98",
+              "comment": ""
+            }
+          },
+          "base": {
+            "text": {
+              "value": "#333333",
+              "comment": ""
+            },
+            "background": {
+              "value": "#FEF1E2",
+              "comment": ""
+            },
+            "border": {
+              "value": "#FEF1E2",
+              "comment": ""
+            }
+          }
+        },
+        "plain": {
+          "disabled": {
+            "text": {
+              "value": "#737373",
+              "comment": ""
+            }
+          },
+          "active": {
+            "text": {
+              "value": "#A85D06",
+              "comment": ""
+            }
+          },
+          "hover": {
+            "text": {
+              "value": "#A85D06",
+              "comment": ""
+            }
+          },
+          "base": {
+            "text": {
+              "value": "#F28608",
+              "comment": ""
+            }
+          }
+        }
+      }
+    }
+  }
+}

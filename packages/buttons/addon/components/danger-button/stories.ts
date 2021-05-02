@@ -3,6 +3,8 @@ import { hbs } from 'ember-cli-htmlbars';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
+import { makeButtonArgTypes } from '../stories-helper';
+
 export default {
   title: 'Components/Buttons/Danger',
   parameters: {
@@ -25,16 +27,7 @@ export const Default = args => ({
   }
 });
 
-Default.argTypes = {
-  label: {
-    defaultValue: 'Danger Button',
-    control: { type: 'text' }
-  },
-  size: {
-    defaultValue: 1,
-    control: { type: 'range', min: -4, max: 4, step: 1 }
-  }
-};
+Default.argTypes = makeButtonArgTypes({ label: 'Danger Button' });
 
 Default.story = {
   decorators: [withDesign],
@@ -46,6 +39,34 @@ Default.story = {
     }
   }
 };
+
+export const Reduced = args => ({
+  template: hbs`
+    <DangerReducedButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</DangerReducedButton>
+    <DangerReducedButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</DangerReducedButton>
+  `,
+  context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
+    invoke: action('button invoked')
+  }
+});
+
+Reduced.argTypes = makeButtonArgTypes({ label: 'Danger Reduced Button' });
+
+export const Plain = args => ({
+  template: hbs`
+    <DangerPlainButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</DangerPlainButton>
+    <DangerPlainButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</DangerPlainButton>
+  `,
+  context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
+    invoke: action('button invoked')
+  }
+});
+
+Plain.argTypes = makeButtonArgTypes({ label: 'Danger Plain Button' });
 
 export const Accessibility = () => ({
   template: hbs`
@@ -61,10 +82,10 @@ Accessibility.story = {
 
 export const Sizing = () => ({
   template: hbs`
-      <DangerButton {{style fontSize="80%"}}>80% Font Size</DangerButton>
+      <DangerButton {{style fontSize="var(--s-1)"}}>Font Size: --s-1</DangerButton>
       <DangerButton>Normal</DangerButton>
-      <DangerButton {{style fontSize="120%"}}>120% Font Size</DangerButton>
-      <DangerButton {{style fontSize="150%"}}>150% Font Size</DangerButton>
+      <DangerButton {{style fontSize="var(--s1)"}}>Font Size: --s1</DangerButton>
+      <DangerButton {{style fontSize="var(--s2)"}}>Font Size: --s2</DangerButton>
     `
 });
 

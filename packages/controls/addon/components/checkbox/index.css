@@ -5,8 +5,8 @@
 .input {
   appearance: none;
   background: none;
-	opacity: .00001;
-	z-index: 2;
+  opacity: 0.00001;
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@
     border-radius: var(--structure-border-radius);
     border-width: var(--structure-border-width);
 
-    border-color: var(--color-intent-action-base-border);
+    border-color: var(--color-intent-action-fill-base-border);
     background-color: var(--color-layout-background);
     height: 1em;
     width: 1em;
@@ -27,60 +27,60 @@
   }
 
   &:hover + .svg {
-    border-color: var(--color-intent-action-hover-border);
+    border-color: var(--color-intent-action-fill-hover-border);
   }
 
   &:active + .svg {
-    border-color: var(--color-intent-action-active-border);
+    border-color: var(--color-intent-action-fill-active-border);
   }
 
   &:focus + .svg {
-    box-shadow: var(--shadow-intent-action-focus);
+    box-shadow: var(--shadow-intent-action-fill-focus);
   }
 
   &:disabled + .svg {
-    border-color: var(--color-intent-action-disabled-border);
+    border-color: var(--color-intent-action-fill-disabled-border);
   }
 }
 
 .input:checked {
   & + .svg {
-    border-color: var(--color-intent-action-base-border);
-    background-color: var(--color-intent-action-base-background);
+    border-color: var(--color-intent-action-fill-base-border);
+    background-color: var(--color-intent-action-fill-base-background);
 
     & > .symbol {
-      stroke: var(--color-intent-action-base-text);
+      stroke: var(--color-intent-action-fill-base-text);
     }
   }
 
   &:hover + .svg {
-    border-color: var(--color-intent-action-hover-border);
-    background-color: var(--color-intent-action-hover-background);
+    border-color: var(--color-intent-action-fill-hover-border);
+    background-color: var(--color-intent-action-fill-hover-background);
 
     & > .symbol {
-      stroke: var(--color-intent-action-hover-text);
+      stroke: var(--color-intent-action-fill-hover-text);
     }
   }
 
   &:focus + .svg {
-    box-shadow: var(--shadow-intent-action-focus);
+    box-shadow: var(--shadow-intent-action-fill-focus);
   }
 
   &:active + .svg {
-    border-color: var(--color-intent-action-active-border);
-    background-color: var(--color-intent-action-active-background);
+    border-color: var(--color-intent-action-fill-active-border);
+    background-color: var(--color-intent-action-fill-active-background);
 
     & > .symbol {
-      stroke: var(--color-intent-action-active-text);
+      stroke: var(--color-intent-action-fill-active-text);
     }
   }
 
   &:disabled + .svg {
-    border-color: var(--color-intent-action-disabled-border);
+    border-color: var(--color-intent-action-fill-disabled-border);
     background-color: var(--color-layout-background);
 
     & > .symbol {
-      stroke: var(--color-intent-action-disabled-text);
+      stroke: var(--color-intent-action-fill-disabled-text);
     }
   }
 }

@@ -3,7 +3,7 @@
     "emphasize": {
       "danger": {
         "stronger": {
-          "value": "",
+          "value": "#8B1717",
           "comment": ""
         },
         "strong": {

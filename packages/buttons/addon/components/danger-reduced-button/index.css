@@ -1,0 +1,24 @@
+.danger-reduced-button {
+  composes: danger-focus from "@hokulea/foundation/intents/danger";
+  color: var(--color-intent-danger-reduced-base-text);
+  background-color: var(--color-intent-danger-reduced-base-background);
+  border-color: var(--color-intent-danger-reduced-base-border);
+
+  &:hover {
+    color: var(--color-intent-danger-reduced-hover-text);
+    background-color: var(--color-intent-danger-reduced-hover-background);
+    border-color: var(--color-intent-danger-reduced-hover-border);
+  }
+
+  &:active {
+    color: var(--color-intent-danger-reduced-active-text);
+    background-color: var(--color-intent-danger-reduced-active-background);
+    border-color: var(--color-intent-danger-reduced-active-border);
+  }
+
+  &:disabled {
+    color: var(--color-intent-danger-reduced-disabled-text);
+    background-color: var(--color-intent-danger-reduced-disabled-background);
+    border-color: var(--color-intent-danger-reduced-disabled-border);
+  }
+}

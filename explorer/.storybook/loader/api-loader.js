@@ -1,6 +1,7 @@
 const { getOptions } = require('loader-utils');
+
 const { compileMarkdown } = require('./md-compiler');
-const Case = require('case');
+
 const path = require('path');
 const fs = require('fs');
 
@@ -15,38 +16,34 @@ const translateLinks = function (html) {
   });
 
   // external links
-  output = output.replace(/<a href="[^#]+">/g, (link) => {
-    return link.replace('>', ' target="_blank">');
-  });
+  output = output.replace(/<a href="[^#]+">/g, link =>
+    link.replace('>', ' target="_blank">')
+  );
 
   return output;
-}
+};
 
-const generateStoryCode = (name, title, html) => {
-  return `
+const generateStoryCode = (name, title, html) => `
     export const ${name} = () => {
       return {
         template: hbs\`${html}\`
       };
     };
 
-    ${name}.story = {
-      name: '${title}',
-      parameters: {
-        options: {
-          showPanel: false,
-          isToolshown: false
-        }
+    ${name}.storyName = '${title}';
+    ${name}.parameters = {
+      options: {
+        showPanel: false,
+        isToolshown: false
       }
     };
   `;
-}
 
-const loadPackage = (fileName) => {
+const loadPackage = fileName => {
   if (fs.existsSync(fileName)) {
     return require(fileName);
   }
-}
+};
 
 const getPackageObject = (package, path) => {
   let node = package.members[0];
@@ -65,28 +62,34 @@ const getPackageObject = (package, path) => {
       }
     }
   }
-}
+};
 
-const sanitizeMarkdown = (contents) => {
+const sanitizeMarkdown = contents => {
   // remove first 4 lines and make first heading a h1
   let source = contents.replace(/^([^\n]*\n){4}/gi, '');
   source = source.replace(/^##/g, '#');
 
   // trim code blocks
-  source = source.replace(/(```)([^`]+)(```)/g, (_match, begin, code, end) => {
-    return `${begin}${code.trim()}\n${end.trim()}`;
-  });
+  source = source.replace(
+    /(```)([^`]+)(```)/g,
+    (_match, begin, code, end) => `${begin}${code.trim()}\n${end.trim()}`
+  );
 
   return source;
-}
+};
 
 const loader = function (source) {
   const options = getOptions(this);
 
-  const doc = compileMarkdown(sanitizeMarkdown(source), { ...options, translateLinks });
+  const doc = compileMarkdown(sanitizeMarkdown(source), {
+    ...options,
+    translateLinks
+  });
   const dir = path.dirname(this.resourcePath);
 
-  const fileName = path.relative(options.dir, this.resourcePath).replace('.md', '');
+  const fileName = path
+    .relative(options.dir, this.resourcePath)
+    .replace('.md', '');
   const segments = fileName.split('.');
 
   // overview
@@ -154,6 +157,6 @@ const loader = function (source) {
     ${generateStoryCode(segments[segments.length - 1], member.name, doc.html)}
     `;
   }
-}
+};
 
 module.exports = loader;

@@ -23,7 +23,6 @@
 
 body {
   /** Apply Font **/
-  font-size: calc(0.333vw + 1em);
   line-height: var(--line-height);
   font-family: var(--font-family, system-ui, sans-serif);
 

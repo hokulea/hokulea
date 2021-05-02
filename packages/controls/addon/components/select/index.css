@@ -11,9 +11,9 @@
 }
 
 .trigger {
-  composes: action-focus from '@hokulea/foundation/intents/action';
-  composes: border-shape from '@hokulea/foundation/structure/border';
-  composes: padding-primitive from '@hokulea/foundation/structure/padding';
+  composes: action-focus from "@hokulea/foundation/intents/action";
+  composes: border-shape from "@hokulea/foundation/structure/border";
+  composes: padding-primitive from "@hokulea/foundation/structure/padding";
 
   color: var(--color-text);
   background-color: var(--color-background);
@@ -44,13 +44,13 @@
       }
 
       &[aria-selected="true"] {
-        color: var(--color-intent-action-base-text);
-        background-color: var(--color-intent-action-base-background);
+        color: var(--color-intent-action-fill-base-text);
+        background-color: var(--color-intent-action-fill-base-background);
       }
 
       &:hover {
-        color: var(--color-intent-action-hover-text);
-        background-color: var(--color-intent-action-hover-background);
+        color: var(--color-intent-action-fill-hover-text);
+        background-color: var(--color-intent-action-fill-hover-background);
       }
     }
   }

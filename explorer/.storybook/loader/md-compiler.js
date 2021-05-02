@@ -1,6 +1,4 @@
 const MarkdownItCompiler = require('markdown-it-compiler');
-const Case = require('case');
-const path = require('path');
 
 let compiler;
 
@@ -17,7 +15,7 @@ const getCompiler = function (config) {
   };
 
   return new MarkdownItCompiler(options);
-}
+};
 
 function compileMarkdown(contents, options) {
   if (!compiler) {
@@ -30,7 +28,6 @@ function compileMarkdown(contents, options) {
   if (options.translateLinks && typeof options.translateLinks === 'function') {
     doc.html = options.translateLinks(doc.html, options);
   }
-
 
   return doc;
 }

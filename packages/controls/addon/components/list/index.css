@@ -1,5 +1,5 @@
 .list {
-  composes: border-shape from '@hokulea/foundation/structure/border';
+  composes: border-shape from "@hokulea/foundation/structure/border";
   background-color: var(--color-layout-background);
   border-color: var(--color-structure-border);
   margin: 0;
@@ -10,8 +10,9 @@
     padding-primitive: var(--s-2);
     padding-inline: var(--s-1);
 
-    &[aria-selected], &[aria-selected="true"] {
-      background-color: var(--color-intent-action-disabled-background);
+    &[aria-selected],
+    &[aria-selected="true"] {
+      background-color: var(--color-intent-action-fill-disabled-background);
     }
   }
 
@@ -24,19 +25,19 @@
       }
 
       &[aria-selected="true"] {
-        color: var(--color-intent-action-base-text);
-        background-color: var(--color-intent-action-base-background);
+        color: var(--color-intent-action-fill-base-text);
+        background-color: var(--color-intent-action-fill-base-background);
       }
 
       &:hover {
-        color: var(--color-intent-action-hover-text);
-        background-color: var(--color-intent-action-hover-background);
+        color: var(--color-intent-action-fill-hover-text);
+        background-color: var(--color-intent-action-fill-hover-background);
       }
     }
   }
 
   [role="option"]:hover {
-    color: var(--color-intent-action-hover-text);
-    background-color: var(--color-intent-action-hover-background);
+    color: var(--color-intent-action-fill-hover-text);
+    background-color: var(--color-intent-action-fill-hover-background);
   }
 }

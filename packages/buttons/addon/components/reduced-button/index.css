@@ -1,0 +1,24 @@
+.reduced-button {
+  composes: action-focus from "@hokulea/foundation/intents/action";
+  color: var(--color-intent-action-reduced-base-text);
+  background-color: var(--color-intent-action-reduced-base-background);
+  border-color: var(--color-intent-action-reduced-base-border);
+
+  &:hover {
+    color: var(--color-intent-action-reduced-hover-text);
+    background-color: var(--color-intent-action-reduced-hover-background);
+    border-color: var(--color-intent-action-reduced-hover-border);
+  }
+
+  &:active {
+    color: var(--color-intent-action-reduced-active-text);
+    background-color: var(--color-intent-action-reduced-active-background);
+    border-color: var(--color-intent-action-reduced-active-border);
+  }
+
+  &:disabled {
+    color: var(--color-intent-action-reduced-disabled-text);
+    background-color: var(--color-intent-action-reduced-disabled-background);
+    border-color: var(--color-intent-action-reduced-disabled-border);
+  }
+}

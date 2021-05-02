@@ -1,17 +1,16 @@
 # Hokulea
 
-Welcome to **Hokulea** the _Design System_ for _Ember_ that doesn't make you
-think!
+Welcome to **Hokulea** the whimsical _Design System_ for _Ember_.
 
 Highlights:
 
-- HTML first, Octane on top
-- Accessibility built-in
-- Responsive - no breakpoints were harmed
-- Adoptive through logical CSS
-- For Designers _and_ Developers
-- Toolchain for fast productivity included
-- Theming support
-- Research driven
+🏎 HTML first, Octane on top<br>
+🧑‍🦽 Accessibility built-in<br>
+📐 ~~Responsive~~ Intrinsic - no breakpoints were harmed<br>
+🌿 Adaptive through logical CSS<br>
+🧑‍🎨🧑‍💻 For Designers _and_ Developers<br>
+🏗 Toolchain for fast productivity included<br>
+🎨 Theming support<br>
+🧪 Research driven<br>
 
-[Hokulea on Github](https://github.com/gossi/hokulea)
+[Hokulea on Github](https://github.com/hokulea/hokulea)

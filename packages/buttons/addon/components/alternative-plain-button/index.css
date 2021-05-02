@@ -1,0 +1,18 @@
+.alternative-plain-button {
+  composes: alternative-focus from "@hokulea/foundation/intents/alternative";
+  color: var(--color-intent-alternative-plain-base-text);
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover {
+    color: var(--color-intent-alternative-plain-hover-text);
+  }
+
+  &:active {
+    color: var(--color-intent-alternative-plain-active-text);
+  }
+
+  &:disabled {
+    color: var(--color-intent-alternative-plain-disabled-text);
+  }
+}

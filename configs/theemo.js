@@ -21,7 +21,20 @@ module.exports = {
 
       // parser
       isTokenByStyle(style) {
-        return style.name.includes('.') && style.name.includes('/');
+        return !style.name.startsWith('.') && (style.name.includes('.') || style.name.includes('/'));
+      },
+
+      getNameFromStyle(style) {
+        if (style.styleType === 'FILL') {
+          const clean = style.name.replace(/\s*/ig, '').replace(/\//g, '.');
+          const folderized = clean.replace(/((intent|indicator|emphasize)\.[^.]+|structure|layout|text)\.(.*)/i, '$1/$3')
+          const categorized = `color.${folderized}`.replace('color.color.', 'color.');
+          return categorized;
+        }
+
+        // console.log(style);
+
+        return style.name;
       },
 
       isTokenByText(node) {

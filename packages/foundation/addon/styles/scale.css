@@ -1,36 +1,35 @@
 :root {
-  --ratio: var(--scale-ratio, 1.4);
+  --ratio: var(--scale-ratio, 1.3);
 
   /* Global Scaling */
-  --s-5: calc(var(--s-4) / var(--ratio));
-  --s-4: calc(var(--s-3) / var(--ratio));
-  --s-3: calc(var(--s-2) / var(--ratio));
-  --s-2: calc(var(--s-1) / var(--ratio));
-  --s-1: calc(var(--s0) / var(--ratio));
+  --s-5: calc(var(--s0) * pow(var(--ratio), -5));
+  --s-4: calc(var(--s0) * pow(var(--ratio), -4));
+  --s-3: calc(var(--s0) * pow(var(--ratio), -3));
+  --s-2: calc(var(--s0) * pow(var(--ratio), -2));
+  --s-1: calc(var(--s0) * pow(var(--ratio), -1));
 
-  --s0: var(--scale-base, 0.8rem);
-  --s1: calc(var(--s0) * var(--ratio));
-  --s2: calc(var(--s1) * var(--ratio));
-  --s3: calc(var(--s2) * var(--ratio));
-  --s4: calc(var(--s3) * var(--ratio));
-  --s5: calc(var(--s4) * var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * pow(var(--ratio), 1));
+  --s2: calc(var(--s0) * pow(var(--ratio), 2));
+  --s3: calc(var(--s0) * pow(var(--ratio), 3));
+  --s4: calc(var(--s0) * pow(var(--ratio), 4));
+  --s5: calc(var(--s0) * pow(var(--ratio), 5));
 
-  /* Locale scaling for sizes controlled by font-size, e.g. padding */
-  --ls-5: calc(var(--ls-4) / var(--ratio));
-  --ls-4: calc(var(--ls-3) / var(--ratio));
-  --ls-3: calc(var(--ls-2) / var(--ratio));
-  --ls-2: calc(var(--ls-1) / var(--ratio));
-  --ls-1: calc(var(--ls0) / var(--ratio));
+  /* Locale scaling */
+  --ls-5: calc(var(--ls0) * pow(var(--ratio), -5));
+  --ls-4: calc(var(--ls0) * pow(var(--ratio), -4));
+  --ls-3: calc(var(--ls0) * pow(var(--ratio), -3));
+  --ls-2: calc(var(--ls0) * pow(var(--ratio), -2));
+  --ls-1: calc(var(--ls0) * pow(var(--ratio), -1));
 
-  --ls0: var(--local-scale-base, 0.8em);
-  --ls1: calc(var(--ls0) * var(--ratio));
-  --ls2: calc(var(--ls1) * var(--ratio));
-  --ls3: calc(var(--ls2) * var(--ratio));
-  --ls4: calc(var(--ls3) * var(--ratio));
-  --ls5: calc(var(--ls4) * var(--ratio));
+  --ls0: 1em;
+  --ls1: calc(var(--ls0) * pow(var(--ratio), 1));
+  --ls2: calc(var(--ls0) * pow(var(--ratio), 2));
+  --ls3: calc(var(--ls0) * pow(var(--ratio), 3));
+  --ls4: calc(var(--ls0) * pow(var(--ratio), 4));
+  --ls5: calc(var(--ls0) * pow(var(--ratio), 5));
 
-  --measure: var(
-    --scale-measure,
-    65ch
-  );
+  --measure: var(--scale-measure, 65ch);
+
+  font-size: calc(0.5vw + 1em * 0.8); /* 0.5vw + 1em * 0.8 */
 }

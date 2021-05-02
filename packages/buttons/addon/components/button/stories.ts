@@ -3,6 +3,8 @@ import { hbs } from 'ember-cli-htmlbars';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
+import { makeButtonArgTypes } from '../stories-helper';
+
 export default {
   title: 'Components/Buttons/Button',
   parameters: {
@@ -25,16 +27,7 @@ export const Default = args => ({
   }
 });
 
-Default.argTypes = {
-  label: {
-    defaultValue: 'Button',
-    control: { type: 'text' }
-  },
-  size: {
-    defaultValue: 1,
-    control: { type: 'range', min: -4, max: 4, step: 1 }
-  }
-};
+Default.argTypes = makeButtonArgTypes({ label: 'Button' });
 
 Default.story = {
   decorators: [withDesign],
@@ -46,6 +39,34 @@ Default.story = {
     }
   }
 };
+
+export const Reduced = args => ({
+  template: hbs`
+    <ReducedButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</ReducedButton>
+    <ReducedButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</ReducedButton>
+  `,
+  context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
+    invoke: action('button invoked')
+  }
+});
+
+Reduced.argTypes = makeButtonArgTypes({ label: 'Reduced Button' });
+
+export const Plain = args => ({
+  template: hbs`
+    <PlainButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</PlainButton>
+    <PlainButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</PlainButton>
+  `,
+  context: {
+    label: args.label,
+    size: `var(--s${args.size})`,
+    invoke: action('button invoked')
+  }
+});
+
+Plain.argTypes = makeButtonArgTypes({ label: 'Plain Button' });
 
 export const Accessibility = () => ({
   template: hbs`
@@ -61,10 +82,10 @@ Accessibility.story = {
 
 export const Sizing = () => ({
   template: hbs`
-      <Button {{style fontSize="80%"}}>80% Font Size</Button>
+      <Button {{style fontSize="var(--s-1)"}}>Font Size: --s-1</Button>
       <Button>Normal</Button>
-      <Button {{style fontSize="120%"}}>120% Font Size</Button>
-      <Button {{style fontSize="150%"}}>150% Font Size</Button>
+      <Button {{style fontSize="var(--s1)"}}>Font Size: --s1</Button>
+      <Button {{style fontSize="var(--s2)"}}>Font Size: --s2</Button>
     `
 });
 

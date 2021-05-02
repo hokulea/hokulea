@@ -25,13 +25,14 @@ The default `font-size` hokulea uses for `:root` is:
 
 ```css
 :root {
-  font-size: calc(0.5vw + 1em * 0.8);
+  font-size: calc(0.5vw + 1em * var(--factor));
 }
 ```
 
 - `1em` respects the user preference
 - `0.5vw` adapts to the given viewport
-- `0.8` is a factor to shrink it a little
+- `--factor` a factor for fine control (use `--scale-factor` to adjust it, default is
+  `0.8`)
 
 With `1em` as `16px`, here are some sample font sizes at given viewport widths:
 

@@ -1,0 +1,28 @@
+{
+  "color": {
+    "indicator": {
+      "error": {
+        "outline": {
+          "text": {
+            "value": "#CC2222",
+            "comment": "",
+            "colorScheme": "light",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          },
+          "border": {
+            "value": "#CC2222",
+            "comment": "",
+            "colorScheme": "light",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        }
+      }
+    }
+  }
+}

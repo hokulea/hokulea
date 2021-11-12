@@ -1,0 +1,35 @@
+{
+  "color": {
+    "text": {
+      "inverse": {
+        "disabled": {
+          "value": "#CECECE",
+          "comment": "",
+          "colorScheme": "light",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        }
+      },
+      "normal": {
+        "value": "#333333",
+        "comment": "Regular text color",
+        "colorScheme": "light",
+        "type": "purpose",
+        "attributes": {
+          "category": "purpose"
+        }
+      },
+      "disabled": {
+        "value": "#737373",
+        "comment": "",
+        "colorScheme": "light",
+        "type": "purpose",
+        "attributes": {
+          "category": "purpose"
+        }
+      }
+    }
+  }
+}

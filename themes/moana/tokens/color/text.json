@@ -1,0 +1,26 @@
+{
+  "color": {
+    "text": {
+      "light": {
+        "reduced": {
+          "value": "#CECECE",
+          "comment": ""
+        },
+        "normal": {
+          "value": "#F5F5F5",
+          "comment": ""
+        }
+      },
+      "dark": {
+        "reduced": {
+          "value": "#737373",
+          "comment": ""
+        },
+        "normal": {
+          "value": "#333333",
+          "comment": ""
+        }
+      }
+    }
+  }
+}

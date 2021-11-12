@@ -1,0 +1,27 @@
+<p>
+  This demo allows you to control the <code>font-size</code> of <code>:root</code>,
+  so you can experience its effect.
+</p>
+
+<Button @importance="subtle" {{on "click" this.reset}}>Reset</Button>
+<Button @importance={{if (eq this.version 'clamp' ) 'fill' }} {{on "click" this.useClamp}}>
+  clamp(16px, calc(0.5vw + 1em * 0.8), 18px)
+</Button>
+<Button @importance={{if (eq this.version 'static' ) 'fill' }} {{on "click" this.useStatic}}>
+  12px
+</Button>
+
+<div {{did-insert this.setupContent}}>
+  Viewport Width: <code>{{this.viewportWidth}}px</code>
+  Font Size: <code>{{this.fontSize}}</code>
+</div>
+
+<Token @name="--s-4" @category="numeric" />
+<Token @name="--s-3" @category="numeric" />
+<Token @name="--s-2" @category="numeric" />
+<Token @name="--s-1" @category="numeric" />
+<Token @name="--s0" @category="numeric" />
+<Token @name="--s1" @category="numeric" />
+<Token @name="--s2" @category="numeric" />
+<Token @name="--s3" @category="numeric" />
+<Token @name="--s4" @category="numeric" />

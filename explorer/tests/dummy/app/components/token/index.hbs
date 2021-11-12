@@ -1,4 +1,4 @@
-<div local-class="box {{@category}}">
+<div local-class="box {{@category}}" title={{@name}}>
   <span local-class="name">{{@name}}</span>
   <div local-class="demo" {{style --value=(concat 'var(' @name ')' )}} {{did-insert this.setupContent}}></div>
   <span local-class="value">{{this.value}}</span>

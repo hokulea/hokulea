@@ -1,0 +1,5 @@
+<div local-class="listing">
+  {{#each this.colors as |color|}}
+    <Token @name={{this.compileName 'color' color}} @category="color" />
+  {{/each}}
+</div>

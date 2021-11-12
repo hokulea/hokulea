@@ -1,0 +1,14 @@
+{
+  "color": {
+    "layout": {
+      "brand": {
+        "value": "#0CAEF3",
+        "comment": "",
+        "type": "purpose",
+        "attributes": {
+          "category": "purpose"
+        }
+      }
+    }
+  }
+}

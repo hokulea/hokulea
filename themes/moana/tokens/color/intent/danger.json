@@ -1,0 +1,236 @@
+{
+  "color": {
+    "intent": {
+      "danger": {
+        "plain": {
+          "disabled": {
+            "text": {
+              "value": "{color.text.disabled.value}",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "active": {
+            "text": {
+              "value": "#8B1717",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "hover": {
+            "text": {
+              "value": "#8B1717",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "base": {
+            "text": {
+              "value": "#CC2222",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          }
+        },
+        "subtle": {
+          "active": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#8B1717",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "#8B1717",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "hover": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#CC2222",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "#CC2222",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "base": {
+            "text": {
+              "value": "{color.text.normal.value}",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#E35858",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "{color.layout.background.value}",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "disabled": {
+            "text": {
+              "value": "#737373",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#6E6E6E",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "{color.layout.background.value}",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          }
+        },
+        "fill": {
+          "active": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#8B1717",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "#8B1717",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "hover": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#CC2222",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "#CC2222",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          },
+          "base": {
+            "text": {
+              "value": "#F5F5F5",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "#E35858",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#E35858",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "color": {
+    "indicator": {
+      "error": {
+        "outline": {
+          "text": {
+            "value": "#EE9A9A",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        }
+      }
+    }
+  }
+}

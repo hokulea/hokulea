@@ -5,8 +5,8 @@
   padding: var(--s-2);
   background-color: var(--color-layout-low-contrast);
 
-  composes: flow from "@hokulea/layouts/flow";
-  --flow-space: var(--s-1);
+  /* composes: flow from "@hokulea/layouts/flow";
+  --flow-space: var(--s-1); */
 }
 
 .name {
@@ -19,18 +19,51 @@
 }
 
 .numeric {
-  display: grid;
+  /* display: grid;
   grid-template-columns: max-content auto;
   grid-auto-rows: max-content;
   grid-column-gap: var(--s-1);
-  grid-row-gap: 0;
+  grid-row-gap: 0; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & > * + * {
+    margin-inline-start: var(--s-1);
+  }
+
+  /* .value {
+    grid-column: 2;
+  } */
+  .name {
+    width: var(--s4);
+  }
 
   .value {
-    grid-column: 2;
+    margin-inline-start: auto;
   }
 
   .demo {
     background-color: var(--color-text-normal);
     width: var(--value);
+    align-self: stretch;
+  }
+}
+
+.color {
+  display: inline flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: calc(2 * var(--s-2) + 60px);
+
+  .name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .demo {
+    background-color: var(--value);
+    width: 60px;
+    height: 60px;
   }
 }

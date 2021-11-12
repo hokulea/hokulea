@@ -1,30 +1,29 @@
 :root {
-  --color-indicator-error-outline-text: #cc2222;
-  --color-indicator-error-outline-border: #cc2222;
-  --color-indicator-info-outline-text: #054661;
-  --color-indicator-info-outline-border: #054661;
-  --color-indicator-success-outline-text: #125449;
-  --color-indicator-success-outline-border: #125449;
-  --color-indicator-warning-outline-text: #b28000;
-  --color-indicator-warning-outline-border: #b28000;
-  --color-intent-action-fill-disabled-text: #737373;
-  --color-intent-action-fill-disabled-border: #f2f2f2;
-  --color-intent-action-fill-disabled-background: #f2f2f2;
-  --color-intent-alternative-fill-disabled-text: #737373;
-  --color-intent-alternative-fill-disabled-border: #f2f2f2;
-  --color-intent-alternative-fill-disabled-background: #f2f2f2;
-  --color-intent-danger-fill-disabled-text: #8b1717;
-  --color-intent-danger-fill-disabled-border: #f2f2f2;
-  --color-intent-danger-fill-disabled-background: #f2f2f2;
-  --color-intent-highlight-fill-disabled-text: #737373;
-  --color-intent-highlight-fill-disabled-border: #f2f2f2;
-  --color-intent-highlight-fill-disabled-background: #f2f2f2;
-  --color-layout-background: #ffffff; /* Background color for layouts */
-  --color-layout-low-contrast: #f2f2f2;
-  --color-layout-high-contrast: #595959;
-  --color-layout-reduced: #6e6e6e;
-  --color-text-inverse-disabled: #cecece;
-  --color-text-inverse: #f5f5f5; /* Text color for more contrast (e.g. high-contrast or reduced) */
-  --color-text-disabled: #737373;
+  --color-text-inverse-disabled: #CECECE;
   --color-text-normal: #333333; /* Regular text color */
+  --color-text-disabled: #737373;
+  --color-layout-background: #FFFFFF; /* Background color for layouts */
+  --color-layout-reduced: #6E6E6E;
+  --color-layout-high-contrast: #595959;
+  --color-layout-low-contrast: #F2F2F2;
+  --color-intent-highlight-fill-disabled-background: #F2F2F2;
+  --color-intent-highlight-fill-disabled-border: #F2F2F2;
+  --color-intent-highlight-fill-disabled-text: #737373;
+  --color-intent-danger-fill-disabled-background: #F2F2F2;
+  --color-intent-danger-fill-disabled-border: #F2F2F2;
+  --color-intent-danger-fill-disabled-text: #8B1717;
+  --color-intent-alternative-fill-disabled-background: #F2F2F2;
+  --color-intent-alternative-fill-disabled-border: #F2F2F2;
+  --color-intent-alternative-fill-disabled-text: #737373;
+  --color-intent-action-fill-disabled-background: #F2F2F2;
+  --color-intent-action-fill-disabled-border: #F2F2F2;
+  --color-intent-action-fill-disabled-text: #737373;
+  --color-indicator-warning-outline-border: #B28000;
+  --color-indicator-warning-outline-text: #B28000;
+  --color-indicator-success-outline-border: #125449;
+  --color-indicator-success-outline-text: #125449;
+  --color-indicator-info-outline-border: #054661;
+  --color-indicator-info-outline-text: #054661;
+  --color-indicator-error-outline-border: #CC2222;
+  --color-indicator-error-outline-text: #CC2222;
 }

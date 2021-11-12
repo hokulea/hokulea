@@ -1,0 +1,48 @@
+{
+  "color": {
+    "emphasize": {
+      "accent": {
+        "stronger": {
+          "value": "#665C00",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        },
+        "strong": {
+          "value": "#B2A000",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        },
+        "regular": {
+          "value": "#FFE500",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        },
+        "weak": {
+          "value": "#FFED4D",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        },
+        "weaker": {
+          "value": "#FFF599",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        }
+      }
+    }
+  }
+}

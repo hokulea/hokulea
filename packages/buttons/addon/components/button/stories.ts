@@ -1,9 +1,9 @@
 import { hbs } from 'ember-cli-htmlbars';
 
+import { Intent, Importance } from '@hokulea/foundation/tokens';
 import { action } from '@storybook/addon-actions';
+import { ArgTypes } from '@storybook/api';
 import { withDesign } from 'storybook-addon-designs';
-
-import { makeButtonArgTypes } from '../stories-helper';
 
 export default {
   title: 'Components/Buttons/Button',
@@ -17,17 +17,40 @@ export default {
 
 export const Default = args => ({
   template: hbs`
-    <Button {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</Button>
-    <Button disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</Button>
+    <Button @intent={{this.intent}} @importance={{this.importance}} {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</Button>
+    <Button @intent={{this.intent}} @importance={{this.importance}} disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</Button>
   `,
   context: {
+    intent: args.intent,
+    importance: args.importance,
     label: args.label,
     size: `var(--s${args.size})`,
     invoke: action('button invoked')
   }
 });
 
-Default.argTypes = makeButtonArgTypes({ label: 'Button' });
+Default.argTypes = {
+  intent: {
+    name: 'Intent',
+    defaultValue: Intent.Action,
+    control: { type: 'radio', options: Object.values(Intent) }
+  },
+  importance: {
+    name: 'Importance',
+    defaultValue: Importance.Fill,
+    control: { type: 'radio', options: Object.values(Importance) }
+  },
+  label: {
+    name: 'Label',
+    defaultValue: 'Button',
+    control: { type: 'text' }
+  },
+  size: {
+    name: 'Size',
+    defaultValue: 0,
+    control: { type: 'range', min: -2, max: 4 }
+  }
+};
 
 Default.story = {
   decorators: [withDesign],
@@ -39,34 +62,6 @@ Default.story = {
     }
   }
 };
-
-export const Reduced = args => ({
-  template: hbs`
-    <ReducedButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</ReducedButton>
-    <ReducedButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</ReducedButton>
-  `,
-  context: {
-    label: args.label,
-    size: `var(--s${args.size})`,
-    invoke: action('button invoked')
-  }
-});
-
-Reduced.argTypes = makeButtonArgTypes({ label: 'Reduced Button' });
-
-export const Plain = args => ({
-  template: hbs`
-    <PlainButton {{on "click" (fn this.invoke)}} {{style fontSize=this.size}}>{{this.label}}</PlainButton>
-    <PlainButton disabled={{true}} {{style fontSize=this.size}}>Disabled {{this.label}}</PlainButton>
-  `,
-  context: {
-    label: args.label,
-    size: `var(--s${args.size})`,
-    invoke: action('button invoked')
-  }
-});
-
-Plain.argTypes = makeButtonArgTypes({ label: 'Plain Button' });
 
 export const Accessibility = () => ({
   template: hbs`

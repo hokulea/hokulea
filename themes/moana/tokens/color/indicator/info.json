@@ -1,0 +1,60 @@
+{
+  "color": {
+    "indicator": {
+      "info": {
+        "box": {
+          "background": {
+            "value": "#9EDFFA",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          },
+          "text": {
+            "value": "#054661",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          },
+          "border": {
+            "value": "#087AAA",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        },
+        "fill": {
+          "background": {
+            "value": "#054661",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          },
+          "border": {
+            "value": "#054661",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        }
+      }
+    }
+  }
+}

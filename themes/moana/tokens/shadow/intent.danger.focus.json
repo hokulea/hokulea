@@ -1,0 +1,16 @@
+{
+  "shadow": {
+    "intent": {
+      "danger": {
+        "focus": {
+          "value": "0 0 6px #CD2222",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        }
+      }
+    }
+  }
+}

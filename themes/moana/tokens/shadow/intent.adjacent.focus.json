@@ -1,0 +1,16 @@
+{
+  "shadow": {
+    "intent": {
+      "adjacent": {
+        "focus": {
+          "value": "0 0 6px #2CD3B5",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        }
+      }
+    }
+  }
+}

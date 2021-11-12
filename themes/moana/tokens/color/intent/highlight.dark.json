@@ -1,0 +1,39 @@
+{
+  "color": {
+    "intent": {
+      "highlight": {
+        "fill": {
+          "disabled": {
+            "text": {
+              "value": "#CECECE",
+              "comment": "",
+              "colorScheme": "dark",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "border": {
+              "value": "#6E6E6E",
+              "comment": "",
+              "colorScheme": "dark",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            },
+            "background": {
+              "value": "#6E6E6E",
+              "comment": "",
+              "colorScheme": "dark",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

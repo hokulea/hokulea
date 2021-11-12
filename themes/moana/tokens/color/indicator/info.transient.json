@@ -1,0 +1,18 @@
+{
+  "color": {
+    "indicator": {
+      "info": {
+        "outline": {
+          "text": {
+            "value": "#55C6F7",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        }
+      }
+    }
+  }
+}

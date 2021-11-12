@@ -1,53 +1,53 @@
+function isOrdinalScalingToken(name) {
+  return name.match(/[+-]?\d+$/);
+}
+
+const modes = ['light', 'dark'];
+
 module.exports = {
-  source: ['properties/**/*.json'],
+  source: [
+    // this is saying find any files in the tokens folder
+    // that does not have .dark or .light, but ends in .json
+    `tokens/**/!(*.${modes.join(`|*.`)}).json`
+  ],
   platforms: {
     web: {
-      transformGroup: 'theemo/css',
+      transforms: [
+        'attribute/cti',
+        'name/cti/kebab',
+        'time/seconds',
+        'content/icon',
+        'size/rem',
+        'color/css',
+        'name/color-scaling',
+      ],
       buildPath: 'build/',
       files: [
         {
           format: 'css/variables',
           destination: 'base.css',
           options: {
+            outputReferences: true,
             showFileHeader: false
           },
           filter(token) {
-            return !token.colorScheme;
-          }
-        },
-        {
-          format: 'css/variables',
-          destination: 'light.css',
-          options: {
-            showFileHeader: false
-          },
-          filter(token) {
-            return token.colorScheme === 'light';
-          }
-        },
-        {
-          format: 'css/variables',
-          destination: 'dark.css',
-          options: {
-            showFileHeader: false
-          },
-          filter(token) {
-            return token.colorScheme === 'dark';
+            return !token.colorScheme && !token.filePath.startsWith('tokens/transient');
           }
         }
       ]
     }
   },
-  transforms: {
-    name: {
-      matcher(property) {
-        return property.name.includes('$');
+  transform: {
+    'name/color-scaling': {
+      type: 'name',
+      matcher(token) {
+        // console.log(token);
+        // return token.path.includes('color') && token.path.includes('palette');
+        return token.path.includes('color') && isOrdinalScalingToken(token.name);
       },
-      transformer(property) {
-        property.path.pop();
-
-        const index = property.name.indexOf('$')
-        return property.name.slice(0, index);
+      transformer(token) {
+        // console.log(token);
+        return token.path.join('-');
       }
     }
   }

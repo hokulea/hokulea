@@ -1,0 +1,25 @@
+{
+  "structure": {
+    "border-style": {
+      "value": "solid",
+      "type": "purpose",
+      "attributes": {
+        "category": "purpose"
+      }
+    },
+    "border-width": {
+      "value": "2px",
+      "type": "purpose",
+      "attributes": {
+        "category": "purpose"
+      }
+    },
+    "border-radius": {
+      "value": "4px",
+      "type": "purpose",
+      "attributes": {
+        "category": "purpose"
+      }
+    }
+  }
+}

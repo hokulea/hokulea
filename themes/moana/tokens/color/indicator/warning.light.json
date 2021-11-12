@@ -1,0 +1,28 @@
+{
+  "color": {
+    "indicator": {
+      "warning": {
+        "outline": {
+          "text": {
+            "value": "#B28000",
+            "comment": "",
+            "colorScheme": "light",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          },
+          "border": {
+            "value": "#B28000",
+            "comment": "",
+            "colorScheme": "light",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        }
+      }
+    }
+  }
+}

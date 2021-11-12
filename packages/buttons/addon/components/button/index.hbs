@@ -1,4 +1,5 @@
-<ButtonBuilder local-class="button" data-test-button ...attributes as |builder|>
+<ButtonBuilder local-class="button {{this.intent}}-{{this.importance}}" data-test-button
+  data-test-button-intent={{this.intent}} data-test-button-importance={{this.importance}} ...attributes as |builder|>
   {{#if (has-block-params)}}
     {{yield builder}}
   {{else}}

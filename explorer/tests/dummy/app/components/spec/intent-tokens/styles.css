@@ -1,0 +1,5 @@
+.listing {
+  display: grid;
+  gap: var(--s-1);
+  grid-template-columns: repeat(auto-fit, calc(2 * var(--s-1) + 60px));
+}

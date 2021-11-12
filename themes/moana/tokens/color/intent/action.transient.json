@@ -1,0 +1,20 @@
+{
+  "color": {
+    "intent": {
+      "action": {
+        "fill": {
+          "disabled": {
+            "text": {
+              "value": "#CECECE",
+              "comment": "",
+              "type": "purpose",
+              "attributes": {
+                "category": "purpose"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

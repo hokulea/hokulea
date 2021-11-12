@@ -1,0 +1,32 @@
+{
+  "color": {
+    "text": {
+      "disabled": {
+        "value": "#CECECE",
+        "comment": "",
+        "type": "purpose",
+        "attributes": {
+          "category": "purpose"
+        }
+      },
+      "normal": {
+        "value": "#F5F5F5",
+        "comment": "",
+        "type": "purpose",
+        "attributes": {
+          "category": "purpose"
+        }
+      },
+      "inverse": {
+        "disabled": {
+          "value": "#737373",
+          "comment": "",
+          "type": "purpose",
+          "attributes": {
+            "category": "purpose"
+          }
+        }
+      }
+    }
+  }
+}

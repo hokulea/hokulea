@@ -1,0 +1,18 @@
+{
+  "color": {
+    "indicator": {
+      "warning": {
+        "outline": {
+          "text": {
+            "value": "#FFCC4D",
+            "comment": "",
+            "type": "purpose",
+            "attributes": {
+              "category": "purpose"
+            }
+          }
+        }
+      }
+    }
+  }
+}

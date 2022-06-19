@@ -5,9 +5,10 @@
         "focus": {
           "value": "0 0 6px #B2A000",
           "comment": "",
-          "type": "purpose",
+          "figmaName": "shadow.intent.accent/focus",
+          "type": "effect",
           "attributes": {
-            "category": "purpose"
+            "category": "effect"
           }
         }
       }

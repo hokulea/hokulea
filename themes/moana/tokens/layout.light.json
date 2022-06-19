@@ -1,0 +1,44 @@
+{
+  "layout": {
+    "background": {
+      "value": "#FFFFFF",
+      "comment": "Background color for layouts",
+      "colorScheme": "light",
+      "figmaName": "layout/background.$light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "low-contrast": {
+      "value": "#F2F2F2",
+      "comment": "",
+      "colorScheme": "light",
+      "figmaName": "layout/low-contrast.$light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "high-contrast": {
+      "value": "#595959",
+      "comment": "",
+      "colorScheme": "light",
+      "figmaName": "layout/high-contrast.$light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "reduced": {
+      "value": "#6E6E6E",
+      "comment": "",
+      "colorScheme": "light",
+      "figmaName": "layout/reduced.$light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

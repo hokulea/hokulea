@@ -1,0 +1,26 @@
+{
+  "indicator": {
+    "warning": {
+      "outline": {
+        "border": {
+          "value": "#B28000",
+          "comment": "",
+          "figmaName": "indicator/warning/outline.border",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#B28000",
+          "comment": "",
+          "figmaName": "indicator/warning/outline.text",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

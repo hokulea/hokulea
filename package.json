@@ -32,11 +32,11 @@
     "lerna": "^3.22.1"
   },
   "resolutions": {
-    "ember-get-config": "^0.3.0",
-    "postcss-values-parser": "^3.2.1"
+    "postcss": "^8.0.0",
+    "ember-get-config": "^0.3.0"
   },
   "volta": {
-    "node": "14.15.0",
+    "node": "16.15.1",
     "yarn": "1.22.5"
   },
   "engines": {

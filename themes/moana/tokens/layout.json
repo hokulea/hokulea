@@ -1,0 +1,13 @@
+{
+  "layout": {
+    "brand": {
+      "value": "#0CAEF3",
+      "comment": "",
+      "figmaName": "layout/brand",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

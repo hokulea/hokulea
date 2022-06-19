@@ -18,7 +18,7 @@
 }
 
 .level-2 {
-  /* color: var(--color-heading); */
+  /* color: var(--heading-color); */
   padding-left: var(--s1);
 }
 

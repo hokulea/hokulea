@@ -5,7 +5,7 @@ function isOrdinalScalingToken(name) {
 const modes = ['light', 'dark'];
 
 module.exports = {
-  include: ['tokens/**/*.transient.json'],
+  include: ['tokens/**/*.!(computed)(ambient).json'],
   source: [
     // this is saying find any files in the tokens folder
     // that does not have .dark or .light, but ends in .json
@@ -20,6 +20,7 @@ module.exports = {
         'content/icon',
         'size/rem',
         'color/css',
+        'name/color',
         'name/color-scaling'
       ],
       buildPath: 'build/',
@@ -32,19 +33,26 @@ module.exports = {
             showFileHeader: false
           },
           filter(token) {
-            return !token.colorScheme;
+            return !token.colorScheme && !token.computed;
           }
         }
       ]
     }
   },
   transform: {
+    'name/color': {
+      type: 'name',
+      matcher(token) {
+        return token.type === 'color';
+      },
+      transformer(token) {
+        return `${token.path.join('-')}-color`;
+      }
+    },
     'name/color-scaling': {
       type: 'name',
       matcher(token) {
-        return (
-          token.path.includes('color') && isOrdinalScalingToken(token.name)
-        );
+        return token.type === 'color' && isOrdinalScalingToken(token.name);
       },
       transformer(token) {
         return token.path.join('-');

@@ -22,14 +22,14 @@
     "postpublish": "ember ts:clean"
   },
   "dependencies": {
-    "@hokulea/ember-css-modules-config": "^0.1.0",
+    "@hokulea/ember-css-modules-config": "^0.2.0",
     "@glimmer/component": "^1.0.4",
     "@hokulea/foundation": "^0.0.0",
     "@hokulea/layouts": "^0.0.0",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
     "ember-cli-typescript": "^4.2.1",
-    "ember-css-modules": "^1.4.0",
+    "ember-css-modules": "^2.0.1",
     "ember-element-helper": "^0.5.5"
   },
   "devDependencies": {

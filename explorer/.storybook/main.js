@@ -7,12 +7,15 @@ module.exports = {
   core: {
     builder: 'webpack5'
   },
+  staticDirs: ['../dist'],
   stories: [
     '../../documentation/**/*.md',
     '../../api/*.md',
     '../../packages/**/stories.ts'
   ],
   addons: [
+    '@storybook/addon-controls',
+    'storybook-addon-designs',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -22,8 +25,6 @@ module.exports = {
         }
       }
     },
-    '@storybook/addon-controls',
-    'storybook-addon-designs',
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
     '@storybook/addon-toolbars',

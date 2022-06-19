@@ -1,0 +1,40 @@
+{
+  "intent": {
+    "danger": {
+      "fill": {
+        "disabled": {
+          "text": {
+            "value": "#F9DBDB",
+            "comment": "",
+            "colorScheme": "dark",
+            "figmaName": "intent/danger/fill/disabled.text.$dark",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#6E6E6E",
+            "comment": "",
+            "colorScheme": "dark",
+            "figmaName": "intent/danger/fill/disabled.border.$dark",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "background": {
+            "value": "#6E6E6E",
+            "comment": "",
+            "colorScheme": "dark",
+            "figmaName": "intent/danger/fill/disabled.background.$dark",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "indicator": {
+    "success": {
+      "outline": {
+        "border": {
+          "value": "#125449",
+          "comment": "",
+          "figmaName": "indicator/success/outline.border",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#125449",
+          "comment": "",
+          "figmaName": "indicator/success/outline.text",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

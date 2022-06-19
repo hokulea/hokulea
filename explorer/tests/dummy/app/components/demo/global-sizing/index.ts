@@ -1,42 +1,12 @@
-import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
+import { GlobalSizingElement } from '../../reference/global-sizing';
+
 export default class GlobalScaleDemoComponent extends Component {
-  private mutationObserver: MutationObserver;
-
-  @tracked fontSize!: string;
-  @tracked viewportWidth!: number;
   @tracked version?: 'clamp' | 'static';
-
-  constructor(owner: unknown, args: Record<string, unknown>) {
-    super(owner, args);
-
-    this.update();
-    window.addEventListener('resize', this.update);
-    this.mutationObserver = new window.MutationObserver(this.update);
-
-    registerDestructor(this, () => {
-      window.removeEventListener('resize', this.update);
-      this.mutationObserver.disconnect();
-    });
-  }
-
-  @action
-  setupContent(element: HTMLElement): void {
-    this.update();
-
-    let elem = element;
-
-    do {
-      this.mutationObserver.observe(elem, {
-        attributes: true,
-        attributeFilter: ['style', 'class']
-      });
-      elem = elem.parentElement as HTMLElement; // booh!
-    } while (elem);
-  }
+  private sizingElement?: GlobalSizingElement;
 
   @action
   useStatic(): void {
@@ -65,10 +35,12 @@ export default class GlobalScaleDemoComponent extends Component {
   }
 
   @action
-  private update() {
-    this.viewportWidth = window.innerWidth;
-    this.fontSize = window
-      .getComputedStyle(document.documentElement)
-      .getPropertyValue('font-size');
+  link(elem: GlobalSizingElement): void {
+    this.sizingElement = elem;
+  }
+
+  @action
+  update(): void {
+    this.sizingElement?.update();
   }
 }

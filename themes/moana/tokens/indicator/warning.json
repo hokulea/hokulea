@@ -1,0 +1,64 @@
+{
+  "indicator": {
+    "warning": {
+      "box": {
+        "background": {
+          "value": "#FFE299",
+          "comment": "",
+          "figmaName": "indicator/warning/box.background",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#B28000",
+          "comment": "",
+          "figmaName": "indicator/warning/box.border",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#664900",
+          "comment": "",
+          "figmaName": "indicator/warning/box.text",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      },
+      "fill": {
+        "background": {
+          "value": "#B28000",
+          "comment": "",
+          "figmaName": "indicator/warning/fill.background",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#B28000",
+          "comment": "",
+          "figmaName": "indicator/warning/fill.border",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#F5F5F5",
+          "comment": "",
+          "figmaName": "indicator/warning/fill.text",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

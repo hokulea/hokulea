@@ -1,0 +1,28 @@
+{
+  "indicator": {
+    "warning": {
+      "outline": {
+        "text": {
+          "value": "#B28000",
+          "comment": "",
+          "colorScheme": "light",
+          "figmaName": "indicator/warning/outline.text.$light",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#B28000",
+          "comment": "",
+          "colorScheme": "light",
+          "figmaName": "indicator/warning/outline.border.$light",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

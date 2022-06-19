@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "style-dictionary": "^3.0.2",
-    "theemo": "^0.0.9"
+    "theemo": "^0.1.2"
   },
   "volta": {
     "extends": "../../package.json"

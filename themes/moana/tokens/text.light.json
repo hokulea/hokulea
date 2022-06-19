@@ -1,0 +1,36 @@
+{
+  "text": {
+    "inverse": {
+      "disabled": {
+        "value": "#CECECE",
+        "comment": "",
+        "colorScheme": "light",
+        "figmaName": "text/inverse.disabled.$light",
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      }
+    },
+    "normal": {
+      "value": "#333333",
+      "comment": "Regular text color",
+      "colorScheme": "light",
+      "figmaName": "text/normal.$light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "disabled": {
+      "value": "#737373",
+      "comment": "",
+      "colorScheme": "light",
+      "figmaName": "text/disabled.$light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

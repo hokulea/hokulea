@@ -15,9 +15,9 @@
   composes: border-shape from "@hokulea/foundation/structure/border";
   composes: padding-primitive from "@hokulea/foundation/structure/padding";
 
-  color: var(--color-text);
-  background-color: var(--color-background);
-  border-color: var(--color-structure-border);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-color: var(--structure-border-color);
 
   display: flex;
   justify-content: space-between;
@@ -44,13 +44,13 @@
       }
 
       &[aria-selected="true"] {
-        color: var(--color-intent-action-fill-base-text);
-        background-color: var(--color-intent-action-fill-base-background);
+        color: var(--intent-action-fill-base-text-color);
+        background-color: var(--intent-action-fill-base-background-color);
       }
 
       &:hover {
-        color: var(--color-intent-action-fill-hover-text);
-        background-color: var(--color-intent-action-fill-hover-background);
+        color: var(--intent-action-fill-hover-text-color);
+        background-color: var(--intent-action-fill-hover-background-color);
       }
     }
   }

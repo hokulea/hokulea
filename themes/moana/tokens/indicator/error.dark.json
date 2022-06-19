@@ -1,0 +1,28 @@
+{
+  "indicator": {
+    "error": {
+      "outline": {
+        "text": {
+          "value": "#EE9A9A",
+          "comment": "",
+          "colorScheme": "dark",
+          "figmaName": "indicator/error/outline.text.$dark",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#EE9A9A",
+          "comment": "",
+          "colorScheme": "dark",
+          "figmaName": "indicator/error/outline.border.$dark",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

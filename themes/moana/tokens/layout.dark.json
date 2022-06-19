@@ -1,0 +1,44 @@
+{
+  "layout": {
+    "background": {
+      "value": "#595959",
+      "comment": "",
+      "colorScheme": "dark",
+      "figmaName": "layout/background.$dark",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "low-contrast": {
+      "value": "#6E6E6E",
+      "comment": "",
+      "colorScheme": "dark",
+      "figmaName": "layout/low-contrast.$dark",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "high-contrast": {
+      "value": "#F2F2F2",
+      "comment": "",
+      "colorScheme": "dark",
+      "figmaName": "layout/high-contrast.$dark",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "reduced": {
+      "value": "#DFDFDF",
+      "comment": "",
+      "colorScheme": "dark",
+      "figmaName": "layout/reduced.$dark",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 .input {
-  composes: border-shape from '@hokulea/foundation/structure/border';
-  composes: action-focus from '@hokulea/foundation/intents/action';
-  border-color: var(--color-layout-low-contrast);
+  composes: border-shape from "@hokulea/foundation/structure/border";
+  composes: action-focus from "@hokulea/foundation/intents/action";
+  border-color: var(--layout-low-contrast-color);
 }
 
 .rim {
-  composes: action-focus from '@hokulea/foundation/intents/action';
-  border-color: var(--color-layout-low-contrast);
+  composes: action-focus from "@hokulea/foundation/intents/action";
+  border-color: var(--layout-low-contrast-color);
 
   & > input {
     border: 0;

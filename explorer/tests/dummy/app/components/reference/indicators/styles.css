@@ -1,0 +1,13 @@
+.control {
+  padding: var(--s0);
+  border: var(--structure-border-color) var(--structure-border-style)
+    var(--structure-border-width);
+  border-radius: var(--structure-border-radius);
+  background-color: var(--layout-low-contrast-color);
+
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: var(--s-5);
+
+  align-items: center;
+}

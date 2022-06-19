@@ -1,0 +1,28 @@
+{
+  "intent": {
+    "danger": {
+      "fill": {
+        "disabled": {
+          "background": {
+            "value": "#F2F2F2",
+            "comment": "",
+            "figmaName": "intent/danger/fill/disabled.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/fill/disabled.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

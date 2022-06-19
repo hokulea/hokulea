@@ -2,23 +2,32 @@
   "structure": {
     "border-style": {
       "value": "solid",
-      "type": "purpose",
+      "type": "content",
       "attributes": {
-        "category": "purpose"
+        "category": "content"
       }
     },
     "border-width": {
       "value": "2px",
-      "type": "purpose",
+      "type": "content",
       "attributes": {
-        "category": "purpose"
+        "category": "content"
       }
     },
     "border-radius": {
       "value": "4px",
-      "type": "purpose",
+      "type": "content",
       "attributes": {
-        "category": "purpose"
+        "category": "content"
+      }
+    },
+    "border": {
+      "value": "#DFDFDF",
+      "comment": "",
+      "figmaName": "structure/border",
+      "type": "color",
+      "attributes": {
+        "category": "color"
       }
     }
   }

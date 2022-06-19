@@ -9,6 +9,10 @@ module.exports = function (defaults) {
       sourceMaps: 'inline'
     },
 
+    autoImport: {
+      watchDependencies: ['@hokulea/tokens']
+    },
+
     theemo: {
       defaultTheme: 'moana'
     }

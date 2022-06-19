@@ -1,391 +1,92 @@
 .button {
+  /* Public Values API */
   composes: focus from "@hokulea/foundation/structure";
   --focus-box-shadow: var(--button-focus-box-shadow);
-  color: var(--button-base-color-text);
-  background-color: var(--button-base-color-background);
-  border-color: var(--button-base-color-border);
+
+  color: var(--button-base-text-color);
+  background-color: var(--button-base-background-color);
+  border-color: var(--button-base-border-color);
 
   &:hover {
-    color: var(--button-hover-color-text);
-    background-color: var(--button-hover-color-background);
-    border-color: var(--button-hover-color-border);
+    color: var(--button-hover-text-color);
+    background-color: var(--button-hover-background-color);
+    border-color: var(--button-hover-border-color);
   }
 
   &:active {
-    color: var(--button-active-color-text);
-    background-color: var(--button-active-color-background);
-    border-color: var(--button-active-color-border);
+    color: var(--button-active-text-color);
+    background-color: var(--button-active-background-color);
+    border-color: var(--button-active-border-color);
   }
 
   &:disabled {
-    color: var(--button-disabled-color-text);
-    background-color: var(--button-disabled-color-background);
-    border-color: var(--button-disabled-color-border);
+    color: var(--button-disabled-text-color);
+    background-color: var(--button-disabled-background-color);
+    border-color: var(--button-disabled-border-color);
   }
-}
 
-/*
- * ACTION
- */
-
-.action-fill {
-  --button-focus-box-shadow: var(--shadow-intent-action-fill-focus);
-
-  --button-base-color-background: var(
-    --color-intent-action-fill-base-background
-  );
-  --button-base-color-border: var(--color-intent-action-fill-base-border);
-  --button-base-color-text: var(--color-intent-action-fill-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-action-fill-hover-background
-  );
-  --button-hover-color-border: var(--color-intent-action-fill-hover-border);
-  --button-hover-color-text: var(--color-intent-action-fill-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-action-fill-active-background
-  );
-  --button-active-color-border: var(--color-intent-action-fill-active-border);
-  --button-active-color-text: var(--color-intent-action-fill-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-action-fill-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-action-fill-disabled-border
-  );
-  --button-disabled-color-text: var(--color-intent-action-fill-disabled-text);
-}
-
-.action-subtle {
-  --button-focus-box-shadow: var(--shadow-intent-action-subtle-focus);
-
-  --button-base-color-background: var(
-    --color-intent-action-subtle-base-background
-  );
-  --button-base-color-border: var(--color-intent-action-subtle-base-border);
-  --button-base-color-text: var(--color-intent-action-subtle-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-action-subtle-hover-background
-  );
-  --button-hover-color-border: var(--color-intent-action-subtle-hover-border);
-  --button-hover-color-text: var(--color-intent-action-subtle-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-action-subtle-active-background
-  );
-  --button-active-color-border: var(--color-intent-action-subtle-active-border);
-  --button-active-color-text: var(--color-intent-action-subtle-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-action-subtle-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-action-subtle-disabled-border
-  );
-  --button-disabled-color-text: var(--color-intent-action-subtle-disabled-text);
-}
-
-.action-plain {
-  --button-focus-box-shadow: var(--shadow-intent-action-plain-focus);
-
-  --button-base-color-background: transparent;
-  --button-base-color-border: transparent;
-  --button-base-color-text: var(--color-intent-action-plain-base-text);
-
-  --button-hover-color-background: transparent;
-  --button-hover-color-border: transparent;
-  --button-hover-color-text: var(--color-intent-action-plain-hover-text);
-
-  --button-active-color-background: transparent;
-  --button-active-color-border: transparent;
-  --button-active-color-text: var(--color-intent-action-plain-active-text);
-
-  --button-disabled-color-background: transparent;
-  --button-disabled-color-border: transparent;
-  --button-disabled-color-text: var(--color-intent-action-plain-disabled-text);
-}
-
-/*
- * ALTERNATIVE
- */
-
-.alternative-fill {
-  --button-focus-box-shadow: var(--shadow-intent-alternative-fill-focus);
-
-  --button-base-color-background: var(
-    --color-intent-alternative-fill-base-background
-  );
-  --button-base-color-border: var(--color-intent-alternative-fill-base-border);
-  --button-base-color-text: var(--color-intent-alternative-fill-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-alternative-fill-hover-background
-  );
-  --button-hover-color-border: var(
-    --color-intent-alternative-fill-hover-border
-  );
-  --button-hover-color-text: var(--color-intent-alternative-fill-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-alternative-fill-active-background
-  );
-  --button-active-color-border: var(
-    --color-intent-alternative-fill-active-border
-  );
-  --button-active-color-text: var(--color-intent-alternative-fill-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-alternative-fill-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-alternative-fill-disabled-border
-  );
-  --button-disabled-color-text: var(
-    --color-intent-alternative-fill-disabled-text
-  );
-}
-
-.alternative-subtle {
-  --button-focus-box-shadow: var(--shadow-intent-alternative-subtle-focus);
-
-  --button-base-color-background: var(
-    --color-intent-alternative-subtle-base-background
-  );
-  --button-base-color-border: var(
-    --color-intent-alternative-subtle-base-border
-  );
-  --button-base-color-text: var(--color-intent-alternative-subtle-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-alternative-subtle-hover-background
-  );
-  --button-hover-color-border: var(
-    --color-intent-alternative-subtle-hover-border
-  );
-  --button-hover-color-text: var(--color-intent-alternative-subtle-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-alternative-subtle-active-background
-  );
-  --button-active-color-border: var(
-    --color-intent-alternative-subtle-active-border
-  );
-  --button-active-color-text: var(
-    --color-intent-alternative-subtle-active-text
-  );
-
-  --button-disabled-color-background: var(
-    --color-intent-alternative-subtle-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-alternative-subtle-disabled-border
-  );
-  --button-disabled-color-text: var(
-    --color-intent-alternative-subtle-disabled-text
-  );
-}
-
-.alternative-plain {
-  --button-focus-box-shadow: var(--shadow-intent-alternative-plain-focus);
-
-  --button-base-color-background: transparent;
-  --button-base-color-border: transparent;
-  --button-base-color-text: var(--color-intent-alternative-plain-base-text);
-
-  --button-hover-color-background: transparent;
-  --button-hover-color-border: transparent;
-  --button-hover-color-text: var(--color-intent-alternative-plain-hover-text);
-
-  --button-active-color-background: transparent;
-  --button-active-color-border: transparent;
-  --button-active-color-text: var(--color-intent-alternative-plain-active-text);
-
-  --button-disabled-color-background: transparent;
-  --button-disabled-color-border: transparent;
-  --button-disabled-color-text: var(
-    --color-intent-alternative-plain-disabled-text
-  );
-}
-
-/*
- * HIGHLIGHT
- */
-
-.highlight-fill {
-  --button-focus-box-shadow: var(--shadow-intent-highlight-fill-focus);
-
-  --button-base-color-background: var(
-    --color-intent-highlight-fill-base-background
-  );
-  --button-base-color-border: var(--color-intent-highlight-fill-base-border);
-  --button-base-color-text: var(--color-intent-highlight-fill-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-highlight-fill-hover-background
-  );
-  --button-hover-color-border: var(--color-intent-highlight-fill-hover-border);
-  --button-hover-color-text: var(--color-intent-highlight-fill-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-highlight-fill-active-background
-  );
-  --button-active-color-border: var(
-    --color-intent-highlight-fill-active-border
-  );
-  --button-active-color-text: var(--color-intent-highlight-fill-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-highlight-fill-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-highlight-fill-disabled-border
-  );
-  --button-disabled-color-text: var(
-    --color-intent-highlight-fill-disabled-text
-  );
-}
-
-.highlight-subtle {
-  --button-focus-box-shadow: var(--shadow-intent-highlight-subtle-focus);
-
-  --button-base-color-background: var(
-    --color-intent-highlight-subtle-base-background
-  );
-  --button-base-color-border: var(--color-intent-highlight-subtle-base-border);
-  --button-base-color-text: var(--color-intent-highlight-subtle-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-highlight-subtle-hover-background
-  );
-  --button-hover-color-border: var(
-    --color-intent-highlight-subtle-hover-border
-  );
-  --button-hover-color-text: var(--color-intent-highlight-subtle-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-highlight-subtle-active-background
-  );
-  --button-active-color-border: var(
-    --color-intent-highlight-subtle-active-border
-  );
-  --button-active-color-text: var(--color-intent-highlight-subtle-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-highlight-subtle-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-highlight-subtle-disabled-border
-  );
-  --button-disabled-color-text: var(
-    --color-intent-highlight-subtle-disabled-text
-  );
-}
-
-.highlight-plain {
-  --button-focus-box-shadow: var(--shadow-intent-highlight-plain-focus);
-
-  --button-base-color-background: transparent;
-  --button-base-color-border: transparent;
-  --button-base-color-text: var(--color-intent-highlight-plain-base-text);
-
-  --button-hover-color-background: transparent;
-  --button-hover-color-border: transparent;
-  --button-hover-color-text: var(--color-intent-highlight-plain-hover-text);
-
-  --button-active-color-background: transparent;
-  --button-active-color-border: transparent;
-  --button-active-color-text: var(--color-intent-highlight-plain-active-text);
-
-  --button-disabled-color-background: transparent;
-  --button-disabled-color-border: transparent;
-  --button-disabled-color-text: var(
-    --color-intent-highlight-plain-disabled-text
-  );
-}
-
-/*
- * DANGER
- */
-
-.danger-fill {
-  --button-focus-box-shadow: var(--shadow-intent-danger-fill-focus);
-
-  --button-base-color-background: var(
-    --color-intent-danger-fill-base-background
-  );
-  --button-base-color-border: var(--color-intent-danger-fill-base-border);
-  --button-base-color-text: var(--color-intent-danger-fill-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-danger-fill-hover-background
-  );
-  --button-hover-color-border: var(--color-intent-danger-fill-hover-border);
-  --button-hover-color-text: var(--color-intent-danger-fill-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-danger-fill-active-background
-  );
-  --button-active-color-border: var(--color-intent-danger-fill-active-border);
-  --button-active-color-text: var(--color-intent-danger-fill-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-danger-fill-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-danger-fill-disabled-border
-  );
-  --button-disabled-color-text: var(--color-intent-danger-fill-disabled-text);
-}
-
-.danger-subtle {
-  --button-focus-box-shadow: var(--shadow-intent-danger-subtle-focus);
-
-  --button-base-color-background: var(
-    --color-intent-danger-subtle-base-background
-  );
-  --button-base-color-border: var(--color-intent-danger-subtle-base-border);
-  --button-base-color-text: var(--color-intent-danger-subtle-base-text);
-
-  --button-hover-color-background: var(
-    --color-intent-danger-subtle-hover-background
-  );
-  --button-hover-color-border: var(--color-intent-danger-subtle-hover-border);
-  --button-hover-color-text: var(--color-intent-danger-subtle-hover-text);
-
-  --button-active-color-background: var(
-    --color-intent-danger-subtle-active-background
-  );
-  --button-active-color-border: var(--color-intent-danger-subtle-active-border);
-  --button-active-color-text: var(--color-intent-danger-subtle-active-text);
-
-  --button-disabled-color-background: var(
-    --color-intent-danger-subtle-disabled-background
-  );
-  --button-disabled-color-border: var(
-    --color-intent-danger-subtle-disabled-border
-  );
-  --button-disabled-color-text: var(--color-intent-danger-subtle-disabled-text);
-}
-
-.danger-plain {
-  --button-focus-box-shadow: var(--shadow-intent-danger-plain-focus);
-
-  --button-base-color-background: transparent;
-  --button-base-color-border: transparent;
-  --button-base-color-text: var(--color-intent-danger-plain-base-text);
-
-  --button-hover-color-background: transparent;
-  --button-hover-color-border: transparent;
-  --button-hover-color-text: var(--color-intent-danger-plain-hover-text);
-
-  --button-active-color-background: transparent;
-  --button-active-color-border: transparent;
-  --button-active-color-text: var(--color-intent-danger-plain-active-text);
-
-  --button-disabled-color-background: transparent;
-  --button-disabled-color-border: transparent;
-  --button-disabled-color-text: var(--color-intent-danger-plain-disabled-text);
+  @each $intent in action, alternative, highlight, danger {
+    &[data-intent="$intent"] {
+      @each $importance in fill, subtle, plain {
+        &[data-importance="$importance"] {
+          --button-focus-box-shadow: var(
+            --shadow-intent-$(intent)-$(importance)-focus,
+            transparent
+          );
+
+          --button-base-background-color: var(
+            --intent-$(intent)-$(importance)-base-background-color,
+            transparent
+          );
+          --button-base-border-color: var(
+            --intent-$(intent)-$(importance)-base-border-color,
+            transparent
+          );
+          --button-base-text-color: var(
+            --intent-$(intent)-$(importance)-base-text-color,
+            transparent
+          );
+
+          --button-hover-background-color: var(
+            --intent-$(intent)-$(importance)-hover-background-color,
+            transparent
+          );
+          --button-hover-border-color: var(
+            --intent-$(intent)-$(importance)-hover-border-color,
+            transparent
+          );
+          --button-hover-text-color: var(
+            --intent-$(intent)-$(importance)-hover-text-color,
+            transparent
+          );
+
+          --button-active-background-color: var(
+            --intent-$(intent)-$(importance)-active-background-color,
+            transparent
+          );
+          --button-active-border-color: var(
+            --intent-$(intent)-$(importance)-active-border-color,
+            transparent
+          );
+          --button-active-text-color: var(
+            --intent-$(intent)-$(importance)-active-text-color,
+            transparent
+          );
+
+          --button-disabled-background-color: var(
+            --intent-$(intent)-$(importance)-disabled-background-color,
+            transparent
+          );
+          --button-disabled-border-color: var(
+            --intent-$(intent)-$(importance)-disabled-border,
+            transparent
+          );
+          --button-disabled-text-color: var(
+            --intent-$(intent)-$(importance)-disabled-text-color,
+            transparent
+          );
+        }
+      }
+    }
+  }
 }

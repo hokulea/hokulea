@@ -1,0 +1,40 @@
+{
+  "intent": {
+    "action": {
+      "fill": {
+        "disabled": {
+          "text": {
+            "value": "#CECECE",
+            "comment": "",
+            "colorScheme": "dark",
+            "figmaName": "intent/action/fill/disabled.text.$dark",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#6E6E6E",
+            "comment": "",
+            "colorScheme": "dark",
+            "figmaName": "intent/action/fill/disabled.border.$dark",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "background": {
+            "value": "#6E6E6E",
+            "comment": "",
+            "colorScheme": "dark",
+            "figmaName": "intent/action/fill/disabled.background.$dark",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

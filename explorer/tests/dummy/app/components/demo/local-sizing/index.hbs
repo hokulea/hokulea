@@ -1,28 +1,26 @@
 <p>
-  This will let you set <code>font-size</code> to any of the global scale tokens.
-  You'll can experience, how the local tokens will adapt to the change.
+  This will let you set
+  <code>font-size</code>
+  to any of the global scale tokens. You'll can experience, how the local tokens
+  will adapt to the change.
 </p>
 
 <p>
   <code>font-size:</code>
 
   <span local-class="size-options">
-    {{#each (array '--s-4' '--s-3' '--s-2' '--s-1' '--s0' '--s1' '--s2' '--s3' '--s4') as |token|}}
-      <Button @importance={{if (not-eq this.token token) 'suble' }} {{on "click" (fn (set this "token" ) token)}}>
+    {{#each
+      (array "--s-4" "--s-3" "--s-2" "--s-1" "--s0" "--s1" "--s2" "--s3" "--s4")
+      as |token|
+    }}
+      <Button
+        @importance={{if (not-eq this.token token) "suble"}}
+        {{on "click" (fn (set this "token") token)}}
+      >
         {{token}}
       </Button>
     {{/each}}
   </span>
 </p>
 
-<div local-class="token-list" {{style fontSize=(concat 'var(' this.token ')' )}}>
-  <Token @name="--ls-4" @category="numeric" />
-  <Token @name="--ls-3" @category="numeric" />
-  <Token @name="--ls-2" @category="numeric" />
-  <Token @name="--ls-1" @category="numeric" />
-  <Token @name="--ls0" @category="numeric" />
-  <Token @name="--ls1" @category="numeric" />
-  <Token @name="--ls2" @category="numeric" />
-  <Token @name="--ls3" @category="numeric" />
-  <Token @name="--ls4" @category="numeric" />
-</div>
+<Reference::LocalSizing @refSize={{this.token}} />

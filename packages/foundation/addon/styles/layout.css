@@ -1,4 +1,4 @@
 body {
-  background-color: var(--color-layout-background);
-  color: var(--color-text-normal);
+  background-color: var(--layout-background-color);
+  color: var(--text-normal-color);
 }

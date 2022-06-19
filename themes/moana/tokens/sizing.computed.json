@@ -1,0 +1,164 @@
+{
+  "s-4": {
+    "value": "",
+    "comment": "Global size 4 steps smaller than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s-3": {
+    "value": "",
+    "comment": "Global size 3 steps smaller than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s-2": {
+    "value": "",
+    "comment": "Global size 2 steps smaller than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s-1": {
+    "value": "",
+    "comment": "Global size 1 step smaller than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s0": {
+    "value": "",
+    "comment": "Global size based on user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s1": {
+    "value": "",
+    "comment": "Global size 1 step bigger than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s2": {
+    "value": "",
+    "comment": "Global size 2 steps bigger than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s3": {
+    "value": "",
+    "comment": "Global size 3 steps bigger than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "s4": {
+    "value": "",
+    "comment": "Global size 4 steps bigger than user preference",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls-4": {
+    "value": "",
+    "comment": "Local size 4 steps smaller than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls-3": {
+    "value": "",
+    "comment": "Local size 3 steps smaller than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls-2": {
+    "value": "",
+    "comment": "Local size 2 steps smaller than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls-1": {
+    "value": "",
+    "comment": "Local size 1 step smaller than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls0": {
+    "value": "",
+    "comment": "Local size based reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls1": {
+    "value": "",
+    "comment": "Local size 1 step bigger than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls2": {
+    "value": "",
+    "comment": "Local size 2 steps bigger than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls3": {
+    "value": "",
+    "comment": "Local size 3 steps bigger than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  },
+  "ls4": {
+    "value": "",
+    "comment": "Local size 4 steps bigger than reference font-size",
+    "computed": true,
+    "type": "content",
+    "attributes": {
+      "category": "content"
+    }
+  }
+}

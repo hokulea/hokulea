@@ -1,0 +1,37 @@
+{
+  "intent": {
+    "alternative": {
+      "fill": {
+        "disabled": {
+          "background": {
+            "value": "#F2F2F2",
+            "comment": "",
+            "figmaName": "intent/alternative/fill/disabled.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#F2F2F2",
+            "comment": "",
+            "figmaName": "intent/alternative/fill/disabled.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#737373",
+            "comment": "",
+            "figmaName": "intent/alternative/fill/disabled.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -43,18 +43,18 @@ module('Rendering | Buttons | <Button>', hooks => {
     });
   });
 
-  module('reduced', () => {
+  module('subtle', () => {
     test('basic use-case', async function (assert) {
-      await render(hbs`<ReducedButton>click me!</ReducedButton>`);
+      await render(hbs`<SubtleButton>click me!</SubtleButton>`);
 
       assert.dom('[data-test-button-content]').hasText('click me!');
     });
 
     test('basic composition use-case', async function (assert) {
       await render(hbs`
-        <ReducedButton as |b|>
+        <SubtleButton as |b|>
           <b.Content data-test-button-content>click me!</b.Content>
-        </ReducedButton>
+        </SubtleButton>
       `);
 
       assert.dom('[data-test-button-content]').hasText('click me!');
@@ -62,20 +62,20 @@ module('Rendering | Buttons | <Button>', hooks => {
 
     test('full composition use-case', async function (assert) {
       await render(hbs`
-        <ReducedButton as |b|>
-          <b.Prefix data-test-reduced-button-prefix>pre</b.Prefix>
-          <b.Affix data-test-reduced-button-affix1>af1</b.Affix>
-          <b.Content data-test-reduced-button-content>click me!</b.Content>
-          <b.Affix data-test-reduced-button-affix2>af2</b.Affix>
-          <b.Suffix data-test-reduced-button-suffix>suf</b.Suffix>
-        </ReducedButton>
+        <SubtleButton as |b|>
+          <b.Prefix data-test-subtle-button-prefix>pre</b.Prefix>
+          <b.Affix data-test-subtle-button-affix1>af1</b.Affix>
+          <b.Content data-test-subtle-button-content>click me!</b.Content>
+          <b.Affix data-test-subtle-button-affix2>af2</b.Affix>
+          <b.Suffix data-test-subtle-button-suffix>suf</b.Suffix>
+        </SubtleButton>
       `);
 
-      assert.dom('[data-test-reduced-button-prefix]').hasText('pre');
-      assert.dom('[data-test-reduced-button-affix1]').hasText('af1');
-      assert.dom('[data-test-reduced-button-content]').hasText('click me!');
-      assert.dom('[data-test-reduced-button-affix2]').hasText('af2');
-      assert.dom('[data-test-reduced-button-suffix]').hasText('suf');
+      assert.dom('[data-test-subtle-button-prefix]').hasText('pre');
+      assert.dom('[data-test-subtle-button-affix1]').hasText('af1');
+      assert.dom('[data-test-subtle-button-content]').hasText('click me!');
+      assert.dom('[data-test-subtle-button-affix2]').hasText('af2');
+      assert.dom('[data-test-subtle-button-suffix]').hasText('suf');
     });
   });
 });

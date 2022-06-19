@@ -1,8 +1,8 @@
 .header {
-  composes: item from '../index';
+  composes: item from "../index";
 
   border-width: 0;
   border-block-end-width: var(--structure-border-width);
   border-style: var(--structure-border-style);
-  border-color: var(--color-structure-border);
+  border-color: var(--structure-border-color);
 }

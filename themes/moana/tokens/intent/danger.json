@@ -1,0 +1,259 @@
+{
+  "intent": {
+    "danger": {
+      "plain": {
+        "disabled": {
+          "text": {
+            "value": "{text.disabled.value}",
+            "comment": "",
+            "figmaName": "intent/danger/plain/disabled.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "active": {
+          "text": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/plain/active.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "hover": {
+          "text": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/plain/hover.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "base": {
+          "text": {
+            "value": "#CC2222",
+            "comment": "",
+            "figmaName": "intent/danger/plain/base.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      },
+      "subtle": {
+        "active": {
+          "background": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/active.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/active.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/active.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "hover": {
+          "background": {
+            "value": "#CC2222",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/hover.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#CC2222",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/hover.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/hover.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "base": {
+          "background": {
+            "value": "{layout.background.value}",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/base.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#E35858",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/base.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "{text.normal.value}",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/base.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "disabled": {
+          "background": {
+            "value": "{layout.background.value}",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/disabled.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#6E6E6E",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/disabled.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#737373",
+            "comment": "",
+            "figmaName": "intent/danger/subtle/disabled.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      },
+      "fill": {
+        "active": {
+          "background": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/fill/active.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#8B1717",
+            "comment": "",
+            "figmaName": "intent/danger/fill/active.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": "",
+            "figmaName": "intent/danger/fill/active.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "hover": {
+          "background": {
+            "value": "#CC2222",
+            "comment": "",
+            "figmaName": "intent/danger/fill/hover.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#CC2222",
+            "comment": "",
+            "figmaName": "intent/danger/fill/hover.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": "",
+            "figmaName": "intent/danger/fill/hover.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        "base": {
+          "background": {
+            "value": "#E35858",
+            "comment": "",
+            "figmaName": "intent/danger/fill/base.background",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "border": {
+            "value": "#E35858",
+            "comment": "",
+            "figmaName": "intent/danger/fill/base.border",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          },
+          "text": {
+            "value": "#F5F5F5",
+            "comment": "",
+            "figmaName": "intent/danger/fill/base.text",
+            "type": "color",
+            "attributes": {
+              "category": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

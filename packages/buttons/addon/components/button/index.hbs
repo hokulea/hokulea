@@ -1,4 +1,10 @@
-<ButtonBuilder local-class="button" data-test-button ...attributes as |builder|>
+<ButtonBuilder
+  local-class="button"
+  data-intent={{this.intent}}
+  data-importance={{this.importance}}
+  data-test-button
+  ...attributes as |builder|
+>
   {{#if (has-block-params)}}
     {{yield builder}}
   {{else}}

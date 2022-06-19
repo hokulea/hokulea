@@ -1,0 +1,64 @@
+{
+  "indicator": {
+    "error": {
+      "box": {
+        "background": {
+          "value": "#F9DBDB",
+          "comment": "",
+          "figmaName": "indicator/error/box.background",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#CC2222",
+          "comment": "",
+          "figmaName": "indicator/error/box.border",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#CC2222",
+          "comment": "",
+          "figmaName": "indicator/error/box.text",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      },
+      "fill": {
+        "background": {
+          "value": "#CC2222",
+          "comment": "",
+          "figmaName": "indicator/error/fill.background",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#CC2222",
+          "comment": "",
+          "figmaName": "indicator/error/fill.border",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#F5F5F5",
+          "comment": "",
+          "figmaName": "indicator/error/fill.text",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

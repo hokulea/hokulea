@@ -1,0 +1,28 @@
+{
+  "indicator": {
+    "info": {
+      "outline": {
+        "text": {
+          "value": "#55C6F7",
+          "comment": "",
+          "colorScheme": "dark",
+          "figmaName": "indicator/info/outline.text.$dark",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#55C6F7",
+          "comment": "",
+          "colorScheme": "dark",
+          "figmaName": "indicator/info/outline.border.$dark",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div local-class="box">
+  <div
+    local-class="demo"
+    {{style --value=(concat "var(" @name ")")}}
+    {{did-insert this.setup}}
+    {{did-update this.update @name}}
+  ></div>
+  <div local-class="content">
+    <TokenName @name={{@name}} />
+    <p local-class="description">{{this.description}}</p>
+  </div>
+  <span local-class="value">{{this.value}}</span>
+</div>

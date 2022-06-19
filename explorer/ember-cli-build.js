@@ -9,6 +9,10 @@ module.exports = function (defaults) {
       sourceMaps: 'inline'
     },
 
+    autoImport: {
+      watchDependencies: ['@hokulea/tokens']
+    },
+
     theemo: {
       defaultTheme: 'moana'
     }
@@ -17,4 +21,7 @@ module.exports = function (defaults) {
   app.import('node_modules/highlight.js/styles/agate.css');
 
   return app.toTree();
+
+  // const { Webpack } = require('@embroider/webpack');
+  // return require('@embroider/compat').compatBuild(app, Webpack);
 };

@@ -1,0 +1,19 @@
+<div local-class="control">
+  <span>Indicator</span>
+  <span>
+    {{#each this.indicators as |indicator|}}
+      <Button
+        @importance={{if (eq this.indicator indicator) "fill" "subtle"}}
+        {{on "click" (set this "indicator" indicator)}}
+      >
+        {{indicator}}
+      </Button>
+    {{/each}}
+  </span>
+</div>
+
+<TokenList>
+  {{#each this.colors as |color|}}
+    <Token::Color @name={{this.compileName "color" color}} />
+  {{/each}}
+</TokenList>

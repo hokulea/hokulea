@@ -1,0 +1,22 @@
+<p>
+  This demo allows you to control the
+  <code>font-size</code>
+  of
+  <code>:root</code>, so you can experience its effect.
+</p>
+
+<Button @importance="subtle" {{on "click" this.reset}}>Reset</Button>
+<Button
+  @importance={{if (eq this.version "clamp") "fill" "subtle"}}
+  {{on "click" this.useClamp}}
+>
+  clamp(16px, calc(0.5vw + 1em * 0.8), 18px)
+</Button>
+<Button
+  @importance={{if (eq this.version "static") "fill" "subtle"}}
+  {{on "click" this.useStatic}}
+>
+  12px
+</Button>
+
+<Reference::GlobalSizing {{did-insert this.link}} />

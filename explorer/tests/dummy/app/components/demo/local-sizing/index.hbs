@@ -1,0 +1,26 @@
+<p>
+  This will let you set
+  <code>font-size</code>
+  to any of the global scale tokens. You'll can experience, how the local tokens
+  will adapt to the change.
+</p>
+
+<p>
+  <code>font-size:</code>
+
+  <span local-class="size-options">
+    {{#each
+      (array "--s-4" "--s-3" "--s-2" "--s-1" "--s0" "--s1" "--s2" "--s3" "--s4")
+      as |token|
+    }}
+      <Button
+        @importance={{if (not-eq this.token token) "suble"}}
+        {{on "click" (fn (set this "token") token)}}
+      >
+        {{token}}
+      </Button>
+    {{/each}}
+  </span>
+</p>
+
+<Reference::LocalSizing @refSize={{this.token}} />

@@ -1,0 +1,34 @@
+{
+  "structure": {
+    "border-style": {
+      "value": "solid",
+      "type": "content",
+      "attributes": {
+        "category": "content"
+      }
+    },
+    "border-width": {
+      "value": "2px",
+      "type": "content",
+      "attributes": {
+        "category": "content"
+      }
+    },
+    "border-radius": {
+      "value": "4px",
+      "type": "content",
+      "attributes": {
+        "category": "content"
+      }
+    },
+    "border": {
+      "value": "#DFDFDF",
+      "comment": "",
+      "figmaName": "structure/border",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

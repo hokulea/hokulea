@@ -23,8 +23,8 @@
     "clean-magic": "yarn clean && yarn magic"
   },
   "devDependencies": {
-    "style-dictionary": "^2.10.2",
-    "theemo": "^0.0.9"
+    "style-dictionary": "^3.0.2",
+    "theemo": "^0.1.2"
   },
   "volta": {
     "extends": "../../package.json"

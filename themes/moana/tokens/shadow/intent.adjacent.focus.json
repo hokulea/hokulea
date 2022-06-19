@@ -1,0 +1,17 @@
+{
+  "shadow": {
+    "intent": {
+      "adjacent": {
+        "focus": {
+          "value": "0 0 6px #2CD3B5",
+          "comment": "",
+          "figmaName": "shadow.intent.adjacent/focus",
+          "type": "effect",
+          "attributes": {
+            "category": "effect"
+          }
+        }
+      }
+    }
+  }
+}

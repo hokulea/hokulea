@@ -1,23 +1,30 @@
 const path = require('path');
+
 const markdownCompilerConfig = require('./config/md-compiler');
 const hbsBabelLoader = require('./loader/hbs-loader');
 
 module.exports = {
-  stories: ['../../documentation/**/*.md', '../../api/*.md', '../../packages/**/stories.ts'],
+  core: {
+    builder: 'webpack5'
+  },
+  staticDirs: ['../dist'],
+  stories: [
+    '../../documentation/**/*.md',
+    '../../api/*.md',
+    '../../packages/**/stories.ts'
+  ],
   addons: [
+    '@storybook/addon-controls',
+    'storybook-addon-designs',
     {
       name: '@storybook/addon-storysource',
       options: {
         rule: {
           test: [/stor(y|ies)\.ts$/],
-          include: [
-            path.resolve(__dirname, '../../packages')
-          ]
+          include: [path.resolve(__dirname, '../../packages')]
         }
       }
     },
-    '@storybook/addon-controls',
-    'storybook-addon-designs',
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
     '@storybook/addon-toolbars',
@@ -46,28 +53,26 @@ module.exports = {
       ]
     });
 
-    config.module.rules.push({
-      test: /api\/.+\.md$/,
-      use: [
-        hbsBabelLoader,
-        {
-          loader: path.resolve(__dirname, 'loader/api-loader'),
-          options: {
-            root: 'API',
-            dir: path.resolve(__dirname, '../../api'),
-            compiler: markdownCompilerConfig
+    config.module.rules.push(
+      {
+        test: /api\/.+\.md$/,
+        use: [
+          hbsBabelLoader,
+          {
+            loader: path.resolve(__dirname, 'loader/api-loader'),
+            options: {
+              root: 'API',
+              dir: path.resolve(__dirname, '../../api'),
+              compiler: markdownCompilerConfig
+            }
           }
-        }
-      ]
-    });
-
-    // ref: https://github.com/storybookjs/storybook/issues/11853
-    config.module.rules.push({
-      test: /\.ts$/,
-      use: [
-        hbsBabelLoader
-      ],
-    });
+        ]
+      },
+      {
+        test: /\.ts$/,
+        use: [hbsBabelLoader]
+      }
+    );
 
     return config;
   }

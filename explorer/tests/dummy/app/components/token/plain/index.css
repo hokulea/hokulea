@@ -1,0 +1,32 @@
+.box {
+  border-color: var(--structure-border-color);
+  border-width: var(--structure-border-width);
+  border-style: var(--structure-border-style);
+  padding: var(--s-2);
+  background-color: var(--layout-low-contrast-color);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.demo {
+  background-color: var(--text-normal-color);
+  width: var(--value);
+  align-self: stretch;
+}
+
+.content {
+  composes: flow from "@hokulea/layouts/flow";
+  --flow-space: var(--s-5);
+}
+
+.value {
+  composes: value from "../props";
+}
+
+.description {
+  composes: description from "../props";
+  grid-column: 1 / span 2;
+}

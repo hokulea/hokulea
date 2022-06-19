@@ -1,0 +1,17 @@
+{
+  "shadow": {
+    "intent": {
+      "action": {
+        "focus": {
+          "value": "0 0 6px #0CAEF3",
+          "comment": "",
+          "figmaName": "shadow.intent.action/focus",
+          "type": "effect",
+          "attributes": {
+            "category": "effect"
+          }
+        }
+      }
+    }
+  }
+}

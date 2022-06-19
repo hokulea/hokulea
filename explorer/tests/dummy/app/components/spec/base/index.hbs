@@ -1,0 +1,21 @@
+<div local-class="spec">
+  <p>Spec</p>
+  {{#if (has-block "figma")}}
+    <span>
+      <Logo::Figma />
+      <code>{{yield to="figma"}}</code>
+    </span>
+  {{/if}}
+  {{#if (has-block "css")}}
+    <span>
+      <Logo::Css />
+      <code>--{{yield to="css"}}</code>
+    </span>
+  {{/if}}
+  {{#if (has-block "style-dictionary")}}
+    <span>
+      <Logo::StyleDictionary />
+      <code>{{yield to="style-dictionary"}}</code>
+    </span>
+  {{/if}}
+</div>

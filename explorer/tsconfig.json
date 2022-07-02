@@ -1,40 +1,26 @@
 {
   "extends": "../configs/tsconfig",
   "compilerOptions": {
+    // The combination of `baseUrl` with `paths` allows Ember's classic package
+    // layout, which is not resolveable with the Node resolution algorithm, to
+    // work with TypeScript.
     "baseUrl": ".",
     "paths": {
-      "dummy/tests/*": [
+      "@hokulea/explorer/tests/*": [
         "tests/*"
       ],
-      "dummy/*": [
-        "tests/dummy/app/*",
+      "@hokulea/explorer/*": [
         "app/*"
       ],
-      "hokulea": [
-        "addon"
-      ],
-      "hokulea/*": [
-        "addon/*"
-      ],
-      "hokulea/test-support": [
-        "addon-test-support"
-      ],
-      "hokulea/test-support/*": [
-        "addon-test-support/*"
-      ],
       "*": [
-        "types/*",
-        "../types/*"
+        "types/*"
       ]
     }
   },
   "include": [
     "app/**/*",
-    "addon/**/*",
     "tests/**/*",
     "types/**/*",
-    "test-support/**/*",
-    "addon-test-support/**/*",
     "..packages/*/addon/**/*"
   ]
 }

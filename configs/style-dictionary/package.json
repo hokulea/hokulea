@@ -1,0 +1,20 @@
+{
+  "name": "@gossi/config-style-dictionary",
+  "version": "0.0.8",
+  "private": true,
+  "scripts": {
+    "lint:js": "eslint ."
+  },
+  "devDependencies": {
+    "@gossi/config-eslint": "^0.1.4",
+    "@gossi/config-prettier": "^0.1.4",
+    "eslint": "^8.26.0",
+    "prettier": "2.7.1"
+  },
+  "engines": {
+    "node": ">= 16.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

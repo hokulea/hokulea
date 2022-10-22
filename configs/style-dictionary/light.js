@@ -1,4 +1,4 @@
-const base = require('./style-dictionary.base');
+const base = require('./base');
 
 const config = {
   ...base,

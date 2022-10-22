@@ -1,5 +1,4 @@
-const { DEV, FIGMA_FILE, FIGMA_SECRET, JSONBIN_FILE, JSONBIN_SECRET } =
-  process.env;
+const { DEV, FIGMA_FILE, FIGMA_SECRET, JSONBIN_FILE, JSONBIN_SECRET } = process.env;
 
 function pathForToken(token) {
   const name =
@@ -12,9 +11,7 @@ function pathForToken(token) {
 }
 
 function isAmbient(token, tokens) {
-  const hasColorSchemes = tokens.some(
-    t => t.colorScheme && t.name === token.name
-  );
+  const hasColorSchemes = tokens.some((t) => t.colorScheme && t.name === token.name);
   const isReference = !token.colorScheme && hasColorSchemes;
 
   return token.tier === 'purpose' && isReference;
@@ -26,7 +23,14 @@ function isRatioScalingToken(name) {
 
 function isComputedToken(name) {
   const [, props] = name.match(/\[token(.*)]/);
+
   return props && props.includes('computed');
+}
+
+function isDocumentationToken(name) {
+  const [, props] = name.match(/\[token(.*)]/);
+
+  return props && props.includes('doc');
 }
 
 function normalizeName(name) {
@@ -45,6 +49,47 @@ function normalizeName(name) {
   // hand it back ;)
   return n;
 }
+
+function getNameFromText(node) {
+  return node.name.replace(/\[token(.*)]/, '').trim();
+}
+
+const TOKENS = ['intent', 'indicator', 'surface', 'text', 'shape', 'tile', 'control'];
+
+// for the hacks - and for migration
+const COMPUTED_VALUES = {
+  'sizing/s-4': '2px',
+  'sizing/s-3': '4px',
+  'sizing/s-2': '8px',
+  'sizing/s-1': '12px',
+  'sizing/s0': '16px',
+  'sizing/s1': '20px',
+  'sizing/s2': '24px',
+  'sizing/s3': '32px',
+  'sizing/s4': '48px',
+  'sizing/ls-4': '2px',
+  'sizing/ls-3': '4px',
+  'sizing/ls-2': '8px',
+  'sizing/ls-1': '12px',
+  'sizing/ls0': '16px',
+  'sizing/ls1': '20px',
+  'sizing/ls2': '24px',
+  'sizing/ls3': '32px',
+  'sizing/ls4': '48px'
+};
+
+// values not synced as part of `theemo sync`
+const DOC_VALUES = {
+  'control/radius': 'var(--shape-radius-plain)',
+  'control/padding-inline': 'var(--ls-2)',
+  'control/padding-block': 'var(--ls-3)',
+  'control/border-width': 'var(--shape-stroke-width)',
+  'control/border-style': 'solid',
+  'tile/radius': 'var(--shape-radius-subtle)',
+  'tile/padding': 'var(--s0)',
+  'tile/border-width': 'var(--shape-stroke-width)',
+  'tile/border-style': 'solid'
+};
 
 module.exports = {
   sync: {
@@ -69,10 +114,11 @@ module.exports = {
 
       // parser
       isTokenByStyle(style) {
-        return (
-          (!DEV ? !style.name.startsWith('.') : true) &&
-          (style.name.includes('.') || style.name.includes('/'))
-        );
+        return TOKENS.some((set) => style.name.startsWith(set));
+        // return (
+        //   (!DEV ? !style.name.startsWith('.') : true) &&
+        //   (style.name.includes('.') || style.name.includes('/'))
+        // );
       },
 
       getNameFromStyle(style) {
@@ -81,11 +127,7 @@ module.exports = {
 
           // color palette names
           if (isRatioScalingToken(name)) {
-            name = name
-              .replace('..', '.')
-              .replace('.-', '-')
-              .replace('.+', '')
-              .replace('.0', '0');
+            name = name.replace('..', '.').replace('.-', '-').replace('.+', '').replace('.0', '0');
           }
 
           // name = `${name}`.replace('color.color.', 'color.');
@@ -100,13 +142,27 @@ module.exports = {
       },
 
       getNameFromText(node) {
-        return node.name.replace(/\[token(.*)]/, '').trim();
+        return getNameFromText(node);
       },
 
       getValueFromText(node) {
-        if (!isComputedToken(node.name)) {
-          return node.characters;
+        if (isComputedToken(node.name)) {
+          const name = getNameFromText(node);
+
+          if (COMPUTED_VALUES[name] !== undefined) {
+            return COMPUTED_VALUES[name];
+          }
         }
+
+        if (isDocumentationToken(node.name)) {
+          const name = getNameFromText(node);
+
+          if (DOC_VALUES[name] !== undefined) {
+            return DOC_VALUES[name];
+          }
+        }
+
+        return node.characters;
       },
 
       getPropertiesForToken(token) {
@@ -117,12 +173,16 @@ module.exports = {
         }
 
         // parse [token computed] here
-        if (
-          token.figmaName.includes('[token') &&
-          isComputedToken(token.figmaName)
-        ) {
+        if (token.figmaName.includes('[token') && isComputedToken(token.figmaName)) {
           return {
             computed: true,
+            description: token.node.characters
+          };
+        }
+
+        if (token.figmaName.includes('[token') && isDocumentationToken(token.figmaName)) {
+          return {
+            documentation: true,
             description: token.node.characters
           };
         }
@@ -136,12 +196,14 @@ module.exports = {
 
         // normalize names
         normalized.name = normalizeName(normalized.name);
+
         if (normalized.reference) {
           normalized.reference = normalizeName(normalized.reference);
         }
 
         // normalize contexts
         const tokenContextIndex = normalized.name.indexOf('.$');
+
         if (tokenContextIndex !== -1) {
           normalized.colorScheme = normalized.name.slice(tokenContextIndex + 2);
           normalized.name = normalized.name.slice(0, tokenContextIndex);
@@ -152,6 +214,7 @@ module.exports = {
 
       classifyToken(token, tokens) {
         const t = { ...token };
+
         t.tier = token.name.startsWith('.') ? 'basic' : 'purpose';
         t.ambient = isAmbient(t, tokens.normalized);
 
@@ -178,8 +241,8 @@ module.exports = {
         //   scale: 'scale'
         // };
 
-        const flatSets = ['layout', 'palette', 'structure', 'text', 'sizing'];
-        const deepSets = ['intent', 'indicator', 'emphasize'];
+        const flatSets = ['palette', 'surface', 'shape', 'tile', 'control', 'text', 'sizing'];
+        const deepSets = ['intent', 'indicator'];
 
         for (const set of flatSets) {
           if (token.name.startsWith(set)) {
@@ -191,6 +254,7 @@ module.exports = {
           if (token.name.startsWith(name)) {
             const sub = token.name.replace(`${name}.`, '');
             const file = sub.split('.').shift();
+
             fileName = `${name}/${file}`;
           }
         }
@@ -229,6 +293,10 @@ module.exports = {
           fileName += '.computed';
         }
 
+        if (token.documentation) {
+          fileName += '.doc';
+        }
+
         return fileName;
       },
 
@@ -239,7 +307,7 @@ module.exports = {
       valueForToken(token, tokens) {
         if (token.reference) {
           const reference = tokens.find(
-            t => t.name === token.reference && t.colorScheme === undefined
+            (t) => t.name === token.reference && t.colorScheme === undefined
           );
 
           if (reference && token.transforms === undefined) {
@@ -253,7 +321,8 @@ module.exports = {
       dataForToken(token) {
         return {
           figmaName: token.figmaName,
-          computed: token.computed
+          computed: token.computed,
+          documentation: token.documentation
         };
       }
     }

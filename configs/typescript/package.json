@@ -1,0 +1,22 @@
+{
+  "name": "@hokulea/config-typescript",
+  "private": true,
+  "scripts": {
+    "lint:js": "eslint --ext js,ts ."
+  },
+  "dependencies": {
+    "@types/css-modules": "*"
+  },
+  "devDependencies": {
+    "@gossi/config-eslint": "^0.1.4",
+    "@gossi/config-prettier": "^0.1.4",
+    "eslint": "^8.26.0",
+    "prettier": "2.7.1"
+  },
+  "engines": {
+    "node": ">= 16.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

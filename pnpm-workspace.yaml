@@ -1,0 +1,7 @@
+packages:
+  - "configs/*"
+  - "core/*"
+  - "explorer"
+  - "ember/*/package"
+  - "ember/*/test-app"
+  - "themes/*"

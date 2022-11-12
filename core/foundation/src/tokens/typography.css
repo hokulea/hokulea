@@ -1,0 +1,15 @@
+/*
+#######################################
+  TYPOGRAPHY
+#######################################
+*/
+
+:root {
+  color: var(--text-main-color);
+
+  /* Prose */
+
+  /* Todo: Put this into tokens, feed from themes */
+  font-family: "Cera Round Pro", sans-serif;
+  line-height: 1.25;
+}

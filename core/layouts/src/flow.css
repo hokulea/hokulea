@@ -1,0 +1,34 @@
+/*
+Flow layout primitive.
+
+It will provide a stack layout along the flow-axis of the document. The space
+between the elements can be controlled by a CSS custom property for the
+container or on individual elements if they differ from the global one.
+
+@example
+
+```css
+@value flow from '@hokulea/layouts/flow';
+
+.segment {
+  composes: flow;
+  --flow-space: var(--s0);
+}
+```
+*/
+.flow {
+  --flow-space: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+
+  & > * + *:not(:empty) {
+    margin-block-start: var(--flow-space);
+  }
+}

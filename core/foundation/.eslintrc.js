@@ -1,4 +1,5 @@
-module.exports = {
-  root: true,
-  extends: '@clark/node'
-};
+'use strict';
+
+const { configs } = require('./index');
+
+module.exports = configs.nodeCJS();

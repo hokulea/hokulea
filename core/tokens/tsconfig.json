@@ -1,0 +1,10 @@
+{
+  "extends": "@hokulea/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declarationDir": "dist/"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

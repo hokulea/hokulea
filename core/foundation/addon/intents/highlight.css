@@ -1,4 +1,0 @@
-.highlight-focus {
-  composes: focus from "../structure";
-  --focus-box-shadow: var(--shadow-intent-highlight-fill-focus);
-}

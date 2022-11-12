@@ -1,19 +1,58 @@
 {
   "name": "@hokulea/tokens",
-  "version": "0.0.0",
-  "description": "Design Tokens for hokulea",
-  "license": "MIT",
+  "version": "0.0.8",
+  "description": "Hokulea Design Tokens",
+  "author": "gossi",
+  "files": [
+    "dist"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*",
+        "dist/*"
+      ]
+    }
+  },
   "scripts": {
-    "clean": "rm -rf build/ tokens/",
-    "sync": "yarn theemo sync",
-    "build": "yarn style-dictionary build --config sd.js",
-    "magic": "npm-run-all sync build",
-    "clean-magic": "yarn clean && yarn magic"
+    "start": "swc src/ -d dist/ -w",
+    "build": "pnpm build:tokens && pnpm build:js && pnpm build:dts",
+    "build:js": "swc src/ -d dist/",
+    "build:dts": "tsc -d --emitDeclarationOnly",
+    "build:tokens": "pnpm tokens:build",
+    "tokens:build": "style-dictionary build --config sd.js && pnpm tokens:format && pnpm tokens:export",
+    "tokens:format": "pnpm lint:css:fix src/tokens.css && pnpm lint:js:fix src/tokens.ts",
+    "tokens:export": "mkdir -p dist && cp src/tokens.css dist/tokens.css",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:css": "stylelint '**/*.css' --allow-empty-input --cache",
+    "lint:css:fix": "stylelint '**/*.css' --allow-empty-input --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "style-dictionary": "^3.0.2",
-    "theemo": "^0.1.2"
+    "@hokulea/theme-moana": "^0.0.0",
+    "@hokulea/config-eslint": "*",
+    "@hokulea/config-prettier": "*",
+    "@hokulea/config-stylelint": "*",
+    "@hokulea/config-style-dictionary": "*",
+    "@hokulea/config-typescript": "*",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.242",
+    "@types/eslint": "^8.4.8",
+    "concurrently": "^7.3.0",
+    "eslint": "^8.26.0",
+    "prettier": "2.7.1",
+    "style-dictionary": "^3.7.1",
+    "stylelint": "^14.10.0",
+    "typescript": "^4.7.4"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
+  },
+  "engines": {
+    "node": "14.* || >= 16.*"
   },
   "volta": {
     "extends": "../../package.json"

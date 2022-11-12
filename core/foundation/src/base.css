@@ -1,0 +1,12 @@
+/* Base Styles for HTML */
+
+/*
+Deactivate as per https://clarkteam.atlassian.net/browse/DS-90
+:root {
+  background-color: var(--surface-base-color);
+}
+*/
+
+code {
+  font-family: "Fira Code", monospace;
+}

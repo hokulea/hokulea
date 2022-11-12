@@ -1,0 +1,6 @@
+:root {
+  --tile-radius: var(--shape-radius-subtle);
+  --tile-padding: var(--s0);
+  --tile-border-width: var(--shape-stroke-width);
+  --tile-border-style: solid;
+}

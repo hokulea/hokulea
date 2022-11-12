@@ -1,5 +1,5 @@
 {
-  "name": "@hokulea/blueprint",
+  "name": "@hokulea/ember-blueprint",
   "version": "0.0.0",
   "description": "The default blueprint for Embroider v2 addons.",
   "keywords": [
@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup --config",
+    "build": "rollup --config --bundleConfigAsCjs",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
@@ -20,7 +20,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "rollup --config --watch"
+    "start": "rollup --config --bundleConfigAsCjs --watch"
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.8.3"
@@ -38,21 +38,21 @@
     "@babel/plugin-transform-typescript": "^7.19.3",
     "@babel/preset-typescript": "^7.18.6",
     "@embroider/addon-dev": "^2.0.0",
-    "@gossi/config-eslint": "^0.1.4",
-    "@gossi/config-prettier": "^0.1.4",
-    "@gossi/config-stylelint": "^0.1.4",
-    "@gossi/config-targets": "^0.1.4",
-    "@gossi/config-template-lint": "^0.1.4",
+    "@hokulea/config-eslint": "*",
+    "@hokulea/config-prettier": "*",
+    "@hokulea/config-stylelint": "*",
+    "@hokulea/config-targets": "*",
+    "@hokulea/config-template-lint": "*",
     "@hokulea/config-typescript": "*",
     "@rollup/plugin-babel": "^6.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
+    "@types/css-modules": "^1.0.2",
     "concurrently": "^7.5.0",
     "ember-cli-htmlbars": "^6.1.1",
     "ember-template-lint": "^4.16.1",
     "eslint": "^8.26.0",
     "prettier": "^2.7.1",
     "rollup": "^3.2.3",
+    "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-ts": "^3.0.2",
     "typescript": "~4.8.4"
   },
@@ -69,6 +69,9 @@
     ".": "./dist/index.js",
     "./*": "./dist/*",
     "./addon-main.js": "./addon-main.js"
+  },
+  "engines": {
+    "node": ">= 16.*"
   },
   "volta": {
     "extends": "../../../package.json"

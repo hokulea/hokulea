@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('@gossi/config-targets');
+module.exports = require('@hokulea/config-targets');

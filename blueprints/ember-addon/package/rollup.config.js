@@ -1,6 +1,11 @@
 import ts from 'rollup-plugin-ts';
+import postcss from 'rollup-plugin-postcss';
+import { rollup as postcssRollup } from '@hokulea/config-postcss';
 import { Addon } from '@embroider/addon-dev/rollup';
-import { targets } from '@gossi/config-targets';
+import { targets } from '@hokulea/config-targets';
+
+const development = Boolean(process.env.ROLLUP_WATCH);
+const production = !development;
 
 const addon = new Addon({
   srcDir: 'src',
@@ -19,6 +24,8 @@ export default {
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
     addon.publicEntrypoints(['components/**/!(stories).ts']),
+
+    postcss(postcssRollup({ minify: production })),
 
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
@@ -49,7 +56,7 @@ export default {
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
-    addon.keepAssets(['**/*.css']),
+    // addon.keepAssets(['**/*.css']),
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean()

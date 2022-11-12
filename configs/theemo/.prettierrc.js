@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('@gossi/config-prettier');
+module.exports = require('@hokulea/config-prettier');

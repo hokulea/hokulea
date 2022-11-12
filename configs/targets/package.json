@@ -1,18 +1,21 @@
 {
-  "name": "@hokulea/config-style-dictionary",
-  "version": "0.0.0",
+  "name": "@hokulea/config-targets",
+  "version": "0.0.8",
   "private": true,
   "scripts": {
     "lint:js": "eslint ."
   },
+  "dependencies": {
+    "@gossi/config-targets": "^0.1.4"
+  },
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
-    "eslint": "^8.26.0",
+    "eslint": "^8.20.0",
     "prettier": "2.7.1"
   },
   "engines": {
-    "node": ">= 16.*"
+    "node": "14.* || >= 16.*"
   },
   "volta": {
     "extends": "../../package.json"

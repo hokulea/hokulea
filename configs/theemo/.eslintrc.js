@@ -1,5 +1,5 @@
 'use strict';
 
-const { configs } = require('@gossi/config-eslint');
+const { configs } = require('@hokulea/config-eslint');
 
 module.exports = configs.nodeCJS();

@@ -1,20 +1,22 @@
 {
-  "name": "@hokulea/config-style-dictionary",
-  "version": "0.0.0",
+  "name": "@hokulea/config-testem",
+  "description": "Hokulea testem config",
+  "version": "0.0.8",
   "private": true,
+  "main": "testem.js",
   "scripts": {
     "lint:js": "eslint ."
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
-    "eslint": "^8.26.0",
+    "eslint": "^8.20.0",
     "prettier": "2.7.1"
-  },
-  "engines": {
-    "node": ">= 16.*"
   },
   "volta": {
     "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">= 16.*"
   }
 }

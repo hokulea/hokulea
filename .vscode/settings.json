@@ -1,0 +1,28 @@
+{
+  "stylelint.configFile": "configs/stylelint/index.js",
+  "stylelint.configBasedir": "configs/stylelint/",
+  "stylelint.packageManager": "pnpm",
+  "stylelint.validate": [
+    "css",
+    "postcss"
+  ],
+  "stylelint.snippet": [
+    "css",
+    "postcss"
+  ],
+  "eslint.packageManager": "pnpm",
+  "eslint.format.enable": false,
+  "eslint.probe": [
+    "javascript",
+    "typescript",
+    "html",
+    "markdown"
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    // "editor.codeActionsOnSave": {
+    //   "source.fixAll.prettier": false,
+    //   "source.fixAll.stylelint": true
+    // }
+  }
+}

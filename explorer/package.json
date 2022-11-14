@@ -100,7 +100,7 @@
     "ember-qunit": "^5.1.4",
     "ember-resolver": "^8.0.2",
     "ember-set-helper": "^2.0.0",
-    "ember-source": "~3.28.9",
+    "ember-source": "~4.8.2",
     "ember-svg-jar": "^2.3.4",
     "ember-template-lint": "^3.2.0",
     "ember-theemo": "^0.0.5",

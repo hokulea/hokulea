@@ -1,0 +1,43 @@
+.affix {
+  /* composes: padding-primitive from '../../structure/padding'; */
+  box-sizing: border-box;
+}
+
+.bordered {
+  border-color: inherit;
+  border-style: inherit;
+  border-width: 0;
+}
+
+.prefix {
+  composes: bordered;
+  border-inline-end-width: inherit;
+  border-right-width: 0;
+}
+
+.suffix {
+  composes: bordered;
+  border-inline-start-width: inherit;
+}
+
+.row-builder {
+  align-items: center;
+
+  /* composes: border-shape from '../../structure/border'; */
+
+  display: inline-flex;
+
+  & > * {
+    display: inline-block;
+  }
+
+  & > .affix + .content,
+  & > .content + .affix,
+  & > .affix:not(.suffix, .prefix) + .affix:not(.suffix, .prefix) {
+    padding-inline-start: 0;
+  }
+}
+
+.content {
+  /* composes: padding-primitive from '../../structure/padding'; */
+}

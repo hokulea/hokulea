@@ -1,0 +1,3 @@
+.content {
+  composes: content from "../row-builder.css";
+}

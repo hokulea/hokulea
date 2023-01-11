@@ -1,5 +1,26 @@
+# compiled output
+build/
+dist/
+tmp/
+.next/
+.turbo/
+
+# dependencies
 node_modules/
-coverage
-/api
-.env
-.DS_Store
+
+# misc
+.env*
+.pnp*
+.sass-cache
+.eslintcache
+.stylelintcache
+connect.lock
+coverage/
+libpeerconnection.log
+npm-debug.log*
+testem.log
+yarn-error.log
+
+# ember-try
+.node_modules.ember-try/
+package.json.ember-try

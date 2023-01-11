@@ -1,0 +1,4 @@
+.action-focus {
+  composes: focus from "../structure";
+  --focus-box-shadow: var(--shadow-intent-action-fill-focus);
+}

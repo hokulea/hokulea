@@ -1,0 +1,100 @@
+{
+  "name": "@hokulea/layouts",
+  "version": "0.0.0",
+  "description": "Small description for @hokulea/layouts goes here",
+  "keywords": [
+    "ember-addon"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint --ext ts,js .",
+    "lint:types": "tsc --noEmit",
+    "lint": "yarn lint:js && yarn lint:types && yarn lint:hbs",
+    "start": "ember serve",
+    "coverage": "COVERAGE=true ember test",
+    "test": "ember test",
+    "test:all": "ember try:each",
+    "prepublishOnly": "ember ts:precompile",
+    "postpublish": "ember ts:clean"
+  },
+  "dependencies": {
+    "@glimmer/component": "^1.0.4",
+    "@hokulea/ember-css-modules-config": "^0.2.0",
+    "@hokulea/foundation": "^0.0.0",
+    "ember-cli-babel": "^7.26.6",
+    "ember-cli-htmlbars": "^5.7.1",
+    "ember-cli-typescript": "^4.2.1",
+    "ember-css-modules": "^2.0.1",
+    "ember-style-modifier": "^0.6.0"
+  },
+  "devDependencies": {
+    "@clark/eslint-config-ember": "^2.2.0",
+    "@clark/eslint-config-ember-typescript": "^2.2.0",
+    "@clark/eslint-config-node": "^2.2.0",
+    "@ember/edition-utils": "^1.2.0",
+    "@ember/optional-features": "^2.0.0",
+    "@ember/test-helpers": "^2.1.4",
+    "@hokulea/theme-moana": "^0.0.0",
+    "@types/ember": "^3.16.5",
+    "@types/ember-qunit": "^3.4.13",
+    "@types/ember-resolver": "^5.0.10",
+    "@types/ember__test-helpers": "^2.0.0",
+    "@types/qunit": "^2.9.6",
+    "@types/rsvp": "^4.0.3",
+    "broccoli-asset-rev": "^3.0.0",
+    "ember-auto-import": "^2.0.1",
+    "ember-cli": "~3.28.5",
+    "ember-cli-code-coverage": "^1.0.2",
+    "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-dependency-lint": "^2.0.0",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-sri": "^2.1.1",
+    "ember-cli-uglify": "^3.0.0",
+    "ember-disable-prototype-extensions": "^1.1.3",
+    "ember-export-application-global": "^2.0.1",
+    "ember-load-initializers": "^2.1.2",
+    "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-qunit": "^6.1.0",
+    "ember-resolver": "^8.0.2",
+    "ember-source": "~3.28.9",
+    "ember-source-channel-url": "^3.0.0",
+    "ember-template-lint": "^3.5.0",
+    "ember-try": "^1.4.0",
+    "eslint": "^8.20.0"",
+    "loader.js": "^4.7.0",
+    "qunit": "^2.14.0",
+    "qunit-dom": "^1.6.0",
+    "typescript": "^4.3.4"
+  },
+  "engines": {
+    "node": ">= 14.*"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  },
+  "typesVersions": {
+    "*": {
+      "test-support": [
+        "addon-test-support/index"
+      ],
+      "test-support/*": [
+        "addon-test-support/*",
+        "addon-test-support/*/index"
+      ],
+      "*": [
+        "addon/*",
+        "addon/*/index"
+      ]
+    }
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

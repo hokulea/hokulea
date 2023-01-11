@@ -1,0 +1,94 @@
+:root {
+  --line-height: var(--scale-ratio);
+  --font-family: var(--typo-prose-family);
+
+  --font-kerning: var(--typo-prose-kerning);
+  --font-tracking: var(--typo-prose-tracking);
+  --font-weight: var(--typo-prose-weight);
+  --font-style: var(--typo-prose-style);
+  --font-synthesis: var(--typo-prose-synthesis);
+  --font-stretch: var(--typo-prose-stretch);
+  --font-optical-sizing: var(--typo-prose-optical-sizing);
+
+  --font-variant-alternates: var(--typo-prose-variant-alternates);
+  --font-variant-caps: var(--typo-prose-variant-caps);
+  --font-variant-east-asian: var(--typo-prose-variant-east-asian);
+  --font-variant-ligatures: var(--typo-prose-variant-ligatures);
+  --font-variant-numeric: var(--typo-prose-variant-numeric);
+  --font-variant-position: var(--typo-prose-variant-position);
+
+  --font-variation-settings: var(--typo-prose-variation-settings);
+  --font-feature-settings: var(--typo-prose-feature-settings);
+}
+
+body {
+  /** Apply Font **/
+  line-height: var(--line-height);
+  font-family: var(--font-family, system-ui, sans-serif);
+
+  /* Regular Axis */
+  font-weight: var(--font-weight, normal);
+  font-style: var(--font-style, normal);
+  font-synthesis: var(--font-synthesis, weight style);
+  font-stretch: var(--font-stretch, normal);
+  font-optical-sizing: var(--font-optical-sizing, auto);
+
+  font-variant-alternates: var(--font-variant-alternates, normal);
+  font-variant-caps: var(--font-variant-caps, normal);
+  font-variant-east-asian: var(--font-variant-east-asian, normal);
+  font-variant-ligatures: var(--font-variant-ligatures, normal);
+  font-variant-numeric: var(--font-variant-numeric, normal);
+  font-variant-position: var(--font-variant-position, normal);
+
+  font-variation-settings: var(--font-variation-settings, normal);
+  font-feature-settings: var(--font-feature-settings, normal);
+
+  font-kerning: var(--font-variant-kerning, auto);
+  letter-spacing: var(--font-tracking, normal);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: calc(0.8 * var(--line-height));
+  hyphens: auto;
+
+  /* This is were I'm hoping to use --font-* insteadof font-* */
+  font-family: var(--typo-heading-family);
+
+  font-weight: var(--typo-heading-weight);
+  font-style: var(--typo-heading-style);
+  font-synthesis: var(--typo-heading-synthesis);
+  font-stretch: var(--typo-heading-stretch);
+  font-optical-sizing: var(--typo-heading-optical-sizing);
+
+  font-variant-alternates: var(--typo-heading-variant-alternates);
+  font-variant-caps: var(--typo-heading-variant-caps);
+  font-variant-east-asian: var(--typo-heading-variant-east-asian);
+  font-variant-ligatures: var(--typo-heading-variant-ligatures);
+  font-variant-numeric: var(--typo-heading-variant-numeric);
+  font-variant-position: var(--typo-heading-variant-position);
+
+  font-variation-settings: var(--typo-heading-variation-settings);
+  font-feature-settings: var(--typo-heading-feature-settings);
+
+  font-kerning: var(--typo-heading-kerning);
+  letter-spacing: var(--typo-heading-tracking);
+}
+
+h1 {
+  font-size: var(--s4);
+}
+
+h2 {
+  font-size: var(--s3);
+}
+
+h3 {
+  font-size: var(--s2);
+}
+
+h4 {
+  font-size: var(--s1);
+}

@@ -1,0 +1,73 @@
+<div class={{this.styles.extrinsic}} data-test-select ...attributes>
+  <div class={{this.styles.select}}>
+    {{#let (dropdown-builder) as |ddb|}}
+      <button
+        type="button"
+        class={{this.styles.trigger}}
+        data-test-select="trigger"
+        {{ddb.trigger installListener=this.installTriggerListener}}
+      >
+        <span>
+          {{#if @value}}
+            {{#if @multiple}}
+              {{#each @value as |value|}}
+                <span class={{this.styles.selectedValue}}>
+                  {{#if (has-block "selected")}}
+                    {{yield value to="selected"}}
+                  {{else if (has-block)}}
+                    {{yield value}}
+                  {{else}}
+                    {{value}}
+                  {{/if}}
+                </span>
+              {{/each}}
+            {{else}}
+              {{#if (has-block "selected")}}
+                {{yield @value to="selected"}}
+              {{else if (has-block)}}
+                {{yield @value}}
+              {{else}}
+                {{@value}}
+              {{/if}}
+            {{/if}}
+          {{else if (has-block "placeholder")}}
+            {{yield to="placeholder"}}
+          {{else if @placeholder}}
+            {{@placeholder}}
+          {{else}}
+            &nbsp;
+          {{/if}}
+        </span>
+        <svg
+          width="18"
+          height="11"
+          viewBox="0 0 18 11"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M1 1L9 9L17 1" stroke="#DFDFDF" stroke-width="2"></path>
+        </svg>
+      </button>
+      <List
+        tabindex="-1"
+        class={{this.styles.options}}
+        data-test-select="list"
+        @multiple={{@multiple}}
+        @options={{@options}}
+        @update={{@update}}
+        {{on "mouseup" (fn this.close ddb.close)}}
+        {{did-insert this.setupList}}
+        {{ddb.popup}}
+        as |option|
+      >
+        {{#if (has-block "option")}}
+          {{yield option to="option"}}
+        {{else if (has-block)}}
+          {{yield option}}
+        {{else}}
+          {{option}}
+        {{/if}}
+      </List>
+    {{/let}}
+  </div>
+</div>

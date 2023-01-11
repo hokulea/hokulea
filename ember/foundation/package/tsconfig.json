@@ -1,0 +1,13 @@
+{
+  "extends": "@hokulea/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src"
+  },
+  "include": [
+    "src/**/*",
+    "types/**/*"
+  ],
+  "exclude": [
+    "**/stories.ts"
+  ]
+}

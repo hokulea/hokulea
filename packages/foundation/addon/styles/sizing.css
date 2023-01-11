@@ -1,0 +1,39 @@
+:root {
+  --sizing-ratio: var(--scale-ratio);
+  --sizing-factor: var(--scale-factor);
+
+  --ratio: var(--sizing-ratio, 1.3);
+  --factor: var(--sizing-factor, 0.8);
+
+  /* Global Scaling */
+  --s-5: calc(var(--s0) * pow(var(--ratio), -5));
+  --s-4: calc(var(--s0) * pow(var(--ratio), -4));
+  --s-3: calc(var(--s0) * pow(var(--ratio), -3));
+  --s-2: calc(var(--s0) * pow(var(--ratio), -2));
+  --s-1: calc(var(--s0) * pow(var(--ratio), -1));
+
+  --s0: 1rem;
+  --s1: calc(var(--s0) * pow(var(--ratio), 1));
+  --s2: calc(var(--s0) * pow(var(--ratio), 2));
+  --s3: calc(var(--s0) * pow(var(--ratio), 3));
+  --s4: calc(var(--s0) * pow(var(--ratio), 4));
+  --s5: calc(var(--s0) * pow(var(--ratio), 5));
+
+  /* Locale scaling */
+  --ls-5: calc(var(--ls0) * pow(var(--ratio), -5));
+  --ls-4: calc(var(--ls0) * pow(var(--ratio), -4));
+  --ls-3: calc(var(--ls0) * pow(var(--ratio), -3));
+  --ls-2: calc(var(--ls0) * pow(var(--ratio), -2));
+  --ls-1: calc(var(--ls0) * pow(var(--ratio), -1));
+
+  --ls0: 1em;
+  --ls1: calc(var(--ls0) * pow(var(--ratio), 1));
+  --ls2: calc(var(--ls0) * pow(var(--ratio), 2));
+  --ls3: calc(var(--ls0) * pow(var(--ratio), 3));
+  --ls4: calc(var(--ls0) * pow(var(--ratio), 4));
+  --ls5: calc(var(--ls0) * pow(var(--ratio), 5));
+
+  --measure: var(--scale-measure, 65ch);
+
+  font-size: calc(0.5vw + 1em * var(--factor));
+}

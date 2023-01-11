@@ -1,0 +1,5 @@
+.border-shape {
+  border-style: var(--structure-border-style);
+  border-radius: var(--structure-border-radius);
+  border-width: var(--structure-border-width);
+}

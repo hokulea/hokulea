@@ -1,0 +1,30 @@
+.card {
+  /* composes: action-focus from "@hokulea/foundation/intents/action"; */
+  background-color: var(--layout-background-color);
+  border-color: var(--structure-border-color);
+  border-width: var(--structure-border-width);
+}
+
+.item {
+  padding: var(--s0);
+}
+
+.header {
+  composes: item from "../card.css";
+  border-block-end-width: var(--structure-border-width);
+  border-color: var(--structure-border-color);
+  border-style: var(--structure-border-style);
+  border-width: 0;
+}
+
+.main {
+  composes: item from "../card.css";
+}
+
+.footer {
+  composes: item from "../card.css";
+  border-block-start-width: var(--structure-border-width);
+  border-color: var(--structure-border-color);
+  border-style: var(--structure-border-style);
+  border-width: 0;
+}

@@ -8,7 +8,7 @@ container or on individual elements if they differ from the global one.
 @example
 
 ```css
-@value flow from '@hokulea/layouts/flow';
+@value flow from "@hokulea/layouts/flow.css";
 
 .segment {
   composes: flow;

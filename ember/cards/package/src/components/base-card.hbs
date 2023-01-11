@@ -1,0 +1,5 @@
+{{#let (if @element @element (element "div")) as |Tag|}}
+  <Tag class={{this.styles.baseCard}} ...attributes>
+    {{yield}}
+  </Tag>
+{{/let}}

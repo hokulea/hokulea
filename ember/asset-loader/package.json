@@ -1,0 +1,51 @@
+{
+  "name": "@hokulea/ember-asset-loader",
+  "version": "0.0.0",
+  "description": "The default blueprint for Embroider v2 addons.",
+  "keywords": [
+    "ember-addon",
+    "ember-css-modules-plugin"
+  ],
+  "author": "gossi",
+  "files": [
+    "addon-main.js",
+    "src"
+  ],
+  "scripts": {
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.4"
+  },
+  "devDependencies": {
+    "@hokulea/config-eslint": "*",
+    "@hokulea/config-prettier": "*",
+    "concurrently": "^7.6.0",
+    "ember-cli-htmlbars": "^6.1.1",
+    "eslint": "^8.30.0",
+    "prettier": "^2.8.1"
+  },
+  "engines": {
+    "node": ">= 16.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.js",
+    "app-js": {}
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./*": "./src/*",
+    "./addon-main.js": "./addon-main.js"
+  }
+}

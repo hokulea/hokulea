@@ -1,3 +1,4 @@
+const path = require('path');
 const { browsers } = require('@hokulea/config-targets');
 const FileSystemLoader = require('./loader');
 

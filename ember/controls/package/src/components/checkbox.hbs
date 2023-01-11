@@ -1,0 +1,20 @@
+<span class={{this.styles.boundary}}>
+  <input
+    type="checkbox"
+    checked={{@value}}
+    class={{this.styles.input}}
+    ...attributes
+    {{on "input" (pick "target.checked" @update)}}
+  />
+
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class={{this.styles.svg}}
+  >
+    <path d="M5 8.05299L6.99123 10L11 6" class={{this.styles.symbol}} stroke-width="2"></path>
+  </svg>
+</span>

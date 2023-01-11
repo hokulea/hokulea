@@ -1,0 +1,45 @@
+{
+  "extends": "../../configs/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "dummy/tests/*": [
+        "tests/*"
+      ],
+      "dummy/*": [
+        "tests/dummy/app/*",
+        "app/*"
+      ],
+      "@hokulea/foundation": [
+        "addon"
+      ],
+      "@hokulea/foundation/*": [
+        "addon/*"
+      ],
+      "@hokulea/foundation/test-support": [
+        "addon-test-support"
+      ],
+      "@hokulea/foundation/test-support/*": [
+        "addon-test-support/*"
+      ],
+      "*": [
+        "../../types/*",
+        "types/*"
+      ],
+      "@ember/destroyable": [
+        "../../node_modules/ember-destroyable-polyfill"
+      ]
+    }
+  },
+  "include": [
+    "app/**/*",
+    "addon/**/*",
+    "tests/**/*",
+    "types/**/*",
+    "test-support/**/*",
+    "addon-test-support/**/*"
+  ],
+  "exclude": [
+    "**/stories.ts"
+  ]
+}

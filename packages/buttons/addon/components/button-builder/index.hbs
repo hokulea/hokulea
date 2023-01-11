@@ -1,0 +1,13 @@
+<RowBuilder
+  @element={{element "button"}}
+  local-class="button-builder"
+  ...attributes as |builder|
+>
+  {{#if (has-block-params)}}
+    {{yield builder}}
+  {{else}}
+    <builder.Content>
+      {{yield}}
+    </builder.Content>
+  {{/if}}
+</RowBuilder>

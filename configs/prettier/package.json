@@ -6,7 +6,7 @@
     "lint:js": "eslint ."
   },
   "dependencies": {
-    "@gossi/config-prettier": "^0.1.4"
+    "@gossi/config-prettier": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "^8.20.0",

@@ -1,0 +1,85 @@
+.extrinsic {
+  display: inline-block;
+}
+
+.select {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 75px;
+  position: relative;
+  width: 100%;
+}
+
+.options {
+  /* Use trigger selector for higher specifity, rather than !important */
+  .trigger + & {
+    border-block-start: 0;
+    border-start-end-radius: 0;
+    border-start-start-radius: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    visibility: hidden;
+  }
+
+  [aria-expanded="true"] + & {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  [role="option"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.trigger {
+  background-color: var(--background-color);
+  border-color: var(--structure-border-color);
+
+  /* composes: action-focus from "@hokulea/foundation/intents/action";
+  composes: border-shape from "@hokulea/foundation/structure/border";
+  composes: padding-primitive from "@hokulea/foundation/structure/padding"; */
+
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+
+  & svg {
+    align-self: center;
+    margin-inline-start: auto;
+    margin-inline-start: var(--ls-1);
+  }
+
+  &[aria-expanded="true"] {
+    border-end-end-radius: 0;
+    border-end-start-radius: 0;
+
+    & + .options {
+      z-index: 50;
+    }
+  }
+
+  &:focus + .options {
+    [role="option"] {
+      &[aria-current="true"] {
+        outline: 2px dashed black;
+      }
+
+      &[aria-selected="true"] {
+        background-color: var(--intent-action-fill-base-background-color);
+        color: var(--intent-action-fill-base-text-color);
+      }
+
+      &:hover {
+        background-color: var(--intent-action-fill-hover-background-color);
+        color: var(--intent-action-fill-hover-text-color);
+      }
+    }
+  }
+}

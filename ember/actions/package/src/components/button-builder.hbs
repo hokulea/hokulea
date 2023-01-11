@@ -1,0 +1,14 @@
+<RowBuilder
+  class={{this.styles.buttonBuilder}}
+  @element={{element "button"}}
+  ...attributes
+  as |builder|
+>
+  {{#if (has-block-params)}}
+    {{yield builder}}
+  {{else}}
+    <builder.Content>
+      {{yield}}
+    </builder.Content>
+  {{/if}}
+</RowBuilder>

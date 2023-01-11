@@ -26,6 +26,10 @@
     "./*.js": {
       "import": "./dist/*.js",
       "require": "./dist/cjs/*.js"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/cjs/*.js"
     }
   },
   "engines": {

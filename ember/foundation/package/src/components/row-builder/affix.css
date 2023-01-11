@@ -1,0 +1,3 @@
+.affix {
+  composes: affix from "../row-builder.css";
+}

@@ -1,0 +1,85 @@
+.boundary {
+  position: relative;
+}
+
+.input {
+  appearance: none;
+  background: none;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0.0001;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  & + .svg {
+    background-color: var(--layout-background-color);
+    border-color: var(--intent-action-fill-base-border-color);
+    border-radius: var(--structure-border-radius);
+    border-style: var(--structure-border-style);
+    border-width: var(--structure-border-width);
+    height: 1em;
+    transform: translateY(0.155em);
+    width: 1em;
+  }
+
+  &:hover + .svg {
+    border-color: var(--intent-action-fill-hover-border-color);
+  }
+
+  &:active + .svg {
+    border-color: var(--intent-action-fill-active-border-color);
+  }
+
+  &:focus + .svg {
+    box-shadow: var(--shadow-intent-action-fill-focus);
+  }
+
+  &:disabled + .svg {
+    border-color: var(--intent-action-fill-disabled-border-color);
+  }
+}
+
+.input:checked {
+  & + .svg {
+    background-color: var(--intent-action-fill-base-background-color);
+    border-color: var(--intent-action-fill-base-border-color);
+
+    & > .symbol {
+      stroke: var(--intent-action-fill-base-text-color);
+    }
+  }
+
+  &:hover + .svg {
+    background-color: var(--intent-action-fill-hover-background-color);
+    border-color: var(--intent-action-fill-hover-border-color);
+
+    & > .symbol {
+      stroke: var(--intent-action-fill-hover-text-color);
+    }
+  }
+
+  &:focus + .svg {
+    box-shadow: var(--shadow-intent-action-fill-focus);
+  }
+
+  &:active + .svg {
+    background-color: var(--intent-action-fill-active-background-color);
+    border-color: var(--intent-action-fill-active-border-color);
+
+    & > .symbol {
+      stroke: var(--intent-action-fill-active-text-color);
+    }
+  }
+
+  &:disabled + .svg {
+    background-color: var(--layout-background-color);
+    border-color: var(--intent-action-fill-disabled-border-color);
+
+    & > .symbol {
+      stroke: var(--intent-action-fill-disabled-text-color);
+    }
+  }
+}

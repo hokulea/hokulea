@@ -1,0 +1,4 @@
+:root {
+  --control-padding-inline: var(--ls-3);
+  --control-padding-primitive: var(--ls-2);
+}

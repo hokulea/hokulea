@@ -1,4 +1,5 @@
-/* stylelint-disable at-rule-no-unknown, custom-property-pattern, function-no-unknown */
+/* stylelint-disable at-rule-no-unknown, custom-property-pattern,
+function-no-unknown, function-whitespace-after */
 
 .button {
   /* Public Values API */
@@ -30,71 +31,71 @@
 
   @each $intent in action, alternative, highlight, danger {
     &[data-intent="$intent"] {
-      @each $importance in fill, subtle, plain {
+      @each $importance in supreme, subtle, plain {
         &[data-importance="$importance"] {
           --button-focus-box-shadow:
             var(
-              --shadow-intent-$(intent) -$(importance) -focus,
+              --shadow-intent-$(intent)-$(importance)-focus,
               transparent
             );
           --button-base-background-color:
             var(
-              --intent-$(intent) -$(importance) -base-background-color,
+              --intent-$(intent)-$(importance)-base-background-color,
               transparent
             );
           --button-base-border-color:
             var(
-              --intent-$(intent) -$(importance) -base-border-color,
+              --intent-$(intent)-$(importance)-base-border-color,
               transparent
             );
           --button-base-text-color:
             var(
-              --intent-$(intent) -$(importance) -base-text-color,
+              --intent-$(intent)-$(importance)-base-text-color,
               transparent
             );
           --button-hover-background-color:
             var(
-              --intent-$(intent) -$(importance) -hover-background-color,
+              --intent-$(intent)-$(importance)-hover-background-color,
               transparent
             );
           --button-hover-border-color:
             var(
-              --intent-$(intent) -$(importance) -hover-border-color,
+              --intent-$(intent)-$(importance)-hover-border-color,
               transparent
             );
           --button-hover-text-color:
             var(
-              --intent-$(intent) -$(importance) -hover-text-color,
+              --intent-$(intent)-$(importance)-hover-text-color,
               transparent
             );
           --button-active-background-color:
             var(
-              --intent-$(intent) -$(importance) -active-background-color,
+              --intent-$(intent)-$(importance)-active-background-color,
               transparent
             );
           --button-active-border-color:
             var(
-              --intent-$(intent) -$(importance) -active-border-color,
+              --intent-$(intent)-$(importance)-active-border-color,
               transparent
             );
           --button-active-text-color:
             var(
-              --intent-$(intent) -$(importance) -active-text-color,
+              --intent-$(intent)-$(importance)-active-text-color,
               transparent
             );
           --button-disabled-background-color:
             var(
-              --intent-$(intent) -$(importance) -disabled-background-color,
+              --intent-$(intent)-$(importance)-disabled-background-color,
               transparent
             );
           --button-disabled-border-color:
             var(
-              --intent-$(intent) -$(importance) -disabled-border,
+              --intent-$(intent)-$(importance)-disabled-border,
               transparent
             );
           --button-disabled-text-color:
             var(
-              --intent-$(intent) -$(importance) -disabled-text-color,
+              --intent-$(intent)-$(importance)-disabled-text-color,
               transparent
             );
         }

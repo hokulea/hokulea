@@ -1,20 +1,18 @@
 'use strict';
 
 const { browsers } = require('@hokulea/config-targets');
-const config = require('@gossi/config-stylelint');
+const configure = require('@gossi/config-stylelint/configure');
+
+const config = configure({ browsers });
 
 module.exports = {
   ...config,
   rules: {
     ...config.rules,
-    'plugin/no-unsupported-browser-features': [
+    'function-no-unknown': [
       true,
       {
-        browsers,
-        ignore: [
-          // grid-template-columns falsely identified as multicolumn
-          'multicolumn'
-        ]
+        ignoreFunctions: ['$']
       }
     ]
   }

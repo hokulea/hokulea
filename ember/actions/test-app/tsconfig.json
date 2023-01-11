@@ -1,0 +1,19 @@
+{
+  "extends": "@hokulea/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@hokulea/ember-actions-test-app/tests/*": [
+        "tests/*"
+      ],
+      "@hokulea/ember-actions-test-app/*": [
+        "app/*"
+      ]
+    }
+  },
+  "include": [
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ]
+}

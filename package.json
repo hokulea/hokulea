@@ -1,46 +1,16 @@
 {
-  "name": "root",
+  "name": "hokulea",
   "private": true,
   "scripts": {
     "api:prepare": "yarn lerna-run api:prepare",
     "api:doc": "yarn api-documenter markdown -i temp/ -o api/",
     "api:cleanup": "mv temp/* api/ && rm -rf temp",
-    "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
-    "bootstrap": "yarn install --frozen-lockfile --non-interactive && yarn lerna bootstrap",
-    "clean": "yarn lerna clean -y && rm -rf node_modules",
-    "reinstall": "yarn clean && yarn bootstrap",
-    "fresh-install": "rm yarn.lock; yarn clean; yarn install && yarn lerna bootstrap",
-    "lerna-run": "FORCE_COLOR=1 yarn lerna --concurrency 1 run --stream",
-    "test": "yarn lerna-run test",
-    "coverage": "yarn lerna-run coverage && node ./scripts/merge-coverage.js",
-    "lint:hbs": "yarn lerna-run lint:hbs",
-    "lint:js": "yarn lerna-run lint:js",
-    "lint:types": "yarn lerna-run lint:types",
-    "lint": "yarn lerna-run lint:js && yarn lerna-run lint:types && yarn lerna-run lint:hbs",
-    "storybook:build": "yarn api && yarn lerna-run --scope @hokulea/explorer build-storybook"
-  },
-  "workspaces": [
-    "explorer",
-    "packages/*",
-    "themes/*"
-  ],
-  "devDependencies": {
-    "@microsoft/api-documenter": "^7.9.25",
-    "els-a11y-addon": "^1.0.4",
-    "els-addon-typed-templates": "^3.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "lerna": "^3.22.1"
-  },
-  "resolutions": {
-    "postcss": "^8.0.0",
-    "ember-get-config": "^0.3.0"
+    "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup"
   },
   "volta": {
-    "node": "16.15.1",
-    "yarn": "1.22.5"
+    "node": "18.12.1"
   },
   "engines": {
-    "node": ">= 14.*"
-  },
-  "dependencies": {}
+    "node": ">= 16.*"
+  }
 }

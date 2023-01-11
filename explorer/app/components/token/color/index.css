@@ -19,7 +19,7 @@
 }
 
 .content {
-  composes: flow from "@hokulea/layouts/flow";
+  composes: flow from "@hokulea/layouts/flow.css";
   --flow-space: var(--s-5);
 }
 

@@ -1,7 +1,7 @@
 .name {
   font-size: var(--s0);
   font-weight: 500;
-  composes: flow from "@hokulea/layouts/flow";
+  composes: flow from "@hokulea/layouts/flow.css";
   --flow-space: 0;
 
   span {

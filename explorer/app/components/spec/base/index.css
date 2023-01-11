@@ -5,7 +5,7 @@
   border-radius: var(--structure-border-radius);
   background-color: var(--layout-low-contrast-color);
 
-  composes: flow from "@hokulea/layouts/flow";
+  composes: flow from "@hokulea/layouts/flow.css";
   --flow-space: var(--s-5);
 
   p {

@@ -1,6 +1,6 @@
 .token-list {
   margin-block-start: var(--s0);
-  composes: flow from "@hokulea/layouts/flow";
+  composes: flow from "@hokulea/layouts/flow.css";
   --flow-space: var(--s0);
 }
 

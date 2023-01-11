@@ -11,7 +11,7 @@
     "postcss"
   ],
   "eslint.packageManager": "pnpm",
-  "eslint.format.enable": false,
+  "eslint.format.enable": true,
   "eslint.probe": [
     "javascript",
     "typescript",
@@ -24,5 +24,6 @@
     //   "source.fixAll.prettier": false,
     //   "source.fixAll.stylelint": true
     // }
-  }
+  },
+  "eslint.useESLintClass": true
 }

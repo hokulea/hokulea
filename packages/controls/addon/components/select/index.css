@@ -1,0 +1,87 @@
+.extrinsic {
+  display: inline-block;
+}
+
+.select {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 75px;
+}
+
+.trigger {
+  composes: action-focus from "@hokulea/foundation/intents/action";
+  composes: border-shape from "@hokulea/foundation/structure/border";
+  composes: padding-primitive from "@hokulea/foundation/structure/padding";
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-color: var(--structure-border-color);
+
+  display: flex;
+  justify-content: space-between;
+
+  & svg {
+    margin-inline-start: auto;
+    align-self: center;
+    margin-inline-start: var(--ls-1);
+  }
+
+  &[aria-expanded="true"] {
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+
+    & + .options {
+      z-index: 50;
+    }
+  }
+
+  &:focus + .options {
+    [role="option"] {
+      &[aria-current="true"] {
+        outline: 2px dashed black;
+      }
+
+      &[aria-selected="true"] {
+        color: var(--intent-action-fill-base-text-color);
+        background-color: var(--intent-action-fill-base-background-color);
+      }
+
+      &:hover {
+        color: var(--intent-action-fill-hover-text-color);
+        background-color: var(--intent-action-fill-hover-background-color);
+      }
+    }
+  }
+}
+
+.options {
+  /* Use trigger selector for higher specifity, rather than !important */
+  .trigger + & {
+    position: absolute;
+    border-block-start: 0;
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  [aria-expanded="true"] + & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  [role="option"] {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

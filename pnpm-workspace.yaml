@@ -1,7 +1,11 @@
 packages:
-  - "configs/*"
-  - "core/*"
-  - "explorer"
-  - "ember/*/package"
-  - "ember/*/test-app"
-  - "themes/*"
+  - 'configs/*'
+  - 'core/*'
+  - 'incubator/ember-controls-modifier/package'
+  - 'incubator/ember-controls-modifier/test-app'
+  - 'incubator/*'
+  #- 'explorer'
+  - 'ember/*/package'
+  - 'ember/*/test-app'
+  - 'ember/asset-loader'
+  - 'themes/*'

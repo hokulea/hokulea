@@ -20,7 +20,11 @@
   border-inline-start-width: inherit;
 }
 
-.row-builder {
+.content {
+  /* composes: padding-primitive from '../../structure/padding'; */
+}
+
+.primitive-builder {
   align-items: center;
 
   /* composes: border-shape from '../../structure/border'; */
@@ -36,8 +40,4 @@
   & > .affix:not(.suffix, .prefix) + .affix:not(.suffix, .prefix) {
     padding-inline-start: 0;
   }
-}
-
-.content {
-  /* composes: padding-primitive from '../../structure/padding'; */
 }

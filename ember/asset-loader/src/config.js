@@ -1,6 +1,7 @@
 const AssetMap = {
   '@hokulea/foundation': ['@hokulea/foundation/dist/styles.css'],
   '@hokulea/layouts': ['@hokulea/layouts/dist/styles.css'],
+  '@hokulea/ember-foundation': ['@hokulea/ember-foundation/dist/styles.css'],
   '@hokulea/ember-actions': ['@hokulea/ember-actions/dist/styles.css']
 };
 

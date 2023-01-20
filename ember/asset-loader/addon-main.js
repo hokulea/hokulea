@@ -4,6 +4,18 @@ const { addonV1Shim } = require('@embroider/addon-shim');
 const { HokuleaCssModulesPlugin } = require('./src/css-modules-plugin.js');
 const { importAssets } = require('./src/index.js');
 
+function isEngine(parent) {
+  return parent._engineConfig !== undefined;
+}
+
+function isApp(parent) {
+  return parent.env !== undefined && !isEngine(parent);
+}
+
+function isAddon(parent) {
+  return !isApp(parent) && !isEngine(parent);
+}
+
 module.exports = {
   ...addonV1Shim(__dirname),
 
@@ -20,6 +32,22 @@ module.exports = {
   included(parent) {
     this._super.included.apply(this, arguments);
 
-    importAssets(parent);
+    // the assets are included only in the app of a related package
+    //
+    // that refers to:
+    // - the "dummy" app in addons v1 and engines
+    // - test-app in addons v2
+    // - an app
+    //
+    // not only is this performance related to not include the same asset
+    // multiple times. When included multiple times, the assets can overwrite
+    // their specificity, when included from multiple locations.
+    // This troubles the browser finding the right CSS class, as there may be
+    // multiple of them present, overwriting their own values, causing wrong
+    // renderings.
+
+    if (isApp(parent)) {
+      importAssets(parent);
+    }
   }
 };

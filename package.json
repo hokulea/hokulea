@@ -5,12 +5,23 @@
     "api:prepare": "yarn lerna-run api:prepare",
     "api:doc": "yarn api-documenter markdown -i temp/ -o api/",
     "api:cleanup": "mv temp/* api/ && rm -rf temp",
-    "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup"
+    "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
+    "clean": "concurrently 'npm:clean:*'",
+    "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
+    "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   },
   "volta": {
     "node": "18.12.1"
   },
   "engines": {
     "node": ">= 16.*"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@embroider/addon-shim@1.8.4": "patches/@embroider__addon-shim@1.8.4.patch"
+    }
   }
 }

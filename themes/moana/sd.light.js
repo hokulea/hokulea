@@ -1,1 +1,1 @@
-module.exports = require('../../configs/style-dictionary.light');
+module.exports = require('@hokulea/config-style-dictionary/light');

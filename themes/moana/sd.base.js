@@ -1,1 +1,1 @@
-module.exports = require('../../configs/style-dictionary.base');
+module.exports = require('@hokulea/config-style-dictionary/base');

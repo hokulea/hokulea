@@ -16,17 +16,20 @@
   },
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
-    "sync": "yarn theemo sync",
-    "build": "npm-run-all build:*",
-    "build:base": "yarn style-dictionary build --config sd.base.js",
-    "build:light": "yarn style-dictionary build --config sd.light.js",
-    "build:dark": "yarn style-dictionary build --config sd.dark.js",
-    "generate": "yarn theemo generate",
+    "sync": "pnpm theemo sync",
+    "build": "pnpm build:sd && pnpm build:theme",
+    "build:sd": "concurrently 'npm:build:sd:*'",
+    "build:sd:base": "pnpm style-dictionary build --config sd.base.js",
+    "build:sd:light": "pnpm style-dictionary build --config sd.light.js",
+    "build:sd:dark": "pnpm style-dictionary build --config sd.dark.js",
+    "build:theme": "pnpm theemo generate",
     "magic": "npm-run-all sync build generate",
-    "clean-magic": "yarn clean && yarn magic"
+    "clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
+    "@hokulea/config-style-dictionary": "*",
+    "@hokulea/config-theemo": "*",
+    "concurrently": "^7.6.0",
     "style-dictionary": "^3.0.2",
     "theemo": "^0.1.2"
   },

@@ -35,8 +35,6 @@ class HokuleaCssModulesPlugin extends Plugin {
   }
 
   config() {
-    console.log('virtualModules', this.virtualModules);
-
     return { virtualModules: this.virtualModules };
   }
 }

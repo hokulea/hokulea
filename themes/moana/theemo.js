@@ -1,1 +1,1 @@
-module.exports = require('../../configs/theemo');
+module.exports = require('@hokulea/config-theemo');

@@ -2,13 +2,13 @@ import Component from '@glimmer/component';
 
 import styles from './content.css';
 
-interface RowBuilderContentSignature {
+interface PrimitiveBuilderContentSignature {
   Element: HTMLSpanElement;
   Blocks: {
     default: [];
   };
 }
 
-export default class RowBuilderContent extends Component<RowBuilderContentSignature> {
+export default class PrimitiveBuilderContent extends Component<PrimitiveBuilderContentSignature> {
   styles = styles;
 }

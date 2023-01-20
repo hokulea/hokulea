@@ -10,13 +10,6 @@
     "addon-main.js",
     "dist"
   ],
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
   "scripts": {
     "build": "rollup --config --bundleConfigAsCjs",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
@@ -86,15 +79,19 @@
     "type": "addon",
     "main": "addon-main.js",
     "app-js": {
-      "./components/row-builder.js": "./dist/_app_/components/row-builder.js",
-      "./components/row-builder/affix.js": "./dist/_app_/components/row-builder/affix.js",
-      "./components/row-builder/content.js": "./dist/_app_/components/row-builder/content.js",
+      "./components/primitive-builder.js": "./dist/_app_/components/primitive-builder.js",
       "./helpers/dropdown-builder.js": "./dist/_app_/helpers/dropdown-builder.js"
     }
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*",
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    },
     "./addon-main.js": "./addon-main.js"
   },
   "volta": {

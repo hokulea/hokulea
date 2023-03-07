@@ -1,0 +1,33 @@
+{
+  "name": "@hokulea/rollup-plugin-postcss",
+  "private": true,
+  "description": "postcss rollup plugin from hokulea",
+  "keywords": [
+    "rollup-plugin"
+  ],
+  "scripts": {
+    "lint:js": "eslint ."
+  },
+  "dependencies": {
+    "@hokulea/config-targets": "*",
+    "concat-with-sourcemaps": "^1.1.0",
+    "cssnano": "^5.1.15",
+    "postcss-import": "^15.1.0",
+    "postcss-lightningcss": "^0.6.0",
+    "postcss-load-config": "^4.0.1",
+    "postcss-modules": "^6.0.0",
+    "postcss": "^8.4.21"
+  },
+  "devDependencies": {
+    "@hokulea/config-eslint": "*",
+    "@hokulea/config-prettier": "*",
+    "eslint": "^8.35.0",
+    "prettier": "^2.8.4"
+  },
+  "engines": {
+    "node": "14.* || >= 16.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

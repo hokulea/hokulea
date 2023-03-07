@@ -1,6 +1,7 @@
 packages:
   - 'configs/*'
   - 'core/*'
+  - 'plugins/*'
   - 'incubator/ember-controls-modifier/package'
   - 'incubator/ember-controls-modifier/test-app'
   - 'incubator/*'

@@ -1,16 +1,13 @@
 const AssetMap = {
-  '@hokulea/foundation': ['@hokulea/foundation/dist/styles.css'],
-  '@hokulea/layouts': ['@hokulea/layouts/dist/styles.css'],
-  '@hokulea/ember-foundation': ['@hokulea/ember-foundation/dist/styles.css'],
-  '@hokulea/ember-actions': ['@hokulea/ember-actions/dist/styles.css']
+  '@hokulea/foundation': ['@hokulea/foundation/dist/index.css'],
+  '@hokulea/layouts': ['@hokulea/layouts/dist/index.css'],
+  '@hokulea/ember-foundation': ['@hokulea/ember-foundation/dist/index.css'],
+  '@hokulea/ember-actions': ['@hokulea/ember-actions/dist/index.css']
 };
 
 const ModulesMap = {
   '@hokulea/actions': {
     '@hokulea/actions/button.css': '@hokulea/actions/button.js'
-  },
-  '@hokulea/foundation': {
-    '@hokulea/foundation/tiles.css': '@hokulea/foundation/tiles.js'
   },
   '@hokulea/layouts': {
     '@hokulea/layouts/flow.css': '@hokulea/layouts/flow.js'

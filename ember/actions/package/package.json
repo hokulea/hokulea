@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "1.8.4",
+    "@hokulea/actions": "*",
     "@hokulea/ember-foundation": "*",
     "@hokulea/tokens": "*",
     "ember-element-helper": "^0.6.1"
@@ -43,6 +44,10 @@
     "@babel/runtime": "^7.20.7",
     "@embroider/addon-dev": "^3.0.0",
     "@glimmer/component": "^1.1.2",
+    "@glint/core": "^1.0.0-beta.3",
+    "@glint/environment-ember-loose": "^1.0.0-beta.3",
+    "@glint/environment-ember-template-imports": "^1.0.0-beta.3",
+    "@glint/template": "^1.0.0-beta.3",
     "@hokulea/actions": "*",
     "@hokulea/layouts": "*",
     "@hokulea/config-eslint": "*",
@@ -55,13 +60,13 @@
     "@hokulea/ember-asset-loader": "*",
     "@hokulea/ember-template-imports": "*",
     "@hokulea/rollup-plugin-postcss": "*",
-    "@rollup/plugin-babel": "^6.0.3",
     "@storybook/addon-actions": "^6.5.15",
     "@types/css-modules": "^1.0.2",
     "babel-plugin-ember-template-compilation": "^2.0.0",
     "concurrently": "^7.6.0",
     "ember-cli-htmlbars": "^6.2.0",
     "ember-source": "^4.11.0",
+    "ember-template-imports": "^3.4.1",
     "ember-template-lint": "^5.6.0",
     "eslint": "^8.35.0",
     "lightningcss": "^1.19.0",
@@ -90,6 +95,8 @@
     "type": "addon",
     "main": "addon-main.js",
     "app-js": {
+      "./components/button-builder.js": "./dist/_app_/components/button-builder.js",
+      "./components/button.js": "./dist/_app_/components/button.js",
       "./components/button2.js": "./dist/_app_/components/button2.js"
     }
   },

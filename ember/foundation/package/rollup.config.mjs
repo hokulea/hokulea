@@ -1,8 +1,8 @@
 import ts from 'rollup-plugin-ts';
-import postcss from 'rollup-plugin-postcss';
-import { rollup as postcssRollup } from '@hokulea/config-postcss';
+import hokuleaRollupPostcss from '@hokulea/rollup-plugin-postcss';
 import { Addon } from '@embroider/addon-dev/rollup';
-import { targets } from '@hokulea/config-targets';
+import { browsers as targets } from '@hokulea/config-targets';
+import emberTemplateImports from '@hokulea/ember-template-imports/rollup-plugin';
 
 const development = Boolean(process.env.ROLLUP_WATCH);
 const production = !development;
@@ -20,14 +20,25 @@ export default {
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
-    addon.publicEntrypoints(['index.ts', 'components/primitive-builder.ts', 'helpers/dropdown-builder.ts']),
+    addon.publicEntrypoints([
+      'index.ts',
+      'template-registry.js',
+      'components/*.js',
+      'helpers/*.js'
+    ]),
 
-    postcss(postcssRollup({ minify: production })),
+    hokuleaRollupPostcss({
+      targets,
+      sourceMap: development,
+      minify: production
+    }),
 
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
     addon.appReexports(['components/primitive-builder.js', 'helpers/dropdown-builder.js']),
+
+    emberTemplateImports(),
 
     // This babel config should *not* apply presets or compile away ES modules.
     // It exists only to provide development niceties for you, like automatic
@@ -40,7 +51,8 @@ export default {
       // but we need the ember plugins converted first
       // (template compilation and co-location)
       transpiler: 'babel',
-      browserslist: targets
+      // browserslist: targets,
+      transpileOnly: true
     }),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from

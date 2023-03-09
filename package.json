@@ -6,16 +6,19 @@
     "api:doc": "yarn api-documenter markdown -i temp/ -o api/",
     "api:cleanup": "mv temp/* api/ && rm -rf temp",
     "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
+    "build": "turbo run --filter @hokulea/ember-actions-test-app build",
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "turbo": "^1.8.3"
   },
   "volta": {
     "node": "16.19.0"
   },
+  "packageManager": "pnpm@7.29.1",
   "engines": {
     "node": ">= 16.*"
   },

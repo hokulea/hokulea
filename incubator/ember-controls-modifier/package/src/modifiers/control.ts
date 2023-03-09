@@ -10,6 +10,8 @@ import {
 } from 'aria-navigator';
 import Modifier from 'ember-modifier';
 
+import type Owner from '@ember/owner';
+
 import type { Control, EmitStrategy, PersistResult, UpdateStrategy } from 'aria-navigator';
 import type { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
 
@@ -156,7 +158,7 @@ export default class ControlControlModifier<T> extends Modifier<ControlSignature
   private emitStrategy?: EmitStrategy;
   private updateStrategy?: UpdateStrategy<T>;
 
-  constructor(owner: unknown, args: ArgsFor<ControlSignature<T>>) {
+  constructor(owner: Owner, args: ArgsFor<ControlSignature<T>>) {
     super(owner, args);
 
     registerDestructor(this, this.teardown);

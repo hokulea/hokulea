@@ -1,5 +1,4 @@
 import ts from 'rollup-plugin-ts';
-import { babel } from '@rollup/plugin-babel';
 import hokuleaRollupPostcss from '@hokulea/rollup-plugin-postcss';
 import { Addon } from '@embroider/addon-dev/rollup';
 import { browsers as targets } from '@hokulea/config-targets';
@@ -16,19 +15,12 @@ const addon = new Addon({
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
   // You can augment this if you need to.
-  output: {
-    ...addon.output(),
-    hoistTransitiveImports: false
-  },
+  output: addon.output(),
 
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
-    addon.publicEntrypoints([
-      // 'components/**/!(*.stories).ts',
-      'components/**/!(*.stories).gts',
-      'components/**/!(*.stories).gjs'
-    ]),
+    addon.publicEntrypoints(['index.js', 'components/**/!(*.stories).js', 'template-registry.js']),
 
     hokuleaRollupPostcss({
       targets,
@@ -49,15 +41,13 @@ export default {
     //
     // By default, this will load the actual babel config from the file
     // babel.config.json.
-    // ts({
-    //   // can be changed to swc or other transpilers later
-    //   // but we need the ember plugins converted first
-    //   // (template compilation and co-location)
-    //   transpiler: 'babel',
-    //   // browserslist: targets
-    // }),
-    babel({
-      babelHelpers: 'bundled',
+    ts({
+      // can be changed to swc or other transpilers later
+      // but we need the ember plugins converted first
+      // (template compilation and co-location)
+      transpiler: 'babel',
+      // browserslist: targets,
+      transpileOnly: true
     }),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from

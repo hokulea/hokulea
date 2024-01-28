@@ -1,10 +1,11 @@
 // eslint-disable-next-line ember/no-classic-components
+import Component from '@glimmer/component';
+// eslint-disable-next-line ember/no-classic-components
 import EmberComponent from '@ember/component';
 import { inject as service } from '@ember/service';
-import Component from '@glimmer/component';
-import { Owner } from '@glimmer/di';
 
-import TheemoService from 'ember-theemo/services/theemo';
+import type Owner from '@ember/owner';
+import type { TheemoService } from 'ember-theemo';
 
 interface Globals {
   theme: string;
@@ -22,7 +23,7 @@ interface StorybookArgs {
 }
 
 export default class StorybookComponent extends Component<StorybookArgs> {
-  @service theemo!: TheemoService;
+  @service declare theemo: TheemoService;
 
   constructor(owner: Owner, args: StorybookArgs) {
     super(owner, args);
@@ -42,10 +43,8 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     // handle globals
     const { globals } = args;
 
-    this.theemo.setTheme(globals.theme);
-    this.theemo.setColorScheme(
-      globals.scheme === 'system' ? undefined : globals.scheme
-    );
+    // this.theemo.setTheme(globals.theme);
+    // this.theemo.setColorScheme(globals.scheme === 'system' ? undefined : globals.scheme);
 
     document.documentElement.dir = globals.direction;
 

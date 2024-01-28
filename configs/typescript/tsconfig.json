@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Path resolution
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     // We only use tsc for type checking and declaration output
     "emitDeclarationOnly": false,
     "declaration": true,

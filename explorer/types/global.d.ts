@@ -1,6 +1,2 @@
-// Types for compiled templates
-declare module '@hokulea/explorer/templates/*' {
-  import { TemplateFactory } from 'htmlbars-inline-precompile';
-  const tmpl: TemplateFactory;
-  export default tmpl;
-}
+import 'ember-source/types';
+import 'ember-source/types/preview';

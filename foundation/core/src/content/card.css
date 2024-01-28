@@ -1,0 +1,30 @@
+.card {
+  /* composes: action-focus from "@hokulea/foundation/intents/action"; */
+  background-color: var(--layout-background-color);
+  border-color: var(--structure-border-color);
+  border-width: var(--structure-border-width);
+}
+
+.item {
+  padding: var(--s0);
+}
+
+.header {
+  composes: item;
+  border-block-end-width: var(--structure-border-width);
+  border-color: var(--structure-border-color);
+  border-style: var(--structure-border-style);
+  border-width: 0;
+}
+
+.body {
+  composes: item;
+}
+
+.footer {
+  composes: item;
+  border-block-start-width: var(--structure-border-width);
+  border-color: var(--structure-border-color);
+  border-style: var(--structure-border-style);
+  border-width: 0;
+}

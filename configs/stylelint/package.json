@@ -7,20 +7,20 @@
   },
   "dependencies": {
     "@hokulea/config-targets": "*",
-    "@gossi/config-stylelint": "^0.3.1"
+    "@gossi/config-stylelint": "^0.6.0"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
-    "eslint": "^8.20.0",
-    "prettier": "2.7.1",
-    "stylelint": "^14.11.0"
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "stylelint": "^16.1.0"
   },
   "peerDependencies": {
-    "stylelint": "^14.11.0"
+    "stylelint": "^16.1.0"
   },
   "engines": {
-    "node": ">= 16.*"
+    "node": ">= 20.*"
   },
   "volta": {
     "extends": "../../package.json"

@@ -6,16 +6,16 @@
     "lint:js": "eslint ."
   },
   "dependencies": {
-    "@gossi/config-targets": "^0.3.1"
+    "@gossi/config-targets": "^0.6.0"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
-    "eslint": "^8.20.0",
-    "prettier": "2.7.1"
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
   },
   "engines": {
-    "node": "14.* || >= 16.*"
+    "node": ">= 20.*"
   },
   "volta": {
     "extends": "../../package.json"

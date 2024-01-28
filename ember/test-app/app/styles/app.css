@@ -1,0 +1,8 @@
+body {
+  padding: var(--spacing-container-padding0);
+}
+
+main {
+  display: grid;
+  gap: var(--spacing-container-gap-block0);
+}

@@ -1,0 +1,19 @@
+/**
+References:
+
+- https://every-layout.dev/layouts/icon/
+- https://archive.hankchizljaw.com/links/121/
+*/
+
+.icon {
+  align-self: center; /* in case we are in a flexbox */
+  aspect-ratio: 1;
+  display: inline-flex;
+  height: 1em;
+  vertical-align: text-top; /* in case we are in a prose environment */
+
+  svg {
+    height: 1em;
+    width: 1em;
+  }
+}

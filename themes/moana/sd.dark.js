@@ -1,1 +1,0 @@
-module.exports = require('@hokulea/config-style-dictionary/dark');

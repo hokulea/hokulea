@@ -1,7 +1,0 @@
-:root {
-  --control-radius: var(--shape-radius-plain);
-  --control-padding-inline: var(--ls-2);
-  --control-padding-block: var(--ls-1);
-  --control-border-width: var(--shape-stroke-width);
-  --control-border-style: solid;
-}

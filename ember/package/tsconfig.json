@@ -1,0 +1,20 @@
+{
+  "extends": "@hokulea/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declarationDir": "./declarations"
+  },
+  "include": [
+    "src/**/*",
+    "types/**/*"
+  ],
+  "exclude": [
+    "**/*.stories.ts"
+  ],
+  "glint": {
+    "environment": [
+      "ember-loose",
+      "ember-template-imports"
+    ]
+  }
+}

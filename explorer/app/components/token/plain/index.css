@@ -1,24 +1,24 @@
 .box {
-  border-color: var(--structure-border-color);
-  border-width: var(--structure-border-width);
-  border-style: var(--structure-border-style);
-  padding: var(--s-2);
+  align-items: center;
   background-color: var(--layout-low-contrast-color);
-
+  border-color: var(--structure-border-color);
+  border-style: var(--structure-border-style);
+  border-width: var(--structure-border-width);
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  padding: var(--s-2);
 }
 
 .demo {
+  align-self: stretch;
   background-color: var(--text-normal-color);
   width: var(--value);
-  align-self: stretch;
 }
 
 .content {
-  composes: flow from "@hokulea/layouts/flow.css";
+  composes: flow from "@hokulea/core/layouts.css";
+
   --flow-space: var(--s-5);
 }
 

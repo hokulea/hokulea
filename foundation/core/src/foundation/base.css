@@ -1,0 +1,9 @@
+/* Base Styles for HTML */
+
+:root {
+  background-color: var(--surface-base);
+}
+
+code {
+  font-family: "Fira Code", monospace;
+}

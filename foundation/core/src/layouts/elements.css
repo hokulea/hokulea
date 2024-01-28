@@ -1,0 +1,13 @@
+.primitive {
+  border: var(--shape-stroke-information);
+  border-radius: var(--shape-radius-primitive);
+  padding: var(--spacing-primitive-padding0);
+}
+
+.container {
+  background-color: var(--surface-container);
+  border: var(--shape-stroke-information);
+  border-radius: var(--shape-radius-container);
+  box-shadow: var(--shape-shadow-container);
+  padding: var(--spacing-container-padding0);
+}

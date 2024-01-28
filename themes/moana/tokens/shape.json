@@ -1,0 +1,35 @@
+{
+  "shape": {
+    "radius": {
+      "primitive": {
+        "$value": "{ls-4}",
+        "$description": ""
+      },
+      "container": {
+        "$value": "{spacing.container.padding-2}",
+        "$description": ""
+      },
+      "container-nested": {
+        "$value": "{spacing.container.padding-3}",
+        "$description": ""
+      }
+    },
+    "stroke": {
+      "width": {
+        "$value": 1,
+        "$description": "",
+        "$type": "number"
+      },
+      "style": {
+        "$value": "solid",
+        "$description": "",
+        "$type": "content"
+      },
+      "color": {
+        "$value": "#d4dcdf",
+        "$description": "",
+        "$type": "color"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.section {
+  header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  h2 {
+    color: var(--typography-main);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    margin: 0;
+  }
+}

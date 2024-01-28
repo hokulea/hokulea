@@ -9,11 +9,18 @@ module.exports = {
   ...config,
   rules: {
     ...config.rules,
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['each']
+      }
+    ],
     'function-no-unknown': [
       true,
       {
         ignoreFunctions: ['$']
       }
-    ]
+    ],
+    'import-notation': 'string'
   }
 };

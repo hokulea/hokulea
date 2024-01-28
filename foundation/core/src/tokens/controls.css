@@ -1,0 +1,4 @@
+:root {
+  --control-border: var(--control-border-width) var(--control-border-style) var(--control-border-color);
+  --control-focus-stroke: var(--control-focus-stroke-style) var(--control-focus-stroke-width) var(--control-focus-stroke-color);
+}

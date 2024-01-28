@@ -1,12 +1,13 @@
 .name {
+  composes: flow from "@hokulea/core/layouts.css";
   font-size: var(--s0);
   font-weight: 500;
-  composes: flow from "@hokulea/layouts/flow.css";
+
   --flow-space: 0;
 
   span {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: var(--ls-5);
   }
 }

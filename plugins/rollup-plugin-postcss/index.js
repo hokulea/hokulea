@@ -12,7 +12,7 @@ module.exports = (options = {}) => {
   const output = options.output ?? undefined;
 
   return {
-    name: '@kujenga/rollup-plugin-postcss',
+    name: '@hokulea/rollup-plugin-postcss',
 
     /**
      * Transforms a CSS file into a module using the PostCSS config of the
@@ -46,6 +46,9 @@ module.exports = (options = {}) => {
       const modulesOptions = options.modules ?? {};
       const postcssModules = require('postcss-modules')({
         ...modulesOptions,
+
+        localsConvention: 'camelCase',
+        // localsConvention: 'camelCaseOnly',
 
         // resolve imports from packages
         resolve: function (file, importer) {
@@ -95,6 +98,7 @@ module.exports = (options = {}) => {
       let cssModulesPosition = plugins.findIndex((plugin) => plugin == require('postcss-modules'));
 
       if (cssModulesPosition === -1) {
+        // do nothing here, huh?
       } else {
         plugins[cssModulesPosition] = postcssModules;
       }
@@ -173,8 +177,8 @@ module.exports = (options = {}) => {
      * 2. Postprocessing on the concatenated file to remove duplicates and other
      *    CSS optimizations with `cssnano` and `lightningcss`
      */
-    async generateBundle(options_, bundle) {
-      if (extracted.size === 0 || !options_.dir) {
+    async generateBundle(options_, _bundle) {
+      if (extracted.size === 0 || !options_.dir || !output) {
         return;
       }
 
@@ -205,8 +209,6 @@ module.exports = (options = {}) => {
       //
       // 2. Postprocess
       // --------------------------------------
-
-      // @TODO improve sourcemaps: https://clarkteam.atlassian.net/browse/DS-108
 
       // this.emitFile({
       //   fileName: 'index.concat.css.map',
@@ -253,21 +255,23 @@ module.exports = (options = {}) => {
       // 3. Write files
       // --------------------------------------
 
-      const codeFileName = fileName;
-      const mapFileName = `${fileName}.map`;
+      if (output) {
+        const codeFileName = fileName;
+        const mapFileName = `${fileName}.map`;
 
-      this.emitFile({
-        fileName: codeFileName,
-        type: 'asset',
-        source: code
-      });
-
-      if (sourceMap === true) {
         this.emitFile({
-          fileName: mapFileName,
+          fileName: codeFileName,
           type: 'asset',
-          source: map
+          source: code
         });
+
+        if (sourceMap === true) {
+          this.emitFile({
+            fileName: mapFileName,
+            type: 'asset',
+            source: map
+          });
+        }
       }
     }
   };

@@ -1,0 +1,112 @@
+{
+  "typography": {
+    "prose": {
+      "$value": {
+        "fontFamily": "Inter",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "letterSpacing": "0",
+        "lineHeight": 1.21,
+        "textTransform": "none"
+      },
+      "$description": "",
+      "$type": "typography"
+    },
+    "heading": {
+      "$value": {
+        "fontFamily": "Inter",
+        "fontSize": "24px",
+        "fontWeight": 400,
+        "letterSpacing": "-0.24px",
+        "lineHeight": 1.21,
+        "textTransform": "none"
+      },
+      "$description": "",
+      "$type": "typography"
+    },
+    "display": {
+      "$value": {
+        "fontFamily": "Inter",
+        "fontSize": "40px",
+        "fontWeight": 400,
+        "letterSpacing": "-0.8px",
+        "lineHeight": 1.21,
+        "textTransform": "none"
+      },
+      "$description": "",
+      "$type": "typography"
+    },
+    "main": {
+      "$value": [
+        {
+          "value": "#0c0e10",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#f1f4f5",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "Regular text color",
+      "$type": "color"
+    },
+    "inverse": {
+      "$value": [
+        {
+          "value": "#f1f4f5",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#0c0e10",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "Text color for more contrast (e.g. high-contrast or reduced)",
+      "$type": "color"
+    },
+    "subtle": {
+      "$value": [
+        {
+          "value": "#37444a",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#e3e8ea",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    },
+    "muted": {
+      "$value": [
+        {
+          "value": "#4d5f67",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#d4dcdf",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    }
+  }
+}

@@ -1,38 +1,45 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/ember/lib');
+const hokuleaPostCSSConfig = require('@hokulea/config-postcss');
 const packageJson = require('./package');
+
+const withSideWatch = require('./lib/with-side-watch');
+const postCSSPlugins = hokuleaPostCSSConfig.plugins;
+const postCSSModulesIndex = hokuleaPostCSSConfig.plugins.indexOf(require('postcss-modules'));
+
+if (postCSSModulesIndex !== -1) {
+  postCSSPlugins.splice(postCSSModulesIndex, 1);
+}
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
-    // Add options here
+    trees: {
+      app: withSideWatch('app', { watching: ['../foundation/core/dist', '../foundation/tokens/dist'] })
+    },
+
     babel: {
       sourceMaps: 'inline'
     },
 
+    ...HOKULEA_CONFIG,
+
     autoImport: {
-      watchDependencies: Object.keys(packageJson.dependencies)
+      watchDependencies: Object.keys(packageJson.dependencies),
+      webpack: {
+        plugins: [new HokuleaAssetLoaderWebpackPlugin()]
+      }
     },
 
-    theemo: {
-      defaultTheme: 'moana'
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true
+    },
+
+    cssModules: {
+      plugins: postCSSPlugins
     }
   });
-
-  app.import('node_modules/highlight.js/styles/agate.css');
-
-  // Use `app.import` to add additional libraries to the generated
-  // output files.
-  //
-  // If you need to use different assets in different
-  // environments, specify an object as the first parameter. That
-  // object's keys should be the environment name and the values
-  // should be the asset to use in that environment.
-  //
-  // If the library that you are including contains AMD or ES6
-  // modules that you would like to import into your application
-  // please specify an object with the list of modules as keys
-  // along with the exports of each module as its value.
 
   return app.toTree();
 };

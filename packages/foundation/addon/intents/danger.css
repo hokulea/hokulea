@@ -1,4 +1,0 @@
-.danger-focus {
-  composes: focus from "../structure";
-  --focus-box-shadow: var(--shadow-intent-danger-fill-focus);
-}

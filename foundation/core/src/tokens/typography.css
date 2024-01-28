@@ -1,0 +1,15 @@
+/*
+#######################################
+  TYPOGRAPHY
+#######################################
+*/
+
+:root {
+  color: var(--typography-main);
+
+  /* Prose */
+
+  /* Todo: Put this into tokens, feed from themes */
+  font-family: Inter, sans-serif;
+  line-height: var(--sizing-ratio);
+}

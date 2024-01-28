@@ -10,13 +10,13 @@
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
-    "eslint": "^8.20.0",
-    "prettier": "2.7.1"
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">= 20.*"
   },
   "volta": {
     "extends": "../../package.json"
-  },
-  "engines": {
-    "node": ">= 16.*"
   }
 }

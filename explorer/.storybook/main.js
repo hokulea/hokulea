@@ -1,5 +1,6 @@
 const path = require('path');
 
+const { precompile } = require('ember-source/dist/ember-template-compiler');
 const markdownCompilerConfig = require('./config/md-compiler');
 const hbsBabelLoader = require('./loader/hbs-loader');
 
@@ -9,10 +10,35 @@ module.exports = {
   },
   staticDirs: ['../dist'],
   stories: [
+    '../app/**/*.stories.ts',
     '../../documentation/**/*.md',
-    '../../api/*.md',
-    '../../packages/**/stories.ts'
+    // '../../api/*.md',
+    '../../ember/package/src/components/**/*.stories.ts'
   ],
+  framework: '@storybook/ember',
+  features: {
+    babelModeV7: true,
+    buildStoriesJson: true
+  },
+  babel: async (options) => ({
+    ...options,
+    presets: [['@babel/preset-typescript']],
+    plugins: [
+      [
+        require.resolve('babel-plugin-htmlbars-inline-precompile'),
+        {
+          precompile,
+          modules: {
+            'ember-cli-htmlbars': 'hbs',
+            'ember-cli-htmlbars-inline-precompile': 'default',
+            'htmlbars-inline-precompile': 'default'
+          }
+        }
+      ],
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
+      '@babel/plugin-proposal-class-properties'
+    ]
+  }),
   addons: [
     '@storybook/addon-controls',
     'storybook-addon-designs',
@@ -30,7 +56,7 @@ module.exports = {
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport'
   ],
-  webpack: async config => {
+  webpack: async (config) => {
     // remove storybook *.md loader
     for (const rule of config.module.rules) {
       if (rule.test.toString().includes('md')) {

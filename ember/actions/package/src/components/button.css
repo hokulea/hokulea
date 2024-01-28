@@ -1,4 +1,0 @@
-.button {
-  /* composes: button from "@hokulea/actions/button.css"; */
-  composes: flow from "@hokulea/layouts/flow.css";
-}

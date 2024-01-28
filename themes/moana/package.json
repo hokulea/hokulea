@@ -16,24 +16,29 @@
   },
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
-    "sync": "pnpm theemo sync",
+    "sync": "theemo sync",
     "build": "pnpm build:sd && pnpm build:theme",
-    "build:sd": "concurrently 'npm:build:sd:*'",
-    "build:sd:base": "pnpm style-dictionary build --config sd.base.js",
-    "build:sd:light": "pnpm style-dictionary build --config sd.light.js",
-    "build:sd:dark": "pnpm style-dictionary build --config sd.dark.js",
-    "build:theme": "pnpm theemo generate",
+    "build:sd": "style-dictionary build",
+    "build:theme": "theemo build",
     "magic": "npm-run-all sync build generate",
     "clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
+    "@theemo/cli": "^0.2.2",
+    "@theemo/build": "^0.2.2",
+    "@theemo/figma": "^0.2.2",
+    "@theemo/style-dictionary": "^0.2.2",
     "@hokulea/config-style-dictionary": "*",
-    "@hokulea/config-theemo": "*",
-    "concurrently": "^7.6.0",
-    "style-dictionary": "^3.0.2",
-    "theemo": "^0.1.2"
+    "concurrently": "^8.2.2",
+    "inflection": "^3.0.0",
+    "style-dictionary": "^3.9.1"
+  },
+  "engines": {
+    "node": ">= 20"
   },
   "volta": {
     "extends": "../../package.json"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@hokulea/theme-moana@0.0.0"
 }

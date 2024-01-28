@@ -1,26 +1,17 @@
-function isOrdinalScalingToken(name) {
-  return name.match(/[+-]?\d+$/);
-}
+const StyleDictionary = require('style-dictionary');
+const {
+  registerTheemo,
+  makeConstrainedFilter
+} = require('@theemo/style-dictionary');
+const { isConstrainedValue } = require('@theemo/tokens');
 
-const modes = ['light', 'dark'];
+registerTheemo(StyleDictionary);
 
 module.exports = {
-  source: [
-    // this is saying find any files in the tokens folder
-    // that does not have .dark or .light, but ends in .json
-    `tokens/**/!(*.${modes.join(`|*.`)}).json`
-  ],
+  source: ['tokens/**/*.json'],
   platforms: {
-    web: {
-      transforms: [
-        'attribute/cti',
-        'name/cti/kebab',
-        'time/seconds',
-        'content/icon',
-        'size/rem',
-        'color/css',
-        'name/color-scaling',
-      ],
+    base: {
+      transformGroup: 'theemo',
       buildPath: 'build/',
       files: [
         {
@@ -30,25 +21,59 @@ module.exports = {
             outputReferences: true,
             showFileHeader: false
           },
-          filter(token) {
-            return !token.colorScheme && !token.filePath.startsWith('tokens/transient');
+          filter: (token) => {
+            return !isConstrainedValue(token.value) && !token.dynamic;
           }
         }
       ]
-    }
-  },
-  transform: {
-    'name/color-scaling': {
-      type: 'name',
-      matcher(token) {
-        // console.log(token);
-        // return token.path.includes('color') && token.path.includes('palette');
-        return token.path.includes('color') && isOrdinalScalingToken(token.name);
+    },
+    dark: {
+      transformGroup: 'theemo',
+      buildPath: 'build/',
+      constraints: {
+        features: {
+          'color-scheme': 'dark'
+        }
       },
-      transformer(token) {
-        // console.log(token);
-        return token.path.join('-');
-      }
+      files: [
+        {
+          format: 'css/variables',
+          destination: 'dark.css',
+          options: {
+            outputReferences: true,
+            showFileHeader: false
+          },
+          filter: makeConstrainedFilter({
+            features: {
+              'color-scheme': 'dark'
+            }
+          })
+        }
+      ]
+    },
+    light: {
+      transformGroup: 'theemo',
+      buildPath: 'build/',
+      constraints: {
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      files: [
+        {
+          format: 'css/variables',
+          destination: 'light.css',
+          options: {
+            outputReferences: true,
+            showFileHeader: false
+          },
+          filter: makeConstrainedFilter({
+            features: {
+              'color-scheme': 'light'
+            }
+          })
+        }
+      ]
     }
   }
-}
+};

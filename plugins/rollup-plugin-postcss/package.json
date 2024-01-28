@@ -11,21 +11,21 @@
   "dependencies": {
     "@hokulea/config-targets": "*",
     "concat-with-sourcemaps": "^1.1.0",
-    "cssnano": "^5.1.15",
-    "postcss-import": "^15.1.0",
-    "postcss-lightningcss": "^0.6.0",
-    "postcss-load-config": "^4.0.1",
+    "cssnano": "^6.0.3",
+    "postcss-import": "^16.0.0",
+    "postcss-lightningcss": "^1.0.0",
+    "postcss-load-config": "^5.0.2",
     "postcss-modules": "^6.0.0",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.33"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
-    "eslint": "^8.35.0",
-    "prettier": "^2.8.4"
+    "eslint": "^8.56.0",
+    "prettier": "^3.0.0"
   },
   "engines": {
-    "node": "14.* || >= 16.*"
+    "node": ">= 20.*"
   },
   "volta": {
     "extends": "../../package.json"

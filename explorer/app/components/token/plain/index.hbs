@@ -1,7 +1,7 @@
-<div local-class="box {{@type}}">
-  <div local-class="content">
+<div class="{{this.styles.box}} {{get this.styles @type}}">
+  <div class={{this.styles.content}}>
     <TokenName @name={{@name}} />
-    <p local-class="description">{{this.description}}</p>
+    <p class={{this.styles.description}}>{{this.description}}</p>
   </div>
-  <span local-class="value">{{this.value}}</span>
+  <span class={{this.styles.value}}>{{this.value}}</span>
 </div>

@@ -1,7 +1,8 @@
 import Component from '@glimmer/component';
 
 import { modifier } from 'ember-modifier';
-import styles from 'page.css';
+
+import styles from './page.css';
 
 interface PageSignature {
   Args: {

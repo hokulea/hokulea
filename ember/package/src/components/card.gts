@@ -1,7 +1,6 @@
 import styles from '@hokulea/core/content.module.css';
 
 import { or } from '../-private/helpers';
-import Box from './box';
 
 import type { TOC } from '@ember/component/template-only';
 
@@ -16,7 +15,7 @@ export interface CardSignature {
 }
 
 const Card: TOC<CardSignature> = <template>
-  <Box class={{styles.card}} ...attributes>
+  <div class={{styles.card}} ...attributes>
     {{#if (has-block "header")}}
       <div class={{styles.header}}>
         {{yield to="header"}}
@@ -38,7 +37,7 @@ const Card: TOC<CardSignature> = <template>
         {{yield to="footer"}}
       </div>
     {{/if}}
-  </Box>
+  </div>
 </template>
 
 export default Card;

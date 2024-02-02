@@ -13,7 +13,7 @@ module.exports = {
     '../app/**/*.stories.ts',
     '../../documentation/**/*.md',
     // '../../api/*.md',
-    '../../ember/package/src/components/**/*.stories.ts'
+    '../../ember/package/src/**/*.stories.ts'
   ],
   framework: '@storybook/ember',
   features: {

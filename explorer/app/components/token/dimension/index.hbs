@@ -1,15 +1,15 @@
-<div class={{this.styles.box}}>
-  <div class={{this.styles.content}}>
+<div local-class="box">
+  <div local-class="content">
     <TokenName @name={{@name}} />
     <div
-      class={{this.styles.demo}}
+      local-class="demo"
       {{style
         fontSize=(concat "var(" @refSize ")")
         --value=(concat "var(" @name ")")
       }}
       {{did-insert this.setup}}
     ></div>
-    <p class={{this.styles.description}}>{{this.description}}</p>
+    <p local-class="description">{{this.description}}</p>
   </div>
-  <span class={{this.styles.value}}>{{this.value}}</span>
+  <span local-class="value">{{this.value}}</span>
 </div>

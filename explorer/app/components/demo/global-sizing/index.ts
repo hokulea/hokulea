@@ -4,11 +4,7 @@ import { tracked } from '@glimmer/tracking';
 
 import { GlobalSizingElement } from '../../reference/global-sizing';
 
-import styles from './index.css';
-
 export default class GlobalScaleDemoComponent extends Component {
-  styles = styles;
-
   @tracked version?: 'clamp' | 'static';
   private sizingElement?: GlobalSizingElement;
 

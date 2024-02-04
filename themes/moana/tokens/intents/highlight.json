@@ -6,13 +6,13 @@
           "background": {
             "$value": [
               {
-                "value": "#fff599",
+                "value": "#fff066",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#fff599",
+                "value": "#fff066",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -61,13 +61,13 @@
           "background": {
             "$value": [
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -205,13 +205,13 @@
           "text": {
             "$value": [
               {
-                "value": "#665c00",
+                "value": "#998a00",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#fff599",
+                "value": "#fff066",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -244,13 +244,13 @@
           "border": {
             "$value": [
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -262,13 +262,13 @@
           "text": {
             "$value": [
               {
-                "value": "#b2a000",
+                "value": "#ccb700",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -282,13 +282,13 @@
           "background": {
             "$value": [
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -426,13 +426,13 @@
           "text": {
             "$value": [
               {
-                "value": "#b2a000",
+                "value": "#ccb700",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#b2a000",
+                "value": "#ccb700",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -448,13 +448,13 @@
           "text": {
             "$value": [
               {
-                "value": "#b2a000",
+                "value": "#ccb700",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#ffed4d",
+                "value": "#ffea33",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -468,13 +468,13 @@
           "text": {
             "$value": [
               {
-                "value": "#665c00",
+                "value": "#998a00",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#b2a000",
+                "value": "#ccb700",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -488,13 +488,13 @@
           "text": {
             "$value": [
               {
-                "value": "#665c00",
+                "value": "#998a00",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#b2a000",
+                "value": "#ccb700",
                 "features": {
                   "color-scheme": "dark"
                 }

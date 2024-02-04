@@ -6,13 +6,13 @@
           "background": {
             "$value": [
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -24,20 +24,19 @@
           "border": {
             "$value": [
               {
-                "value": "#9edffa",
+                "value": "{intent.action.supreme.base.background}",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "{intent.action.supreme.base.background}",
                 "features": {
                   "color-scheme": "dark"
                 }
               }
             ],
-            "$description": "",
-            "$type": "color"
+            "$description": ""
           },
           "text": {
             "$value": [
@@ -62,13 +61,13 @@
           "background": {
             "$value": [
               {
-                "value": "#55c6f7",
+                "value": "#3cbef6",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#55c6f7",
+                "value": "#3cbef6",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -80,13 +79,30 @@
           "border": {
             "$value": [
               {
-                "value": "#55c6f7",
+                "value": "{intent.action.supreme.hover.background}",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#55c6f7",
+                "value": "{intent.action.supreme.hover.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#0c0e10",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -94,23 +110,6 @@
             ],
             "$description": "",
             "$type": "color"
-          },
-          "text": {
-            "$value": [
-              {
-                "value": "{intent.action.supreme.base.text}",
-                "features": {
-                  "color-scheme": "light"
-                }
-              },
-              {
-                "value": "{intent.action.supreme.base.text}",
-                "features": {
-                  "color-scheme": "dark"
-                }
-              }
-            ],
-            "$description": ""
           }
         },
         "active": {
@@ -135,13 +134,30 @@
           "border": {
             "$value": [
               {
-                "value": "#0caef3",
+                "value": "{intent.action.supreme.active.background}",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#0caef3",
+                "value": "{intent.action.supreme.active.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#0c0e10",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -149,23 +165,6 @@
             ],
             "$description": "",
             "$type": "color"
-          },
-          "text": {
-            "$value": [
-              {
-                "value": "{intent.action.supreme.base.text}",
-                "features": {
-                  "color-scheme": "light"
-                }
-              },
-              {
-                "value": "{intent.action.supreme.base.text}",
-                "features": {
-                  "color-scheme": "dark"
-                }
-              }
-            ],
-            "$description": ""
           }
         },
         "disabled": {
@@ -206,13 +205,13 @@
           "text": {
             "$value": [
               {
-                "value": "#054661",
+                "value": "#076892",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -245,13 +244,13 @@
           "border": {
             "$value": [
               {
-                "value": "#087aaa",
+                "value": "#098bc3",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -263,13 +262,13 @@
           "text": {
             "$value": [
               {
-                "value": "#087aaa",
+                "value": "#098bc3",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -283,13 +282,13 @@
           "background": {
             "$value": [
               {
-                "value": "#55c6f7",
+                "value": "#3cbef6",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#55c6f7",
+                "value": "#3cbef6",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -373,19 +372,20 @@
           "text": {
             "$value": [
               {
-                "value": "{intent.action.subtle.hover.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "{intent.action.subtle.hover.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "dark"
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           }
         },
         "disabled": {
@@ -426,13 +426,13 @@
           "text": {
             "$value": [
               {
-                "value": "#087aaa",
+                "value": "#098bc3",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -448,13 +448,13 @@
           "text": {
             "$value": [
               {
-                "value": "#087aaa",
+                "value": "#098bc3",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#9edffa",
+                "value": "#66d1ff",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -468,13 +468,13 @@
           "text": {
             "$value": [
               {
-                "value": "#054661",
+                "value": "#076892",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#55c6f7",
+                "value": "#3cbef6",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -488,7 +488,7 @@
           "text": {
             "$value": [
               {
-                "value": "#054661",
+                "value": "#076892",
                 "features": {
                   "color-scheme": "light"
                 }

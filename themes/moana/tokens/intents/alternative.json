@@ -6,13 +6,13 @@
           "background": {
             "$value": [
               {
-                "value": "#abede2",
+                "value": "#80e5d3",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#abede2",
+                "value": "#80e5d3",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -61,13 +61,13 @@
           "background": {
             "$value": [
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -96,19 +96,20 @@
           "text": {
             "$value": [
               {
-                "value": "{intent.alternative.supreme.base.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "{intent.alternative.supreme.base.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "dark"
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           }
         },
         "active": {
@@ -150,19 +151,20 @@
           "text": {
             "$value": [
               {
-                "value": "{intent.alternative.supreme.base.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "{intent.alternative.supreme.base.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "dark"
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           }
         },
         "disabled": {
@@ -203,13 +205,13 @@
           "text": {
             "$value": [
               {
-                "value": "#125449",
+                "value": "#1a7f6d",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#abede2",
+                "value": "#80e5d3",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -242,13 +244,13 @@
           "border": {
             "$value": [
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -260,13 +262,13 @@
           "text": {
             "$value": [
               {
-                "value": "#1f947f",
+                "value": "#23a991",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -280,13 +282,13 @@
           "background": {
             "$value": [
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -370,19 +372,20 @@
           "text": {
             "$value": [
               {
-                "value": "{intent.alternative.subtle.hover.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "{intent.alternative.subtle.hover.text}",
+                "value": "#0c0e10",
                 "features": {
                   "color-scheme": "dark"
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           }
         },
         "disabled": {
@@ -423,13 +426,13 @@
           "text": {
             "$value": [
               {
-                "value": "#1f947f",
+                "value": "#23a991",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#abede2",
+                "value": "#80e5d3",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -445,13 +448,13 @@
           "text": {
             "$value": [
               {
-                "value": "#1f947f",
+                "value": "#23a991",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#abede2",
+                "value": "#80e5d3",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -465,13 +468,13 @@
           "text": {
             "$value": [
               {
-                "value": "#125449",
+                "value": "#1a7f6d",
                 "features": {
                   "color-scheme": "light"
                 }
               },
               {
-                "value": "#6be0cb",
+                "value": "#56dcc4",
                 "features": {
                   "color-scheme": "dark"
                 }
@@ -485,7 +488,7 @@
           "text": {
             "$value": [
               {
-                "value": "#125449",
+                "value": "#1a7f6d",
                 "features": {
                   "color-scheme": "light"
                 }

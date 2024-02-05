@@ -3,13 +3,13 @@
     "border-color": {
       "$value": [
         {
-          "value": "#e3e8ea",
+          "value": "#d4dcdf",
           "features": {
             "color-scheme": "light"
           }
         },
         {
-          "value": "#4d5f67",
+          "value": "#37444a",
           "features": {
             "color-scheme": "dark"
           }
@@ -27,7 +27,7 @@
           }
         },
         {
-          "value": "#21292d",
+          "value": "#171c1e",
           "features": {
             "color-scheme": "dark"
           }
@@ -132,13 +132,13 @@
       "background": {
         "$value": [
           {
-            "value": "#f1f4f5",
+            "value": "#e9edee",
             "features": {
               "color-scheme": "light"
             }
           },
           {
-            "value": "#37444a",
+            "value": "#262f32",
             "features": {
               "color-scheme": "dark"
             }

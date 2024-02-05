@@ -27,7 +27,7 @@
           }
         },
         {
-          "value": "#21292d",
+          "value": "#1d2427",
           "features": {
             "color-scheme": "dark"
           }
@@ -39,13 +39,13 @@
     "container1": {
       "$value": [
         {
-          "value": "#ffffff",
+          "value": "#e9edee",
           "features": {
             "color-scheme": "light"
           }
         },
         {
-          "value": "#ffffff",
+          "value": "#262f32",
           "features": {
             "color-scheme": "dark"
           }

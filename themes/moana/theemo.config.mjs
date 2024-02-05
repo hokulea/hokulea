@@ -33,6 +33,12 @@ const DYNAMIC = [
   'ls4'
 ];
 
+function cleanTopic(topic) {
+  if (topic) {
+    return topic.replace(/\s+\(.*\)/, '');
+  }
+}
+
 export default defineConfig({
   sync: {
     reader: {
@@ -55,9 +61,13 @@ export default defineConfig({
                 .replace('local/', '');
             }
 
-            if (TOPICS.includes(variable.collection.name.toLowerCase())) {
+            if (
+              TOPICS.includes(
+                cleanTopic(variable.collection.name.toLowerCase())
+              )
+            ) {
               return `${inflection
-                .singularize(variable.collection.name)
+                .singularize(cleanTopic(variable.collection.name))
                 .toLowerCase()}.${getNameFromVariable(variable)}`;
             }
 
@@ -101,7 +111,10 @@ export default defineConfig({
 
             return {
               ...dynamics,
-              topic: token.figma.variable?.collection?.name?.toLowerCase() ?? ''
+              topic:
+                cleanTopic(
+                  token.figma.variable?.collection?.name?.toLowerCase()
+                ) ?? ''
             };
           }
         }
@@ -110,7 +123,7 @@ export default defineConfig({
 
     lexer: {
       normalizeToken(token) {
-        if (['factor', 'ratio'].includes(token.name)) {
+        if (['sizing.factor', 'sizing.ratio'].includes(token.name)) {
           return {
             ...token,
             value: parseFloat(parseFloat(token.value).toFixed(2))
@@ -125,6 +138,14 @@ export default defineConfig({
           return {
             ...token,
             value: `${token.value[0].value}px`,
+            type: 'dimension'
+          };
+        }
+
+        if (['shape.stroke.width'].includes(token.name)) {
+          return {
+            ...token,
+            value: `${token.value}px`,
             type: 'dimension'
           };
         }

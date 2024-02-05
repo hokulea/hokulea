@@ -2,7 +2,7 @@
   "shape": {
     "radius": {
       "primitive": {
-        "$value": "{ls-4}",
+        "$value": "{ls-3}",
         "$description": ""
       },
       "container": {
@@ -16,9 +16,9 @@
     },
     "stroke": {
       "width": {
-        "$value": 1,
+        "$value": "1px",
         "$description": "",
-        "$type": "number"
+        "$type": "dimension"
       },
       "style": {
         "$value": "solid",
@@ -26,7 +26,20 @@
         "$type": "content"
       },
       "color": {
-        "$value": "#d4dcdf",
+        "$value": [
+          {
+            "value": "#e3e8ea",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#37444a",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
         "$description": "",
         "$type": "color"
       }

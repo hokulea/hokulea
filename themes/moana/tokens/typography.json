@@ -26,11 +26,11 @@
     },
     "display": {
       "$value": {
-        "fontFamily": "Inter",
+        "fontFamily": "Inter Display",
         "fontSize": "40px",
         "fontWeight": 400,
         "letterSpacing": "-0.8px",
-        "lineHeight": 1.21,
+        "lineHeight": 1.17,
         "textTransform": "none"
       },
       "$description": "",
@@ -45,7 +45,7 @@
           }
         },
         {
-          "value": "#f1f4f5",
+          "value": "#e9edee",
           "features": {
             "color-scheme": "dark"
           }
@@ -57,7 +57,7 @@
     "inverse": {
       "$value": [
         {
-          "value": "#f1f4f5",
+          "value": "#e9edee",
           "features": {
             "color-scheme": "light"
           }
@@ -81,7 +81,7 @@
           }
         },
         {
-          "value": "#e3e8ea",
+          "value": "#d4dcdf",
           "features": {
             "color-scheme": "dark"
           }
@@ -99,7 +99,7 @@
           }
         },
         {
-          "value": "#d4dcdf",
+          "value": "#9aacb3",
           "features": {
             "color-scheme": "dark"
           }

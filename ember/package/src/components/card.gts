@@ -5,7 +5,7 @@ import { or } from '../-private/helpers';
 import type { TOC } from '@ember/component/template-only';
 
 export interface CardSignature {
-  Element: HTMLDivElement; // ElementFor<BaseCard>
+  Element: HTMLDivElement;
   Blocks: {
     header?: [];
     footer?: [];

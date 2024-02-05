@@ -1,5 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { parseArgs, baseArgTypes } from './stories-utils';
+
+import { baseArgTypes, parseArgs } from './stories-utils';
 
 import type { FieldArgs } from './stories-utils';
 
@@ -32,40 +33,44 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = baseArgTypes;
-Default.args = {
-  label: 'I agree to Terms and Conditions'
-};
-
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash terms=''}} as |f|>
-        <f.Checkbox @name="terms" @label="I agree to Terms and Conditions" @description="I really do!" />
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+export const Showcase = {
+  render: Template.bind({}),
+  argTypes: baseArgTypes,
+  args: {
+    label: 'I agree to Terms and Conditions'
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash terms=''}} as |f|>
-        <f.Checkbox @name="terms" @label="I agree to Terms and Conditions" @disabled={{true}} />
-      </Form>
-    `
-  };
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash terms=''}} as |f|>
+          <f.Checkbox @name="terms" @label="I agree to Terms and Conditions" @description="I really do!" />
+        </Form>
+      `
+    };
+  },
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash terms=''}} as |f|>
+          <f.Checkbox @name="terms" @label="I agree to Terms and Conditions" @disabled={{true}} />
+        </Form>
+      `
+    };
+  },
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

@@ -1,91 +1,171 @@
 import { render } from '@ember/test-helpers';
-import { module, test } from 'qunit';
+import { module, skip, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { Button } from '@hokulea/ember-actions';
-import { ButtonPage } from '@hokulea/ember-actions/test-support';
+import sinon from 'sinon';
 
-module('Rendering | <Button>', (hooks) => {
+import { Button } from '@hokulea/ember';
+import { Importance, Intent, Spacing } from '@hokulea/tokens';
+
+import { ButtonPageObject } from '@hokulea/ember/test-support';
+import { linkFor, setupLink } from 'ember-link/test-support';
+
+module('Rendering | <Button>', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('Button2', async function(assert) {
-    await render(<template><Button>Hello</Button></template>);
-    const button = new ButtonPage();
+  test('it renders with defaults', async function (assert) {
+    await render(<template><Button>Hello World</Button></template>);
+
+    const button = new ButtonPageObject();
+
     assert.dom(button.element).exists();
-    // assert.dom('[data-test-button]').exists();
+    assert.dom(button.element).hasText('Hello World');
+
+    assert.strictEqual(button.intent, Intent.Action);
+    assert.strictEqual(button.importance, Importance.Supreme);
   });
 
+  module('Styling', function () {
+    test('it can change the intent', async function (assert) {
+      await render(<template><Button @intent={{Intent.Danger}} /></template>);
 
+      const button = new ButtonPageObject();
 
-  // module('default / fill', () => {
-  //   test('basic use-case', async function (assert) {
-  //     await render(hbs`<Button>click me!</Button>`);
+      assert.strictEqual(button.intent, Intent.Danger);
+    });
 
-  //     assert.dom('[data-test-button-content]').hasText('click me!');
-  //   });
+    test('it can change the importance', async function (assert) {
+      await render(<template><Button @importance={{Importance.Subtle}} /></template>);
 
-  //   test('basic composition use-case', async function (assert) {
-  //     await render(hbs`
-  //     <Button as |b|>
-  //       <b.Content data-test-button-content>click me!</b.Content>
-  //     </Button>
-  //   `);
+      const button = new ButtonPageObject();
 
-  //     assert.dom('[data-test-button-content]').hasText('click me!');
-  //   });
+      assert.strictEqual(button.importance, Importance.Subtle);
+    });
 
-  //   test('full composition use-case', async function (assert) {
-  //     await render(hbs`
-  //     <Button as |b|>
-  //       <b.Prefix data-test-button-prefix>pre</b.Prefix>
-  //       <b.Affix data-test-button-affix1>af1</b.Affix>
-  //       <b.Content data-test-button-content>click me!</b.Content>
-  //       <b.Affix data-test-button-affix2>af2</b.Affix>
-  //       <b.Suffix data-test-button-suffix>suf</b.Suffix>
-  //     </Button>
-  //   `);
+    test('it can change spacing', async function (assert) {
+      await render(<template><Button @spacing={{Spacing.MinusOne}} /></template>);
 
-  //     assert.dom('[data-test-button-prefix]').hasText('pre');
-  //     assert.dom('[data-test-button-affix1]').hasText('af1');
-  //     assert.dom('[data-test-button-content]').hasText('click me!');
-  //     assert.dom('[data-test-button-affix2]').hasText('af2');
-  //     assert.dom('[data-test-button-suffix]').hasText('suf');
-  //   });
-  // });
+      const button = new ButtonPageObject();
 
-  // module('subtle', () => {
-  //   test('basic use-case', async function (assert) {
-  //     await render(hbs`<SubtleButton>click me!</SubtleButton>`);
+      assert.strictEqual(button.spacing, Spacing.MinusOne);
+    });
 
-  //     assert.dom('[data-test-button-content]').hasText('click me!');
-  //   });
+    test('it can be disabled', async function (assert) {
+      await render(<template><Button @disabled={{true}} /></template>);
 
-  //   test('basic composition use-case', async function (assert) {
-  //     await render(hbs`
-  //       <SubtleButton as |b|>
-  //         <b.Content data-test-button-content>click me!</b.Content>
-  //       </SubtleButton>
-  //     `);
+      const button = new ButtonPageObject();
 
-  //     assert.dom('[data-test-button-content]').hasText('click me!');
-  //   });
+      assert.dom(button.element).hasAria('disabled', 'true');
+    });
+  });
 
-  //   test('full composition use-case', async function (assert) {
-  //     await render(hbs`
-  //       <SubtleButton as |b|>
-  //         <b.Prefix data-test-subtle-button-prefix>pre</b.Prefix>
-  //         <b.Affix data-test-subtle-button-affix1>af1</b.Affix>
-  //         <b.Content data-test-subtle-button-content>click me!</b.Content>
-  //         <b.Affix data-test-subtle-button-affix2>af2</b.Affix>
-  //         <b.Suffix data-test-subtle-button-suffix>suf</b.Suffix>
-  //       </SubtleButton>
-  //     `);
+  module('Behavior', function (behaviorHooks) {
+    setupLink(behaviorHooks);
 
-  //     assert.dom('[data-test-subtle-button-prefix]').hasText('pre');
-  //     assert.dom('[data-test-subtle-button-affix1]').hasText('af1');
-  //     assert.dom('[data-test-subtle-button-content]').hasText('click me!');
-  //     assert.dom('[data-test-subtle-button-affix2]').hasText('af2');
-  //     assert.dom('[data-test-subtle-button-suffix]').hasText('suf');
-  //   });
-  // });
+    test('it renders as <span>, when no push behavior is given', async function (assert) {
+      await render(<template><Button /></template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button.element).hasTagName('span');
+    });
+
+    test('it renders as <button>, when a function is given', async function (assert) {
+      const push = sinon.spy();
+
+      await render(<template><Button @push={{push}} /></template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button.element).hasTagName('button');
+    });
+
+    test('it renders as <a>, when a link is given', async function (assert) {
+      const link = linkFor('some.route');
+
+      await render(<template><Button @push={{link}} /></template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button.element).hasTagName('a');
+    });
+
+    test('it will invoke functions', async function (assert) {
+      const push = sinon.spy();
+
+      await render(<template><Button @push={{push}} /></template>);
+
+      const button = new ButtonPageObject();
+
+      await button.push();
+
+      assert.ok(push.calledOnce);
+    });
+
+    /**
+     * Re-activate this, when `<CommandElement>` can be disabled itself.
+     */
+    skip('it will not invoke functions when disabled', async function (assert) {
+      const push = sinon.spy();
+
+      await render(<template><Button @push={{push}} @disabled={{true}}>Hello</Button></template>);
+
+      const button = new ButtonPageObject();
+
+      await button.push();
+
+      assert.notOk(push.calledOnce);
+    });
+  });
+
+  module('Slots', function () {
+    test('it has a before slot', async function (assert) {
+      await render(<template>
+        <Button>
+          <:before>Hello</:before>
+          <:label>Label</:label>
+        </Button>
+      </template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button.$before.element).exists();
+      assert.dom(button.$label.element).exists();
+      assert.dom(button.$after.element).doesNotExist();
+      assert.dom(button.$before.element).hasText('Hello');
+      assert.dom(button.$label.element).hasText('Label');
+    });
+
+    test('it has an after slot', async function (assert) {
+      await render(<template>
+        <Button>
+          <:label>Label</:label>
+          <:after>Afterwards</:after>
+        </Button>
+      </template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button.$before.element).doesNotExist();
+      assert.dom(button.$label.element).exists();
+      assert.dom(button.$after.element).exists();
+      assert.dom(button.$label.element).hasText('Label');
+      assert.dom(button.$after.element).hasText('Afterwards');
+    });
+
+    test('it works with label slot', async function (assert) {
+      await render(<template>
+        <Button>
+          <:label>Label</:label>
+        </Button>
+      </template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button.$before.element).doesNotExist();
+      assert.dom(button.$label.element).exists();
+      assert.dom(button.$after.element).doesNotExist();
+      assert.dom(button.$label.element).hasText('Label');
+    });
+  });
 });

@@ -121,138 +121,59 @@ const Template = (args: ButtonArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = baseArgTypes;
-Default.args = {
-  label: 'Button'
-};
-Default.parameters = {
-  design: [
-    {
-      name: 'Action',
-      type: 'figma',
-      url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-    },
-    {
-      name: 'Danger',
-      type: 'figma',
-      url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-    },
-    {
-      name: 'Specification',
-      type: 'figma',
-      url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-    }
-  ]
-};
-
-// export const WithBefore = (args: ButtonArgs) => {
-//   return {
-//     template: hbs`
-//       <Button
-//         @push={{this.push}}
-//         @intent={{this.intent}}
-//         @importance={{this.importance}}
-//         @spacing={{this.spacing}}
-//         @disabled={{this.disabled}}
-//       >
-//         <:before>
-//           <Icon @icon={{this.icon}} @style={{this.style}}/>
-//         </:before>
-//         <:label>
-//           {{this.label}}
-//         </:label>
-//       </Button>
-//     `,
-//     context: parseArgs(args)
-//   };
-// };
-
-// WithBefore.argTypes = iconArgTypes;
-// WithBefore.args = {
-//   label: 'Button',
-//   icon: IconName.Placeholder
-// };
-// WithBefore.parameters = {
-//   design: [
-//     {
-//       type: 'figma',
-//       url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-//     }
-//   ]
-// };
-
-// export const WithAfter = (args: ButtonArgs) => {
-//   return {
-//     template: hbs`
-//       <Button
-//         @push={{this.push}}
-//         @intent={{this.intent}}
-//         @importance={{this.importance}}
-//         @spacing={{this.spacing}}
-//         @disabled={{this.disabled}}
-//       >
-//         <:label>
-//           {{this.label}}
-//         </:label>
-//         <:after>
-//           <Icon @icon={{this.icon}} @style={{this.style}}/>
-//         </:after>
-//       </Button>
-//     `,
-//     context: parseArgs(args)
-//   };
-// };
-
-// WithAfter.argTypes = iconArgTypes;
-// WithAfter.args = {
-//   label: 'Button',
-//   icon: IconName.Placeholder
-// };
-// WithAfter.parameters = {
-//   design: [
-//     {
-//       type: 'figma',
-//       url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-//     }
-//   ]
-// };
-
-export const Stack = () => {
-  return {
-    template: hbs`
-      <div style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;">
-        <Button @importance="supreme" @push={{this.push}}>
-          Supreme
-        </Button>
-
-        <Button @importance="subtle" @push={{this.push}}>
-          Subtle
-        </Button>
-
-        <Button @importance="muted" @push={{this.push}}>
-          Muted
-        </Button>
-
-        <Button @importance="plain" @push={{this.push}}>
-          Plain
-        </Button>
-      </div>
-    `,
-    context: {
-      push: action('button pushed')
-    }
-  };
-};
-
-Stack.parameters = {
-  options: {
-    showPanel: false
+export const Showcase = {
+  render: Template.bind({}),
+  argTypes: baseArgTypes,
+  args: {
+    label: 'Button'
   },
-  design: [
-    {
-      type: 'figma',
-      url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
+  parameters: {
+    design: [
+      {
+        name: 'Action',
+        type: 'figma',
+        url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
+      },
+      {
+        name: 'Danger',
+        type: 'figma',
+        url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
+      },
+      {
+        name: 'Specification',
+        type: 'figma',
+        url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
+      }
+    ]
+  }
+};
+
+export const Stack = {
+  render: () => {
+    return {
+      template: hbs`
+        <div style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;">
+          <Button @importance="supreme" @push={{this.push}}>
+            Supreme
+          </Button>
+
+          <Button @importance="subtle" @push={{this.push}}>
+            Subtle
+          </Button>
+
+          <Button @importance="plain" @push={{this.push}}>
+            Plain
+          </Button>
+        </div>
+      `,
+      context: {
+        push: action('button pushed')
+      }
+    };
+  },
+  parameters: {
+    options: {
+      showPanel: false
     }
-  ]
+  }
 };

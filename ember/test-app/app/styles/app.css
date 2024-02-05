@@ -1,3 +1,31 @@
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  src: url("/Inter.var.woff2?3.13") format("woff2-variations");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Inter Display";
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  src: url("/InterDisplay.var.woff2?3.13") format("woff2-variations");
+}
+
+:root {
+  --typo-prose-family: "Inter", system-ui, sans-serif;
+  --typo-prose-feature-settings: "case" 1, "frac" 1, "ss03" 1, "cv05" 1, "cv07", "kern" 1;
+  --typo-heading-feature-settings: "liga" 1, "calt" 1, "cv05" 1, "kern" 1;
+  --typo-heading-tracking: -0.018em;
+  --typo-heading-weight: 350;
+  --typo-display-family: "Inter Display", system-ui, sans-serif;
+  --typo-display-feature-settings: "liga" 1, "calt" 1, "salt" 1, "kern" 1;
+  --typo-display-weight: 300;
+  --typo-display-tracking: -0.003em;
+}
+
 body {
   padding: var(--spacing-container-padding0);
 }

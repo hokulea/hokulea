@@ -21,16 +21,24 @@ export default {
   // You can augment this if you need to.
   output: addon.output(),
 
-  external: ['@hokulea/core'],
+  external: [
+    '@glimmer/component',
+    '@ember/component',
+    '@ember/template-compilation',
+    '@ember/test-helpers',
+    '@hokulea/core',
+    'ember-modifier',
+    'ember-element-helper'
+  ],
 
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
     addon.publicEntrypoints([
       'index.js',
-      // 'test-support/index.js',
+      'test-support/index.js',
       // from here on, it is only required for classic ember builds
-      // 'template-registry.js',
+      'template-registry.js',
       'components/box.js',
       'components/button.js',
       'components/card.js',
@@ -43,6 +51,7 @@ export default {
       'components/currency-input.js',
       'components/email-input.js',
       'components/password-input.js',
+      'components/section.js',
       'components/select.js',
       'components/radio.js',
       'components/checkbox.js',
@@ -73,6 +82,7 @@ export default {
       'components/currency-input.js',
       'components/email-input.js',
       'components/password-input.js',
+      'components/section.js',
       'components/select.js',
       'components/radio.js',
       'components/checkbox.js',

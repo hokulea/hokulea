@@ -6,12 +6,18 @@ const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/em
 // eslint-disable-next-line node/no-missing-require
 const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
-const withSideWatch = require('./lib/with-side-watch');
+const sideWatch = require('@embroider/broccoli-side-watch');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     trees: {
-      app: withSideWatch('app', { watching: ['../../foundation/core/dist', '../../foundation/tokens/dist', '../../themes/moana/dist'] })
+      app: sideWatch('app', {
+        watching: [
+          '../../foundation/core/dist',
+          '../../foundation/tokens/dist',
+          '../../themes/moana/dist'
+        ]
+      })
     },
 
     'ember-cli-babel': {

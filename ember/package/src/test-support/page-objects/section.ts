@@ -16,4 +16,5 @@ export class SectionPageObject extends PageObject<
   }
 
   $header = sel('[data-test-section="header"]');
+  $title = sel('[data-test-section="title"]');
 }

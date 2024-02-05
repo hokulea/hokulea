@@ -40,6 +40,7 @@ export default class RadioField<
             <Checkbox
               @value={{asBoolean f.value}}
               @update={{this.setBooleanValue f.setValue}}
+              @disabled={{@disabled}}
               id={{f.id}}
               name={{@name}}
               {{f.manageValidation}}

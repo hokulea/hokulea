@@ -9,4 +9,7 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   this.route('actions');
+  this.route('content');
+  this.route('controls');
+  this.route('forms');
 });

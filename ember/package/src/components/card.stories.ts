@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Cards/Card',
+  title: 'Components/Content/Card',
   component: 'Card',
   parameters: {
     options: {
@@ -24,7 +24,7 @@ export const Builder = () => ({
   template: hbs`
     <Card>
       <:header>Card Title</:header>
-      <:main>Sample Card Content</:main>
+      <:body>Sample Card Content</:body>
       <:footer>Footer</:footer>
     </Card>
     `

@@ -1,5 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { parseArgs, argTypesWithPlaceholder } from './stories-utils';
+
+import { argTypesWithPlaceholder, parseArgs } from './stories-utils';
 
 import type { FieldArgs } from './stories-utils';
 
@@ -33,56 +34,61 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = argTypesWithPlaceholder;
-Default.args = {
-  label: 'Birthday'
-};
-
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash birthday=''}} as |f|>
-        <f.Date @name="birthday" @label="Birthday" @description="When are you born?" />
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+export const Default = {
+  render: Template.bind({}),
+  argTypes: argTypesWithPlaceholder,
+  args: {
+    label: 'Birthday'
   }
 };
 
-export const Placeholder = () => {
-  return {
-    template: hbs`
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash birthday=''}} as |f|>
+          <f.Date @name="birthday" @label="Birthday" @description="When are you born?" />
+        </Form>
+      `
+    };
+  },
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
+};
+
+export const Placeholder = {
+  render: () => {
+    return {
+      template: hbs`
       <Form @data={{hash birthday=''}} as |f|>
         <f.Date @name="birthday" @label="Birthday" placeholder="When are you born?" />
       </Form>
     `
-  };
-};
-
-Placeholder.parameters = {
-  options: {
-    showPanel: false
+    };
+  },
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
       <Form @data={{hash birthday=''}} as |f|>
         <f.Date @name="birthday" @label="Birthday" @disabled={{true}} />
       </Form>
     `
-  };
-};
-
-Disabled.parameters = {
-  options: {
-    showPanel: false
+    };
+  },
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

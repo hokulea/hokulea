@@ -1,5 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { parseArgs, argTypesWithPlaceholder } from './stories-utils';
+
+import { argTypesWithPlaceholder, parseArgs } from './stories-utils';
 
 import type { FieldArgs } from './stories-utils';
 
@@ -33,56 +34,65 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = argTypesWithPlaceholder;
-Default.args = {
-  label: 'Your Password'
-};
+export const Default = {
+  render: Template,
+  argTypes: argTypesWithPlaceholder,
 
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash password=''}} as |f|>
-        <f.Password @name="password" @label="Your Password" @description="It's a secret" />
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+  args: {
+    label: 'Your Password'
   }
 };
 
-export const Placeholder = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash password=''}} as |f|>
-        <f.Password @name="password" @label="Your Password" placeholder="It's a secret" />
-      </Form>
-    `
-  };
-};
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash password=''}} as |f|>
+          <f.Password @name="password" @label="Your Password" @description="It's a secret" />
+        </Form>
+      `
+    };
+  },
 
-Placeholder.parameters = {
-  options: {
-    showPanel: false
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash password=''}} as |f|>
-        <f.Password @name="password" @label="Your Password" @disabled={{true}} />
-      </Form>
-    `
-  };
+export const Placeholder = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash password=''}} as |f|>
+          <f.Password @name="password" @label="Your Password" placeholder="It's a secret" />
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash password=''}} as |f|>
+          <f.Password @name="password" @label="Your Password" @disabled={{true}} />
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

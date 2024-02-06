@@ -1,5 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { parseArgs, argTypesWithPlaceholder } from './stories-utils';
+
+import { argTypesWithPlaceholder, parseArgs } from './stories-utils';
 
 import type { FieldArgs } from './stories-utils';
 
@@ -33,56 +34,65 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = argTypesWithPlaceholder;
-Default.args = {
-  label: 'How old are you?'
-};
+export const Default = {
+  render: Template,
+  argTypes: argTypesWithPlaceholder,
 
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash age=''}} as |f|>
-        <f.Number @name="age" @label="How old are you?" @description="Age in Years" />
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+  args: {
+    label: 'How old are you?'
   }
 };
 
-export const Placeholder = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash age=''}} as |f|>
-        <f.Number @name="age" @label="How old are you?" placeholder="Age in Years" />
-      </Form>
-    `
-  };
-};
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash age=''}} as |f|>
+          <f.Number @name="age" @label="How old are you?" @description="Age in Years" />
+        </Form>
+      `
+    };
+  },
 
-Placeholder.parameters = {
-  options: {
-    showPanel: false
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash age=''}} as |f|>
-        <f.Number @name="age" @label="How old are you?" @disabled={{true}} />
-      </Form>
-    `
-  };
+export const Placeholder = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash age=''}} as |f|>
+          <f.Number @name="age" @label="How old are you?" placeholder="Age in Years" />
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash age=''}} as |f|>
+          <f.Number @name="age" @label="How old are you?" @disabled={{true}} />
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

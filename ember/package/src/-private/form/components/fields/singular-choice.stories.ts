@@ -39,54 +39,61 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = baseArgTypes;
-Default.args = {
-  label: 'Graduation'
-};
+export const Default = {
+  render: Template,
+  argTypes: baseArgTypes,
 
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash graduation=''}} as |f|>
-        <f.SingularChoice @name="graduation" @label="Graduation" @description="Which degree have you graduated in?" as |r|>
-          <r.Option @value="doctor" @label="Doktor" required={{this.required}} />
-          <r.Option @value="diploma" @label="Diplom" />
-          <r.Option @value="master" @label="Master" />
-          <r.Option @value="bachelor" @label="Bachelor" />
-          <r.Option @value="apprenticeship" @label="Ausbildung" />
-          <r.Option @value="matura" @label="Abitur" />
-        </f.SingularChoice>
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+  args: {
+    label: 'Graduation'
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash graduation=''}} as |f|>
-        <f.SingularChoice @name="graduation" @label="Graduation" @disabled={{true}} as |r|>
-          <r.Option @value="doctor" @label="Doktor" required={{this.required}} />
-          <r.Option @value="diploma" @label="Diplom" />
-          <r.Option @value="master" @label="Master" />
-          <r.Option @value="bachelor" @label="Bachelor" />
-          <r.Option @value="apprenticeship" @label="Ausbildung" />
-          <r.Option @value="matura" @label="Abitur" />
-        </f.SingularChoice>
-      </Form>
-    `
-  };
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash graduation=''}} as |f|>
+          <f.SingularChoice @name="graduation" @label="Graduation" @description="Which degree have you graduated in?" as |r|>
+            <r.Option @value="doctor" @label="Doktor" required={{this.required}} />
+            <r.Option @value="diploma" @label="Diplom" />
+            <r.Option @value="master" @label="Master" />
+            <r.Option @value="bachelor" @label="Bachelor" />
+            <r.Option @value="apprenticeship" @label="Ausbildung" />
+            <r.Option @value="matura" @label="Abitur" />
+          </f.SingularChoice>
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash graduation=''}} as |f|>
+          <f.SingularChoice @name="graduation" @label="Graduation" @disabled={{true}} as |r|>
+            <r.Option @value="doctor" @label="Doktor" required={{this.required}} />
+            <r.Option @value="diploma" @label="Diplom" />
+            <r.Option @value="master" @label="Master" />
+            <r.Option @value="bachelor" @label="Bachelor" />
+            <r.Option @value="apprenticeship" @label="Ausbildung" />
+            <r.Option @value="matura" @label="Abitur" />
+          </f.SingularChoice>
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

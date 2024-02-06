@@ -37,6 +37,7 @@ const Template = (args: FieldArgs) => {
 export const Default = {
   render: Template.bind({}),
   argTypes: argTypesWithPlaceholder,
+
   args: {
     label: 'Salary'
   }
@@ -52,6 +53,7 @@ export const Description = {
     `
     };
   },
+
   parameters: {
     options: {
       showPanel: false
@@ -69,6 +71,7 @@ export const Placeholder = {
     `
     };
   },
+
   parameter: {
     options: {
       showPanel: false
@@ -86,6 +89,7 @@ export const Disabled = {
     `
     };
   },
+
   parameters: {
     options: {
       showPanel: false

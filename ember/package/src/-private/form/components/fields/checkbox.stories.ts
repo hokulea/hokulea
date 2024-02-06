@@ -36,6 +36,7 @@ const Template = (args: FieldArgs) => {
 export const Showcase = {
   render: Template.bind({}),
   argTypes: baseArgTypes,
+
   args: {
     label: 'I agree to Terms and Conditions'
   }
@@ -51,6 +52,7 @@ export const Description = {
       `
     };
   },
+
   parameters: {
     options: {
       showPanel: false
@@ -68,6 +70,7 @@ export const Disabled = {
       `
     };
   },
+
   parameters: {
     options: {
       showPanel: false

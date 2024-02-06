@@ -1,5 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { parseArgs, baseArgTypes } from './stories-utils';
+
+import { baseArgTypes, parseArgs } from './stories-utils';
 
 import type { FieldArgs } from './stories-utils';
 
@@ -38,48 +39,55 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = baseArgTypes;
-Default.args = {
-  label: 'Favorite Fruit'
-};
+export const Default = {
+  render: Template,
+  argTypes: baseArgTypes,
 
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash fruit=''}} as |f|>
-        <f.Select @name="fruit" @label="Favorite Fruit" @description="What's most delicious to you?" as |s|>
-          <s.Option @value="Apple" />
-          <s.Option @value="Banana" />
-          <s.Option @value="Pear">🍐 Pear</s.Option>
-        </f.Select>
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+  args: {
+    label: 'Favorite Fruit'
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash fruit=''}} as |f|>
-        <f.Select @name="fruit" @label="Favorite Fruit" @disabled={{true}} as |s|>
-          <s.Option @value="Apple" />
-          <s.Option @value="Banana" />
-          <s.Option @value="Pear">🍐 Pear</s.Option>
-        </f.Select>
-      </Form>
-    `
-  };
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash fruit=''}} as |f|>
+          <f.Select @name="fruit" @label="Favorite Fruit" @description="What's most delicious to you?" as |s|>
+            <s.Option @value="Apple" />
+            <s.Option @value="Banana" />
+            <s.Option @value="Pear">🍐 Pear</s.Option>
+          </f.Select>
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash fruit=''}} as |f|>
+          <f.Select @name="fruit" @label="Favorite Fruit" @disabled={{true}} as |s|>
+            <s.Option @value="Apple" />
+            <s.Option @value="Banana" />
+            <s.Option @value="Pear">🍐 Pear</s.Option>
+          </f.Select>
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

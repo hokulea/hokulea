@@ -1,5 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { parseArgs, baseArgTypes } from './stories-utils';
+
+import { baseArgTypes, parseArgs } from './stories-utils';
 
 import type { FieldArgs } from './stories-utils';
 
@@ -36,50 +37,57 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = baseArgTypes;
-Default.args = {
-  label: 'Which Pets do you own?'
-};
+export const Default = {
+  render: Template,
+  argTypes: baseArgTypes,
 
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash pets=''}} as |f|>
-        <f.MultipleChoice @name="pets" @label="Which Pets do you own?" @description="Maybe some wild ones?" as |r|>
-          <r.Option @value="rhino" @label="Rhino" required />
-          <r.Option @value="tiger" @label="Tiger" disabled @description="This one seems unrealistic, no?" />
-          <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
-          <r.Option @value="kangaroo" @label="Kangaroo" />
-        </f.MultipleChoice>
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+  args: {
+    label: 'Which Pets do you own?'
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash pets=''}} as |f|>
-        <f.MultipleChoice @name="pets" @label="Which Pets do you own?" @disabled={{true}} as |r|>
-          <r.Option @value="rhino" @label="Rhino" />
-          <r.Option @value="tiger" @label="Tiger" />
-          <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
-          <r.Option @value="kangaroo" @label="Kangaroo" />
-        </f.MultipleChoice>
-      </Form>
-    `
-  };
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash pets=''}} as |f|>
+          <f.MultipleChoice @name="pets" @label="Which Pets do you own?" @description="Maybe some wild ones?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" required />
+            <r.Option @value="tiger" @label="Tiger" disabled @description="This one seems unrealistic, no?" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
+          </f.MultipleChoice>
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash pets=''}} as |f|>
+          <f.MultipleChoice @name="pets" @label="Which Pets do you own?" @disabled={{true}} as |r|>
+            <r.Option @value="rhino" @label="Rhino" />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
+          </f.MultipleChoice>
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

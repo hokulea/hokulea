@@ -37,6 +37,7 @@ const Template = (args: FieldArgs) => {
 export const Default = {
   render: Template.bind({}),
   argTypes: argTypesWithPlaceholder,
+
   args: {
     label: 'Birthday'
   }
@@ -52,6 +53,7 @@ export const Description = {
       `
     };
   },
+
   parameters: {
     options: {
       showPanel: false
@@ -69,6 +71,7 @@ export const Placeholder = {
     `
     };
   },
+
   parameters: {
     options: {
       showPanel: false

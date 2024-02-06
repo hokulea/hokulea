@@ -34,56 +34,65 @@ const Template = (args: FieldArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.argTypes = argTypesWithPlaceholder;
-Default.args = {
-  label: 'Given Name'
-};
+export const Default = {
+  render: Template,
+  argTypes: argTypesWithPlaceholder,
 
-export const Description = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash givenName=''}} as |f|>
-        <f.Text @name="givenName" @label="Given Name" @description="How you like to be called?" />
-      </Form>
-    `
-  };
-};
-
-Description.parameters = {
-  options: {
-    showPanel: false
+  args: {
+    label: 'Given Name'
   }
 };
 
-export const Placeholder = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash givenName=''}} as |f|>
-        <f.Text @name="givenName" @label="Given Name" placeholder="How you like to be called?" />
-      </Form>
-    `
-  };
-};
+export const Description = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash givenName=''}} as |f|>
+          <f.Text @name="givenName" @label="Given Name" @description="How you like to be called?" />
+        </Form>
+      `
+    };
+  },
 
-Placeholder.parameters = {
-  options: {
-    showPanel: false
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };
 
-export const Disabled = () => {
-  return {
-    template: hbs`
-      <Form @data={{hash givenName=''}} as |f|>
-        <f.Text @name="givenName" @label="Given Name" @disabled={{true}} />
-      </Form>
-    `
-  };
+export const Placeholder = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash givenName=''}} as |f|>
+          <f.Text @name="givenName" @label="Given Name" placeholder="How you like to be called?" />
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };
 
-Disabled.parameters = {
-  options: {
-    showPanel: false
+export const Disabled = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form @data={{hash givenName=''}} as |f|>
+          <f.Text @name="givenName" @label="Given Name" @disabled={{true}} />
+        </Form>
+      `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
   }
 };

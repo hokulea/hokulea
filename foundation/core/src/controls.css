@@ -24,7 +24,7 @@
 
 .control {
   all: unset;
-  background: var(--control-background);
+  background-color: var(--control-background);
   border: var(--control-border);
   border-radius: var(--shape-radius-primitive);
   color: var(--control-text);

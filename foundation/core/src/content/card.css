@@ -1,8 +1,8 @@
 .card {
   /* composes: action-focus from "@hokulea/foundation/intents/action"; */
-  background-color: var(--layout-background-color);
-  border-color: var(--structure-border-color);
-  border-width: var(--structure-border-width);
+  background-color: var(--surface-container);
+  border: var(--shape-stroke);
+  border-radius: var(--shape-radius-container);
 }
 
 .item {
@@ -11,9 +11,11 @@
 
 .header {
   composes: item;
-  border-block-end-width: var(--structure-border-width);
-  border-color: var(--structure-border-color);
-  border-style: var(--structure-border-style);
+  background-color: var(--surface-container1);
+  border: var(--shape-stroke);
+  border-block-end-width: var(--shape-stroke-width);
+  border-start-end-radius: var(--shape-radius-container);
+  border-start-start-radius: var(--shape-radius-container);
   border-width: 0;
 }
 
@@ -23,8 +25,7 @@
 
 .footer {
   composes: item;
-  border-block-start-width: var(--structure-border-width);
-  border-color: var(--structure-border-color);
-  border-style: var(--structure-border-style);
+  border: var(--shape-stroke);
+  border-block-start-width: var(--shape-stroke-width);
   border-width: 0;
 }

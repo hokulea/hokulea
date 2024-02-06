@@ -1,0 +1,3 @@
+:root {
+  --shape-stroke: var(--shape-stroke-color) var(--shape-stroke-style) var(--shape-stroke-width);
+}

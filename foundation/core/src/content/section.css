@@ -1,16 +1,12 @@
 .section {
-  header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
+  /* This is not the best, but ok to start */
+  header + * {
+    margin-block-start: var(--spacing-container-gap-block0);
   }
+}
 
-  h2 {
-    color: var(--typography-main);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 26px;
-    margin: 0;
-  }
+.section-title {
+  color: var(--typography-main);
+  font-weight: 500;
+  margin: 0;
 }

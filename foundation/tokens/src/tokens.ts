@@ -9,7 +9,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#f9dbdb',
+        value: '#ee9696',
         features: {
           'color-scheme': 'light'
         },
@@ -32,7 +32,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -55,7 +55,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -78,7 +78,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -101,7 +101,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -147,7 +147,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -155,7 +155,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ee9a9a',
+        value: '#e76a6a',
         features: {
           'color-scheme': 'dark'
         },
@@ -170,7 +170,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -178,7 +178,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ee9a9a',
+        value: '#e76a6a',
         features: {
           'color-scheme': 'dark'
         },
@@ -188,12 +188,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-box-background': {
-    name: 'indicator-info-box-background',
+  'indicator-info-supreme-background': {
+    name: 'indicator-info-supreme-background',
     description: '',
     value: [
       {
-        value: '#9edffa',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'light'
         },
@@ -211,12 +211,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-box-border': {
-    name: 'indicator-info-box-border',
+  'indicator-info-supreme-border': {
+    name: 'indicator-info-supreme-border',
     description: '',
     value: [
       {
-        value: '#087aaa',
+        value: '#098bc3',
         features: {
           'color-scheme': 'light'
         },
@@ -234,12 +234,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-box-text': {
-    name: 'indicator-info-box-text',
+  'indicator-info-supreme-text': {
+    name: 'indicator-info-supreme-text',
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -257,12 +257,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-fill-background': {
-    name: 'indicator-info-fill-background',
+  'indicator-info-subtle-background': {
+    name: 'indicator-info-subtle-background',
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -280,12 +280,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-fill-border': {
-    name: 'indicator-info-fill-border',
+  'indicator-info-subtle-border': {
+    name: 'indicator-info-subtle-border',
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -303,12 +303,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-fill-text': {
-    name: 'indicator-info-fill-text',
+  'indicator-info-subtle-text': {
+    name: 'indicator-info-subtle-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -326,12 +326,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-outline-border': {
-    name: 'indicator-info-outline-border',
+  'indicator-info-plain-border': {
+    name: 'indicator-info-plain-border',
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -339,7 +339,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#55c6f7',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'dark'
         },
@@ -349,12 +349,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-outline-text': {
-    name: 'indicator-info-outline-text',
+  'indicator-info-plain-text': {
+    name: 'indicator-info-plain-text',
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -362,7 +362,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#55c6f7',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'dark'
         },
@@ -745,7 +745,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#9edffa',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'light'
         },
@@ -753,7 +753,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#9edffa',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -768,7 +768,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#9edffa',
+        value: [
+          {
+            value: '#66d1ff',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#66d1ff',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -776,22 +793,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#66d1ff',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#66d1ff',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-supreme-base-text': {
     name: 'intent-action-supreme-base-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -799,7 +832,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -814,7 +847,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#55c6f7',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'light'
         },
@@ -822,7 +855,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'dark'
         },
@@ -837,7 +870,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#55c6f7',
+        value: [
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -845,22 +895,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-supreme-hover-text': {
     name: 'intent-action-supreme-hover-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -868,7 +934,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -883,7 +949,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#0caef3',
         features: {
           'color-scheme': 'light'
         },
@@ -891,7 +957,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0caef3',
         features: {
           'color-scheme': 'dark'
         },
@@ -906,7 +972,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#054661',
+        value: [
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -914,22 +997,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-supreme-active-text': {
     name: 'intent-action-supreme-active-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -937,7 +1036,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -952,7 +1051,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -960,22 +1076,89 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-supreme-disabled-border': {
     name: 'intent-action-supreme-disabled-border',
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -983,22 +1166,72 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-supreme-disabled-text': {
     name: 'intent-action-supreme-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -1006,7 +1239,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#cecece',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -1023,19 +1256,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -1046,22 +1279,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-subtle-base-border': {
     name: 'intent-action-subtle-base-border',
     description: '',
     value: [
       {
-        value: '#55c6f7',
+        value: '#098bc3',
         features: {
           'color-scheme': 'light'
         },
@@ -1069,7 +1318,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -1084,7 +1333,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#098bc3',
         features: {
           'color-scheme': 'light'
         },
@@ -1092,7 +1341,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -1107,7 +1356,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#55c6f7',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'light'
         },
@@ -1115,7 +1364,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'dark'
         },
@@ -1130,7 +1379,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#55c6f7',
+        value: [
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1138,22 +1404,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#3cbef6',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-subtle-hover-text': {
     name: 'intent-action-subtle-hover-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1161,7 +1443,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1176,7 +1458,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#0caef3',
         features: {
           'color-scheme': 'light'
         },
@@ -1184,7 +1466,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0caef3',
         features: {
           'color-scheme': 'dark'
         },
@@ -1199,7 +1481,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#054661',
+        value: [
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1207,22 +1506,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          },
+          {
+            value: '#0caef3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-subtle-active-text': {
     name: 'intent-action-subtle-active-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1230,7 +1545,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1247,19 +1562,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -1270,15 +1585,31 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-subtle-disabled-border': {
     name: 'intent-action-subtle-disabled-border',
@@ -1287,19 +1618,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#6e6e6e',
+            value: '#e9edee',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#dfdfdf',
+            value: '#262f32',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -1310,22 +1641,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-action-subtle-disabled-text': {
     name: 'intent-action-subtle-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#098bc3',
         features: {
           'color-scheme': 'light'
         },
@@ -1333,7 +1680,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -1348,7 +1695,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#087aaa',
+        value: '#098bc3',
         features: {
           'color-scheme': 'light'
         },
@@ -1356,7 +1703,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -1371,7 +1718,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -1379,7 +1726,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'dark'
         },
@@ -1394,7 +1741,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#054661',
+        value: '#076892',
         features: {
           'color-scheme': 'light'
         },
@@ -1402,7 +1749,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0caef3',
         features: {
           'color-scheme': 'dark'
         },
@@ -1419,19 +1766,53 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#cecece',
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -1442,22 +1823,72 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-supreme-base-background': {
     name: 'intent-alternative-supreme-base-background',
     description: '',
     value: [
       {
-        value: '#abede2',
+        value: '#80e5d3',
         features: {
           'color-scheme': 'light'
         },
@@ -1465,7 +1896,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#80e5d3',
         features: {
           'color-scheme': 'dark'
         },
@@ -1480,7 +1911,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#abede2',
+        value: [
+          {
+            value: '#80e5d3',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#80e5d3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1488,22 +1936,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#80e5d3',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#80e5d3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-supreme-base-text': {
     name: 'intent-alternative-supreme-base-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1511,7 +1975,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1526,7 +1990,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#6be0cb',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'light'
         },
@@ -1534,7 +1998,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'dark'
         },
@@ -1549,7 +2013,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#6be0cb',
+        value: [
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1557,22 +2038,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-supreme-hover-text': {
     name: 'intent-alternative-supreme-hover-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1580,7 +2077,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1595,7 +2092,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#2cd3b5',
         features: {
           'color-scheme': 'light'
         },
@@ -1603,7 +2100,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#2cd3b5',
         features: {
           'color-scheme': 'dark'
         },
@@ -1618,7 +2115,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: [
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1626,22 +2140,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-supreme-active-text': {
     name: 'intent-alternative-supreme-active-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1649,7 +2179,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1664,7 +2194,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1672,22 +2219,89 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-supreme-disabled-border': {
     name: 'intent-alternative-supreme-disabled-border',
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1695,22 +2309,72 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-supreme-disabled-text': {
     name: 'intent-alternative-supreme-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#1a7f6d',
         features: {
           'color-scheme': 'light'
         },
@@ -1718,7 +2382,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#cecece',
+        value: '#80e5d3',
         features: {
           'color-scheme': 'dark'
         },
@@ -1735,19 +2399,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -1758,22 +2422,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-subtle-base-border': {
     name: 'intent-alternative-subtle-base-border',
     description: '',
     value: [
       {
-        value: '#6be0cb',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'light'
         },
@@ -1781,7 +2461,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'dark'
         },
@@ -1796,7 +2476,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#23a991',
         features: {
           'color-scheme': 'light'
         },
@@ -1804,7 +2484,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'dark'
         },
@@ -1819,7 +2499,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#6be0cb',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'light'
         },
@@ -1827,7 +2507,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'dark'
         },
@@ -1842,7 +2522,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#6be0cb',
+        value: [
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1850,22 +2547,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#56dcc4',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-subtle-hover-text': {
     name: 'intent-alternative-subtle-hover-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1873,7 +2586,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1888,7 +2601,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#2cd3b5',
         features: {
           'color-scheme': 'light'
         },
@@ -1896,7 +2609,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#2cd3b5',
         features: {
           'color-scheme': 'dark'
         },
@@ -1911,7 +2624,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: [
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -1919,22 +2649,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          },
+          {
+            value: '#2cd3b5',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-subtle-active-text': {
     name: 'intent-alternative-subtle-active-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -1942,7 +2688,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -1959,19 +2705,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -1982,22 +2728,55 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-subtle-disabled-border': {
     name: 'intent-alternative-subtle-disabled-border',
     description: '',
     value: [
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2005,22 +2784,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-alternative-subtle-disabled-text': {
     name: 'intent-alternative-subtle-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#23a991',
         features: {
           'color-scheme': 'light'
         },
@@ -2028,7 +2823,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#80e5d3',
         features: {
           'color-scheme': 'dark'
         },
@@ -2043,7 +2838,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#1f947f',
+        value: '#23a991',
         features: {
           'color-scheme': 'light'
         },
@@ -2051,7 +2846,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#80e5d3',
         features: {
           'color-scheme': 'dark'
         },
@@ -2066,7 +2861,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#1a7f6d',
         features: {
           'color-scheme': 'light'
         },
@@ -2074,7 +2869,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#56dcc4',
         features: {
           'color-scheme': 'dark'
         },
@@ -2089,7 +2884,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#1a7f6d',
         features: {
           'color-scheme': 'light'
         },
@@ -2097,7 +2892,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#2cd3b5',
         features: {
           'color-scheme': 'dark'
         },
@@ -2114,7 +2909,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: '#4d5f67',
             features: {
               'color-scheme': 'light'
             },
@@ -2122,7 +2917,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#cecece',
+            value: '#9aacb3',
             features: {
               'color-scheme': 'dark'
             },
@@ -2137,22 +2932,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#4d5f67',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            isSource: true
+          },
+          {
+            value: '#9aacb3',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/alternative.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-supreme-base-background': {
     name: 'intent-danger-supreme-base-background',
     description: '',
     value: [
       {
-        value: '#e35858',
+        value: '#dc2828',
         features: {
           'color-scheme': 'light'
         },
@@ -2160,7 +2971,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#dc2828',
         features: {
           'color-scheme': 'dark'
         },
@@ -2175,7 +2986,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#e35858',
+        value: [
+          {
+            value: '#dc2828',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#dc2828',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2183,22 +3011,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#dc2828',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#dc2828',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-supreme-base-text': {
     name: 'intent-danger-supreme-base-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -2206,7 +3050,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -2221,7 +3065,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -2229,7 +3073,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'dark'
         },
@@ -2244,7 +3088,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: [
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2252,22 +3113,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-supreme-hover-text': {
     name: 'intent-danger-supreme-hover-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -2275,7 +3152,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -2290,7 +3167,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: '#911818',
         features: {
           'color-scheme': 'light'
         },
@@ -2298,7 +3175,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#911818',
         features: {
           'color-scheme': 'dark'
         },
@@ -2313,7 +3190,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: [
+          {
+            value: '#911818',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#911818',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2321,22 +3215,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#911818',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#911818',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-supreme-active-text': {
     name: 'intent-danger-supreme-active-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -2344,7 +3254,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -2359,7 +3269,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2367,22 +3294,89 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-supreme-disabled-border': {
     name: 'intent-danger-supreme-disabled-border',
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2390,22 +3384,72 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-supreme-disabled-text': {
     name: 'intent-danger-supreme-disabled-text',
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: '#911818',
         features: {
           'color-scheme': 'light'
         },
@@ -2413,7 +3457,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#f9dbdb',
+        value: '#e76a6a',
         features: {
           'color-scheme': 'dark'
         },
@@ -2430,19 +3474,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -2453,22 +3497,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-subtle-base-border': {
     name: 'intent-danger-subtle-base-border',
     description: '',
     value: [
       {
-        value: '#e35858',
+        value: '#dc2828',
         features: {
           'color-scheme': 'light'
         },
@@ -2476,7 +3536,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'dark'
         },
@@ -2491,24 +3551,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: [
-          {
-            value: '#333333',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-            isSource: true
-          },
-          {
-            value: '#f5f5f5',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-            isSource: true
-          }
-        ],
+        value: '#dc2828',
         features: {
           'color-scheme': 'light'
         },
@@ -2516,7 +3559,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#dc2828',
         features: {
           'color-scheme': 'dark'
         },
@@ -2531,7 +3574,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -2539,7 +3582,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'dark'
         },
@@ -2554,7 +3597,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: [
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2562,22 +3622,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          },
+          {
+            value: '#b41d1d',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-subtle-hover-text': {
     name: 'intent-danger-subtle-hover-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -2585,7 +3661,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -2600,7 +3676,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: '#911818',
         features: {
           'color-scheme': 'light'
         },
@@ -2608,7 +3684,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#911818',
         features: {
           'color-scheme': 'dark'
         },
@@ -2623,7 +3699,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: '#911818',
         features: {
           'color-scheme': 'light'
         },
@@ -2631,7 +3707,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#911818',
         features: {
           'color-scheme': 'dark'
         },
@@ -2646,7 +3722,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -2654,7 +3730,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -2671,19 +3747,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -2694,22 +3770,55 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-subtle-disabled-border': {
     name: 'intent-danger-subtle-disabled-border',
     description: '',
     value: [
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2717,22 +3826,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-danger-subtle-disabled-text': {
     name: 'intent-danger-subtle-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#911818',
         features: {
           'color-scheme': 'light'
         },
@@ -2740,7 +3865,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ee9696',
         features: {
           'color-scheme': 'dark'
         },
@@ -2755,7 +3880,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#cc2222',
+        value: '#dc2828',
         features: {
           'color-scheme': 'light'
         },
@@ -2763,7 +3888,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e76a6a',
         features: {
           'color-scheme': 'dark'
         },
@@ -2778,7 +3903,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: '#b41d1d',
         features: {
           'color-scheme': 'light'
         },
@@ -2786,7 +3911,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#dc2828',
         features: {
           'color-scheme': 'dark'
         },
@@ -2801,7 +3926,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#8b1717',
+        value: '#911818',
         features: {
           'color-scheme': 'light'
         },
@@ -2809,7 +3934,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#dc2828',
         features: {
           'color-scheme': 'dark'
         },
@@ -2826,19 +3951,53 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#cecece',
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -2849,22 +4008,72 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/danger.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-supreme-base-background': {
     name: 'intent-highlight-supreme-base-background',
     description: '',
     value: [
       {
-        value: '#fff599',
+        value: '#fff066',
         features: {
           'color-scheme': 'light'
         },
@@ -2872,7 +4081,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#fff066',
         features: {
           'color-scheme': 'dark'
         },
@@ -2887,7 +4096,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#fff599',
+        value: [
+          {
+            value: '#fff066',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#fff066',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2895,22 +4121,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fff066',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#fff066',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-supreme-base-text': {
     name: 'intent-highlight-supreme-base-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -2918,7 +4160,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -2933,7 +4175,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffed4d',
+        value: '#ffea33',
         features: {
           'color-scheme': 'light'
         },
@@ -2941,7 +4183,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffea33',
         features: {
           'color-scheme': 'dark'
         },
@@ -2956,7 +4198,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffed4d',
+        value: [
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -2964,22 +4223,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-supreme-hover-text': {
     name: 'intent-highlight-supreme-hover-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -2987,7 +4262,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -3002,7 +4277,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#b2a000',
+        value: '#ffe500',
         features: {
           'color-scheme': 'light'
         },
@@ -3010,7 +4285,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffe500',
         features: {
           'color-scheme': 'dark'
         },
@@ -3025,7 +4300,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#b2a000',
+        value: [
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -3033,22 +4325,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-supreme-active-text': {
     name: 'intent-highlight-supreme-active-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -3056,7 +4364,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -3071,7 +4379,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -3079,22 +4404,89 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-supreme-disabled-border': {
     name: 'intent-highlight-supreme-disabled-border',
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -3102,22 +4494,72 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#e9edee',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              },
+              {
+                value: '#262f32',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-supreme-disabled-text': {
     name: 'intent-highlight-supreme-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#998a00',
         features: {
           'color-scheme': 'light'
         },
@@ -3125,7 +4567,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#cecece',
+        value: '#fff066',
         features: {
           'color-scheme': 'dark'
         },
@@ -3142,19 +4584,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -3165,22 +4607,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-subtle-base-border': {
     name: 'intent-highlight-subtle-base-border',
     description: '',
     value: [
       {
-        value: '#ffed4d',
+        value: '#ffea33',
         features: {
           'color-scheme': 'light'
         },
@@ -3188,7 +4646,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffea33',
         features: {
           'color-scheme': 'dark'
         },
@@ -3203,7 +4661,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#ccb700',
         features: {
           'color-scheme': 'light'
         },
@@ -3211,7 +4669,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffea33',
         features: {
           'color-scheme': 'dark'
         },
@@ -3226,7 +4684,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffed4d',
+        value: '#ffea33',
         features: {
           'color-scheme': 'light'
         },
@@ -3234,7 +4692,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffea33',
         features: {
           'color-scheme': 'dark'
         },
@@ -3249,7 +4707,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffed4d',
+        value: [
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -3257,22 +4732,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffea33',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-subtle-hover-text': {
     name: 'intent-highlight-subtle-hover-text',
     description: '',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -3280,7 +4771,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -3295,7 +4786,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#665c00',
+        value: '#ffe500',
         features: {
           'color-scheme': 'light'
         },
@@ -3303,7 +4794,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffe500',
         features: {
           'color-scheme': 'dark'
         },
@@ -3318,7 +4809,24 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#665c00',
+        value: [
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -3326,22 +4834,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          },
+          {
+            value: '#ffe500',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-subtle-active-text': {
     name: 'intent-highlight-subtle-active-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -3349,7 +4873,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -3366,19 +4890,19 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#ffffff',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#595959',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -3389,22 +4913,55 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#fafbfb',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#171c1e',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-subtle-disabled-border': {
     name: 'intent-highlight-subtle-disabled-border',
     description: '',
     value: [
       {
-        value: '#6e6e6e',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'light'
         },
@@ -3412,22 +4969,38 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: '#e9edee',
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: '#262f32',
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
   },
   'intent-highlight-subtle-disabled-text': {
     name: 'intent-highlight-subtle-disabled-text',
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#ccb700',
         features: {
           'color-scheme': 'light'
         },
@@ -3435,7 +5008,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ccb700',
         features: {
           'color-scheme': 'dark'
         },
@@ -3450,7 +5023,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#b2a000',
+        value: '#ccb700',
         features: {
           'color-scheme': 'light'
         },
@@ -3458,7 +5031,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffea33',
         features: {
           'color-scheme': 'dark'
         },
@@ -3473,7 +5046,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#665c00',
+        value: '#998a00',
         features: {
           'color-scheme': 'light'
         },
@@ -3481,7 +5054,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ccb700',
         features: {
           'color-scheme': 'dark'
         },
@@ -3496,7 +5069,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#665c00',
+        value: '#998a00',
         features: {
           'color-scheme': 'light'
         },
@@ -3504,7 +5077,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ccb700',
         features: {
           'color-scheme': 'dark'
         },
@@ -3521,19 +5094,53 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
             features: {
               'color-scheme': 'light'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           },
           {
-            value: '#cecece',
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
             features: {
               'color-scheme': 'dark'
             },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
             isSource: true
           }
         ],
@@ -3544,22 +5151,257 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: [
+          {
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'light'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          },
+          {
+            value: [
+              {
+                value: '#4d5f67',
+                features: {
+                  'color-scheme': 'light'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              },
+              {
+                value: '#9aacb3',
+                features: {
+                  'color-scheme': 'dark'
+                },
+                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
+                isSource: true
+              }
+            ],
+            features: {
+              'color-scheme': 'dark'
+            },
+            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+            isSource: true
+          }
+        ],
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/highlight.json',
         isSource: true
       }
-    ],
-    type: 'color'
+    ]
+  },
+  'spacing-container-padding-4': {
+    name: 'spacing-container-padding-4',
+    description: '',
+    value: 4
+  },
+  'spacing-container-padding-3': {
+    name: 'spacing-container-padding-3',
+    description: '',
+    value: 8
+  },
+  'spacing-container-padding-2': {
+    name: 'spacing-container-padding-2',
+    description: '',
+    value: 10
+  },
+  'spacing-container-padding-1': {
+    name: 'spacing-container-padding-1',
+    description: '',
+    value: 12
+  },
+  'spacing-container-padding0': {
+    name: 'spacing-container-padding0',
+    description: '',
+    value: 16
+  },
+  'spacing-container-padding1': {
+    name: 'spacing-container-padding1',
+    description: '',
+    value: 20
+  },
+  'spacing-container-padding2': {
+    name: 'spacing-container-padding2',
+    description: '',
+    value: 26
+  },
+  'spacing-container-padding3': {
+    name: 'spacing-container-padding3',
+    description: '',
+    value: 34
+  },
+  'spacing-container-padding4': {
+    name: 'spacing-container-padding4',
+    description: '',
+    value: 44
+  },
+  'spacing-container-gap-inline-2': {
+    name: 'spacing-container-gap-inline-2',
+    description: '',
+    value: 4
+  },
+  'spacing-container-gap-inline-1': {
+    name: 'spacing-container-gap-inline-1',
+    description: '',
+    value: 8
+  },
+  'spacing-container-gap-inline0': {
+    name: 'spacing-container-gap-inline0',
+    description: '',
+    value: 10
+  },
+  'spacing-container-gap-inline1': {
+    name: 'spacing-container-gap-inline1',
+    description: '',
+    value: 12
+  },
+  'spacing-container-gap-inline2': {
+    name: 'spacing-container-gap-inline2',
+    description: '',
+    value: 16
+  },
+  'spacing-container-gap-block-4': {
+    name: 'spacing-container-gap-block-4',
+    description: '',
+    value: 4
+  },
+  'spacing-container-gap-block-3': {
+    name: 'spacing-container-gap-block-3',
+    description: '',
+    value: 8
+  },
+  'spacing-container-gap-block-2': {
+    name: 'spacing-container-gap-block-2',
+    description: '',
+    value: 10
+  },
+  'spacing-container-gap-block-1': {
+    name: 'spacing-container-gap-block-1',
+    description: '',
+    value: 12
+  },
+  'spacing-container-gap-block0': {
+    name: 'spacing-container-gap-block0',
+    description: '',
+    value: 16
+  },
+  'spacing-container-gap-block1': {
+    name: 'spacing-container-gap-block1',
+    description: '',
+    value: 20
+  },
+  'spacing-container-gap-block2': {
+    name: 'spacing-container-gap-block2',
+    description: '',
+    value: 26
+  },
+  'spacing-container-gap-block3': {
+    name: 'spacing-container-gap-block3',
+    description: '',
+    value: 34
+  },
+  'spacing-container-gap-block4': {
+    name: 'spacing-container-gap-block4',
+    description: '',
+    value: 44
+  },
+  'spacing-primitive-padding-4': {
+    name: 'spacing-primitive-padding-4',
+    description: '',
+    value: 4
+  },
+  'spacing-primitive-padding-3': {
+    name: 'spacing-primitive-padding-3',
+    description: '',
+    value: 8
+  },
+  'spacing-primitive-padding-2': {
+    name: 'spacing-primitive-padding-2',
+    description: '',
+    value: 10
+  },
+  'spacing-primitive-padding-1': {
+    name: 'spacing-primitive-padding-1',
+    description: '',
+    value: 12
+  },
+  'spacing-primitive-padding0': {
+    name: 'spacing-primitive-padding0',
+    description: '',
+    value: 16
+  },
+  'spacing-primitive-padding1': {
+    name: 'spacing-primitive-padding1',
+    description: '',
+    value: 20
+  },
+  'spacing-primitive-padding2': {
+    name: 'spacing-primitive-padding2',
+    description: '',
+    value: 26
+  },
+  'spacing-primitive-padding3': {
+    name: 'spacing-primitive-padding3',
+    description: '',
+    value: 34
+  },
+  'spacing-primitive-padding4': {
+    name: 'spacing-primitive-padding4',
+    description: '',
+    value: 44
+  },
+  'spacing-primitive-gap-2': {
+    name: 'spacing-primitive-gap-2',
+    description: '',
+    value: 4
+  },
+  'spacing-primitive-gap-1': {
+    name: 'spacing-primitive-gap-1',
+    description: '',
+    value: 8
+  },
+  'spacing-primitive-gap0': {
+    name: 'spacing-primitive-gap0',
+    description: '',
+    value: 10
+  },
+  'spacing-primitive-gap1': {
+    name: 'spacing-primitive-gap1',
+    description: '',
+    value: 12
+  },
+  'spacing-primitive-gap2': {
+    name: 'spacing-primitive-gap2',
+    description: '',
+    value: 16
   },
   'control-border-color': {
     name: 'control-border-color',
     description: '',
     value: [
       {
-        value: '#c4c4c4',
+        value: '#d4dcdf',
         features: {
           'color-scheme': 'light'
         },
@@ -3567,21 +5409,22 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#c4c4c4',
+        value: '#37444a',
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
         isSource: true
       }
-    ]
+    ],
+    type: 'color'
   },
   'control-background': {
     name: 'control-background',
     description: '',
     value: [
       {
-        value: '#f2f2f2',
+        value: '#fafbfb',
         features: {
           'color-scheme': 'light'
         },
@@ -3589,7 +5432,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#f2f2f2',
+        value: '#171c1e',
         features: {
           'color-scheme': 'dark'
         },
@@ -3625,25 +5468,8 @@ export const tokens: Tokens = {
   'control-border-width': {
     name: 'control-border-width',
     description: '',
-    value: [
-      {
-        value: 2,
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-        isSource: true
-      },
-      {
-        value: 2,
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-        isSource: true
-      }
-    ],
-    type: 'number'
+    value: '2px',
+    type: 'dimension'
   },
   'control-text': {
     name: 'control-text',
@@ -3652,7 +5478,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#333333',
+            value: '#0c0e10',
             features: {
               'color-scheme': 'light'
             },
@@ -3660,7 +5486,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#f5f5f5',
+            value: '#e9edee',
             features: {
               'color-scheme': 'dark'
             },
@@ -3677,7 +5503,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#333333',
+            value: '#0c0e10',
             features: {
               'color-scheme': 'light'
             },
@@ -3685,7 +5511,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#f5f5f5',
+            value: '#e9edee',
             features: {
               'color-scheme': 'dark'
             },
@@ -3708,7 +5534,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: '#37444a',
             features: {
               'color-scheme': 'light'
             },
@@ -3716,7 +5542,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#cecece',
+            value: '#d4dcdf',
             features: {
               'color-scheme': 'dark'
             },
@@ -3733,7 +5559,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: '#37444a',
             features: {
               'color-scheme': 'light'
             },
@@ -3741,7 +5567,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#cecece',
+            value: '#d4dcdf',
             features: {
               'color-scheme': 'dark'
             },
@@ -3787,7 +5613,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: '#4d5f67',
             features: {
               'color-scheme': 'light'
             },
@@ -3795,7 +5621,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#cecece',
+            value: '#9aacb3',
             features: {
               'color-scheme': 'dark'
             },
@@ -3812,7 +5638,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#737373',
+            value: '#4d5f67',
             features: {
               'color-scheme': 'light'
             },
@@ -3820,7 +5646,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#cecece',
+            value: '#9aacb3',
             features: {
               'color-scheme': 'dark'
             },
@@ -3841,7 +5667,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#dfdfdf',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -3849,7 +5675,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#dfdfdf',
+        value: '#262f32',
         features: {
           'color-scheme': 'dark'
         },
@@ -3866,7 +5692,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#f2f2f2',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
@@ -3874,7 +5700,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#f2f2f2',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
@@ -3891,7 +5717,7 @@ export const tokens: Tokens = {
       {
         value: [
           {
-            value: '#f2f2f2',
+            value: '#fafbfb',
             features: {
               'color-scheme': 'light'
             },
@@ -3899,7 +5725,7 @@ export const tokens: Tokens = {
             isSource: true
           },
           {
-            value: '#f2f2f2',
+            value: '#171c1e',
             features: {
               'color-scheme': 'dark'
             },
@@ -3987,25 +5813,8 @@ export const tokens: Tokens = {
   'control-focus-stroke-offset': {
     name: 'control-focus-stroke-offset',
     description: '',
-    value: [
-      {
-        value: 2,
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-        isSource: true
-      },
-      {
-        value: 2,
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-        isSource: true
-      }
-    ],
-    type: 'number'
+    value: '2px',
+    type: 'dimension'
   },
   'control-focus-stroke-width': {
     name: 'control-focus-stroke-width',
@@ -4030,127 +5839,12 @@ export const tokens: Tokens = {
     ],
     type: 'number'
   },
-  'layout-background': {
-    name: 'layout-background',
-    description: 'Background color for layouts',
-    value: [
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      },
-      {
-        value: '#595959',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'layout-brand': {
-    name: 'layout-brand',
-    description: '',
-    value: [
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      },
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'surface-low-contrast': {
-    name: 'surface-low-contrast',
-    description: '',
-    value: [
-      {
-        value: '#f2f2f2',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      },
-      {
-        value: '#6e6e6e',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'surface-high-contrast': {
-    name: 'surface-high-contrast',
-    description: '',
-    value: [
-      {
-        value: '#595959',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      },
-      {
-        value: '#f2f2f2',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'surface-reduced': {
-    name: 'surface-reduced',
-    description: '',
-    value: [
-      {
-        value: '#6e6e6e',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      },
-      {
-        value: '#dfdfdf',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
   'surface-base': {
     name: 'surface-base',
     description: '',
     value: [
       {
-        value: '#ffffff',
+        value: '#fafbfb',
         features: {
           'color-scheme': 'light'
         },
@@ -4158,7 +5852,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#595959',
+        value: '#171c1e',
         features: {
           'color-scheme': 'dark'
         },
@@ -4173,7 +5867,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffffff',
+        value: '#f1f4f5',
         features: {
           'color-scheme': 'light'
         },
@@ -4181,7 +5875,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#1d2427',
         features: {
           'color-scheme': 'dark'
         },
@@ -4196,7 +5890,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -4204,7 +5898,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#262f32',
         features: {
           'color-scheme': 'dark'
         },
@@ -4260,388 +5954,192 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'structure-border': {
-    name: 'structure-border',
+  'shape-radius-primitive': {
+    name: 'shape-radius-primitive',
+    description: '',
+    value: 8
+  },
+  'shape-radius-container': {
+    name: 'shape-radius-container',
+    description: '',
+    value: 10
+  },
+  'shape-radius-container-nested': {
+    name: 'shape-radius-container-nested',
+    description: '',
+    value: 8
+  },
+  'shape-stroke-width': {
+    name: 'shape-stroke-width',
+    description: '',
+    value: '1px',
+    type: 'dimension'
+  },
+  'shape-stroke-style': {
+    name: 'shape-stroke-style',
+    description: '',
+    value: 'solid',
+    type: 'content'
+  },
+  'shape-stroke-color': {
+    name: 'shape-stroke-color',
     description: '',
     value: [
       {
-        value: '#dfdfdf',
+        value: '#e3e8ea',
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/shape.json',
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#37444a',
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/layout.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/shape.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'palette-structure-0': {
-    name: 'palette-structure-0',
-    description: '',
-    value: '#c4c4c4',
-    type: 'color'
-  },
-  'radius-primitive': {
-    name: 'radius-primitive',
-    description: '',
-    value: 8
-  },
-  'radius-container': {
-    name: 'radius-container',
-    description: '',
-    value: 10
-  },
-  'radius-container-nested': {
-    name: 'radius-container-nested',
-    description: '',
-    value: 8
-  },
-  'stroke-width': {
-    name: 'stroke-width',
-    description: '',
-    value: 1,
-    type: 'number'
-  },
-  'stroke-style': {
-    name: 'stroke-style',
-    description: '',
-    value: 'solid',
-    type: 'content'
-  },
-  'stroke-color': {
-    name: 'stroke-color',
-    description: '',
-    value: '#c4c4c4'
-  },
-  'global-s0': {
-    name: 'global-s0',
+  s0: {
+    name: 's0',
     description: '',
     value: 16,
     type: 'number'
   },
-  'global-s1': {
-    name: 'global-s1',
+  s1: {
+    name: 's1',
     description: '',
     value: 20,
     type: 'number'
   },
-  'global-s2': {
-    name: 'global-s2',
+  s2: {
+    name: 's2',
     description: '',
     value: 26,
     type: 'number'
   },
-  'global-s3': {
-    name: 'global-s3',
+  s3: {
+    name: 's3',
     description: '',
     value: 34,
     type: 'number'
   },
-  'global-s4': {
-    name: 'global-s4',
+  s4: {
+    name: 's4',
     description: '',
     value: 44,
     type: 'number'
   },
-  'global-s-1': {
-    name: 'global-s-1',
+  's-1': {
+    name: 's-1',
     description: '',
     value: 12,
     type: 'number'
   },
-  'global-s-2': {
-    name: 'global-s-2',
+  's-2': {
+    name: 's-2',
     description: '',
     value: 10,
     type: 'number'
   },
-  'global-s-3': {
-    name: 'global-s-3',
+  's-3': {
+    name: 's-3',
     description: '',
     value: 8,
     type: 'number'
   },
-  'global-s-4': {
-    name: 'global-s-4',
+  's-4': {
+    name: 's-4',
     description: '',
     value: 4,
     type: 'number'
   },
-  'local-ls0': {
-    name: 'local-ls0',
+  ls0: {
+    name: 'ls0',
     description: '',
     value: 16,
     type: 'number'
   },
-  'local-ls-1': {
-    name: 'local-ls-1',
+  'ls-1': {
+    name: 'ls-1',
     description: '',
     value: 12,
     type: 'number'
   },
-  'local-ls-2': {
-    name: 'local-ls-2',
+  'ls-2': {
+    name: 'ls-2',
     description: '',
     value: 10,
     type: 'number'
   },
-  'local-ls-3': {
-    name: 'local-ls-3',
+  'ls-3': {
+    name: 'ls-3',
     description: '',
     value: 8,
     type: 'number'
   },
-  'local-ls-4': {
-    name: 'local-ls-4',
+  'ls-4': {
+    name: 'ls-4',
     description: '',
     value: 4,
     type: 'number'
   },
-  'local-ls1': {
-    name: 'local-ls1',
+  ls1: {
+    name: 'ls1',
     description: '',
     value: 20,
     type: 'number'
   },
-  'local-ls2': {
-    name: 'local-ls2',
+  ls2: {
+    name: 'ls2',
     description: '',
     value: 26,
     type: 'number'
   },
-  'local-ls3': {
-    name: 'local-ls3',
+  ls3: {
+    name: 'ls3',
     description: '',
     value: 34,
     type: 'number'
   },
-  'local-ls4': {
-    name: 'local-ls4',
+  ls4: {
+    name: 'ls4',
     description: '',
     value: 44,
     type: 'number'
   },
-  ratio: {
-    name: 'ratio',
+  'sizing-ratio': {
+    name: 'sizing-ratio',
     description: '',
     value: 1.3,
     type: 'number'
   },
-  factor: {
-    name: 'factor',
+  'sizing-factor': {
+    name: 'sizing-factor',
     description: '',
     value: 0.8,
     type: 'number'
   },
-  'primitive-padding-4': {
-    name: 'primitive-padding-4',
+  'typography-prose': {
+    name: 'typography-prose',
     description: '',
-    value: 4
+    value: '400 16px/1.21 "Inter"',
+    type: 'typography'
   },
-  'primitive-padding-3': {
-    name: 'primitive-padding-3',
-    description: '',
-    value: 8
-  },
-  'primitive-padding-2': {
-    name: 'primitive-padding-2',
-    description: '',
-    value: 10
-  },
-  'primitive-padding-1': {
-    name: 'primitive-padding-1',
-    description: '',
-    value: 12
-  },
-  'primitive-padding0': {
-    name: 'primitive-padding0',
-    description: '',
-    value: 16
-  },
-  'primitive-padding1': {
-    name: 'primitive-padding1',
-    description: '',
-    value: 20
-  },
-  'primitive-padding2': {
-    name: 'primitive-padding2',
-    description: '',
-    value: 26
-  },
-  'primitive-padding3': {
-    name: 'primitive-padding3',
-    description: '',
-    value: 34
-  },
-  'primitive-padding4': {
-    name: 'primitive-padding4',
-    description: '',
-    value: 44
-  },
-  'primitive-gap-2': {
-    name: 'primitive-gap-2',
-    description: '',
-    value: 4
-  },
-  'primitive-gap-1': {
-    name: 'primitive-gap-1',
-    description: '',
-    value: 8
-  },
-  'primitive-gap0': {
-    name: 'primitive-gap0',
-    description: '',
-    value: 10
-  },
-  'primitive-gap1': {
-    name: 'primitive-gap1',
-    description: '',
-    value: 12
-  },
-  'primitive-gap2': {
-    name: 'primitive-gap2',
-    description: '',
-    value: 16
-  },
-  'container-padding-4': {
-    name: 'container-padding-4',
-    description: '',
-    value: 4
-  },
-  'container-padding-3': {
-    name: 'container-padding-3',
-    description: '',
-    value: 8
-  },
-  'container-padding-2': {
-    name: 'container-padding-2',
-    description: '',
-    value: 10
-  },
-  'container-padding-1': {
-    name: 'container-padding-1',
-    description: '',
-    value: 12
-  },
-  'container-padding0': {
-    name: 'container-padding0',
-    description: '',
-    value: 16
-  },
-  'container-padding1': {
-    name: 'container-padding1',
-    description: '',
-    value: 20
-  },
-  'container-padding2': {
-    name: 'container-padding2',
-    description: '',
-    value: 26
-  },
-  'container-padding3': {
-    name: 'container-padding3',
-    description: '',
-    value: 34
-  },
-  'container-padding4': {
-    name: 'container-padding4',
-    description: '',
-    value: 44
-  },
-  'container-gap-inline-2': {
-    name: 'container-gap-inline-2',
-    description: '',
-    value: 4
-  },
-  'container-gap-inline-1': {
-    name: 'container-gap-inline-1',
-    description: '',
-    value: 8
-  },
-  'container-gap-inline0': {
-    name: 'container-gap-inline0',
-    description: '',
-    value: 10
-  },
-  'container-gap-inline1': {
-    name: 'container-gap-inline1',
-    description: '',
-    value: 12
-  },
-  'container-gap-inline2': {
-    name: 'container-gap-inline2',
-    description: '',
-    value: 16
-  },
-  'container-gap-block-4': {
-    name: 'container-gap-block-4',
-    description: '',
-    value: 4
-  },
-  'container-gap-block-3': {
-    name: 'container-gap-block-3',
-    description: '',
-    value: 8
-  },
-  'container-gap-block-2': {
-    name: 'container-gap-block-2',
-    description: '',
-    value: 10
-  },
-  'container-gap-block-1': {
-    name: 'container-gap-block-1',
-    description: '',
-    value: 12
-  },
-  'container-gap-block0': {
-    name: 'container-gap-block0',
-    description: '',
-    value: 16
-  },
-  'container-gap-block1': {
-    name: 'container-gap-block1',
-    description: '',
-    value: 20
-  },
-  'container-gap-block2': {
-    name: 'container-gap-block2',
-    description: '',
-    value: 26
-  },
-  'container-gap-block3': {
-    name: 'container-gap-block3',
-    description: '',
-    value: 34
-  },
-  'container-gap-block4': {
-    name: 'container-gap-block4',
-    description: '',
-    value: 44
-  },
-  'typography-typography-prosa': {
-    name: 'typography-typography-prosa',
+  'typography-heading': {
+    name: 'typography-heading',
     description: '',
     value: '400 24px/1.21 "Inter"',
     type: 'typography'
   },
-  'typography-typography-heading': {
-    name: 'typography-typography-heading',
+  'typography-display': {
+    name: 'typography-display',
     description: '',
-    value: '400 24px/1.21 "Inter"',
-    type: 'typography'
-  },
-  'typography-typography-display': {
-    name: 'typography-typography-display',
-    description: '',
-    value: '400 24px/1.21 "Inter"',
+    value: '400 40px/1.17 "Inter Display"',
     type: 'typography'
   },
   'typography-main': {
@@ -4649,7 +6147,7 @@ export const tokens: Tokens = {
     description: 'Regular text color',
     value: [
       {
-        value: '#333333',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'light'
         },
@@ -4657,7 +6155,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -4672,7 +6170,7 @@ export const tokens: Tokens = {
     description: 'Text color for more contrast (e.g. high-contrast or reduced)',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -4680,53 +6178,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#333333',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'typography-disabled': {
-    name: 'typography-disabled',
-    description: '',
-    value: [
-      {
-        value: '#737373',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-        isSource: true
-      },
-      {
-        value: '#cecece',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'typography-inverse-disabled': {
-    name: 'typography-inverse-disabled',
-    description: '',
-    value: [
-      {
-        value: '#cecece',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-        isSource: true
-      },
-      {
-        value: '#737373',
+        value: '#0c0e10',
         features: {
           'color-scheme': 'dark'
         },
@@ -4741,7 +6193,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#37444a',
         features: {
           'color-scheme': 'light'
         },
@@ -4749,7 +6201,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#cecece',
+        value: '#d4dcdf',
         features: {
           'color-scheme': 'dark'
         },
@@ -4764,7 +6216,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#737373',
+        value: '#4d5f67',
         features: {
           'color-scheme': 'light'
         },
@@ -4772,7 +6224,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#cecece',
+        value: '#9aacb3',
         features: {
           'color-scheme': 'dark'
         },

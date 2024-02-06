@@ -85,8 +85,8 @@ export default [
     },
     plugins: [
       multiInput.default(),
-      css({ output: 'index.css' }),
-      del({ targets: ['dist/dist', 'dist/foundation.js'], hook: 'closeBundle', runOnce: true })
+      css({ output: 'index.css' })
+      // del({ targets: ['dist/dist', 'dist/foundation.js'], hook: 'closeBundle', runOnce: true })
     ]
   }
 ];

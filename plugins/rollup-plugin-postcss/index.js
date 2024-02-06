@@ -177,7 +177,7 @@ module.exports = (options = {}) => {
      * 2. Postprocessing on the concatenated file to remove duplicates and other
      *    CSS optimizations with `cssnano` and `lightningcss`
      */
-    async generateBundle(options_, _bundle) {
+    async generateBundle(options_ /*, _bundle*/) {
       if (extracted.size === 0 || !options_.dir || !output) {
         return;
       }

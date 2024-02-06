@@ -948,10 +948,10 @@ importers:
         version: 6.0.0(postcss@8.4.33)
     devDependencies:
       '@hokulea/config-eslint':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/eslint
       '@hokulea/config-prettier':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/prettier
       eslint:
         specifier: ^8.56.0

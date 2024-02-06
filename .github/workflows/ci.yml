@@ -8,37 +8,54 @@ on:
       - main
 
 jobs:
-  lint:
+  lint-js:
+    name: lint:js
     runs-on: ubuntu-latest
-
     steps:
-    - name: Setup node
-      uses: volta-cli/action@v1
-    - name: Checkout
-      uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-    - name: install
-      run: yarn
-    - name: lint
-      run: yarn lint
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: Build package
+        run: pnpm build
+      - run: pnpm run -r --parallel --aggregate-output lint:js
 
-  test:
+  lint-hbs:
+    name: lint:hbs
     runs-on: ubuntu-latest
-
     steps:
-    - name: Setup node
-      uses: volta-cli/action@v1
-    - name: Checkout
-      uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-    - name: install
-      run: yarn
-    - name: test
-      run: yarn test
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: Build package
+        run: pnpm build
+      - run: pnpm run -r --parallel --aggregate-output lint:hbs
 
+  lint-types:
+    name: lint:types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: Build package
+        run: pnpm build
+      - run: pnpm run -r --parallel --aggregate-output lint:types
+
+  test-locked-deps:
+    name: Locked Deps
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: Build package
+        run: pnpm build
+      - name: Tests
+        run: pnpm run -r --parallel --aggregate-output test
+
+  test-floating-deps:
+    name: Floating Deps
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: Build package
+        run: pnpm build
+      - name: Tests
+        run: pnpm run -r --parallel --aggregate-output test

@@ -35,8 +35,8 @@ module.exports = {
     const title = doc.attributes.title
       ? doc.attributes.title
       : doc.toc && doc.toc.length > 0
-      ? doc.toc[0].content
-      : '';
+        ? doc.toc[0].content
+        : '';
 
     // strip first <h1> off of html
     if (!doc.attributes.title) {

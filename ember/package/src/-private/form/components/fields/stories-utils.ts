@@ -43,14 +43,14 @@ export function parseArgs(args: FieldArgs): FieldArgs {
       typeof args.disabled === 'boolean'
         ? args.disabled
         : typeof args.disabled === 'string'
-        ? JSON.parse(args.disabled)
-        : undefined,
+          ? JSON.parse(args.disabled)
+          : undefined,
     required:
       typeof args.required === 'boolean'
         ? args.required
         : typeof args.required === 'string'
-        ? JSON.parse(args.required)
-        : undefined,
+          ? JSON.parse(args.required)
+          : undefined,
     submit: (data) => {
       if (data instanceof Event) {
         return;

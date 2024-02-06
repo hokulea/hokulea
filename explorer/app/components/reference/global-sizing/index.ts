@@ -1,7 +1,7 @@
-import { registerDestructor } from '@ember/destroyable';
-import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { registerDestructor } from '@ember/destroyable';
+import { action } from '@ember/object';
 
 export interface GlobalSizingElement extends HTMLElement {
   update: () => void;
@@ -21,6 +21,7 @@ export default class GlobalScaleDemoComponent extends Component {
 
     // listen for changes
     window.addEventListener('resize', this.update);
+
     const mutationObserver = new window.MutationObserver(this.update);
 
     registerDestructor(this, () => {
@@ -29,6 +30,7 @@ export default class GlobalScaleDemoComponent extends Component {
     });
 
     let elem = element as HTMLElement;
+
     do {
       mutationObserver.observe(elem, {
         attributes: true,
@@ -44,8 +46,6 @@ export default class GlobalScaleDemoComponent extends Component {
   @action
   private update() {
     this.viewportWidth = window.innerWidth;
-    this.fontSize = window
-      .getComputedStyle(document.documentElement)
-      .getPropertyValue('font-size');
+    this.fontSize = window.getComputedStyle(document.documentElement).getPropertyValue('font-size');
   }
 }

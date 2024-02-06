@@ -1,3 +1,4 @@
+// eslint-disable-next-line n/no-missing-require
 const { getOptions } = require('loader-utils');
 
 const { compileMarkdown } = require('./md-compiler');
@@ -10,7 +11,7 @@ const translateLinks = function (html, options) {
   const baseDir = path.dirname(options.file);
 
   // internal links
-  let output = html.replace(/<a href="([^"]+)\.md#?(.+)?">/g, (_match, target, _hash) => {
+  let output = html.replace(/<a href="([^"]+)\.md#?(.+)?">/g, (_match, target /*, _hash*/) => {
     const nav = path.relative(options.dir, path.normalize(`${baseDir}/${target}`));
     const parts = nav.split('/');
     const name = parts.pop();

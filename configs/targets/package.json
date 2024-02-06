@@ -6,7 +6,7 @@
     "lint:js": "eslint ."
   },
   "dependencies": {
-    "@gossi/config-targets": "^0.6.0"
+    "@gossi/config-targets": "^0.7.0"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",

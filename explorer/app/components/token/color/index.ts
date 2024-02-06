@@ -1,7 +1,7 @@
-import { registerDestructor } from '@ember/destroyable';
-import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { registerDestructor } from '@ember/destroyable';
+import { action } from '@ember/object';
 
 import { findDescription } from '../token';
 
@@ -22,6 +22,7 @@ export default class TokenComponent extends Component<TokenArgs> {
   setup(): void {
     // listen for changes
     const media = window.matchMedia('(prefers-color-scheme: dark)');
+
     media.addEventListener('change', this.update);
 
     registerDestructor(this, () => {

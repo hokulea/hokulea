@@ -6,14 +6,6 @@
   "files": [
     "dist"
   ],
-  "typesVersions": {
-    "*": {
-      "*": [
-        "src/*",
-        "dist/*"
-      ]
-    }
-  },
   "scripts": {
     "start": "swc src/ -d dist/ -w",
     "build": "pnpm build:tokens && pnpm build:js && pnpm build:dts",
@@ -53,8 +45,14 @@
     "typescript": "^5.3.3"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
   },
   "engines": {
     "node": ">= 20.*"

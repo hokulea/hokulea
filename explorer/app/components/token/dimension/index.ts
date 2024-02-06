@@ -1,7 +1,7 @@
-import { registerDestructor } from '@ember/destroyable';
-import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { registerDestructor } from '@ember/destroyable';
+import { action } from '@ember/object';
 
 import { findDescription } from '../token';
 
@@ -23,6 +23,7 @@ export default class TokenComponent extends Component<TokenArgs> {
   setup(element: HTMLElement): void {
     // listen for changes
     window.addEventListener('resize', this.update);
+
     const mutationObserver = new window.MutationObserver(this.update);
 
     registerDestructor(this, () => {
@@ -31,7 +32,9 @@ export default class TokenComponent extends Component<TokenArgs> {
     });
 
     this.demo = element;
+
     let elem = element;
+
     do {
       mutationObserver.observe(elem, {
         attributes: true,
@@ -59,6 +62,7 @@ export default class TokenComponent extends Component<TokenArgs> {
 
   private compute(): string | undefined {
     const width = this.demo?.getBoundingClientRect().width;
+
     return width ? `${width.toFixed(2)}px` : undefined;
   }
 }

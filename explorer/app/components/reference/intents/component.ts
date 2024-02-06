@@ -1,6 +1,6 @@
-import { helper } from '@ember/component/helper';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { helper } from '@ember/component/helper';
 
 export default class IntentsComponent extends Component {
   states = ['base', 'active', 'hover', 'disabled'];
@@ -15,6 +15,7 @@ export default class IntentsComponent extends Component {
 
   get colors(): string[] {
     const colors = [];
+
     for (const state of this.states) {
       for (const prop of this.colorProperties) {
         colors.push(`${state}-${prop}`);
@@ -25,7 +26,6 @@ export default class IntentsComponent extends Component {
   }
 
   compileName = helper(
-    ([type, prop]) =>
-      `--intent-${this.intent}-${this.importance}-${prop}-${type}`
+    ([type, prop]) => `--intent-${this.intent}-${this.importance}-${prop}-${type}`
   );
 }

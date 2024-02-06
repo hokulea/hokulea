@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-invalid-this */
 import EmberRouter from '@ember/routing/router';
 
 import config from '@hokulea/ember-test-app/config/environment';

@@ -1,13 +1,13 @@
-import type { StorybookConfig } from '@storybook/ember';
-import { precompile } from 'ember-source/dist/ember-template-compiler';
-import Case from 'case';
-
-import type { RuleSetRule } from 'webpack';
-
 import path from 'node:path';
+
+import Case from 'case';
+import { precompile } from 'ember-source/dist/ember-template-compiler';
 
 import markdownCompilerConfig from './config/md-compiler';
 import hbsBabelLoader from './loader/hbs-loader';
+
+import type { StorybookConfig } from '@storybook/ember';
+import type { RuleSetRule } from 'webpack';
 
 const config: StorybookConfig = {
   // stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -101,4 +101,5 @@ const config: StorybookConfig = {
     return config;
   }
 };
+
 export default config;

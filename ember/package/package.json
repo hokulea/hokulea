@@ -51,8 +51,10 @@
   "dependencies": {
     "@hokulea/core": "workspace:*",
     "@embroider/addon-shim": "^1.8.7",
+    "debug": "^4.3.2",
     "decorator-transforms": "^1.1.0",
     "ember-async-data": "^1.0.3",
+    "read-pkg-up": "^11.0.0",
     "tracked-built-ins": "^3.3.0"
   },
   "peerDependencies": {
@@ -74,6 +76,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
+    "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-transform-typescript": "^7.23.6",
     "@babel/runtime": "^7.23.8",
     "@ember/test-helpers": "^3.2.1",
@@ -103,6 +106,7 @@
     "concurrently": "^8.2.2",
     "ember-command": "^2.0.2",
     "ember-cli-htmlbars": "^6.3.0",
+    "ember-css-modules": "^2.0.1",
     "ember-link": "^3.2.0",
     "ember-source": "^5.6.0",
     "ember-template-imports": "^4.0.0",

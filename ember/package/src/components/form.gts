@@ -44,6 +44,7 @@ import type { WithBoundArgs } from '@glint/template';
 
 type ValidateOn = 'change' | 'focusout' | 'submit' | 'input';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export interface FormSignature<DATA extends UserData, SUBMISSION_VALUE> {
   Element: HTMLFormElement;
   Args: {
@@ -201,6 +202,7 @@ class FieldData<DATA extends FormData, KEY extends FormKey<DATA> = FormKey<DATA>
  * </HeadlessForm>
  * ```
  */
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Component<
   FormSignature<DATA, SUBMISSION_VALUE>
 > {
@@ -372,11 +374,11 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
       ? // no need for dynamic validation, as validation always happens on submit
         undefined
       : // when validation happens more frequently than revalidation, then we can ignore revalidation, because the validation handler will already cover us
-      validateOn === 'input' ||
-        (validateOn === 'change' && revalidateOn === 'focusout') ||
-        validateOn === revalidateOn
-      ? undefined
-      : revalidateOn;
+        validateOn === 'input' ||
+          (validateOn === 'change' && revalidateOn === 'focusout') ||
+          validateOn === revalidateOn
+        ? undefined
+        : revalidateOn;
   }
 
   /**

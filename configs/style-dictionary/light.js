@@ -5,6 +5,7 @@ const config = {
   include: [`tokens/**/!(*.${base.modes.join(`|*.`)}).json`],
   source: [`tokens/**/*.light.json`]
 };
+
 config.platforms.web.files = [
   {
     format: 'css/variables',

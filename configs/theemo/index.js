@@ -1,4 +1,4 @@
-const { DEV, FIGMA_FILE, FIGMA_SECRET, JSONBIN_FILE, JSONBIN_SECRET } = process.env;
+const { /*DEV,*/ FIGMA_FILE, FIGMA_SECRET, JSONBIN_FILE, JSONBIN_SECRET } = process.env;
 
 function pathForToken(token) {
   const name =

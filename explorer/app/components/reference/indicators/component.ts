@@ -1,6 +1,6 @@
-import { helper } from '@ember/component/helper';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { helper } from '@ember/component/helper';
 
 export default class IndicatorsComponent extends Component {
   colorProperties = ['background', 'border', 'text'];
@@ -13,6 +13,7 @@ export default class IndicatorsComponent extends Component {
 
   get colors(): string[] {
     const colors = [];
+
     for (const importance of this.importanceLevels) {
       for (const prop of this.colorProperties) {
         colors.push(`${importance}-${prop}`);
@@ -22,7 +23,5 @@ export default class IndicatorsComponent extends Component {
     return colors;
   }
 
-  compileName = helper(
-    ([type, prop]) => `--indicator-${this.indicator}-${prop}-${type}`
-  );
+  compileName = helper(([type, prop]) => `--indicator-${this.indicator}-${prop}-${type}`);
 }

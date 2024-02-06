@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 
 const { precompile } = require('ember-source/dist/ember-template-compiler');
@@ -25,6 +26,7 @@ module.exports = {
     presets: [['@babel/preset-typescript']],
     plugins: [
       [
+        // eslint-disable-next-line n/no-missing-require
         require.resolve('babel-plugin-htmlbars-inline-precompile'),
         {
           precompile,

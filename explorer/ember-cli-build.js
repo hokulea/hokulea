@@ -5,7 +5,7 @@ const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/em
 const hokuleaPostCSSConfig = require('@hokulea/config-postcss');
 const packageJson = require('./package');
 
-const withSideWatch = require('./lib/with-side-watch');
+const sideWatch = require('@embroider/broccoli-side-watch');
 const postCSSPlugins = hokuleaPostCSSConfig.plugins;
 const postCSSModulesIndex = hokuleaPostCSSConfig.plugins.indexOf(require('postcss-modules'));
 
@@ -16,7 +16,7 @@ if (postCSSModulesIndex !== -1) {
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     trees: {
-      app: withSideWatch('app', { watching: ['../foundation/core/dist', '../foundation/tokens/dist'] })
+      app: sideWatch('app', { watching: ['../foundation/core/dist', '../foundation/tokens/dist'] })
     },
 
     babel: {

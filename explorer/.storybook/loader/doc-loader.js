@@ -10,28 +10,20 @@ const translateLinks = function (html, options) {
   const baseDir = path.dirname(options.file);
 
   // internal links
-  let output = html.replace(
-    /<a href="([^"]+)\.md#?(.+)?">/g,
-    (_match, target, _hash) => {
-      const nav = path.relative(
-        options.dir,
-        path.normalize(`${baseDir}/${target}`)
-      );
-      const parts = nav.split('/');
-      const name = parts.pop();
+  let output = html.replace(/<a href="([^"]+)\.md#?(.+)?">/g, (_match, target, _hash) => {
+    const nav = path.relative(options.dir, path.normalize(`${baseDir}/${target}`));
+    const parts = nav.split('/');
+    const name = parts.pop();
 
-      return `<a
+    return `<a
       href="#"
       data-sb-kind="${Case.lower(options.root)}-${parts.join('-')}"
       data-sb-story="${name}"
     >`;
-    }
-  );
+  });
 
   // external links
-  output = output.replace(/<a href="[^#]+">/g, link =>
-    link.replace('>', ' target="_blank">')
-  );
+  output = output.replace(/<a href="[^#]+">/g, (link) => link.replace('>', ' target="_blank">'));
 
   // // anchor link
   // output = output.replace(/<a href="#(.+)">/g, (link, target) => {
@@ -54,12 +46,13 @@ const loader = function (source) {
     .relative(options.dir, this.resourcePath)
     .replace('.md', '')
     .split('/')
-    .map(name => Case.capital(name))
+    .map((name) => Case.capital(name))
     .join('/');
   const parts = nav.split('/');
   const id = parts.pop();
   const name = Case.camel(id);
   const title = doc.attributes.title ? doc.attributes.title : id;
+  // const metaId = `documentation-${parts.join('-').toLowerCase().replace(' ', '-')}--${id.toLowerCase()}`;
 
   const code = `import { hbs } from 'ember-cli-htmlbars';
   import { withLinks } from '@storybook/addon-links';

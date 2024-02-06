@@ -1,5 +1,0 @@
-.input {
-  composes: input from "./input-builder.css";
-
-  /* composes: padding-primitive from '@hokulea/foundation/structure/padding'; */
-}

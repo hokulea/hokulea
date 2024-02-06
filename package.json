@@ -7,7 +7,7 @@
     "api:cleanup": "mv temp/* api/ && rm -rf temp",
     "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
     "start": "turbo run start --parallel",
-    "start-storybook": "pnpm run --filter @hokulea/explorer start-storybook",
+    "storybook": "pnpm run --filter @hokulea/explorer storybook",
     "build": "turbo run --filter @hokulea/ember-actions-test-app build",
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",

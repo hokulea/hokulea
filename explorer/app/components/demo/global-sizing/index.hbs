@@ -6,16 +6,10 @@
 </p>
 
 <Button @importance="subtle" {{on "click" this.reset}}>Reset</Button>
-<Button
-  @importance={{if (eq this.version "clamp") "fill" "subtle"}}
-  {{on "click" this.useClamp}}
->
+<Button @importance={{if (eq this.version "clamp") "fill" "subtle"}} {{on "click" this.useClamp}}>
   clamp(16px, calc(0.5vw + 1em * 0.8), 18px)
 </Button>
-<Button
-  @importance={{if (eq this.version "static") "fill" "subtle"}}
-  {{on "click" this.useStatic}}
->
+<Button @importance={{if (eq this.version "static") "fill" "subtle"}} {{on "click" this.useStatic}}>
   12px
 </Button>
 

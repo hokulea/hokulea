@@ -3,10 +3,7 @@
     <TokenName @name={{@name}} />
     <div
       local-class="demo"
-      {{style
-        fontSize=(concat "var(" @refSize ")")
-        --value=(concat "var(" @name ")")
-      }}
+      {{style fontSize=(concat "var(" @refSize ")") --value=(concat "var(" @name ")")}}
       {{did-insert this.setup}}
     ></div>
     <p local-class="description">{{this.description}}</p>

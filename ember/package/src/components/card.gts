@@ -16,28 +16,28 @@ export interface CardSignature {
 
 const Card: TOC<CardSignature> = <template>
   <div class={{styles.card}} ...attributes>
-    {{#if (has-block "header")}}
+    {{#if (has-block 'header')}}
       <div class={{styles.header}}>
-        {{yield to="header"}}
+        {{yield to='header'}}
       </div>
     {{/if}}
 
-    {{#if (or (has-block "body") (has-block "default"))}}
+    {{#if (or (has-block 'body') (has-block))}}
       <div class={{styles.body}}>
-        {{#if (has-block "body")}}
-          {{yield to="body"}}
-        {{else if (has-block "default")}}
+        {{#if (has-block 'body')}}
+          {{yield to='body'}}
+        {{else if (has-block)}}
           {{yield}}
         {{/if}}
       </div>
     {{/if}}
 
-    {{#if (has-block "footer")}}
+    {{#if (has-block 'footer')}}
       <div class={{styles.footer}}>
-        {{yield to="footer"}}
+        {{yield to='footer'}}
       </div>
     {{/if}}
   </div>
-</template>
+</template>;
 
 export default Card;

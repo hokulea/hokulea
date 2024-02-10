@@ -1,7 +1,7 @@
 {
   "indicator": {
     "info": {
-      "supreme": {
+      "subtle": {
         "background": {
           "$value": [
             {
@@ -11,7 +11,7 @@
               }
             },
             {
-              "value": "#ffffff",
+              "value": "#66d1ff",
               "features": {
                 "color-scheme": "dark"
               }
@@ -29,7 +29,7 @@
               }
             },
             {
-              "value": "#ffffff",
+              "value": "#098bc3",
               "features": {
                 "color-scheme": "dark"
               }
@@ -41,13 +41,13 @@
         "text": {
           "$value": [
             {
-              "value": "#076892",
+              "value": "#054661",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#ffffff",
+              "value": "#054661",
               "features": {
                 "color-scheme": "dark"
               }
@@ -57,7 +57,7 @@
           "$type": "color"
         }
       },
-      "subtle": {
+      "supreme": {
         "background": {
           "$value": [
             {
@@ -67,7 +67,7 @@
               }
             },
             {
-              "value": "#ffffff",
+              "value": "#076892",
               "features": {
                 "color-scheme": "dark"
               }
@@ -85,7 +85,7 @@
               }
             },
             {
-              "value": "#ffffff",
+              "value": "#076892",
               "features": {
                 "color-scheme": "dark"
               }
@@ -103,7 +103,7 @@
               }
             },
             {
-              "value": "#ffffff",
+              "value": "#e9edee",
               "features": {
                 "color-scheme": "dark"
               }

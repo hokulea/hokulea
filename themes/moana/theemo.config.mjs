@@ -11,7 +11,7 @@ import inflection from 'inflection';
 const { FIGMA_SECRET } = process.env;
 
 const NESTED_TOPICS = ['intents', 'indicators', 'spacing'];
-const TOPICS = ['indicators', 'intents', 'shape', 'sizing', 'spacing'];
+const TOPICS = ['shape', 'sizing', 'spacing'];
 const DYNAMIC = [
   's-4',
   's-3',

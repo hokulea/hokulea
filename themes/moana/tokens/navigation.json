@@ -2,15 +2,15 @@
   "navigation": {
     "links": {
       "base": {
-        "$value": "{intent.intent.action.plain.base.text}",
+        "$value": "{intent.action.plain.base.text}",
         "$description": ""
       },
       "hover": {
-        "$value": "{intent.intent.action.plain.hover.text}",
+        "$value": "{intent.action.plain.hover.text}",
         "$description": ""
       },
       "active": {
-        "$value": "{intent.intent.action.plain.active.text}",
+        "$value": "{intent.action.plain.active.text}",
         "$description": ""
       }
     }

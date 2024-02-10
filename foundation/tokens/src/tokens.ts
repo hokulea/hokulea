@@ -4,8 +4,8 @@ import { type Token } from './';
 type Tokens = Record<string, Token>;
 
 export const tokens: Tokens = {
-  'indicator-error-box-background': {
-    name: 'indicator-error-box-background',
+  'indicator-error-subtle-background': {
+    name: 'indicator-error-subtle-background',
     description: '',
     value: [
       {
@@ -17,754 +17,18 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-box-border': {
-    name: 'indicator-error-box-border',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-box-text': {
-    name: 'indicator-error-box-text',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-fill-background': {
-    name: 'indicator-error-fill-background',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-fill-border': {
-    name: 'indicator-error-fill-border',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-fill-text': {
-    name: 'indicator-error-fill-text',
-    description: '',
-    value: [
-      {
-        value: '#f5f5f5',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-outline-border': {
-    name: 'indicator-error-outline-border',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#e76a6a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-outline-text': {
-    name: 'indicator-error-outline-text',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      },
-      {
-        value: '#e76a6a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-subtle-background': {
-    name: 'indicator-indicator-info-subtle-background',
-    description: '',
-    value: [
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-subtle-border': {
-    name: 'indicator-indicator-info-subtle-border',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-subtle-text': {
-    name: 'indicator-indicator-info-subtle-text',
-    description: '',
-    value: [
-      {
-        value: '#054661',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#054661',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-supreme-background': {
-    name: 'indicator-indicator-info-supreme-background',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-supreme-border': {
-    name: 'indicator-indicator-info-supreme-border',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-supreme-text': {
-    name: 'indicator-indicator-info-supreme-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-plain-border': {
-    name: 'indicator-indicator-info-plain-border',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#3cbef6',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-info-plain-text': {
-    name: 'indicator-indicator-info-plain-text',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#3cbef6',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-subtle-background': {
-    name: 'indicator-indicator-success-subtle-background',
-    description: '',
-    value: [
-      {
-        value: '#abede2',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#abede2',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-subtle-border': {
-    name: 'indicator-indicator-success-subtle-border',
-    description: '',
-    value: [
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-subtle-text': {
-    name: 'indicator-indicator-success-subtle-text',
-    description: '',
-    value: [
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-supreme-background': {
-    name: 'indicator-indicator-success-supreme-background',
-    description: '',
-    value: [
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-supreme-border': {
-    name: 'indicator-indicator-success-supreme-border',
-    description: '',
-    value: [
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-supreme-text': {
-    name: 'indicator-indicator-success-supreme-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-plain-border': {
-    name: 'indicator-indicator-success-plain-border',
-    description: '',
-    value: [
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#6be0cb',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-success-plain-text': {
-    name: 'indicator-indicator-success-plain-text',
-    description: '',
-    value: [
-      {
-        value: '#125449',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#6be0cb',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-subtle-background': {
-    name: 'indicator-indicator-warning-subtle-background',
-    description: '',
-    value: [
-      {
-        value: '#ffe299',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#ffe299',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-subtle-border': {
-    name: 'indicator-indicator-warning-subtle-border',
-    description: '',
-    value: [
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-subtle-text': {
-    name: 'indicator-indicator-warning-subtle-text',
-    description: '',
-    value: [
-      {
-        value: '#664900',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#664900',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-supreme-background': {
-    name: 'indicator-indicator-warning-supreme-background',
-    description: '',
-    value: [
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-supreme-border': {
-    name: 'indicator-indicator-warning-supreme-border',
-    description: '',
-    value: [
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-supreme-text': {
-    name: 'indicator-indicator-warning-supreme-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-plain-border': {
-    name: 'indicator-indicator-warning-plain-border',
-    description: '',
-    value: [
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#ffcc4d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-warning-plain-text': {
-    name: 'indicator-indicator-warning-plain-text',
-    description: '',
-    value: [
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
-        value: '#ffcc4d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-indicator-error-subtle-background': {
-    name: 'indicator-indicator-error-subtle-background',
-    description: '',
-    value: [
-      {
-        value: '#ee9696',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      },
-      {
         value: '#ee9696',
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-subtle-border': {
-    name: 'indicator-indicator-error-subtle-border',
+  'indicator-error-subtle-border': {
+    name: 'indicator-error-subtle-border',
     description: '',
     value: [
       {
@@ -772,7 +36,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -780,14 +44,14 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-subtle-text': {
-    name: 'indicator-indicator-error-subtle-text',
+  'indicator-error-subtle-text': {
+    name: 'indicator-error-subtle-text',
     description: '',
     value: [
       {
@@ -795,7 +59,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -803,14 +67,14 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-supreme-background': {
-    name: 'indicator-indicator-error-supreme-background',
+  'indicator-error-supreme-background': {
+    name: 'indicator-error-supreme-background',
     description: '',
     value: [
       {
@@ -818,7 +82,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -826,14 +90,14 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-supreme-border': {
-    name: 'indicator-indicator-error-supreme-border',
+  'indicator-error-supreme-border': {
+    name: 'indicator-error-supreme-border',
     description: '',
     value: [
       {
@@ -841,7 +105,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -849,14 +113,14 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-supreme-text': {
-    name: 'indicator-indicator-error-supreme-text',
+  'indicator-error-supreme-text': {
+    name: 'indicator-error-supreme-text',
     description: '',
     value: [
       {
@@ -864,7 +128,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -872,14 +136,14 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-plain-border': {
-    name: 'indicator-indicator-error-plain-border',
+  'indicator-error-plain-border': {
+    name: 'indicator-error-plain-border',
     description: '',
     value: [
       {
@@ -887,7 +151,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -895,14 +159,14 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
     type: 'color'
   },
-  'indicator-indicator-error-plain-text': {
-    name: 'indicator-indicator-error-plain-text',
+  'indicator-error-plain-text': {
+    name: 'indicator-error-plain-text',
     description: '',
     value: [
       {
@@ -910,7 +174,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       },
       {
@@ -918,76 +182,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/indicator.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-info-supreme-background': {
-    name: 'indicator-info-supreme-background',
-    description: '',
-    value: [
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-info-supreme-border': {
-    name: 'indicator-info-supreme-border',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-info-supreme-text': {
-    name: 'indicator-info-supreme-text',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/error.json',
         isSource: true
       }
     ],
@@ -998,7 +193,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#076892',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'light'
         },
@@ -1006,7 +201,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'dark'
         },
@@ -1021,7 +216,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#076892',
+        value: '#098bc3',
         features: {
           'color-scheme': 'light'
         },
@@ -1029,7 +224,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#098bc3',
         features: {
           'color-scheme': 'dark'
         },
@@ -1044,6 +239,75 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
+        value: '#054661',
+        features: {
+          'color-scheme': 'light'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        isSource: true
+      },
+      {
+        value: '#054661',
+        features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-info-supreme-background': {
+    name: 'indicator-info-supreme-background',
+    description: '',
+    value: [
+      {
+        value: '#076892',
+        features: {
+          'color-scheme': 'light'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        isSource: true
+      },
+      {
+        value: '#076892',
+        features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-info-supreme-border': {
+    name: 'indicator-info-supreme-border',
+    description: '',
+    value: [
+      {
+        value: '#076892',
+        features: {
+          'color-scheme': 'light'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        isSource: true
+      },
+      {
+        value: '#076892',
+        features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/info.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-info-supreme-text': {
+    name: 'indicator-info-supreme-text',
+    description: '',
+    value: [
+      {
         value: '#e9edee',
         features: {
           'color-scheme': 'light'
@@ -1052,7 +316,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -1108,8 +372,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-box-background': {
-    name: 'indicator-success-box-background',
+  'indicator-success-subtle-background': {
+    name: 'indicator-success-subtle-background',
     description: '',
     value: [
       {
@@ -1121,7 +385,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#abede2',
         features: {
           'color-scheme': 'dark'
         },
@@ -1131,8 +395,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-box-border': {
-    name: 'indicator-success-box-border',
+  'indicator-success-subtle-border': {
+    name: 'indicator-success-subtle-border',
     description: '',
     value: [
       {
@@ -1144,7 +408,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#125449',
         features: {
           'color-scheme': 'dark'
         },
@@ -1154,8 +418,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-box-text': {
-    name: 'indicator-success-box-text',
+  'indicator-success-subtle-text': {
+    name: 'indicator-success-subtle-text',
     description: '',
     value: [
       {
@@ -1167,7 +431,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#125449',
         features: {
           'color-scheme': 'dark'
         },
@@ -1177,8 +441,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-fill-background': {
-    name: 'indicator-success-fill-background',
+  'indicator-success-supreme-background': {
+    name: 'indicator-success-supreme-background',
     description: '',
     value: [
       {
@@ -1190,7 +454,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#125449',
         features: {
           'color-scheme': 'dark'
         },
@@ -1200,8 +464,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-fill-border': {
-    name: 'indicator-success-fill-border',
+  'indicator-success-supreme-border': {
+    name: 'indicator-success-supreme-border',
     description: '',
     value: [
       {
@@ -1213,53 +477,30 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-success-fill-text': {
-    name: 'indicator-success-fill-text',
-    description: '',
-    value: [
-      {
-        value: '#f5f5f5',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
-        isSource: true
-      },
-      {
-        value: '#ffffff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-success-outline-border': {
-    name: 'indicator-success-outline-border',
-    description: '',
-    value: [
-      {
         value: '#125449',
         features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-success-supreme-text': {
+    name: 'indicator-success-supreme-text',
+    description: '',
+    value: [
+      {
+        value: '#e9edee',
+        features: {
           'color-scheme': 'light'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
         isSource: true
       },
       {
-        value: '#6be0cb',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -1269,8 +510,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-outline-text': {
-    name: 'indicator-success-outline-text',
+  'indicator-success-plain-border': {
+    name: 'indicator-success-plain-border',
     description: '',
     value: [
       {
@@ -1292,8 +533,31 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-box-background': {
-    name: 'indicator-warning-box-background',
+  'indicator-success-plain-text': {
+    name: 'indicator-success-plain-text',
+    description: '',
+    value: [
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'light'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
+        isSource: true
+      },
+      {
+        value: '#6be0cb',
+        features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/indicators/success.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-warning-subtle-background': {
+    name: 'indicator-warning-subtle-background',
     description: '',
     value: [
       {
@@ -1305,7 +569,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#ffe299',
         features: {
           'color-scheme': 'dark'
         },
@@ -1315,8 +579,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-box-border': {
-    name: 'indicator-warning-box-border',
+  'indicator-warning-subtle-border': {
+    name: 'indicator-warning-subtle-border',
     description: '',
     value: [
       {
@@ -1328,7 +592,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#b28000',
         features: {
           'color-scheme': 'dark'
         },
@@ -1338,8 +602,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-box-text': {
-    name: 'indicator-warning-box-text',
+  'indicator-warning-subtle-text': {
+    name: 'indicator-warning-subtle-text',
     description: '',
     value: [
       {
@@ -1351,7 +615,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#664900',
         features: {
           'color-scheme': 'dark'
         },
@@ -1361,8 +625,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-fill-background': {
-    name: 'indicator-warning-fill-background',
+  'indicator-warning-supreme-background': {
+    name: 'indicator-warning-supreme-background',
     description: '',
     value: [
       {
@@ -1374,7 +638,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#b28000',
         features: {
           'color-scheme': 'dark'
         },
@@ -1384,8 +648,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-fill-border': {
-    name: 'indicator-warning-fill-border',
+  'indicator-warning-supreme-border': {
+    name: 'indicator-warning-supreme-border',
     description: '',
     value: [
       {
@@ -1397,7 +661,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#b28000',
         features: {
           'color-scheme': 'dark'
         },
@@ -1407,12 +671,12 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-fill-text': {
-    name: 'indicator-warning-fill-text',
+  'indicator-warning-supreme-text': {
+    name: 'indicator-warning-supreme-text',
     description: '',
     value: [
       {
-        value: '#f5f5f5',
+        value: '#e9edee',
         features: {
           'color-scheme': 'light'
         },
@@ -1420,7 +684,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#e9edee',
         features: {
           'color-scheme': 'dark'
         },
@@ -1430,8 +694,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-outline-border': {
-    name: 'indicator-warning-outline-border',
+  'indicator-warning-plain-border': {
+    name: 'indicator-warning-plain-border',
     description: '',
     value: [
       {
@@ -1453,8 +717,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-warning-outline-text': {
-    name: 'indicator-warning-outline-text',
+  'indicator-warning-plain-text': {
+    name: 'indicator-warning-plain-text',
     description: '',
     value: [
       {
@@ -2462,7 +1726,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#3cbef6',
+        value: '#0caef3',
         features: {
           'color-scheme': 'dark'
         },
@@ -2485,7 +1749,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#0caef3',
+        value: '#098bc3',
         features: {
           'color-scheme': 'dark'
         },
@@ -5947,4477 +5211,6 @@ export const tokens: Tokens = {
       }
     ]
   },
-  'intent-intent-action-supreme-base-background': {
-    name: 'intent-intent-action-supreme-base-background',
-    description: '',
-    value: [
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-supreme-base-border': {
-    name: 'intent-intent-action-supreme-base-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#66d1ff',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#66d1ff',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#66d1ff',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#66d1ff',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-supreme-base-text': {
-    name: 'intent-intent-action-supreme-base-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-supreme-hover-background': {
-    name: 'intent-intent-action-supreme-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#3cbef6',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#3cbef6',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-supreme-hover-border': {
-    name: 'intent-intent-action-supreme-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-supreme-hover-text': {
-    name: 'intent-intent-action-supreme-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-supreme-active-background': {
-    name: 'intent-intent-action-supreme-active-background',
-    description: '',
-    value: [
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-supreme-active-border': {
-    name: 'intent-intent-action-supreme-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-supreme-active-text': {
-    name: 'intent-intent-action-supreme-active-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-supreme-disabled-background': {
-    name: 'intent-intent-action-supreme-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-supreme-disabled-border': {
-    name: 'intent-intent-action-supreme-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-supreme-disabled-text': {
-    name: 'intent-intent-action-supreme-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-base-background': {
-    name: 'intent-intent-action-subtle-base-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-subtle-base-border': {
-    name: 'intent-intent-action-subtle-base-border',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-base-text': {
-    name: 'intent-intent-action-subtle-base-text',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-hover-background': {
-    name: 'intent-intent-action-subtle-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#3cbef6',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#3cbef6',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-hover-border': {
-    name: 'intent-intent-action-subtle-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#3cbef6',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-subtle-hover-text': {
-    name: 'intent-intent-action-subtle-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-active-background': {
-    name: 'intent-intent-action-subtle-active-background',
-    description: '',
-    value: [
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-active-border': {
-    name: 'intent-intent-action-subtle-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#0caef3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-subtle-active-text': {
-    name: 'intent-intent-action-subtle-active-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-subtle-disabled-background': {
-    name: 'intent-intent-action-subtle-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-subtle-disabled-border': {
-    name: 'intent-intent-action-subtle-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-action-subtle-disabled-text': {
-    name: 'intent-intent-action-subtle-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-plain-base-text': {
-    name: 'intent-intent-action-plain-base-text',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-plain-hover-text': {
-    name: 'intent-intent-action-plain-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0caef3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-plain-active-text': {
-    name: 'intent-intent-action-plain-active-text',
-    description: '',
-    value: [
-      {
-        value: '#076892',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-action-plain-disabled-text': {
-    name: 'intent-intent-action-plain-disabled-text',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-supreme-base-background': {
-    name: 'intent-intent-alternative-supreme-base-background',
-    description: '',
-    value: [
-      {
-        value: '#80e5d3',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#80e5d3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-supreme-base-border': {
-    name: 'intent-intent-alternative-supreme-base-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#80e5d3',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#80e5d3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#80e5d3',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#80e5d3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-supreme-base-text': {
-    name: 'intent-intent-alternative-supreme-base-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-supreme-hover-background': {
-    name: 'intent-intent-alternative-supreme-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-supreme-hover-border': {
-    name: 'intent-intent-alternative-supreme-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-supreme-hover-text': {
-    name: 'intent-intent-alternative-supreme-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-supreme-active-background': {
-    name: 'intent-intent-alternative-supreme-active-background',
-    description: '',
-    value: [
-      {
-        value: '#2cd3b5',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#2cd3b5',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-supreme-active-border': {
-    name: 'intent-intent-alternative-supreme-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-supreme-active-text': {
-    name: 'intent-intent-alternative-supreme-active-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-supreme-disabled-background': {
-    name: 'intent-intent-alternative-supreme-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-supreme-disabled-border': {
-    name: 'intent-intent-alternative-supreme-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-supreme-disabled-text': {
-    name: 'intent-intent-alternative-supreme-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#1a7f6d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#80e5d3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-base-background': {
-    name: 'intent-intent-alternative-subtle-base-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-subtle-base-border': {
-    name: 'intent-intent-alternative-subtle-base-border',
-    description: '',
-    value: [
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-base-text': {
-    name: 'intent-intent-alternative-subtle-base-text',
-    description: '',
-    value: [
-      {
-        value: '#23a991',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-hover-background': {
-    name: 'intent-intent-alternative-subtle-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-hover-border': {
-    name: 'intent-intent-alternative-subtle-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#56dcc4',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-subtle-hover-text': {
-    name: 'intent-intent-alternative-subtle-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-active-background': {
-    name: 'intent-intent-alternative-subtle-active-background',
-    description: '',
-    value: [
-      {
-        value: '#2cd3b5',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#2cd3b5',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-active-border': {
-    name: 'intent-intent-alternative-subtle-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#2cd3b5',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-subtle-active-text': {
-    name: 'intent-intent-alternative-subtle-active-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-subtle-disabled-background': {
-    name: 'intent-intent-alternative-subtle-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-subtle-disabled-border': {
-    name: 'intent-intent-alternative-subtle-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-alternative-subtle-disabled-text': {
-    name: 'intent-intent-alternative-subtle-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#23a991',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#80e5d3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-plain-base-text': {
-    name: 'intent-intent-alternative-plain-base-text',
-    description: '',
-    value: [
-      {
-        value: '#23a991',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#80e5d3',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-plain-hover-text': {
-    name: 'intent-intent-alternative-plain-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#1a7f6d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#56dcc4',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-plain-active-text': {
-    name: 'intent-intent-alternative-plain-active-text',
-    description: '',
-    value: [
-      {
-        value: '#1a7f6d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#2cd3b5',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-alternative-plain-disabled-text': {
-    name: 'intent-intent-alternative-plain-disabled-text',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#4d5f67',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-            isSource: true
-          },
-          {
-            value: '#9aacb3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#4d5f67',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-            isSource: true
-          },
-          {
-            value: '#9aacb3',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-supreme-base-background': {
-    name: 'intent-intent-highlight-supreme-base-background',
-    description: '',
-    value: [
-      {
-        value: '#ece079',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#ece079',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-supreme-base-border': {
-    name: 'intent-intent-highlight-supreme-base-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#ece079',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#ece079',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#ece079',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#ece079',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-supreme-base-text': {
-    name: 'intent-intent-highlight-supreme-base-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-supreme-hover-background': {
-    name: 'intent-intent-highlight-supreme-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-supreme-hover-border': {
-    name: 'intent-intent-highlight-supreme-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-supreme-hover-text': {
-    name: 'intent-intent-highlight-supreme-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-supreme-active-background': {
-    name: 'intent-intent-highlight-supreme-active-background',
-    description: '',
-    value: [
-      {
-        value: '#dfcc20',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#dfcc20',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-supreme-active-border': {
-    name: 'intent-intent-highlight-supreme-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-supreme-active-text': {
-    name: 'intent-intent-highlight-supreme-active-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-supreme-disabled-background': {
-    name: 'intent-intent-highlight-supreme-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-supreme-disabled-border': {
-    name: 'intent-intent-highlight-supreme-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-supreme-disabled-text': {
-    name: 'intent-intent-highlight-supreme-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#8e800b',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#ece079',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-base-background': {
-    name: 'intent-intent-highlight-subtle-base-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-subtle-base-border': {
-    name: 'intent-intent-highlight-subtle-base-border',
-    description: '',
-    value: [
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-base-text': {
-    name: 'intent-intent-highlight-subtle-base-text',
-    description: '',
-    value: [
-      {
-        value: '#b3a31a',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-hover-background': {
-    name: 'intent-intent-highlight-subtle-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-hover-border': {
-    name: 'intent-intent-highlight-subtle-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#e5d64d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-subtle-hover-text': {
-    name: 'intent-intent-highlight-subtle-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-active-background': {
-    name: 'intent-intent-highlight-subtle-active-background',
-    description: '',
-    value: [
-      {
-        value: '#dfcc20',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#dfcc20',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-active-border': {
-    name: 'intent-intent-highlight-subtle-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#dfcc20',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-subtle-active-text': {
-    name: 'intent-intent-highlight-subtle-active-text',
-    description: '',
-    value: [
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-subtle-disabled-background': {
-    name: 'intent-intent-highlight-subtle-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-subtle-disabled-border': {
-    name: 'intent-intent-highlight-subtle-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-highlight-subtle-disabled-text': {
-    name: 'intent-intent-highlight-subtle-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#b3a31a',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#b3a31a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-plain-base-text': {
-    name: 'intent-intent-highlight-plain-base-text',
-    description: '',
-    value: [
-      {
-        value: '#b3a31a',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e5d64d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-plain-hover-text': {
-    name: 'intent-intent-highlight-plain-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#8e800b',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#b3a31a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-plain-active-text': {
-    name: 'intent-intent-highlight-plain-active-text',
-    description: '',
-    value: [
-      {
-        value: '#8e800b',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#b3a31a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-highlight-plain-disabled-text': {
-    name: 'intent-intent-highlight-plain-disabled-text',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-supreme-base-background': {
-    name: 'intent-intent-danger-supreme-base-background',
-    description: '',
-    value: [
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-supreme-base-border': {
-    name: 'intent-intent-danger-supreme-base-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#dc2828',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#dc2828',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#dc2828',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#dc2828',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-supreme-base-text': {
-    name: 'intent-intent-danger-supreme-base-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-supreme-hover-background': {
-    name: 'intent-intent-danger-supreme-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-supreme-hover-border': {
-    name: 'intent-intent-danger-supreme-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-supreme-hover-text': {
-    name: 'intent-intent-danger-supreme-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-supreme-active-background': {
-    name: 'intent-intent-danger-supreme-active-background',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-supreme-active-border': {
-    name: 'intent-intent-danger-supreme-active-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#911818',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#911818',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#911818',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#911818',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-supreme-active-text': {
-    name: 'intent-intent-danger-supreme-active-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-supreme-disabled-background': {
-    name: 'intent-intent-danger-supreme-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-supreme-disabled-border': {
-    name: 'intent-intent-danger-supreme-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#e9edee',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              },
-              {
-                value: '#262f32',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-supreme-disabled-text': {
-    name: 'intent-intent-danger-supreme-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e76a6a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-base-background': {
-    name: 'intent-intent-danger-subtle-base-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-subtle-base-border': {
-    name: 'intent-intent-danger-subtle-base-border',
-    description: '',
-    value: [
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-base-text': {
-    name: 'intent-intent-danger-subtle-base-text',
-    description: '',
-    value: [
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-hover-background': {
-    name: 'intent-intent-danger-subtle-hover-background',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-hover-border': {
-    name: 'intent-intent-danger-subtle-hover-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          },
-          {
-            value: '#b41d1d',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-subtle-hover-text': {
-    name: 'intent-intent-danger-subtle-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-active-background': {
-    name: 'intent-intent-danger-subtle-active-background',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-active-border': {
-    name: 'intent-intent-danger-subtle-active-border',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-active-text': {
-    name: 'intent-intent-danger-subtle-active-text',
-    description: '',
-    value: [
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e9edee',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-subtle-disabled-background': {
-    name: 'intent-intent-danger-subtle-disabled-background',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-subtle-disabled-border': {
-    name: 'intent-intent-danger-subtle-disabled-border',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: '#e9edee',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#262f32',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
-  'intent-intent-danger-subtle-disabled-text': {
-    name: 'intent-intent-danger-subtle-disabled-text',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#ee9696',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-plain-base-text': {
-    name: 'intent-intent-danger-plain-base-text',
-    description: '',
-    value: [
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#e76a6a',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-plain-hover-text': {
-    name: 'intent-intent-danger-plain-hover-text',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-plain-active-text': {
-    name: 'intent-intent-danger-plain-active-text',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: '#dc2828',
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ],
-    type: 'color'
-  },
-  'intent-intent-danger-plain-disabled-text': {
-    name: 'intent-intent-danger-plain-disabled-text',
-    description: '',
-    value: [
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'light'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      },
-      {
-        value: [
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: [
-              {
-                value: '#4d5f67',
-                features: {
-                  'color-scheme': 'light'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              },
-              {
-                value: '#9aacb3',
-                features: {
-                  'color-scheme': 'dark'
-                },
-                filePath: 'node_modules/@hokulea/theme-moana/tokens/typography.json',
-                isSource: true
-              }
-            ],
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
-        features: {
-          'color-scheme': 'dark'
-        },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
-        isSource: true
-      }
-    ]
-  },
   'spacing-container-padding-4': {
     name: 'spacing-container-padding-4',
     description: '',
@@ -11153,7 +5946,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       },
       {
@@ -11161,7 +5954,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
     ]
@@ -11175,7 +5968,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       },
       {
@@ -11183,7 +5976,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
     ]
@@ -11197,7 +5990,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'light'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       },
       {
@@ -11205,7 +5998,7 @@ export const tokens: Tokens = {
         features: {
           'color-scheme': 'dark'
         },
-        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/intent.json',
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/intents/action.json',
         isSource: true
       }
     ]

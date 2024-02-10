@@ -1,149 +1,155 @@
 {
   "indicator": {
     "error": {
-      "box-background": {
-        "$value": [
-          {
-            "value": "#ee9696",
-            "features": {
-              "color-scheme": "light"
+      "subtle": {
+        "background": {
+          "$value": [
+            {
+              "value": "#ee9696",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#ee9696",
+              "features": {
+                "color-scheme": "dark"
+              }
             }
-          },
-          {
-            "value": "#ffffff",
-            "features": {
-              "color-scheme": "dark"
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": [
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "dark"
+              }
             }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": [
+            {
+              "value": "#911818",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#911818",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        }
       },
-      "box-border": {
-        "$value": [
-          {
-            "value": "#b41d1d",
-            "features": {
-              "color-scheme": "light"
+      "supreme": {
+        "background": {
+          "$value": [
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "dark"
+              }
             }
-          },
-          {
-            "value": "#ffffff",
-            "features": {
-              "color-scheme": "dark"
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": [
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "dark"
+              }
             }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": [
+            {
+              "value": "#e9edee",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#e9edee",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        }
       },
-      "box-text": {
-        "$value": [
-          {
-            "value": "#b41d1d",
-            "features": {
-              "color-scheme": "light"
+      "plain": {
+        "border": {
+          "$value": [
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#e76a6a",
+              "features": {
+                "color-scheme": "dark"
+              }
             }
-          },
-          {
-            "value": "#ffffff",
-            "features": {
-              "color-scheme": "dark"
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": [
+            {
+              "value": "#b41d1d",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#e76a6a",
+              "features": {
+                "color-scheme": "dark"
+              }
             }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
-      },
-      "fill-background": {
-        "$value": [
-          {
-            "value": "#b41d1d",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "#ffffff",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
-      },
-      "fill-border": {
-        "$value": [
-          {
-            "value": "#b41d1d",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "#ffffff",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
-      },
-      "fill-text": {
-        "$value": [
-          {
-            "value": "#f5f5f5",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "#ffffff",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
-      },
-      "outline-border": {
-        "$value": [
-          {
-            "value": "#b41d1d",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "#e76a6a",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
-      },
-      "outline-text": {
-        "$value": [
-          {
-            "value": "#b41d1d",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "#e76a6a",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
+          ],
+          "$description": "",
+          "$type": "color"
+        }
       }
     }
   }

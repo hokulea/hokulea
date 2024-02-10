@@ -72,8 +72,8 @@ const loader = function (source) {
   ${name}.storyName = '${title}';
   ${name}.parameters = {
     options: {
-      showPanel: false,
-      isToolshown: false
+      bottomPanelHeight: 0,
+      showToolbar: false
     }
   };
   `;

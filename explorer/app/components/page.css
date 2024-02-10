@@ -38,13 +38,13 @@
 }
 
 .level-3 {
-  font-size: var(--s0);
-  padding-left: var(--s2);
+  font-size: var(--s-1);
+  padding-left: var(--s3);
 }
 
 .level-4 {
-  font-size: var(--s0);
-  padding-left: var(--s3);
+  font-size: var(--s-2);
+  padding-left: var(--s4);
 }
 
 .level-5 {

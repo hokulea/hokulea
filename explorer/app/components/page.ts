@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 
 import { modifier } from 'ember-modifier';
 
-// import styles from './page.css';
+import styles from './page.css';
 
 interface PageSignature {
   Args: {
@@ -26,7 +26,7 @@ export default class PageComponent extends Component<PageSignature> {
   }
 
   getClassForLevel = (level: number) => {
-    return `level${level}`;
+    return styles[`level-${level}`];
   };
 
   replaceLinks = modifier((element: HTMLDivElement) => {

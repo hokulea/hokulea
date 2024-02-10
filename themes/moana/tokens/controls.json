@@ -230,22 +230,9 @@
         "$type": "dimension"
       },
       "stroke-width": {
-        "$value": [
-          {
-            "value": 0,
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": 0,
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
+        "$value": "2px",
         "$description": "",
-        "$type": "number"
+        "$type": "dimension"
       }
     }
   }

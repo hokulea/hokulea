@@ -131,9 +131,11 @@ export default defineConfig({
         }
 
         if (
-          ['control.border-width', 'control.focus.stroke-offset'].includes(
-            token.name
-          )
+          [
+            'control.border-width',
+            'control.focus.stroke-offset',
+            'control.focus.stroke-width'
+          ].includes(token.name)
         ) {
           return {
             ...token,

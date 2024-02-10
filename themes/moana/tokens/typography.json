@@ -107,6 +107,80 @@
       ],
       "$description": "",
       "$type": "color"
+    },
+    "emphasize": {
+      "$value": [
+        {
+          "value": "#23a991",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#80e5d3",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    },
+    "selected": {
+      "background": {
+        "$value": [
+          {
+            "value": "#f2eba6",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#094339",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "code": {
+      "text": {
+        "$value": [
+          {
+            "value": "{typography.subtle}",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "{typography.subtle}",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": ""
+      },
+      "background": {
+        "$value": [
+          {
+            "value": "{surface.container1}",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "{surface.container1}",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": ""
+      }
     }
   }
 }

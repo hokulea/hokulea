@@ -1,0 +1,12 @@
+.section {
+  /* This is not the best, but ok to start */
+  header + * {
+    margin-block-start: var(--spacing-container-gap-block0);
+  }
+}
+
+.section-title {
+  color: var(--typography-main);
+  font-weight: 500;
+  margin: 0;
+}

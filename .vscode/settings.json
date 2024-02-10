@@ -1,0 +1,59 @@
+{
+  // Extension: CSS Variable Autocomplete (by Vu Nguyen)
+  "cssVariables.lookupFiles": [
+    "foundation/tokens/src/tokens.css"
+  ],
+  // "stylelint.configFile": "configs/stylelint/index.js",
+  "stylelint.configBasedir": "configs/stylelint/",
+  "stylelint.packageManager": "pnpm",
+  "stylelint.validate": [
+    "css",
+    "postcss"
+  ],
+  "stylelint.snippet": [
+    "css",
+    "postcss"
+  ],
+  "eslint.format.enable": true,
+  "eslint.useESLintClass": true,
+  "eslint.probe": [
+    "javascript",
+    "typescript",
+    "html",
+    "markdown",
+    "glimmer-ts"
+  ],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  // "cssvar.files": [
+  //   "foundation/tokens/src/tokens.css"
+  // ],
+  // "cssVariables.lookupFiles": [
+  //   "**/*.css",
+  //   "**/*.scss",
+  //   "**/*.sass",
+  //   "**/*.less",
+  //   "node_modules/open-props/open-props.min.css"
+  // ],
+  // "cssVariables.lookupFiles": [
+  //   "foundation/tokens/src/tokens.css"
+  // ],
+  // this needs to go to the workspace:
+  // "cssVariables.lookupFiles": [
+  //   "foundation/tokens/src/tokens.css"
+  // ],
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    // "editor.codeActionsOnSave": {
+    //   "source.fixAll.prettier": false,
+    //   "source.fixAll.stylelint": true
+    // }
+  },
+  "[glimmer-ts]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}

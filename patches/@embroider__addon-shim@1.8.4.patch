@@ -1,0 +1,17 @@
+diff --git a/src/index.js b/src/index.js
+index 655eca090c6347993f172b350e324ae42debf511..72adaf4bda00eb9921f74e3abdadc8b91ead8de3 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -128,7 +128,11 @@ function addonV1Shim(directory, options = {}) {
+             return isInside(directory, appInstance.project.root);
+         },
+         registerV2Addon(name, root) {
+-            autoImportInstance.registerV2Addon(name, root);
++            if (autoImportInstance) {
++                autoImportInstance.registerV2Addon(name, root);
++            } else if (this.parent && this.parent.registerV2Addon) {
++                this.parent.registerV2Addon(name, root);
++            }
+         },
+     };
+ }

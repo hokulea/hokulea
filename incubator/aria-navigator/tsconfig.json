@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "declarationDir": "dist/",
+    // Path resolution
+    "moduleResolution": "bundler",
+    // We only use tsc for type checking and declaration output
+    "emitDeclarationOnly": false,
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    // Build settings
+    "noEmitOnError": false,
+    "module": "ESNext",
+    "target": "ESNext",
+    // Features
+    "experimentalDecorators": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    // Strictness / Correctness
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

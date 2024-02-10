@@ -1,0 +1,157 @@
+.focus:focus-visible {
+  outline: var(--control-focus-stroke);
+  outline-offset: var(--control-focus-stroke-offset);
+}
+
+.focus-within {
+  &:focus-within {
+    outline: var(--control-focus-stroke);
+    outline-offset: var(--control-focus-stroke-offset);
+  }
+
+  @supports selector(:has(*)) {
+    &:focus-within {
+      outline: none;
+    }
+
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+    &:has(:focus-visible) {
+      outline: var(--control-focus-stroke);
+      outline-offset: var(--control-focus-stroke-offset);
+    }
+  }
+}
+
+.control {
+  all: unset;
+  background-color: var(--control-background);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
+  color: var(--control-text);
+  display: inline-flex; /* Safari needs to set display explicitely when `all: unset` is given */
+  padding: var(--spacing-primitive-padding0);
+
+
+  /* Reset this for safari */
+  @supports (-webkit-hyphens:none) {
+    height: auto;
+  }
+
+  &:disabled, &[aria-disabled], &[aria-disabled="true"] {
+    background-color: var(--control-disabled-background);
+    color: var(--control-disabled-text);
+  }
+}
+
+.input {
+  composes: control;
+  composes: focus;
+  height: 1em;
+  line-height: 1em;
+
+  &::placeholder {
+    color: var(--control-placeholder);
+  }
+
+  &[type="number"], &[type="date"] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  &[type="date"]::-webkit-calendar-picker-indicator,
+  &[type="date"]::-webkit-datetime-edit {
+    align-self: center;
+  }
+
+  /* &[type="date"]::-webkit-datetime-edit {
+    height: 1em;
+  } */
+}
+
+.select {
+  composes: control;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMDAxNzMgOUM0LjE5NDA0IDkgMy43MTk1OSA5LjkwODAzIDQuMTgwODMgMTAuNTcxMUw2LjgxMzQ2IDE0LjM1NTVDNy40MTAyNCAxNS4yMTM0IDguNjc5NCAxNS4yMTMzIDkuMjc2MTggMTQuMzU1NUwxMS45MDg4IDEwLjU3MTFDMTIuMzcwMSA5LjkwODAzIDExLjg5NTYgOSAxMS4wODc5IDlINS4wMDE3M1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik01LjAwMTczIDYuOTk4OUM0LjE5NDA0IDYuOTk4OSAzLjcxOTU5IDYuMDkwODcgNC4xODA4MyA1LjQyNzg0TDYuODEzNDYgMS42NDM0MkM3LjQxMDI0IDAuNzg1NTQ4IDguNjc5NCAwLjc4NTU1MiA5LjI3NjE4IDEuNjQzNDJMMTEuOTA4OCA1LjQyNzg0QzEyLjM3MDEgNi4wOTA4NyAxMS44OTU2IDYuOTk4OSAxMS4wODc5IDYuOTk4OUg1LjAwMTczWiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==');
+  background-position: right var(--spacing-primitive-padding0) center;
+  background-repeat: no-repeat;
+  padding-inline-end: calc(var(--spacing-primitive-padding0) + 16px + var(--spacing-primitive-gap0));
+}
+
+.textarea {
+  composes: focus;
+  composes: control;
+  white-space: pre-wrap; /* This is for Firefox - "all: unset" apparently disables line-breaks */
+}
+
+.choice {
+  accent-color: var(--control-accent);
+  aspect-ratio: 1;
+  background: var(--control-background);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
+  height: 0.9em;
+  transform: translateY(0.1em);
+}
+
+
+.affix {
+  display: inline-block;
+  line-height: 1em;
+  padding-inline: var(--spacing-primitive-padding0);
+}
+
+.prefix {
+  composes: affix;
+  border-inline-end: var(--control-border);
+}
+
+.suffix {
+  composes: affix;
+  border-inline-start: var(--control-border);
+}
+
+.input-builder {
+  composes: control;
+  composes: focus-within;
+  align-items: center;
+  display: inline-flex;
+  height: auto;
+  padding: 0;
+
+  & > .input {
+    background: unset;
+    border: unset;
+    flex-grow: 1;
+
+    /* Reset this for safari */
+    @supports (-webkit-hyphens:none) {
+      height: 1em;
+    }
+
+    &:focus {
+      outline: unset;
+    }
+  }
+
+  & > .affix + .input,
+  & > .input + .affix,
+  & > .affix:not(.suffix, .prefix) + .affix:not(.suffix, .prefix) {
+    padding-inline-start: 0;
+  }
+
+  & > * {
+    padding-block: var(--spacing-primitive-padding0);
+  }
+}
+
+.input:not([type="radio"], [type="checkbox"])[aria-invalid="true"],
+.select[aria-invalid="true"],
+.textarea[aria-invalid="true"],
+.input-builder[data-invalid="true"] {
+  border-color: var(--indicator-error-supreme-border);
+}
+
+/* .input:not([type="radio"], [type="checkbox"])[aria-invalid="false"],
+.select[aria-invalid="false"],
+.textarea[aria-invalid="false"],
+.input-builder[data-invalid="false"] {
+  border-color: var(--indicator-success-supreme-border);
+} */

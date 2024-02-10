@@ -1,0 +1,26 @@
+.box {
+  composes: box from "./props";
+  align-items: center;
+  flex-direction: row;
+  gap: var(--s-1);
+}
+
+.demo {
+  composes: demo from './props';
+  box-shadow: var(--value);
+}
+
+.content {
+  composes: flow from "@hokulea/core/layouts.css";
+
+  --flow-space: var(--s-3);
+}
+
+.value {
+  composes: value from "./props";
+  margin-inline-start: auto;
+}
+
+.description {
+  composes: description from "./props";
+}

@@ -1,0 +1,10 @@
+.control {
+  align-items: center;
+  background-color: var(--surface-container);
+  border: var(--shape-stroke);
+  border-radius: var(--shape-radius-container);
+  display: grid;
+  gap: var(--s-3);
+  grid-template-columns: max-content auto;
+  padding: var(--spacing-container-padding0);
+}

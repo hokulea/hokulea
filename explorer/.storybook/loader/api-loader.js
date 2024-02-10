@@ -1,3 +1,4 @@
+// eslint-disable-next-line n/no-missing-require
 const { getOptions } = require('loader-utils');
 
 const { compileMarkdown } = require('./md-compiler');
@@ -16,9 +17,7 @@ const translateLinks = function (html) {
   });
 
   // external links
-  output = output.replace(/<a href="[^#]+">/g, link =>
-    link.replace('>', ' target="_blank">')
-  );
+  output = output.replace(/<a href="[^#]+">/g, (link) => link.replace('>', ' target="_blank">'));
 
   return output;
 };
@@ -39,7 +38,7 @@ const generateStoryCode = (name, title, html) => `
     };
   `;
 
-const loadPackage = fileName => {
+const loadPackage = (fileName) => {
   if (fs.existsSync(fileName)) {
     return require(fileName);
   }
@@ -51,9 +50,11 @@ const getPackageObject = (package, path) => {
   // traverse members from here
   while (path.length > 0) {
     const entity = path.shift();
+
     for (const item of node.members) {
       if (item.name.toLowerCase() === entity) {
         node = item;
+
         if (path.length === 0) {
           return node;
         }
@@ -64,9 +65,10 @@ const getPackageObject = (package, path) => {
   }
 };
 
-const sanitizeMarkdown = contents => {
+const sanitizeMarkdown = (contents) => {
   // remove first 4 lines and make first heading a h1
   let source = contents.replace(/^([^\n]*\n){4}/gi, '');
+
   source = source.replace(/^##/g, '#');
 
   // trim code blocks
@@ -87,9 +89,7 @@ const loader = function (source) {
   });
   const dir = path.dirname(this.resourcePath);
 
-  const fileName = path
-    .relative(options.dir, this.resourcePath)
-    .replace('.md', '');
+  const fileName = path.relative(options.dir, this.resourcePath).replace('.md', '');
   const segments = fileName.split('.');
 
   // overview
@@ -128,6 +128,7 @@ const loader = function (source) {
 
   // package entity (class, interface, etc.)
   const entity = getPackageObject(package, [...segments.slice(1, 2)]);
+
   if (segments.length === 2) {
     return `
     import { hbs } from 'ember-cli-htmlbars';
@@ -145,6 +146,7 @@ const loader = function (source) {
   // entity member (property, method, ...)
   if (segments.length === 3) {
     const member = getPackageObject(package, [...segments.slice(1)]);
+
     return `
     import { hbs } from 'ember-cli-htmlbars';
     import { withLinks } from '@storybook/addon-links';

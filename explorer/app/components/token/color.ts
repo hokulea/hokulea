@@ -1,0 +1,44 @@
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+
+import { modifier } from 'ember-modifier';
+
+import { findDescription } from './token';
+
+export interface TokenArgs {
+  name: string;
+}
+
+const BODY_STYLES = window.getComputedStyle(document.body);
+
+export default class TokenComponent extends Component<TokenArgs> {
+  @tracked value?: string;
+
+  get description(): string | undefined {
+    return findDescription(this.args.name);
+  }
+
+  setup = modifier(() => {
+    // listen for changes
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    media.addEventListener('change', this.update);
+
+    // first run
+    this.update();
+
+    return () => {
+      media.removeEventListener('change', this.update);
+    };
+  });
+
+  @action
+  private update() {
+    this.value = this.compute();
+  }
+
+  private compute(): string | undefined {
+    return BODY_STYLES.getPropertyValue(this.args.name) || '-';
+  }
+}

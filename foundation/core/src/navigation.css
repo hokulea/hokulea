@@ -1,0 +1,23 @@
+/* a, a:link, a:visited {
+  color: var(--navigation-links-base);
+}
+
+a:hover {
+  color: var(--navigation-links-hover);
+}
+
+a:active {
+  color: var(--navigation-links-active);
+} */
+
+a, a:link, a:visited {
+  color: var(--intent-action-plain-base-text);
+}
+
+a:hover {
+  color: var(--intent-action-plain-hover-text);
+}
+
+a:active {
+  color: var(--intent-action-plain-active-text);
+}

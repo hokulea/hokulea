@@ -1,0 +1,51 @@
+{
+  "name": "aria-navigator",
+  "description": "",
+  "author": "gossi",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "concurrently -g 'npm:start:*'",
+    "start:js": "pnpm build:js -w",
+    "start:types": "pnpm build:types -w",
+    "build": "concurrently -g 'npm:build:*'",
+    "build:js": "swc src/ -d dist/",
+    "build:types": "tsc -d --emitDeclarationOnly",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0"
+  },
+  "devDependencies": {
+    "@gossi/config-eslint": "^0.5.0",
+    "@gossi/config-prettier": "^0.5.0",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.242",
+    "@types/eslint": "^8.4.8",
+    "@types/lodash.isequal": "^4.5.6",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.35.0",
+    "prettier": "^3.0.0",
+    "typescript": "~5.1.6"
+  },
+  "engines": {
+    "node": ">= 16.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

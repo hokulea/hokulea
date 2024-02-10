@@ -1,0 +1,47 @@
+{
+  "name": "@hokulea/core",
+  "version": "0.0.8",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    "./index.css": "./dist/index.css",
+    "./*.module.css": {
+      "import": "./dist/*.css.js",
+      "require": "./dist/*.css.cjs"
+    },
+    "./*.css": "./src/*.css",
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
+    }
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "start": "rollup --config --watch"
+  },
+  "devDependencies": {
+    "@hokulea/config-eslint": "workspace:*",
+    "@hokulea/config-prettier": "workspace:*",
+    "@hokulea/config-postcss": "workspace:*",
+    "@hokulea/config-targets": "workspace:*",
+    "@hokulea/rollup-plugin-postcss": "workspace:*",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "eslint": "^8.56.0",
+    "fast-glob": "^3.3.2",
+    "postcss": "^8.4.33",
+    "prettier": "^3.1.1",
+    "rollup": "^4.9.4",
+    "rollup-plugin-css-only": "^4.5.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-multi-input": "^1.4.1"
+  },
+  "engines": {
+    "node": ">= 20.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

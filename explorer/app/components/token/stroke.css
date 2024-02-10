@@ -1,0 +1,38 @@
+.box {
+  composes: box from './props';
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: var(--s-1);
+  overflow: hidden;
+  padding: var(--s-2);
+}
+
+.demo {
+  align-items: center;
+  display: flex;
+  height: 1em;
+  width: var(--s4);
+
+  &::before {
+    border-bottom: var(--value);
+    content: '';
+    width: 100%;
+  }
+}
+
+.content {
+  composes: flow from "@hokulea/core/layouts.css";
+
+  --flow-space: var(--s-4);
+}
+
+.value {
+  composes: value from "./props";
+  margin-inline-start: auto;
+}
+
+.description {
+  composes: description from "./props";
+  grid-column: 1 / span 2;
+}

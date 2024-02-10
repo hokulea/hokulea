@@ -1,0 +1,10 @@
+packages:
+  - 'configs/*'
+  - 'foundation/*'
+  - 'plugins/*'
+  # - 'incubator/ember-controls-modifier/package'
+  # - 'incubator/ember-controls-modifier/test-app'
+  # - 'incubator/*'
+  - 'explorer'
+  - 'ember/*'
+  - 'themes/*'

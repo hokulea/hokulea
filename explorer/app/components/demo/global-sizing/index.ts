@@ -1,11 +1,12 @@
-import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
-import { GlobalSizingElement } from '../../reference/global-sizing';
+import type { GlobalSizingElement } from '../../reference/global-sizing';
 
 export default class GlobalScaleDemoComponent extends Component {
   @tracked version?: 'clamp' | 'static';
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   private sizingElement?: GlobalSizingElement;
 
   @action

@@ -1,5 +1,5 @@
 {
-  "extends": "../configs/tsconfig",
+  "extends": "@hokulea/config-typescript/tsconfig.json",
   "compilerOptions": {
     // The combination of `baseUrl` with `paths` allows Ember's classic package
     // layout, which is not resolveable with the Node resolution algorithm, to
@@ -23,4 +23,7 @@
     "types/**/*",
     "..packages/*/addon/**/*"
   ]
+  // "exclude": [
+  //   "**/*.stories.ts"
+  // ]
 }

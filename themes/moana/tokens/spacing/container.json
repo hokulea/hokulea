@@ -1,0 +1,98 @@
+{
+  "spacing": {
+    "container": {
+      "padding-4": {
+        "$value": "{s-4}",
+        "$description": ""
+      },
+      "padding-3": {
+        "$value": "{s-3}",
+        "$description": ""
+      },
+      "padding-2": {
+        "$value": "{s-2}",
+        "$description": ""
+      },
+      "padding-1": {
+        "$value": "{s-1}",
+        "$description": ""
+      },
+      "padding0": {
+        "$value": "{s0}",
+        "$description": ""
+      },
+      "padding1": {
+        "$value": "{s1}",
+        "$description": ""
+      },
+      "padding2": {
+        "$value": "{s2}",
+        "$description": ""
+      },
+      "padding3": {
+        "$value": "{s3}",
+        "$description": ""
+      },
+      "padding4": {
+        "$value": "{s4}",
+        "$description": ""
+      },
+      "gap-inline-2": {
+        "$value": "{s-4}",
+        "$description": ""
+      },
+      "gap-inline-1": {
+        "$value": "{s-3}",
+        "$description": ""
+      },
+      "gap-inline0": {
+        "$value": "{s-2}",
+        "$description": ""
+      },
+      "gap-inline1": {
+        "$value": "{s-1}",
+        "$description": ""
+      },
+      "gap-inline2": {
+        "$value": "{s0}",
+        "$description": ""
+      },
+      "gap-block-4": {
+        "$value": "{s-4}",
+        "$description": ""
+      },
+      "gap-block-3": {
+        "$value": "{s-3}",
+        "$description": ""
+      },
+      "gap-block-2": {
+        "$value": "{s-2}",
+        "$description": ""
+      },
+      "gap-block-1": {
+        "$value": "{s-1}",
+        "$description": ""
+      },
+      "gap-block0": {
+        "$value": "{s0}",
+        "$description": ""
+      },
+      "gap-block1": {
+        "$value": "{s1}",
+        "$description": ""
+      },
+      "gap-block2": {
+        "$value": "{s2}",
+        "$description": ""
+      },
+      "gap-block3": {
+        "$value": "{s3}",
+        "$description": ""
+      },
+      "gap-block4": {
+        "$value": "{s4}",
+        "$description": ""
+      }
+    }
+  }
+}

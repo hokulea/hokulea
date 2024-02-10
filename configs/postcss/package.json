@@ -1,0 +1,33 @@
+{
+  "name": "@hokulea/config-postcss",
+  "private": true,
+  "description": "postcss config for hokulea",
+  "scripts": {
+    "lint:js": "eslint ."
+  },
+  "dependencies": {
+    "@hokulea/config-targets": "*",
+    "postcss-each": "^1.1.0",
+    "postcss-modules": "^6.0.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-pow": "^1.0.1",
+    "postcss-preset-env": "^9.3.0"
+  },
+  "devDependencies": {
+    "@hokulea/config-eslint": "*",
+    "@hokulea/config-prettier": "*",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "postcss": "^8.4.33"
+  },
+  "peerDependencies": {
+    "lightningcss": "^1.22.1",
+    "postcss": "^8.4.33"
+  },
+  "engines": {
+    "node": ">= 20.*"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

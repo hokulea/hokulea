@@ -1,0 +1,86 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-container-gap-block0);
+}
+
+.label {
+  color: var(--typography-main);
+  font-weight: 550; /* Non-Chrome Browsers (Safari, FF) display font-weight: 500 as "normal" */
+
+  /*
+    Cera Round Pro is obv difficult for browsers to render
+    Chrome only: can display font-weight: 500 as expected
+  */
+  @supports (not (-webkit-hyphens:none)) and (not (-moz-appearance:none)) and (list-style-type:"*") {
+    font-weight: 500;
+  }
+}
+
+.description {
+  color: var(--typography-subtle);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-container-gap-block-3);
+}
+
+fieldset.field {
+  border: 0;
+  display: block;
+
+  & > * + * {
+    margin-block-start: var(--spacing-container-gap-block-3);
+  }
+}
+
+.errors {
+  align-items: flex-start;
+  color: var(--indicator-error-plain-text);
+  display: flex;
+  gap: var(--spacing-primitive-gap0);
+
+  /* Wrapper for the icon */
+  & > span {
+    align-items: flex-end;
+    display: flex;
+    height: 1lh;
+  }
+
+  /* Wrapper for the error messages */
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-container-gap-block-3);
+}
+
+.choice {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--spacing-primitive-gap0);
+
+  /* wrapper for the checkbox/radio */
+  & > span {
+    align-items: flex-end;
+    display: flex;
+    height: 1em;
+  }
+
+  /* wraps all texts */
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label {
+    font-weight: 400;
+  }
+}

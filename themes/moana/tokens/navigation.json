@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "links": {
+      "base": {
+        "$value": "{intent.action.plain.base.text}",
+        "$description": ""
+      },
+      "hover": {
+        "$value": "{intent.action.plain.hover.text}",
+        "$description": ""
+      },
+      "active": {
+        "$value": "{intent.action.plain.active.text}",
+        "$description": ""
+      }
+    }
+  }
+}

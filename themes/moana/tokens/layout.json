@@ -1,13 +1,94 @@
 {
-  "layout": {
-    "brand": {
-      "value": "#0CAEF3",
-      "comment": "",
-      "figmaName": "layout/brand",
-      "type": "color",
-      "attributes": {
-        "category": "color"
-      }
+  "surface": {
+    "base": {
+      "$value": [
+        {
+          "value": "#fafbfb",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#171c1e",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    },
+    "container": {
+      "$value": [
+        {
+          "value": "#f1f4f5",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#1d2427",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    },
+    "container1": {
+      "$value": [
+        {
+          "value": "#e9edee",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#262f32",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    },
+    "popover": {
+      "$value": [
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    },
+    "window": {
+      "$value": [
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
     }
   }
 }

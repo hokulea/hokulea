@@ -1,5 +1,5 @@
 .control {
   display: grid;
-  grid-template-columns: max-content auto;
   gap: var(--s-4);
+  grid-template-columns: max-content auto;
 }

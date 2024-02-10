@@ -1,0 +1,12 @@
+{
+  "name": "@hokulea/ember-template-imports",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./*.js"
+  },
+  "dependencies": {
+    "ember-source": "~4.11.0",
+    "ember-template-imports": "^3.4.1"
+  }
+}

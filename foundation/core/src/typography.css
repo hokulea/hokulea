@@ -1,0 +1,58 @@
+:root {
+  --measure: 65ch;
+  --line-height: var(--sizing-ratio);
+
+
+  color: var(--typography-main);
+
+  /* Prose */
+
+  /* Todo: Put this into tokens, feed from themes */
+  font-family: Inter, sans-serif;
+  line-height: var(--line-height);
+}
+
+::selection {
+  background-color: var(--typography-selected-background);
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4 {
+  hyphens: auto;
+  line-height: calc(0.8 * var(--line-height));
+}
+
+h1 {
+  font-size: var(--s4);
+}
+
+h2 {
+  font-size: var(--s3);
+}
+
+h3 {
+  font-size: var(--s2);
+}
+
+h4 {
+  font-size: var(--s1);
+}
+
+/* Prose */
+
+em, i {
+  color: var(--typography-emphasize);
+}
+
+code {
+  background-color: var(--typography-code-background);
+  border-radius: 4px;
+  color: var(--typography-code-text);
+  display: inline-block;
+  font-size: 90%;
+  padding: 0.2em;
+}

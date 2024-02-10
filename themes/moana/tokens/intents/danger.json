@@ -1,0 +1,530 @@
+{
+  "intent": {
+    "danger": {
+      "supreme": {
+        "base": {
+          "background": {
+            "$value": [
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "{intent.danger.supreme.base.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{intent.danger.supreme.base.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "hover": {
+          "background": {
+            "$value": [
+              {
+                "value": "#b41d1d",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#b41d1d",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "{intent.danger.supreme.hover.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{intent.danger.supreme.hover.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "active": {
+          "background": {
+            "$value": [
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "{intent.danger.supreme.active.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{intent.danger.supreme.active.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "disabled": {
+          "background": {
+            "$value": [
+              {
+                "value": "{control.disabled.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{control.disabled.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "{intent.danger.supreme.disabled.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{intent.danger.supreme.disabled.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e76a6a",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        }
+      },
+      "subtle": {
+        "base": {
+          "background": {
+            "$value": [
+              {
+                "value": "{control.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{control.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#b41d1d",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "hover": {
+          "background": {
+            "$value": [
+              {
+                "value": "#b41d1d",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#b41d1d",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "{intent.danger.subtle.hover.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{intent.danger.subtle.hover.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "active": {
+          "background": {
+            "$value": [
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e9edee",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "disabled": {
+          "background": {
+            "$value": [
+              {
+                "value": "{control.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{control.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "border": {
+            "$value": [
+              {
+                "value": "{control.disabled.background}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{control.disabled.background}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          },
+          "text": {
+            "$value": [
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#ee9696",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        }
+      },
+      "plain": {
+        "base": {
+          "text": {
+            "$value": [
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#e76a6a",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "hover": {
+          "text": {
+            "$value": [
+              {
+                "value": "#b41d1d",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "active": {
+          "text": {
+            "$value": [
+              {
+                "value": "#911818",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "#dc2828",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": "",
+            "$type": "color"
+          }
+        },
+        "disabled": {
+          "text": {
+            "$value": [
+              {
+                "value": "{control.disabled.text}",
+                "features": {
+                  "color-scheme": "light"
+                }
+              },
+              {
+                "value": "{control.disabled.text}",
+                "features": {
+                  "color-scheme": "dark"
+                }
+              }
+            ],
+            "$description": ""
+          }
+        }
+      }
+    }
+  }
+}

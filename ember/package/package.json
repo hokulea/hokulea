@@ -1,0 +1,156 @@
+{
+  "name": "@hokulea/ember",
+  "version": "0.0.0",
+  "description": "The default blueprint for Embroider v2 addons.",
+  "keywords": [
+    "ember-addon",
+    "ember-css-modules-plugin"
+  ],
+  "author": "gossi",
+  "files": [
+    "addon-main.js",
+    "dist",
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./test-support": {
+      "types": "./declarations/test-support/index.d.ts",
+      "default": "./dist/test-support/index.js"
+    },
+    "./lib": {
+      "require": "./lib/index.js"
+    },
+    "./addon-main.js": "./addon-main.js",
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*"
+    }
+  },
+  "scripts": {
+    "build": "concurrently -g 'npm:build:*'",
+    "build:js": "rollup --config",
+    "build:types": "glint --declaration",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
+    "lint:css:fix": "stylelint 'src/**/*.css' --allow-empty-input --fix",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "start": "concurrently 'npm:start:*'",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "glint --declaration --watch"
+  },
+  "dependencies": {
+    "@hokulea/core": "workspace:*",
+    "@embroider/addon-shim": "^1.8.7",
+    "debug": "^4.3.2",
+    "decorator-transforms": "^1.1.0",
+    "ember-async-data": "^1.0.3",
+    "read-pkg-up": "7.0.1",
+    "tracked-built-ins": "^3.3.0"
+  },
+  "peerDependencies": {
+    "@ember/test-helpers": "^3.2.0",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "ember-command": "^2.0.2",
+    "ember-element-helper": "^0.8.5",
+    "ember-modifier": "^4.1.0",
+    "fractal-page-object": "^0.4.1"
+  },
+  "peerDependenciesMeta": {
+    "fractal-page-object": {
+      "optional": true
+    },
+    "@ember/test-helpers": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/eslint-parser": "^7.23.10",
+    "@babel/plugin-transform-typescript": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
+    "@ember/test-helpers": "^3.2.1",
+    "@embroider/addon-dev": "^4.2.0",
+    "@glint/core": "^1.3.0",
+    "@glint/environment-ember-loose": "^1.3.0",
+    "@glint/environment-ember-template-imports": "^1.3.0",
+    "@glint/template": "^1.3.0",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "@hokulea/config-eslint": "workspace:*",
+    "@hokulea/config-postcss": "workspace:*",
+    "@hokulea/config-prettier": "workspace:*",
+    "@hokulea/config-stylelint": "workspace:*",
+    "@hokulea/config-targets": "workspace:*",
+    "@hokulea/config-template-lint": "workspace:*",
+    "@hokulea/config-typescript": "workspace:*",
+    "@hokulea/rollup-plugin-postcss": "workspace:*",
+    "@hokulea/tokens": "workspace:*",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-actions": "^8.0.0-beta.0",
+    "@types/css-modules": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "babel-plugin-ember-template-compilation": "^2.2.1",
+    "concurrently": "^8.2.2",
+    "ember-command": "^2.0.2",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-css-modules": "^2.0.1",
+    "ember-link": "^3.2.0",
+    "ember-source": "^5.6.0",
+    "ember-template-imports": "^4.0.0",
+    "ember-template-lint": "^5.13.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-ember": "^11.12.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "fractal-page-object": "^0.5.0",
+    "postcss": "^8.4.33",
+    "prettier": "^3.1.1",
+    "rollup": "^4.9.5",
+    "rollup-plugin-postcss": "^4.0.2",
+    "stylelint": "^16.1.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.js",
+    "app-js": {
+      "./components/box.js": "./dist/_app_/components/box.js",
+      "./components/button.js": "./dist/_app_/components/button.js",
+      "./components/card.js": "./dist/_app_/components/card.js",
+      "./components/checkbox.js": "./dist/_app_/components/checkbox.js",
+      "./components/currency-input.js": "./dist/_app_/components/currency-input.js",
+      "./components/date-input.js": "./dist/_app_/components/date-input.js",
+      "./components/email-input.js": "./dist/_app_/components/email-input.js",
+      "./components/form.js": "./dist/_app_/components/form.js",
+      "./components/input-builder.js": "./dist/_app_/components/input-builder.js",
+      "./components/number-input.js": "./dist/_app_/components/number-input.js",
+      "./components/password-input.js": "./dist/_app_/components/password-input.js",
+      "./components/phone-input.js": "./dist/_app_/components/phone-input.js",
+      "./components/radio.js": "./dist/_app_/components/radio.js",
+      "./components/section.js": "./dist/_app_/components/section.js",
+      "./components/select.js": "./dist/_app_/components/select.js",
+      "./components/text-area.js": "./dist/_app_/components/text-area.js",
+      "./components/text-input.js": "./dist/_app_/components/text-input.js"
+    }
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

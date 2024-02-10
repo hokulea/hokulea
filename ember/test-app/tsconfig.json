@@ -1,0 +1,25 @@
+{
+  "extends": "@hokulea/config-typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@hokulea/ember-test-app/tests/*": [
+        "tests/*"
+      ],
+      "@hokulea/ember-test-app/*": [
+        "app/*"
+      ]
+    }
+  },
+  "include": [
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ],
+  "glint": {
+    "environment": [
+      "ember-loose",
+      "ember-template-imports"
+    ]
+  }
+}

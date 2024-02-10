@@ -6,6 +6,12 @@
   max-width: var(--center-max-width);
 }
 
+.article {
+  composes: flow from '@hokulea/core/layouts.css';
+
+  --flow-space: var(--ls0);
+}
+
 .toc {
   /* position: fixed;
   margin-left: 35rem;
@@ -14,7 +20,8 @@
   & > a {
     display: block;
     margin-bottom: var(--s-1);
-    margin-left: calc(var(--s0) * -1);
+
+    /* margin-left: calc(var(--s0) * -1); */
     text-decoration: none;
   }
 

@@ -1,4 +1,4 @@
-import { tokens } from '@hokulea/tokens/tokens';
+import { tokens } from '@hokulea/tokens';
 
 import type { Token } from '@hokulea/tokens';
 
@@ -17,6 +17,16 @@ export function findDescription(name: string): string | undefined {
 
   if (token) {
     return token.description;
+  }
+
+  return undefined;
+}
+
+export function findValue(name: string): string | number | unknown | undefined {
+  const token = findToken(name);
+
+  if (token) {
+    return token.value;
   }
 
   return undefined;

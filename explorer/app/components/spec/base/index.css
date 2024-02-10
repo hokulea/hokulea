@@ -1,12 +1,11 @@
 .spec {
-  composes: flow from "@hokulea/core/layouts.css";
-  background-color: var(--layout-low-contrast-color);
-  border: var(--structure-border-color) var(--structure-border-style)
-    var(--structure-border-width);
-  border-radius: var(--structure-border-radius);
-  padding: var(--s0);
-
-  --flow-space: var(--s-5);
+  background-color: var(--surface-container1);
+  border: var(--shape-stroke);
+  border-radius: var(--shape-radius-container);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  padding: var(--spacing-container-padding0);
 
   p {
     font-weight: 500;
@@ -15,6 +14,6 @@
   span {
     align-items: center;
     display: flex;
-    gap: var(--ls-5);
+    gap: var(--ls-4);
   }
 }

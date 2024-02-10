@@ -2,14 +2,16 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { helper } from '@ember/component/helper';
 
+import { Importance, Indicator } from '@hokulea/tokens';
+
 export default class IndicatorsComponent extends Component {
   colorProperties = ['background', 'border', 'text'];
   focusProperties = ['shadow'];
 
-  indicators = ['success', 'info', 'warning', 'error'];
-  importanceLevels = ['fill', 'subtle', 'plain'];
+  indicators = [Indicator.Success, Indicator.Info, Indicator.Warning, Indicator.Error];
+  importanceLevels = [Importance.Supreme, Importance.Subtle, Importance.Plain];
 
-  @tracked indicator = 'success';
+  @tracked indicator = Indicator.Success;
 
   get colors(): string[] {
     const colors = [];
@@ -23,5 +25,5 @@ export default class IndicatorsComponent extends Component {
     return colors;
   }
 
-  compileName = helper(([type, prop]) => `--indicator-${this.indicator}-${prop}-${type}`);
+  compileName = helper(([prop]) => `--indicator-${this.indicator}-${prop}`);
 }

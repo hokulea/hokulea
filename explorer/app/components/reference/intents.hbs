@@ -4,7 +4,8 @@
     {{#each this.intents as |intent|}}
       <Button
         @intent={{intent}}
-        @importance={{if (eq this.intent intent) "fill" "subtle"}}
+        @importance={{if (eq this.intent intent) "supreme" "subtle"}}
+        @spacing="-1"
         {{on "click" (set this "intent" intent)}}
       >
         {{intent}}
@@ -17,7 +18,8 @@
     {{#each this.importanceLevels as |importance|}}
       <Button
         @intent={{this.intent}}
-        @importance={{if (eq this.importance importance) "fill" "subtle"}}
+        @importance={{if (eq this.importance importance) "supreme" "subtle"}}
+        @spacing="-1"
         {{on "click" (set this "importance" importance)}}
       >
         {{importance}}
@@ -28,6 +30,6 @@
 
 <TokenList>
   {{#each this.colors as |color|}}
-    <Token::Color @name={{this.compileName "color" color}} />
+    <Token::Color @name={{this.compileName color}} />
   {{/each}}
 </TokenList>

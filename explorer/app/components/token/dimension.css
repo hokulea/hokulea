@@ -1,0 +1,28 @@
+.box {
+  composes: box from './props';
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.demo {
+  align-self: stretch;
+  background-color: var(--typography-main);
+  width: var(--value);
+}
+
+.content {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 30ch auto;
+}
+
+.value {
+  composes: value from "./props";
+}
+
+.description {
+  composes: description from "./props";
+  grid-column: 1 / span 2;
+}

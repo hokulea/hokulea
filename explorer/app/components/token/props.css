@@ -1,4 +1,23 @@
+.box {
+  background-color: var(--surface-container);
+  border: var(--shape-stroke);
+  border-radius: var(--shape-radius-container);
+  display: flex;
+  padding: var(--spacing-container-padding-2);
+}
+
+.demo {
+  align-self: start;
+  aspect-ratio: 1;
+  background-color: var(--surface-container);
+  border: var(--shape-stroke-information);
+  border-radius: var(--shape-radius-primitive);
+  width: var(--s4);
+}
+
+
 .value {
+  font-family: monospace;
   font-size: var(--s-1);
 }
 

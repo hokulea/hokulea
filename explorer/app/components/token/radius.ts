@@ -1,12 +1,13 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { registerDestructor } from '@ember/destroyable';
-import { action } from '@ember/object';
 
-import { findDescription } from '../token';
+import { modifier } from 'ember-modifier';
+
+import { findDescription } from './token';
 
 export interface TokenArgs {
   name: string;
+  compute?: boolean;
 }
 
 const BODY_STYLES = window.getComputedStyle(document.body);
@@ -19,17 +20,15 @@ export default class TokenComponent extends Component<TokenArgs> {
     return findDescription(this.args.name);
   }
 
-  @action
-  setup(element: HTMLElement): void {
+  get computable() {
+    return this.args.compute ?? true;
+  }
+
+  setup = modifier((element: HTMLElement) => {
     // listen for changes
     window.addEventListener('resize', this.update);
 
     const mutationObserver = new window.MutationObserver(this.update);
-
-    registerDestructor(this, () => {
-      window.removeEventListener('resize', this.update);
-      mutationObserver.disconnect();
-    });
 
     this.demo = element;
 
@@ -45,7 +44,12 @@ export default class TokenComponent extends Component<TokenArgs> {
 
     // first run
     this.update();
-  }
+
+    return () => {
+      window.removeEventListener('resize', this.update);
+      mutationObserver.disconnect();
+    };
+  });
 
   get property(): string {
     return BODY_STYLES.getPropertyValue(this.args.name);
@@ -55,7 +59,6 @@ export default class TokenComponent extends Component<TokenArgs> {
     return this.computed ?? this.property;
   }
 
-  @action
   private update() {
     this.computed = this.compute();
   }
@@ -63,6 +66,6 @@ export default class TokenComponent extends Component<TokenArgs> {
   private compute(): string | undefined {
     const width = this.demo?.getBoundingClientRect().width;
 
-    return width ? `${width.toFixed(2)}px` : undefined;
+    return width ? `${width.toFixed(0)}px` : undefined;
   }
 }

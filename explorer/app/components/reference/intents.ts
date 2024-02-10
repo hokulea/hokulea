@@ -2,16 +2,18 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { helper } from '@ember/component/helper';
 
+import { Importance, Intent } from '@hokulea/tokens';
+
 export default class IntentsComponent extends Component {
   states = ['base', 'active', 'hover', 'disabled'];
   colorProperties = ['background', 'border', 'text'];
   focusProperties = ['shadow'];
 
-  intents = ['action', 'alternative', 'highlight', 'danger'];
-  importanceLevels = ['fill', 'subtle', 'plain'];
+  intents = [Intent.Action, Intent.Alternative, Intent.Highlight, Intent.Danger];
+  importanceLevels = [Importance.Supreme, Importance.Subtle, Importance.Plain];
 
-  @tracked intent = 'action';
-  @tracked importance = 'fill';
+  @tracked intent = Intent.Action;
+  @tracked importance = Importance.Subtle;
 
   get colors(): string[] {
     const colors = [];
@@ -25,7 +27,5 @@ export default class IntentsComponent extends Component {
     return colors;
   }
 
-  compileName = helper(
-    ([type, prop]) => `--intent-${this.intent}-${this.importance}-${prop}-${type}`
-  );
+  compileName = helper(([prop]) => `--intent-${this.intent}-${this.importance}-${prop}`);
 }

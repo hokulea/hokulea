@@ -18,7 +18,7 @@ const translateLinks = function (html, options) {
 
     return `<a
       href="#"
-      data-sb-kind="${Case.lower(options.root)}-${parts.join('-')}"
+      data-sb-kind="${Case.lower(options.root)}-${parts.join('-')}-${name}"
       data-sb-story="${name}"
     >`;
   });

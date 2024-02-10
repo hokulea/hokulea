@@ -3,6 +3,8 @@ import { tracked } from '@glimmer/tracking';
 import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
 
+import { modifier } from 'ember-modifier';
+
 export interface GlobalSizingElement extends HTMLElement {
   update: () => void;
 }
@@ -11,8 +13,7 @@ export default class GlobalScaleDemoComponent extends Component {
   @tracked fontSize!: string;
   @tracked viewportWidth!: number;
 
-  @action
-  setup(element: GlobalSizingElement): void {
+  setup = modifier((element: GlobalSizingElement) => {
     // "public" API:
     // eslint-disable-next-line no-param-reassign
     element.update = () => {
@@ -41,7 +42,7 @@ export default class GlobalScaleDemoComponent extends Component {
 
     // first run
     this.update();
-  }
+  });
 
   @action
   private update() {

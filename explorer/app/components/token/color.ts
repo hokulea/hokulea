@@ -1,9 +1,10 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
 
-import { findDescription } from '../token';
+import { modifier } from 'ember-modifier';
+
+import { findDescription } from './token';
 
 export interface TokenArgs {
   name: string;
@@ -18,20 +19,19 @@ export default class TokenComponent extends Component<TokenArgs> {
     return findDescription(this.args.name);
   }
 
-  @action
-  setup(): void {
+  setup = modifier(() => {
     // listen for changes
     const media = window.matchMedia('(prefers-color-scheme: dark)');
 
     media.addEventListener('change', this.update);
 
-    registerDestructor(this, () => {
-      media.removeEventListener('change', this.update);
-    });
-
     // first run
     this.update();
-  }
+
+    return () => {
+      media.removeEventListener('change', this.update);
+    };
+  });
 
   @action
   private update() {

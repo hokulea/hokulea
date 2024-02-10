@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-import { findDescription } from '../token';
+import { findDescription } from './token';
 
 export interface TokenArgs {
   name: string;

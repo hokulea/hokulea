@@ -1,0 +1,12 @@
+<div local-class="box">
+  <div local-class="demo" {{style --value=(concat "var(" @name ")")}}></div>
+  <div local-class="content">
+    <TokenName @name={{@name}} />
+    <p local-class="description">{{this.description}}</p>
+  </div>
+
+  {{#if this.computable}}
+    <span local-class="meter" {{style --value=(concat "var(" @name ")")}} {{this.setup}}></span>
+  {{/if}}
+  <span local-class="value">{{this.value}}</span>
+</div>

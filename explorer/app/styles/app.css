@@ -31,28 +31,6 @@ h4 {
   --typo-heading-weight: 450;
 }
 
-a,
-a:link a:visited {
-  color: var(--intent-action-plain-base-text-color);
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--intent-action-plain-hover-text-color);
-}
-
-em {
-  color: var(--intent-alternative-plain-base-text-color);
-}
-
-code {
-  background: var(--layout-low-contrast-color);
-  border-radius: 4px;
-  color: var(--intent-alternative-plain-base-text-color);
-  display: inline;
-  padding: 0.22em;
-}
-
 pre > code:global(.hljs) {
   display: block;
   padding: 0.5em;

@@ -3,7 +3,8 @@
   <span>
     {{#each this.indicators as |indicator|}}
       <Button
-        @importance={{if (eq this.indicator indicator) "fill" "subtle"}}
+        @importance={{if (eq this.indicator indicator) "supreme" "subtle"}}
+        @spacing="-1"
         {{on "click" (set this "indicator" indicator)}}
       >
         {{indicator}}
@@ -14,6 +15,6 @@
 
 <TokenList>
   {{#each this.colors as |color|}}
-    <Token::Color @name={{this.compileName "color" color}} />
+    <Token::Color @name={{this.compileName color}} />
   {{/each}}
 </TokenList>

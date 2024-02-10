@@ -2,7 +2,7 @@
   <div
     local-class="demo"
     {{style --value=(concat "var(" @name ")")}}
-    {{did-insert this.setup}}
+    {{this.setup}}
     {{did-update this.update @name}}
   ></div>
   <div local-class="content">

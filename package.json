@@ -9,6 +9,7 @@
     "start": "turbo run start --parallel",
     "storybook": "pnpm run --filter @hokulea/explorer storybook",
     "build": "turbo run --filter @hokulea/ember build",
+    "build:storybook": "turbo run --filter @hokulea/explorer build",
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
@@ -18,9 +19,10 @@
     "turbo": "^1.11.3"
   },
   "volta": {
-    "node": "20.10.0"
+    "node": "20.10.0",
+    "pnpm": "8.15.1"
   },
-  "packageManager": "pnpm@8.14.1",
+  "packageManager": "pnpm@8.15.1",
   "engines": {
     "node": ">= 20.*"
   },

@@ -18,9 +18,9 @@ export default {
 const Template = (args: FieldArgs) => {
   return {
     template: hbs`
-      <Form @data={{hash salary=undefined}} @submit={{this.submit}} as |f|>
+      <Form @data={{hash price=undefined}} @submit={{this.submit}} as |f|>
         <f.Currency
-          @name="salary"
+          @name="price"
           @label={{this.label}}
           @description={{this.description}}
           @disabled={{this.disabled}}
@@ -39,7 +39,7 @@ export const Default = {
   argTypes: argTypesWithPlaceholder,
 
   args: {
-    label: 'Salary'
+    label: 'Price'
   }
 };
 
@@ -47,8 +47,8 @@ export const Description = {
   render: () => {
     return {
       template: hbs`
-      <Form @data={{hash salary=''}} as |f|>
-        <f.Currency @name="salary" @label="Salary" @description="Your yearly gross" />
+      <Form @data={{hash price=''}} as |f|>
+        <f.Currency @name="price" @label="Price" @description="What does it cost?" />
       </Form>
     `
     };
@@ -65,8 +65,8 @@ export const Placeholder = {
   render: () => {
     return {
       template: hbs`
-      <Form @data={{hash salary=''}} as |f|>
-        <f.Currency @name="salary" @label="Salary" placeholder="Your yearly gross" />
+      <Form @data={{hash price=''}} as |f|>
+        <f.Currency @name="price" @label="Price" placeholder="What does it cost?" />
       </Form>
     `
     };
@@ -83,8 +83,8 @@ export const Disabled = {
   render: () => {
     return {
       template: hbs`
-      <Form @data={{hash salary=''}} as |f|>
-        <f.Currency @name="salary" @label="Salary" @disabled={{true}} />
+      <Form @data={{hash price=''}} as |f|>
+        <f.Currency @name="price" @label="Price" @disabled={{true}} />
       </Form>
     `
     };

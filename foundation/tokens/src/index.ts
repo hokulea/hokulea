@@ -20,7 +20,6 @@ export type Intents = `${Intent}`;
 export enum Importance {
   Supreme = 'supreme',
   Subtle = 'subtle',
-  Muted = 'muted',
   Plain = 'plain'
 }
 

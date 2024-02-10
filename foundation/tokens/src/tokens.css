@@ -32,6 +32,7 @@
   --s0: 16;
   --shape-stroke-style: solid;
   --shape-stroke-width: 1px;
+  --control-focus-stroke-width: 2px;
   --control-focus-stroke-offset: 2px;
   --control-border-width: 2px;
   --shape-radius-primitive: var(--ls-3);

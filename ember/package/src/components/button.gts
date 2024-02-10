@@ -1,4 +1,4 @@
-import CommandElement from 'ember-command/components/command-element';
+import { CommandElement } from 'ember-command';
 
 import styles from '@hokulea/core/actions.module.css';
 

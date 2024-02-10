@@ -7,3 +7,14 @@
 code {
   font-family: "Fira Code", monospace;
 }
+
+/* Natural flow and rhythm in articles by default */
+article {
+  ul, ol, dd {
+    padding-inline-start: 1em;
+  }
+
+  & > * + * {
+    margin-block-start: 1em;
+  }
+}

@@ -24,12 +24,15 @@
 
 .control {
   all: unset;
+  aspect-ratio: 1;
   background-color: var(--control-background);
   border: var(--control-border);
   border-radius: var(--shape-radius-primitive);
   color: var(--control-text);
   display: inline-flex; /* Safari needs to set display explicitely when `all: unset` is given */
+  height: 0.9em;
   padding: var(--spacing-primitive-padding0);
+  transform: translateY(0.1em);
 
   /* Reset this for safari */
   @supports (-webkit-hyphens:none) {

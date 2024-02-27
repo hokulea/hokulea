@@ -9,10 +9,11 @@ export class ApplicationRoute extends Route<{}> {
       Hokulea
 
       <nav>
-        <LinkTo @route="actions">Actions</LinkTo>
-        <LinkTo @route="content">Content</LinkTo>
-        <LinkTo @route="controls">Controls</LinkTo>
-        <LinkTo @route="forms">Forms</LinkTo>
+        <LinkTo @route='actions'>Actions</LinkTo>
+        <LinkTo @route='content'>Content</LinkTo>
+        <LinkTo @route='controls'>Controls</LinkTo>
+        <LinkTo @route='forms'>Forms</LinkTo>
+        <LinkTo @route='icons'>Icons</LinkTo>
       </nav>
     </header>
 

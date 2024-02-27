@@ -1,5 +1,9 @@
 const fs = require('node:fs');
+const path = require('node:path');
 const { HokuleaAssetLoaderWebpackPlugin } = require('./webpack-asset-loader-plugin');
+
+const lucideStatic = path.dirname(path.dirname(path.dirname(require.resolve('lucide-static'))));
+const HOKULEA_ICON_PATH = path.join(lucideStatic, 'icons');
 
 function importAssets(app) {
   const paths = [
@@ -26,5 +30,6 @@ const HOKULEA_CONFIG = {
 module.exports = {
   importAssets,
   HOKULEA_CONFIG,
+  HOKULEA_ICON_PATH,
   HokuleaAssetLoaderWebpackPlugin
 };

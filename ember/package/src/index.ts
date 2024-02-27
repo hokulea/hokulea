@@ -2,14 +2,14 @@
 // icons
 
 // @ts-ignore
-// export { default as Icon } from './components/icon';
+export { default as Icon } from './components/icon';
 
 // actions
 
 // @ts-ignore
 export { default as Button } from './components/button';
 // @ts-ignore
-// export { default as IconButton } from './components/icon-button';
+export { default as IconButton } from './components/icon-button';
 
 // controls
 

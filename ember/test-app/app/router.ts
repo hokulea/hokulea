@@ -13,4 +13,5 @@ Router.map(function () {
   this.route('content');
   this.route('controls');
   this.route('forms');
+  this.route('icons');
 });

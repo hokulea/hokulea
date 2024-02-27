@@ -3,17 +3,24 @@ References:
 
 - https://every-layout.dev/layouts/icon/
 - https://archive.hankchizljaw.com/links/121/
+
+The `.icon` is applied to a `<span>` element and can be a citizen within prose
+text or can be put into a flexbox layout. Therefore it has a height of `1em` to
+match the height of its neighbouring elements/texts. The span itself is an
+inline-flexbox and aligns its items center. That is when the icon is used in a
+flexbox layout, the actual icon is positioned appropriately.
+
+The `svg` element inside then receives the sizing for the _actual_ icon itself.
 */
 
 .icon {
-  align-self: center; /* in case we are in a flexbox */
+  align-items: center;
   aspect-ratio: 1;
   display: inline-flex;
   height: 1em;
-  vertical-align: text-top; /* in case we are in a prose environment */
 
   svg {
-    height: 1em;
-    width: 1em;
+    aspect-ratio: 1;
+    height: 1.1cap;
   }
 }

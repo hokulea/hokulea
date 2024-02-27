@@ -1,7 +1,11 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/ember/lib');
+const {
+  HOKULEA_CONFIG,
+  HOKULEA_ICON_PATH,
+  HokuleaAssetLoaderWebpackPlugin
+} = require('@hokulea/ember/lib');
 const hokuleaPostCSSConfig = require('@hokulea/config-postcss');
 const packageJson = require('./package');
 
@@ -24,6 +28,10 @@ module.exports = function (defaults) {
     },
 
     ...HOKULEA_CONFIG,
+
+    svgJar: {
+      sourceDirs: ['public/icons', HOKULEA_ICON_PATH]
+    },
 
     autoImport: {
       watchDependencies: Object.keys(packageJson.dependencies),

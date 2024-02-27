@@ -8,7 +8,6 @@ import styles from '@hokulea/core/actions.module.css';
 import disabled from '../-private/modifiers/disabled';
 import Icon from './icon';
 
-import type { IconName, IconNames, StyleName, StyleNames } from '@hokulea/icons';
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
 
@@ -22,9 +21,7 @@ export interface IconButtonSignature {
     disabled?: boolean;
     label: string;
     /** The name of the icon */
-    icon: IconName | IconNames;
-    /** The style for the icon */
-    style?: StyleName | StyleNames;
+    icon: string;
   };
   Blocks: {
     default: [];
@@ -34,7 +31,7 @@ export interface IconButtonSignature {
 export default class IconButton extends Component<IconButtonSignature> {
   get label() {
     assert(
-      'Please provide a `@label` to `<IconButton>` for accessibility reasons. Ask your designer/PM to provide one',
+      'Please provide a `@label` to `<IconButton>` for accessibility reasons.',
       this.args.label !== undefined
     );
 
@@ -53,7 +50,7 @@ export default class IconButton extends Component<IconButtonSignature> {
       data-test-icon-button
       ...attributes
     >
-      <Icon @icon={{@icon}} @style={{@style}} data-test-icon-button='icon' />
+      <Icon @icon={{@icon}} data-test-icon-button='icon' />
     </CommandElement>
   </template>
 }

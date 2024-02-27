@@ -8,4 +8,8 @@
     padding-block: var(--spacing-primitive-padding-1);
     padding-inline: var(--spacing-primitive-padding2);
   }
+
+  & > span {
+    display: inline-flex;
+  }
 }

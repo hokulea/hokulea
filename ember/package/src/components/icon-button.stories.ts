@@ -1,13 +1,14 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from '@storybook/addon-actions';
+import iconTags from 'lucide-static/tags.json';
 
-import { IconName, StyleName } from '@hokulea/icons';
 import { Importance, Intent, Spacing } from '@hokulea/tokens';
 
-import type { IconNames, StyleNames } from '@hokulea/icons';
 import type { Importances, Intents, Spacings } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
+
+const iconNames = Object.keys(iconTags);
 
 // import type { IconButtonSignature } from './icon-button';
 interface IconButtonSignature {
@@ -20,9 +21,7 @@ interface IconButtonSignature {
     disabled?: boolean;
     label: string;
     /** The name of the icon */
-    icon: IconName | IconNames;
-    /** The style for the icon */
-    style?: StyleName | StyleNames;
+    icon: string;
   };
   Blocks: {
     default: [];
@@ -58,7 +57,6 @@ export default {
         labels: {
           [Importance.Supreme]: 'supreme (default)',
           [Importance.Subtle]: 'subtle',
-          [Importance.Muted]: 'muted',
           [Importance.Plain]: 'plain'
         }
       }
@@ -84,19 +82,8 @@ export default {
     },
     icon: {
       name: 'Icon',
-      options: Object.values(IconName).sort(),
+      options: iconNames.sort(),
       control: 'select'
-    },
-    style: {
-      name: 'Style',
-      options: Object.values(StyleName),
-      control: {
-        type: 'radio',
-        labels: {
-          [StyleName.Regular]: 'regular (default)',
-          [StyleName.Filled]: 'filled'
-        }
-      }
     }
   }
 };
@@ -115,7 +102,6 @@ const Template = (args: IconButtonArgs) => {
         @disabled={{this.disabled}}
         @label={{this.label}}
         @icon={{this.icon}}
-        @style={{this.style}}
       />
     `,
     context: {
@@ -131,21 +117,10 @@ const Template = (args: IconButtonArgs) => {
   };
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Text',
-  icon: IconName.Placeholder
-};
-Default.parameters = {
-  design: [
-    {
-      type: 'figma',
-      url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=689%3A4612&t=9EsqN4F3D1emPtSj-1'
-    },
-    {
-      name: 'Specification',
-      type: 'figma',
-      url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=689%3A4512&t=9EsqN4F3D1emPtSj-1'
-    }
-  ]
+export const Showcase = {
+  render: Template.bind({}),
+  args: {
+    label: 'Text',
+    icon: 'activity'
+  }
 };

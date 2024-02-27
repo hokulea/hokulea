@@ -240,6 +240,9 @@ importers:
       ember-modifier:
         specifier: ^4.1.0
         version: 4.1.0(ember-source@5.6.0)
+      lucide-static:
+        specifier: ^0.331.0
+        version: 0.331.0
       read-pkg-up:
         specifier: 7.0.1
         version: 7.0.1
@@ -349,6 +352,9 @@ importers:
       ember-source:
         specifier: ^5.6.0
         version: 5.6.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(rsvp@4.8.5)(webpack@5.90.1)
+      ember-svg-jar:
+        specifier: ^2.4.8
+        version: 2.4.8(@glint/template@1.3.0)
       ember-template-imports:
         specifier: ^4.0.0
         version: 4.1.0
@@ -548,6 +554,9 @@ importers:
       ember-source-channel-url:
         specifier: ^3.0.0
         version: 3.0.0
+      ember-svg-jar:
+        specifier: ^2.4.8
+        version: 2.4.8(@glint/template@1.3.0)
       ember-template-imports:
         specifier: ^4.0.0
         version: 4.1.0
@@ -761,7 +770,7 @@ importers:
         version: 4.2.0(@ember/string@3.1.1)(ember-source@5.6.0)
       ember-svg-jar:
         specifier: ^2.4.7
-        version: 2.4.8
+        version: 2.4.8(@glint/template@1.3.0)
       ember-template-imports:
         specifier: ^4.0.0
         version: 4.1.0
@@ -10994,7 +11003,7 @@ packages:
       - supports-color
     dev: true
 
-  /ember-svg-jar@2.4.8:
+  /ember-svg-jar@2.4.8(@glint/template@1.3.0):
     resolution: {integrity: sha512-xXfPzpJ+aP9k4w6FOboAcABdoK1VF+12sTM6y8CJI4biLNzphmkQ0zFr+m+8w9U8PPTUlaRqeJShTGOa4y9z6g==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
@@ -14878,6 +14887,10 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
     dev: true
+
+  /lucide-static@0.331.0:
+    resolution: {integrity: sha512-pZs6H274XGNJpBPEW+BnqPwWFPKd2BhBQevg6r+zreOsnAwuJf2BKYeWPTti4CWZjfOupTrK7PN+fXJs945+3Q==}
+    dev: false
 
   /magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}

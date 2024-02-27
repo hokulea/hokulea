@@ -14,10 +14,6 @@ export class IconPageObject extends PageObject<HTMLSpanElement> {
   }
 
   get name(): string | null | undefined {
-    return this.element?.getAttribute('data-test-name');
-  }
-
-  get style(): string | null | undefined {
-    return this.element?.getAttribute('data-test-style');
+    return this.element?.getAttribute('data-test-icon');
   }
 }

@@ -55,7 +55,8 @@
     "decorator-transforms": "^1.1.0",
     "ember-async-data": "^1.0.3",
     "read-pkg-up": "7.0.1",
-    "tracked-built-ins": "^3.3.0"
+    "tracked-built-ins": "^3.3.0",
+    "lucide-static": "^0.331.0"
   },
   "peerDependencies": {
     "@ember/test-helpers": "^3.2.0",
@@ -64,6 +65,7 @@
     "ember-command": "^2.0.2",
     "ember-element-helper": "^0.8.5",
     "ember-modifier": "^4.1.0",
+    "ember-svg-jar": "^2.4.8",
     "fractal-page-object": "^0.4.1"
   },
   "peerDependenciesMeta": {
@@ -111,6 +113,7 @@
     "ember-source": "^5.6.0",
     "ember-template-imports": "^4.0.0",
     "ember-template-lint": "^5.13.0",
+    "ember-svg-jar": "^2.4.8",
     "eslint": "^8.56.0",
     "eslint-plugin-ember": "^11.12.0",
     "eslint-plugin-storybook": "^0.6.15",
@@ -139,6 +142,8 @@
       "./components/date-input.js": "./dist/_app_/components/date-input.js",
       "./components/email-input.js": "./dist/_app_/components/email-input.js",
       "./components/form.js": "./dist/_app_/components/form.js",
+      "./components/icon-button.js": "./dist/_app_/components/icon-button.js",
+      "./components/icon.js": "./dist/_app_/components/icon.js",
       "./components/input-builder.js": "./dist/_app_/components/input-builder.js",
       "./components/number-input.js": "./dist/_app_/components/number-input.js",
       "./components/password-input.js": "./dist/_app_/components/password-input.js",

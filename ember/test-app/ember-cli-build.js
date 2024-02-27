@@ -2,7 +2,11 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 // eslint-disable-next-line n/no-missing-require
-const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/ember/lib');
+const {
+  HOKULEA_CONFIG,
+  HOKULEA_ICON_PATH,
+  HokuleaAssetLoaderWebpackPlugin
+} = require('@hokulea/ember/lib');
 // eslint-disable-next-line n/no-missing-require
 const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
@@ -22,6 +26,10 @@ module.exports = function (defaults) {
 
     'ember-cli-babel': {
       enableTypeScriptTransform: true
+    },
+
+    svgJar: {
+      sourceDirs: ['public/icons', HOKULEA_ICON_PATH]
     },
 
     autoImport: {

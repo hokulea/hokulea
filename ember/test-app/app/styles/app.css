@@ -1,16 +1,16 @@
 @font-face {
-  font-display: swap;
   font-family: Inter;
-  font-style: oblique 0deg 10deg;
   font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: swap;
   src: url("/Inter.var.woff2?3.13") format("woff2-variations");
 }
 
 @font-face {
-  font-display: block;
   font-family: "Inter Display";
-  font-style: oblique 0deg 10deg;
   font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: block;
   src: url("/InterDisplay.var.woff2?3.13") format("woff2-variations");
 }
 

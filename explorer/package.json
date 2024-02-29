@@ -11,6 +11,8 @@
     "build:storybook": "storybook build",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:css": "stylelint 'app/**/*.css' --allow-empty-input --cache",
+    "lint:css:fix": "stylelint 'app/**/*.css' --allow-empty-input --fix",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
@@ -106,6 +108,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "storybook": "^8.0.0-beta.6",
+    "stylelint": "^16.2.1",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0"
   },

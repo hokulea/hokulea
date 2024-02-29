@@ -1,8 +1,8 @@
 .box {
   composes: box from "./props";
-  align-items: center;
   flex-direction: row;
   gap: var(--s-1);
+  align-items: center;
 }
 
 .demo {
@@ -11,14 +11,14 @@
 }
 
 .meter {
-  visibility: hidden;
   width: var(--value);
+  visibility: hidden;
 }
 
 .content {
-  composes: flow from "@hokulea/core/layouts.css";
-
   --flow-space: var(--s-3);
+
+  composes: flow from "@hokulea/core/layouts.css";
 }
 
 .value {

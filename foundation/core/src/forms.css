@@ -5,8 +5,8 @@
 }
 
 .label {
-  color: var(--typography-main);
   font-weight: 550; /* Non-Chrome Browsers (Safari, FF) display font-weight: 500 as "normal" */
+  color: var(--typography-main);
 
   /*
     Cera Round Pro is obv difficult for browsers to render
@@ -28,8 +28,8 @@
 }
 
 fieldset.field {
-  border: 0;
   display: block;
+  border: 0;
 
   & > * + * {
     margin-block-start: var(--spacing-container-3);
@@ -37,15 +37,15 @@ fieldset.field {
 }
 
 .errors {
-  align-items: flex-start;
-  color: var(--indicator-error-plain-text);
   display: flex;
   gap: var(--spacing-primitive-3);
+  align-items: flex-start;
+  color: var(--indicator-error-plain-text);
 
   /* Wrapper for the icon */
   & > span {
-    align-items: flex-end;
     display: flex;
+    align-items: flex-end;
     height: 1lh;
   }
 
@@ -63,14 +63,14 @@ fieldset.field {
 }
 
 .choice {
-  align-items: flex-start;
   display: flex;
   gap: var(--spacing-primitive-2);
+  align-items: flex-start;
 
   /* wrapper for the checkbox/radio */
   & > span {
-    align-items: flex-end;
     display: flex;
+    align-items: flex-end;
     height: 1em;
   }
 

@@ -1,11 +1,11 @@
 .token-list {
+  --flow-space: var(--s0);
+
   composes: flow from "@hokulea/core/layouts.css";
   margin-block-start: var(--s0);
-
-  --flow-space: var(--s0);
 }
 
 .size-options {
-  font-size: var(--s-1);
   margin-inline-start: var(--s-1);
+  font-size: var(--s-1);
 }

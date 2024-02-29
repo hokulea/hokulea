@@ -1,21 +1,22 @@
 .box {
   composes: box from './props';
-  align-items: center;
+
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
 .demo {
   align-self: stretch;
-  background-color: var(--typography-main);
   width: var(--value);
+  background-color: var(--typography-main);
 }
 
 .content {
-  composes: flow from "@hokulea/core/layouts.css";
-
   --flow-space: var(--s-4);
+
+  composes: flow from "@hokulea/core/layouts.css";
 }
 
 .value {

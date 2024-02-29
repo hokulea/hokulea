@@ -48,12 +48,6 @@ importers:
       postcss-modules:
         specifier: ^6.0.0
         version: 6.0.0(postcss@8.4.35)
-      postcss-nested:
-        specifier: ^6.0.1
-        version: 6.0.1(postcss@8.4.35)
-      postcss-pow:
-        specifier: ^1.0.1
-        version: 1.0.1
       postcss-preset-env:
         specifier: ^9.3.0
         version: 9.3.0(postcss@8.4.35)
@@ -126,6 +120,9 @@ importers:
       stylelint:
         specifier: ^16.1.0
         version: 16.2.1(typescript@5.3.3)
+      stylelint-config-clean-order:
+        specifier: ^5.4.1
+        version: 5.4.1(stylelint@16.2.1)
 
   configs/targets:
     dependencies:
@@ -590,6 +587,9 @@ importers:
       sinon:
         specifier: ^17.0.1
         version: 17.0.1
+      stylelint:
+        specifier: ^16.2.1
+        version: 16.2.1(typescript@5.3.3)
       typescript:
         specifier: ~5.3.3
         version: 5.3.3
@@ -852,6 +852,9 @@ importers:
       storybook:
         specifier: ^8.0.0-beta.6
         version: 8.0.0-beta.6(react-dom@17.0.2)(react@17.0.2)
+      stylelint:
+        specifier: ^16.2.1
+        version: 16.2.1(typescript@5.3.3)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -870,6 +873,9 @@ importers:
       '@hokulea/config-prettier':
         specifier: workspace:*
         version: link:../../configs/prettier
+      '@hokulea/config-stylelint':
+        specifier: workspace:*
+        version: link:../../configs/stylelint
       '@hokulea/config-targets':
         specifier: workspace:*
         version: link:../../configs/targets
@@ -903,6 +909,9 @@ importers:
       rollup-plugin-multi-input:
         specifier: ^1.4.1
         version: 1.4.1
+      stylelint:
+        specifier: ^16.1.0
+        version: 16.2.1(typescript@5.3.3)
 
   foundation/tokens:
     dependencies:
@@ -3189,6 +3198,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm@0.18.20:
@@ -3197,6 +3207,7 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-x64@0.18.20:
@@ -3205,6 +3216,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.18.20:
@@ -3213,6 +3225,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.18.20:
@@ -3221,6 +3234,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.18.20:
@@ -3229,6 +3243,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.18.20:
@@ -3237,6 +3252,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.18.20:
@@ -3245,6 +3261,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.18.20:
@@ -3253,6 +3270,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.18.20:
@@ -3261,6 +3279,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.18.20:
@@ -3269,6 +3288,7 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.18.20:
@@ -3277,6 +3297,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.18.20:
@@ -3285,6 +3306,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.18.20:
@@ -3293,6 +3315,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.18.20:
@@ -3301,6 +3324,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.18.20:
@@ -3309,6 +3333,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.18.20:
@@ -3317,6 +3342,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.18.20:
@@ -3325,6 +3351,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.18.20:
@@ -3333,6 +3360,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.18.20:
@@ -3341,6 +3369,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.18.20:
@@ -3349,6 +3378,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.18.20:
@@ -3357,6 +3387,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.56.0):
@@ -9313,7 +9344,7 @@ packages:
       postcss-value-parser: 4.2.0
       schema-utils: 3.3.0
       semver: 7.6.0
-      webpack: 5.90.1(esbuild@0.18.20)
+      webpack: 5.90.1
 
   /css-loader@6.10.0(webpack@5.90.1):
     resolution: {integrity: sha512-LTSA/jWbwdMlk+rhmElbDR2vbtQoTBPr7fkJE+mxrHj+7ru0hUmHafDRzWIjIHTwpitWVaqY2/UWGRca3yUgRw==}
@@ -11472,6 +11503,7 @@ packages:
       '@esbuild/win32-arm64': 0.18.20
       '@esbuild/win32-ia32': 0.18.20
       '@esbuild/win32-x64': 0.18.20
+    dev: true
 
   /escalade@3.1.2:
     resolution: {integrity: sha512-ErCHMCae19vR8vQGe50xIsVomy19rg6gFu3+r3jkEO46suLMWBksvVyoGgQV+jOfl84ZSOSlmv6Gxa89PmTGmA==}
@@ -15354,7 +15386,7 @@ packages:
     dependencies:
       schema-utils: 4.2.0
       tapable: 2.2.1
-      webpack: 5.90.1(esbuild@0.18.20)
+      webpack: 5.90.1
 
   /minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -16271,10 +16303,6 @@ packages:
       through2: 2.0.5
     dev: true
 
-  /picocolors@0.2.1:
-    resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
-    dev: false
-
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
@@ -16958,16 +16986,6 @@ packages:
       postcss-modules-values: 4.0.0(postcss@8.4.35)
       string-hash: 1.1.3
 
-  /postcss-nested@6.0.1(postcss@8.4.35):
-    resolution: {integrity: sha512-mEp4xPMi5bSWiMbsgoPfcP74lsWLHkQbZc3sY+jWYd65CUwXrUaTp0fmNpa01ZcETKlIgUdFN/MpS2xZtqL9dQ==}
-    engines: {node: '>=12.0'}
-    peerDependencies:
-      postcss: ^8.2.14
-    dependencies:
-      postcss: 8.4.35
-      postcss-selector-parser: 6.0.15
-    dev: false
-
   /postcss-nesting@12.0.2(postcss@8.4.35):
     resolution: {integrity: sha512-63PpJHSeNs93S3ZUIyi+7kKx4JqOIEJ6QYtG3x+0qA4J03+4n0iwsyA1GAHyWxsHYljQS4/4ZK1o2sMi70b5wQ==}
     engines: {node: ^14 || ^16 || >=18}
@@ -17219,13 +17237,6 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-pow@1.0.1:
-    resolution: {integrity: sha512-9MTpBXCNamMlx/9Z4rE1CtOwzJI6C1QGfgtasywsO8xEWwtPgiXfncFA15HZacM1fCqzvjQDEgn9xWllOzQUJg==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      postcss: 7.0.39
-    dev: false
-
   /postcss-preset-env@9.3.0(postcss@8.4.35):
     resolution: {integrity: sha512-ycw6doPrqV6QxDCtgiyGDef61bEfiSc59HGM4gOw/wxQxmKnhuEery61oOC/5ViENz/ycpRsuhTexs1kUBTvVw==}
     engines: {node: ^14 || ^16 || >=18}
@@ -17398,7 +17409,6 @@ packages:
       postcss: ^8.4.20
     dependencies:
       postcss: 8.4.35
-    dev: false
 
   /postcss-svgo@5.1.0(postcss@8.4.35):
     resolution: {integrity: sha512-D75KsH1zm5ZrHyxPakAxJWtkyXew5qwS70v56exwvw542d9CRtTo78K0WeFxZB4G7JXKKMbEZtZayTGdIky/eA==}
@@ -17444,14 +17454,6 @@ packages:
 
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
-
-  /postcss@7.0.39:
-    resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      picocolors: 0.2.1
-      source-map: 0.6.1
-    dev: false
 
   /postcss@8.4.35:
     resolution: {integrity: sha512-u5U8qYpBCpN13BsiEB0CbR1Hhh4Gc0zLFuedrHJKMctHCHAGrMdG0PRM/KErzAL3CU6/eckEtmHNB3x6e3c0vA==}
@@ -19303,7 +19305,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.1(esbuild@0.18.20)
+      webpack: 5.90.1
 
   /style-loader@3.3.4(webpack@5.90.1):
     resolution: {integrity: sha512-0WqXzrsMTyb8yjZJHDqwmnwRJvhALK9LfRtRc6B4UTWe8AijYLZYZ9thuJTZc2VfQWINADW/j+LiJnfy2RoC1w==}
@@ -19339,6 +19341,15 @@ packages:
       postcss: 8.4.35
       postcss-selector-parser: 6.0.15
     dev: false
+
+  /stylelint-config-clean-order@5.4.1(stylelint@16.2.1):
+    resolution: {integrity: sha512-C9E94vFk7QKqPshXik3iNU5cYz7vm0Up4/wu1biRjThWLWJ3gYRdXfyV/1fFU7u4ThfSIf2/ijNhk0pf0ErPWQ==}
+    peerDependencies:
+      stylelint: '>=14'
+    dependencies:
+      stylelint: 16.2.1(typescript@5.3.3)
+      stylelint-order: 6.0.4(stylelint@16.2.1)
+    dev: true
 
   /stylelint-config-recommended@12.0.0(stylelint@16.2.1):
     resolution: {integrity: sha512-x6x8QNARrGO2sG6iURkzqL+Dp+4bJorPMMRNPScdvaUK8PsynriOcMW7AFDKqkWAS5wbue/u8fUT/4ynzcmqdQ==}
@@ -19377,7 +19388,6 @@ packages:
       postcss: 8.4.35
       postcss-sorting: 8.0.2(postcss@8.4.35)
       stylelint: 16.2.1(typescript@5.3.3)
-    dev: false
 
   /stylelint@16.2.1(typescript@5.3.3):
     resolution: {integrity: sha512-SfIMGFK+4n7XVAyv50CpVfcGYWG4v41y6xG7PqOgQSY8M/PgdK0SQbjWFblxjJZlN9jNq879mB4BCZHJRIJ1hA==}
@@ -19665,6 +19675,7 @@ packages:
       serialize-javascript: 6.0.2
       terser: 5.27.0
       webpack: 5.90.1(esbuild@0.18.20)
+    dev: true
 
   /terser-webpack-plugin@5.3.10(webpack@5.90.1):
     resolution: {integrity: sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w==}
@@ -20827,6 +20838,7 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
+    dev: true
 
   /websocket-driver@0.7.4:
     resolution: {integrity: sha512-b17KeDIQVjvb0ssuSDF2cYXSg2iztliJ4B9WdsuB6J952qCPKmnVq4DyW5motImXHDC1cBT/1UezrJVsKw5zjg==}

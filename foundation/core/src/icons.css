@@ -14,9 +14,9 @@ The `svg` element inside then receives the sizing for the _actual_ icon itself.
 */
 
 .icon {
+  display: inline-flex;
   align-items: center;
   aspect-ratio: 1;
-  display: inline-flex;
   height: 1em;
 
   svg {

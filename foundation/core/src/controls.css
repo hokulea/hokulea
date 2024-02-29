@@ -24,12 +24,16 @@
 
 .control {
   all: unset;
+
+  display: inline-flex; /* Safari needs to set display explicitely when `all: unset` is given */
+
+  padding: var(--spacing-primitive0);
+
+  color: var(--control-text);
+
   background-color: var(--control-background);
   border: var(--control-border);
   border-radius: var(--shape-radius-primitive);
-  color: var(--control-text);
-  display: inline-flex; /* Safari needs to set display explicitely when `all: unset` is given */
-  padding: var(--spacing-primitive0);
 
 
   /* Reset this for safari */
@@ -38,8 +42,8 @@
   }
 
   &:disabled, &[aria-disabled], &[aria-disabled="true"] {
-    background-color: var(--control-disabled-background);
     color: var(--control-disabled-text);
+    background-color: var(--control-disabled-background);
   }
 }
 
@@ -69,10 +73,12 @@
 
 .select {
   composes: control;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMDAxNzMgOUM0LjE5NDA0IDkgMy43MTk1OSA5LjkwODAzIDQuMTgwODMgMTAuNTcxMUw2LjgxMzQ2IDE0LjM1NTVDNy40MTAyNCAxNS4yMTM0IDguNjc5NCAxNS4yMTMzIDkuMjc2MTggMTQuMzU1NUwxMS45MDg4IDEwLjU3MTFDMTIuMzcwMSA5LjkwODAzIDExLjg5NTYgOSAxMS4wODc5IDlINS4wMDE3M1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik01LjAwMTczIDYuOTk4OUM0LjE5NDA0IDYuOTk4OSAzLjcxOTU5IDYuMDkwODcgNC4xODA4MyA1LjQyNzg0TDYuODEzNDYgMS42NDM0MkM3LjQxMDI0IDAuNzg1NTQ4IDguNjc5NCAwLjc4NTU1MiA5LjI3NjE4IDEuNjQzNDJMMTEuOTA4OCA1LjQyNzg0QzEyLjM3MDEgNi4wOTA4NyAxMS44OTU2IDYuOTk4OSAxMS4wODc5IDYuOTk4OUg1LjAwMTczWiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==');
-  background-position: right var(--spacing-primitive-padding0) center;
-  background-repeat: no-repeat;
+
   padding-inline-end: calc(var(--spacing-primitive0) + 16px + var(--spacing-primitive-3));
+
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMDAxNzMgOUM0LjE5NDA0IDkgMy43MTk1OSA5LjkwODAzIDQuMTgwODMgMTAuNTcxMUw2LjgxMzQ2IDE0LjM1NTVDNy40MTAyNCAxNS4yMTM0IDguNjc5NCAxNS4yMTMzIDkuMjc2MTggMTQuMzU1NUwxMS45MDg4IDEwLjU3MTFDMTIuMzcwMSA5LjkwODAzIDExLjg5NTYgOSAxMS4wODc5IDlINS4wMDE3M1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik01LjAwMTczIDYuOTk4OUM0LjE5NDA0IDYuOTk4OSAzLjcxOTU5IDYuMDkwODcgNC4xODA4MyA1LjQyNzg0TDYuODEzNDYgMS42NDM0MkM3LjQxMDI0IDAuNzg1NTQ4IDguNjc5NCAwLjc4NTU1MiA5LjI3NjE4IDEuNjQzNDJMMTEuOTA4OCA1LjQyNzg0QzEyLjM3MDEgNi4wOTA4NyAxMS44OTU2IDYuOTk4OSAxMS4wODc5IDYuOTk4OUg1LjAwMTczWiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==');
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-primitive-padding0) center;
 }
 
 .textarea {
@@ -82,20 +88,22 @@
 }
 
 .choice {
-  accent-color: var(--control-accent);
+  transform: translateY(0.1em);
+
   aspect-ratio: 1;
+  height: 0.9em;
+
+  accent-color: var(--control-accent);
   background: var(--control-background);
   border: var(--control-border);
   border-radius: var(--shape-radius-primitive);
-  height: 0.9em;
-  transform: translateY(0.1em);
 }
 
 
 .affix {
   display: inline-block;
-  line-height: 1em;
   padding-inline: var(--spacing-primitive0);
+  line-height: 1em;
 }
 
 .prefix {
@@ -111,15 +119,17 @@
 .input-builder {
   composes: control;
   composes: focus-within;
-  align-items: center;
+
   display: inline-flex;
+  align-items: center;
+
   height: auto;
   padding: 0;
 
   & > .input {
+    flex-grow: 1;
     background: unset;
     border: unset;
-    flex-grow: 1;
 
     /* Reset this for safari */
     @supports (-webkit-hyphens:none) {

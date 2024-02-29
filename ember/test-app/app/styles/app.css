@@ -27,10 +27,10 @@
 }
 
 body {
-  padding: var(--spacing-container-padding0);
+  padding: var(--spacing-container0);
 }
 
 main {
   display: grid;
-  gap: var(--spacing-container-gap-block0);
+  gap: var(--spacing-container0);
 }

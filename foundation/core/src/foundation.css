@@ -2,6 +2,8 @@
 
 @import "./tokens/sizing.css";
 
+@import "./tokens/spacing.css";
+
 @import "./tokens/shape.css";
 
 @import "./tokens/controls.css";

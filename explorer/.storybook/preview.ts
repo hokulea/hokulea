@@ -61,6 +61,19 @@ const preview = {
         ]
       }
     },
+    density: {
+      name: 'Density',
+      description: 'Density of the UI',
+      defaultValue: 'default',
+      toolbar: {
+        icon: 'filter',
+        items: [
+          { value: 'compact', title: 'Compact' },
+          { value: 'default', title: 'Default' },
+          { value: 'comfortable', title: 'Comfortable' }
+        ]
+      }
+    },
     direction: {
       name: 'Direction',
       description: 'direction for text',

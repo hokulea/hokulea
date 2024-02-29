@@ -1,0 +1,111 @@
+{
+  "spacing": {
+    "primitive0": {
+      "$value": "{ls0}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive-1": {
+      "$value": "{ls-1}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive-2": {
+      "$value": "{ls-2}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive-3": {
+      "$value": "{ls-3}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive-4": {
+      "$value": "{ls-4}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive1": {
+      "$value": "{ls1}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive2": {
+      "$value": "{ls2}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive3": {
+      "$value": "{ls3}",
+      "$description": "",
+      "dynamic": true
+    },
+    "primitive4": {
+      "$value": "{ls4}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container-4": {
+      "$value": "{s-4}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container-3": {
+      "$value": "{s-3}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container-2": {
+      "$value": "{s-2}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container-1": {
+      "$value": "{s-1}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container0": {
+      "$value": "{s0}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container1": {
+      "$value": "{s1}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container2": {
+      "$value": "{s2}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container3": {
+      "$value": "{s3}",
+      "$description": "",
+      "dynamic": true
+    },
+    "container4": {
+      "$value": "{s4}",
+      "$description": "",
+      "dynamic": true
+    },
+    "density": {
+      "base": {
+        "$value": 1,
+        "$description": "",
+        "$type": "number"
+      },
+      "compact": {
+        "$value": 0.8,
+        "$description": "",
+        "$type": "number"
+      },
+      "comfortable": {
+        "$value": 1.2,
+        "$description": "",
+        "$type": "number"
+      }
+    }
+  }
+}

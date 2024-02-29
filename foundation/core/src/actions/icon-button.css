@@ -1,9 +1,9 @@
 .icon-button {
   composes: base-button from './actions/base.css';
   border-radius: var(--shape-radius-primitive);
-  padding: var(--spacing-primitive-padding0);
+  padding: var(--spacing-primitive0);
 
   &[data-spacing="-1"] {
-    padding: var(--spacing-primitive-padding-1);
+    padding: var(--spacing-primitive-1);
   }
 }

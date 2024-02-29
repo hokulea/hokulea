@@ -1,0 +1,41 @@
+/*
+#######################################
+  SPACING
+#######################################
+*/
+
+:root {
+  --spacing-density: var(--spacing-density-base, 1);
+
+  /* Primitive Spacing */
+  --spacing-primitive-4: calc(var(--ls-4) * var(--spacing-density));
+  --spacing-primitive-3: calc(var(--ls-3) * var(--spacing-density));
+  --spacing-primitive-2: calc(var(--ls-2) * var(--spacing-density));
+  --spacing-primitive-1: calc(var(--ls-1) * var(--spacing-density));
+  --spacing-primitive0: calc(var(--ls0) * var(--spacing-density));
+  --spacing-primitive1: calc(var(--ls1) * var(--spacing-density));
+  --spacing-primitive2: calc(var(--ls2) * var(--spacing-density));
+  --spacing-primitive3: calc(var(--ls3) * var(--spacing-density));
+  --spacing-primitive4: calc(var(--ls4) * var(--spacing-density));
+
+  /* Container Spacing */
+  --spacing-container-4: calc(var(--s-4) * var(--spacing-density));
+  --spacing-container-3: calc(var(--s-3) * var(--spacing-density));
+  --spacing-container-2: calc(var(--s-2) * var(--spacing-density));
+  --spacing-container-1: calc(var(--s-1) * var(--spacing-density));
+  --spacing-container0: calc(var(--s0) * var(--spacing-density));
+  --spacing-container1: calc(var(--s1) * var(--spacing-density));
+  --spacing-container2: calc(var(--s2) * var(--spacing-density));
+  --spacing-container3: calc(var(--s3) * var(--spacing-density));
+  --spacing-container4: calc(var(--s4) * var(--spacing-density));
+}
+
+/* This should be in theemo */
+[data-density="comfortable"] {
+  --spacing-density: var(--spacing-density-comfortable, 1.2);
+}
+
+[data-density="compact"] {
+  --spacing-density: var(--spacing-density-compact, 0.8);
+}
+

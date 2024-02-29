@@ -12,6 +12,7 @@ interface Globals {
   scheme: string;
   writingMode: string;
   direction: string;
+  density: string;
 }
 
 interface StorybookArgs {
@@ -46,7 +47,10 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     // this.theemo.setTheme(globals.theme);
     // this.theemo.setColorScheme(globals.scheme === 'system' ? undefined : globals.scheme);
 
+    // global: direction
     document.documentElement.dir = globals.direction;
+
+    // global: writing mode
 
     // remove all wm-* classes
     for (const className of document.body.classList.values()) {
@@ -56,5 +60,8 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     }
 
     document.body.classList.add(`wm-${globals.writingMode}`);
+
+    // global: density
+    document.documentElement.dataset.density = globals.density !== 'default' ? globals.density : '';
   }
 }

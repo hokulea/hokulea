@@ -1,12 +1,12 @@
 .button {
   composes: base-button from './actions/base.css';
   border-radius: var(--shape-radius-primitive);
-  padding-block: var(--spacing-primitive-padding0);
-  padding-inline: var(--spacing-primitive-padding3);
+  padding-block: var(--spacing-primitive0);
+  padding-inline: var(--spacing-primitive3);
 
   &[data-spacing="-1"] {
-    padding-block: var(--spacing-primitive-padding-1);
-    padding-inline: var(--spacing-primitive-padding2);
+    padding-block: var(--spacing-primitive-1);
+    padding-inline: var(--spacing-primitive2);
   }
 
   & > span {

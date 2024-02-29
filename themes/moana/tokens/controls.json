@@ -152,32 +152,33 @@
       "background": {
         "$value": [
           {
-            "value": "{control.background}",
+            "value": "#66d1ff",
             "features": {
               "color-scheme": "light"
             }
           },
           {
-            "value": "{control.background}",
+            "value": "#06577a",
             "features": {
               "color-scheme": "dark"
             }
           }
         ],
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       }
     },
     "selected": {
       "background": {
         "$value": [
           {
-            "value": "#ffffff",
+            "value": "#99e0ff",
             "features": {
               "color-scheme": "light"
             }
           },
           {
-            "value": "#ffffff",
+            "value": "#00364d",
             "features": {
               "color-scheme": "dark"
             }
@@ -233,6 +234,26 @@
         "$value": "2px",
         "$description": "",
         "$type": "dimension"
+      }
+    },
+    "active": {
+      "background": {
+        "$value": [
+          {
+            "value": "#3cbef6",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#054661",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
       }
     }
   }

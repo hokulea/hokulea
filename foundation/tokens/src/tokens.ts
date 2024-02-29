@@ -5211,191 +5211,6 @@ export const tokens: Tokens = {
       }
     ]
   },
-  'spacing-container-padding-4': {
-    name: 'spacing-container-padding-4',
-    description: '',
-    value: 4
-  },
-  'spacing-container-padding-3': {
-    name: 'spacing-container-padding-3',
-    description: '',
-    value: 8
-  },
-  'spacing-container-padding-2': {
-    name: 'spacing-container-padding-2',
-    description: '',
-    value: 10
-  },
-  'spacing-container-padding-1': {
-    name: 'spacing-container-padding-1',
-    description: '',
-    value: 12
-  },
-  'spacing-container-padding0': {
-    name: 'spacing-container-padding0',
-    description: '',
-    value: 16
-  },
-  'spacing-container-padding1': {
-    name: 'spacing-container-padding1',
-    description: '',
-    value: 20
-  },
-  'spacing-container-padding2': {
-    name: 'spacing-container-padding2',
-    description: '',
-    value: 26
-  },
-  'spacing-container-padding3': {
-    name: 'spacing-container-padding3',
-    description: '',
-    value: 34
-  },
-  'spacing-container-padding4': {
-    name: 'spacing-container-padding4',
-    description: '',
-    value: 44
-  },
-  'spacing-container-gap-inline-2': {
-    name: 'spacing-container-gap-inline-2',
-    description: '',
-    value: 4
-  },
-  'spacing-container-gap-inline-1': {
-    name: 'spacing-container-gap-inline-1',
-    description: '',
-    value: 8
-  },
-  'spacing-container-gap-inline0': {
-    name: 'spacing-container-gap-inline0',
-    description: '',
-    value: 10
-  },
-  'spacing-container-gap-inline1': {
-    name: 'spacing-container-gap-inline1',
-    description: '',
-    value: 12
-  },
-  'spacing-container-gap-inline2': {
-    name: 'spacing-container-gap-inline2',
-    description: '',
-    value: 16
-  },
-  'spacing-container-gap-block-4': {
-    name: 'spacing-container-gap-block-4',
-    description: '',
-    value: 4
-  },
-  'spacing-container-gap-block-3': {
-    name: 'spacing-container-gap-block-3',
-    description: '',
-    value: 8
-  },
-  'spacing-container-gap-block-2': {
-    name: 'spacing-container-gap-block-2',
-    description: '',
-    value: 10
-  },
-  'spacing-container-gap-block-1': {
-    name: 'spacing-container-gap-block-1',
-    description: '',
-    value: 12
-  },
-  'spacing-container-gap-block0': {
-    name: 'spacing-container-gap-block0',
-    description: '',
-    value: 16
-  },
-  'spacing-container-gap-block1': {
-    name: 'spacing-container-gap-block1',
-    description: '',
-    value: 20
-  },
-  'spacing-container-gap-block2': {
-    name: 'spacing-container-gap-block2',
-    description: '',
-    value: 26
-  },
-  'spacing-container-gap-block3': {
-    name: 'spacing-container-gap-block3',
-    description: '',
-    value: 34
-  },
-  'spacing-container-gap-block4': {
-    name: 'spacing-container-gap-block4',
-    description: '',
-    value: 44
-  },
-  'spacing-primitive-padding-4': {
-    name: 'spacing-primitive-padding-4',
-    description: '',
-    value: 4
-  },
-  'spacing-primitive-padding-3': {
-    name: 'spacing-primitive-padding-3',
-    description: '',
-    value: 8
-  },
-  'spacing-primitive-padding-2': {
-    name: 'spacing-primitive-padding-2',
-    description: '',
-    value: 10
-  },
-  'spacing-primitive-padding-1': {
-    name: 'spacing-primitive-padding-1',
-    description: '',
-    value: 12
-  },
-  'spacing-primitive-padding0': {
-    name: 'spacing-primitive-padding0',
-    description: '',
-    value: 16
-  },
-  'spacing-primitive-padding1': {
-    name: 'spacing-primitive-padding1',
-    description: '',
-    value: 20
-  },
-  'spacing-primitive-padding2': {
-    name: 'spacing-primitive-padding2',
-    description: '',
-    value: 26
-  },
-  'spacing-primitive-padding3': {
-    name: 'spacing-primitive-padding3',
-    description: '',
-    value: 34
-  },
-  'spacing-primitive-padding4': {
-    name: 'spacing-primitive-padding4',
-    description: '',
-    value: 44
-  },
-  'spacing-primitive-gap-2': {
-    name: 'spacing-primitive-gap-2',
-    description: '',
-    value: 4
-  },
-  'spacing-primitive-gap-1': {
-    name: 'spacing-primitive-gap-1',
-    description: '',
-    value: 8
-  },
-  'spacing-primitive-gap0': {
-    name: 'spacing-primitive-gap0',
-    description: '',
-    value: 10
-  },
-  'spacing-primitive-gap1': {
-    name: 'spacing-primitive-gap1',
-    description: '',
-    value: 12
-  },
-  'spacing-primitive-gap2': {
-    name: 'spacing-primitive-gap2',
-    description: '',
-    value: 16
-  },
   'control-border-color': {
     name: 'control-border-color',
     description: '',
@@ -5690,24 +5505,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
+        value: '#66d1ff',
         features: {
           'color-scheme': 'light'
         },
@@ -5715,38 +5513,22 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: [
-          {
-            value: '#fafbfb',
-            features: {
-              'color-scheme': 'light'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          },
-          {
-            value: '#171c1e',
-            features: {
-              'color-scheme': 'dark'
-            },
-            filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
-            isSource: true
-          }
-        ],
+        value: '#06577a',
         features: {
           'color-scheme': 'dark'
         },
         filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
         isSource: true
       }
-    ]
+    ],
+    type: 'color'
   },
   'control-selected-background': {
     name: 'control-selected-background',
     description: '',
     value: [
       {
-        value: '#ffffff',
+        value: '#99e0ff',
         features: {
           'color-scheme': 'light'
         },
@@ -5754,7 +5536,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#00364d',
         features: {
           'color-scheme': 'dark'
         },
@@ -5821,6 +5603,29 @@ export const tokens: Tokens = {
     description: '',
     value: '2px',
     type: 'dimension'
+  },
+  'control-active-background': {
+    name: 'control-active-background',
+    description: '',
+    value: [
+      {
+        value: '#3cbef6',
+        features: {
+          'color-scheme': 'light'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+        isSource: true
+      },
+      {
+        value: '#054661',
+        features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
   },
   'surface-base': {
     name: 'surface-base',
@@ -5896,7 +5701,7 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#ffffff',
+        value: '#f1f4f5',
         features: {
           'color-scheme': 'light'
         },
@@ -5904,7 +5709,7 @@ export const tokens: Tokens = {
         isSource: true
       },
       {
-        value: '#ffffff',
+        value: '#1d2427',
         features: {
           'color-scheme': 'dark'
         },
@@ -6173,10 +5978,124 @@ export const tokens: Tokens = {
     value: 0.8,
     type: 'number'
   },
+  'spacing-primitive0': {
+    name: 'spacing-primitive0',
+    description: '',
+    value: 16
+  },
+  'spacing-primitive-1': {
+    name: 'spacing-primitive-1',
+    description: '',
+    value: 12
+  },
+  'spacing-primitive-2': {
+    name: 'spacing-primitive-2',
+    description: '',
+    value: 10
+  },
+  'spacing-primitive-3': {
+    name: 'spacing-primitive-3',
+    description: '',
+    value: 8
+  },
+  'spacing-primitive-4': {
+    name: 'spacing-primitive-4',
+    description: '',
+    value: 4
+  },
+  'spacing-primitive1': {
+    name: 'spacing-primitive1',
+    description: '',
+    value: 20
+  },
+  'spacing-primitive2': {
+    name: 'spacing-primitive2',
+    description: '',
+    value: 26
+  },
+  'spacing-primitive3': {
+    name: 'spacing-primitive3',
+    description: '',
+    value: 34
+  },
+  'spacing-primitive4': {
+    name: 'spacing-primitive4',
+    description: '',
+    value: 44
+  },
+  'spacing-container-4': {
+    name: 'spacing-container-4',
+    description: '',
+    value: 4
+  },
+  'spacing-container-3': {
+    name: 'spacing-container-3',
+    description: '',
+    value: 8
+  },
+  'spacing-container-2': {
+    name: 'spacing-container-2',
+    description: '',
+    value: 10
+  },
+  'spacing-container-1': {
+    name: 'spacing-container-1',
+    description: '',
+    value: 12
+  },
+  'spacing-container0': {
+    name: 'spacing-container0',
+    description: '',
+    value: 16
+  },
+  'spacing-container1': {
+    name: 'spacing-container1',
+    description: '',
+    value: 20
+  },
+  'spacing-container2': {
+    name: 'spacing-container2',
+    description: '',
+    value: 26
+  },
+  'spacing-container3': {
+    name: 'spacing-container3',
+    description: '',
+    value: 34
+  },
+  'spacing-container4': {
+    name: 'spacing-container4',
+    description: '',
+    value: 44
+  },
+  'spacing-density-base': {
+    name: 'spacing-density-base',
+    description: '',
+    value: 1,
+    type: 'number'
+  },
+  'spacing-density-compact': {
+    name: 'spacing-density-compact',
+    description: '',
+    value: 0.8,
+    type: 'number'
+  },
+  'spacing-density-comfortable': {
+    name: 'spacing-density-comfortable',
+    description: '',
+    value: 1.2,
+    type: 'number'
+  },
   'typography-prose': {
     name: 'typography-prose',
     description: '',
     value: '400 16px/1.21 "Inter"',
+    type: 'typography'
+  },
+  'typography-control': {
+    name: 'typography-control',
+    description: 'For controls',
+    value: '500 16px/1.21 "Inter"',
     type: 'typography'
   },
   'typography-heading': {

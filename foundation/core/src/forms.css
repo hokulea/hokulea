@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-container-gap-block0);
+  gap: var(--spacing-container0);
 }
 
 .label {
@@ -24,7 +24,7 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-container-gap-block-3);
+  gap: var(--spacing-container-3);
 }
 
 fieldset.field {
@@ -32,7 +32,7 @@ fieldset.field {
   display: block;
 
   & > * + * {
-    margin-block-start: var(--spacing-container-gap-block-3);
+    margin-block-start: var(--spacing-container-3);
   }
 }
 
@@ -40,7 +40,7 @@ fieldset.field {
   align-items: flex-start;
   color: var(--indicator-error-plain-text);
   display: flex;
-  gap: var(--spacing-primitive-gap0);
+  gap: var(--spacing-primitive-3);
 
   /* Wrapper for the icon */
   & > span {
@@ -59,13 +59,13 @@ fieldset.field {
 .choices {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-container-gap-block-3);
+  gap: var(--spacing-container-3);
 }
 
 .choice {
   align-items: flex-start;
   display: flex;
-  gap: var(--spacing-primitive-gap0);
+  gap: var(--spacing-primitive-2);
 
   /* wrapper for the checkbox/radio */
   & > span {

@@ -20,12 +20,17 @@
   },
   "scripts": {
     "build": "rollup --config",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
+    "lint:css:fix": "stylelint 'src/**/*.css' --allow-empty-input --fix",
     "start": "rollup --config --watch"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "workspace:*",
     "@hokulea/config-prettier": "workspace:*",
     "@hokulea/config-postcss": "workspace:*",
+    "@hokulea/config-stylelint": "workspace:*",
     "@hokulea/config-targets": "workspace:*",
     "@hokulea/rollup-plugin-postcss": "workspace:*",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -36,7 +41,8 @@
     "rollup": "^4.9.4",
     "rollup-plugin-css-only": "^4.5.2",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-multi-input": "^1.4.1"
+    "rollup-plugin-multi-input": "^1.4.1",
+    "stylelint": "^16.1.0"
   },
   "engines": {
     "node": ">= 20.*"

@@ -1,8 +1,8 @@
 .button {
   composes: base-button from './actions/base.css';
-  border-radius: var(--shape-radius-primitive);
   padding-block: var(--spacing-primitive0);
   padding-inline: var(--spacing-primitive3);
+  border-radius: var(--shape-radius-primitive);
 
   &[data-spacing="-1"] {
     padding-block: var(--spacing-primitive-1);

@@ -1,19 +1,21 @@
 .spec {
-  background-color: var(--surface-container1);
-  border: var(--shape-stroke);
-  border-radius: var(--shape-radius-container);
   display: flex;
   flex-direction: column;
   gap: var(--s-4);
+
   padding: var(--spacing-container-padding0);
+
+  background-color: var(--surface-container1);
+  border: var(--shape-stroke);
+  border-radius: var(--shape-radius-container);
 
   p {
     font-weight: 500;
   }
 
   span {
-    align-items: center;
     display: flex;
     gap: var(--ls-4);
+    align-items: center;
   }
 }

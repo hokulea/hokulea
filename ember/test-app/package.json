@@ -16,6 +16,8 @@
     "dev:package": "pnpm run --filter='@hokulea/ember' start",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:css": "stylelint 'app/**/*.css' --allow-empty-input --cache",
+    "lint:css:fix": "stylelint 'app/**/*.css' --allow-empty-input --fix",
     "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
     "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
     "lint:js": "eslint . --cache",
@@ -89,6 +91,7 @@
     "qunit": "^2.20.0",
     "qunit-dom": "^3.0.0",
     "sinon": "^17.0.1",
+    "stylelint": "^16.2.1",
     "typescript": "~5.3.3",
     "webpack": "^5.90.1"
   },

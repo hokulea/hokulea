@@ -5969,7 +5969,7 @@ export const tokens: Tokens = {
   'sizing-ratio': {
     name: 'sizing-ratio',
     description: '',
-    value: 1.3,
+    value: 1.25,
     type: 'number'
   },
   'sizing-factor': {

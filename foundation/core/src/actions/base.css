@@ -1,41 +1,45 @@
-/* stylelint-disable function-whitespace-after, function-no-unknown,
-custom-property-pattern, annotation-no-unknown, keyframe-selector-notation */
+/* stylelint-disable custom-property-pattern */
 
 .base-button {
   composes: focus from '../controls.css';
-  align-items: center;
+
   all: unset;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: var(--spacing-primitive-3);
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+  line-height: 1;
+  color: var(--button-base-text);
+  text-decoration: none;
+  vertical-align: middle;
+
   background-color: var(--button-base-background);
   border: var(--control-border);
   border-color: var(--button-base-border);
   border-width: 2px;
-  color: var(--button-base-text);
-  cursor: pointer;
-  display: inline-flex;
-  font-weight: 500;
-  gap: var(--spacing-primitive-3);
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  vertical-align: middle;
 
   &:hover {
-    background-color: var(--button-hover-background);
-    border-color: var(--button-hover-border);
     color: var(--button-hover-text);
     text-decoration: none;
+    background-color: var(--button-hover-background);
+    border-color: var(--button-hover-border);
   }
 
   &:active {
+    color: var(--button-active-text);
     background-color: var(--button-active-background);
     border-color: var(--button-active-border);
-    color: var(--button-active-text);
   }
 
   &[aria-disabled="true"] {
+    color: var(--button-disabled-text);
     background-color: var(--button-disabled-background);
     border-color: var(--button-disabled-border);
-    color: var(--button-disabled-text);
   }
 
   @each $intent in action, alternative, highlight, danger {

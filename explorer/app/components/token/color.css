@@ -1,10 +1,11 @@
 .box {
   composes: box from './props';
-  align-items: center;
+
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   gap: var(--s-1);
-  overflow: hidden;
+  align-items: center;
 }
 
 .demo {
@@ -13,9 +14,9 @@
 }
 
 .content {
-  composes: flow from "@hokulea/core/layouts.css";
-
   --flow-space: var(--s-5);
+
+  composes: flow from "@hokulea/core/layouts.css";
 }
 
 .value {

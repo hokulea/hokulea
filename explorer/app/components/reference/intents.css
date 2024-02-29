@@ -1,10 +1,12 @@
 .control {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: var(--s-3);
   align-items: center;
+
+  padding: var(--spacing-container-padding0);
+
   background-color: var(--surface-container);
   border: var(--shape-stroke);
   border-radius: var(--shape-radius-container);
-  display: grid;
-  gap: var(--s-3);
-  grid-template-columns: max-content auto;
-  padding: var(--spacing-container-padding0);
 }

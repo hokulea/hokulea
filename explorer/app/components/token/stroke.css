@@ -1,30 +1,32 @@
 .box {
   composes: box from './props';
-  align-items: center;
+
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   gap: var(--s-1);
-  overflow: hidden;
+  align-items: center;
+
   padding: var(--s-2);
 }
 
 .demo {
-  align-items: center;
   display: flex;
-  height: 1em;
+  align-items: center;
   width: var(--s4);
+  height: 1em;
 
   &::before {
-    border-bottom: var(--value);
     content: '';
     width: 100%;
+    border-bottom: var(--value);
   }
 }
 
 .content {
-  composes: flow from "@hokulea/core/layouts.css";
-
   --flow-space: var(--s-4);
+
+  composes: flow from "@hokulea/core/layouts.css";
 }
 
 .value {

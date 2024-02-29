@@ -18,6 +18,16 @@ jobs:
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:js
 
+  lint-css:
+    name: lint:css
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: Build package
+        run: pnpm build
+      - run: pnpm run -r --parallel --aggregate-output lint:css
+
   lint-hbs:
     name: lint:hbs
     runs-on: ubuntu-latest

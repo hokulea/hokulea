@@ -1,14 +1,6 @@
 const { browsers } = require('@hokulea/config-targets');
 
 const plugins = [
-  // https://github.com/postcss/postcss-nested
-  // Nest rules and reference the parent via &
-  require('postcss-nested'),
-
-  // https://github.com/limitlessloop/postcss-pow
-  // Adds pow() function
-  require('postcss-pow'),
-
   // https://www.npmjs.com/package/postcss-each
   // adds @each construct
   require('postcss-each'),
@@ -31,14 +23,6 @@ const plugins = [
     // browsers, diminishing the probability of discovering bugs only when
     // testing in older browsers.
     preserve: false,
-
-    // Explicitly enable features that we want, despite being proposals yet.
-    // features: {
-    //   'custom-properties': true,
-    //   'custom-media-queries': true,
-    //   'nesting-rules': true,
-    //   'pseudo-class-any-link': true
-    // },
 
     autoprefixer: {
       // We don't manually apply prefixes unless they are really necessary,

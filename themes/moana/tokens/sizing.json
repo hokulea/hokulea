@@ -109,7 +109,7 @@
   },
   "sizing": {
     "ratio": {
-      "$value": 1.3,
+      "$value": 1.25,
       "$description": "",
       "$type": "number"
     },

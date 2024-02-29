@@ -16,63 +16,27 @@
   --sizing-global-base: calc(0.5vw + 1em * var(--factor));
   --sizing-local-base: 1em;
 
-  /*
-    Base font size
-    --------------
-
-    Ideally, this is 1(r)em to respect user preference.
-    We need to keep it at hardcoded `16px` for now to respect the existing design
-  */
-  font-size: var(--sizing-global-base);
-
   /* computed tokens */
 
   /* global sizing tokens */
-  --s-4: calc(var(--sizing-global-base) * 0.125);
-  --s-3: calc(var(--sizing-global-base) * 0.25);
-  --s-2: calc(var(--sizing-global-base) * 0.5);
-  --s-1: calc(var(--sizing-global-base) * 0.75);
+  --s-4: calc(var(--sizing-global-base) * pow(var(--ratio), -4));
+  --s-3: calc(var(--sizing-global-base) * pow(var(--ratio), -3));
+  --s-2: calc(var(--sizing-global-base) * pow(var(--ratio), -2));
+  --s-1: calc(var(--sizing-global-base) * pow(var(--ratio), -1));
   --s0: var(--sizing-global-base);
-
-  /*
-    calc(
-      var(--sizing-global-base) * (pow(2, n - 1) * var(--sizing-factor) + 1)
-    );
-  */
-  --s1: calc(var(--sizing-global-base) * 1.25);
-  --s2: calc(var(--sizing-global-base) * 1.5);
-  --s3: calc(var(--sizing-global-base) * 2);
-  --s4: calc(var(--sizing-global-base) * 3);
+  --s1: calc(var(--sizing-global-base) * pow(var(--ratio), 1));
+  --s2: calc(var(--sizing-global-base) * pow(var(--ratio), 2));
+  --s3: calc(var(--sizing-global-base) * pow(var(--ratio), 3));
+  --s4: calc(var(--sizing-global-base) * pow(var(--ratio), 4));
 
   /* local sizing tokens */
-  --ls-4: calc(var(--sizing-local-base) * 0.125);
-  --ls-3: calc(var(--sizing-local-base) * 0.25);
-  --ls-2: calc(var(--sizing-local-base) * 0.5);
-  --ls-1: calc(var(--sizing-local-base) * 0.75);
+  --ls-4: calc(var(--sizing-local-base) * pow(var(--ratio), -4));
+  --ls-3: calc(var(--sizing-local-base) * pow(var(--ratio), -3));
+  --ls-2: calc(var(--sizing-local-base) * pow(var(--ratio), -2));
+  --ls-1: calc(var(--sizing-local-base) * pow(var(--ratio), -1));
   --ls0: var(--sizing-local-base);
-  --ls1: calc(var(--sizing-local-base) * 1.25);
-  --ls2: calc(var(--sizing-local-base) * 1.5);
-  --ls3: calc(var(--sizing-local-base) * 2);
-  --ls4: calc(var(--sizing-local-base) * 3);
-
-  /*
-    Additional notes:
-
-    - Ideally we wanted to have a factor in there, which we can "lower" in mobile
-      environment
-
-      ```css
-      @media (max-width: 768px) {
-        --sizing-factor: 0.2;
-      }
-      ```
-
-    - We would want to use the formula but postcss build is "breaking"
-
-      ```css
-      calc(
-        var(--sizing-local-base) * (pow(2, n - 1) * var(--lsizing-factor) + 1)
-      );
-      ```
-  */
+  --ls1: calc(var(--sizing-local-base) * pow(var(--ratio), 1));
+  --ls2: calc(var(--sizing-local-base) * pow(var(--ratio), 2));
+  --ls3: calc(var(--sizing-local-base) * pow(var(--ratio), 3));
+  --ls4: calc(var(--sizing-local-base) * pow(var(--ratio), 4));
 }

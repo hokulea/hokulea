@@ -130,19 +130,9 @@ export const Showcase = {
   parameters: {
     design: [
       {
-        name: 'Action',
+        name: 'Button',
         type: 'figma',
-        url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-      },
-      {
-        name: 'Danger',
-        type: 'figma',
-        url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
-      },
-      {
-        name: 'Specification',
-        type: 'figma',
-        url: 'https://www.figma.com/file/97CLleUR6W4v80RwlgnmlB/K-%7C-Components?type=design&node-id=719%3A3165&mode=design&t=6Bkzi2ao9SnuRE1l-1'
+        url: 'https://www.figma.com/file/Fq29S0hD3i38bAjYz3wWwy/Hokulea?type=design&node-id=5536%3A294&mode=design&t=iSaWUPpVi5tWVgwi-1'
       }
     ]
   }

@@ -17,7 +17,12 @@ const config: StorybookConfig = {
     // '../../api/*.md',
     '../../ember/package/src/**/*.stories.ts'
   ],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-designs'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-designs',
+    '@chromatic-com/storybook'
+  ],
   framework: {
     // @ts-expect-error this _IS_ the name
     name: '@storybook/ember',

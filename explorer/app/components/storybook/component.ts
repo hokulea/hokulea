@@ -62,8 +62,6 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     document.body.classList.add(`wm-${globals.writingMode}`);
 
     // global: density
-    if (globals.density !== 'default') {
-      document.documentElement.dataset.density = globals.density;
-    }
+    document.documentElement.dataset.density = globals.density !== 'default' ? globals.density : '';
   }
 }

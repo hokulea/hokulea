@@ -6,11 +6,11 @@
         "$description": ""
       },
       "container": {
-        "$value": "{spacing.container.padding-2}",
+        "$value": "{spacing.container-2}",
         "$description": ""
       },
       "container-nested": {
-        "$value": "{spacing.container.padding-3}",
+        "$value": "{spacing.container-3}",
         "$description": ""
       }
     },

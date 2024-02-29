@@ -57,13 +57,13 @@
     "popover": {
       "$value": [
         {
-          "value": "#ffffff",
+          "value": "#f1f4f5",
           "features": {
             "color-scheme": "light"
           }
         },
         {
-          "value": "#ffffff",
+          "value": "#1d2427",
           "features": {
             "color-scheme": "dark"
           }

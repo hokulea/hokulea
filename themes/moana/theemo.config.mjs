@@ -10,8 +10,8 @@ import inflection from 'inflection';
 
 const { FIGMA_SECRET } = process.env;
 
-const NESTED_TOPICS = ['intents', 'indicators', 'spacing'];
-const TOPICS = ['shape', 'sizing', 'spacing'];
+const NESTED_TOPICS = ['intents', 'indicators'];
+const TOPICS = ['shape', 'sizing'];
 const DYNAMIC = [
   's-4',
   's-3',
@@ -30,7 +30,25 @@ const DYNAMIC = [
   'ls1',
   'ls2',
   'ls3',
-  'ls4'
+  'ls4',
+  'spacing.primitive-4',
+  'spacing.primitive-3',
+  'spacing.primitive-2',
+  'spacing.primitive-1',
+  'spacing.primitive0',
+  'spacing.primitive1',
+  'spacing.primitive2',
+  'spacing.primitive3',
+  'spacing.primitive4',
+  'spacing.container-4',
+  'spacing.container-3',
+  'spacing.container-2',
+  'spacing.container-1',
+  'spacing.container0',
+  'spacing.container1',
+  'spacing.container2',
+  'spacing.container3',
+  'spacing.container4'
 ];
 
 function cleanTopic(topic) {
@@ -123,13 +141,6 @@ export default defineConfig({
 
     lexer: {
       normalizeToken(token) {
-        if (['sizing.factor', 'sizing.ratio'].includes(token.name)) {
-          return {
-            ...token,
-            value: parseFloat(parseFloat(token.value).toFixed(2))
-          };
-        }
-
         if (
           [
             'control.border-width',
@@ -149,6 +160,14 @@ export default defineConfig({
             ...token,
             value: `${token.value}px`,
             type: 'dimension'
+          };
+        }
+
+        // if (['sizing.factor', 'sizing.ratio'].includes(token.name)) {
+        if (token.type === 'number') {
+          return {
+            ...token,
+            value: parseFloat(parseFloat(token.value).toFixed(2))
           };
         }
 

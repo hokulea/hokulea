@@ -480,7 +480,7 @@ importers:
         specifier: ^17.0.3
         version: 17.0.3
       broccoli-asset-rev:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       concurrently:
         specifier: ^8.2.2
@@ -489,10 +489,10 @@ importers:
         specifier: ^6.1.1
         version: 6.1.1(@babel/core@7.23.9)(@ember/test-helpers@3.2.1)(@glint/template@1.3.0)(qunit@2.20.0)(webpack@5.90.1)
       ember-auto-import:
-        specifier: ^2.7.2
+        specifier: 2.7.2
         version: 2.7.2(@glint/template@1.3.0)(webpack@5.90.1)
       ember-cli:
-        specifier: ~5.6.0
+        specifier: 5.6.0
         version: 5.6.0(react-dom@17.0.2)(react@17.0.2)
       ember-cli-app-version:
         specifier: ^6.0.1
@@ -501,16 +501,16 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(@babel/core@7.23.9)
       ember-cli-dependency-checker:
-        specifier: ^3.3.2
+        specifier: 3.3.2
         version: 3.3.2(ember-cli@5.6.0)
       ember-cli-htmlbars:
         specifier: ^6.3.0
         version: 6.3.0
       ember-cli-inject-live-reload:
-        specifier: ^2.1.0
+        specifier: 2.1.0
         version: 2.1.0
       ember-cli-sri:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       ember-command:
         specifier: ^2.0.2
@@ -709,7 +709,7 @@ importers:
         specifier: ^9.1.3
         version: 9.1.3(@babel/core@7.23.9)(webpack@5.90.1)
       broccoli-asset-rev:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       case:
         specifier: ^1.6.3
@@ -718,10 +718,10 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       ember-auto-import:
-        specifier: ^2.7.2
+        specifier: 2.7.2
         version: 2.7.2(@glint/template@1.3.0)(webpack@5.90.1)
       ember-cli:
-        specifier: ~5.6.0
+        specifier: 5.6.0
         version: 5.6.0(react-dom@17.0.2)(react@17.0.2)
       ember-cli-app-version:
         specifier: ^6.0.0
@@ -730,16 +730,16 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(@babel/core@7.23.9)
       ember-cli-dependency-checker:
-        specifier: ^3.3.2
+        specifier: 3.3.2
         version: 3.3.2(ember-cli@5.6.0)
       ember-cli-htmlbars:
         specifier: ^6.3.0
         version: 6.3.0
       ember-cli-inject-live-reload:
-        specifier: ^2.1.0
+        specifier: 2.1.0
         version: 2.1.0
       ember-cli-sri:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       ember-command:
         specifier: ^2.0.2
@@ -1124,7 +1124,7 @@ packages:
     resolution: {integrity: sha512-lN85QRR+5IbYrMWM6Y4pE/noaQtg4pNiqeNGX60eqOfo6gtEj6uw/JagelB8vVztSd7R6M5n1+PQkDbHbBRU4g==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.23.0
+      '@babel/types': 7.23.9
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
       jsesc: 2.5.2
@@ -2330,13 +2330,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/generator': 7.23.0
+      '@babel/generator': 7.23.6
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.23.9
-      '@babel/types': 7.23.0
+      '@babel/types': 7.23.9
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:

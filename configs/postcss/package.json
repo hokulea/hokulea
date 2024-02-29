@@ -9,8 +9,6 @@
     "@hokulea/config-targets": "*",
     "postcss-each": "^1.1.0",
     "postcss-modules": "^6.0.0",
-    "postcss-nested": "^6.0.1",
-    "postcss-pow": "^1.0.1",
     "postcss-preset-env": "^9.3.0"
   },
   "devDependencies": {

@@ -263,13 +263,13 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1(@glint/template@1.3.0)(ember-source@5.6.0)(webpack@5.90.1)
       '@embroider/addon-dev':
-        specifier: ^4.2.0
+        specifier: 4.2.1
         version: 4.2.1(@glint/template@1.3.0)(rollup@4.9.6)
       '@glimmer/component':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2(@babel/core@7.23.9)
       '@glimmer/tracking':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2
       '@glint/core':
         specifier: ^1.3.0
@@ -347,7 +347,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(@ember/test-helpers@3.2.1)(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-source:
-        specifier: ^5.6.0
+        specifier: 5.6.0
         version: 5.6.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(rsvp@4.8.5)(webpack@5.90.1)
       ember-svg-jar:
         specifier: ^2.4.8
@@ -414,7 +414,7 @@ importers:
         specifier: ^7.23.10
         version: 7.23.10(@babel/core@7.23.9)(eslint@8.56.0)
       '@ember/optional-features':
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       '@ember/string':
         specifier: ^3.1.1
@@ -426,22 +426,22 @@ importers:
         specifier: 0.0.2-unstable.ba9fd29
         version: 0.0.2-unstable.ba9fd29
       '@embroider/compat':
-        specifier: ^3.4.4
+        specifier: 3.4.4
         version: 3.4.4(@embroider/core@3.4.4)(@glint/template@1.3.0)
       '@embroider/core':
-        specifier: ^3.4.4
+        specifier: 3.4.4
         version: 3.4.4(@glint/template@1.3.0)
       '@embroider/test-setup':
-        specifier: ^3.0.3
+        specifier: 3.0.3
         version: 3.0.3(@embroider/compat@3.4.4)(@embroider/core@3.4.4)(@embroider/webpack@3.2.2)
       '@embroider/webpack':
-        specifier: ^3.2.2
+        specifier: 3.2.2
         version: 3.2.2(@embroider/core@3.4.4)(webpack@5.90.1)
       '@glimmer/component':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2(@babel/core@7.23.9)
       '@glimmer/tracking':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2
       '@glint/core':
         specifier: ^1.3.0
@@ -519,7 +519,7 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       ember-disable-prototype-extensions:
-        specifier: ^1.1.3
+        specifier: 1.1.3
         version: 1.1.3
       ember-element-helper:
         specifier: ^0.8.5
@@ -528,7 +528,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(@ember/test-helpers@3.2.1)(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-load-initializers:
-        specifier: ^2.1.2
+        specifier: 2.1.2
         version: 2.1.2(@babel/core@7.23.9)
       ember-modifier:
         specifier: ^4.1.0
@@ -540,13 +540,13 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(@ember/test-helpers@3.2.1)(@glint/template@1.3.0)(ember-source@5.6.0)(qunit@2.20.0)
       ember-resolver:
-        specifier: ^11.0.1
+        specifier: 11.0.1
         version: 11.0.1(ember-source@5.6.0)
       ember-sinon-qunit:
         specifier: ^7.4.0
         version: 7.4.0(ember-source@5.6.0)(qunit@2.20.0)(sinon@17.0.1)
       ember-source:
-        specifier: ~5.6.0
+        specifier: 5.6.0
         version: 5.6.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(rsvp@4.8.5)(webpack@5.90.1)
       ember-source-channel-url:
         specifier: ^3.0.0
@@ -631,7 +631,7 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(react@17.0.2)
       '@ember/optional-features':
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       '@ember/render-modifiers':
         specifier: ^2.1.0
@@ -646,10 +646,10 @@ importers:
         specifier: 0.0.2-unstable.ba9fd29
         version: 0.0.2-unstable.ba9fd29
       '@glimmer/component':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2(@babel/core@7.23.9)
       '@glimmer/tracking':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2
       '@hokulea/config-eslint':
         specifier: workspace:*
@@ -754,7 +754,7 @@ importers:
         specifier: ^3.1.0
         version: 3.2.0(@ember/test-helpers@3.2.1)(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-load-initializers:
-        specifier: ^2.1.2
+        specifier: 2.1.2
         version: 2.1.2(@babel/core@7.23.9)
       ember-modifier:
         specifier: ^4.1.0
@@ -763,13 +763,13 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(@ember/test-helpers@3.2.1)(@glint/template@1.3.0)(ember-source@5.6.0)(qunit@2.20.0)
       ember-resolver:
-        specifier: ^11.0.1
+        specifier: 11.0.1
         version: 11.0.1(ember-source@5.6.0)
       ember-set-helper:
         specifier: ^2.0.1
         version: 2.0.1
       ember-source:
-        specifier: ~5.6.0
+        specifier: 5.6.0
         version: 5.6.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(rsvp@4.8.5)(webpack@5.90.1)
       ember-style-modifier:
         specifier: ^4.2.0
@@ -971,8 +971,8 @@ importers:
   plugins/ember-template-imports:
     dependencies:
       ember-source:
-        specifier: ~4.11.0
-        version: 4.11.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(webpack@5.90.1)
+        specifier: ~4.12.0
+        version: 4.12.4(@babel/core@7.23.9)(@glimmer/component@1.1.2)(webpack@5.90.1)
       ember-template-imports:
         specifier: ^3.4.1
         version: 3.4.2
@@ -10956,8 +10956,8 @@ packages:
       - encoding
     dev: true
 
-  /ember-source@4.11.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(webpack@5.90.1):
-    resolution: {integrity: sha512-SNRHsQOvF3C9emS7Rg4zcFdwY6aiSkV/7CG+KBpmzLY6hIWQNruzEDZINpNgqBn7CicAJ6g573WG7zu6458agQ==}
+  /ember-source@4.12.4(@babel/core@7.23.9)(@glimmer/component@1.1.2)(webpack@5.90.1):
+    resolution: {integrity: sha512-HUlNAY+qr/Jm4c/5E11n5w6IvLY7Rr4DxmFv/0LZ3R5LqDSubM1jEmny5zDjOfadMa4pawoCmFFWXVeJEXwppg==}
     engines: {node: '>= 14.*'}
     peerDependencies:
       '@glimmer/component': ^1.1.2
@@ -10967,6 +10967,7 @@ packages:
       '@ember/edition-utils': 1.2.0
       '@glimmer/component': 1.1.2(@babel/core@7.23.9)
       '@glimmer/vm-babel-plugins': 0.84.2(@babel/core@7.23.9)
+      '@simple-dom/interface': 1.4.0
       babel-plugin-debug-macros: 0.3.4(@babel/core@7.23.9)
       babel-plugin-filter-imports: 4.0.0
       broccoli-concat: 4.2.5

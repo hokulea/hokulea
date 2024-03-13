@@ -317,8 +317,8 @@ importers:
         specifier: ^15.2.3
         version: 15.2.3(rollup@4.9.6)
       '@storybook/addon-actions':
-        specifier: ^8.0.0-beta.0
-        version: 8.0.0-beta.1
+        specifier: ^8.0.0-beta.1
+        version: 8.0.0-beta.6
       '@types/css-modules':
         specifier: ^1.0.5
         version: 1.0.5
@@ -4388,17 +4388,6 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: true
 
-  /@storybook/addon-actions@8.0.0-beta.1:
-    resolution: {integrity: sha512-ZNOmcBipTWNXLTwhG0x+DwdWaywGX5JrehxrGkA7LruhHC8bt7yGWwjOO3R7TZUQ4nqZOp+cEN7Em3JTt2UxHA==}
-    dependencies:
-      '@storybook/core-events': 8.0.0-beta.1
-      '@storybook/global': 5.0.0
-      '@types/uuid': 9.0.8
-      dequal: 2.0.3
-      polished: 4.3.1
-      uuid: 9.0.1
-    dev: true
-
   /@storybook/addon-actions@8.0.0-beta.6:
     resolution: {integrity: sha512-g+X2M6Awg21vkXzRP7hWBYCdbXnxJ3BJWsP7BblYmPo2J7eJDzhQascNyTmSr0pb1/7nv+tworGviXThgvlUgw==}
     dependencies:
@@ -5005,12 +4994,6 @@ packages:
 
   /@storybook/core-events@8.0.0-alpha.10:
     resolution: {integrity: sha512-Q4J1pV6j/Tkj0rMmetRSAOfqsRjY4SenDPMOAvn6SDsug3nTB4yJ3xNbhLvUKvgmVrJha4YJmZWShKjJvDNaIw==}
-    dependencies:
-      ts-dedent: 2.2.0
-    dev: true
-
-  /@storybook/core-events@8.0.0-beta.1:
-    resolution: {integrity: sha512-+4S25XFtlamZI+CFf4Dq15g1wW/GW2gToJwfoH/8t0btgBt5eVrZRQcpirMq1p2NgM3EmMTJk33+Ko/5s5PYZQ==}
     dependencies:
       ts-dedent: 2.2.0
     dev: true

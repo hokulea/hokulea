@@ -49,7 +49,7 @@
     "@hokulea/config-template-lint": "workspace:*",
     "@hokulea/config-typescript": "workspace:*",
     "@storybook/addon-essentials": "^8.0.0-beta.6",
-    "@storybook/addon-designs": "^8.0.0-beta.6",
+    "@storybook/addon-designs": "^8.0.0-next.0",
     "@storybook/addon-links": "^8.0.0-beta.6",
     "@storybook/addon-storysource": "^8.0.0-beta.6",
     "@storybook/cli": "^8.0.0-beta.6",

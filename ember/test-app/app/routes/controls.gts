@@ -1,3 +1,5 @@
+import { array } from '@ember/helper';
+
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';
 
@@ -8,6 +10,7 @@ import {
   DateInput,
   EmailInput,
   InputBuilder,
+  List,
   NumberInput,
   PasswordInput,
   PhoneInput,
@@ -27,81 +30,87 @@ function noop() {
 
 export class ControlsRoute extends Route<{}> {
   <template>
-    <Section @title="Text">
+    <Section @title='List'>
+      <List @items={{array 'Banana' 'Apple' 'Pear'}} as |i|>
+        {{i}}
+      </List>
+    </Section>
+
+    <Section @title='Text'>
       <TextInput />
-      <TextInput @value="text" />
+      <TextInput @value='text' />
       <TextInput disabled />
     </Section>
 
-    <Section @title="Number">
+    <Section @title='Number'>
       <NumberInput />
       <NumberInput @value={{1234}} />
       <NumberInput disabled />
     </Section>
 
-    <Section @title="CurrencyInput">
+    <Section @title='CurrencyInput'>
       <CurrencyInput />
       <CurrencyInput @value={{1234}} />
       <CurrencyInput @disabled={{true}} />
     </Section>
 
-    <Section @title="Phone">
+    <Section @title='Phone'>
       <PhoneInput />
-      <PhoneInput @value="+49160412341234" />
+      <PhoneInput @value='+49160412341234' />
       <PhoneInput disabled />
     </Section>
 
-    <Section @title="Email">
+    <Section @title='Email'>
       <EmailInput />
-      <EmailInput @value="admin@example.com" />
+      <EmailInput @value='admin@example.com' />
       <EmailInput disabled />
     </Section>
 
-    <Section @title="Date">
+    <Section @title='Date'>
       <DateInput />
-      <DateInput @value="1970-01-01" />
+      <DateInput @value='1970-01-01' />
       <DateInput disabled />
     </Section>
 
-    <Section @title="Password">
+    <Section @title='Password'>
       <PasswordInput />
-      <PasswordInput @value="secret" />
+      <PasswordInput @value='secret' />
       <PasswordInput disabled />
     </Section>
 
-    <Section @title="Select">
+    <Section @title='Select'>
       <Select as |s|>
-        <s.Option @value="Banana" />
-        <s.Option @value="Apple" />
-        <s.Option @value="Pear" />
+        <s.Option @value='Banana' />
+        <s.Option @value='Apple' />
+        <s.Option @value='Pear' />
       </Select>
     </Section>
 
-    <Section @title="Radio">
+    <Section @title='Radio'>
       <Radio />
       <Radio checked />
       <Radio disabled />
     </Section>
 
-    <Section @title="Checkbox">
+    <Section @title='Checkbox'>
       <Checkbox />
       <Checkbox checked />
       <Checkbox disabled />
     </Section>
 
-    <Section @title="Textarea">
+    <Section @title='Textarea'>
       <TextArea />
     </Section>
 
     <hr />
 
-    <Section @title="Input + Button">
+    <Section @title='Input + Button'>
       <TextInput />
-      <DateInput @value="1970-01-01" />
+      <DateInput @value='1970-01-01' />
       <Button @push={{(noop)}}>Start</Button>
     </Section>
 
-    <Section @title="Builder">
+    <Section @title='Builder'>
       <InputBuilder as |b|>
         <b.Prefix>Pre</b.Prefix>
         <b.Affix>Aff</b.Affix>
@@ -113,7 +122,7 @@ export class ControlsRoute extends Route<{}> {
       <Button @push={{(noop)}}>Start</Button>
     </Section>
 
-    <Section @title="Extended Builder">
+    <Section @title='Extended Builder'>
       <InputBuilder as |b|>
         <b.Prefix>Pre</b.Prefix>
         <b.Prefix>Pre</b.Prefix>

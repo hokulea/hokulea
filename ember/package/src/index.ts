@@ -16,6 +16,8 @@ export { default as IconButton } from './components/icon-button';
 // @ts-ignore
 export { default as DateInput } from './components/date-input';
 // @ts-ignore
+export { default as List } from './components/list';
+// @ts-ignore
 export { default as NumberInput } from './components/number-input';
 // @ts-ignore
 export { default as PhoneInput } from './components/phone-input';

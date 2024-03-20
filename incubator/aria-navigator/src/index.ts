@@ -13,6 +13,6 @@ export { NoopEmitStrategy } from './emit-strategies/noop-emit-strategy';
 export { ListNavigationStrategy } from './navigation-strategies/list-navigation';
 
 // update strategies
-export { DerievedUpdateStrategy } from './update-strategies/derieved-update-strategy';
+export { ReactiveUpdateStrategy } from './update-strategies/reactive-update-strategy';
 export { DomObserverUpdateStrategy } from './update-strategies/dom-observer-update-strategy';
 export { UpdateStrategy } from './update-strategies/update-strategy';

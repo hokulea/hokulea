@@ -1,6 +1,25 @@
 import isEqual from 'lodash.isequal';
 
-import type { EmitStrategy, PersistResult } from '../emit-strategies/emit-strategy';
+import type { EmitStrategy } from '../emit-strategies/emit-strategy';
+import {
+  NavigationParameterBag,
+  NavigationPattern
+} from '../navigation-patterns/navigation-pattern';
+
+function pipe<Value>(input: Value, ...fns: ((input: Value) => Value)[]) {
+  let lastResult = input;
+
+  for (let fn of fns) {
+    lastResult = fn(lastResult);
+  }
+
+  return lastResult;
+}
+
+interface Capabilities {
+  singleSelection: boolean;
+  multiSelection: boolean;
+}
 
 export type Item = HTMLElement;
 export type List = Item[];
@@ -13,14 +32,15 @@ export type TreeItem = {
 export interface ControlArgs<T = unknown> {
   items?: T[];
   selection?: T[];
-  activeItem: T;
-  select?: (selection: number[] | T[]) => PersistResult;
-  activateItem?: (item: number | T) => PersistResult;
+  activeItem?: T;
+  select?: (selection: number[] | T[]) => void;
+  activateItem?: (item: number | T) => void;
 }
 
 export class Control {
   items: Item[] = [];
   selection: Item[] = [];
+  shiftItem?: Item;
   activeItem?: Item;
   prevActiveItem?: Item;
 
@@ -28,6 +48,13 @@ export class Control {
 
   element: HTMLElement;
   emitter?: EmitStrategy;
+
+  capabilities: Capabilities = {
+    singleSelection: false,
+    multiSelection: false
+  };
+
+  private navigationPatterns: NavigationPattern[] = [];
 
   constructor(element: HTMLElement) {
     this.element = element;
@@ -49,6 +76,23 @@ export class Control {
 
   setEmitter(emitter: EmitStrategy) {
     this.emitter = emitter;
+  }
+
+  protected registerNavigationPatterns(patterns: NavigationPattern[]) {
+    this.navigationPatterns = patterns;
+    const eventNames = new Set(...this.navigationPatterns.map((p) => p.eventListeners ?? []));
+
+    for (const eventName of eventNames) {
+      this.element.addEventListener(eventName, this.handleEvent.bind(this));
+    }
+  }
+
+  handleEvent(event: Event) {
+    const patterns = this.navigationPatterns.filter((p) => p.matches(event));
+
+    patterns.forEach((p) => p.prepare?.(event));
+
+    pipe({ event } as NavigationParameterBag, ...patterns.map((p) => p.handle.bind(p)));
   }
 
   // read in from DOM
@@ -92,25 +136,7 @@ export class Control {
 
     this.selection = selection;
 
-    this.emitSelection();
-  }
-
-  private emitSelection() {
-    const persisted = this.emitter?.select(this.selection);
-
-    if (persisted !== true) {
-      this.persistSelection(this.selection);
-    }
-  }
-
-  private persistSelection(selection: Item[]) {
-    for (const element of this.items) {
-      if (selection.includes(element)) {
-        element.setAttribute('aria-selected', 'true');
-      } else {
-        element.removeAttribute('aria-selected');
-      }
-    }
+    this.emitter?.select(this.selection);
   }
 
   activateItem(item?: Item) {
@@ -121,37 +147,7 @@ export class Control {
     this.prevActiveItem = this.activeItem;
     this.activeItem = item;
 
-    this.emitItemActivation();
-  }
-
-  private emitItemActivation() {
-    const persisted = this.emitter?.activateItem(this.activeItem);
-
-    if (persisted !== true) {
-      this.persistActivateItem(this.activeItem);
-    }
-  }
-
-  private persistActivateItem(item?: Item) {
-    this.prevActiveItem?.removeAttribute('aria-current');
-    item?.setAttribute('aria-current', 'true');
-  }
-
-  // event handlers
-  focus() {
-    if (this.items.length === 0) {
-      return;
-    }
-
-    if (this.selection.length > 0) {
-      this.activateItem(this.selection[0]);
-    } else {
-      this.activateItem(this.items[0]);
-
-      if (!this.multiple) {
-        this.select([this.items[0]]);
-      }
-    }
+    this.emitter?.activateItem(this.activeItem);
   }
 
   navigate(_event: MouseEvent | KeyboardEvent) {

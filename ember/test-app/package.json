@@ -93,7 +93,7 @@
     "sinon": "^17.0.1",
     "stylelint": "^16.2.1",
     "typescript": "~5.3.3",
-    "webpack": "^5.90.1"
+    "webpack": "^5.91.0"
   },
   "engines": {
     "node": ">= 20.*"

@@ -32,17 +32,17 @@
     "@hokulea/config-stylelint": "*",
     "@hokulea/config-style-dictionary": "*",
     "@hokulea/config-typescript": "*",
-    "@swc/cli": "^0.1.63",
-    "@swc/core": "^1.3.102",
-    "@theemo/style-dictionary": "^0.2.1",
-    "@theemo/tokens": "^0.2.1",
+    "@swc/cli": "0.1.65",
+    "@swc/core": "1.4.0",
+    "@theemo/style-dictionary": "0.2.2",
+    "@theemo/tokens": "0.2.2",
     "@types/eslint": "^8.56.2",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "prettier": "^3.2.1",
-    "style-dictionary": "^3.9.1",
-    "stylelint": "^16.1.0",
-    "typescript": "^5.3.3"
+    "style-dictionary": "3.9.2",
+    "stylelint": "16.2.1",
+    "typescript": "5.3.3"
   },
   "exports": {
     ".": {

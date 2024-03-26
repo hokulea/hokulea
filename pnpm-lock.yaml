@@ -12,7 +12,7 @@ importers:
         specifier: ^8.2.2
         version: 8.2.2
       turbo:
-        specifier: ^1.11.3
+        specifier: 1.12.3
         version: 1.12.3
 
   configs/eslint:
@@ -22,7 +22,7 @@ importers:
         version: 0.7.0(@babel/core@7.23.9)(eslint-plugin-import@2.29.1)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.3.3)
     devDependencies:
       '@babel/core':
-        specifier: ^7.23.7
+        specifier: 7.23.9
         version: 7.23.9(supports-color@8.1.1)
       eslint:
         specifier: ^8.56.0
@@ -31,7 +31,7 @@ importers:
         specifier: ^3.1.1
         version: 3.2.5
       typescript:
-        specifier: ~5.3.3
+        specifier: 5.3.3
         version: 5.3.3
 
   configs/postcss:
@@ -62,7 +62,7 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       postcss:
-        specifier: ^8.4.33
+        specifier: 8.4.35
         version: 8.4.35
       prettier:
         specifier: ^3.1.1
@@ -118,10 +118,10 @@ importers:
         specifier: ^3.1.1
         version: 3.2.5
       stylelint:
-        specifier: ^16.1.0
+        specifier: 16.2.1
         version: 16.2.1(typescript@5.3.3)
       stylelint-config-clean-order:
-        specifier: ^5.4.1
+        specifier: 5.4.1
         version: 5.4.1(stylelint@16.2.1)
 
   configs/targets:
@@ -248,19 +248,19 @@ importers:
         version: 3.3.0
     devDependencies:
       '@babel/core':
-        specifier: ^7.23.7
+        specifier: 7.23.9
         version: 7.23.9(supports-color@8.1.1)
       '@babel/eslint-parser':
-        specifier: ^7.23.10
+        specifier: 7.23.10
         version: 7.23.10(@babel/core@7.23.9)(eslint@8.56.0)
       '@babel/plugin-transform-typescript':
-        specifier: ^7.23.6
+        specifier: 7.23.6
         version: 7.23.6(@babel/core@7.23.9)
       '@babel/runtime':
-        specifier: ^7.23.8
+        specifier: 7.23.9
         version: 7.23.9
       '@ember/test-helpers':
-        specifier: ^3.2.1
+        specifier: 3.2.1
         version: 3.2.1(@glint/template@1.3.0)(ember-source@5.6.0)(webpack@5.90.1)
       '@embroider/addon-dev':
         specifier: ^4.2.0
@@ -272,16 +272,16 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       '@glint/core':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0(typescript@5.3.3)
       '@glint/environment-ember-loose':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0(@glimmer/component@1.1.2)(@glint/template@1.3.0)(ember-cli-htmlbars@6.3.0)(ember-modifier@4.1.0)
       '@glint/environment-ember-template-imports':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0(@glint/environment-ember-loose@1.3.0)(@glint/template@1.3.0)
       '@glint/template':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0
       '@hokulea/config-eslint':
         specifier: workspace:*
@@ -311,13 +311,13 @@ importers:
         specifier: workspace:*
         version: link:../../foundation/tokens
       '@rollup/plugin-babel':
-        specifier: ^6.0.4
+        specifier: 6.0.4
         version: 6.0.4(@babel/core@7.23.9)(rollup@4.9.6)
       '@rollup/plugin-node-resolve':
-        specifier: ^15.2.3
+        specifier: 15.2.3
         version: 15.2.3(rollup@4.9.6)
       '@storybook/addon-actions':
-        specifier: ^8.0.0-beta.0
+        specifier: 8.0.0-beta.1
         version: 8.0.0-beta.1
       '@types/css-modules':
         specifier: ^1.0.5
@@ -329,31 +329,31 @@ importers:
         specifier: ^5.59.9
         version: 5.62.0(eslint@8.56.0)(typescript@5.3.3)
       babel-plugin-ember-template-compilation:
-        specifier: ^2.2.1
+        specifier: 2.2.1
         version: 2.2.1
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
       ember-cli-htmlbars:
-        specifier: ^6.3.0
+        specifier: 6.3.0
         version: 6.3.0
       ember-command:
-        specifier: ^2.0.2
+        specifier: 2.0.2
         version: 2.0.2(@ember/test-helpers@3.2.1)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(ember-element-helper@0.8.5)(ember-link@3.2.0)
       ember-css-modules:
-        specifier: ^2.0.1
+        specifier: 2.0.1
         version: 2.0.1
       ember-link:
-        specifier: ^3.2.0
+        specifier: 3.2.0
         version: 3.2.0(@ember/test-helpers@3.2.1)(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-source:
         specifier: ^5.6.0
         version: 5.6.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(rsvp@4.8.5)(webpack@5.90.1)
       ember-svg-jar:
-        specifier: ^2.4.8
+        specifier: 2.4.8
         version: 2.4.8(@glint/template@1.3.0)
       ember-template-imports:
-        specifier: ^4.0.0
+        specifier: 4.1.0
         version: 4.1.0
       ember-template-lint:
         specifier: ^5.13.0
@@ -368,28 +368,28 @@ importers:
         specifier: ^0.6.15
         version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
       fractal-page-object:
-        specifier: ^0.5.0
+        specifier: 0.5.0
         version: 0.5.0
       postcss:
-        specifier: ^8.4.33
+        specifier: 8.4.35
         version: 8.4.35
       prettier:
         specifier: ^3.1.1
         version: 3.2.5
       rollup:
-        specifier: ^4.9.5
+        specifier: 4.9.6
         version: 4.9.6
       rollup-plugin-postcss:
-        specifier: ^4.0.2
+        specifier: 4.0.2
         version: 4.0.2(postcss@8.4.35)
       stylelint:
-        specifier: ^16.1.0
+        specifier: 16.2.1
         version: 16.2.1(typescript@5.3.3)
       typescript:
-        specifier: ^5.3.3
+        specifier: 5.3.3
         version: 5.3.3
       webpack:
-        specifier: ^5.89.0
+        specifier: 5.90.1
         version: 5.90.1
 
   ember/test-app:
@@ -408,19 +408,19 @@ importers:
         version: link:../../foundation/tokens
     devDependencies:
       '@babel/core':
-        specifier: ^7.23.9
+        specifier: 7.23.9
         version: 7.23.9(supports-color@8.1.1)
       '@babel/eslint-parser':
-        specifier: ^7.23.10
+        specifier: 7.23.10
         version: 7.23.10(@babel/core@7.23.9)(eslint@8.56.0)
       '@ember/optional-features':
         specifier: ^2.0.0
         version: 2.0.0
       '@ember/string':
-        specifier: ^3.1.1
+        specifier: 3.1.1
         version: 3.1.1
       '@ember/test-helpers':
-        specifier: ^3.2.1
+        specifier: 3.2.1
         version: 3.2.1(@glint/template@1.3.0)(ember-source@5.6.0)(webpack@5.90.1)
       '@embroider/broccoli-side-watch':
         specifier: 0.0.2-unstable.ba9fd29
@@ -444,16 +444,16 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       '@glint/core':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0(typescript@5.3.3)
       '@glint/environment-ember-loose':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0(@glimmer/component@1.1.2)(@glint/template@1.3.0)(ember-cli-htmlbars@6.3.0)(ember-modifier@4.1.0)
       '@glint/environment-ember-template-imports':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0(@glint/environment-ember-loose@1.3.0)(@glint/template@1.3.0)
       '@glint/template':
-        specifier: ^1.3.0
+        specifier: 1.3.0
         version: 1.3.0
       '@hokulea/config-eslint':
         specifier: workspace:*
@@ -486,7 +486,7 @@ importers:
         specifier: ^8.2.2
         version: 8.2.2
       ember-a11y-testing:
-        specifier: ^6.1.1
+        specifier: 6.1.1
         version: 6.1.1(@babel/core@7.23.9)(@ember/test-helpers@3.2.1)(@glint/template@1.3.0)(qunit@2.20.0)(webpack@5.90.1)
       ember-auto-import:
         specifier: ^2.7.2
@@ -495,16 +495,16 @@ importers:
         specifier: ~5.6.0
         version: 5.6.0(react-dom@17.0.2)(react@17.0.2)
       ember-cli-app-version:
-        specifier: ^6.0.1
+        specifier: 6.0.1
         version: 6.0.1(ember-source@5.6.0)
       ember-cli-babel:
-        specifier: ^8.2.0
+        specifier: 8.2.0
         version: 8.2.0(@babel/core@7.23.9)
       ember-cli-dependency-checker:
         specifier: ^3.3.2
         version: 3.3.2(ember-cli@5.6.0)
       ember-cli-htmlbars:
-        specifier: ^6.3.0
+        specifier: 6.3.0
         version: 6.3.0
       ember-cli-inject-live-reload:
         specifier: ^2.1.0
@@ -513,28 +513,28 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       ember-command:
-        specifier: ^2.0.2
+        specifier: 2.0.2
         version: 2.0.2(@ember/test-helpers@3.2.1)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(ember-element-helper@0.8.5)(ember-link@3.2.0)
       ember-css-modules:
-        specifier: ^2.0.1
+        specifier: 2.0.1
         version: 2.0.1
       ember-disable-prototype-extensions:
         specifier: ^1.1.3
         version: 1.1.3
       ember-element-helper:
-        specifier: ^0.8.5
+        specifier: 0.8.5
         version: 0.8.5(@glint/environment-ember-loose@1.3.0)(@glint/template@1.3.0)(ember-source@5.6.0)
       ember-link:
-        specifier: ^3.2.0
+        specifier: 3.2.0
         version: 3.2.0(@ember/test-helpers@3.2.1)(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-load-initializers:
         specifier: ^2.1.2
         version: 2.1.2(@babel/core@7.23.9)
       ember-modifier:
-        specifier: ^4.1.0
+        specifier: 4.1.0
         version: 4.1.0(ember-source@5.6.0)
       ember-polaris-routing:
-        specifier: ^0.3.0
+        specifier: 0.3.0
         version: 0.3.0(tracked-built-ins@3.3.0)
       ember-qunit:
         specifier: ^8.0.2
@@ -543,7 +543,7 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1(ember-source@5.6.0)
       ember-sinon-qunit:
-        specifier: ^7.4.0
+        specifier: 7.4.0
         version: 7.4.0(ember-source@5.6.0)(qunit@2.20.0)(sinon@17.0.1)
       ember-source:
         specifier: ~5.6.0
@@ -552,16 +552,16 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       ember-svg-jar:
-        specifier: ^2.4.8
+        specifier: 2.4.8
         version: 2.4.8(@glint/template@1.3.0)
       ember-template-imports:
-        specifier: ^4.0.0
+        specifier: 4.1.0
         version: 4.1.0
       ember-template-lint:
         specifier: ^5.13.0
         version: 5.13.0
       ember-theemo:
-        specifier: ^0.1.3
+        specifier: 0.1.3
         version: 0.1.3(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-try:
         specifier: ^3.0.0
@@ -570,10 +570,10 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       fractal-page-object:
-        specifier: ^0.5.0
+        specifier: 0.5.0
         version: 0.5.0
       loader.js:
-        specifier: ^4.7.0
+        specifier: 4.7.0
         version: 4.7.0
       prettier:
         specifier: ^3.1.1
@@ -585,16 +585,16 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       sinon:
-        specifier: ^17.0.1
+        specifier: 17.0.1
         version: 17.0.1
       stylelint:
-        specifier: ^16.2.1
+        specifier: 16.2.1
         version: 16.2.1(typescript@5.3.3)
       typescript:
-        specifier: ~5.3.3
+        specifier: 5.3.3
         version: 5.3.3
       webpack:
-        specifier: ^5.90.1
+        specifier: 5.90.1
         version: 5.90.1
 
   explorer:
@@ -613,34 +613,34 @@ importers:
         version: link:../foundation/tokens
     devDependencies:
       '@babel/core':
-        specifier: ^7.23.9
+        specifier: 7.23.9
         version: 7.23.9(supports-color@8.1.1)
       '@babel/eslint-parser':
-        specifier: ^7.23.10
+        specifier: 7.23.10
         version: 7.23.10(@babel/core@7.23.9)(eslint@8.56.0)
       '@babel/plugin-proposal-class-properties':
-        specifier: ^7.18.6
+        specifier: 7.18.6
         version: 7.18.6(@babel/core@7.23.9)
       '@babel/plugin-proposal-decorators':
-        specifier: ^7.23.9
+        specifier: 7.23.9
         version: 7.23.9(@babel/core@7.23.9)
       '@babel/preset-typescript':
-        specifier: ^7.23.3
+        specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.9)
       '@chromatic-com/storybook':
-        specifier: ^1.2.1
+        specifier: 1.2.1
         version: 1.2.1(react@17.0.2)
       '@ember/optional-features':
         specifier: ^2.0.0
         version: 2.0.0
       '@ember/render-modifiers':
-        specifier: ^2.1.0
+        specifier: 2.1.0
         version: 2.1.0(@babel/core@7.23.9)(ember-source@5.6.0)
       '@ember/string':
-        specifier: ^3.1.1
+        specifier: 3.1.1
         version: 3.1.1
       '@ember/test-helpers':
-        specifier: ^3.2.1
+        specifier: 3.2.1
         version: 3.2.1(@glint/template@1.3.0)(ember-source@5.6.0)(webpack@5.90.1)
       '@embroider/broccoli-side-watch':
         specifier: 0.0.2-unstable.ba9fd29
@@ -673,31 +673,31 @@ importers:
         specifier: workspace:*
         version: link:../configs/typescript
       '@storybook/addon-designs':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-next.0
         version: 8.0.0-next.0(@storybook/addon-docs@8.0.0-alpha.10)(@storybook/components@8.0.0-alpha.10)(@storybook/manager-api@8.0.0-beta.6)(@storybook/preview-api@8.0.0-alpha.10)(@storybook/theming@8.0.0-alpha.10)(react-dom@17.0.2)(react@17.0.2)
       '@storybook/addon-essentials':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6(@types/react@18.2.55)(react-dom@17.0.2)(react@17.0.2)
       '@storybook/addon-links':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6(react@17.0.2)
       '@storybook/addon-storysource':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6
       '@storybook/cli':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6(react-dom@17.0.2)(react@17.0.2)
       '@storybook/ember':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6(@babel/core@7.23.9)(babel-plugin-ember-modules-api-polyfill@3.5.0)(babel-plugin-htmlbars-inline-precompile@5.3.1)(ember-source@5.6.0)(esbuild@0.18.20)(react-dom@17.0.2)(react@17.0.2)(typescript@5.3.3)(webpack@5.90.1)
       '@storybook/ember-cli-storybook':
-        specifier: ^0.6.1
+        specifier: 0.6.1
         version: 0.6.1
       '@storybook/manager-api':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6(react-dom@17.0.2)(react@17.0.2)
       '@storybook/types':
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6
       '@types/qunit':
         specifier: ^2.19.9
@@ -706,16 +706,16 @@ importers:
         specifier: ^4.0.8
         version: 4.0.9
       babel-loader:
-        specifier: ^9.1.3
+        specifier: 9.1.3
         version: 9.1.3(@babel/core@7.23.9)(webpack@5.90.1)
       broccoli-asset-rev:
         specifier: ^3.0.0
         version: 3.0.0
       case:
-        specifier: ^1.6.3
+        specifier: 1.6.3
         version: 1.6.3
       chromatic:
-        specifier: ^11.0.0
+        specifier: 11.0.0
         version: 11.0.0
       ember-auto-import:
         specifier: ^2.7.2
@@ -724,16 +724,16 @@ importers:
         specifier: ~5.6.0
         version: 5.6.0(react-dom@17.0.2)(react@17.0.2)
       ember-cli-app-version:
-        specifier: ^6.0.0
+        specifier: 6.0.1
         version: 6.0.1(ember-source@5.6.0)
       ember-cli-babel:
-        specifier: ^8.2.0
+        specifier: 8.2.0
         version: 8.2.0(@babel/core@7.23.9)
       ember-cli-dependency-checker:
         specifier: ^3.3.2
         version: 3.3.2(ember-cli@5.6.0)
       ember-cli-htmlbars:
-        specifier: ^6.3.0
+        specifier: 6.3.0
         version: 6.3.0
       ember-cli-inject-live-reload:
         specifier: ^2.1.0
@@ -742,22 +742,22 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       ember-command:
-        specifier: ^2.0.2
+        specifier: 2.0.2
         version: 2.0.2(@ember/test-helpers@3.2.1)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(ember-element-helper@0.8.5)(ember-link@3.2.0)
       ember-css-modules:
-        specifier: ^2.0.1
+        specifier: 2.0.1
         version: 2.0.1
       ember-element-helper:
-        specifier: ^0.8.5
+        specifier: 0.8.5
         version: 0.8.5(@glint/environment-ember-loose@1.3.0)(@glint/template@1.3.0)(ember-source@5.6.0)
       ember-link:
-        specifier: ^3.1.0
+        specifier: 3.2.0
         version: 3.2.0(@ember/test-helpers@3.2.1)(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-load-initializers:
         specifier: ^2.1.2
         version: 2.1.2(@babel/core@7.23.9)
       ember-modifier:
-        specifier: ^4.1.0
+        specifier: 4.1.0
         version: 4.1.0(ember-source@5.6.0)
       ember-qunit:
         specifier: ^8.0.2
@@ -766,28 +766,28 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1(ember-source@5.6.0)
       ember-set-helper:
-        specifier: ^2.0.1
+        specifier: 2.0.1
         version: 2.0.1
       ember-source:
         specifier: ~5.6.0
         version: 5.6.0(@babel/core@7.23.9)(@glimmer/component@1.1.2)(@glint/template@1.3.0)(rsvp@4.8.5)(webpack@5.90.1)
       ember-style-modifier:
-        specifier: ^4.2.0
+        specifier: 4.2.0
         version: 4.2.0(@ember/string@3.1.1)(ember-source@5.6.0)
       ember-svg-jar:
-        specifier: ^2.4.7
+        specifier: 2.4.8
         version: 2.4.8(@glint/template@1.3.0)
       ember-template-imports:
-        specifier: ^4.0.0
+        specifier: 4.1.0
         version: 4.1.0
       ember-template-lint:
         specifier: ^5.13.0
         version: 5.13.0
       ember-theemo:
-        specifier: ^0.1.3
+        specifier: 0.1.3
         version: 0.1.3(@glimmer/tracking@1.1.2)(@glint/template@1.3.0)
       ember-truth-helpers:
-        specifier: ^4.0.3
+        specifier: 4.0.3
         version: 4.0.3(ember-source@5.6.0)
       eslint:
         specifier: ^8.56.0
@@ -796,43 +796,43 @@ importers:
         specifier: ^0.6.15
         version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
       loader.js:
-        specifier: ^4.7.0
+        specifier: 4.7.0
         version: 4.7.0
       markdown-it-abbr:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       markdown-it-anchor:
-        specifier: ^8.6.7
+        specifier: 8.6.7
         version: 8.6.7(@types/markdown-it@13.0.7)(markdown-it@14.0.0)
       markdown-it-compiler:
-        specifier: ^0.1.0
+        specifier: 0.1.0
         version: 0.1.0
       markdown-it-custom-block:
-        specifier: ^0.1.2
+        specifier: 0.1.2
         version: 0.1.2
       markdown-it-deflist:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       markdown-it-ember:
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: 0.0.3
       markdown-it-highlightjs:
-        specifier: ^4.0.1
+        specifier: 4.0.1
         version: 4.0.1
       markdown-it-ins:
-        specifier: ^4.0.0
+        specifier: 4.0.0
         version: 4.0.0
       markdown-it-mark:
-        specifier: ^4.0.0
+        specifier: 4.0.0
         version: 4.0.0
       markdown-it-sub:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       markdown-it-sup:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       postcss-modules:
-        specifier: ^6.0.0
+        specifier: 6.0.0
         version: 6.0.0(postcss@8.4.35)
       prettier:
         specifier: ^3.2.2
@@ -844,22 +844,22 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       react:
-        specifier: ^17.0.2
+        specifier: 17.0.2
         version: 17.0.2
       react-dom:
-        specifier: ^17.0.2
+        specifier: 17.0.2
         version: 17.0.2(react@17.0.2)
       storybook:
-        specifier: ^8.0.0-beta.6
+        specifier: 8.0.0-beta.6
         version: 8.0.0-beta.6(react-dom@17.0.2)(react@17.0.2)
       stylelint:
-        specifier: ^16.2.1
+        specifier: 16.2.1
         version: 16.2.1(typescript@5.3.3)
       typescript:
-        specifier: ^5.3.3
+        specifier: 5.3.3
         version: 5.3.3
       webpack:
-        specifier: ^5.89.0
+        specifier: 5.90.1
         version: 5.90.1(esbuild@0.18.20)
 
   foundation/core:
@@ -883,34 +883,34 @@ importers:
         specifier: workspace:*
         version: link:../../plugins/rollup-plugin-postcss
       '@rollup/plugin-commonjs':
-        specifier: ^25.0.7
+        specifier: 25.0.7
         version: 25.0.7(rollup@4.9.6)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
       fast-glob:
-        specifier: ^3.3.2
+        specifier: 3.3.2
         version: 3.3.2
       postcss:
-        specifier: ^8.4.33
+        specifier: 8.4.35
         version: 8.4.35
       prettier:
         specifier: ^3.1.1
         version: 3.2.5
       rollup:
-        specifier: ^4.9.4
+        specifier: 4.9.6
         version: 4.9.6
       rollup-plugin-css-only:
-        specifier: ^4.5.2
+        specifier: 4.5.2
         version: 4.5.2(rollup@4.9.6)
       rollup-plugin-delete:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       rollup-plugin-multi-input:
-        specifier: ^1.4.1
+        specifier: 1.4.1
         version: 1.4.1
       stylelint:
-        specifier: ^16.1.0
+        specifier: 16.2.1
         version: 16.2.1(typescript@5.3.3)
 
   foundation/tokens:
@@ -938,13 +938,13 @@ importers:
         specifier: '*'
         version: link:../../themes/moana
       '@swc/cli':
-        specifier: ^0.1.63
+        specifier: 0.1.65
         version: 0.1.65(@swc/core@1.4.0)
       '@swc/core':
-        specifier: ^1.3.102
+        specifier: 1.4.0
         version: 1.4.0
       '@theemo/style-dictionary':
-        specifier: ^0.2.1
+        specifier: 0.2.2
         version: 0.2.2(style-dictionary@3.9.2)
       '@types/eslint':
         specifier: ^8.56.2
@@ -959,13 +959,13 @@ importers:
         specifier: ^3.2.1
         version: 3.2.5
       style-dictionary:
-        specifier: ^3.9.1
+        specifier: 3.9.2
         version: 3.9.2
       stylelint:
-        specifier: ^16.1.0
+        specifier: 16.2.1
         version: 16.2.1(typescript@5.3.3)
       typescript:
-        specifier: ^5.3.3
+        specifier: 5.3.3
         version: 5.3.3
 
   plugins/ember-template-imports:
@@ -1023,34 +1023,34 @@ importers:
         specifier: '*'
         version: link:../../configs/style-dictionary
       '@theemo/build':
-        specifier: ^0.2.2
+        specifier: 0.2.2
         version: 0.2.2
       '@theemo/cli':
-        specifier: ^0.2.2
+        specifier: 0.2.2
         version: 0.2.2
       '@theemo/figma':
-        specifier: ^0.2.2
+        specifier: 0.2.2
         version: 0.2.2
       '@theemo/style-dictionary':
-        specifier: ^0.2.2
+        specifier: 0.2.2
         version: 0.2.2(style-dictionary@3.9.2)
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
       inflection:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       style-dictionary:
-        specifier: ^3.9.1
+        specifier: 3.9.2
         version: 3.9.2
 
   themes/vaomatua:
     devDependencies:
       style-dictionary:
-        specifier: ^3.0.2
+        specifier: 3.9.2
         version: 3.9.2
       theemo:
-        specifier: ^0.1.2
+        specifier: 0.1.3
         version: 0.1.3
 
 packages:
@@ -1124,7 +1124,7 @@ packages:
     resolution: {integrity: sha512-lN85QRR+5IbYrMWM6Y4pE/noaQtg4pNiqeNGX60eqOfo6gtEj6uw/JagelB8vVztSd7R6M5n1+PQkDbHbBRU4g==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.23.0
+      '@babel/types': 7.23.9
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
       jsesc: 2.5.2
@@ -2330,13 +2330,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/generator': 7.23.0
+      '@babel/generator': 7.23.6
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.23.9
-      '@babel/types': 7.23.0
+      '@babel/types': 7.23.9
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:

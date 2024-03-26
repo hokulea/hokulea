@@ -33,16 +33,16 @@
     "@hokulea/config-stylelint": "workspace:*",
     "@hokulea/config-targets": "workspace:*",
     "@hokulea/rollup-plugin-postcss": "workspace:*",
-    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-commonjs": "25.0.7",
     "eslint": "^8.56.0",
-    "fast-glob": "^3.3.2",
-    "postcss": "^8.4.33",
+    "fast-glob": "3.3.2",
+    "postcss": "8.4.35",
     "prettier": "^3.1.1",
-    "rollup": "^4.9.4",
-    "rollup-plugin-css-only": "^4.5.2",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-multi-input": "^1.4.1",
-    "stylelint": "^16.1.0"
+    "rollup": "4.9.6",
+    "rollup-plugin-css-only": "4.5.2",
+    "rollup-plugin-delete": "2.0.0",
+    "rollup-plugin-multi-input": "1.4.1",
+    "stylelint": "16.2.1"
   },
   "engines": {
     "node": ">= 20.*"

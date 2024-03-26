@@ -54,7 +54,7 @@
     "debug": "^4.3.2",
     "decorator-transforms": "^1.1.0",
     "ember-async-data": "^1.0.3",
-    "read-pkg-up": "7.0.1",
+    "read-package-up": "11.0.0",
     "tracked-built-ins": "^3.3.0",
     "lucide-static": "^0.331.0"
   },

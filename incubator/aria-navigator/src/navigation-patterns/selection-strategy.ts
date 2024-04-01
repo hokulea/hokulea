@@ -1,24 +1,35 @@
-import { Control } from '..';
-import { Item } from '../controls/control';
-import { isEndEvent } from './end-navigation';
-import { isHomeEvent } from './home-navigation';
-import { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
 import isEqual from 'lodash.isequal';
 
+import type { Control } from '..';
+import type { Item } from '../controls/control';
+import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
+
 export class SelectionStrategy implements NavigationPattern {
-  eventListeners: EventNames[] = ['keydown', 'keyup', 'mouseup'];
+  eventListeners: EventNames[] = ['focusin', 'keydown', 'keyup', 'pointerup'];
+
+  #selection: Item[] = [];
+
+  get selection() {
+    return this.#selection;
+  }
 
   private shiftItem?: Item;
 
-  constructor(private control: Control) {}
+  constructor(private control: Control) {
+    this.readSelection();
+  }
 
   matches(event: Event): boolean {
-    return this.eventListeners.includes(event.type as EventNames);
+    return this.control.items.length > 0 && this.eventListeners.includes(event.type as EventNames);
   }
 
   prepare(event: Event): void {
-    // handle HOME and END selection
-    if ((isHomeEvent(event) || isEndEvent(event)) && this.control.activeItem) {
+    if (
+      !this.shiftItem &&
+      this.control.activeItem &&
+      event instanceof KeyboardEvent &&
+      event.shiftKey
+    ) {
       this.shiftItem = this.control.activeItem;
     }
   }
@@ -31,38 +42,44 @@ export class SelectionStrategy implements NavigationPattern {
     }
 
     // mouse
-    else if (event instanceof MouseEvent && bag.item) {
-      this.handleMouseSelection(event, bag.item);
+    else if (event instanceof PointerEvent && bag.item) {
+      this.handlePointer(event, bag.item);
     }
 
     // keyboard
     else if (event instanceof KeyboardEvent) {
-      this.handleKeyboardSelection(bag);
+      this.handleKeyboard(bag);
     }
 
     return bag;
   }
 
+  select(selection: Item[]) {
+    const items = selection.every(Number)
+      ? selection
+          .map((sel) => this.control.items.find((item) => item === sel))
+          .filter((e) => e !== undefined)
+      : selection;
 
-  handleFocus() {
-    // if (this.control.capabilities.multiSelection && this.control.selection.length > 0) {
-    //   this.activateItem(this.control.selection[0]);
-    // } else if (
-    //   this.control.capabilities.singleSelection && this.control.selection.length > 0
-    //     || !(this.control.capabilities.singleSelection || this.control.capabilities.multiSelection)
-    // ) {
-    //   this.activateItem(this.control.items[0]);
-    // }
-
-      // if (!this.multiple) {
-      //   this.select([this.items[0]]);
-      // }
+    this.persistSelection(items as Item[]);
   }
 
-  private handleMouseSelection(event: MouseEvent, item: Item) {
-    // this.control.activateItem(item);
-    // event.stopPropagation();
+  readSelection() {
+    this.#selection = [
+      ...this.control.element.querySelectorAll('[aria-selected="true"]')
+    ] as HTMLElement[];
+  }
 
+  private handleFocus() {
+    const multiple = this.control.options.multiple;
+    const selectionPresent = this.control.selection.length > 0;
+
+    if (this.control.capabilities.singleSelection && !multiple && !selectionPresent) {
+      this.selectSingle(this.control.items[0]);
+    }
+  }
+
+  private handlePointer(event: PointerEvent, item: Item) {
     if (event.shiftKey) {
       this.selectShift(item);
     } else if (event.metaKey) {
@@ -72,17 +89,18 @@ export class SelectionStrategy implements NavigationPattern {
         this.selectAdd(item);
       }
     } else {
-      this.select(item);
+      this.selectSingle(item);
     }
   }
 
-  private handleKeyboardSelection(bag: NavigationParameterBag) {
+  private handleKeyboard(bag: NavigationParameterBag) {
     const { event, item } = bag as NavigationParameterBag & { event: KeyboardEvent };
 
     if (event.type === 'keydown') {
       if (item) {
         this.handleItem(event, item);
       }
+
       this.handleKeyCombinations(event);
     } else if (event.type === 'keyup' && !event.shiftKey) {
       this.shiftItem = undefined;
@@ -90,12 +108,12 @@ export class SelectionStrategy implements NavigationPattern {
   }
 
   private handleItem(event: KeyboardEvent, item: Item) {
-    if (this.control.multiple) {
+    if (this.control.options.multiple) {
       if (event.shiftKey) {
         this.selectShift(item);
       }
     } else {
-      this.select(item);
+      this.selectSingle(item);
     }
   }
 
@@ -104,7 +122,7 @@ export class SelectionStrategy implements NavigationPattern {
    * and cmd/ctrl + a
    */
   private handleKeyCombinations(event: KeyboardEvent) {
-    if (event.key === ' ' && this.control.activeItem && this.control.multiple) {
+    if (event.key === ' ' && this.control.activeItem && this.control.options.multiple) {
       // handle select and active item
       if (this.control.selection.includes(this.control.activeItem)) {
         this.deselect(this.control.activeItem);
@@ -132,14 +150,14 @@ export class SelectionStrategy implements NavigationPattern {
     }
   }
 
-  private select(item: HTMLElement) {
+  private selectSingle(item: HTMLElement) {
     this.shiftItem = item;
 
     this.persistSelection([item]);
   }
 
   private selectAdd(item: HTMLElement) {
-    const selection = this.control.multiple ? this.control.selection.slice() : [];
+    const selection = this.control.options.multiple ? this.control.selection.slice() : [];
 
     selection.push(item);
 
@@ -148,13 +166,13 @@ export class SelectionStrategy implements NavigationPattern {
   }
 
   private selectAll() {
-    if (this.control.multiple) {
+    if (this.control.options.multiple) {
       this.persistSelection(this.control.items);
     }
   }
 
   private selectRange(from: number, to: number) {
-    if (this.control.multiple) {
+    if (this.control.options.multiple) {
       const selection = [];
       let i = from;
       const up = to > from;
@@ -170,20 +188,18 @@ export class SelectionStrategy implements NavigationPattern {
 
   private selectShift(item: HTMLElement) {
     // only, when selection mode is MULTI
-    if (this.control.multiple && this.shiftItem) {
+    if (this.control.options.multiple && this.shiftItem) {
       const indexShift = this.control.items.indexOf(this.shiftItem);
       const indexItem = this.control.items.indexOf(item);
 
       this.selectRange(indexShift, indexItem);
-    } else {
-      this.select(item);
     }
   }
 
   // talk to the control from here
 
   private persistSelection(selection: Item[]) {
-    if (isEqual(selection, this.control.selection)) {
+    if (isEqual(selection, this.#selection)) {
       return;
     }
 
@@ -195,6 +211,8 @@ export class SelectionStrategy implements NavigationPattern {
       }
     }
 
-    this.control.select(selection);
+    this.#selection = selection;
+
+    this.control.emitter?.selected(this.#selection);
   }
 }

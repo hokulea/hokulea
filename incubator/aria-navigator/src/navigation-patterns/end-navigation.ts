@@ -1,5 +1,5 @@
-import { Control } from '..';
-import { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
+import type { Control } from '..';
+import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
 
 export function isEndEvent(event: Event): boolean {
   return event instanceof KeyboardEvent && event.type === 'keydown' && event.key === 'End';

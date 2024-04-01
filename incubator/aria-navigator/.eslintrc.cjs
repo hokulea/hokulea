@@ -18,4 +18,4 @@ const { configs } = require('@gossi/config-eslint');
 //   ]
 // };
 
-module.exports = configs.nodeTS();
+module.exports = configs.nodeESM();

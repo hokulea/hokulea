@@ -1,5 +1,6 @@
-import type { ControlArgs } from '../controls/control';
+import type { Control } from '..';
 
-export interface UpdateStrategy<T> {
-  updateArguments(args: ControlArgs<T>): void;
+export interface UpdateStrategy {
+  setControl(control: Control): void;
+  teardown?(): void;
 }

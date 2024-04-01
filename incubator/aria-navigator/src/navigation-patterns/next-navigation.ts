@@ -1,5 +1,6 @@
-import { Control } from '..';
-import { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
+import type { Control } from '..';
+import type { Item } from '../controls/control';
+import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
 
 function matchesKeys(event: Event, keyOrKeys: string | string[]) {
   const keys = Array.isArray(keyOrKeys) ? keyOrKeys : [keyOrKeys];
@@ -20,7 +21,7 @@ export class NextNavigation implements NavigationPattern {
   }
 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
-    let item;
+    let item: Item | undefined = undefined;
 
     if (this.control.activeItem) {
       const activeIndex = this.control.items.indexOf(this.control.activeItem);

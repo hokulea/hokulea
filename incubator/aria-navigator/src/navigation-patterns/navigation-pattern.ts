@@ -1,4 +1,4 @@
-import { Item } from '../controls/control';
+import type { Item } from '../controls/control';
 
 export type NavigationParameterBag = {
   event: Event;

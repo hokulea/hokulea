@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "turbo": "^1.11.3"
+    "turbo": "^1.13.2"
   },
   "volta": {
     "node": "20.10.0",

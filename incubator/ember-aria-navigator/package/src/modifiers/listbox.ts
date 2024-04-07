@@ -21,20 +21,20 @@ function asArray(val: unknown | unknown[] | undefined) {
 function createItemEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignature<T>>) {
   return new ItemEmitStrategy(listbox, {
     select: (selection: HTMLElement[]) => {
-      (options as NamedArgs<ListboxSignature<undefined>>).select?.(
+      (options.select as ((selection: HTMLElement | HTMLElement[]) => void) | undefined)?.(
         options.multi ? selection : selection[0]
       );
     },
 
     activateItem: (item: HTMLElement) => {
-      (options as NamedArgs<ListboxSignature<undefined>>).activateItem?.(item);
+      (options.activateItem as ((item: HTMLElement) => void) | undefined)?.(item);
     }
   });
 }
 
 function createIndexEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignature<T>>) {
   const findByIndex = (index: number) => {
-    return options.items?.[index] ?? undefined;
+    return (options as WithItems<T>).items?.[index] ?? undefined;
   };
 
   return new IndexEmitStrategy(listbox, {
@@ -44,12 +44,12 @@ function createIndexEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSigna
           .map((index) => findByIndex(index))
           .filter((i) => i !== undefined) as T[];
 
-        (options.select as (selection: T[]) => void | undefined)?.(items);
+        (options.select as ((selection: T[]) => void) | undefined)?.(items);
       } else {
         const item = findByIndex(selection[0]);
 
         if (item) {
-          (options.select as (selection: T) => void | undefined)?.(item);
+          (options.select as ((selection: T) => void) | undefined)?.(item);
         }
       }
     },
@@ -58,23 +58,46 @@ function createIndexEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSigna
       const item = findByIndex(index);
 
       if (item) {
-        (options.activateItem as (item: T) => void | undefined)?.(item);
+        (options.activateItem as ((item: T) => void) | undefined)?.(item);
       }
     }
   });
 }
 
+type WithItems<T> = {
+  items: T[];
+  selection?: T | T[];
+  activateItem?: (item: T) => void;
+} & (
+  | {
+      multi: true;
+      select?: (selection: T[]) => void;
+    }
+  | {
+      multi?: false;
+      select?: (selection: T) => void;
+    }
+);
+
 interface ListboxSignature<T> {
   Args: {
     Positional: [];
-    Named: {
-      items: T[];
-      selection?: T | T[];
-      multi?: boolean;
-      disabled?: boolean;
-      select?: (selection: T | T[] | HTMLElement | HTMLElement[]) => void;
-      activateItem?: (item: T | HTMLElement) => void;
-    };
+    Named: { disabled?: boolean } & (
+      | WithItems<T>
+      | ({
+          selection?: HTMLElement | HTMLElement[];
+          activateItem?: (item: HTMLElement) => void;
+        } & (
+          | {
+              multi: true;
+              select?: (selection: HTMLElement[]) => void;
+            }
+          | {
+              multi?: false;
+              select?: (selection: HTMLElement) => void;
+            }
+        ))
+    );
   };
 }
 
@@ -218,15 +241,18 @@ export default class ListboxModifier<T> extends Modifier<ListboxSignature<T>> {
       });
     }
 
-    if (options.items && !(this.emitter instanceof IndexEmitStrategy)) {
+    if ((options as WithItems<T>).items && !(this.emitter instanceof IndexEmitStrategy)) {
       this.emitter = createIndexEmitter<T>(this.listbox, options);
-    } else if (!options.items && !(this.emitter instanceof ItemEmitStrategy)) {
+    } else if (!(options as WithItems<T>).items && !(this.emitter instanceof ItemEmitStrategy)) {
       this.emitter = createItemEmitter<T>(this.listbox, options);
     }
 
-    if (options.items && !isEqual(this.prevItems, options.items)) {
+    if (
+      (options as WithItems<T>).items &&
+      !isEqual(this.prevItems, (options as WithItems<T>).items)
+    ) {
       this.updater.updateItems();
-      this.prevItems = [...options.items];
+      this.prevItems = [...(options as WithItems<T>).items];
     }
 
     if (options.selection && !isEqual(asArray(this.prevSelection), asArray(options.selection))) {

@@ -67,10 +67,8 @@ export default class List<V> extends Component<ListSignature<V>> {
   @tracked items: V[] = new TrackedArray();
 
   registerItem = (item: V) => {
-    // this.items = [...this.items, item];
     next(() => {
       this.items.push(item);
-      // this.items = this.items;
     });
   };
 
@@ -93,6 +91,7 @@ export default class List<V> extends Component<ListSignature<V>> {
       class={{styles.list}}
       data-test-list
       ...attributes
+      {{!@glint-ignore}}
       {{listbox
         items=this.items
         selection=@value

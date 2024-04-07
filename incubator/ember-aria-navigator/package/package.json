@@ -13,7 +13,7 @@
   "scripts": {
     "build": "concurrently 'npm:build:*'",
     "build:js": "rollup --config",
-    "build:types": "tsc --emitDeclarationOnly --watch",
+    "build:types": "tsc --emitDeclarationOnly",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",

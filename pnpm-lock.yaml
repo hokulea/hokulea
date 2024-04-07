@@ -325,6 +325,9 @@ importers:
       '@types/css-modules':
         specifier: ^1.0.5
         version: 1.0.5
+      '@types/qunit':
+        specifier: ^2.19.10
+        version: 2.19.10
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.59.9
         version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.57.0)(typescript@5.4.2)

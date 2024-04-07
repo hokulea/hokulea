@@ -8,14 +8,16 @@ module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     trees: {
       app: sideWatch('app', {
-        watching: [
-          '../../aria-navigator/dist',
-        ]
+        watching: ['../../aria-navigator/dist', '../../ember-aria-navigator/package/dist']
       })
     },
 
     autoImport: {
       watchDependencies: Object.keys(packageJson.dependencies)
+    },
+
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true
     }
   });
 

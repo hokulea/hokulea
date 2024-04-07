@@ -1,33 +1,80 @@
-import { associateDestroyableChild, registerDestructor } from '@ember/destroyable';
-
 import {
-  DomObserverUpdateStrategy,
   IndexEmitStrategy,
   ItemEmitStrategy,
   Listbox,
-  NoopEmitStrategy,
   ReactiveUpdateStrategy
 } from 'aria-navigator';
 import Modifier from 'ember-modifier';
+import isEqual from 'lodash.isequal';
 
-import type Owner from '@ember/owner';
-import type { Control, EmitStrategy, UpdateStrategy } from 'aria-navigator';
-import type { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
+import type { EmitStrategy } from 'aria-navigator';
+import type { NamedArgs, PositionalArgs } from 'ember-modifier';
 
-export interface ListboxArgs<T = unknown> {
-  items?: T[];
-  selection?: T[];
-  activeItem?: T;
-  select?: (selection: number[] | T[]) => void;
-  activateItem?: (item: number | T) => void;
+function asArray(val: unknown | unknown[] | undefined) {
+  if (val === undefined) {
+    return [];
+  }
+
+  return Array.isArray(val) ? val : [val];
+}
+
+function createItemEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignature<T>>) {
+  return new ItemEmitStrategy(listbox, {
+    select: (selection: HTMLElement[]) => {
+      (options as NamedArgs<ListboxSignature<undefined>>).select?.(
+        options.multi ? selection : selection[0]
+      );
+    },
+
+    activateItem: (item: HTMLElement) => {
+      (options as NamedArgs<ListboxSignature<undefined>>).activateItem?.(item);
+    }
+  });
+}
+
+function createIndexEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignature<T>>) {
+  const findByIndex = (index: number) => {
+    return options.items?.[index] ?? undefined;
+  };
+
+  return new IndexEmitStrategy(listbox, {
+    select: (selection: number[]) => {
+      if (options.multi) {
+        const items = selection
+          .map((index) => findByIndex(index))
+          .filter((i) => i !== undefined) as T[];
+
+        (options.select as (selection: T[]) => void | undefined)?.(items);
+      } else {
+        const item = findByIndex(selection[0]);
+
+        if (item) {
+          (options.select as (selection: T) => void | undefined)?.(item);
+        }
+      }
+    },
+
+    activateItem: (index: number) => {
+      const item = findByIndex(index);
+
+      if (item) {
+        (options.activateItem as (item: T) => void | undefined)?.(item);
+      }
+    }
+  });
 }
 
 interface ListboxSignature<T> {
   Args: {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     Positional: [];
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    Named: ListboxArgs<T>;
+    Named: {
+      items: T[];
+      selection?: T | T[];
+      multi?: boolean;
+      disabled?: boolean;
+      select?: (selection: T | T[] | HTMLElement | HTMLElement[]) => void;
+      activateItem?: (item: T | HTMLElement) => void;
+    };
   };
 }
 
@@ -149,128 +196,72 @@ interface ListboxSignature<T> {
  * ```
  */
 export default class ListboxModifier<T> extends Modifier<ListboxSignature<T>> {
-  declare element: HTMLElement;
-  private declare options: NamedArgs<ListboxSignature<T>>;
-  private control?: Control;
+  private declare listbox: Listbox;
+  private declare updater: ReactiveUpdateStrategy;
+  private declare emitter: EmitStrategy;
 
-  private emitStrategy?: EmitStrategy;
-  private updateStrategy?: UpdateStrategy<T>;
-
-  constructor(owner: Owner, args: ArgsFor<ListboxSignature<T>>) {
-    super(owner, args);
-
-    registerDestructor(this, this.teardown);
-  }
+  private prevItems?: T[];
+  private prevSelection?: T | T[];
+  private prevMulti?: boolean;
+  private prevDisabled?: boolean;
 
   modify(
     element: Element,
     _: PositionalArgs<ListboxSignature<T>>,
     options: NamedArgs<ListboxSignature<T>>
   ) {
-    this.element = element as HTMLElement;
-    this.options = options;
+    if (!this.listbox) {
+      this.updater = new ReactiveUpdateStrategy();
 
-    // update
-    if (this.control) {
-      this.emitStrategy = this.createOrUpdateEmitStrategy(this.control);
-      this.updateStrategy = this.createOrUpdateUpdateStrategy(this.control);
-
-      (this.updateStrategy as UpdateStrategy<T>).updateArguments(this.options);
+      this.listbox = new Listbox(element as HTMLElement, {
+        updater: this.updater
+      });
     }
 
-    // setup
-    if (this.element) {
-      if (!this.element.hasAttribute('tabindex')) {
-        this.element.setAttribute('tabindex', '0');
+    if (options.items && !(this.emitter instanceof IndexEmitStrategy)) {
+      this.emitter = createIndexEmitter<T>(this.listbox, options);
+    } else if (!options.items && !(this.emitter instanceof ItemEmitStrategy)) {
+      this.emitter = createItemEmitter<T>(this.listbox, options);
+    }
+
+    if (options.items && !isEqual(this.prevItems, options.items)) {
+      this.updater.updateItems();
+      this.prevItems = [...options.items];
+    }
+
+    if (options.selection && !isEqual(asArray(this.prevSelection), asArray(options.selection))) {
+      this.updater.updateSelection();
+      this.prevSelection = [...asArray(options.selection)];
+    }
+
+    let optionsChanged = false;
+
+    if (this.prevMulti !== options.multi) {
+      if (options.multi) {
+        element.setAttribute('aria-multiselectable', 'true');
+      } else {
+        element.removeAttribute('aria-multiselectable');
       }
 
-      this.control = new Listbox(this.element);
-      this.emitStrategy = this.createOrUpdateEmitStrategy(this.control);
-      this.updateStrategy = this.createOrUpdateUpdateStrategy(this.control);
+      optionsChanged = true;
 
-      this.control.read();
+      this.prevMulti = options.multi;
     }
-  }
 
-  teardown() {
-    if (this.control) {
-      this.control.teardown();
-    }
-  }
-
-  // factories
-
-  private createOrUpdateUpdateStrategy(widget: Control): UpdateStrategy<T> {
-    const args = this.options;
-    const canUseDerievedStrategy =
-      [args.items, args.selection, args.activeItem].filter((argument) => argument !== undefined)
-        .length > 0;
-
-    if (canUseDerievedStrategy) {
-      if (this.updateStrategy instanceof ReactiveUpdateStrategy) {
-        return this.updateStrategy;
+    if (this.prevDisabled !== options.disabled) {
+      if (options.disabled) {
+        element.setAttribute('aria-disabled', 'true');
+      } else {
+        element.removeAttribute('aria-disabled');
       }
 
-      const strategy = new ReactiveUpdateStrategy<T>(widget);
+      optionsChanged = true;
 
-      associateDestroyableChild(this, strategy);
-
-      return strategy;
+      this.prevDisabled = options.disabled;
     }
 
-    if (this.updateStrategy instanceof DomObserverUpdateStrategy) {
-      return this.updateStrategy;
+    if (optionsChanged) {
+      this.updater.updateOptions();
     }
-
-    const strategy = new DomObserverUpdateStrategy<T>(widget);
-
-    associateDestroyableChild(this, strategy);
-
-    return strategy;
-  }
-
-  private createOrUpdateEmitStrategy(control: Control) {
-    const args = this.options;
-    const canUseIndexStrategy = args.select !== undefined && args.activateItem !== undefined;
-
-    const canUseItemStrategy = canUseIndexStrategy && args.items !== undefined;
-
-    if (canUseItemStrategy) {
-      if (this.emitStrategy instanceof ItemEmitStrategy) {
-        this.emitStrategy.updateArguments(this.options as ListboxArgs<unknown>);
-
-        return this.emitStrategy;
-      }
-
-      const strategy = new ItemEmitStrategy(this.options as ListboxArgs<unknown>, control);
-
-      associateDestroyableChild(this, strategy);
-
-      return strategy;
-    }
-
-    if (canUseIndexStrategy) {
-      if (this.emitStrategy instanceof IndexEmitStrategy) {
-        this.emitStrategy.updateArguments(this.options as ListboxArgs<unknown>);
-
-        return this.emitStrategy;
-      }
-
-      const strategy = new IndexEmitStrategy(this.options as ListboxArgs<unknown>, control);
-
-      associateDestroyableChild(this, strategy);
-
-      return strategy;
-    }
-
-    if (this.emitStrategy instanceof NoopEmitStrategy) {
-      return this.emitStrategy;
-    }
-
-    const strategy = new NoopEmitStrategy(args as ListboxArgs<unknown>, control);
-
-    associateDestroyableChild(this, strategy);
-
-    return strategy;
   }
 }

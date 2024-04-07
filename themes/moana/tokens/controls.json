@@ -168,27 +168,27 @@
         "$type": "color"
       }
     },
-    "selected": {
-      "background": {
-        "$value": [
-          {
-            "value": "#99e0ff",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "#00364d",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
-        "$description": "",
-        "$type": "color"
-      }
-    },
     "focus": {
+      "selected": {
+        "background": {
+          "$value": [
+            {
+              "value": "#99e0ff",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#00364d",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        }
+      },
       "stroke-color": {
         "$value": [
           {
@@ -247,6 +247,26 @@
           },
           {
             "value": "#054661",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "selected": {
+      "background": {
+        "$value": [
+          {
+            "value": "#f1f4f5",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#1d2427",
             "features": {
               "color-scheme": "dark"
             }

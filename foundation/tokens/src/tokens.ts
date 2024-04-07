@@ -5523,8 +5523,8 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'control-selected-background': {
-    name: 'control-selected-background',
+  'control-focus-selected-background': {
+    name: 'control-focus-selected-background',
     description: '',
     value: [
       {
@@ -5618,6 +5618,29 @@ export const tokens: Tokens = {
       },
       {
         value: '#054661',
+        features: {
+          'color-scheme': 'dark'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+        isSource: true
+      }
+    ],
+    type: 'color'
+  },
+  'control-selected-background': {
+    name: 'control-selected-background',
+    description: '',
+    value: [
+      {
+        value: '#f1f4f5',
+        features: {
+          'color-scheme': 'light'
+        },
+        filePath: 'node_modules/@hokulea/theme-moana/tokens/controls.json',
+        isSource: true
+      },
+      {
+        value: '#1d2427',
         features: {
           'color-scheme': 'dark'
         },

@@ -20,7 +20,7 @@
     "build": "pnpm build:sd && pnpm build:theme",
     "build:sd": "style-dictionary build",
     "build:theme": "theemo build",
-    "magic": "npm-run-all sync build generate",
+    "magic": "pnpm sync && pnpm build",
     "clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {

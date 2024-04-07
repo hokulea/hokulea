@@ -43,8 +43,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.7.0",
-    "@gossi/config-prettier": "^0.7.0",
+    "@gossi/config-eslint": "^0.8.0",
+    "@gossi/config-prettier": "^0.8.0",
     "@hokulea/core": "workspace:*",
     "@hokulea/theme-moana": "workspace:*",
     "@swc/cli": "^0.3.10",

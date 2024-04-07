@@ -28,7 +28,7 @@ function parseArgs(args) {
 export const Showcase = {
   render: (args) => ({
     template: hbs`
-      <List @update={{this.update}} as |L|>
+      <List @update={{this.update}} as |l|>
         {{#each (array 'Apple' 'Banana' 'Pineapple') as |i|}}
           <l.Option @value={{i}}>{{i}}</l.Option>
         {{/each}}

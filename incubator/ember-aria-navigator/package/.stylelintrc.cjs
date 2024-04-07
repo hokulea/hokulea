@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('@hokulea/config-stylelint');
+module.exports = require('@gossi/config-stylelint');

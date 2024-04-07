@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@hokulea/config-targets": "*",
-    "@gossi/config-stylelint": "^0.7.0"
+    "@gossi/config-stylelint": "^0.8.0"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",

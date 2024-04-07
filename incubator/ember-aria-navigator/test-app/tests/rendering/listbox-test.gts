@@ -1,4 +1,5 @@
-import { render } from '@ember/test-helpers';
+import { tracked } from '@glimmer/tracking';
+import { render, rerender } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
@@ -14,9 +15,6 @@ import {
 } from 'ember-aria-navigator/test-support';
 
 import type { TestContext as BaseTestContext } from '@ember/test-helpers';
-import { setupOnerror } from '@ember/test-helpers';
-import { rerender } from '@ember/test-helpers';
-import { tracked } from '@glimmer/tracking';
 
 interface TestContext extends BaseTestContext {
   options: string[];
@@ -30,7 +28,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
   test('tabindex attribute is set', async function (this: TestContext, assert) {
     const options = ['apple', 'banana', 'pineapple'];
 
-    await render(
+    await render([
       <template>
         <div role='listbox' {{listbox items=options}}>
           {{#each options as |option|}}
@@ -38,18 +36,18 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
           {{/each}}
         </div>
       </template>
-    );
+    ]);
 
     assert.dom('[role="listbox"]').hasAttribute('tabindex', '0');
   });
 
   test('disabling sets tabindex to -1', async function (this: TestContext, assert) {
     const options = ['apple', 'banana', 'pineapple'];
-    const context = new class {
+    const context = new (class {
       @tracked disabled = false;
-    };
+    })();
 
-    await render(
+    await render([
       <template>
         <div role='listbox' {{listbox items=options disabled=context.disabled}}>
           {{#each options as |option|}}
@@ -57,7 +55,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
           {{/each}}
         </div>
       </template>
-    );
+    ]);
 
     assert.dom('[role="listbox"]').hasAttribute('tabindex', '0');
 
@@ -72,7 +70,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
     test('it supports keyboard navigation', async function (this: TestContext, assert) {
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options}}>
             {{#each options as |option|}}
@@ -80,7 +78,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await testListKeyboardNavigation(assert);
     });
@@ -88,7 +86,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
     test('it supports mouse navigation', async function (this: TestContext, assert) {
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options}}>
             {{#each options as |option|}}
@@ -96,7 +94,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await testListPointerNavigation(assert);
     });
@@ -107,7 +105,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
       const selectSpy = sinon.spy();
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox select=selectSpy}} data-test-listbox>
             {{#each options as |option|}}
@@ -115,7 +113,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await selectListbox('[data-test-listbox]', 'pineapple');
 
@@ -132,7 +130,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
         { id: 3, value: 'pineapple' }
       ];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options select=selectSpy}} data-test-listbox>
             {{#each options as |option|}}
@@ -140,7 +138,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await selectListbox('[data-test-listbox]', 'banana');
 
@@ -150,7 +148,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
     test('it supports keyboard selection', async function (this: TestContext, assert) {
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options}}>
             {{#each options as |option|}}
@@ -158,7 +156,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await testListKeyboardSelection(assert);
     });
@@ -166,7 +164,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
     test('it supports mouse selection', async function (this: TestContext, assert) {
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options}}>
             {{#each options as |option|}}
@@ -174,7 +172,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await testListPointerSelection(assert);
     });
@@ -185,7 +183,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
       const selectSpy = sinon.spy();
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox select=selectSpy multi=true}} data-test-listbox>
             {{#each options as |option|}}
@@ -193,7 +191,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       const apple = document.querySelector('[role="option"]:first-child') as HTMLElement;
       const banana = document.querySelector('[role="option"]:nth-child(2)') as HTMLElement;
@@ -217,15 +215,19 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
         { id: 3, value: 'pineapple' }
       ];
 
-      await render(
+      await render([
         <template>
-          <div role='listbox' {{listbox items=options select=selectSpy multi=true}} data-test-listbox>
+          <div
+            role='listbox'
+            {{listbox items=options select=selectSpy multi=true}}
+            data-test-listbox
+          >
             {{#each options as |option|}}
               <p role='option'>{{option.value}}</p>
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await selectListbox('[data-test-listbox]', 'banana');
       assert.ok(selectSpy.getCall(0).calledWith([options[1]]));
@@ -240,7 +242,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
     test('it supports keyboard selection', async function (this: TestContext, assert) {
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options multi=true}}>
             {{#each options as |option|}}
@@ -248,7 +250,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await testListKeyboardSelection(assert);
     });
@@ -256,7 +258,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
     test('it supports mouse selection', async function (this: TestContext, assert) {
       const options = ['apple', 'banana', 'pineapple'];
 
-      await render(
+      await render([
         <template>
           <div role='listbox' {{listbox items=options multi=true}}>
             {{#each options as |option|}}
@@ -264,7 +266,7 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
             {{/each}}
           </div>
         </template>
-      );
+      ]);
 
       await testListPointerSelection(assert);
     });

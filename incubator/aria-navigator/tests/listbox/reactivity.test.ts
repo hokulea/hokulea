@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { IndexEmitStrategy, ItemEmitStrategy, Listbox, ReactiveUpdateStrategy } from '../../src';
-import { appendItemToList } from '../components/list';
+import { appendItemToList, createListElement } from '../components/list';
 import { createListWithFruits } from './-shared';
 
 describe('Listbox', () => {
@@ -114,14 +114,46 @@ describe('Listbox', () => {
         expect(listbox.selection.length).toBe(0);
       });
 
-      it('reads options', async () => {
-        expect(listbox.options.multiple).toBeFalsy();
+      describe('read options', () => {
+        it('detects multi-select', async () => {
+          expect(listbox.options.multiple).toBeFalsy();
 
-        list.setAttribute('aria-multiselectable', 'true');
+          list.setAttribute('aria-multiselectable', 'true');
 
-        await vi.waitUntil(() => list.getAttribute('aria-multiselectable') === 'true');
+          await vi.waitUntil(() => list.getAttribute('aria-multiselectable') === 'true');
 
-        expect(listbox.options.multiple).toBeTruthy();
+          expect(listbox.options.multiple).toBeTruthy();
+        });
+
+        it('detects single-select', async () => {
+          expect(listbox.options.multiple).toBeTruthy();
+
+          list.removeAttribute('aria-multiselectable');
+
+          await vi.waitUntil(() => list.getAttribute('aria-multiselectable') === null);
+
+          expect(listbox.options.multiple).toBeFalsy();
+        });
+
+        it('sets tabindex to -1 when the aria-disabled is `true`', async () => {
+          expect(list.getAttribute('tabindex')).toBe('0');
+
+          list.setAttribute('aria-disabled', 'true');
+
+          await vi.waitUntil(() => list.getAttribute('aria-disabled') === 'true');
+
+          expect(list.getAttribute('tabindex')).toBe('-1');
+        });
+
+        it('re-sets tabindex to 0 when the aria-disabled is removed', async () => {
+          expect(list.getAttribute('tabindex')).toBe('-1');
+
+          list.removeAttribute('aria-disabled');
+
+          await vi.waitUntil(() => list.getAttribute('aria-disabled') === null);
+
+          expect(list.getAttribute('tabindex')).toBe('0');
+        });
       });
     });
 
@@ -155,14 +187,46 @@ describe('Listbox', () => {
         expect(listbox.selection.length).toBe(1);
       });
 
-      it('reads options', () => {
-        expect(listbox.options.multiple).toBeFalsy();
+      describe('read options', () => {
+        it('detects multi-select', async () => {
+          expect(listbox.options.multiple).toBeFalsy();
 
-        list.setAttribute('aria-multiselectable', 'true');
+          list.setAttribute('aria-multiselectable', 'true');
 
-        updater.updateOptions();
+          updater.updateOptions();
 
-        expect(listbox.options.multiple).toBeTruthy();
+          expect(listbox.options.multiple).toBeTruthy();
+        });
+
+        it('detects single-select', async () => {
+          expect(listbox.options.multiple).toBeTruthy();
+
+          list.removeAttribute('aria-multiselectable');
+
+          updater.updateOptions();
+
+          expect(listbox.options.multiple).toBeFalsy();
+        });
+
+        it('sets tabindex to -1 when the aria-disabled is `true`', async () => {
+          expect(list.getAttribute('tabindex')).toBe('0');
+
+          list.setAttribute('aria-disabled', 'true');
+
+          updater.updateOptions();
+
+          expect(list.getAttribute('tabindex')).toBe('-1');
+        });
+
+        it('re-sets tabindex to 0 when the aria-disabled is removed', async () => {
+          expect(list.getAttribute('tabindex')).toBe('-1');
+
+          list.removeAttribute('aria-disabled');
+
+          updater.updateOptions();
+
+          expect(list.getAttribute('tabindex')).toBe('0');
+        });
       });
     });
   });

@@ -5,7 +5,7 @@ import type { Item } from '../controls/control';
 import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
 
 export class SelectionStrategy implements NavigationPattern {
-  eventListeners: EventNames[] = ['focusin', 'keydown', 'keyup', 'pointerup'];
+  eventListeners: EventNames[] = ['focusin', 'keydown', 'keyup', 'pointerup', 'change'];
 
   #selection: Item[] = [];
 
@@ -42,13 +42,21 @@ export class SelectionStrategy implements NavigationPattern {
     }
 
     // mouse
-    else if (event instanceof PointerEvent && bag.item) {
-      this.handlePointer(event, bag.item);
+    else if (event.type === 'pointerup' && bag.item) {
+      this.handlePointer(event as PointerEvent, bag.item);
     }
 
     // keyboard
     else if (event instanceof KeyboardEvent) {
       this.handleKeyboard(bag);
+    }
+
+    // this is usually triggered when testing
+    // ie. a couple of options are _marked_ as selected
+    // then the `change` event is triggered
+    // to mimic one "user action" results in one event emitted
+    else if (event.type === 'change') {
+      this.handleChange();
     }
 
     return bag;
@@ -68,6 +76,12 @@ export class SelectionStrategy implements NavigationPattern {
     this.#selection = [
       ...this.control.element.querySelectorAll('[aria-selected="true"]')
     ] as HTMLElement[];
+  }
+
+  private handleChange() {
+    this.readSelection();
+
+    this.control.emitter?.selected(this.#selection);
   }
 
   private handleFocus() {

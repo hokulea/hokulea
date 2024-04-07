@@ -13,10 +13,11 @@ export class DomObserverUpdateStrategy implements UpdateStrategy {
       this.control.readItems();
     }
 
+    const optionAttributes = [...this.control.optionAttributes, 'aria-disabled'];
     const changedOptions =
       changes.length === 1 &&
       changes[0].type === 'attributes' &&
-      this.control.optionAttributes.includes(changes[0].attributeName as string);
+      optionAttributes.includes(changes[0].attributeName as string);
 
     if (changedOptions) {
       this.control?.readOptions();

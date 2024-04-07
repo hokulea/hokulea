@@ -55,6 +55,8 @@ export class Listbox extends Control {
     ]);
 
     // setup
+    element.role = 'listbox';
+
     if (!element.hasAttribute('tabindex')) {
       element.setAttribute('tabindex', '0');
     }
@@ -74,6 +76,17 @@ export class Listbox extends Control {
 
   readSelection(): void {
     this.#selectionStrategy.readSelection();
+  }
+
+  readOptions(): void {
+    super.readOptions();
+
+    const disabled =
+      (this.element?.hasAttribute('aria-disabled') &&
+        this.element.getAttribute('aria-disabled') === 'true') ||
+      false;
+
+    this.element.setAttribute('tabindex', disabled ? '-1' : '0');
   }
 
   private ensureIds() {

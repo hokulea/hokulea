@@ -12,6 +12,14 @@ describe('Listbox', () => {
   });
 
   describe('setup', () => {
+    it('has listbox role', () => {
+      const list = createListElement(document.body);
+
+      new Listbox(list);
+
+      expect(list.getAttribute('role')).toBe('listbox');
+    });
+
     it('sets tabindex', () => {
       const list = createListElement(document.body);
 

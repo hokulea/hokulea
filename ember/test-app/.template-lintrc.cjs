@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('@gossi/config-template-lint');
+const config = require('@hokulea/config-template-lint');
 
 module.exports = {
   ...config,

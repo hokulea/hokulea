@@ -24,6 +24,7 @@ export class AriaRoute extends Route<{}> {
   @tracked listItems = FRUITS;
 
   <template>
+    {{! template-lint-disable no-forbidden-elements }}
     <style>
       .with-controls { display: grid; grid-template-columns: auto 45%; gap: 1rem; } .controls
       {display: flex; flex-direction: column; gap: var(--spacing-container-2);} .inline-form {
@@ -51,6 +52,7 @@ export class AriaRoute extends Route<{}> {
             <Button @push={{set this 'listItems' POKEMON}} @spacing='-1'>Pokemon</Button>
           </div>
 
+          {{! template-lint-disable no-unnecessary-curly-parens }}
           <Form
             @data={{hash item=''}}
             @submit={{(fn appendItem this.listItems)}}

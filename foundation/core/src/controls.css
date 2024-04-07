@@ -165,3 +165,55 @@
 .input-builder[data-invalid="false"] {
   border-color: var(--indicator-success-supreme-border);
 } */
+
+.list {
+  all: unset;
+
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-block: var(--spacing-container-3);
+
+  background-color: var(--control-background);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
+
+  [role="option"] {
+    display: inline-flex;
+    gap: var(--spacing-primitive-3);
+
+    padding-block: var(--spacing-primitive-4);
+    padding-inline: var(--spacing-primitive-3);
+
+    color: var(--control-text);
+
+    &[aria-selected="true"] {
+      background-color: var(--control-selected-background);
+    }
+  }
+
+  &:focus {
+    [role="option"] {
+      &[aria-selected="true"] {
+        background-color: var(--control-focus-selected-background);
+      }
+
+      &[aria-disabled="disabled"] {
+        color: var(--control-disabled-text);
+      }
+    }
+  }
+
+  &[aria-multiselectable="true"]:focus {
+    [role="option"][aria-current="true"] {
+      outline: var(--control-focus-stroke);
+      outline-offset: calc(var(--control-focus-stroke-width) * -1);
+    }
+  }
+
+  :is(&:focus, &) [role="option"]:hover {
+    background-color: var(--control-hover-background);
+  }
+}

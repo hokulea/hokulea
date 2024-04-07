@@ -12,6 +12,7 @@ const data = {
   receiptNumber: '',
   price: '',
   fruit: '',
+  pokemon: '',
   graduation: '',
   pets: [],
   note: '',
@@ -52,6 +53,12 @@ export class FormsRoute extends Route<{}> {
         <s.Option @value="Banana" />
         <s.Option @value="Pear">🍐 Pear</s.Option>
       </f.Select>
+
+      <f.List @name="pokemon" @label="Starter Pokemon" as |l|>
+        <l.Option @value="Bulbasaur">🟢 Bulbasaur</l.Option>
+        <l.Option @value="Charmander">🔴 Charmander</l.Option>
+        <l.Option @value="Squirtle">🔵 Squirtle</l.Option>
+      </f.List>
 
       <f.SingularChoice @label="Abschluss" @name="graduation" as |r|>
         <r.Option @value="doctor" @label="Doktor" required />

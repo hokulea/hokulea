@@ -76,6 +76,7 @@
     "ember-polaris-routing": "^0.3.0",
     "ember-qunit": "^8.0.2",
     "ember-resolver": "^11.0.1",
+    "ember-set-helper": "^3.0.1",
     "ember-sinon-qunit": "^7.4.0",
     "ember-source": "~5.7.0",
     "ember-source-channel-url": "^3.0.0",
@@ -86,12 +87,14 @@
     "ember-svg-jar": "^2.4.8",
     "fractal-page-object": "^0.5.0",
     "eslint": "^8.56.0",
+    "glimmer-scoped-css": "^0.4.1",
     "loader.js": "^4.7.0",
     "prettier": "^3.1.1",
     "qunit": "^2.20.0",
     "qunit-dom": "^3.0.0",
     "sinon": "^17.0.1",
     "stylelint": "^16.2.1",
+    "tracked-built-ins": "^3.3.0",
     "typescript": "~5.3.3",
     "webpack": "^5.90.1"
   },
@@ -100,6 +103,11 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/setup-ast-transforms"
+    ]
   },
   "volta": {
     "extends": "../../package.json"

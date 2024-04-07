@@ -22,6 +22,8 @@ import type IconButton from './components/icon-button';
 // @ts-ignore cannot import gts
 import type InputBuilder from './components/input-builder';
 // @ts-ignore cannot import gts
+import type List from './components/list';
+// @ts-ignore cannot import gts
 import type NumberInput from './components/number-input';
 // @ts-ignore cannot import gts
 import type PasswordInput from './components/password-input';
@@ -48,6 +50,7 @@ export default interface HokuleaRegistry {
   EmailInput: typeof EmailInput;
   Icon: typeof Icon;
   IconButton: typeof IconButton;
+  List: typeof List;
   NumberInput: typeof NumberInput;
   PasswordInput: typeof PasswordInput;
   PhoneInput: typeof PhoneInput;

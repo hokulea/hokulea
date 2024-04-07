@@ -31,8 +31,10 @@ function noop() {
 export class ControlsRoute extends Route<{}> {
   <template>
     <Section @title='List'>
-      <List @items={{array 'Banana' 'Apple' 'Pear'}} as |i|>
-        {{i}}
+      <List as |l|>
+        {{#each (array 'Banana' 'Apple' 'Pear') as |i|}}
+          <l.Option @value={{i}}>{{i}}</l.Option>
+        {{/each}}
       </List>
     </Section>
 

@@ -1,26 +1,44 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { registerDestructor } from '@ember/destroyable';
+import { hash } from '@ember/helper';
+import { next } from '@ember/runloop';
 
-// import { hash } from '@ember/helper';
 import { listbox } from 'ember-aria-navigator';
+import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
 
-// import type { WithBoundArgs } from '@glint/template';
+import type Owner from '@ember/owner';
+import type { WithBoundArgs } from '@glint/template';
 
 export interface OptionSignature<V> {
   Element: HTMLOptionElement;
   Args: {
     value: V;
+    isSelected: (option: V) => boolean;
+    registerItem: (item: V) => void;
+    unregisterItem: (item: V) => void;
   };
   Blocks: {
-    default: [value: V];
+    default: [];
   };
 }
 
 class Option<V> extends Component<OptionSignature<V>> {
+  constructor(owner: Owner, args: OptionSignature<V>['Args']) {
+    super(owner, args);
+
+    args.registerItem(args.value);
+
+    registerDestructor(this, () => {
+      args.unregisterItem(args.value);
+    });
+  }
+
   <template>
-    <span role='option'>
-      {{yield @value}}
+    <span role='option' aria-selected={{if (@isSelected @value) 'true'}}>
+      {{yield}}
     </span>
   </template>
 }
@@ -28,40 +46,72 @@ class Option<V> extends Component<OptionSignature<V>> {
 export interface ListSignature<V> {
   Element: HTMLDivElement;
   Args: {
-    items: V[];
+    multiple?: boolean;
+    disabled?: boolean;
     value?: V | V[];
     update?: (value: V | V[]) => void;
-    disabled?: boolean;
+    activateItem?: (value: V) => void;
   };
   Blocks: {
-    default: [item: V];
+    default: [
+      {
+        Option: WithBoundArgs<typeof Option<V>, 'isSelected' | 'registerItem' | 'unregisterItem'>;
+      }
+    ];
   };
 }
 
 export default class List<V> extends Component<ListSignature<V>> {
   Option = Option<V>;
-  // isSelected = (option: V) => {
-  //   if (Array.isArray(this.args.value)) {
-  //     return this.args.value.includes(option);
-  //   }
 
-  //   return String(option) === String(this.args.value);
-  // };
+  @tracked items: V[] = new TrackedArray();
 
-  // select = (event: Event) => {
-  //   const select = event.target as HTMLSelectElement;
-  //   const selection = Array.of(...select.selectedOptions).map((option) => option.value);
-  //   const value = selection.length === 1 ? selection[0] : selection;
+  registerItem = (item: V) => {
+    // this.items = [...this.items, item];
+    next(() => {
+      this.items.push(item);
+      // this.items = this.items;
+    });
+  };
 
-  //   this.args.update?.(value);
-  // };
+  unregisterItem = (item: V) => {
+    next(() => {
+      this.items.splice(this.items.indexOf(item), 1);
+    });
+  };
+
+  isSelected = (option: V) => {
+    if (Array.isArray(this.args.value)) {
+      return this.args.value.includes(option);
+    }
+
+    return this.args.value === option;
+  };
 
   <template>
-    <div class={{styles.list}} disabled={{@disabled}} data-test-select
-    ...attributes {{listbox}}>
-      {{#each @items as |item|}}
-        <Option @value={{item}}>{{yield item}}</Option>
-      {{/each}}
+    <div
+      class={{styles.list}}
+      data-test-list
+      ...attributes
+      {{listbox
+        items=this.items
+        selection=@value
+        multi=@multiple
+        disabled=@disabled
+        select=@update
+        activateItem=@activateItem
+      }}
+    >
+      {{yield
+        (hash
+          Option=(component
+            this.Option
+            isSelected=this.isSelected
+            registerItem=this.registerItem
+            unregisterItem=this.unregisterItem
+          )
+        )
+      }}
     </div>
   </template>
 }

@@ -17,6 +17,7 @@ import CheckboxField from '../-private/form/components/fields/checkbox';
 import CurrencyField from '../-private/form/components/fields/currency';
 import DateField from '../-private/form/components/fields/date';
 import EmailField from '../-private/form/components/fields/email';
+import ListField from '../-private/form/components/fields/list';
 import MultipleChoiceField from '../-private/form/components/fields/multiple-choice';
 import NumberField from '../-private/form/components/fields/number';
 import PasswordField from '../-private/form/components/fields/password';
@@ -103,6 +104,7 @@ export interface FormSignature<DATA extends UserData, SUBMISSION_VALUE> {
         Currency: WithBoundArgs<typeof CurrencyField<DATA>, 'Field'>;
         Date: WithBoundArgs<typeof DateField<DATA>, 'Field'>;
         Email: WithBoundArgs<typeof EmailField<DATA>, 'Field'>;
+        List: WithBoundArgs<typeof ListField<DATA>, 'Field'>;
         MultipleChoice: WithBoundArgs<typeof MultipleChoiceField<DATA>, 'Field'>;
         Number: WithBoundArgs<typeof NumberField<DATA>, 'Field'>;
         Password: WithBoundArgs<typeof PasswordField<DATA>, 'Field'>;
@@ -211,6 +213,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
   CurrencyField = CurrencyField<DATA>;
   DateField = DateField<DATA>;
   EmailField = EmailField<DATA>;
+  ListField = ListField<DATA>;
   MultipleChoiceField = MultipleChoiceField<DATA>;
   NumberField = NumberField<DATA>;
   PasswordField = PasswordField<DATA>;
@@ -618,6 +621,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
             Currency=(component this.CurrencyField Field=BoundField)
             Date=(component this.DateField Field=BoundField)
             Email=(component this.EmailField Field=BoundField)
+            List=(component this.ListField Field=BoundField)
             MultipleChoice=(component this.MultipleChoiceField Field=BoundField)
             Number=(component this.NumberField Field=BoundField)
             Password=(component this.PasswordField Field=BoundField)

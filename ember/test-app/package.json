@@ -89,7 +89,7 @@
     "eslint": "^8.56.0",
     "glimmer-scoped-css": "^0.4.1",
     "loader.js": "^4.7.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.5",
     "qunit": "^2.20.0",
     "qunit-dom": "^3.0.0",
     "sinon": "^17.0.1",

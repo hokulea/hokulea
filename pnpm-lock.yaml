@@ -28,7 +28,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       typescript:
         specifier: ~5.3.3
@@ -65,7 +65,7 @@ importers:
         specifier: ^8.4.33
         version: 8.4.35
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/prettier:
@@ -78,7 +78,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/style-dictionary:
@@ -93,7 +93,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/stylelint:
@@ -115,7 +115,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       stylelint:
         specifier: ^16.1.0
@@ -140,7 +140,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/template-lint:
@@ -162,7 +162,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/testem:
@@ -177,7 +177,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/theemo:
@@ -192,7 +192,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   configs/typescript:
@@ -211,7 +211,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
 
   ember/package:
@@ -380,7 +380,7 @@ importers:
         specifier: ^8.4.33
         version: 8.4.35
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       rollup:
         specifier: ^4.9.5
@@ -588,7 +588,7 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       qunit:
         specifier: ^2.20.0
@@ -910,7 +910,7 @@ importers:
         specifier: ^8.4.33
         version: 8.4.35
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       rollup:
         specifier: ^4.9.4
@@ -1301,7 +1301,7 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0
       prettier:
-        specifier: ^3.1.1
+        specifier: ^3.2.5
         version: 3.2.5
       qunit:
         specifier: ^2.20.1

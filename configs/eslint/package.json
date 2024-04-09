@@ -6,7 +6,7 @@
     "lint:js": "eslint ."
   },
   "dependencies": {
-    "@gossi/config-eslint": "^0.8.0"
+    "@gossi/config-eslint": "^0.9.0"
   },
   "peerDependencies": {
     "@babel/core": "^7.23.7",

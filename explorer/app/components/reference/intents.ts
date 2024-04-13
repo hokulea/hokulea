@@ -27,5 +27,5 @@ export default class IntentsComponent extends Component {
     return colors;
   }
 
-  compileName = helper(([prop]: [string]) => `--intent-${this.intent}-${this.importance}-${prop}`);
+  compileName = helper(([prop]) => `--intent-${this.intent}-${this.importance}-${prop}`);
 }

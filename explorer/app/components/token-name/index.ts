@@ -1,19 +1,19 @@
 import Component from '@glimmer/component';
 
-import { findDescription, findValue } from './token';
+import { findDescription, findToken } from '../token/token';
 
 export interface TokenArgs {
   name: string;
 }
-
-const BODY_STYLES = window.getComputedStyle(document.body);
 
 export default class TokenComponent extends Component<TokenArgs> {
   get description(): string | undefined {
     return findDescription(this.args.name);
   }
 
-  get value(): string {
-    return BODY_STYLES.getPropertyValue(this.args.name) ?? findValue(this.args.name);
+  get figmaName(): string | undefined {
+    const token = findToken(this.args.name);
+
+    return token?.figmaName;
   }
 }

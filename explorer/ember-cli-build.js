@@ -30,7 +30,7 @@ module.exports = function (defaults) {
     ...HOKULEA_CONFIG,
 
     svgJar: {
-      sourceDirs: ['public/icons', HOKULEA_ICON_PATH]
+      sourceDirs: ['public/logos', HOKULEA_ICON_PATH]
     },
 
     autoImport: {

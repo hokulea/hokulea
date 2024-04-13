@@ -43,28 +43,4 @@ export default class PageComponent extends Component<PageSignature> {
       }
     }
   });
-
-  <template>
-    <div class={{styles.layout}}>
-      <article {{this.replaceLinks}} class={{styles.article}}>
-        <header class={{styles.header}}>
-          <h1>
-            {{@title}}
-          </h1>
-
-          {{#if this.toc}}
-            <nav class={{styles.toc}}>
-              {{!-- <a href="#{{@slug}}" style="padding-left: var(--s1)">{{@title}}</a> --}}
-              {{#each this.toc as |heading|}}
-                <a href='#{{heading.slug}}' class={{this.getClassForLevel heading.lvl}}>
-                  {{heading.content}}
-                </a>
-              {{/each}}
-            </nav>
-          {{/if}}
-        </header>
-        {{yield}}
-      </article>
-    </div>
-  </template>
 }

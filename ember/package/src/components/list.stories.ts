@@ -28,7 +28,7 @@ function parseArgs(args) {
 export const Showcase = {
   render: (args) => ({
     template: hbs`
-      <List @update={{this.update}} as |l|>
+      <List @update={{this.update}} @disabled={{this.disabled}} as |l|>
         {{#each (array 'Apple' 'Banana' 'Pineapple') as |i|}}
           <l.Option @value={{i}}>{{i}}</l.Option>
         {{/each}}
@@ -44,9 +44,9 @@ export const Showcase = {
     //   name: 'Value',
     //   control: 'text'
     // },
-    // disabled: {
-    //   name: 'Disabled',
-    //   control: 'boolean'
-    // }
+    disabled: {
+      name: 'Disabled',
+      control: 'boolean'
+    }
   }
 };

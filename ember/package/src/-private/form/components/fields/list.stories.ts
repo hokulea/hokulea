@@ -5,7 +5,7 @@ import { baseArgTypes, parseArgs } from './stories-utils';
 import type { FieldArgs } from './stories-utils';
 
 export default {
-  title: 'Components/Form/Select',
+  title: 'Components/Form/List',
   component: '',
   parameters: {
     options: {
@@ -19,19 +19,18 @@ const Template = (args: FieldArgs) => {
   return {
     template: hbs`
       <Form @data={{hash fruit=undefined}} @submit={{this.submit}} as |f|>
-        <f.Select
+        <f.List
           @name="fruit"
           @label={{this.label}}
           @description={{this.description}}
           @disabled={{this.disabled}}
           placeholder={{this.placeholder}}
           required={{this.required}}
-        as |s|>
-          <s.Option @value="" />
-          <s.Option @value="Apple" />
-          <s.Option @value="Banana" />
-          <s.Option @value="Pear">🍐 Pear</s.Option>
-        </f.Select>
+        as |l|>
+          <l.Option @value="Apple">Apple</l.Option>
+          <l.Option @value="Banana">Banana</l.Option>
+          <l.Option @value="Pear">🍐 Pear</l.Option>
+        </f.List>
         <f.Submit>Send</f.Submit>
       </Form>
     `,
@@ -53,11 +52,11 @@ export const Description = {
     return {
       template: hbs`
         <Form @data={{hash fruit=''}} as |f|>
-          <f.Select @name="fruit" @label="Favorite Fruit" @description="What's most delicious to you?" as |s|>
-            <s.Option @value="Apple" />
-            <s.Option @value="Banana" />
-            <s.Option @value="Pear">🍐 Pear</s.Option>
-          </f.Select>
+          <f.List @name="fruit" @label="Favorite Fruit" @description="What's most delicious to you?" as |l|>
+            <l.Option @value="Apple">Apple</l.Option>
+            <l.Option @value="Banana">Banana</l.Option>
+            <l.Option @value="Pear">🍐 Pear</l.Option>
+          </f.List>
         </Form>
       `
     };
@@ -75,11 +74,11 @@ export const Disabled = {
     return {
       template: hbs`
         <Form @data={{hash fruit=''}} as |f|>
-          <f.Select @name="fruit" @label="Favorite Fruit" @disabled={{true}} as |s|>
-            <s.Option @value="Apple" />
-            <s.Option @value="Banana" />
-            <s.Option @value="Pear">🍐 Pear</s.Option>
-          </f.Select>
+          <f.List @name="fruit" @label="Favorite Fruit" @disabled={{true}} as |l|>
+            <l.Option @value="Apple">Apple</l.Option>
+            <l.Option @value="Banana">Banana</l.Option>
+            <l.Option @value="Pear">🍐 Pear</l.Option>
+          </f.List>
         </Form>
       `
     };

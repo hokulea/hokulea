@@ -148,6 +148,7 @@
       "./components/icon-button.js": "./dist/_app_/components/icon-button.js",
       "./components/icon.js": "./dist/_app_/components/icon.js",
       "./components/input-builder.js": "./dist/_app_/components/input-builder.js",
+      "./components/list.js": "./dist/_app_/components/list.js",
       "./components/number-input.js": "./dist/_app_/components/number-input.js",
       "./components/password-input.js": "./dist/_app_/components/password-input.js",
       "./components/phone-input.js": "./dist/_app_/components/phone-input.js",

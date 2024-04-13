@@ -1,42 +1,44 @@
-// @ts-expect-error importing a gts file is working
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment */
+
+// @ts-ignore
 import type Box from './components/box';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Button from './components/button';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Card from './components/card';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Checkbox from './components/checkbox';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type CurrencyInput from './components/currency-input';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type DateInput from './components/date-input';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type EmailInput from './components/email-input';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Form from './components/form';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Icon from './components/icon';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type IconButton from './components/icon-button';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type InputBuilder from './components/input-builder';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type List from './components/list';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type NumberInput from './components/number-input';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type PasswordInput from './components/password-input';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type PhoneInput from './components/phone-input';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Radio from './components/radio';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Section from './components/section';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type Select from './components/select';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type TextArea from './components/text-area';
-// @ts-expect-error importing a gts file is working
+// @ts-ignore
 import type TextInput from './components/text-input';
 
 export default interface HokuleaRegistry {

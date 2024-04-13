@@ -4,7 +4,6 @@ import { Listbox } from '../../src';
 
 export class List {
   private element!: HTMLDivElement;
-  private behavior!: Listbox;
 
   constructor(parent: HTMLElement) {
     this.createElement(parent);
@@ -17,7 +16,7 @@ export class List {
 
     parent.appendChild(this.element);
 
-    this.behavior = new Listbox(this.element);
+    new Listbox(this.element);
   }
 
   setItems(items: string[]) {

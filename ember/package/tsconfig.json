@@ -8,6 +8,9 @@
     "src/**/*",
     "types/**/*"
   ],
+  "exclude": [
+    "src/**/*.stories.ts"
+  ],
   "glint": {
     "environment": [
       "ember-loose",

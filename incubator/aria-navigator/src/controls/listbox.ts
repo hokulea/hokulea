@@ -81,12 +81,7 @@ export class Listbox extends Control {
   readOptions(): void {
     super.readOptions();
 
-    const disabled =
-      (this.element.hasAttribute('aria-disabled') &&
-        this.element.getAttribute('aria-disabled') === 'true') ||
-      false;
-
-    this.element.setAttribute('tabindex', disabled ? '-1' : '0');
+    this.element.setAttribute('tabindex', this.options.disabled ? '-1' : '0');
   }
 
   private ensureIds() {

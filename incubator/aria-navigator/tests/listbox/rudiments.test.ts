@@ -44,4 +44,18 @@ describe('Listbox', () => {
       expect(listbox.items.map((item) => item.id).every(Boolean)).toBeTruthy();
     });
   });
+
+  describe('disabled', () => {
+    it('focus does not work', () => {
+      const list = createListElement(document.body);
+
+      list.setAttribute('aria-disabled', 'true');
+
+      new Listbox(list);
+
+      list.dispatchEvent(new FocusEvent('focusin'));
+
+      expect([...list.children].every((elem) => !elem.hasAttribute('aria-selected'))).toBeTruthy();
+    });
+  });
 });

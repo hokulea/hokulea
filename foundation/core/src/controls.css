@@ -41,7 +41,7 @@
     height: auto;
   }
 
-  &:disabled, &[aria-disabled], &[aria-disabled="true"] {
+  &:disabled, &[aria-disabled="true"] {
     color: var(--control-disabled-text);
     background-color: var(--control-disabled-background);
   }
@@ -206,14 +206,19 @@
     }
   }
 
-  &[aria-multiselectable="true"]:focus {
+  :not(&[aria-disabled="true"])[aria-multiselectable="true"]:focus {
     [role="option"][aria-current="true"] {
       outline: var(--control-focus-stroke);
       outline-offset: calc(var(--control-focus-stroke-width) * -1);
     }
   }
 
-  :is(&:focus, &) [role="option"]:hover {
+  :not(&[aria-disabled="true"]):is(&:focus, &) [role="option"]:hover {
     background-color: var(--control-hover-background);
+  }
+
+  &[aria-disabled="true"] {
+    color: var(--control-disabled-text);
+    background-color: var(--control-disabled-background);
   }
 }

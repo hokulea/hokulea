@@ -30,6 +30,7 @@ interface ControlOptions {
 
 interface Options {
   multiple: boolean;
+  disabled: boolean;
 }
 
 export type Item = HTMLElement;
@@ -73,7 +74,8 @@ export abstract class Control {
    * Options instruct, which behaviors are actually _active_
    */
   options: Options = {
-    multiple: false
+    multiple: false,
+    disabled: false
   };
 
   private navigationPatterns: NavigationPattern[] = [];
@@ -113,6 +115,10 @@ export abstract class Control {
   }
 
   private handleEvent(event: Event) {
+    if (this.options.disabled) {
+      return;
+    }
+
     const patterns = this.navigationPatterns.filter((p) => p.matches(event));
 
     patterns.forEach((p) => p.prepare?.(event));
@@ -128,6 +134,11 @@ export abstract class Control {
     this.options.multiple =
       (this.element.hasAttribute('aria-multiselectable') &&
         this.element.getAttribute('aria-multiselectable') === 'true') ||
+      false;
+
+    this.options.disabled =
+      (this.element.hasAttribute('aria-disabled') &&
+        this.element.getAttribute('aria-disabled') === 'true') ||
       false;
   }
 

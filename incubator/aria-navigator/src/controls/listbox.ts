@@ -82,7 +82,7 @@ export class Listbox extends Control {
     super.readOptions();
 
     const disabled =
-      (this.element?.hasAttribute('aria-disabled') &&
+      (this.element.hasAttribute('aria-disabled') &&
         this.element.getAttribute('aria-disabled') === 'true') ||
       false;
 

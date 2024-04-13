@@ -41,7 +41,7 @@ const TextInput: TOC<InputBuilderSignature> = <template>
   {{! template-lint-disable no-unsupported-role-attributes }}
   <span
     class={{styles.inputBuilder}}
-    aria-disabled={{if @disabled "true"}}
+    aria-disabled={{if @disabled 'true'}}
     data-input-builder
     data-test-input-builder
   >

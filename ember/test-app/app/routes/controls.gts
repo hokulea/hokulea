@@ -28,7 +28,7 @@ function noop() {
   };
 }
 
-export class ControlsRoute extends Route<{}> {
+export class ControlsRoute extends Route<object> {
   <template>
     <Section @title='List'>
       <List as |l|>

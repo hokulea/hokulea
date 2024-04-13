@@ -28,17 +28,20 @@ function findOption(
     throw new Error(`Must pass an element, selector, or descriptor to \`findOption\`.`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (typeof text === 'undefined' || text === null) {
     throw new Error(`Must provide an \`text\` to select when calling \`findOption\`.`);
   }
 
-  const element = getElement(target) as HTMLElement;
+  const element = getElement(target);
 
   if (!element) {
     throw new Error(errorMessage('Element not found', target, 'findOption'));
   }
 
-  return getOptions(element, selectors.option).find((e) => e.textContent?.trim().includes(text));
+  return getOptions(element as HTMLElement, selectors.option).find((e) =>
+    e.textContent?.trim().includes(text)
+  );
 }
 
 export function findOptions(
@@ -54,17 +57,18 @@ export function findOptions(
     throw new Error(`Must pass an element, selector, or descriptor to \`findOption\`.`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (typeof texts === 'undefined' || texts === null) {
     throw new Error(`Must provide an \`texts\` to select when calling \`findOption\`.`);
   }
 
-  const element = getElement(target) as HTMLElement;
+  const element = getElement(target);
 
   if (!element) {
     throw new Error(errorMessage('Element not found', target, 'findOption'));
   }
 
-  return getOptions(element, selectors.option).filter((e) =>
+  return getOptions(element as HTMLElement, selectors.option).filter((e) =>
     texts.includes(e.textContent?.trim() as string)
   );
 }
@@ -86,13 +90,14 @@ export async function select(
     throw new Error(`Must pass an element, selector, or descriptor to \`${name}\`.`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (typeof options === 'undefined' || options === null) {
     throw new Error(
       `Must provide an \`option\` or \`options\` to select when calling \`${name}\`.`
     );
   }
 
-  const element = getElement(target) as HTMLElement;
+  const element = getElement(target);
 
   if (!element) {
     throw new Error(errorMessage('Element not found', target, name));
@@ -106,7 +111,7 @@ export async function select(
   //   throw new Error(errorMessage('Element is disabled', selectors.list, name));
   // }
 
-  const multi = element.getAttribute('aria-multiselectable') === 'true';
+  const multi = (element as HTMLElement).getAttribute('aria-multiselectable') === 'true';
 
   if (!multi && Array.isArray(options)) {
     throw new Error(
@@ -122,12 +127,14 @@ export async function select(
     Array.isArray(options)
       ? findOptions(element, options, { selectors })
       : [findOption(element, options, { selectors })]
-  ).filter((e) => e !== null) as HTMLElement[];
+  )
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    .filter((e) => e !== null) as HTMLElement[];
 
-  const items = element.querySelectorAll(selectors.option) as NodeListOf<HTMLElement>;
+  const items = element.querySelectorAll(selectors.option);
 
   for (const item of items) {
-    if (optionElements.includes(item)) {
+    if (optionElements.includes(item as HTMLElement)) {
       item.setAttribute('aria-selected', 'true');
     } else if (!keepPreviouslySelected) {
       item.removeAttribute('aria-selected');

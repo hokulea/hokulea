@@ -12,18 +12,20 @@ import type { SelectPageObject } from '@hokulea/ember/test-support';
 module('Rendering | <Form.Select>', function (hooks) {
   setupRenderingTest(hooks);
 
-  let data = { favoriteFruit: '' };
+  const data = { favoriteFruit: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Select
-          @label='Deine Lieblingsfrucht?'
-          @description='Aus dem Obstkorb'
-          @name='favoriteFruit'
-        />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Select
+            @label='Deine Lieblingsfrucht?'
+            @description='Aus dem Obstkorb'
+            @name='favoriteFruit'
+          />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -44,11 +46,13 @@ module('Rendering | <Form.Select>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control.element;
@@ -57,37 +61,43 @@ module('Rendering | <Form.Select>', function (hooks) {
   });
 
   test('disabling the input', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' disabled />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' disabled />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control.element;
 
     assert.dom(input).isDisabled();
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     assert.dom(input).isDisabled();
   });
 
   module('Primitive items', function () {
     test('renders items', async function (assert) {
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
-              <s.Option @value={{item}} />
-            {{/each}}
-          </f.Select>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |f|>
+            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
+              {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+                <s.Option @value={{item}} />
+              {{/each}}
+            </f.Select>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as SelectPageObject;
@@ -98,17 +108,19 @@ module('Rendering | <Form.Select>', function (hooks) {
     });
 
     test('renders selection', async function (assert) {
-      data = { favoriteFruit: 'Apple' };
+      const fruitData = { favoriteFruit: 'Apple' };
 
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
-              <s.Option @value={{item}} />
-            {{/each}}
-          </f.Select>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{fruitData}} as |f|>
+            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
+              {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+                <s.Option @value={{item}} />
+              {{/each}}
+            </f.Select>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as SelectPageObject;
@@ -136,15 +148,17 @@ module('Rendering | <Form.Select>', function (hooks) {
     ];
 
     test('renders items', async function (assert) {
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
-            {{#each items as |item|}}
-              <s.Option @value={{item.id}}>{{item.name}}</s.Option>
-            {{/each}}
-          </f.Select>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |f|>
+            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
+              {{#each items as |item|}}
+                <s.Option @value={{item.id}}>{{item.name}}</s.Option>
+              {{/each}}
+            </f.Select>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as SelectPageObject;
@@ -155,17 +169,19 @@ module('Rendering | <Form.Select>', function (hooks) {
     });
 
     test('renders selection', async function (assert) {
-      data = { favoriteFruit: `${items[1].id}` };
+      const fruitData = { favoriteFruit: `${items[1].id}` };
 
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
-            {{#each items as |item|}}
-              <s.Option @value={{item.id}}>{{item.name}}</s.Option>
-            {{/each}}
-          </f.Select>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{fruitData}} as |f|>
+            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
+              {{#each items as |item|}}
+                <s.Option @value={{item.id}}>{{item.name}}</s.Option>
+              {{/each}}
+            </f.Select>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as SelectPageObject;

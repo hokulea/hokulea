@@ -142,7 +142,7 @@ export async function testListboxPointerNavigation(
 ): Promise<void> {
   const { list } = elements;
   const options = getOptions(list, selectors.option);
-  const [first, second, last] = options;
+  const [first, second, last] = options as [HTMLElement, HTMLElement, HTMLElement];
 
   await triggerEvent(first, 'pointerup');
   assert.dom(first).hasAria('current', 'true', 'Clicking first option activates it');
@@ -168,7 +168,7 @@ export async function testListboxForPointerSingleSelection(
 ): Promise<void> {
   const { list } = elements;
   const options = getOptions(list, selectors.option);
-  const [first, second, last] = options;
+  const [first, second, last] = options as [HTMLElement, HTMLElement, HTMLElement];
 
   await triggerEvent(first, 'pointerup', { bubbles: true });
   assert.dom(first).hasAria('selected', 'true', 'Clicking first option selects it');
@@ -194,7 +194,7 @@ export async function testListboxForPointerMultiSelection(
 ): Promise<void> {
   const { list } = elements;
   const options = getOptions(list, selectors.option);
-  const [first, second, last] = options;
+  const [first, second, last] = options as [HTMLElement, HTMLElement, HTMLElement];
 
   await triggerEvent(first, 'pointerup');
   assert.dom(first).hasAria('selected', 'true', 'Clicking first option selects it');

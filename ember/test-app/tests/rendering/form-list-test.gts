@@ -14,18 +14,16 @@ module('Rendering | <Form.List>', function (hooks) {
 
   type Pokemon = { id: number; name: string };
 
-  let data: { starterPokemon: string | Pokemon } = { starterPokemon: '' };
+  const data: { starterPokemon: string | Pokemon } = { starterPokemon: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.List
-          @label='Your Starter Pokemon?'
-          @description='Gen 1'
-          @name='starterPokemon'
-        />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.List @label='Your Starter Pokemon?' @description='Gen 1' @name='starterPokemon' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -45,11 +43,13 @@ module('Rendering | <Form.List>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.List @name='starterPokemon' @label='Your Starter Pokemon?' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control.element;
@@ -58,11 +58,13 @@ module('Rendering | <Form.List>', function (hooks) {
   });
 
   test('disabling the input', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.List @name='starterPokemon' @label='Your Starter Pokemon?' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control.element;
@@ -72,15 +74,17 @@ module('Rendering | <Form.List>', function (hooks) {
 
   module('Primitive items', function () {
     test('renders items', async function (assert) {
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
-            {{#each (array 'Bulbasaur' 'Charmander' 'Squirtle') as |item|}}
-              <l.Option @value={{item}}>{{item}}</l.Option>
-            {{/each}}
-          </f.List>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |f|>
+            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
+              {{#each (array 'Bulbasaur' 'Charmander' 'Squirtle') as |item|}}
+                <l.Option @value={{item}}>{{item}}</l.Option>
+              {{/each}}
+            </f.List>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
@@ -91,17 +95,19 @@ module('Rendering | <Form.List>', function (hooks) {
     });
 
     test('renders selection', async function (assert) {
-      data = { starterPokemon: 'Charmander' };
+      const pokemonData = { starterPokemon: 'Charmander' };
 
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
-            {{#each (array 'Bulbasaur' 'Charmander' 'Squirtle') as |item|}}
-              <l.Option @value={{item}}>{{item}}</l.Option>
-            {{/each}}
-          </f.List>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{pokemonData}} as |f|>
+            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
+              {{#each (array 'Bulbasaur' 'Charmander' 'Squirtle') as |item|}}
+                <l.Option @value={{item}}>{{item}}</l.Option>
+              {{/each}}
+            </f.List>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
@@ -127,15 +133,17 @@ module('Rendering | <Form.List>', function (hooks) {
     ];
 
     test('renders items', async function (assert) {
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
-            {{#each items as |item|}}
-              <l.Option @value={{item}}>{{item.name}}</l.Option>
-            {{/each}}
-          </f.List>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |f|>
+            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
+              {{#each items as |item|}}
+                <l.Option @value={{item}}>{{item.name}}</l.Option>
+              {{/each}}
+            </f.List>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
@@ -146,17 +154,19 @@ module('Rendering | <Form.List>', function (hooks) {
     });
 
     test('renders selection', async function (assert) {
-      data = { starterPokemon: items[1] };
+      const pokemonData = { starterPokemon: items[1] };
 
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
-            {{#each items as |item|}}
-              <l.Option @value={{item}}>{{item.name}}</l.Option>
-            {{/each}}
-          </f.List>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{pokemonData}} as |f|>
+            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
+              {{#each items as |item|}}
+                <l.Option @value={{item}}>{{item.name}}</l.Option>
+              {{/each}}
+            </f.List>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;

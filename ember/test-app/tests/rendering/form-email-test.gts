@@ -12,11 +12,13 @@ module('Rendering | <Form.Email>', function (hooks) {
   const data = { email: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Email @label='Email' @description='Primärer Kontakt' @name='email' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Email @label='Email' @description='Primärer Kontakt' @name='email' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -37,11 +39,13 @@ module('Rendering | <Form.Email>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Email @name='email' @label='Email' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Email @name='email' @label='Email' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
@@ -50,22 +54,26 @@ module('Rendering | <Form.Email>', function (hooks) {
   });
 
   test('disabling the input', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Email @name='email' @label='Email' disabled />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Email @name='email' @label='Email' disabled />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
 
     assert.dom(input.control).isDisabled();
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Email @name='email' @label='Email' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Email @name='email' @label='Email' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     assert.dom(input.control).isDisabled();
   });

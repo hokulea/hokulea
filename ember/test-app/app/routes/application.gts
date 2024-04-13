@@ -3,7 +3,7 @@ import { LinkTo } from '@ember/routing';
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';
 
-export class ApplicationRoute extends Route<{}> {
+export class ApplicationRoute extends Route<object> {
   <template>
     <header>
       Hokulea

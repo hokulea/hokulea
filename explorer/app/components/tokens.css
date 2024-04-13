@@ -10,3 +10,10 @@
     align-items: center;
   }
 }
+
+.list {
+  --flow-space: var(--s0);
+
+  composes: flow from "@hokulea/core/layouts.css";
+  margin-block-start: var(--s0);
+}

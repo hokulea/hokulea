@@ -4,8 +4,8 @@ export interface FieldArgs {
   label: string;
   description: string;
   placeholder: string;
-  disabled?: boolean;
-  required?: boolean;
+  disabled?: boolean | string;
+  required?: boolean | string;
   submit: (data: object) => void;
 }
 
@@ -40,17 +40,9 @@ export function parseArgs(args: FieldArgs): FieldArgs {
   return {
     ...args,
     disabled:
-      typeof args.disabled === 'boolean'
-        ? args.disabled
-        : typeof args.disabled === 'string'
-          ? JSON.parse(args.disabled)
-          : undefined,
+      typeof args.disabled === 'string' ? (JSON.parse(args.disabled) as boolean) : args.disabled,
     required:
-      typeof args.required === 'boolean'
-        ? args.required
-        : typeof args.required === 'string'
-          ? JSON.parse(args.required)
-          : undefined,
+      typeof args.required === 'string' ? (JSON.parse(args.required) as boolean) : args.disabled,
     submit: (data) => {
       if (data instanceof Event) {
         return;

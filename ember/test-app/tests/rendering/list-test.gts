@@ -1,5 +1,5 @@
 import { array } from '@ember/helper';
-import { render, select } from '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 

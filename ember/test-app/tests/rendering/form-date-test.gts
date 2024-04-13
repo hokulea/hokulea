@@ -12,11 +12,13 @@ module('Rendering | <Form.Date>', function (hooks) {
   const data = { birthday: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Date @label='Geburtstag' @description='Wann bist du geboren?' @name='birthday' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Date @label='Geburtstag' @description='Wann bist du geboren?' @name='birthday' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -37,11 +39,13 @@ module('Rendering | <Form.Date>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Date @name='birthday' @label='Geburtstag' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Date @name='birthday' @label='Geburtstag' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
@@ -50,22 +54,26 @@ module('Rendering | <Form.Date>', function (hooks) {
   });
 
   test('disabling the input', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Date @name='birthday' @label='Geburtstag' disabled />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Date @name='birthday' @label='Geburtstag' disabled />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
 
     assert.dom(input.control).isDisabled();
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Date @name='birthday' @label='Geburtstag' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Date @name='birthday' @label='Geburtstag' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     assert.dom(input.control).isDisabled();
   });

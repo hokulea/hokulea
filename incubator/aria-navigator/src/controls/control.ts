@@ -1,11 +1,11 @@
-import { DomObserverUpdateStrategy } from '..';
+import { DomObserverUpdateStrategy } from '../update-strategies/dom-observer-update-strategy';
 
-import type { UpdateStrategy } from '..';
 import type { EmitStrategy } from '../emit-strategies/emit-strategy';
 import type {
   NavigationParameterBag,
   NavigationPattern
 } from '../navigation-patterns/navigation-pattern';
+import type { UpdateStrategy } from '../update-strategies/update-strategy';
 
 function pipe<Value>(input: Value, ...fns: ((input: Value) => Value)[]) {
   let lastResult = input;
@@ -97,9 +97,7 @@ export abstract class Control {
   }
 
   setUpdateStrategy(updater: UpdateStrategy) {
-    if (this.updater) {
-      this.updater.teardown?.();
-    }
+    this.updater.teardown?.();
 
     this.updater = updater;
   }
@@ -128,7 +126,7 @@ export abstract class Control {
 
   readOptions() {
     this.options.multiple =
-      (this.element?.hasAttribute('aria-multiselectable') &&
+      (this.element.hasAttribute('aria-multiselectable') &&
         this.element.getAttribute('aria-multiselectable') === 'true') ||
       false;
   }

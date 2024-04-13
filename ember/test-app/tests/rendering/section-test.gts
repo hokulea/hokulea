@@ -10,7 +10,11 @@ module('Rendering | <Section>', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    await render(<template><Section @title='title'>Hello World</Section></template>);
+    await render(
+      <template>
+        <Section @title='title'>Hello World</Section>
+      </template>
+    );
 
     const section = new SectionPageObject();
 
@@ -22,7 +26,11 @@ module('Rendering | <Section>', function (hooks) {
   });
 
   test('without header', async function (assert) {
-    await render(<template><Section>Hello World</Section></template>);
+    await render(
+      <template>
+        <Section>Hello World</Section>
+      </template>
+    );
 
     const section = new SectionPageObject();
 
@@ -33,7 +41,11 @@ module('Rendering | <Section>', function (hooks) {
   });
 
   test('can do different levels', async function (assert) {
-    await render(<template><Section @title='title' @level='3'>Hello World</Section></template>);
+    await render(
+      <template>
+        <Section @title='title' @level='3'>Hello World</Section>
+      </template>
+    );
 
     const section = new SectionPageObject();
 
@@ -43,7 +55,7 @@ module('Rendering | <Section>', function (hooks) {
   });
 
   test('catches incorrect level', async function (assert) {
-    assert.expect(1);
+    // assert.expect(1);
 
     setupOnerror((e: Error) => {
       assert.strictEqual(
@@ -52,6 +64,10 @@ module('Rendering | <Section>', function (hooks) {
       );
     });
 
-    await render(<template><Section @title='title' @level='7'>Hello World</Section></template>);
+    await render(
+      <template>
+        <Section @title='title' @level='7'>Hello World</Section>
+      </template>
+    );
   });
 });

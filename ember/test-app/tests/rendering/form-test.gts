@@ -31,11 +31,13 @@ module('Rendering | <Form>', function (hooks) {
   });
 
   test('yields a submit button', async function (assert) {
-    await render(<template>
-      <Form as |f|>
-        <f.Submit>Send</f.Submit>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form as |f|>
+          <f.Submit>Send</f.Submit>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -45,11 +47,13 @@ module('Rendering | <Form>', function (hooks) {
   });
 
   test('yields a reset button', async function (assert) {
-    await render(<template>
-      <Form as |f|>
-        <f.Reset>Reset</f.Reset>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form as |f|>
+          <f.Reset>Reset</f.Reset>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 

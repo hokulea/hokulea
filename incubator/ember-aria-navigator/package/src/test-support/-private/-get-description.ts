@@ -16,6 +16,7 @@ export default function getDescription(target: Target): string {
   if (data) {
     return data.description || '<unknown descriptor>';
   } else {
-    return `${target}`;
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    return target.toString();
   }
 }

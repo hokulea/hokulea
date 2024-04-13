@@ -14,7 +14,11 @@ module('Rendering | <Button>', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders with defaults', async function (assert) {
-    await render(<template><Button>Hello World</Button></template>);
+    await render(
+      <template>
+        <Button>Hello World</Button>
+      </template>
+    );
 
     const button = new ButtonPageObject();
 
@@ -108,7 +112,11 @@ module('Rendering | <Button>', function (hooks) {
     skip('it will not invoke functions when disabled', async function (assert) {
       const push = sinon.spy();
 
-      await render(<template><Button @push={{push}} @disabled={{true}}>Hello</Button></template>);
+      await render(
+        <template>
+          <Button @push={{push}} @disabled={{true}}>Hello</Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -120,12 +128,14 @@ module('Rendering | <Button>', function (hooks) {
 
   module('Slots', function () {
     test('it has a before slot', async function (assert) {
-      await render(<template>
-        <Button>
-          <:before>Hello</:before>
-          <:label>Label</:label>
-        </Button>
-      </template>);
+      await render(
+        <template>
+          <Button>
+            <:before>Hello</:before>
+            <:label>Label</:label>
+          </Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -137,12 +147,14 @@ module('Rendering | <Button>', function (hooks) {
     });
 
     test('it has an after slot', async function (assert) {
-      await render(<template>
-        <Button>
-          <:label>Label</:label>
-          <:after>Afterwards</:after>
-        </Button>
-      </template>);
+      await render(
+        <template>
+          <Button>
+            <:label>Label</:label>
+            <:after>Afterwards</:after>
+          </Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -154,11 +166,13 @@ module('Rendering | <Button>', function (hooks) {
     });
 
     test('it works with label slot', async function (assert) {
-      await render(<template>
-        <Button>
-          <:label>Label</:label>
-        </Button>
-      </template>);
+      await render(
+        <template>
+          <Button>
+            <:label>Label</:label>
+          </Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 

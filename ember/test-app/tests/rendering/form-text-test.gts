@@ -12,11 +12,13 @@ module('Rendering | <Form.Text>', function (hooks) {
   const data = { givenName: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Text @label='Vorname' @description='Wie heißt du?' @name='givenName' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Text @label='Vorname' @description='Wie heißt du?' @name='givenName' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -37,11 +39,13 @@ module('Rendering | <Form.Text>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Text @name='givenName' @label='Vorname' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Text @name='givenName' @label='Vorname' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
@@ -50,22 +54,26 @@ module('Rendering | <Form.Text>', function (hooks) {
   });
 
   test('disabling the field', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Text @name='givenName' @label='Vorname' disabled />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Text @name='givenName' @label='Vorname' disabled />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
 
     assert.dom(input.control).isDisabled();
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Text @name='givenName' @label='Vorname' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Text @name='givenName' @label='Vorname' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     assert.dom(input.control).isDisabled();
   });

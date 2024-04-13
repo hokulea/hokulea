@@ -5,6 +5,7 @@ vendor/
 # compiled output
 dist/
 tmp/
+declarations/
 
 # dependencies
 node_modules/
@@ -14,7 +15,6 @@ coverage/
 !.*
 .*/
 .eslintcache
-vite.config.ts
 
 # ember-try
 .node_modules.ember-try/

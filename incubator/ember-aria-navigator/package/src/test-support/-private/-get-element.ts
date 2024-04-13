@@ -19,12 +19,9 @@ function getElement<K extends keyof HTMLElementTagNameMap>(
 function getElement<K extends keyof SVGElementTagNameMap>(
   target: K
 ): SVGElementTagNameMap[K] | null;
-function getElement(target: string): Element | null;
-function getElement(target: Element): Element;
-function getElement(target: IDOMElementDescriptor): Element | null;
-function getElement(target: Document): Document;
-function getElement(target: Window): Document;
 function getElement(target: string | IDOMElementDescriptor): Element | null;
+function getElement(target: Element): Element;
+function getElement(target: Document | Window): Document;
 function getElement(target: Target): Element | Document | null;
 /**
   Used internally by the DOM interaction helpers to find one element.

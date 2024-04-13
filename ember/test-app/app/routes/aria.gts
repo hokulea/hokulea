@@ -19,7 +19,7 @@ function appendItem(items: unknown[], { item }: { item: unknown }) {
 const FRUITS = new TrackedArray(['Banana', 'Apple', 'Pear']);
 const POKEMON = new TrackedArray(['Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu']);
 
-export class AriaRoute extends Route<{}> {
+export class AriaRoute extends Route<object> {
   @tracked listMultiple = false;
   @tracked listItems = FRUITS;
 

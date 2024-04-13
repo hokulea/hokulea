@@ -36,24 +36,26 @@ module('Integration | <Form> | Data', function (hooks) {
         age: 21
       };
 
-      await render(<template>
-        <Form @data={{data}} as |f|>
-          <f.Text @name='givenName' @label='Given Name' />
-          <f.Text @name='familyName' @label='Family Name' />
-          <f.SingularChoice @name='gender' @label='Gender' as |group|>
-            <group.Option @value='male' @label='Male' />
-            <group.Option @value='female' @label='Female' />
-            <group.Option @value='other' @label='Other' />
-          </f.SingularChoice>
-          <f.Number @name='age' @label='Age' />
-          <f.Select @name='country' @label='Country' as |s|>
-            <s.Option @value='USA'>United States</s.Option>
-            <s.Option @value='GER'>Germany</s.Option>
-          </f.Select>
-          <f.TextArea @name='comments' @label='Comments' />
-          <f.Checkbox @name='acceptTerms' @label='Terms accepted' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |f|>
+            <f.Text @name='givenName' @label='Given Name' />
+            <f.Text @name='familyName' @label='Family Name' />
+            <f.SingularChoice @name='gender' @label='Gender' as |group|>
+              <group.Option @value='male' @label='Male' />
+              <group.Option @value='female' @label='Female' />
+              <group.Option @value='other' @label='Other' />
+            </f.SingularChoice>
+            <f.Number @name='age' @label='Age' />
+            <f.Select @name='country' @label='Country' as |s|>
+              <s.Option @value='USA'>United States</s.Option>
+              <s.Option @value='GER'>Germany</s.Option>
+            </f.Select>
+            <f.TextArea @name='comments' @label='Comments' />
+            <f.Checkbox @name='acceptTerms' @label='Terms accepted' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -72,16 +74,18 @@ module('Integration | <Form> | Data', function (hooks) {
     test('value is yielded from field component', async function (assert) {
       const data = { givenName: 'Tony', familyName: 'Ward' };
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Field @name='givenName' @label='Given Name' as |field|>
-            <div data-test-given-name>{{field.value}}</div>
-          </form.Field>
-          <form.Field @name='familyName' @label='Family Name' as |field|>
-            <div data-test-family-name>{{field.value}}</div>
-          </form.Field>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Field @name='givenName' @label='Given Name' as |field|>
+              <div data-test-given-name>{{field.value}}</div>
+            </form.Field>
+            <form.Field @name='familyName' @label='Family Name' as |field|>
+              <div data-test-family-name>{{field.value}}</div>
+            </form.Field>
+          </Form>
+        </template>
+      );
 
       assert.dom('[data-test-given-name]').hasText('Tony');
       assert.dom('[data-test-family-name]').hasText('Ward');
@@ -100,12 +104,14 @@ module('Integration | <Form> | Data', function (hooks) {
 
       ctx.data = { givenName: 'Tony', familyName: 'Ward' };
 
-      await render(<template>
-        <Form @data={{ctx.data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{ctx.data}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -129,12 +135,14 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const data = new DummyData();
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -159,12 +167,14 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const data = new DummyData();
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -185,12 +195,14 @@ module('Integration | <Form> | Data', function (hooks) {
     test('data is not mutated', async function (assert) {
       const data = { givenName: 'Tony', familyName: 'Ward' };
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -217,24 +229,26 @@ module('Integration | <Form> | Data', function (hooks) {
       };
       const submitHandler = sinon.spy();
 
-      await render(<template>
-        <Form @data={{data}} @submit={{submitHandler}} as |f|>
-          <f.Text @name='givenName' @label='Given Name' />
-          <f.Text @name='familyName' @label='Family Name' />
-          <f.SingularChoice @name='gender' @label='Gender' as |group|>
-            <group.Option @value='male' @label='Male' />
-            <group.Option @value='female' @label='Female' />
-            <group.Option @value='other' @label='Other' />
-          </f.SingularChoice>
-          <f.Number @name='age' @label='Age' />
-          <f.Select @name='country' @label='Country' as |s|>
-            <s.Option @value='USA'>United States</s.Option>
-            <s.Option @value='GER'>Germany</s.Option>
-          </f.Select>
-          <f.TextArea @name='comments' @label='Comments' />
-          <f.Checkbox @name='acceptTerms' @label='Terms accepted' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} @submit={{submitHandler}} as |f|>
+            <f.Text @name='givenName' @label='Given Name' />
+            <f.Text @name='familyName' @label='Family Name' />
+            <f.SingularChoice @name='gender' @label='Gender' as |group|>
+              <group.Option @value='male' @label='Male' />
+              <group.Option @value='female' @label='Female' />
+              <group.Option @value='other' @label='Other' />
+            </f.SingularChoice>
+            <f.Number @name='age' @label='Age' />
+            <f.Select @name='country' @label='Country' as |s|>
+              <s.Option @value='USA'>United States</s.Option>
+              <s.Option @value='GER'>Germany</s.Option>
+            </f.Select>
+            <f.TextArea @name='comments' @label='Comments' />
+            <f.Checkbox @name='acceptTerms' @label='Terms accepted' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -291,14 +305,16 @@ module('Integration | <Form> | Data', function (hooks) {
       };
       const submitHandler = sinon.spy();
 
-      await render(<template>
-        <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
+      await render(
+        <template>
+          <Form @data={{data}} @submit={{submitHandler}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
 
-          <Button @push={{form.submit}} data-test-submit>Submit</Button>
-        </Form>
-      </template>);
+            <Button @push={{form.submit}} data-test-submit>Submit</Button>
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -322,21 +338,23 @@ module('Integration | <Form> | Data', function (hooks) {
     test('setValue yielded from field sets internal value', async function (assert) {
       const data = { givenName: 'Tony' };
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Field @name='givenName' @label='' as |field|>
-            <label for='given-name'>First name:</label>
-            <input type='text' value={{field.value}} id='given-name' data-test-given-name />
-            <button
-              type='button'
-              {{on 'click' (fn field.setValue 'Nicole')}}
-              data-test-custom-control
-            >
-              Update
-            </button>
-          </form.Field>
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Field @name='givenName' @label='' as |field|>
+              <label for='given-name'>First name:</label>
+              <input type='text' value={{field.value}} id='given-name' data-test-given-name />
+              <button
+                type='button'
+                {{on 'click' (fn field.setValue 'Nicole')}}
+                data-test-custom-control
+              >
+                Update
+              </button>
+            </form.Field>
+          </Form>
+        </template>
+      );
 
       assert.dom('input[data-test-given-name]').hasValue('Tony');
 
@@ -352,12 +370,14 @@ module('Integration | <Form> | Data', function (hooks) {
     test('mutates passed @data when form fields are updated', async function (assert) {
       const data = { givenName: 'Tony', familyName: 'Ward' };
 
-      await render(<template>
-        <Form @data={{data}} @dataMode='mutable' as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} @dataMode='mutable' as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -370,12 +390,14 @@ module('Integration | <Form> | Data', function (hooks) {
       const data = { givenName: 'Tony', familyName: 'Ward' };
       const submitHandler = sinon.spy();
 
-      await render(<template>
-        <Form @data={{data}} @dataMode='mutable' @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          <form.Text @name='familyName' @label='Family Name' />
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} @dataMode='mutable' @submit={{submitHandler}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name='familyName' @label='Family Name' />
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 

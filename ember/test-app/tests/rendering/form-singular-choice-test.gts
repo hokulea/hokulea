@@ -12,21 +12,23 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
   const data = { pet: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.SingularChoice
-          @label='Welches ist dein Lieblingshaustier?'
-          @description='Stofftiere zählen nicht ;)'
-          @name='pet'
-          as |r|
-        >
-          <r.Option @value='rhino' @label='Rhino' required />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.SingularChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.SingularChoice
+            @label='Welches ist dein Lieblingshaustier?'
+            @description='Stofftiere zählen nicht ;)'
+            @name='pet'
+            as |r|
+          >
+            <r.Option @value='rhino' @label='Rhino' required />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.SingularChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -44,16 +46,18 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
   });
 
   test('html attributes work on options', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
-          <r.Option @value='rhino' @label='Rhino' required />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.SingularChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
+            <r.Option @value='rhino' @label='Rhino' required />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.SingularChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];
@@ -62,16 +66,18 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
   });
 
   test('disabling one option', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
-          <r.Option @value='rhino' @label='Rhino' disabled />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.SingularChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
+            <r.Option @value='rhino' @label='Rhino' disabled />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.SingularChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];
@@ -81,21 +87,23 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
   });
 
   test('disabling the field', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.SingularChoice
-          @name='pet'
-          @label='Welches ist dein Lieblingshaustier?'
-          @disabled={{true}}
-          as |r|
-        >
-          <r.Option @value='rhino' @label='Rhino' />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.SingularChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.SingularChoice
+            @name='pet'
+            @label='Welches ist dein Lieblingshaustier?'
+            @disabled={{true}}
+            as |r|
+          >
+            <r.Option @value='rhino' @label='Rhino' />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.SingularChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];
@@ -106,16 +114,18 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
   });
 
   test('option has label and description', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
-          <r.Option @value='rhino' @label='Rhino' />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.SingularChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
+            <r.Option @value='rhino' @label='Rhino' />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.SingularChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];

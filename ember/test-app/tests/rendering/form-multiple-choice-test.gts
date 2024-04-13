@@ -12,21 +12,23 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
   const data = { pets: [] };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.MultipleChoice
-          @label='Welche Haustiere hast du?'
-          @description='Stofftiere zählen nicht ;)'
-          @name='pets'
-          as |r|
-        >
-          <r.Option @value='rhino' @label='Rhino' required />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.MultipleChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.MultipleChoice
+            @label='Welche Haustiere hast du?'
+            @description='Stofftiere zählen nicht ;)'
+            @name='pets'
+            as |r|
+          >
+            <r.Option @value='rhino' @label='Rhino' required />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.MultipleChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -44,16 +46,18 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
   });
 
   test('html attributes work on options', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
-          <r.Option @value='rhino' @label='Rhino' required />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.MultipleChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
+            <r.Option @value='rhino' @label='Rhino' required />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.MultipleChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];
@@ -62,16 +66,18 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
   });
 
   test('disabling one option', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
-          <r.Option @value='rhino' @label='Rhino' disabled />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.MultipleChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
+            <r.Option @value='rhino' @label='Rhino' disabled />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.MultipleChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];
@@ -81,16 +87,23 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
   });
 
   test('disabling the field', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' @disabled={{true}} as |r|>
-          <r.Option @value='rhino' @label='Rhino' />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.MultipleChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.MultipleChoice
+            @name='pets'
+            @label='Welche Haustiere hast du?'
+            @disabled={{true}}
+            as |r|
+          >
+            <r.Option @value='rhino' @label='Rhino' />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.MultipleChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];
@@ -101,16 +114,18 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
   });
 
   test('option has label and description', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
-          <r.Option @value='rhino' @label='Rhino' />
-          <r.Option @value='tiger' @label='Tiger' />
-          <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-          <r.Option @value='kangaroo' @label='Kangaroo' />
-        </f.MultipleChoice>
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
+            <r.Option @value='rhino' @label='Rhino' />
+            <r.Option @value='tiger' @label='Tiger' />
+            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
+            <r.Option @value='kangaroo' @label='Kangaroo' />
+          </f.MultipleChoice>
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const field = form.$fields[0];

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { IndexEmitStrategy, ItemEmitStrategy, Listbox, ReactiveUpdateStrategy } from '../../src';
-import { appendItemToList, createListElement } from '../components/list';
+import { appendItemToList } from '../components/list';
 import { createListWithFruits } from './-shared';
 
 describe('Listbox', () => {
@@ -14,10 +14,8 @@ describe('Listbox', () => {
       const thirdItem = list.children[2];
 
       const listeners = {
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        select(_indices: number[]) {},
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        activateItem(_index: number) {}
+        select() {},
+        activateItem() {}
       };
 
       new IndexEmitStrategy(listbox, listeners);
@@ -47,10 +45,8 @@ describe('Listbox', () => {
       const thirdItem = list.children[2];
 
       const listeners = {
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        select(_indices: HTMLElement[]) {},
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        activateItem(_index: HTMLElement) {}
+        select() {},
+        activateItem() {}
       };
 
       new ItemEmitStrategy(listbox, listeners);
@@ -188,7 +184,7 @@ describe('Listbox', () => {
       });
 
       describe('read options', () => {
-        it('detects multi-select', async () => {
+        it('detects multi-select', () => {
           expect(listbox.options.multiple).toBeFalsy();
 
           list.setAttribute('aria-multiselectable', 'true');
@@ -198,7 +194,7 @@ describe('Listbox', () => {
           expect(listbox.options.multiple).toBeTruthy();
         });
 
-        it('detects single-select', async () => {
+        it('detects single-select', () => {
           expect(listbox.options.multiple).toBeTruthy();
 
           list.removeAttribute('aria-multiselectable');
@@ -208,7 +204,7 @@ describe('Listbox', () => {
           expect(listbox.options.multiple).toBeFalsy();
         });
 
-        it('sets tabindex to -1 when the aria-disabled is `true`', async () => {
+        it('sets tabindex to -1 when the aria-disabled is `true`', () => {
           expect(list.getAttribute('tabindex')).toBe('0');
 
           list.setAttribute('aria-disabled', 'true');
@@ -218,7 +214,7 @@ describe('Listbox', () => {
           expect(list.getAttribute('tabindex')).toBe('-1');
         });
 
-        it('re-sets tabindex to 0 when the aria-disabled is removed', async () => {
+        it('re-sets tabindex to 0 when the aria-disabled is removed', () => {
           expect(list.getAttribute('tabindex')).toBe('-1');
 
           list.removeAttribute('aria-disabled');

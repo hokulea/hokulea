@@ -20,7 +20,7 @@ export class DomObserverUpdateStrategy implements UpdateStrategy {
       optionAttributes.includes(changes[0].attributeName as string);
 
     if (changedOptions) {
-      this.control?.readOptions();
+      this.control.readOptions();
     }
 
     const changedSelection = changes.every(

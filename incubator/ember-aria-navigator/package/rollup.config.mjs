@@ -8,8 +8,8 @@ import { babel } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { defineConfig } from 'rollup';
 
-const development = Boolean(process.env.ROLLUP_WATCH);
-const production = !development;
+// const development = Boolean(process.env.ROLLUP_WATCH);
+// const production = !development;
 
 const addon = new Addon({
   srcDir: 'src',

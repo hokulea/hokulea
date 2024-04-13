@@ -58,13 +58,13 @@ export class ScrollToItem implements NavigationPattern {
   }
 
   private scrollUpwardsToItem(item: HTMLElement) {
-    if (this.control.element && (!this.isItemInViewport(item) || item.offsetTop === 0)) {
+    if (!this.isItemInViewport(item) || item.offsetTop === 0) {
       this.control.element.scrollTop = item.offsetTop;
     }
   }
 
   private scrollDownwardsToItem(item: HTMLElement) {
-    if (this.control.element && !this.isItemInViewport(item)) {
+    if (!this.isItemInViewport(item)) {
       this.control.element.scrollTop =
         item.offsetTop - this.control.element.clientHeight + item.clientHeight;
     }
@@ -74,10 +74,9 @@ export class ScrollToItem implements NavigationPattern {
     const buffer = 2;
 
     return (
-      this.control.element &&
-      (this.control.element.scrollTop + this.control.element.clientHeight >=
+      this.control.element.scrollTop + this.control.element.clientHeight >=
         item.offsetTop + buffer ||
-        this.control.element.scrollTop + buffer <= item.offsetTop + item.clientHeight)
+      this.control.element.scrollTop + buffer <= item.offsetTop + item.clientHeight
     );
   }
 }

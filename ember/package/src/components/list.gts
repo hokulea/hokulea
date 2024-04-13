@@ -67,12 +67,14 @@ export default class List<V> extends Component<ListSignature<V>> {
   @tracked items: V[] = new TrackedArray();
 
   registerItem = (item: V) => {
+    // eslint-disable-next-line ember/no-runloop
     next(() => {
       this.items.push(item);
     });
   };
 
   unregisterItem = (item: V) => {
+    // eslint-disable-next-line ember/no-runloop
     next(() => {
       this.items.splice(this.items.indexOf(item), 1);
     });

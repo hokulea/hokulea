@@ -11,8 +11,6 @@ export class List {
   }
 
   createElement(parent: HTMLElement) {
-    console.log('parent', parent);
-
     this.element = document.createElement('div');
     this.element.role = 'listbox';
     this.element.classList.add(styles.list);
@@ -35,7 +33,7 @@ export class List {
 }
 
 export function createListElement(parent: HTMLElement) {
-  const element = document.createElement('div') as HTMLDivElement;
+  const element = document.createElement('div');
 
   element.role = 'listbox';
   element.classList.add(styles.list);

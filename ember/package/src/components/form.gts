@@ -174,36 +174,6 @@ class FieldData<DATA extends FormData, KEY extends FormKey<DATA> = FormKey<DATA>
   validate?: FieldValidateCallback<DATA, KEY>;
 }
 
-/**
- * Headless form component.
- *
- * @example
- * Usage example:
- *
- * ```hbs
- * <HeadlessForm
- *   @data={{this.data}}
- *   @validateOn="focusout"
- *   @revalidateOn="input"
- *   @onSubmit={{this.doSomething}}
- *   as |form|
- * >
- *   <form.Field @name="firstName" as |field|>
- *     <div>
- *       <field.Label>First name</field.Label>
- *       <field.Input
- *         required
- *       />
- *       <field.errors />
- *     </div>
- *   </form.Field>
- *
- *   <button
- *     type="submit"
- *   >Submit</button>
- * </HeadlessForm>
- * ```
- */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Component<
   FormSignature<DATA, SUBMISSION_VALUE>
@@ -255,6 +225,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
     e?.preventDefault();
 
     for (const key of Object.keys(this.internalData)) {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete this.internalData[key as keyof DATA];
     }
 
@@ -305,6 +276,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
 
       deleteProperty(_target, prop) {
         if (prop in internalData) {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
           delete internalData[prop as keyof DATA];
         }
 
@@ -609,27 +581,26 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
           fieldRevalidationEvent=this.fieldRevalidationEvent
           manageValidation=(modifier this.ManagaValidationModifier showErrorsFor=this.showErrorsFor)
         )
-        as |BoundField|
+        as |WiredField|
       }}
-
         {{yield
           (hash
             Submit=Submit
             Reset=Reset
-            Field=BoundField
-            Checkbox=(component this.CheckboxField Field=BoundField)
-            Currency=(component this.CurrencyField Field=BoundField)
-            Date=(component this.DateField Field=BoundField)
-            Email=(component this.EmailField Field=BoundField)
-            List=(component this.ListField Field=BoundField)
-            MultipleChoice=(component this.MultipleChoiceField Field=BoundField)
-            Number=(component this.NumberField Field=BoundField)
-            Password=(component this.PasswordField Field=BoundField)
-            Phone=(component this.PhoneField Field=BoundField)
-            Select=(component this.SelectField Field=BoundField)
-            SingularChoice=(component this.SingularChoiceField Field=BoundField)
-            Text=(component this.TextField Field=BoundField)
-            TextArea=(component this.TextAreaField Field=BoundField)
+            Field=WiredField
+            Checkbox=(component this.CheckboxField Field=WiredField)
+            Currency=(component this.CurrencyField Field=WiredField)
+            Date=(component this.DateField Field=WiredField)
+            Email=(component this.EmailField Field=WiredField)
+            List=(component this.ListField Field=WiredField)
+            MultipleChoice=(component this.MultipleChoiceField Field=WiredField)
+            Number=(component this.NumberField Field=WiredField)
+            Password=(component this.PasswordField Field=WiredField)
+            Phone=(component this.PhoneField Field=WiredField)
+            Select=(component this.SelectField Field=WiredField)
+            SingularChoice=(component this.SingularChoiceField Field=WiredField)
+            Text=(component this.TextField Field=WiredField)
+            TextArea=(component this.TextAreaField Field=WiredField)
             validationState=this.validationState
             submissionState=this.submissionState
             invalid=this.validationErrorsExist

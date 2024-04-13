@@ -10,11 +10,12 @@ import isEqual from 'lodash.isequal';
 import type { EmitStrategy } from 'aria-navigator';
 import type { NamedArgs, PositionalArgs } from 'ember-modifier';
 
-function asArray(val: unknown | unknown[] | undefined) {
+function asArray(val?: unknown) {
   if (val === undefined) {
     return [];
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return Array.isArray(val) ? val : [val];
 }
 
@@ -22,7 +23,7 @@ function createItemEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignat
   return new ItemEmitStrategy(listbox, {
     select: (selection: HTMLElement[]) => {
       (options.select as ((selection: HTMLElement | HTMLElement[]) => void) | undefined)?.(
-        options.multi ? selection : selection[0]
+        options.multi ? selection : (selection[0] as HTMLElement)
       );
     },
 
@@ -34,7 +35,7 @@ function createItemEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignat
 
 function createIndexEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSignature<T>>) {
   const findByIndex = (index: number) => {
-    return (options as WithItems<T>).items?.[index] ?? undefined;
+    return (options as WithItems<T>).items[index] ?? undefined;
   };
 
   return new IndexEmitStrategy(listbox, {
@@ -46,7 +47,7 @@ function createIndexEmitter<T>(listbox: Listbox, options: NamedArgs<ListboxSigna
 
         (options.select as ((selection: T[]) => void) | undefined)?.(items);
       } else {
-        const item = findByIndex(selection[0]);
+        const item = findByIndex(selection[0] as number);
 
         if (item) {
           (options.select as ((selection: T) => void) | undefined)?.(item);
@@ -79,147 +80,30 @@ type WithItems<T> = {
     }
 );
 
+type OptionalItems = {
+  items?: HTMLElement[];
+  selection?: HTMLElement | HTMLElement[];
+  activateItem?: (item: HTMLElement) => void;
+} & (
+  | {
+      multi: true;
+      select?: (selection: HTMLElement[]) => void;
+    }
+  | {
+      multi?: false;
+      select?: (selection: HTMLElement) => void;
+    }
+);
+
 interface ListboxSignature<T> {
   Args: {
     Positional: [];
-    Named: { disabled?: boolean } & (
-      | WithItems<T>
-      | ({
-          selection?: HTMLElement | HTMLElement[];
-          activateItem?: (item: HTMLElement) => void;
-        } & (
-          | {
-              multi: true;
-              select?: (selection: HTMLElement[]) => void;
-            }
-          | {
-              multi?: false;
-              select?: (selection: HTMLElement) => void;
-            }
-        ))
-    );
+    Named: { disabled?: boolean } & (WithItems<T> | OptionalItems);
   };
 }
 
-/**
- * Modifier to add controls to an aria widget
- *
- * @remark
- *
- * ## Usage
- *
- * Prepare your markup with the required accessibility attributes and use the
- * modifier to enable keyboard navigation, selection and active/current item
- * management.
- *
- * - Pass in actions that will be invoked once an event happened.
- * - Pass in data to fully manage the modifier from the outside
- *
- * ### Persisting aria to the DOM
- *
- * By nature the modifier will do that for you and change `aria-*` attributes
- * accordingly. However, if you wish to take over this process for yourself,
- * then the actions you pass in to be notified on happened events (`select` and
- * `activateItem`) can return `true` to indicate you will take over state
- * management in DOM yourself.
- *
- * ### Caveat
- *
- * Although a `<ul>` with `<li>` is a proper accessible markup, the modifier
- * has no built-in semantic evaluation as of yet. Even with the markup described
- * here, you need to add `role="listbox"` and `role="option"` as this is what
- * the modifier is selecting for.
- *
- * @example
- *
- * Plain Example
- *
- * The modifier will manage everything on its own:
- *
- * ```hbs
- * <ul
- *   role="listbox"
- *   {{control}}
- * >
- *   <li role="option">Banana</li>
- *   <li role="option">Apple</li>
- *   <li role="option">Citrus</li>
- * </ul>
- * ```
- *
- * @example
- *
- * Pass in actions to handle updates
- *
- * The modifier will manage everything plus will invoke your passed in actions
- * for you to handle updates
- *
- * ```hbs
- * <ul
- *   role="listbox"
- *   {{control
- *     select=this.select
- *     activateItem=this.activateItem
- *   }}
- * >
- *   <li role="option">Banana</li>
- *   <li role="option">Apple</li>
- *   <li role="option">Citrus</li>
- * </ul>
- * ```
- *
- * @example
- *
- * Pass in actions to handle updates with items and selection
- *
- * The modifier will manage everything plus will invoke your passed in actions
- * for you to handle updates. Also it will receive updates through ember's
- * reactivitiy system
- *
- * ```hbs
- * <ul
- *   role="listbox"
- *   {{control
- *     items=this.items
- *     selection=this.selection
- *     select=this.select
- *     activateItem=this.activateItem
- *   }}
- * >
- *  {{#each this.items as |item|}}
- *    <li role="option">{{item}}</li>
- *  {{/each}}
- * </ul>
- * ```
- *
- * @example
- *
- * Pass in actions to handle updates with items and selection
- * with multiselect
- *
- * The modifier will manage everything plus will invoke your passed in actions
- * for you to handle updates. Also it will receive updates through ember's
- * reactivitiy system
- *
- * ```hbs
- * <ul
- *   role="listbox"
- *   aria-multiselectable="true"
- *   {{control
- *     items=this.items
- *     selection=this.selection
- *     select=this.select
- *     activateItem=this.activateItem
- *   }}
- * >
- *  {{#each this.items as |item|}}
- *    <li role="option">{{item}}</li>
- *  {{/each}}
- * </ul>
- * ```
- */
 export default class ListboxModifier<T> extends Modifier<ListboxSignature<T>> {
-  private declare listbox: Listbox;
+  private listbox?: Listbox;
   private declare updater: ReactiveUpdateStrategy;
   private declare emitter: EmitStrategy;
 
@@ -241,23 +125,20 @@ export default class ListboxModifier<T> extends Modifier<ListboxSignature<T>> {
       });
     }
 
-    if ((options as WithItems<T>).items && !(this.emitter instanceof IndexEmitStrategy)) {
+    if (options.items && !(this.emitter instanceof IndexEmitStrategy)) {
       this.emitter = createIndexEmitter<T>(this.listbox, options);
-    } else if (!(options as WithItems<T>).items && !(this.emitter instanceof ItemEmitStrategy)) {
+    } else if (!options.items && !(this.emitter instanceof ItemEmitStrategy)) {
       this.emitter = createItemEmitter<T>(this.listbox, options);
     }
 
-    if (
-      (options as WithItems<T>).items &&
-      !isEqual(this.prevItems, (options as WithItems<T>).items)
-    ) {
+    if (options.items && !isEqual(this.prevItems, (options as WithItems<T>).items)) {
       this.updater.updateItems();
       this.prevItems = [...(options as WithItems<T>).items];
     }
 
     if (options.selection && !isEqual(asArray(this.prevSelection), asArray(options.selection))) {
       this.updater.updateSelection();
-      this.prevSelection = [...asArray(options.selection)];
+      this.prevSelection = asArray(options.selection);
     }
 
     let optionsChanged = false;

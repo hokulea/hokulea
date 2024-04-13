@@ -14,6 +14,8 @@ export default class TokenComponent extends Component<TokenArgs> {
   }
 
   get value(): string {
-    return BODY_STYLES.getPropertyValue(this.args.name) ?? findValue(this.args.name);
+    const value = BODY_STYLES.getPropertyValue(this.args.name);
+
+    return value !== '' ? value : (findValue(this.args.name) as string);
   }
 }

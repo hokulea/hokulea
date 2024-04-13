@@ -9,7 +9,7 @@
         <nav local-class="toc">
           {{!-- <a href="#{{@slug}}" style="padding-left: var(--s1)">{{@title}}</a> --}}
           {{#each this.toc as |heading|}}
-            <a href="#{{heading.slug}}" class={{this.getClassForLevel heading.lvl}}>
+            <a href="#{{heading.slug}}" data-level={{heading.lvl}}>
               {{heading.content}}
             </a>
           {{/each}}

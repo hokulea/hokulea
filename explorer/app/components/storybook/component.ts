@@ -31,7 +31,7 @@ export default class StorybookComponent extends Component<StorybookArgs> {
 
     // render original story
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+    // @ts-expect-error
     owner.register(
       'component:story',
       // eslint-disable-next-line ember/no-classic-classes, ember/require-tagless-components

@@ -2,8 +2,6 @@ import Component from '@glimmer/component';
 
 import { modifier } from 'ember-modifier';
 
-import styles from './page.css';
-
 interface PageSignature {
   Args: {
     toc?: string;
@@ -20,14 +18,10 @@ interface TocItem {
 
 export default class PageComponent extends Component<PageSignature> {
   get toc(): TocItem[] {
-    const items = JSON.parse(decodeURIComponent(this.args.toc ? this.args.toc : '[]'));
+    const items = JSON.parse(decodeURIComponent(this.args.toc ? this.args.toc : '[]')) as TocItem[];
 
     return items.length > 1 ? items : [];
   }
-
-  getClassForLevel = (level: number) => {
-    return styles[`level-${level}`];
-  };
 
   replaceLinks = modifier((element: HTMLDivElement) => {
     for (const link of [...element.querySelectorAll('a')]) {

@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { registerDestructor } from '@ember/destroyable';
 import { action } from '@ember/object';
 
 import { modifier } from 'ember-modifier';
@@ -21,31 +20,31 @@ export default class TokenComponent extends Component<TokenArgs> {
     return findDescription(this.args.name);
   }
 
-  setup = modifier((element: HTMLElement) => {
+  setup = modifier((element: HTMLElement, [update]: [() => void]) => {
     // listen for changes
-    window.addEventListener('resize', this.update);
+    window.addEventListener('resize', update);
 
-    const mutationObserver = new window.MutationObserver(this.update);
-
-    registerDestructor(this, () => {
-      window.removeEventListener('resize', this.update);
-      mutationObserver.disconnect();
-    });
+    const mutationObserver = new window.MutationObserver(update);
 
     this.demo = element;
 
-    let elem = element;
+    let elem: HTMLElement | null = element;
 
     do {
       mutationObserver.observe(elem, {
         attributes: true,
         attributeFilter: ['style', 'class']
       });
-      elem = elem.parentElement as HTMLElement; // booh!
-    } while (elem);
+      elem = elem.parentElement;
+    } while (elem !== null);
 
     // first run
-    this.update();
+    update();
+
+    return () => {
+      window.removeEventListener('resize', update);
+      mutationObserver.disconnect();
+    };
   });
 
   get property(): string {
@@ -57,13 +56,14 @@ export default class TokenComponent extends Component<TokenArgs> {
   }
 
   @action
-  private update() {
+  update() {
     this.computed = this.compute();
   }
 
   private compute(): string | undefined {
     const width = this.demo?.getBoundingClientRect().width;
 
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return width ? `${Math.round(width * 100) / 100}px` : undefined;
   }
 }

@@ -35,7 +35,6 @@
     "@babel/preset-typescript": "^7.24.1",
     "@chromatic-com/storybook": "^1.2.1",
     "@ember/optional-features": "^2.0.0",
-    "@ember/render-modifiers": "^2.1.0",
     "@ember/test-helpers": "^3.2.1",
     "@ember/string": "^3.1.1",
     "@embroider/broccoli-side-watch": "0.0.2-unstable.ba9fd29",

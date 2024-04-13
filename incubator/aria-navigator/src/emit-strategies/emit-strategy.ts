@@ -1,10 +1,13 @@
 import type { Item } from '../controls/control';
 
-export type PersistResult = boolean | undefined;
+export interface EmitterOptions<T> {
+  select?(selection: T[]): void;
+  activateItem?(item: T): void;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export interface EmitStrategy {
-  select(selection: Item[]): PersistResult;
+  selected(selection: Item[]): void;
 
-  activateItem(item?: Item): PersistResult;
+  itemActivated(item?: Item): void;
 }

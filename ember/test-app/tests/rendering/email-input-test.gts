@@ -56,9 +56,11 @@ module('Rendering | <EmailInput>', function (hooks) {
   test('triggers @update when value changes', async function (assert) {
     const handleUpdate = sinon.spy();
 
-    await render(<template>
-      <EmailInput @value='han.solo@smuglers-of-the.galaxy' @update={{handleUpdate}} />
-    </template>);
+    await render(
+      <template>
+        <EmailInput @value='han.solo@smuglers-of-the.galaxy' @update={{handleUpdate}} />
+      </template>
+    );
 
     const input = new EmailInputPageObject();
 

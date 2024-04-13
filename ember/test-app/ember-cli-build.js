@@ -11,12 +11,16 @@ const {
 const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
 const sideWatch = require('@embroider/broccoli-side-watch');
+const { GlimmerScopedCSSWebpackPlugin } = require('glimmer-scoped-css/webpack');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     trees: {
       app: sideWatch('app', {
         watching: [
+          '../package/dist',
+          '../../incubator/aria-navigator/dist',
+          '../../incubator/ember-aria-navigator/package/dist',
           '../../foundation/core/dist',
           '../../foundation/tokens/dist',
           '../../themes/moana/dist'
@@ -35,7 +39,7 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: Object.keys(packageJson.dependencies),
       webpack: {
-        plugins: [new HokuleaAssetLoaderWebpackPlugin()]
+        plugins: [new HokuleaAssetLoaderWebpackPlugin(), new GlimmerScopedCSSWebpackPlugin()]
       }
     },
     ...HOKULEA_CONFIG
@@ -46,7 +50,11 @@ module.exports = function (defaults) {
   return maybeEmbroider(app, {
     packagerOptions: {
       webpackConfig: {
-        plugins: [theemoPlugin(), new HokuleaAssetLoaderWebpackPlugin()]
+        plugins: [
+          theemoPlugin(),
+          new HokuleaAssetLoaderWebpackPlugin(),
+          new GlimmerScopedCSSWebpackPlugin()
+        ]
       }
     }
   });

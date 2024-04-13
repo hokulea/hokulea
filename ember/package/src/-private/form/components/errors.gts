@@ -28,7 +28,7 @@ export interface ErrorsSignature<VALUE> {
 export default class Errors<VALUE> extends Component<ErrorsSignature<VALUE>> {
   <template>
     <div id={{@id}} aria-live='assertive' class={{styles.errors}} ...attributes>
-      {{!-- <span><Icon @icon='dismiss-circle' @style='filled' /></span> --}}
+      {{! <span><Icon @icon='dismiss-circle' @style='filled' /></span> }}
       {{#if (has-block)}}
         {{yield @errors}}
       {{else}}

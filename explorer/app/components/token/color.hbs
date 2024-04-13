@@ -1,9 +1,9 @@
+{{this.update @name}}
 <div local-class="box">
   <div
     local-class="demo"
     {{style --value=(concat "var(" @name ")")}}
-    {{this.setup}}
-    {{did-update this.update @name}}
+    {{this.setup this.update}}
   ></div>
   <div local-class="content">
     <TokenName @name={{@name}} />

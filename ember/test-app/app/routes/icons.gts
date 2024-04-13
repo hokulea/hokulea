@@ -3,7 +3,7 @@ import CompatRoute from 'ember-polaris-routing/route/compat';
 
 import { Icon } from '@hokulea/ember';
 
-export class ActionsRoute extends Route<{}> {
+export class ActionsRoute extends Route<object> {
   <template>
     <h2>Icons</h2>
 

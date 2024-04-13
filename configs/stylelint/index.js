@@ -5,15 +5,10 @@ const configure = require('@gossi/config-stylelint/configure');
 
 const config = configure({ browsers });
 
-const rules = config.rules;
-
-delete rules['order/properties-order'];
-
 module.exports = {
   ...config,
-  extends: [...config.extends, 'stylelint-config-clean-order'],
   rules: {
-    ...rules,
+    ...config.rules,
     'at-rule-no-unknown': [
       true,
       {
@@ -25,7 +20,6 @@ module.exports = {
       {
         ignoreFunctions: ['$']
       }
-    ],
-    'import-notation': 'string'
+    ]
   }
 };

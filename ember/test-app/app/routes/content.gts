@@ -3,7 +3,7 @@ import CompatRoute from 'ember-polaris-routing/route/compat';
 
 import { Card, Section } from '@hokulea/ember';
 
-export class ContentRoute extends Route<{}> {
+export class ContentRoute extends Route<object> {
   <template>
     <h2>Content</h2>
 
@@ -14,13 +14,13 @@ export class ContentRoute extends Route<{}> {
       <:body>Makro, Meso, Micro - but also contents</:body>
     </Card>
 
-    <Section @title="Section">with sample "content"</Section>
+    <Section @title='Section'>with sample "content"</Section>
 
-    <Section @title="Training">
+    <Section @title='Training'>
       Planning, Diagnostics, Control, Documentation
     </Section>
 
-    <Section @title="Training">
+    <Section @title='Training'>
       <Card>
         <:header>Planning</:header>
         <:body>Makro, Meso, Micro - but also contents</:body>
@@ -32,7 +32,7 @@ export class ContentRoute extends Route<{}> {
       </Card>
     </Section>
 
-    <Section @title="Section">
+    <Section @title='Section'>
       <Card>... with a card</Card>
     </Section>
   </template>

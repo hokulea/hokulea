@@ -149,6 +149,7 @@ h1 {
 /* More readable underline style for anchor tags without a class. This could be
 set on anchor tags globally, but it can cause conflicts. */
 a:not([class]) {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   text-decoration-skip-ink: auto;
 }
 

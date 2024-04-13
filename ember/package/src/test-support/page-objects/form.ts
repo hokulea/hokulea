@@ -28,10 +28,10 @@ export class FormPageObject extends PageObject<HTMLFormElement> {
   }
 
   async submit() {
-    return await triggerEvent(this.element as HTMLFormElement, 'submit');
+    await triggerEvent(this.element as HTMLFormElement, 'submit');
   }
 
   async reset() {
-    return await triggerEvent(this.element as HTMLFormElement, 'reset');
+    await triggerEvent(this.element as HTMLFormElement, 'reset');
   }
 }

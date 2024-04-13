@@ -18,11 +18,13 @@ module('Integration | <Form>', function (hooks) {
 
     const data = { givenName: 'John' };
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Text @name='givenName' @label='Given Name' />
-        <f.Text @name='givenName' @label='Family Name' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Text @name='givenName' @label='Given Name' />
+          <f.Text @name='givenName' @label='Family Name' />
+        </Form>
+      </template>
+    );
   });
 });

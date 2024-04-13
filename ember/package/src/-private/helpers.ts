@@ -2,7 +2,7 @@ import { get } from '@ember/object';
 
 /* Shamelessly stolen from: https://github.com/DockYard/ember-composable-helpers/blob/master/addon/helpers/pick.js */
 function pick<V = unknown>(path: string, action?: (value: V) => void) {
-  return function (event: Object): V | void {
+  return function (event: object): V | void {
     let value = get(event, path) as V;
 
     if (!action) {

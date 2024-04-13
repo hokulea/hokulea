@@ -43,13 +43,15 @@ module('Rendering | <Select>', function (hooks) {
 
   module('Primitive Options', function () {
     test('renders options', async function (assert) {
-      await render(<template>
-        <Select as |s|>
-          {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
-            <s.Option @value={{item}} />
-          {{/each}}
-        </Select>
-      </template>);
+      await render(
+        <template>
+          <Select as |s|>
+            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+              <s.Option @value={{item}} />
+            {{/each}}
+          </Select>
+        </template>
+      );
 
       const input = new SelectPageObject();
 
@@ -59,13 +61,15 @@ module('Rendering | <Select>', function (hooks) {
     });
 
     test('renders selection', async function (assert) {
-      await render(<template>
-        <Select @value='Apple' as |s|>
-          {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
-            <s.Option @value={{item}} />
-          {{/each}}
-        </Select>
-      </template>);
+      await render(
+        <template>
+          <Select @value='Apple' as |s|>
+            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+              <s.Option @value={{item}} />
+            {{/each}}
+          </Select>
+        </template>
+      );
 
       const input = new SelectPageObject();
 
@@ -75,13 +79,15 @@ module('Rendering | <Select>', function (hooks) {
     test('triggers @update', async function (assert) {
       const handleUpdate = sinon.spy();
 
-      await render(<template>
-        <Select @update={{handleUpdate}} as |s|>
-          {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
-            <s.Option @value={{item}} />
-          {{/each}}
-        </Select>
-      </template>);
+      await render(
+        <template>
+          <Select @update={{handleUpdate}} as |s|>
+            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+              <s.Option @value={{item}} />
+            {{/each}}
+          </Select>
+        </template>
+      );
 
       const input = new SelectPageObject();
 
@@ -110,13 +116,15 @@ module('Rendering | <Select>', function (hooks) {
     ];
 
     test('renders items', async function (assert) {
-      await render(<template>
-        <Select as |s|>
-          {{#each items as |item|}}
-            <s.Option @value={{item.id}}>{{item.name}}</s.Option>
-          {{/each}}
-        </Select>
-      </template>);
+      await render(
+        <template>
+          <Select as |s|>
+            {{#each items as |item|}}
+              <s.Option @value={{item.id}}>{{item.name}}</s.Option>
+            {{/each}}
+          </Select>
+        </template>
+      );
 
       const input = new SelectPageObject();
 
@@ -128,13 +136,15 @@ module('Rendering | <Select>', function (hooks) {
     test('renders selection', async function (assert) {
       const selection = items[1];
 
-      await render(<template>
-        <Select @value={{selection.id}} as |s|>
-          {{#each items as |item|}}
-            <s.Option @value={{item.id}}>{{item.name}}</s.Option>
-          {{/each}}
-        </Select>
-      </template>);
+      await render(
+        <template>
+          <Select @value={{selection.id}} as |s|>
+            {{#each items as |item|}}
+              <s.Option @value={{item.id}}>{{item.name}}</s.Option>
+            {{/each}}
+          </Select>
+        </template>
+      );
 
       const input = new SelectPageObject();
 
@@ -144,13 +154,15 @@ module('Rendering | <Select>', function (hooks) {
     test('triggers @update', async function (assert) {
       const handleUpdate = sinon.spy();
 
-      await render(<template>
-        <Select @update={{handleUpdate}} as |s|>
-          {{#each items as |item|}}
-            <s.Option @value={{item.id}}>{{item.name}}</s.Option>
-          {{/each}}
-        </Select>
-      </template>);
+      await render(
+        <template>
+          <Select @update={{handleUpdate}} as |s|>
+            {{#each items as |item|}}
+              <s.Option @value={{item.id}}>{{item.name}}</s.Option>
+            {{/each}}
+          </Select>
+        </template>
+      );
 
       const input = new SelectPageObject();
 

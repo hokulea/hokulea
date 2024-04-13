@@ -2,6 +2,8 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
+import { modifier } from 'ember-modifier';
+
 import type { GlobalSizingElement } from '../../reference/global-sizing';
 
 export default class GlobalScaleDemoComponent extends Component {
@@ -35,10 +37,9 @@ export default class GlobalScaleDemoComponent extends Component {
     this.update();
   }
 
-  @action
-  link(elem: GlobalSizingElement): void {
+  link = modifier((elem: GlobalSizingElement) => {
     this.sizingElement = elem;
-  }
+  });
 
   @action
   update(): void {

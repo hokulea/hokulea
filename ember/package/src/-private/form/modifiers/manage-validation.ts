@@ -26,7 +26,7 @@ export interface NamedOptions<DATA extends UserData> {
 }
 
 export interface ManagaValidationSignature<DATA extends UserData> {
-  Element: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+  Element: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | HTMLDivElement;
   Args: {
     Named: NamedOptions<DATA>;
   };
@@ -70,23 +70,3 @@ export default class ManageValidationModifier<DATA extends UserData> extends Mod
     return undefined;
   }
 }
-
-// const ManageValidationModifier = modifier<ManagaValidationSignature<DATA>>(
-//   (element, _pos, { invalid, errorMessageId }) => {
-//     element.ariaInvalid = invalid ? 'true' : 'false';
-
-//     if (invalid) {
-//       element.setAttribute('aria-errormessage', errorMessageId);
-//     } else {
-//       element.removeAttribute('aria-errormessage');
-//     }
-
-//     if (element.parentElement && 'inputBuilder' in element.parentElement.dataset) {
-//       element.parentElement.setAttribute('data-invalid', invalid ? 'true' : 'false');
-//     }
-
-//     return undefined;
-//   }
-// );
-
-// export default ManageValidationModifier;

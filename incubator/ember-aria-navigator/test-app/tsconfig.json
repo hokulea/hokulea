@@ -1,0 +1,25 @@
+{
+  "extends": "@tsconfig/ember",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "ember-aria-navigator-test-app/tests/*": [
+        "tests/*"
+      ],
+      "ember-aria-navigator-test-app/*": [
+        "app/*"
+      ]
+    }
+  },
+  "include": [
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ],
+  "glint": {
+    "environment": [
+      "ember-loose",
+      "ember-template-imports"
+    ]
+  }
+}

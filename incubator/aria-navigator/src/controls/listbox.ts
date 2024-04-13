@@ -1,62 +1,93 @@
-import { ListNavigationStrategy } from '../navigation-strategies/list-navigation';
+import { v4 as uuidv4 } from 'uuid';
+
+import { ActiveDescendentStrategy } from '../navigation-patterns/active-descendent-strategy';
+import { EndNavigation } from '../navigation-patterns/end-navigation';
+import { HomeNavigation } from '../navigation-patterns/home-navigation';
+import { NextNavigation } from '../navigation-patterns/next-navigation';
+import { PointerNavigation } from '../navigation-patterns/pointer-navigation';
+import { PreviousNavigation } from '../navigation-patterns/previous-navigation';
+import { ScrollToItem } from '../navigation-patterns/scroll-to-item';
+import { SelectionStrategy } from '../navigation-patterns/selection-strategy';
 import { Control } from './control';
 
+import type { EmitStrategy, UpdateStrategy } from '..';
+
+interface ListboxOptions {
+  updater?: UpdateStrategy;
+  emitter?: EmitStrategy;
+}
+
 export class Listbox extends Control {
-  private navigationStrategy;
+  #selectionStrategy: SelectionStrategy = new SelectionStrategy(this);
+  #focusStrategy: ActiveDescendentStrategy = new ActiveDescendentStrategy(this);
 
-  constructor(element: HTMLElement) {
-    super(element);
-    this.navigationStrategy = new ListNavigationStrategy(this);
-
-    element.addEventListener('mouseup', this.navigate);
-    element.addEventListener('keydown', this.navigate);
-    element.addEventListener('keyup', this.navigate);
-    element.addEventListener('focusin', this.focus);
-    element.addEventListener('listbox', this.customHandler);
+  get selection() {
+    return this.#selectionStrategy.selection;
   }
 
-  teardown() {
-    this.element.removeEventListener('mouseup', this.navigate);
-    this.element.removeEventListener('keydown', this.navigate);
-    this.element.removeEventListener('keyup', this.navigate);
-    this.element.removeEventListener('focusin', this.focus);
-    this.element.removeEventListener('listbox', this.customHandler);
+  get activeItem() {
+    return this.#focusStrategy.activeItem;
+  }
+
+  get prevActiveItem() {
+    return this.#focusStrategy.prevActiveItem;
+  }
+
+  constructor(element: HTMLElement, options?: ListboxOptions) {
+    super(element, {
+      capabilities: {
+        singleSelection: true,
+        multiSelection: true
+      },
+      optionAttributes: ['aria-multiselectable'],
+      ...options
+    });
+
+    this.registerNavigationPatterns([
+      new NextNavigation(this, ['ArrowDown', 'ArrowRight']),
+      new PreviousNavigation(this, ['ArrowUp', 'ArrowLeft']),
+      new HomeNavigation(this),
+      new EndNavigation(this),
+      new PointerNavigation(this),
+      this.#focusStrategy,
+      new ScrollToItem(this),
+      this.#selectionStrategy
+    ]);
+
+    // setup
+    element.role = 'listbox';
+
+    if (!element.hasAttribute('tabindex')) {
+      element.setAttribute('tabindex', '0');
+    }
+
+    this.readItems();
   }
 
   readItems() {
     this.items = [...this.element.querySelectorAll('[role="option"]')] as HTMLElement[];
+
+    this.ensureIds();
+
+    this.#selectionStrategy.select(
+      this.selection.filter((selection) => this.items.includes(selection))
+    );
   }
 
-  navigate(event: MouseEvent | KeyboardEvent) {
-    this.navigationStrategy.navigate(event);
+  readSelection(): void {
+    this.#selectionStrategy.readSelection();
   }
 
-  navigateHome(event: KeyboardEvent) {
-    this.navigationStrategy.navigateHome(event);
+  readOptions(): void {
+    super.readOptions();
+
+    this.element.setAttribute('tabindex', this.options.disabled ? '-1' : '0');
   }
 
-  navigateEnd(event: KeyboardEvent) {
-    this.navigationStrategy.navigateEnd(event);
-  }
-
-  customHandler(event: Event) {
-    const detail = (event as CustomEvent).detail;
-
-    if (detail.command) {
-      if (detail.command === 'navigate-next') {
-        this.navigationStrategy.navigateNext(detail.originalEvent);
-      } else if (detail.command === 'navigate-previous') {
-        this.navigationStrategy.navigatePrevious(detail.originalEvent);
-      } else if (detail.command === 'navigate-home') {
-        this.navigationStrategy.navigateHome(detail.originalEvent);
-      } else if (detail.command === 'navigate-end') {
-        this.navigationStrategy.navigateEnd(detail.originalEvent);
-      } else if (detail.command === 'focus') {
-        this.focus();
-      } else if (detail.command === 'select') {
-        this.select(detail.selection);
-      } else if (detail.command === 'activate-item') {
-        this.activateItem(detail.item);
+  private ensureIds() {
+    for (const item of this.items) {
+      if (!item.id) {
+        item.id = uuidv4();
       }
     }
   }

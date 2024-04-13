@@ -1,0 +1,106 @@
+{
+  "name": "ember-aria-navigator",
+  "version": "0.0.0",
+  "description": "The default blueprint for Embroider v2 addons.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "author": "gossi",
+  "files": [
+    "addon-main.js",
+    "dist"
+  ],
+  "scripts": {
+    "build": "concurrently 'npm:build:*'",
+    "build:js": "rollup --config",
+    "build:types": "tsc --emitDeclarationOnly",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
+    "lint:css:fix": "stylelint 'src/**/*.css' --allow-empty-input --fix",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "concurrently 'npm:start:*'",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "tsc --emitDeclarationOnly --watch"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.7",
+    "lodash.isequal": "^4.5.0",
+    "dom-element-descriptors": "^0.5.0",
+    "ember-modifier": "^4.1.0",
+    "aria-navigator": "workspace:*"
+  },
+  "peerDependencies": {
+    "@ember/test-helpers": "^3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@ember/test-helpers": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
+    "@babel/plugin-transform-typescript": "^7.23.6",
+    "@babel/runtime": "^7.24.0",
+    "@ember/test-helpers": "^3.3.0",
+    "@embroider/addon-dev": "^4.2.0",
+    "@gossi/config-eslint": "^0.10.0",
+    "@gossi/config-prettier": "^0.8.0",
+    "@gossi/config-targets": "^0.9.0",
+    "@gossi/config-template-lint": "^0.8.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@tsconfig/ember": "^3.0.6",
+    "@types/lodash.isequal": "^4.5.8",
+    "@types/qunit": "^2.19.10",
+    "concurrently": "^8.2.2",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-source": "~5.7.0",
+    "ember-template-lint": "^6.0.0",
+    "eslint": "^8.57.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "qunit-dom": "^3.0.0",
+    "rollup": "^4.13.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.js",
+    "app-js": {
+      "./modifiers/listbox.js": "./dist/_app_/modifiers/listbox.js"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./test-support": {
+      "types": "./declarations/test-support/index.d.ts",
+      "default": "./dist/test-support/index.js"
+    },
+    "./addon-main.js": "./addon-main.js",
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*"
+    }
+  },
+  "engines": {
+    "node": ">= 18.*"
+  },
+  "volta": {
+    "extends": "../../../package.json"
+  }
+}

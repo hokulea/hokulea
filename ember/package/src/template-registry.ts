@@ -1,41 +1,44 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore cannot import gts
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment */
+
+// @ts-ignore
 import type Box from './components/box';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Button from './components/button';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Card from './components/card';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Checkbox from './components/checkbox';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type CurrencyInput from './components/currency-input';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type DateInput from './components/date-input';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type EmailInput from './components/email-input';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Form from './components/form';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Icon from './components/icon';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type IconButton from './components/icon-button';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type InputBuilder from './components/input-builder';
-// @ts-ignore cannot import gts
+// @ts-ignore
+import type List from './components/list';
+// @ts-ignore
 import type NumberInput from './components/number-input';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type PasswordInput from './components/password-input';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type PhoneInput from './components/phone-input';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Radio from './components/radio';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Section from './components/section';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type Select from './components/select';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type TextArea from './components/text-area';
-// @ts-ignore cannot import gts
+// @ts-ignore
 import type TextInput from './components/text-input';
 
 export default interface HokuleaRegistry {
@@ -48,6 +51,7 @@ export default interface HokuleaRegistry {
   EmailInput: typeof EmailInput;
   Icon: typeof Icon;
   IconButton: typeof IconButton;
+  List: typeof List;
   NumberInput: typeof NumberInput;
   PasswordInput: typeof PasswordInput;
   PhoneInput: typeof PhoneInput;

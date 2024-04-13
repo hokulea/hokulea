@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment */
+
 // icons
 
 // @ts-ignore
@@ -15,6 +16,8 @@ export { default as IconButton } from './components/icon-button';
 
 // @ts-ignore
 export { default as DateInput } from './components/date-input';
+// @ts-ignore
+export { default as List } from './components/list';
 // @ts-ignore
 export { default as NumberInput } from './components/number-input';
 // @ts-ignore

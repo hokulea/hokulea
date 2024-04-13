@@ -3,6 +3,7 @@ import { PageObject, selector as sel } from 'fractal-page-object';
 import { CheckboxPageObject } from '../choice';
 import { InputPageObject } from '../input';
 import { InputBuilderPageObject } from '../input-builder';
+import { ListPageObject } from '../list';
 import { SelectPageObject } from '../select';
 import { TextAreaPageObject } from '../text-area';
 import { ChoicesPageObject } from './choices';
@@ -33,6 +34,7 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
   private $select = sel(SelectPageObject.SELECTOR, SelectPageObject);
   private $textArea = sel(TextAreaPageObject.SELECTOR, TextAreaPageObject);
   private $checkbox = sel(CheckboxPageObject.SELECTOR, CheckboxPageObject);
+  private $list = sel(ListPageObject.SELECTOR, ListPageObject);
 
   $choices = sel(ChoicesPageObject.SELECTOR, ChoicesPageObject);
   $errors = sel(
@@ -48,7 +50,12 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
     }
   );
 
-  get $control(): InputPageObject | InputBuilderPageObject | SelectPageObject | TextAreaPageObject {
+  get $control():
+    | InputPageObject
+    | InputBuilderPageObject
+    | SelectPageObject
+    | TextAreaPageObject
+    | ListPageObject {
     if (this.$inputBuilder.element) {
       return this.$inputBuilder;
     }
@@ -67,6 +74,10 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
 
     if (this.$textArea.element) {
       return this.$textArea;
+    }
+
+    if (this.$list.element) {
+      return this.$list;
     }
 
     return this.$input; // @TODO bad fallback for now

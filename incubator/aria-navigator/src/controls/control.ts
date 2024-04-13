@@ -1,6 +1,37 @@
-import isEqual from 'lodash.isequal';
+import { DomObserverUpdateStrategy } from '../update-strategies/dom-observer-update-strategy';
 
-import type { EmitStrategy, PersistResult } from '../emit-strategies/emit-strategy';
+import type { EmitStrategy } from '../emit-strategies/emit-strategy';
+import type {
+  NavigationParameterBag,
+  NavigationPattern
+} from '../navigation-patterns/navigation-pattern';
+import type { UpdateStrategy } from '../update-strategies/update-strategy';
+
+function pipe<Value>(input: Value, ...fns: ((input: Value) => Value)[]) {
+  let lastResult = input;
+
+  for (let fn of fns) {
+    lastResult = fn(lastResult);
+  }
+
+  return lastResult;
+}
+
+interface Capabilities {
+  singleSelection: boolean;
+  multiSelection: boolean;
+}
+
+interface ControlOptions {
+  capabilities?: Capabilities;
+  optionAttributes?: string[];
+  updater?: UpdateStrategy;
+}
+
+interface Options {
+  multiple: boolean;
+  disabled: boolean;
+}
 
 export type Item = HTMLElement;
 export type List = Item[];
@@ -10,151 +41,112 @@ export type TreeItem = {
   children: TreeItem[];
 };
 
-export interface ControlArgs<T = unknown> {
-  items?: T[];
-  selection?: T[];
-  activeItem: T;
-  select?: (selection: number[] | T[]) => PersistResult;
-  activateItem?: (item: number | T) => PersistResult;
-}
-
-export class Control {
+export abstract class Control {
   items: Item[] = [];
-  selection: Item[] = [];
-  activeItem?: Item;
-  prevActiveItem?: Item;
 
-  multiple = false;
+  abstract get selection(): Item[];
+  abstract get activeItem(): Item | undefined;
+  abstract get prevActiveItem(): Item | undefined;
 
   element: HTMLElement;
   emitter?: EmitStrategy;
+  updater: UpdateStrategy;
 
-  constructor(element: HTMLElement) {
+  /**
+   * Capabilities define, which _behaviors_ are applicable to the given control
+   */
+  #capabilities: Capabilities = {
+    singleSelection: false,
+    multiSelection: false
+  };
+
+  get capabilities() {
+    return this.#capabilities;
+  }
+
+  #optionAttributes: string[] = [];
+
+  get optionAttributes() {
+    return this.#optionAttributes;
+  }
+
+  /**
+   * Options instruct, which behaviors are actually _active_
+   */
+  options: Options = {
+    multiple: false,
+    disabled: false
+  };
+
+  private navigationPatterns: NavigationPattern[] = [];
+
+  constructor(element: HTMLElement, options: ControlOptions) {
     this.element = element;
+
+    this.#capabilities = options.capabilities ?? this.#capabilities;
+    this.#optionAttributes = options.optionAttributes ?? this.#optionAttributes;
+    this.updater = options.updater ?? new DomObserverUpdateStrategy(this);
+
+    if (options.updater) {
+      options.updater.setControl(this);
+    }
 
     this.readOptions();
   }
 
-  teardown() {
-    // implements this
-  }
-
-  installRemote(_element: HTMLElement) {
-    // implement this
-  }
-
-  uninstallRemote(_element: HTMLElement) {
-    // implement this
-  }
-
-  setEmitter(emitter: EmitStrategy) {
+  setEmitStrategy(emitter: EmitStrategy) {
     this.emitter = emitter;
+  }
+
+  setUpdateStrategy(updater: UpdateStrategy) {
+    this.updater.teardown?.();
+
+    this.updater = updater;
+  }
+
+  protected registerNavigationPatterns(patterns: NavigationPattern[]) {
+    this.navigationPatterns = patterns;
+
+    const eventNames = new Set(this.navigationPatterns.map((p) => p.eventListeners ?? []).flat());
+
+    for (const eventName of eventNames) {
+      this.element.addEventListener(eventName, this.handleEvent.bind(this));
+    }
+  }
+
+  private handleEvent(event: Event) {
+    if (this.options.disabled) {
+      return;
+    }
+
+    const patterns = this.navigationPatterns.filter((p) => p.matches(event));
+
+    patterns.forEach((p) => p.prepare?.(event));
+
+    pipe({ event } as NavigationParameterBag, ...patterns.map((p) => p.handle.bind(p)));
+
+    event.stopPropagation();
   }
 
   // read in from DOM
 
-  public read() {
-    this.readOptions();
-    this.readItems();
-    this.readSelection();
-    this.readActiveItem();
-  }
-
   readOptions() {
-    this.multiple =
-      (this.element?.hasAttribute('aria-multiselectable') &&
+    this.options.multiple =
+      (this.element.hasAttribute('aria-multiselectable') &&
         this.element.getAttribute('aria-multiselectable') === 'true') ||
       false;
-  }
 
-  readSelection() {
-    const selection = [...this.element.querySelectorAll('[aria-selected="true"]')] as HTMLElement[];
-
-    this.select(selection);
-  }
-
-  readActiveItem() {
-    const activeItem = this.element.querySelector('[aria-current]') as Item | undefined;
-
-    this.activateItem(activeItem);
+    this.options.disabled =
+      (this.element.hasAttribute('aria-disabled') &&
+        this.element.getAttribute('aria-disabled') === 'true') ||
+      false;
   }
 
   readItems() {
     this.items = [];
   }
 
-  // mutate state
-
-  select(selection: Item[]) {
-    if (isEqual(selection, this.selection)) {
-      return;
-    }
-
-    this.selection = selection;
-
-    this.emitSelection();
-  }
-
-  private emitSelection() {
-    const persisted = this.emitter?.select(this.selection);
-
-    if (persisted !== true) {
-      this.persistSelection(this.selection);
-    }
-  }
-
-  private persistSelection(selection: Item[]) {
-    for (const element of this.items) {
-      if (selection.includes(element)) {
-        element.setAttribute('aria-selected', 'true');
-      } else {
-        element.removeAttribute('aria-selected');
-      }
-    }
-  }
-
-  activateItem(item?: Item) {
-    if (item === this.activeItem) {
-      return;
-    }
-
-    this.prevActiveItem = this.activeItem;
-    this.activeItem = item;
-
-    this.emitItemActivation();
-  }
-
-  private emitItemActivation() {
-    const persisted = this.emitter?.activateItem(this.activeItem);
-
-    if (persisted !== true) {
-      this.persistActivateItem(this.activeItem);
-    }
-  }
-
-  private persistActivateItem(item?: Item) {
-    this.prevActiveItem?.removeAttribute('aria-current');
-    item?.setAttribute('aria-current', 'true');
-  }
-
-  // event handlers
-  focus() {
-    if (this.items.length === 0) {
-      return;
-    }
-
-    if (this.selection.length > 0) {
-      this.activateItem(this.selection[0]);
-    } else {
-      this.activateItem(this.items[0]);
-
-      if (!this.multiple) {
-        this.select([this.items[0]]);
-      }
-    }
-  }
-
-  navigate(_event: MouseEvent | KeyboardEvent) {
-    // implement this
+  readSelection() {
+    // no-op, please implement
   }
 }

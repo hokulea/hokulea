@@ -5,6 +5,7 @@
 # compiled output
 /dist/
 /tmp/
+/storybook-static/
 
 # dependencies
 /bower_components/

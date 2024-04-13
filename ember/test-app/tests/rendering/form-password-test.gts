@@ -12,11 +12,13 @@ module('Rendering | <Form.Password>', function (hooks) {
   const data = { password: '' };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Password @label='Passwort' @description='Für den Login' @name='password' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Password @label='Passwort' @description='Für den Login' @name='password' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -37,11 +39,13 @@ module('Rendering | <Form.Password>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Password @name='password' @label='Passwort' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Password @name='password' @label='Passwort' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
@@ -50,22 +54,26 @@ module('Rendering | <Form.Password>', function (hooks) {
   });
 
   test('disabling the input', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Password @name='password' @label='Passwort' disabled />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Password @name='password' @label='Passwort' disabled />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
 
     assert.dom(input.control).isDisabled();
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Password @name='password' @label='Passwort' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Password @name='password' @label='Passwort' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     assert.dom(input.control).isDisabled();
   });

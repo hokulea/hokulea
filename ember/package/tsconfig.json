@@ -9,7 +9,7 @@
     "types/**/*"
   ],
   "exclude": [
-    "**/*.stories.ts"
+    "src/**/*.stories.ts"
   ],
   "glint": {
     "environment": [

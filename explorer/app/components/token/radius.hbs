@@ -6,7 +6,11 @@
   </div>
 
   {{#if this.computable}}
-    <span local-class="meter" {{style --value=(concat "var(" @name ")")}} {{this.setup}}></span>
+    <span
+      local-class="meter"
+      {{style --value=(concat "var(" @name ")")}}
+      {{this.setup this.update}}
+    ></span>
   {{/if}}
   <span local-class="value">{{this.value}}</span>
 </div>

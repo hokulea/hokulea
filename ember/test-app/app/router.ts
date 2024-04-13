@@ -14,4 +14,5 @@ Router.map(function () {
   this.route('controls');
   this.route('forms');
   this.route('icons');
+  this.route('aria');
 });

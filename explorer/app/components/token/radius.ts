@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
 import { modifier } from 'ember-modifier';
 
@@ -24,29 +25,29 @@ export default class TokenComponent extends Component<TokenArgs> {
     return this.args.compute ?? true;
   }
 
-  setup = modifier((element: HTMLElement) => {
+  setup = modifier((element: HTMLElement, [update]: [() => void]) => {
     // listen for changes
-    window.addEventListener('resize', this.update);
+    window.addEventListener('resize', update);
 
-    const mutationObserver = new window.MutationObserver(this.update);
+    const mutationObserver = new window.MutationObserver(update);
 
     this.demo = element;
 
-    let elem = element;
+    let elem: HTMLElement | null = element;
 
     do {
       mutationObserver.observe(elem, {
         attributes: true,
         attributeFilter: ['style', 'class']
       });
-      elem = elem.parentElement as HTMLElement; // booh!
-    } while (elem);
+      elem = elem.parentElement;
+    } while (elem !== null);
 
     // first run
-    this.update();
+    update();
 
     return () => {
-      window.removeEventListener('resize', this.update);
+      window.removeEventListener('resize', update);
       mutationObserver.disconnect();
     };
   });
@@ -59,7 +60,8 @@ export default class TokenComponent extends Component<TokenArgs> {
     return this.computed ?? this.property;
   }
 
-  private update() {
+  @action
+  update() {
     this.computed = this.compute();
   }
 

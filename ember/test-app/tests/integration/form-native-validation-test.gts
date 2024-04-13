@@ -22,11 +22,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
     const data: TestFormData = {};
     const submitHandler = sinon.spy();
 
-    await render(<template>
-      <Form @data={{data}} @submit={{submitHandler}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @submit={{submitHandler}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -37,11 +39,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
     const data: TestFormData = {};
     const submitHandler = sinon.spy();
 
-    await render(<template>
-      <Form @data={{data}} @submit={{submitHandler}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @submit={{submitHandler}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -54,11 +58,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
     const data: TestFormData = {};
     const invalidHandler = sinon.spy();
 
-    await render(<template>
-      <Form @data={{data}} @invalidated={{invalidHandler}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @invalidated={{invalidHandler}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -71,12 +77,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
     const data: TestFormData = {};
     const submitHandler = sinon.spy();
 
-    await render(<template>
-      <Form @data={{data}} @submit={{submitHandler}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-        <form.Text @name='familyName' @label='Family Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @submit={{submitHandler}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name='familyName' @label='Family Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -91,12 +99,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('validation errors are revalidated on submit', async function (assert) {
     const data: TestFormData = {};
 
-    await render(<template>
-      <Form @data={{data}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-        <form.Text @name='familyName' @label='Family Name' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name='familyName' @label='Family Name' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -120,11 +130,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('<Errors> renders all error messages in non-block mode', async function (assert) {
     const data: TestFormData = {};
 
-    await render(<template>
-      <Form @data={{data}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -136,11 +148,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('works with setCustomValidity', async function (this: RenderingTestContext, assert) {
     const data: TestFormData = {};
 
-    await render(<template>
-      <Form @data={{data}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -163,11 +177,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('validation errors mark the control as invalid', async function (assert) {
     const data: TestFormData = {};
 
-    await render(<template>
-      <Form @data={{data}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -201,18 +217,20 @@ module('Integration | <Form> | Native validation', function (hooks) {
           ]
         : undefined;
 
-    await render(<template>
-      <Form @data={{data}} @validate={{validateForm}} as |form|>
-        <form.Text
-          @name='givenName'
-          @label='Given Name'
-          @validate={{validateField}}
-          required
-          pattern='^[A-Za-z]+$'
-        />
-        <form.Text @name='familyName' @label='Family Name' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @validate={{validateForm}} as |form|>
+          <form.Text
+            @name='givenName'
+            @label='Given Name'
+            @validate={{validateField}}
+            required
+            pattern='^[A-Za-z]+$'
+          />
+          <form.Text @name='familyName' @label='Family Name' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -264,18 +282,20 @@ module('Integration | <Form> | Native validation', function (hooks) {
           ]
         : undefined;
 
-    await render(<template>
-      <Form @data={{data}} @validate={{validateForm}} as |form|>
-        <form.Text
-          @name='givenName'
-          @label='Given Name'
-          @validate={{validateField}}
-          required
-          pattern='^[A-Za-z]+$'
-        />
-        <form.Text @name='familyName' @label='Family Name' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @validate={{validateForm}} as |form|>
+          <form.Text
+            @name='givenName'
+            @label='Given Name'
+            @validate={{validateField}}
+            required
+            pattern='^[A-Za-z]+$'
+          />
+          <form.Text @name='familyName' @label='Family Name' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -300,12 +320,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
           }
         : undefined;
 
-    await render(<template>
-      <Form @data={{data}} @validate={{validateForm}} @ignoreNativeValidation={{true}} as |form|>
-        <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-        <form.Text @name='familyName' @label='Family Name' required />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} @validate={{validateForm}} @ignoreNativeValidation={{true}} as |form|>
+          <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
+          <form.Text @name='familyName' @label='Family Name' required />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -323,12 +345,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
       test('validation errors are exposed on focusout', async function (assert) {
         const data: TestFormData = {};
 
-        await render(<template>
-          <Form @data={{data}} @validateOn='focusout' as |form|>
-            <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-            <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
-          </Form>
-        </template>);
+        await render(
+          <template>
+            <Form @data={{data}} @validateOn='focusout' as |form|>
+              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
+              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            </Form>
+          </template>
+        );
 
         const form = new FormPageObject();
 
@@ -363,12 +387,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
       test('validation errors are exposed on change', async function (assert) {
         const data: TestFormData = {};
 
-        await render(<template>
-          <Form @data={{data}} @validateOn='change' as |form|>
-            <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-            <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
-          </Form>
-        </template>);
+        await render(
+          <template>
+            <Form @data={{data}} @validateOn='change' as |form|>
+              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
+              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            </Form>
+          </template>
+        );
 
         const form = new FormPageObject();
 
@@ -396,12 +422,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
       test('validation errors are exposed on focusout', async function (assert) {
         const data: TestFormData = {};
 
-        await render(<template>
-          <Form @data={{data}} @revalidateOn='focusout' as |form|>
-            <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-            <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
-          </Form>
-        </template>);
+        await render(
+          <template>
+            <Form @data={{data}} @revalidateOn='focusout' as |form|>
+              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
+              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            </Form>
+          </template>
+        );
 
         const form = new FormPageObject();
 
@@ -480,12 +508,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
       test('validation errors are revalidated on change', async function (assert) {
         const data: TestFormData = {};
 
-        await render(<template>
-          <Form @data={{data}} @revalidateOn='change' as |form|>
-            <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-            <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
-          </Form>
-        </template>);
+        await render(
+          <template>
+            <Form @data={{data}} @revalidateOn='change' as |form|>
+              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
+              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            </Form>
+          </template>
+        );
 
         const form = new FormPageObject();
 

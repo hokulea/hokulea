@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: var(--s-4);
 
-  padding: var(--spacing-container-padding0);
+  padding: var(--spacing-container0);
 
   background-color: var(--surface-container1);
   border: var(--shape-stroke);

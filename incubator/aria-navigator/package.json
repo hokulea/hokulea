@@ -2,48 +2,72 @@
   "name": "aria-navigator",
   "description": "",
   "author": "gossi",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*"
-    }
-  },
   "files": [
     "dist"
   ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "start": "concurrently -g 'npm:start:*'",
-    "start:js": "pnpm build:js -w",
-    "start:types": "pnpm build:types -w",
-    "build": "concurrently -g 'npm:build:*'",
-    "build:js": "swc src/ -d dist/",
-    "build:types": "tsc -d --emitDeclarationOnly",
+    "dev": "vite",
+    "__build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "tsup --watch",
+    "_start": "concurrently -g 'npm:start:*'",
+    "_start:js": "pnpm build:js -w",
+    "_start:types": "pnpm build:types -w",
+    "build": "tsup",
+    "_build": "concurrently -g 'npm:build:*'",
+    "_build:js": "swc src -d dist",
+    "_build:types": "tsc -d --emitDeclarationOnly",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix"
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "lodash.isequal": "^4.5.0"
+    "lodash.isequal": "^4.5.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.5.0",
-    "@gossi/config-prettier": "^0.5.0",
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.242",
-    "@types/eslint": "^8.4.8",
-    "@types/lodash.isequal": "^4.5.6",
-    "concurrently": "^7.6.0",
-    "eslint": "^8.35.0",
-    "prettier": "^3.0.0",
-    "typescript": "~5.1.6"
+    "@gossi/config-eslint": "^0.10.0",
+    "@gossi/config-prettier": "^0.8.0",
+    "@hokulea/core": "workspace:*",
+    "@hokulea/theme-moana": "workspace:*",
+    "@swc/cli": "^0.3.10",
+    "@swc/core": "^1.4.6",
+    "@testing-library/dom": "^9.3.4",
+    "@types/css-modules": "^1.0.5",
+    "@types/eslint": "^8.56.5",
+    "@types/lodash.isequal": "^4.5.8",
+    "@types/uuid": "^9.0.8",
+    "@vitest/browser": "^1.4.0",
+    "@vitest/coverage-istanbul": "^1.4.0",
+    "@vitest/ui": "^1.4.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.6",
+    "vitest": "^1.4.0",
+    "webdriverio": "^8.35.1"
   },
   "engines": {
-    "node": ">= 16.*"
+    "node": ">= 18.*"
   },
   "volta": {
     "extends": "../../package.json"

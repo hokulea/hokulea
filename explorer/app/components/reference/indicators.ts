@@ -25,5 +25,5 @@ export default class IndicatorsComponent extends Component {
     return colors;
   }
 
-  compileName = helper(([prop]) => `--indicator-${this.indicator}-${prop}`);
+  compileName = helper(([prop]: [string]) => `--indicator-${this.indicator}-${prop}`);
 }

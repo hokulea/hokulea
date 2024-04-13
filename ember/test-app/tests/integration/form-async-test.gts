@@ -63,24 +63,26 @@ module('Integration | <Form> | Async state', function (hooks) {
     test('validation state is yielded - valid', async function (assert) {
       const data: TestFormData = { givenName: 'Tony', familyName: 'Ward' };
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Text
-            @name='givenName'
-            @label='Given Name'
-            @validate={{validateFieldCallbackAsync}}
-          />
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Text
+              @name='givenName'
+              @label='Given Name'
+              @validate={{validateFieldCallbackAsync}}
+            />
 
-          {{#if form.validationState}}
-            <div data-test-validation-state>{{form.validationState.state}}</div>
-            {{#if form.validationState.isResolved}}
-              <div data-test-validation-value>
-                {{stringify form.validationState.value}}
-              </div>
+            {{#if form.validationState}}
+              <div data-test-validation-state>{{form.validationState.state}}</div>
+              {{#if form.validationState.isResolved}}
+                <div data-test-validation-value>
+                  {{stringify form.validationState.value}}
+                </div>
+              {{/if}}
             {{/if}}
-          {{/if}}
-        </Form>
-      </template>);
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -110,23 +112,25 @@ module('Integration | <Form> | Async state', function (hooks) {
     test('validation state is yielded - invalid', async function (assert) {
       const data: TestFormData = { givenName: 'Foo', familyName: 'Smith' };
 
-      await render(<template>
-        <Form @data={{data}} as |form|>
-          <form.Text
-            @name='givenName'
-            @label='Given Name'
-            @validate={{validateFieldCallbackAsync}}
-          />
-          {{#if form.validationState}}
-            <div data-test-validation-state>{{form.validationState.state}}</div>
-            {{#if form.validationState.isResolved}}
-              <div data-test-validation-value>
-                {{stringify form.validationState.value}}
-              </div>
+      await render(
+        <template>
+          <Form @data={{data}} as |form|>
+            <form.Text
+              @name='givenName'
+              @label='Given Name'
+              @validate={{validateFieldCallbackAsync}}
+            />
+            {{#if form.validationState}}
+              <div data-test-validation-state>{{form.validationState.state}}</div>
+              {{#if form.validationState.isResolved}}
+                <div data-test-validation-value>
+                  {{stringify form.validationState.value}}
+                </div>
+              {{/if}}
             {{/if}}
-          {{/if}}
-        </Form>
-      </template>);
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -165,19 +169,21 @@ module('Integration | <Form> | Async state', function (hooks) {
           setTimeout(() => resolve('SUCCESS'), 10);
         });
 
-      await render(<template>
-        <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          {{#if form.submissionState}}
-            <div data-test-submission-state>{{form.submissionState.state}}</div>
-            {{#if form.submissionState.isResolved}}
-              <div data-test-submission-value>
-                {{form.submissionState.value}}
-              </div>
+      await render(
+        <template>
+          <Form @data={{data}} @submit={{submitHandler}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            {{#if form.submissionState}}
+              <div data-test-submission-state>{{form.submissionState.state}}</div>
+              {{#if form.submissionState.isResolved}}
+                <div data-test-submission-value>
+                  {{form.submissionState.value}}
+                </div>
+              {{/if}}
             {{/if}}
-          {{/if}}
-        </Form>
-      </template>);
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -211,19 +217,21 @@ module('Integration | <Form> | Async state', function (hooks) {
           setTimeout(() => reject('ERROR'), 10);
         });
 
-      await render(<template>
-        <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' />
-          {{#if form.submissionState}}
-            <div data-test-submission-state>{{form.submissionState.state}}</div>
-            {{#if form.submissionState.isRejected}}
-              <div data-test-submission-error>
-                {{stringify form.submissionState.error}}
-              </div>
+      await render(
+        <template>
+          <Form @data={{data}} @submit={{submitHandler}} as |form|>
+            <form.Text @name='givenName' @label='Given Name' />
+            {{#if form.submissionState}}
+              <div data-test-submission-state>{{form.submissionState.state}}</div>
+              {{#if form.submissionState.isRejected}}
+                <div data-test-submission-error>
+                  {{stringify form.submissionState.error}}
+                </div>
+              {{/if}}
             {{/if}}
-          {{/if}}
-        </Form>
-      </template>);
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 
@@ -257,21 +265,23 @@ module('Integration | <Form> | Async state', function (hooks) {
           setTimeout(() => resolve('SUCCESS'), 10);
         });
 
-      await render(<template>
-        <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text
-            @name='givenName'
-            @label='Given Name'
-            @validate={{validateFieldCallbackAsync}}
-          />
-          {{#if form.validationState}}
-            <div data-test-validation-state>{{form.validationState.state}}</div>
-          {{/if}}
-          {{#if form.submissionState}}
-            <div data-test-submission-state>{{form.submissionState.state}}</div>
-          {{/if}}
-        </Form>
-      </template>);
+      await render(
+        <template>
+          <Form @data={{data}} @submit={{submitHandler}} as |form|>
+            <form.Text
+              @name='givenName'
+              @label='Given Name'
+              @validate={{validateFieldCallbackAsync}}
+            />
+            {{#if form.validationState}}
+              <div data-test-validation-state>{{form.validationState.state}}</div>
+            {{/if}}
+            {{#if form.submissionState}}
+              <div data-test-submission-state>{{form.submissionState.state}}</div>
+            {{/if}}
+          </Form>
+        </template>
+      );
 
       const form = new FormPageObject();
 

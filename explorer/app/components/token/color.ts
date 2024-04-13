@@ -19,22 +19,22 @@ export default class TokenComponent extends Component<TokenArgs> {
     return findDescription(this.args.name);
   }
 
-  setup = modifier(() => {
+  setup = modifier((_element, [update]: [() => void]) => {
     // listen for changes
     const media = window.matchMedia('(prefers-color-scheme: dark)');
 
-    media.addEventListener('change', this.update);
+    media.addEventListener('change', update);
 
     // first run
-    this.update();
+    update();
 
     return () => {
-      media.removeEventListener('change', this.update);
+      media.removeEventListener('change', update);
     };
   });
 
   @action
-  private update() {
+  update() {
     this.value = this.compute();
   }
 

@@ -14,15 +14,17 @@ module('Rendering | <Form.Currency>', function (hooks) {
   const data = { contribution: 0 };
 
   test('it renders with defaults', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Currency
-          @label='Eigenanteil'
-          @description='Wieviel zahlst du selbst?'
-          @name='contribution'
-        />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Currency
+            @label='Eigenanteil'
+            @description='Wieviel zahlst du selbst?'
+            @name='contribution'
+          />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
 
@@ -46,11 +48,13 @@ module('Rendering | <Form.Currency>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Currency @name='contribution' @label='Eigenanteil' placeholder='abc' />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Currency @name='contribution' @label='Eigenanteil' placeholder='abc' />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
@@ -59,22 +63,26 @@ module('Rendering | <Form.Currency>', function (hooks) {
   });
 
   test('disabling the input', async function (assert) {
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Currency @name='contribution' @label='Eigenanteil' disabled />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Currency @name='contribution' @label='Eigenanteil' disabled />
+        </Form>
+      </template>
+    );
 
     const form = new FormPageObject();
     const input = form.$fields[0].$control;
 
     assert.dom(input.control).isDisabled();
 
-    await render(<template>
-      <Form @data={{data}} as |f|>
-        <f.Currency @name='contribution' @label='Eigenanteil' @disabled={{true}} />
-      </Form>
-    </template>);
+    await render(
+      <template>
+        <Form @data={{data}} as |f|>
+          <f.Currency @name='contribution' @label='Eigenanteil' @disabled={{true}} />
+        </Form>
+      </template>
+    );
 
     assert.dom(input.control).isDisabled();
   });

@@ -7,14 +7,14 @@
   },
   "dependencies": {
     "@hokulea/config-targets": "*",
-    "@gossi/config-stylelint": "^0.7.0"
+    "@gossi/config-stylelint": "^0.9.0"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "*",
     "@hokulea/config-prettier": "*",
     "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "stylelint": "^16.1.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.3.1",
     "stylelint-config-clean-order": "^5.4.1"
   },
   "peerDependencies": {

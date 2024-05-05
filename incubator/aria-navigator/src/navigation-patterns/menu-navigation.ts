@@ -1,5 +1,3 @@
-import { isItemOf } from '../controls/control';
-
 import type { Control } from '..';
 import type { Item } from '../controls/control';
 import type { FocusStrategy } from './focus-strategy';
@@ -96,9 +94,6 @@ export class MenuNavigation implements NavigationPattern {
             menu.hidePopover();
           }
         });
-      // for (const item of this.control.items) {
-      //   if (item !== )
-      // }
 
       if (this.control.activeItem?.hasAttribute('popovertarget')) {
         this.showSubmenu();
@@ -116,26 +111,6 @@ export class MenuNavigation implements NavigationPattern {
       ) {
         (event.relatedTarget as HTMLElement).focus();
       }
-
-      // // target is menu
-      // if (
-      //   target === this.control.element &&
-      //   !this.control.element.contains(event.relatedTarget as Node) &&
-      //   // @ts-expect-error yep, we add out own secret type
-      //   event.relatedTarget !== this.control.element[OPENER]
-      // ) {
-      //   this.hideSubmenu();
-      // }
-
-      // moving pointer away from trigger
-      // if (isItemOf(target, this.control) && target.hasAttribute('popovertarget')) {
-      //   const menu = getMenuFromItem(target);
-
-      //   if (menu && event.relatedTarget !== menu) {
-      //     menu[FOCUS_TRIGGER_ON_CLOSE] = false;
-      //     menu.hidePopover();
-      //   }
-      // }
     }
   }
 

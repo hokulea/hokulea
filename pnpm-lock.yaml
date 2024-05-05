@@ -219,6 +219,9 @@ importers:
       '@embroider/addon-shim':
         specifier: ^1.8.7
         version: 1.8.7
+      '@floating-ui/dom':
+        specifier: ^1.6.3
+        version: 1.6.3
       '@hokulea/core':
         specifier: workspace:*
         version: link:../../foundation/core
@@ -249,6 +252,9 @@ importers:
       tracked-built-ins:
         specifier: ^3.3.0
         version: 3.3.0
+      uuid:
+        specifier: ^9.0.1
+        version: 9.0.1
     devDependencies:
       '@babel/core':
         specifier: ^7.24.4
@@ -331,6 +337,9 @@ importers:
       '@types/qunit':
         specifier: ^2.19.10
         version: 2.19.10
+      '@types/uuid':
+        specifier: ^9.0.8
+        version: 9.0.8
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.5.0
         version: 7.5.0(@typescript-eslint/parser@7.5.0)(eslint@8.57.0)(typescript@5.4.4)
@@ -4106,6 +4115,23 @@ packages:
       '@lit-labs/react': 1.2.1
       react: 17.0.2
     dev: true
+
+  /@floating-ui/core@1.6.0:
+    resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
+    dependencies:
+      '@floating-ui/utils': 0.2.1
+    dev: false
+
+  /@floating-ui/dom@1.6.3:
+    resolution: {integrity: sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==}
+    dependencies:
+      '@floating-ui/core': 1.6.0
+      '@floating-ui/utils': 0.2.1
+    dev: false
+
+  /@floating-ui/utils@0.2.1:
+    resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: false
 
   /@glimmer/compiler@0.85.13:
     resolution: {integrity: sha512-To8a+yScHAHE9/PpwuHyz2yYTBM2+m1Z6l4B9A6LgjkKeu0K7plv2c03V9JpsA3mMJBROJ1mfxOUuQsvTidEkg==}

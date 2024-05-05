@@ -41,6 +41,18 @@ export type TreeItem = {
   children: TreeItem[];
 };
 
+export function isItemOf(item: Item, control: Control) {
+  return control.items.includes(item);
+}
+
+export function asItemOf(item: Item, control: Control): Item | undefined {
+  if (isItemOf(item, control)) {
+    return item;
+  }
+
+  return undefined;
+}
+
 export abstract class Control {
   items: Item[] = [];
 

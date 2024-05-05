@@ -2,7 +2,10 @@ import type { Control, Item } from '../controls/control';
 import type { FocusStrategy } from './focus-strategy';
 import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
 
-export class ActiveDescendentStrategy implements NavigationPattern, FocusStrategy {
+/**
+ * @see https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_roving_tabindex
+ */
+export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy {
   eventListeners: EventNames[] = ['focusin', 'keydown', 'pointerup'];
 
   activeItem?: Item;
@@ -31,32 +34,27 @@ export class ActiveDescendentStrategy implements NavigationPattern, FocusStrateg
   }
 
   handleFocus() {
-    const multiSelection =
-      this.control.capabilities.multiSelection && this.control.options.multiple;
-    const selectionPresent = this.control.selection.length > 0;
-
-    if (multiSelection && selectionPresent) {
-      this.activateItem(this.control.selection[0]);
-    } else {
+    if (!this.activeItem) {
       this.activateItem(this.control.items[0]);
     }
   }
 
   activateItem(item: Item) {
-    if (item === this.activeItem) {
-      return;
+    if (item !== this.activeItem) {
+      // turn passed item active
+      item.setAttribute('tabindex', '0');
+
+      this.prevActiveItem = this.activeItem;
+      this.activeItem = item;
+
+      // mark the previous one not active anymore
+      this.control.prevActiveItem?.setAttribute('tabindex', '-1');
     }
 
-    // turn passed item active
-    item.setAttribute('aria-current', 'true');
-    this.control.element.setAttribute('aria-activedescendant', item.id);
+    this.activeItem.focus();
 
-    this.prevActiveItem = this.activeItem;
-    this.activeItem = item;
-
-    // mark the previous one not active anymore
-    this.control.prevActiveItem?.removeAttribute('aria-current');
-
-    this.control.emitter?.itemActivated(item);
+    if (item !== this.activeItem) {
+      this.control.emitter?.itemActivated(item);
+    }
   }
 }

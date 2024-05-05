@@ -9,6 +9,7 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     // Build settings
+    "noEmit": true,
     "noEmitOnError": false,
     "module": "ESNext",
     "target": "ESNext",
@@ -20,12 +21,15 @@
     "strict": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
+    // "noUncheckedIndexedAccess": true,
+    // "noPropertyAccessFromIndexSignature": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "verbatimModuleSyntax": true,
   }
 }

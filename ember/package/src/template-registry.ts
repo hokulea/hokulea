@@ -25,6 +25,8 @@ import type InputBuilder from './components/input-builder';
 // @ts-ignore
 import type List from './components/list';
 // @ts-ignore
+import type Menu from './components/menu';
+// @ts-ignore
 import type NumberInput from './components/number-input';
 // @ts-ignore
 import type PasswordInput from './components/password-input';
@@ -40,6 +42,7 @@ import type Select from './components/select';
 import type TextArea from './components/text-area';
 // @ts-ignore
 import type TextInput from './components/text-input';
+import type popover from './helpers/popover';
 
 export default interface HokuleaRegistry {
   Box: typeof Box;
@@ -52,6 +55,7 @@ export default interface HokuleaRegistry {
   Icon: typeof Icon;
   IconButton: typeof IconButton;
   List: typeof List;
+  Menu: typeof Menu;
   NumberInput: typeof NumberInput;
   PasswordInput: typeof PasswordInput;
   PhoneInput: typeof PhoneInput;
@@ -62,4 +66,7 @@ export default interface HokuleaRegistry {
   TextInput: typeof TextInput;
   InputBuilder: typeof InputBuilder;
   Form: typeof Form;
+
+  // behavior
+  popover: typeof popover;
 }

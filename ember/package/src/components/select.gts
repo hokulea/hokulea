@@ -58,7 +58,7 @@ export default class Select extends Component<SelectSignature> {
   select = (event: Event) => {
     const select = event.target as HTMLSelectElement;
     const selection = Array.of(...select.selectedOptions).map((option) => option.value);
-    const value = selection.length === 1 ? selection[0] : selection;
+    const value = selection.length === 1 ? (selection[0] as Value) : (selection as Value[]);
 
     this.args.update?.(value);
   };

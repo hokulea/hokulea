@@ -36,6 +36,7 @@ export type MenuItemSignature =
       };
     };
 
+/* eslint-disable @typescript-eslint/no-use-before-define */
 const MenuItem: TOC<MenuItemSignature> = <template>
   {{#if (has-block 'menu')}}
     {{#let (popover position='right-start') as |p|}}
@@ -58,6 +59,7 @@ const MenuItem: TOC<MenuItemSignature> = <template>
     </CommandElement>
   {{/if}}
 </template>;
+/* eslint-enable @typescript-eslint/no-use-before-define */
 
 export interface MenuSignature {
   Element: HTMLDivElement;

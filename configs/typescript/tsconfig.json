@@ -9,7 +9,6 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     // Build settings
-    "noEmit": true,
     "noEmitOnError": false,
     "module": "ESNext",
     "target": "ESNext",

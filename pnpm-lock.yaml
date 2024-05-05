@@ -968,22 +968,22 @@ importers:
         version: 0.2.2
     devDependencies:
       '@hokulea/config-eslint':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/eslint
       '@hokulea/config-prettier':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/prettier
       '@hokulea/config-style-dictionary':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/style-dictionary
       '@hokulea/config-stylelint':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/stylelint
       '@hokulea/config-typescript':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../configs/typescript
       '@hokulea/theme-moana':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../themes/moana
       '@swc/cli':
         specifier: ^0.1.63

@@ -2,6 +2,7 @@
   "extends": "@hokulea/config-typescript/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "noEmit": true,
     "paths": {
       "@hokulea/ember-test-app/tests/*": [
         "tests/*"

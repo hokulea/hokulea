@@ -1,9 +1,15 @@
+import { on } from '@ember/modifier';
+
+import { link } from 'ember-link';
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';
 
 import { Button, Menu, popover } from '@hokulea/ember';
 
-const noop = () => {};
+const noop = () => {
+  // eslint-disable-next-line no-console
+  console.log('noop');
+};
 
 export class NavigationRoute extends Route<object> {
   <template>
@@ -34,7 +40,7 @@ export class NavigationRoute extends Route<object> {
         <Button {{p.trigger}}>Toggle Menu</Button>
         <Menu {{p.target}} as |m|>
           <m.Item @push={{noop}}>Home</m.Item>
-          <m.Item>About</m.Item>
+          <m.Item @push={{link 'actions'}}>Actions</m.Item>
           <m.Item>
             <:label>Nested</:label>
             <:menu as |nm|>
@@ -47,7 +53,7 @@ export class NavigationRoute extends Route<object> {
               </nm.Item>
             </:menu>
           </m.Item>
-          <m.Item>Products</m.Item>
+          <m.Item @push={{link 'controls'}}>Controls</m.Item>
         </Menu>
       {{/let}}
     </p>

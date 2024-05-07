@@ -24,7 +24,7 @@ function getMenuFromItem(item: Item): MenuElement | null {
 }
 
 export class MenuNavigation implements NavigationPattern {
-  eventListeners: EventNames[] = ['keydown', 'toggle', 'pointerover', 'pointerout'];
+  eventListeners: EventNames[] = ['keydown', 'toggle', 'pointerover', 'pointerout', 'pointerup'];
 
   constructor(
     private control: Control,
@@ -40,7 +40,8 @@ export class MenuNavigation implements NavigationPattern {
           event.code === 'ArrowLeft')) ||
       event.type === 'toggle' ||
       event.type === 'pointerover' ||
-      event.type === 'pointerout'
+      event.type === 'pointerout' ||
+      event.type === 'pointerup'
     );
   }
 
@@ -67,15 +68,23 @@ export class MenuNavigation implements NavigationPattern {
   }
 
   navigateWithKeyboard(event: KeyboardEvent) {
-    if (
-      event.code === 'ArrowRight' /* || event.code === 'Enter'*/ &&
-      this.control.activeItem?.hasAttribute('popovertarget')
-    ) {
+    if (event.code === 'ArrowRight' && this.control.activeItem?.hasAttribute('popovertarget')) {
       this.showSubmenu(true);
     }
 
     if (event.code === 'ArrowLeft') {
       this.hideSubmenu();
+    }
+
+    // close menu, when action is invoked
+    if (
+      !this.control.activeItem?.hasAttribute('popovertarget') &&
+      (event.code === 'Enter' || event.code === ' ')
+    ) {
+      event.preventDefault();
+
+      this.control.activeItem?.click();
+      this.closeRootMenu();
     }
   }
 
@@ -111,6 +120,14 @@ export class MenuNavigation implements NavigationPattern {
       ) {
         (event.relatedTarget as HTMLElement).focus();
       }
+    }
+
+    // close on invocation
+    else if (
+      event.type === 'pointerup' &&
+      !this.control.activeItem?.hasAttribute('popovertarget')
+    ) {
+      this.closeRootMenu();
     }
   }
 
@@ -157,5 +174,25 @@ export class MenuNavigation implements NavigationPattern {
         trigger.focus();
       }
     }
+  }
+
+  closeRootMenu() {
+    const getRootMenu = (menu: MenuElement): HTMLElement => {
+      if (menu[OPENER]) {
+        let parent: HTMLElement | null = menu[OPENER];
+
+        while (parent && parent.getAttribute('role') !== 'menu') {
+          parent = menu.parentElement;
+        }
+
+        return getRootMenu(parent as MenuElement);
+      }
+
+      return menu;
+    };
+
+    const root = getRootMenu(this.control.element as MenuElement);
+
+    root.hidePopover();
   }
 }

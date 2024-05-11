@@ -6,7 +6,7 @@ import type { EventNames, NavigationParameterBag, NavigationPattern } from './na
  * @see https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_roving_tabindex
  */
 export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy {
-  eventListeners: EventNames[] = ['focusin', 'keydown', 'pointerup'];
+  eventListeners: EventNames[] = ['focusin'];
 
   activeItem?: Item;
   prevActiveItem?: Item;

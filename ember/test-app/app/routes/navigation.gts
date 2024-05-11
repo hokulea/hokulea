@@ -1,5 +1,3 @@
-import { on } from '@ember/modifier';
-
 import { link } from 'ember-link';
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';

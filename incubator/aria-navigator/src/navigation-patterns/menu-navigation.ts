@@ -34,10 +34,10 @@ export class MenuNavigation implements NavigationPattern {
   matches(event: Event): boolean {
     return (
       (event instanceof KeyboardEvent &&
-        (event.code === ' ' ||
-          event.code === 'Enter' ||
-          event.code === 'ArrowRight' ||
-          event.code === 'ArrowLeft')) ||
+        (event.key === ' ' ||
+          event.key === 'Enter' ||
+          event.key === 'ArrowRight' ||
+          event.key === 'ArrowLeft')) ||
       event.type === 'toggle' ||
       event.type === 'pointerover' ||
       event.type === 'pointerout' ||
@@ -48,6 +48,8 @@ export class MenuNavigation implements NavigationPattern {
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     const { event } = bag;
 
+    console.log(event);
+
     // navigation handlers
     if (event.type === 'keydown') {
       this.navigateWithKeyboard(event as KeyboardEvent);
@@ -55,7 +57,7 @@ export class MenuNavigation implements NavigationPattern {
       this.navigateWithPointer(event);
     }
 
-    // submenu behavior
+    // toggle behavior
     else if (isToggleEvent(event)) {
       if (event.newState === 'open') {
         this.show();
@@ -68,18 +70,20 @@ export class MenuNavigation implements NavigationPattern {
   }
 
   navigateWithKeyboard(event: KeyboardEvent) {
-    if (event.code === 'ArrowRight' && this.control.activeItem?.hasAttribute('popovertarget')) {
+    if (event.key === 'ArrowRight' && this.control.activeItem?.hasAttribute('popovertarget')) {
       this.showSubmenu(true);
     }
 
-    if (event.code === 'ArrowLeft') {
+    if (event.key === 'ArrowLeft') {
+      console.log('hide submenu');
+
       this.hideSubmenu();
     }
 
     // close menu, when action is invoked
     if (
       !this.control.activeItem?.hasAttribute('popovertarget') &&
-      (event.code === 'Enter' || event.code === ' ')
+      (event.key === 'Enter' || event.key === ' ')
     ) {
       event.preventDefault();
 
@@ -152,6 +156,7 @@ export class MenuNavigation implements NavigationPattern {
     if ((this.control.element as MenuElement)[FOCUS_ON_OPEN] !== false) {
       if (this.control.items.length > 0) {
         this.control.items[0].focus();
+        console.log('focus first item after show', this.control.items[0]);
       }
     }
   }
@@ -170,15 +175,18 @@ export class MenuNavigation implements NavigationPattern {
       // @ts-expect-error yep, we add out own secret type
       const trigger = this.control.element[OPENER] as HTMLElement | undefined;
 
+      console.log('focus trigger', trigger);
+
       if (trigger) {
         trigger.focus();
+        console.log('focus trigger', trigger);
       }
     }
   }
 
   closeRootMenu() {
-    const getRootMenu = (menu: MenuElement): HTMLElement => {
-      if (menu[OPENER]) {
+    const getRootMenu = (menu: MenuElement): HTMLElement | undefined => {
+      if (menu[OPENER] && menu.hasAttribute('popover')) {
         let parent: HTMLElement | null = menu[OPENER];
 
         while (parent && parent.getAttribute('role') !== 'menu') {
@@ -188,11 +196,13 @@ export class MenuNavigation implements NavigationPattern {
         return getRootMenu(parent as MenuElement);
       }
 
-      return menu;
+      return menu.hasAttribute('popover') ? menu : undefined;
     };
 
     const root = getRootMenu(this.control.element as MenuElement);
 
-    root.hidePopover();
+    if (root) {
+      root.hidePopover();
+    }
   }
 }

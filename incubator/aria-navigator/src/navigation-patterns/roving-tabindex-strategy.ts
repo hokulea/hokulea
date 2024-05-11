@@ -45,15 +45,15 @@ export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy 
       item.setAttribute('tabindex', '0');
 
       this.prevActiveItem = this.activeItem;
-      this.activeItem = item;
 
       // mark the previous one not active anymore
       this.control.prevActiveItem?.setAttribute('tabindex', '-1');
     }
 
-    this.activeItem.focus();
+    item.focus();
 
     if (item !== this.activeItem) {
+      this.activeItem = item;
       this.control.emitter?.itemActivated(item);
     }
   }

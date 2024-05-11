@@ -178,17 +178,19 @@ export class MenuNavigation implements NavigationPattern {
 
   closeRootMenu() {
     const getRootMenu = (menu: MenuElement): HTMLElement | undefined => {
-      if (menu[OPENER] && menu.hasAttribute('popover')) {
-        let parent: HTMLElement | null = menu[OPENER];
+      const menus = [];
 
-        while (parent && parent.getAttribute('role') !== 'menu') {
-          parent = menu.parentElement;
+      let elem: HTMLElement | null = menu;
+
+      while (elem) {
+        if (elem.getAttribute('role') === 'menu' && elem.hasAttribute('popover')) {
+          menus.push(elem);
         }
 
-        return getRootMenu(parent as MenuElement);
+        elem = elem.parentElement;
       }
 
-      return menu.hasAttribute('popover') ? menu : undefined;
+      return menus.pop();
     };
 
     const root = getRootMenu(this.control.element as MenuElement);

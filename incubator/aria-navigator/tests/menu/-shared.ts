@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid';
+
 import { appendItemToMenu, appendSubmenuToMenu, createMenuElement } from '../components/menu';
 
 import type { Menu } from '../../src';
@@ -29,6 +31,31 @@ export function createRefactorMenu() {
   appendItemToMenu(refactorMenu, 'Paste');
 
   return { refactorMenu, socialMenu, shareMenu };
+}
+
+export function withTriggerButton(menu: HTMLElement) {
+  const id = uuid();
+  const button = document.createElement('button');
+
+  button.setAttribute('popovertarget', id);
+  button.setAttribute('type', 'button');
+  button.append('Trigger Menu');
+  document.body.append(button);
+
+  menu.id = id;
+  menu.setAttribute('popover', '');
+
+  return button;
+}
+
+export function createRefactorMenuWithTriggerButton() {
+  const menus = createRefactorMenu();
+  const triggerButton = withTriggerButton(menus.refactorMenu);
+
+  return {
+    ...menus,
+    triggerButton
+  };
 }
 
 export function getItems(menu: Menu) {

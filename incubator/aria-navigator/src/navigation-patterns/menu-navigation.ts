@@ -48,8 +48,6 @@ export class MenuNavigation implements NavigationPattern {
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     const { event } = bag;
 
-    console.log(event);
-
     // navigation handlers
     if (event.type === 'keydown') {
       this.navigateWithKeyboard(event as KeyboardEvent);
@@ -75,8 +73,6 @@ export class MenuNavigation implements NavigationPattern {
     }
 
     if (event.key === 'ArrowLeft') {
-      console.log('hide submenu');
-
       this.hideSubmenu();
     }
 
@@ -156,7 +152,6 @@ export class MenuNavigation implements NavigationPattern {
     if ((this.control.element as MenuElement)[FOCUS_ON_OPEN] !== false) {
       if (this.control.items.length > 0) {
         this.control.items[0].focus();
-        console.log('focus first item after show', this.control.items[0]);
       }
     }
   }
@@ -175,11 +170,8 @@ export class MenuNavigation implements NavigationPattern {
       // @ts-expect-error yep, we add out own secret type
       const trigger = this.control.element[OPENER] as HTMLElement | undefined;
 
-      console.log('focus trigger', trigger);
-
       if (trigger) {
         trigger.focus();
-        console.log('focus trigger', trigger);
       }
     }
   }

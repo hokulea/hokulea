@@ -20,8 +20,6 @@ describe('Menu > Navigation > With Pointer', () => {
     });
 
     test('keeps focus on trigger item', async () => {
-      // await settled();
-
       await vi.waitFor(() => {
         expect(document.activeElement).toBe(fourthItem);
       });

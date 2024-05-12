@@ -49,7 +49,7 @@
     "@hokulea/theme-moana": "workspace:*",
     "@swc/cli": "^0.3.10",
     "@swc/core": "^1.4.6",
-    "@testing-library/dom": "^9.3.4",
+    "@testing-library/dom": "^10.1.0",
     "@types/css-modules": "^1.0.5",
     "@types/eslint": "^8.56.5",
     "@types/lodash.isequal": "^4.5.8",
@@ -62,9 +62,9 @@
     "prettier": "^3.2.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.4",
-    "vite": "^5.2.6",
+    "vite": "^5.2.11",
     "vitest": "^1.6.0",
-    "webdriverio": "^8.35.1"
+    "webdriverio": "^8.36.1"
   },
   "engines": {
     "node": ">= 18.*"

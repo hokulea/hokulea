@@ -51,8 +51,6 @@ jobs:
   test-locked-deps:
     name: Locked Deps
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.44.0-jammy
     steps:
       - name: Setup
         uses: wyvox/action@v1
@@ -64,8 +62,6 @@ jobs:
   test-floating-deps:
     name: Floating Deps
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.44.0-jammy
     steps:
       - name: Setup
         uses: wyvox/action@v1

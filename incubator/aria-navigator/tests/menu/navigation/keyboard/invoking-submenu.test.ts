@@ -1,7 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { Menu } from '../../../../src';
-import { settled } from '../../../utils';
 import { createRefactorMenu, getItems } from '../../-shared';
 
 describe('Menu > Navigation > With Keyboard', () => {
@@ -29,10 +28,10 @@ describe('Menu > Navigation > With Keyboard', () => {
       mastodonItem.dispatchEvent(new PointerEvent('pointerover', { bubbles: true }));
       socialMenu.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
 
-      await settled();
-
-      expect(shareMenu.matches(':popover-open')).toBeFalsy();
-      expect(socialMenu.matches(':popover-open')).toBeFalsy();
+      await vi.waitFor(() => {
+        expect(shareMenu.matches(':popover-open')).toBeFalsy();
+        expect(socialMenu.matches(':popover-open')).toBeFalsy();
+      });
     });
   });
 });

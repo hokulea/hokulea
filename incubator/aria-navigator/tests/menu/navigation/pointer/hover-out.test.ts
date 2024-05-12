@@ -1,7 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { Menu } from '../../../../src';
-import { settled } from '../../../utils';
 import { createRefactorMenu, getItems } from '../../-shared';
 
 describe('Menu > Navigation > With Pointer', () => {
@@ -23,20 +22,21 @@ describe('Menu > Navigation > With Pointer', () => {
     test('hover into submenu moves focus', async () => {
       codeItem.dispatchEvent(new PointerEvent('pointerover', { bubbles: true }));
 
-      await settled();
-
-      expect(shareMenu.matches(':popover-open')).toBeTruthy();
-      expect(document.activeElement).toBe(codeItem);
+      await vi.waitFor(() => {
+        expect(shareMenu.matches(':popover-open')).toBeTruthy();
+        expect(document.activeElement).toBe(codeItem);
+      });
     });
 
     test('hover back to trigger moves focus and keeps the submenu open', async () => {
       shareMenu.dispatchEvent(
         new PointerEvent('pointerout', { bubbles: true, relatedTarget: fourthItem })
       );
-      await settled();
 
-      expect(shareMenu.matches(':popover-open')).toBeTruthy();
-      expect(document.activeElement).toBe(fourthItem);
+      await vi.waitFor(() => {
+        expect(shareMenu.matches(':popover-open')).toBeTruthy();
+        expect(document.activeElement).toBe(fourthItem);
+      });
     });
   });
 });

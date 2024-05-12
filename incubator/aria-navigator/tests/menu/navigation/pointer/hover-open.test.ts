@@ -1,7 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { Menu } from '../../../../src';
-import { settled } from '../../../utils';
 import { createRefactorMenu, getItems } from '../../-shared';
 
 describe('Menu > Navigation > With Pointer', () => {
@@ -21,9 +20,11 @@ describe('Menu > Navigation > With Pointer', () => {
     });
 
     test('keeps focus on trigger item', async () => {
-      await settled();
+      // await settled();
 
-      expect(document.activeElement).toBe(fourthItem);
+      await vi.waitFor(() => {
+        expect(document.activeElement).toBe(fourthItem);
+      });
     });
   });
 });

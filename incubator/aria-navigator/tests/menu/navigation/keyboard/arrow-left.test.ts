@@ -1,7 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { Menu } from '../../../../src';
-import { settled } from '../../../utils';
 import { createRefactorMenu, getItems } from '../../-shared';
 
 describe('Menu > Navigation > With Keyboard', () => {
@@ -22,11 +21,12 @@ describe('Menu > Navigation > With Keyboard', () => {
     refactorMenu.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' }));
 
     refactorMenu.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
-    await settled();
 
-    expect(shareMenu.matches(':popover-open')).toBeTruthy();
-    expect(codeItem.getAttribute('tabindex')).toBe('0');
-    expect(document.activeElement).toBe(codeItem);
+    await vi.waitFor(() => {
+      expect(shareMenu.matches(':popover-open')).toBeTruthy();
+      expect(codeItem.getAttribute('tabindex')).toBe('0');
+      expect(document.activeElement).toBe(codeItem);
+    });
 
     test('use `ArrowLeft` to close submenu', () => {
       // await settled();
@@ -35,8 +35,9 @@ describe('Menu > Navigation > With Keyboard', () => {
     });
 
     test('has focus moved to the trigger of the submenu', async () => {
-      await settled();
-      expect(document.activeElement).toBe(fourthItem);
+      await vi.waitFor(() => {
+        expect(document.activeElement).toBe(fourthItem);
+      });
     });
   });
 });

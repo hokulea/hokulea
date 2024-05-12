@@ -1,7 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { Menu } from '../../../../src';
-import { settled } from '../../../utils';
 import { createRefactorMenu, getItems } from '../../-shared';
 
 describe('Menu > Navigation > With Keyboard', () => {
@@ -32,10 +31,10 @@ describe('Menu > Navigation > With Keyboard', () => {
       const share = new Menu(shareMenu);
       const firstItem = share.items[0];
 
-      await settled();
-
-      expect(firstItem.getAttribute('tabindex')).toBe('0');
-      expect(document.activeElement).toBe(firstItem);
+      await vi.waitFor(() => {
+        expect(firstItem.getAttribute('tabindex')).toBe('0');
+        expect(document.activeElement).toBe(firstItem);
+      });
     });
   });
 });

@@ -136,8 +136,6 @@ export class MenuNavigation implements NavigationPattern {
       const menu = getMenuFromItem(this.control.activeItem);
 
       if (menu) {
-        // console.log('open menu', moveFocus, this.control.activeItem, menu);
-
         menu[OPENER] = this.control.activeItem;
         menu[FOCUS_ON_OPEN] = moveFocus;
         menu.showPopover();

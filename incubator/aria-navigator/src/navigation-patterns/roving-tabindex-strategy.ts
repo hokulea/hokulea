@@ -20,8 +20,8 @@ export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     const { event, item } = bag;
 
-    if (event.type === 'focusin') {
-      this.handleFocus();
+    if (event.type === 'focusin' && this.control.element === event.target && !this.activeItem) {
+      this.activateItem(this.control.items[0]);
 
       return bag;
     }
@@ -31,12 +31,6 @@ export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy 
     }
 
     return bag;
-  }
-
-  handleFocus() {
-    if (!this.activeItem) {
-      this.activateItem(this.control.items[0]);
-    }
   }
 
   activateItem(item: Item) {

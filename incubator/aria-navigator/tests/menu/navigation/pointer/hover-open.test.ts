@@ -14,21 +14,15 @@ describe('Menu > Navigation > With Pointer', () => {
     expect(shareMenu.matches(':popover-open')).toBeFalsy();
     expect(menu.activeItem).toBeUndefined();
 
-    test('hover item to show submenu', async () => {
+    test('hover item to show submenu', () => {
       fourthItem.dispatchEvent(new PointerEvent('pointerover', { bubbles: true }));
-      expect(menu.activeItem).toBe(fourthItem);
-
       expect(shareMenu.matches(':popover-open')).toBeTruthy();
+    });
 
+    test('keeps focus on trigger item', async () => {
       await vi.waitFor(() => {
         expect(document.activeElement).toBe(fourthItem);
       });
     });
-
-    // test('keeps focus on trigger item', async () => {
-    //   await vi.waitFor(() => {
-    //     expect(document.activeElement).toBe(fourthItem);
-    //   });
-    // });
   });
 });

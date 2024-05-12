@@ -4,7 +4,7 @@ import { Menu } from '../../../../src';
 import { createRefactorMenu, getItems } from '../../-shared';
 
 describe('Menu > Navigation > With Pointer', () => {
-  describe.only('Hover opens submenu', () => {
+  describe('Hover opens submenu', () => {
     const { refactorMenu, shareMenu } = createRefactorMenu();
 
     const menu = new Menu(refactorMenu);

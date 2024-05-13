@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import type { Control, Item } from '../controls/control';
 import type { FocusStrategy } from './focus-strategy';
 import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
@@ -58,5 +60,14 @@ export class ActiveDescendentStrategy implements NavigationPattern, FocusStrateg
     this.control.prevActiveItem?.removeAttribute('aria-current');
 
     this.control.emitter?.itemActivated(item);
+  }
+
+  updateItems() {
+    // @TODO
+    for (const item of this.control.items) {
+      if (!item.id) {
+        item.id = uuidv4();
+      }
+    }
   }
 }

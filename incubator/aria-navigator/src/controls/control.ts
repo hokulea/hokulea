@@ -1,6 +1,7 @@
 import { DomObserverUpdateStrategy } from '../update-strategies/dom-observer-update-strategy';
 
 import type { EmitStrategy } from '../emit-strategies/emit-strategy';
+import type { FocusStrategy } from '../navigation-patterns/focus-strategy';
 import type {
   NavigationParameterBag,
   NavigationPattern
@@ -53,8 +54,22 @@ export function asItemOf(item: Item, control: Control): Item | undefined {
   return undefined;
 }
 
+export function isItemEnabled(item: Item) {
+  return !item.hasAttribute('aria-disabled') || item.getAttribute('aria-disabled') === 'false';
+}
+
 export abstract class Control {
+  protected abstract focusStrategy: FocusStrategy;
+
   items: Item[] = [];
+
+  get enabledItems() {
+    if (this.options.disabled) {
+      return [];
+    }
+
+    return this.items.filter(isItemEnabled);
+  }
 
   abstract get selection(): Item[];
   abstract get activeItem(): Item | undefined;
@@ -102,8 +117,6 @@ export abstract class Control {
     if (options.updater) {
       options.updater.setControl(this);
     }
-
-    this.readOptions();
   }
 
   setEmitStrategy(emitter: EmitStrategy) {

@@ -16,18 +16,18 @@ interface MenuOptions {
 }
 
 export class Menu extends Control {
-  #focusStrategy: RovingTabindexStrategy = new RovingTabindexStrategy(this);
+  protected focusStrategy: RovingTabindexStrategy = new RovingTabindexStrategy(this);
 
   get selection() {
     return [];
   }
 
   get activeItem() {
-    return this.#focusStrategy.activeItem;
+    return this.focusStrategy.activeItem;
   }
 
   get prevActiveItem() {
-    return this.#focusStrategy.prevActiveItem;
+    return this.focusStrategy.prevActiveItem;
   }
 
   constructor(element: HTMLElement, options?: MenuOptions) {
@@ -45,38 +45,27 @@ export class Menu extends Control {
       new HomeNavigation(this),
       new EndNavigation(this),
       new PointerNavigation(this, 'pointerover'),
-      this.#focusStrategy,
-      new MenuNavigation(this, this.#focusStrategy),
+      this.focusStrategy,
+      new MenuNavigation(this, this.focusStrategy),
       new ScrollToItem(this)
     ]);
 
     // setup
     element.role = 'menu';
 
+    this.readOptions();
     this.readItems();
   }
 
   readItems() {
     this.items = [...this.element.querySelectorAll('& > [role="menuitem"]')] as HTMLElement[];
 
-    this.ensureTabindex();
+    this.focusStrategy.updateItems();
   }
 
-  // readOptions(): void {
-  //   super.readOptions();
+  readOptions(): void {
+    super.readOptions();
 
-  //   this.element.setAttribute('tabindex', this.options.disabled ? '-1' : '0');
-  // }
-
-  private ensureTabindex() {
-    for (const item of this.items) {
-      if (!item.getAttribute('tabindex')) {
-        item.setAttribute('tabindex', '-1');
-      }
-    }
-
-    if (!this.activeItem && this.items.length > 0) {
-      this.items[0].setAttribute('tabindex', '0');
-    }
+    this.focusStrategy.updateItems();
   }
 }

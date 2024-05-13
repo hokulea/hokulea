@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, test } from 'vitest';
 
 import { Menu } from '../../src';
 import { createMenuElement } from '../components/menu';
 import { createRefactorMenu } from './-shared';
 
 describe('Menu', () => {
-  it('renders', () => {
+  test('renders', () => {
     const { refactorMenu } = createRefactorMenu();
 
     const menu = new Menu(refactorMenu);
@@ -14,7 +14,7 @@ describe('Menu', () => {
   });
 
   describe('setup', () => {
-    it('has listbox role', () => {
+    test('has listbox role', () => {
       const menu = createMenuElement(document.body);
 
       new Menu(menu);
@@ -22,7 +22,7 @@ describe('Menu', () => {
       expect(menu.getAttribute('role')).toBe('menu');
     });
 
-    it('sets tabindex on the first item', () => {
+    test('sets tabindex on the first item', () => {
       const { refactorMenu } = createRefactorMenu();
 
       new Menu(refactorMenu);
@@ -32,7 +32,7 @@ describe('Menu', () => {
       expect(firstItem.getAttribute('tabindex')).toBe('0');
     });
 
-    it('reads items', () => {
+    test('reads items', () => {
       const { refactorMenu } = createRefactorMenu();
 
       const menu = new Menu(refactorMenu);
@@ -40,7 +40,7 @@ describe('Menu', () => {
       expect(menu.items.length).toBe(7);
     });
 
-    it('items have tabindex', () => {
+    test('items have tabindex', () => {
       const { refactorMenu } = createRefactorMenu();
 
       const menu = new Menu(refactorMenu);
@@ -49,17 +49,19 @@ describe('Menu', () => {
     });
   });
 
-  // describe('disabled', () => {
-  //   it('focus does not work', () => {
-  //     const list = createListElement(document.body);
+  describe('disabled', () => {
+    test('focus does not work', () => {
+      const { refactorMenu } = createRefactorMenu();
 
-  //     list.setAttribute('aria-disabled', 'true');
+      refactorMenu.setAttribute('aria-disabled', 'true');
 
-  //     new Listbox(list);
+      const menu = new Menu(refactorMenu);
 
-  //     list.dispatchEvent(new FocusEvent('focusin'));
+      expect(
+        menu.items.map((item) => item.getAttribute('tabindex') === '-1').every(Boolean)
+      ).toBeTruthy();
 
-  //     expect([...list.children].every((elem) => !elem.hasAttribute('aria-selected'))).toBeTruthy();
-  //   });
-  // });
+      refactorMenu.dispatchEvent(new FocusEvent('focusin'));
+    });
+  });
 });

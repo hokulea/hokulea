@@ -1,4 +1,5 @@
 import { DomObserverUpdateStrategy } from '../update-strategies/dom-observer-update-strategy';
+import { isItemEnabled } from './-utils';
 
 import type { EmitStrategy } from '../emit-strategies/emit-strategy';
 import type { FocusStrategy } from '../navigation-patterns/focus-strategy';
@@ -41,22 +42,6 @@ export type TreeItem = {
   item: Item;
   children: TreeItem[];
 };
-
-export function isItemOf(item: Item, control: Control) {
-  return control.items.includes(item);
-}
-
-export function asItemOf(item: Item, control: Control): Item | undefined {
-  if (isItemOf(item, control)) {
-    return item;
-  }
-
-  return undefined;
-}
-
-export function isItemEnabled(item: Item) {
-  return !item.hasAttribute('aria-disabled') || item.getAttribute('aria-disabled') === 'false';
-}
 
 export abstract class Control {
   protected abstract focusStrategy: FocusStrategy;

@@ -1,4 +1,4 @@
-import { asItemOf } from '../controls/control';
+import { asItemOf } from '../controls/-utils';
 
 import type { Control } from '..';
 import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';

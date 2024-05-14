@@ -1,4 +1,5 @@
-import { type Control, isItemOf } from '../controls/control';
+import { isItemOf } from '../controls/-utils';
+import { type Control } from '../controls/control';
 
 import type { UpdateStrategy } from './update-strategy';
 

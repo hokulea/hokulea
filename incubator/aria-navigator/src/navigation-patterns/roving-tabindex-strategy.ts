@@ -1,4 +1,5 @@
-import { type Control, isItemEnabled, type Item } from '../controls/control';
+import { isItemEnabled } from '../controls/-utils';
+import { type Control, type Item } from '../controls/control';
 
 import type { FocusStrategy } from './focus-strategy';
 import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';

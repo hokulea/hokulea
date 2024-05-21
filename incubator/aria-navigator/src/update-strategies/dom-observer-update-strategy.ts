@@ -3,16 +3,6 @@ import { type Control } from '../controls/control';
 
 import type { UpdateStrategy } from './update-strategy';
 
-// function verbose(o: object) {
-//   const r = {};
-
-//   for (const p in o) {
-//     r[p] = o[p];
-//   }
-
-//   return r;
-// }
-
 export class DomObserverUpdateStrategy implements UpdateStrategy {
   private observer: MutationObserver = new MutationObserver((changes) => {
     if (!this.control) {
@@ -20,8 +10,6 @@ export class DomObserverUpdateStrategy implements UpdateStrategy {
     }
 
     const changedItems = changes.every((change) => change.type === 'childList');
-
-    // console.log(changes.map(verbose));
 
     const itemAttributes = ['aria-disabled'];
     const changedItemAttributes = changes.some(

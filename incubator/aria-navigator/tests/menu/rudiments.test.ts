@@ -14,7 +14,7 @@ describe('Menu', () => {
   });
 
   describe('setup', () => {
-    test('has listbox role', () => {
+    test('has menu role', () => {
       const menu = createMenuElement(document.body);
 
       new Menu(menu);

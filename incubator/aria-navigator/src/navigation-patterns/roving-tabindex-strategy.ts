@@ -8,7 +8,7 @@ import type { EventNames, NavigationParameterBag, NavigationPattern } from './na
  * @see https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_roving_tabindex
  */
 export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy {
-  eventListeners: EventNames[] = ['focusin'];
+  eventListeners: EventNames[] = ['focus', 'focusin'];
 
   activeItem?: Item;
   prevActiveItem?: Item;
@@ -22,8 +22,12 @@ export class RovingTabindexStrategy implements NavigationPattern, FocusStrategy 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     const { event, item } = bag;
 
-    if (event.type === 'focusin' && this.control.element === event.target && !this.activeItem) {
-      this.activateItem(this.control.enabledItems[0]);
+    if (event.type === 'focusin' && !this.activeItem) {
+      if (this.control.element === event.target) {
+        this.activateItem(this.control.enabledItems[0]);
+      } else if (this.control.enabledItems.includes(event.target as Item)) {
+        this.activateItem(event.target as Item);
+      }
 
       return bag;
     }

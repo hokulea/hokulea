@@ -17,6 +17,10 @@ function isToggleEvent(event: Event): event is ToggleEvent {
   return event.type === 'toggle';
 }
 
+function isPointerEvent(event: Event): event is PointerEvent {
+  return ['pointerover', 'pointerout', 'pointerup'].includes(event.type);
+}
+
 function getMenuFromItem(item: Item): MenuElement | null {
   return document.getElementById(
     item.getAttribute('popovertarget') as string
@@ -51,7 +55,7 @@ export class MenuNavigation implements NavigationPattern {
     // navigation handlers
     if (event.type === 'keydown') {
       this.navigateWithKeyboard(event as KeyboardEvent);
-    } else if (event instanceof PointerEvent) {
+    } else if (isPointerEvent(event)) {
       this.navigateWithPointer(event);
     }
 
@@ -148,10 +152,18 @@ export class MenuNavigation implements NavigationPattern {
   }
 
   show() {
+    for (const item of this.control.items) {
+      item.setAttribute('tabindex', '-1');
+    }
+
+    if (this.control.enabledItems.length > 0) {
+      this.control.enabledItems[0].setAttribute('tabindex', '0');
+    }
+
     // move focus to first element
     if ((this.control.element as MenuElement)[FOCUS_ON_OPEN] !== false) {
-      if (this.control.items.length > 0) {
-        this.control.items[0].focus();
+      if (this.control.enabledItems.length > 0) {
+        this.control.enabledItems[0].focus();
       }
     }
   }
@@ -159,10 +171,6 @@ export class MenuNavigation implements NavigationPattern {
   hide() {
     // reset focus
     this.focusStrategy.activeItem = undefined;
-
-    this.control.items.forEach((item, idx) => {
-      item.setAttribute('tabindex', idx === 0 ? '0' : '-1');
-    });
 
     const focusTriggerOnClose = (this.control.element as MenuElement)[FOCUS_TRIGGER_ON_CLOSE];
 

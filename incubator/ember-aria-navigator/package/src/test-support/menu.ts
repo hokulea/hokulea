@@ -1,13 +1,4 @@
-import {
-  click,
-  focus,
-  getRootElement,
-  pauseTest,
-  settled,
-  type Target,
-  triggerEvent,
-  triggerKeyEvent
-} from '@ember/test-helpers';
+import { click, getRootElement, triggerEvent, triggerKeyEvent } from '@ember/test-helpers';
 
 import sinon from 'sinon';
 

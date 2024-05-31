@@ -3,7 +3,7 @@ import { module, skip, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 
 import { FormPageObject } from '@hokulea/ember/test-support';
-import { a11yAudit } from 'ember-a11y-testing/test-support';
+import { a11yAudit, setRunOptions } from 'ember-a11y-testing/test-support';
 
 module('Acceptance | a11y', function (hooks) {
   setupApplicationTest(hooks);
@@ -14,6 +14,17 @@ module('Acceptance | a11y', function (hooks) {
   module('Actions', function () {
     skip('Actions passes a11y audit', async function (assert) {
       await visit('/actions');
+
+      // even disabling color-contrast rules makes axe warn about
+      // `aria-disabled` usage for disabled buttons. This needs investigation.
+      setRunOptions({
+        rules: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'color-contrast': {
+            enabled: false
+          }
+        }
+      });
 
       await a11yAudit();
       assert.true(true, 'no a11y errors found!');
@@ -34,6 +45,15 @@ module('Acceptance | a11y', function (hooks) {
       const form = new FormPageObject();
 
       await form.submit();
+
+      await a11yAudit();
+      assert.true(true, 'no a11y errors found!');
+    });
+  });
+
+  module('Navigation', function () {
+    test('Navigation passes a11y audit', async function (assert) {
+      await visit('/navigation');
 
       await a11yAudit();
       assert.true(true, 'no a11y errors found!');

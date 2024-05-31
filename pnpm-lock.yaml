@@ -512,6 +512,9 @@ importers:
       ember-a11y-testing:
         specifier: ^6.1.1
         version: 6.1.1(@babel/core@7.24.4)(@ember/test-helpers@3.3.0)(@glint/template@1.4.0)(qunit@2.20.1)(webpack@5.91.0)
+      ember-aria-navigator:
+        specifier: workspace:*
+        version: link:../../incubator/ember-aria-navigator/package
       ember-auto-import:
         specifier: ^2.7.2
         version: 2.7.2(@glint/template@1.4.0)(webpack@5.91.0)

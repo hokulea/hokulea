@@ -1,23 +1,23 @@
-name: "Coverage"
+name: 'Coverage'
 
-on: 
+on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   coverage:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup
-      uses: wyvox/action@v1
-    - name: coverage
-      uses: paambaati/codeclimate-action@v2.7.5
-      env:
-        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-      with:
-        coverageCommand: yarn coverage
-        coverageLocations: |
-          ${{github.workspace}}/coverage/*.lcov:lcov
+      - name: Setup
+        uses: wyvox/action@v1
+      - name: coverage
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        with:
+          coverageCommand: yarn coverage
+          coverageLocations: |
+            ${{github.workspace}}/coverage/*.lcov:lcov

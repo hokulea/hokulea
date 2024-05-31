@@ -21,31 +21,58 @@ type MenuDefaultBlock = {
   Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
 };
 
-type MenuItemArgs = {
-  disabled?: boolean;
-  registerItem: (item: MenuItem) => void;
-  unregisterItem: (item: MenuItem) => void;
-};
-
-export type MenuItemSignature = {
+export interface MenuItemSignature {
   Element: HTMLButtonElement | HTMLAnchorElement;
-} & (
-  | {
-      Args: MenuItemArgs & {
-        push: CommandAction;
-      };
-      Blocks: {
-        default: [];
-      };
-    }
-  | {
-      Args: MenuItemArgs;
-      Blocks: {
-        label: [];
-        menu: [MenuDefaultBlock];
-      };
-    }
-);
+  Args: {
+    disabled?: boolean;
+    push?: CommandAction;
+    registerItem: (item: MenuItem) => void;
+    unregisterItem: (item: MenuItem) => void;
+  };
+  Blocks: {
+    default?: [];
+    label?: [];
+    menu?: [MenuDefaultBlock];
+  };
+}
+
+// below are attempts at conditional typing based on provided blocks in dynamic invocation
+
+// type MenuItemArgs = {
+//   disabled?: boolean;
+//   registerItem: (item: MenuItem) => void;
+//   unregisterItem: (item: MenuItem) => void;
+// };
+
+// export interface MenuItemSignature<T = {}> {
+//   Element: HTMLButtonElement | HTMLAnchorElement;
+//   Args: T extends { Blocks: { default: [] } }
+//     ? MenuItemArgs & {
+//         push: CommandAction;
+//       }
+//     : MenuItemArgs;
+//   Blocks: T extends { Blocks: { default: [] } }
+//     ? { default: [] }
+//     : { label: []; menu: [MenuDefaultBlock] };
+// }
+
+//  & (
+//   | {
+//       Args: MenuItemArgs & {
+//         push: CommandAction;
+//       };
+//       Blocks: {
+//         default: [];
+//       };
+//     }
+//   | {
+//       Args: MenuItemArgs;
+//       Blocks: {
+//         label: [];
+//         menu: [MenuDefaultBlock];
+//       };
+//     }
+// );
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
 class MenuItem extends Component<MenuItemSignature> {

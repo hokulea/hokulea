@@ -153,6 +153,35 @@ describe('Listbox Navigation', () => {
       });
     });
 
+    describe('navigates with HOME, skip disabled item', () => {
+      const list = createListWithFruits();
+
+      new Listbox(list);
+
+      const firstItem = list.children[0];
+      const secondItem = list.children[1];
+      const thirdItem = list.children[2];
+
+      expect(list.getAttribute('aria-activedescendant')).toBeNull();
+      expect(firstItem.getAttribute('aria-current')).toBeNull();
+      expect(secondItem.getAttribute('aria-current')).toBeNull();
+      expect(thirdItem.getAttribute('aria-current')).toBeNull();
+
+      firstItem.setAttribute('aria-disabled', 'true');
+
+      list.dispatchEvent(new KeyboardEvent('keydown', { key: 'Home' }));
+
+      it('moves aria-activedescendant', () => {
+        expect(list.getAttribute('aria-activedescendant')).toBe(secondItem.id);
+      });
+
+      it('marks items with aria-current', () => {
+        expect(firstItem.getAttribute('aria-current')).toBeNull();
+        expect(secondItem.getAttribute('aria-current')).toBe('true');
+        expect(thirdItem.getAttribute('aria-current')).toBeNull();
+      });
+    });
+
     describe('navigates with END', () => {
       const list = createListWithFruits();
 
@@ -180,6 +209,35 @@ describe('Listbox Navigation', () => {
       });
     });
 
+    describe('navigates with END, skip disabled item', () => {
+      const list = createListWithFruits();
+
+      new Listbox(list);
+
+      const firstItem = list.children[0];
+      const secondItem = list.children[1];
+      const thirdItem = list.children[2];
+
+      expect(list.getAttribute('aria-activedescendant')).toBeNull();
+      expect(firstItem.getAttribute('aria-current')).toBeNull();
+      expect(secondItem.getAttribute('aria-current')).toBeNull();
+      expect(thirdItem.getAttribute('aria-current')).toBeNull();
+
+      thirdItem.setAttribute('aria-disabled', 'true');
+
+      list.dispatchEvent(new KeyboardEvent('keydown', { key: 'End' }));
+
+      it('moves aria-activedescendant', () => {
+        expect(list.getAttribute('aria-activedescendant')).toBe(secondItem.id);
+      });
+
+      it('marks items with aria-current', () => {
+        expect(firstItem.getAttribute('aria-current')).toBeNull();
+        expect(secondItem.getAttribute('aria-current')).toBe('true');
+        expect(thirdItem.getAttribute('aria-current')).toBeNull();
+      });
+    });
+
     describe('navigate with NEXT', () => {
       const list = createListWithFruits();
 
@@ -203,7 +261,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBeNull();
       });
 
-      it('use Home key to activate first item', () => {
+      it('use `Home` key to activate first item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'Home' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(firstItem.id);
@@ -212,7 +270,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-selected')).toBeNull();
       });
 
-      it('use ArrowDow key to activate second item', () => {
+      it('use `ArrowDown` key to activate second item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(secondItem.id);
@@ -221,7 +279,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBeNull();
       });
 
-      it('use ArrowDown key to activate third item', () => {
+      it('use `ArrowDown` key to activate third item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(thirdItem.id);
@@ -230,7 +288,42 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBe('true');
       });
 
-      it('use ArrowDown key, but keep third item activated (hit end of list)', () => {
+      it('use `ArrowDown` key, but keep third item activated (hit end of list)', () => {
+        list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' }));
+
+        expect(list.getAttribute('aria-activedescendant')).toBe(thirdItem.id);
+        expect(firstItem.getAttribute('aria-current')).toBeNull();
+        expect(secondItem.getAttribute('aria-current')).toBeNull();
+        expect(thirdItem.getAttribute('aria-current')).toBe('true');
+      });
+    });
+
+    describe('navigate with NEXT, skip disabled item', () => {
+      const list = createListWithFruits();
+
+      new Listbox(list);
+
+      const firstItem = list.children[0];
+      const secondItem = list.children[1];
+      const thirdItem = list.children[2];
+
+      expect(list.getAttribute('aria-activedescendant')).toBeNull();
+      expect(firstItem.getAttribute('aria-current')).toBeNull();
+      expect(secondItem.getAttribute('aria-current')).toBeNull();
+      expect(thirdItem.getAttribute('aria-current')).toBeNull();
+
+      secondItem.setAttribute('aria-disabled', 'true');
+
+      it('use `Home` key to activate first item', () => {
+        list.dispatchEvent(new KeyboardEvent('keydown', { key: 'Home' }));
+
+        expect(list.getAttribute('aria-activedescendant')).toBe(firstItem.id);
+        expect(firstItem.getAttribute('aria-selected')).toBe('true');
+        expect(secondItem.getAttribute('aria-selected')).toBeNull();
+        expect(thirdItem.getAttribute('aria-selected')).toBeNull();
+      });
+
+      it('use `ArrowDown` key to activate third item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(thirdItem.id);
@@ -263,7 +356,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBeNull();
       });
 
-      it('use End key to activate last item', () => {
+      it('use `End` key to activate last item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'End' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(thirdItem.id);
@@ -272,7 +365,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBe('true');
       });
 
-      it('use ArrowUp key to activate second item', () => {
+      it('use `ArrowUp` key to activate second item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(secondItem.id);
@@ -281,7 +374,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBeNull();
       });
 
-      it('use ArrowUp key to activate first item', () => {
+      it('use `ArrowUp` key to activate first item', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(firstItem.id);
@@ -290,7 +383,7 @@ describe('Listbox Navigation', () => {
         expect(thirdItem.getAttribute('aria-current')).toBeNull();
       });
 
-      it('use ArrowUp key to, but keep first item activated (hit beginning of list)', () => {
+      it('use `ArrowUp` key to, but keep first item activated (hit beginning of list)', () => {
         list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' }));
 
         expect(list.getAttribute('aria-activedescendant')).toBe(firstItem.id);
@@ -298,6 +391,41 @@ describe('Listbox Navigation', () => {
         expect(secondItem.getAttribute('aria-current')).toBeNull();
         expect(thirdItem.getAttribute('aria-current')).toBeNull();
       });
+    });
+  });
+
+  describe('navigate with PREV, skip disabled item', () => {
+    const list = createListWithFruits();
+
+    new Listbox(list);
+
+    const firstItem = list.children[0];
+    const secondItem = list.children[1];
+    const thirdItem = list.children[2];
+
+    expect(list.getAttribute('aria-activedescendant')).toBeNull();
+    expect(firstItem.getAttribute('aria-current')).toBeNull();
+    expect(secondItem.getAttribute('aria-current')).toBeNull();
+    expect(thirdItem.getAttribute('aria-current')).toBeNull();
+
+    secondItem.setAttribute('aria-disabled', 'true');
+
+    it('use `End` key to activate last item', () => {
+      list.dispatchEvent(new KeyboardEvent('keydown', { key: 'End' }));
+
+      expect(list.getAttribute('aria-activedescendant')).toBe(thirdItem.id);
+      expect(firstItem.getAttribute('aria-current')).toBeNull();
+      expect(secondItem.getAttribute('aria-current')).toBeNull();
+      expect(thirdItem.getAttribute('aria-current')).toBe('true');
+    });
+
+    it('use `ArrowUp` key to activate first item', () => {
+      list.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' }));
+
+      expect(list.getAttribute('aria-activedescendant')).toBe(firstItem.id);
+      expect(firstItem.getAttribute('aria-current')).toBe('true');
+      expect(secondItem.getAttribute('aria-current')).toBeNull();
+      expect(thirdItem.getAttribute('aria-current')).toBeNull();
     });
   });
 });

@@ -11,15 +11,15 @@ export class EndNavigation implements NavigationPattern {
   constructor(private control: Control) {}
 
   matches(event: Event): boolean {
-    return isEndEvent(event) && this.control.items.length > 0;
+    return isEndEvent(event) && this.control.enabledItems.length > 0;
   }
 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
-    const lastOffset = this.control.items.length - 1;
+    const lastOffset = this.control.enabledItems.length - 1;
 
     return {
       ...bag,
-      item: this.control.items[lastOffset]
+      item: this.control.enabledItems[lastOffset]
     };
   }
 }

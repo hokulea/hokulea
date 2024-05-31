@@ -15,6 +15,7 @@ export default defineConfig({
     }
   },
   test: {
+    // disableConsoleIntercept: true,
     open: false,
     coverage: {
       enabled: true,
@@ -25,7 +26,8 @@ export default defineConfig({
       enabled: true,
       // enableUI: true,
       headless: true,
-      name: 'chrome'
+      name: 'chrome',
+      // provider: 'playwright'
       // provider: 'none'
     }
   }

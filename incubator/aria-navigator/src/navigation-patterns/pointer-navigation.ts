@@ -1,24 +1,25 @@
+import { asItemOf } from '../controls/-utils';
+
 import type { Control } from '..';
-import type { Item } from '../controls/control';
 import type { EventNames, NavigationParameterBag, NavigationPattern } from './navigation-pattern';
 
 export class PointerNavigation implements NavigationPattern {
-  eventListeners: EventNames[] = ['pointerup'];
+  eventListeners: EventNames[];
 
-  constructor(private control: Control) {}
+  constructor(
+    private control: Control,
+    typeOrTypes: EventNames | EventNames[] = 'pointerup'
+  ) {
+    this.eventListeners = Array.isArray(typeOrTypes) ? typeOrTypes : [typeOrTypes];
+  }
 
   matches(event: Event): boolean {
-    return event.type === 'pointerup';
+    return this.eventListeners.includes(event.type as EventNames);
   }
 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     const { event } = bag as NavigationParameterBag & { event: PointerEvent };
-    const target = event.target as HTMLElement;
-    let item: Item | undefined = undefined;
-
-    if (this.control.items.includes(target)) {
-      item = target;
-    }
+    const item = asItemOf(event.target as HTMLElement, this.control);
 
     return {
       ...bag,

@@ -17,17 +17,17 @@ export class PreviousNavigation implements NavigationPattern {
   ) {}
 
   matches(event: Event): boolean {
-    return matchesKeys(event, this.keyOrKeys) && this.control.items.length > 0;
+    return matchesKeys(event, this.keyOrKeys) && this.control.enabledItems.length > 0;
   }
 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     let item: Item | undefined = undefined;
 
     if (this.control.activeItem) {
-      const activeIndex = this.control.items.indexOf(this.control.activeItem);
+      const activeIndex = this.control.enabledItems.indexOf(this.control.activeItem);
 
       if (activeIndex !== 0) {
-        item = this.control.items[activeIndex - 1];
+        item = this.control.enabledItems[activeIndex - 1];
       }
     }
 

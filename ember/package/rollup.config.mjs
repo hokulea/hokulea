@@ -45,6 +45,7 @@ export default {
       'components/icon-button.js',
       'components/icon.js',
       'components/list.js',
+      'components/menu.js',
       'components/text-input.js',
       'components/phone-input.js',
       'components/date-input.js',
@@ -58,7 +59,8 @@ export default {
       'components/checkbox.js',
       'components/input-builder.js',
       'components/text-area.js',
-      'components/form.js'
+      'components/form.js',
+      'helpers/popover.js'
     ]),
 
     hokuleaRollupPostcss({
@@ -77,6 +79,7 @@ export default {
       'components/icon-button.js',
       'components/icon.js',
       'components/list.js',
+      'components/menu.js',
       'components/text-input.js',
       'components/phone-input.js',
       'components/date-input.js',
@@ -90,7 +93,8 @@ export default {
       'components/checkbox.js',
       'components/input-builder.js',
       'components/text-area.js',
-      'components/form.js'
+      'components/form.js',
+      'helpers/popover.js'
     ]),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from

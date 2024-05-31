@@ -1,4 +1,6 @@
-import type { Control } from '../controls/control';
+import { isItemOf } from '../controls/-utils';
+import { type Control } from '../controls/control';
+
 import type { UpdateStrategy } from './update-strategy';
 
 export class DomObserverUpdateStrategy implements UpdateStrategy {
@@ -9,7 +11,15 @@ export class DomObserverUpdateStrategy implements UpdateStrategy {
 
     const changedItems = changes.every((change) => change.type === 'childList');
 
-    if (changedItems) {
+    const itemAttributes = ['aria-disabled'];
+    const changedItemAttributes = changes.some(
+      (change) =>
+        change.type === 'attributes' &&
+        isItemOf(change.target as HTMLElement, this.control as Control) &&
+        itemAttributes.includes(change.attributeName as string)
+    );
+
+    if (changedItems || changedItemAttributes) {
       this.control.readItems();
     }
 

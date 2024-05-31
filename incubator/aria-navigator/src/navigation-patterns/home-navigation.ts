@@ -11,13 +11,13 @@ export class HomeNavigation implements NavigationPattern {
   constructor(private control: Control) {}
 
   matches(event: Event): boolean {
-    return isHomeEvent(event) && this.control.items.length > 0;
+    return isHomeEvent(event) && this.control.enabledItems.length > 0;
   }
 
   handle(bag: NavigationParameterBag): NavigationParameterBag {
     return {
       ...bag,
-      item: this.control.items[0]
+      item: this.control.enabledItems[0]
     };
   }
 }

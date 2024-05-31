@@ -25,7 +25,7 @@ interface TestContext extends BaseTestContext {
 module('Rendering | Modifier | {{listbox}}', (hooks) => {
   setupRenderingTest(hooks);
 
-  test('tabindex attribute is set', async function (this: TestContext, assert) {
+  test('tabindex attribute is set', async function (assert) {
     const options = ['apple', 'banana', 'pineapple'];
 
     await render(

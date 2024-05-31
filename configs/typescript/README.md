@@ -9,7 +9,7 @@ Typescript configuration for your packagess
 ```json
 {
   "devDependencies": {
-    "@hokulea/config-typescript": "*"
+    "@hokulea/config-typescript": "workspace:*"
   }
 }
 ```

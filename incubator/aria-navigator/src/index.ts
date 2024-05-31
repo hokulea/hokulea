@@ -1,6 +1,7 @@
 // controls
 export { Control } from './controls/control';
 export { Listbox } from './controls/listbox';
+export { Menu } from './controls/menu';
 
 // emit strategies
 export type { EmitStrategy } from './emit-strategies/emit-strategy';

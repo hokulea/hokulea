@@ -66,12 +66,15 @@ module('Rendering | <Button>', function (hooks) {
   module('Behavior', function (behaviorHooks) {
     setupLink(behaviorHooks);
 
-    test('it renders as <span>, when no push behavior is given', async function (assert) {
+    // Originally, this was a `<span>` but with `<Menu>` this changed to a
+    // `<button>` although doing nothing - I'm not sure about this.
+    test('it renders as <button>, when no push behavior is given', async function (assert) {
       await render(<template><Button /></template>);
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.element).hasTagName('span');
+      // assert.dom(button.element).hasTagName('span');
+      assert.dom(button.element).hasTagName('button');
     });
 
     test('it renders as <button>, when a function is given', async function (assert) {

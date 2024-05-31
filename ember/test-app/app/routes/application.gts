@@ -15,6 +15,7 @@ export class ApplicationRoute extends Route<object> {
         <LinkTo @route='aria'>Aria</LinkTo>
         <LinkTo @route='forms'>Forms</LinkTo>
         <LinkTo @route='icons'>Icons</LinkTo>
+        <LinkTo @route='navigation'>Navigation</LinkTo>
       </nav>
     </header>
 

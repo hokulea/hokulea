@@ -1,6 +1,8 @@
 import { DomObserverUpdateStrategy } from '../update-strategies/dom-observer-update-strategy';
+import { isItemEnabled } from './-utils';
 
 import type { EmitStrategy } from '../emit-strategies/emit-strategy';
+import type { FocusStrategy } from '../navigation-patterns/focus-strategy';
 import type {
   NavigationParameterBag,
   NavigationPattern
@@ -42,7 +44,17 @@ export type TreeItem = {
 };
 
 export abstract class Control {
+  protected abstract focusStrategy: FocusStrategy;
+
   items: Item[] = [];
+
+  get enabledItems() {
+    if (this.options.disabled) {
+      return [];
+    }
+
+    return this.items.filter(isItemEnabled);
+  }
 
   abstract get selection(): Item[];
   abstract get activeItem(): Item | undefined;
@@ -90,8 +102,6 @@ export abstract class Control {
     if (options.updater) {
       options.updater.setControl(this);
     }
-
-    this.readOptions();
   }
 
   setEmitStrategy(emitter: EmitStrategy) {

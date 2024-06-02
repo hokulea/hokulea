@@ -17,7 +17,7 @@ import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
 import type { CommandAction } from 'ember-command';
 
-type MenuDefaultBlock = {
+export type MenuDefaultBlock = {
   Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
 };
 

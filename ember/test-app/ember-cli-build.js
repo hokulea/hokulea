@@ -28,6 +28,10 @@ module.exports = function (defaults) {
       })
     },
 
+    babel: {
+      plugins: [require.resolve('ember-concurrency/async-arrow-task-transform')]
+    },
+
     'ember-cli-babel': {
       enableTypeScriptTransform: true
     },

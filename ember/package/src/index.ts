@@ -50,6 +50,9 @@ export { default as Form } from './components/form';
 // navigation
 
 // @ts-ignore
+export { default as AppHeader } from './components/app-header';
+
+// @ts-ignore
 export { default as Menu } from './components/menu';
 
 // content

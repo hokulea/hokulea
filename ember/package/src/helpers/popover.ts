@@ -1,7 +1,7 @@
 import { tracked } from '@glimmer/tracking';
 import { helper } from '@ember/component/helper';
 
-import { computePosition, type Placement } from '@floating-ui/dom';
+import { computePosition, flip, type Placement } from '@floating-ui/dom';
 import { modifier } from 'ember-modifier';
 import { v4 as uuid } from 'uuid';
 
@@ -30,14 +30,15 @@ const popover = helper((_, { position }: { position?: Placement }) => {
       const pos = (event: ToggleEvent) => {
         if (position && event.newState === 'open' && triggerElement) {
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          computePosition(triggerElement, element, { placement: position }).then(
-            ({ x, y }): void => {
-              Object.assign(element.style, {
-                left: `${String(x)}px`,
-                top: `${String(y)}px`
-              });
-            }
-          );
+          computePosition(triggerElement, element, {
+            placement: position,
+            middleware: [flip()]
+          }).then(({ x, y }): void => {
+            Object.assign(element.style, {
+              left: `${String(x)}px`,
+              top: `${String(y)}px`
+            });
+          });
         }
       };
 

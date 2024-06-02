@@ -85,3 +85,143 @@ a:active {
     background-color: var(--control-disabled-background);
   }
 }
+
+.app-header {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  gap: var(--spacing-container1);
+  align-items: baseline;
+
+  padding-inline: var(--spacing-container0);
+
+  background: var(--surface-container);
+
+  & > * {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    min-width: 0;
+  }
+
+  [part="brand"] {
+    align-items: center;
+    padding-block: var(--spacing-container0);
+    font-size: var(--s0);
+    font-weight: bold;
+  }
+
+  &[data-sensing] > :is(nav, [part="aux"]) {
+    visibility: hidden;
+  }
+
+  & > nav {
+    flex-grow: 1;
+
+    &[data-position="center"] {
+      justify-content: center;
+    }
+
+    &[data-position="end"] {
+      justify-content: end;
+    }
+  }
+
+  :is(a,button) {
+    color: var(--typography-main);
+    text-decoration: none;
+    background: transparent;
+
+    &:hover, &[aria-current="page"] {
+      color: var(--intent-action-plain-base-text);
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      span {
+        outline: var(--control-focus-stroke);
+        outline-offset: var(--spacing-primitive-4);
+      }
+    }
+  }
+
+  & > :is(nav, [part="menu"]) > :is(a,button) {
+    flex-shrink: 0;
+
+    min-width: 0;
+    padding-block: var(--spacing-container0);
+    padding-inline: var(--spacing-container-4);
+
+    white-space: nowrap;
+  }
+
+  & > :is([part="aux"],[part="menu"]) {
+    margin-inline-start: auto;
+  }
+
+  /* Popover menu */
+
+  & > [part="menu"] > [popover] {
+    flex-direction: column;
+
+    min-width: 33vw;
+    max-width: 66vw;
+    height: 100vh;
+
+    color: var(--typography-main);
+
+    background-color: var(--surface-base);
+
+    &::backdrop {
+      background-color: rgb(0 0 0 / 12%);
+    }
+
+    &:popover-open {
+      display: flex;
+    }
+
+    & > header {
+      display: flex;
+      padding-inline: var(--spacing-container0);
+      background: var(--surface-container);
+    }
+
+    nav {
+      padding-block: var(--spacing-container-4);
+      padding-inline: var(--spacing-container0);
+    }
+
+    [part="aux"] {
+      margin-block-start: auto;
+      padding: var(--spacing-container0);
+    }
+
+    :not(header) :is(a, summary, span) {
+      display: list-item;
+      padding-block: var(--spacing-container-4);
+      list-style-position: inside;
+
+      &::marker {
+        margin: none;
+      }
+    }
+
+    :not(header) :is(a, span) {
+      /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+      text-indent: 0.85em;
+      list-style-type: none;
+    }
+
+    details > div {
+      display: flex;
+      flex-direction: column;
+      padding-inline-start: 0.85em;
+    }
+
+    *:focus-visible {
+      outline: var(--control-focus-stroke);
+    }
+  }
+}

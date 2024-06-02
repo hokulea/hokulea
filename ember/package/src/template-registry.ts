@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment */
 
 // @ts-ignore
+import type AppHeader from './components/app-header';
+// @ts-ignore
 import type Box from './components/box';
 // @ts-ignore
 import type Button from './components/button';
@@ -45,6 +47,7 @@ import type TextInput from './components/text-input';
 import type popover from './helpers/popover';
 
 export default interface HokuleaRegistry {
+  AppHeader: typeof AppHeader;
   Box: typeof Box;
   Button: typeof Button;
   Card: typeof Card;

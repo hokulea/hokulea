@@ -8,5 +8,7 @@
 
 @import "./tokens/controls.css";
 
+@import "./tokens/navigation.css";
+
 @import "./foundation/base.css";
 

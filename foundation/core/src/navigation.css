@@ -11,15 +11,15 @@ a:active {
 } */
 
 a, a:link, a:visited {
-  color: var(--intent-action-plain-base-text);
+  color: var(--navigation-links-base);
 }
 
 a:hover {
-  color: var(--intent-action-plain-hover-text);
+  color: var(--navigation-links-hover);
 }
 
 a:active {
-  color: var(--intent-action-plain-active-text);
+  color: var(--navigation-links-active);
 }
 
 .menu:is(:not([popover]),[popover]:popover-open) {
@@ -112,15 +112,15 @@ a:active {
     font-weight: bold;
 
     &, a&:link, a&:visited {
-      color: var(--intent-action-plain-base-text);
+      color: var(--navigation-links-base);
     }
 
     a&:hover {
-      color: var(--intent-action-plain-hover-text);
+      color: var(--navigation-links-hover);
     }
 
     a&:active {
-      color: var(--intent-action-plain-active-text);
+      color: var(--navigation-links-active);
     }
   }
 

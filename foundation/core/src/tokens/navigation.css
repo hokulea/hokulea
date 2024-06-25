@@ -1,0 +1,10 @@
+/*
+They are only due to a bug:
+https://github.com/theemo-tokens/theemo/issues/746
+*/
+
+:root {
+  --navigation-links-base: var(--intent-action-base-text);
+  --navigation-links-hover: var(--intent-action-hover-text);
+  --navigation-links-active: var(--intent-action-active-text);
+}

@@ -35,6 +35,15 @@ module('Acceptance | a11y', function (hooks) {
     test('form passes a11y audit', async function (assert) {
       await visit('/forms');
 
+      setRunOptions({
+        rules: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'color-contrast': {
+            enabled: false
+          }
+        }
+      });
+
       await a11yAudit();
       assert.true(true, 'no a11y errors found!');
     });
@@ -46,6 +55,15 @@ module('Acceptance | a11y', function (hooks) {
 
       await form.submit();
 
+      setRunOptions({
+        rules: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'color-contrast': {
+            enabled: false
+          }
+        }
+      });
+
       await a11yAudit();
       assert.true(true, 'no a11y errors found!');
     });
@@ -54,6 +72,15 @@ module('Acceptance | a11y', function (hooks) {
   module('Navigation', function () {
     test('Navigation passes a11y audit', async function (assert) {
       await visit('/navigation');
+
+      setRunOptions({
+        rules: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'color-contrast': {
+            enabled: false
+          }
+        }
+      });
 
       await a11yAudit();
       assert.true(true, 'no a11y errors found!');

@@ -69,7 +69,7 @@ export class SelectionStrategy implements NavigationPattern {
           .filter((e) => e !== undefined)
       : selection;
 
-    this.persistSelection(items as Item[]);
+    this.persistSelection(items);
   }
 
   readSelection() {

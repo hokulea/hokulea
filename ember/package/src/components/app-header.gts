@@ -188,17 +188,19 @@ export default class AppHeader extends Component<AppHeaderSignature> {
             </button>
 
             <section popover {{p.target}} {{this.closeWhenLink}}>
-              <header>
+              <div>
                 {{#if (has-block 'brand')}}
                   <CommandElement @command={{@home}} part='brand'>
                     {{yield to='brand'}}
                   </CommandElement>
                 {{/if}}
-              </header>
+              </div>
 
+              {{! template-lint-disable no-duplicate-landmark-elements }}
               <nav>
                 {{yield (hash Item=PopoverNavItem) to='nav'}}
               </nav>
+              {{! template-lint-enable no-duplicate-landmark-elements }}
 
               {{#if (has-block 'aux')}}
                 <span part='aux'>

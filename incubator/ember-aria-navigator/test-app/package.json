@@ -77,7 +77,7 @@
     "qunit": "^2.21.0",
     "qunit-dom": "^3.1.2",
     "sinon": "^17.0.1",
-    "typescript": "~5.4.2",
+    "typescript": "~5.5.0",
     "webpack": "^5.92.0"
   },
   "ember": {

@@ -146,7 +146,7 @@ a:active {
     background: transparent;
 
     &:hover, &[aria-current="page"] {
-      color: var(--intent-action-plain-base-text);
+      color: var(--navigation-links-base);
     }
 
     &:focus-visible {

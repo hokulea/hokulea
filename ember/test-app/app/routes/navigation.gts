@@ -11,7 +11,7 @@ const noop = () => {
 
 export class NavigationRoute extends Route<object> {
   <template>
-    <h2>Icons</h2>
+    <h2>Navigation</h2>
 
     <p>
       <Menu as |m|>

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "declarationDir": "./declarations",
-    "noEmit": false
+    "noEmit": false,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*",

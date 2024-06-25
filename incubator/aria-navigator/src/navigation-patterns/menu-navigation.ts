@@ -131,7 +131,11 @@ export class MenuNavigation implements NavigationPattern {
       event.type === 'pointerup' &&
       !this.control.activeItem?.hasAttribute('popovertarget')
     ) {
-      this.closeRootMenu();
+      // firefox wouldn't execute the default click handler from a menuitem,
+      // when `this.closeRootMenu()` is invoked directly.
+      // As such, pushing this on the event loop gives firefox "time to breath"
+      // and execute the default click handler as well as closing the menu
+      window.setTimeout(() => this.closeRootMenu(), 0);
     }
   }
 

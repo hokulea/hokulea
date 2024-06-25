@@ -2,7 +2,8 @@
   "extends": "@hokulea/config-typescript/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "declarationDir": "./declarations"
+    "declarationDir": "./declarations",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*",

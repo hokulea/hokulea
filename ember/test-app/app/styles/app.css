@@ -26,11 +26,8 @@
   --typo-display-tracking: -0.003em;
 }
 
-body {
-  padding: var(--spacing-container0);
-}
-
 main {
   display: grid;
   gap: var(--spacing-container0);
+  padding: var(--spacing-container0);
 }

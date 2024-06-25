@@ -1,4 +1,4 @@
-// eslint-disable-next-line n/no-unpublished-require
+// eslint-disable-next-line n/no-unpublished-require, n/no-missing-require
 const Plugin = require('ember-css-modules/lib/plugin');
 const { ModulesMap } = require('./config');
 const debug = require('debug')('hokulea:css-module');

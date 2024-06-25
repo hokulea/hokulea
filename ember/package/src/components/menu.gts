@@ -13,25 +13,21 @@ import styles from '@hokulea/core/navigation.module.css';
 import disabled from '../-private/modifiers/disabled';
 import popover from '../helpers/popover';
 
+import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu';
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
-import type { CommandAction } from 'ember-command';
 
-type MenuDefaultBlock = {
+export type MenuDefaultBlock = {
   Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
 };
 
 export interface MenuItemSignature {
-  Element: HTMLButtonElement | HTMLAnchorElement;
-  Args: {
-    disabled?: boolean;
-    push?: CommandAction;
+  Element: MenuItemElement;
+  Args: MenuItemArgs & {
     registerItem: (item: MenuItem) => void;
     unregisterItem: (item: MenuItem) => void;
   };
-  Blocks: {
-    default?: [];
-    label?: [];
+  Blocks: MenuItemBlocks & {
     menu?: [MenuDefaultBlock];
   };
 }
@@ -96,25 +92,20 @@ class MenuItem extends Component<MenuItemSignature> {
           {{disabled when=(if @disabled @disabled false)}}
           {{p.trigger}}
         >
-          {{! @glint-ignore }}
-          {{yield to='label'}}
+          {{~yield to='label'~}}
         </button>
 
-        {{!@glint-ignore}}
         <Menu {{p.target}} as |m|>
-          {{! @glint-ignore }}
           {{yield m to='menu'}}
         </Menu>
       {{/let}}
     {{else}}
       <CommandElement
-        {{! @glint-ignore }}
         @command={{@push}}
         {{disabled when=(if @disabled @disabled false)}}
         role='menuitem'
       >
-        {{! @glint-ignore }}
-        {{yield}}
+        {{~yield~}}
       </CommandElement>
     {{/if}}
   </template>

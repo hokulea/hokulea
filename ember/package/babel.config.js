@@ -24,6 +24,7 @@ module.exports = {
         transforms: []
       }
     ],
+    require.resolve('ember-concurrency/async-arrow-task-transform'),
     ['module:decorator-transforms', { runtime: { import: 'decorator-transforms/runtime' } }]
   ]
 };

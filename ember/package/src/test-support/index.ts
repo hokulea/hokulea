@@ -1,3 +1,4 @@
+export { AppHeaderPageObject } from './page-objects/app-header';
 export { ButtonPageObject } from './page-objects/button';
 export { CheckboxPageObject, RadioPageObject } from './page-objects/choice';
 export { FormPageObject } from './page-objects/form';

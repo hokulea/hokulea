@@ -4,23 +4,29 @@ import CompatRoute from 'ember-polaris-routing/route/compat';
 
 import { AppHeader } from '@hokulea/ember';
 
+function noop() {
+  // eslint-disable-next-line no-console
+  console.log('noop');
+}
+
 export class ApplicationRoute extends Route<object> {
   <template>
-    <AppHeader @position='center'>
+    <AppHeader @position='center' @home={{link 'application'}}>
       <:brand>Hokulea</:brand>
-      <:nav as |Item|>
-        <Item @push={{link 'actions'}}>Actions</Item>
-        <Item @push={{link 'content'}}>Content</Item>
-        <Item @push={{link 'controls'}}>Controls</Item>
-        <Item @push={{link 'aria'}}>Aria</Item>
-        <Item @push={{link 'forms'}}>Forms</Item>
-        <Item @push={{link 'icons'}}>Icons</Item>
-        <Item @push={{link 'navigation'}}>Navigation</Item>
-        <Item>
+      <:nav as |n|>
+        <n.Item @push={{link 'actions'}}>Actions</n.Item>
+        <n.Item @push={{link 'content'}}>Content</n.Item>
+        <n.Item>lalala</n.Item>
+        <n.Item @push={{link 'controls'}}>Controls</n.Item>
+        <n.Item @push={{link 'aria'}}>Aria</n.Item>
+        <n.Item @push={{link 'forms'}}>Forms</n.Item>
+        <n.Item @push={{link 'icons'}}>Icons</n.Item>
+        <n.Item @push={{link 'navigation'}}>Navigation</n.Item>
+        <n.Item>
           <:label>Let's go down</:label>
           <:menu as |m|>
             <m.Item>One</m.Item>
-            <m.Item>Two</m.Item>
+            <m.Item @push={{noop}}>Two</m.Item>
             <m.Item>Three</m.Item>
             <m.Item>
               <:label>Down down</:label>
@@ -30,7 +36,7 @@ export class ApplicationRoute extends Route<object> {
               </:menu>
             </m.Item>
           </:menu>
-        </Item>
+        </n.Item>
       </:nav>
       <:aux>
         at the end

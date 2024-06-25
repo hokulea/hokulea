@@ -110,6 +110,18 @@ a:active {
     padding-block: var(--spacing-container0);
     font-size: var(--s0);
     font-weight: bold;
+
+    &, a&:link, a&:visited {
+      color: var(--intent-action-plain-base-text);
+    }
+
+    a&:hover {
+      color: var(--intent-action-plain-hover-text);
+    }
+
+    a&:active {
+      color: var(--intent-action-plain-active-text);
+    }
   }
 
   &[data-sensing] > :is(nav, [part="aux"]) {
@@ -147,7 +159,7 @@ a:active {
     }
   }
 
-  & > :is(nav, [part="menu"]) > :is(a,button) {
+  & > :is(nav, [part="menu"]) > [part="item"] {
     flex-shrink: 0;
 
     min-width: 0;
@@ -198,7 +210,7 @@ a:active {
       padding: var(--spacing-container0);
     }
 
-    :not(header) :is(a, summary, span) {
+    :not(header) [part="item"] {
       display: list-item;
       padding-block: var(--spacing-container-4);
       list-style-position: inside;
@@ -208,7 +220,8 @@ a:active {
       }
     }
 
-    :not(header) :is(a, span) {
+    :not(header) :is(a, span, button) {
+      text-align: start;
       /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
       text-indent: 0.85em;
       list-style-type: none;

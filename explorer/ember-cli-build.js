@@ -24,7 +24,8 @@ module.exports = function (defaults) {
     },
 
     babel: {
-      sourceMaps: 'inline'
+      // sourceMaps: 'inline',
+      plugins: [require.resolve('ember-concurrency/async-arrow-task-transform')]
     },
 
     ...HOKULEA_CONFIG,

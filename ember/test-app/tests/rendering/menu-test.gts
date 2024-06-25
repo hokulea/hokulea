@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { tracked } from '@glimmer/tracking';
 import { array } from '@ember/helper';
 import { render } from '@ember/test-helpers';
@@ -14,6 +16,8 @@ import {
   testMenuKeyboardNavigation,
   testMenuPointerNavigation
 } from 'ember-aria-navigator/test-support';
+
+import { RefactorMenuFactory } from './-menu';
 
 module('Rendering | <Menu>', function (hooks) {
   setupRenderingTest(hooks);
@@ -117,28 +121,9 @@ module('Rendering | <Menu>', function (hooks) {
     await render(
       <template>
         <button type='button' popovertarget='refactormenu'>Refactor</button>
+
         <Menu id='refactormenu' popover as |m|>
-          <m.Item>Format Document</m.Item>
-          <m.Item>Refactor...</m.Item>
-          <m.Item>Source Action...</m.Item>
-          <hr />
-          <m.Item>
-            <:label>Share></:label>
-            <:menu as |sm|>
-              <sm.Item>Code</sm.Item>
-              <sm.Item>
-                <:label>Social</:label>
-                <:menu as |som|>
-                  <som.Item>Twitter</som.Item>
-                  <som.Item>Mastodon</som.Item>
-                  <som.Item>Bsky</som.Item>
-                </:menu>
-              </sm.Item>
-            </:menu>
-          </m.Item>
-          <m.Item>Cut</m.Item>
-          <m.Item>Copy</m.Item>
-          <m.Item>Paste</m.Item>
+          <RefactorMenuFactory @menu={{m}} />
         </Menu>
       </template>
     );
@@ -151,27 +136,7 @@ module('Rendering | <Menu>', function (hooks) {
       <template>
         <button type='button' popovertarget='refactormenu'>Refactor</button>
         <Menu id='refactormenu' popover as |m|>
-          <m.Item>Format Document</m.Item>
-          <m.Item>Refactor...</m.Item>
-          <m.Item>Source Action...</m.Item>
-          <hr />
-          <m.Item>
-            <:label>Share></:label>
-            <:menu as |sm|>
-              <sm.Item>Code</sm.Item>
-              <sm.Item>
-                <:label>Social</:label>
-                <:menu as |som|>
-                  <som.Item>Twitter</som.Item>
-                  <som.Item>Mastodon</som.Item>
-                  <som.Item>Bsky</som.Item>
-                </:menu>
-              </sm.Item>
-            </:menu>
-          </m.Item>
-          <m.Item>Cut</m.Item>
-          <m.Item>Copy</m.Item>
-          <m.Item>Paste</m.Item>
+          <RefactorMenuFactory @menu={{m}} />
         </Menu>
       </template>
     );

@@ -61,7 +61,7 @@
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.4",
+    "typescript": "^5.5.2",
     "vite": "^5.2.11",
     "vitest": "^1.6.0",
     "webdriverio": "^8.36.1"

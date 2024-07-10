@@ -4,29 +4,17 @@ import { IconPageObject } from './icon';
 import { MenuItemPageObject } from './menu';
 
 import type { Menu, MenuItem, MenuItemElement } from './-menu';
-import type {
-  ElementLike,
-  GenericPageObject,
-  PageObjectConstructor
-} from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 class AppNavPageObject extends PageObject<HTMLElement> implements Menu<HTMLElement> {
-  $item = sel<MenuItemElement, MenuItem>(
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    NavItemPageObject.SELECTOR,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/no-use-before-define
-    NavItemPageObject as unknown as PageObjectConstructor<HTMLElement, MenuItem>
-  );
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  $item = sel<MenuItemElement, MenuItem>(NavItemPageObject.SELECTOR, NavItemPageObject);
 }
 
 export class NavItemPageObject extends MenuItemPageObject implements MenuItem {
   static SELECTOR = '[part="item"]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? NavItemPageObject.SELECTOR, parent, index);
   }
 
@@ -49,12 +37,9 @@ export class NavItemPageObject extends MenuItemPageObject implements MenuItem {
     );
   }
 
-  get $menu() {
+  get $menu(): Menu | undefined {
     if (this.isPopupNavItem()) {
-      return sel<HTMLElement, Menu>(
-        '+ div',
-        AppNavPageObject as unknown as PageObjectConstructor<HTMLElement, Menu>
-      );
+      return sel<HTMLElement, Menu>('+ div', AppNavPageObject);
     }
 
     return this.menu;
@@ -64,11 +49,7 @@ export class NavItemPageObject extends MenuItemPageObject implements MenuItem {
 export class AppHeaderPageObject extends PageObject<HTMLElement> {
   static SELECTOR = '[data-test-app-header]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? AppHeaderPageObject.SELECTOR, parent, index);
   }
 

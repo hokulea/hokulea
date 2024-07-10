@@ -1,17 +1,13 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import type { GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class SectionPageObject extends PageObject<
   HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement
 > {
   static SELECTOR = '[data-test-section]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | Element | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? SectionPageObject.SELECTOR, parent, index);
   }
 

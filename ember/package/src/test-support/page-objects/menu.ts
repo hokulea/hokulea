@@ -1,6 +1,7 @@
-import { type ElementLike, globalSelector, PageObject, selector as sel } from 'fractal-page-object';
+import { globalSelector, PageObject, selector as sel } from 'fractal-page-object';
 
 import type { Menu, MenuElement, MenuItem, MenuItemElement } from './-menu';
+import type { ElementLike } from 'fractal-page-object';
 
 export class MenuItemPageObject extends PageObject<MenuItemElement> implements MenuItem {
   static SELECTOR = '[role="menuitem"]';

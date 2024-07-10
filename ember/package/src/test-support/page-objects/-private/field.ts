@@ -8,16 +8,12 @@ import { SelectPageObject } from '../select';
 import { TextAreaPageObject } from '../text-area';
 import { ChoicesPageObject } from './choices';
 
-import type { ElementLike, GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetElement> {
   static SELECTOR = '[data-test-field]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? FieldPageObject.SELECTOR, parent, index);
   }
 

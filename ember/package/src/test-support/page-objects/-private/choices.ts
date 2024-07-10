@@ -2,6 +2,12 @@ import { PageObject, selector as sel } from 'fractal-page-object';
 
 import type { ElementLike } from 'fractal-page-object';
 
+class OptionPageObject extends PageObject<HTMLDivElement> {
+  $label = sel<HTMLLabelElement | HTMLLegendElement>('[data-test-label]');
+  $description = sel<HTMLParagraphElement>('[data-test-description]');
+  $control = sel<HTMLInputElement>('input');
+}
+
 export class ChoicesPageObject extends PageObject<HTMLDivElement | HTMLFieldSetElement> {
   static SELECTOR = '[data-test-choices]';
 
@@ -9,16 +15,11 @@ export class ChoicesPageObject extends PageObject<HTMLDivElement | HTMLFieldSetE
     super(selector ?? ChoicesPageObject.SELECTOR, parent, index);
   }
 
-  $options = sel(
-    '[data-test-option]',
-    class extends PageObject<HTMLDivElement> {
-      $label = sel<HTMLLabelElement | HTMLLegendElement>('[data-test-label]');
-      $description = sel<HTMLParagraphElement>('[data-test-description]');
-      $control = sel<HTMLInputElement>('input');
-    }
-  );
+  $options = sel('[data-test-option]', OptionPageObject);
 
   option(value: string) {
-    return this.$options.find((option) => option.$control.element?.value === value);
+    return this.$options.find(
+      (option) => option.$control.element?.value === value
+    ) as OptionPageObject;
   }
 }

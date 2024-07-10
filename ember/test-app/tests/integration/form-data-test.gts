@@ -59,16 +59,16 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Tony');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Ward');
-      assert.dom(form.field('gender')?.$choices.option('male')?.$control.element).isChecked();
-      assert.dom(form.field('gender')?.$choices.option('female')?.$control.element).isNotChecked();
-      assert.dom(form.field('gender')?.$choices.option('other')?.$control.element).isNotChecked();
+      assert.dom(form.field('givenName').$control).hasValue('Tony');
+      assert.dom(form.field('familyName').$control).hasValue('Ward');
+      assert.dom(form.field('gender').$choices.option('male').$control).isChecked();
+      assert.dom(form.field('gender').$choices.option('female').$control).isNotChecked();
+      assert.dom(form.field('gender').$choices.option('other').$control).isNotChecked();
 
-      assert.dom(form.field('age')?.$control.element).hasValue('21');
-      assert.dom(form.field('country')?.$control.element).hasValue('USA');
-      assert.dom(form.field('comments')?.$control.element).hasValue('lorem ipsum');
-      assert.dom(form.field('acceptTerms')?.$control.element).isChecked();
+      assert.dom(form.field('age').$control).hasValue('21');
+      assert.dom(form.field('country').$control).hasValue('USA');
+      assert.dom(form.field('comments').$control).hasValue('lorem ipsum');
+      assert.dom(form.field('acceptTerms').$control).isChecked();
     });
 
     test('value is yielded from field component', async function (assert) {
@@ -115,15 +115,15 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Tony');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Ward');
+      assert.dom(form.field('givenName').$control).hasValue('Tony');
+      assert.dom(form.field('familyName').$control).hasValue('Ward');
 
       ctx.data = { givenName: 'Luke', familyName: 'Skywalker' };
 
       await rerender();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Luke');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Skywalker');
+      assert.dom(form.field('givenName').$control).hasValue('Luke');
+      assert.dom(form.field('familyName').$control).hasValue('Skywalker');
     });
 
     test('form controls are reactive to updating data properties', async function (assert) {
@@ -146,16 +146,16 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Tony');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Ward');
+      assert.dom(form.field('givenName').$control).hasValue('Tony');
+      assert.dom(form.field('familyName').$control).hasValue('Ward');
 
       data.givenName = 'Luke';
       data.familyName = 'Skywalker';
 
       await rerender();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Luke');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Skywalker');
+      assert.dom(form.field('givenName').$control).hasValue('Luke');
+      assert.dom(form.field('familyName').$control).hasValue('Skywalker');
     });
 
     test('form controls keep dirty state when updating data properties', async function (assert) {
@@ -178,18 +178,18 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Tony');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Ward');
+      assert.dom(form.field('givenName').$control).hasValue('Tony');
+      assert.dom(form.field('familyName').$control).hasValue('Ward');
 
-      await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Palpatine');
+      await fillIn(form.field('givenName').$control, 'Palpatine');
 
       data.givenName = 'Luke';
       data.familyName = 'Skywalker';
 
       await rerender();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Palpatine');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Skywalker');
+      assert.dom(form.field('givenName').$control).hasValue('Palpatine');
+      assert.dom(form.field('familyName').$control).hasValue('Skywalker');
     });
 
     test('data is not mutated', async function (assert) {
@@ -206,12 +206,12 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Palpatine');
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Palpatine');
+      await fillIn(form.field('givenName').$control, 'Palpatine');
+      assert.dom(form.field('givenName').$control).hasValue('Palpatine');
       assert.strictEqual(data.givenName, 'Tony', 'data object is not mutated after entering data');
 
-      await triggerEvent(form.element as HTMLFormElement, 'submit');
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Palpatine');
+      await triggerEvent(form, 'submit');
+      assert.dom(form.field('givenName').$control).hasValue('Palpatine');
       assert.strictEqual(data.givenName, 'Tony', 'data object is not mutated after submitting');
     });
   });
@@ -252,20 +252,18 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Tony');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Ward');
-      assert.dom(form.field('comments')?.$control.element).hasValue('lorem ipsum');
-      assert.dom(form.field('acceptTerms')?.$control.element).isNotChecked();
+      assert.dom(form.field('givenName').$control).hasValue('Tony');
+      assert.dom(form.field('familyName').$control).hasValue('Ward');
+      assert.dom(form.field('comments').$control).hasValue('lorem ipsum');
+      assert.dom(form.field('acceptTerms').$control).isNotChecked();
 
-      await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Nicole');
-      await fillIn(form.field('familyName')?.$control.element as HTMLInputElement, 'Chung');
-      await select(form.field('country')?.$control.element as HTMLSelectElement, 'GER');
-      await click(
-        form.field('gender')?.$choices.option('female')?.$control.element as HTMLInputElement
-      );
-      await fillIn(form.field('age')?.$control.element as HTMLInputElement, '20');
-      await fillIn(form.field('comments')?.$control.element as HTMLInputElement, 'foo bar');
-      await click(form.field('acceptTerms')?.$control.element as HTMLInputElement);
+      await fillIn(form.field('givenName').$control, 'Nicole');
+      await fillIn(form.field('familyName').$control, 'Chung');
+      await select(form.field('country').$control, 'GER');
+      await click(form.field('gender').$choices.option('female').$control);
+      await fillIn(form.field('age').$control, '20');
+      await fillIn(form.field('comments').$control, 'foo bar');
+      await click(form.field('acceptTerms').$control);
       await form.submit();
 
       assert.deepEqual(
@@ -318,11 +316,11 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Tony');
-      assert.dom(form.field('familyName')?.$control.element).hasValue('Ward');
+      assert.dom(form.field('givenName').$control).hasValue('Tony');
+      assert.dom(form.field('familyName').$control).hasValue('Ward');
 
-      await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Nicole');
-      await fillIn(form.field('familyName')?.$control.element as HTMLInputElement, 'Chung');
+      await fillIn(form.field('givenName').$control, 'Nicole');
+      await fillIn(form.field('familyName').$control, 'Chung');
 
       await click('[data-test-submit]');
 
@@ -381,8 +379,8 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Luke');
-      assert.dom(form.field('givenName')?.$control.element).hasValue('Luke');
+      await fillIn(form.field('givenName').$control, 'Luke');
+      assert.dom(form.field('givenName').$control).hasValue('Luke');
       assert.strictEqual(data.givenName, 'Luke', 'data object is mutated after entering data');
     });
 
@@ -401,7 +399,7 @@ module('Integration | <Form> | Data', function (hooks) {
 
       const form = new FormPageObject();
 
-      await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Luke');
+      await fillIn(form.field('givenName').$control, 'Luke');
 
       await form.submit();
 

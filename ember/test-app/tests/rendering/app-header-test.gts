@@ -21,8 +21,8 @@ module('Rendering | <AppHeader>', (hooks) => {
 
     const appHeader = new AppHeaderPageObject();
 
-    assert.dom(appHeader.element).exists();
-    assert.dom(appHeader.$menu.element).doesNotExist();
+    assert.dom(appHeader).exists();
+    assert.dom(appHeader.$menu).doesNotExist();
   });
 
   test('brand can take a link', async (assert) => {
@@ -40,12 +40,12 @@ module('Rendering | <AppHeader>', (hooks) => {
 
     const appHeader = new AppHeaderPageObject();
 
-    assert.dom(appHeader.element).exists();
-    assert.dom(appHeader.$brand.element).exists();
-    assert.dom(appHeader.$brand.element).hasTagName('a');
+    assert.dom(appHeader).exists();
+    assert.dom(appHeader.$brand).exists();
+    assert.dom(appHeader.$brand).hasTagName('a');
 
     // act
-    await click(appHeader.$brand.element as HTMLElement);
+    await click(appHeader.$brand);
 
     // assert
     assert.verifySteps(['link clicked']);
@@ -65,14 +65,14 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      assert.dom(appHeader.$menu.element).doesNotExist();
+      assert.dom(appHeader.$menu).doesNotExist();
 
-      assert.dom(appHeader.$brand.element).exists();
-      assert.dom(appHeader.$brand.element).hasText('brand');
-      assert.dom(appHeader.$nav.element).exists();
-      assert.dom(appHeader.$nav.element).hasText('nav');
-      assert.dom(appHeader.$aux.element).exists();
-      assert.dom(appHeader.$aux.element).hasText('aux');
+      assert.dom(appHeader.$brand).exists();
+      assert.dom(appHeader.$brand).hasText('brand');
+      assert.dom(appHeader.$nav).exists();
+      assert.dom(appHeader.$nav).hasText('nav');
+      assert.dom(appHeader.$aux).exists();
+      assert.dom(appHeader.$aux).hasText('aux');
     });
 
     test('a nav icon is invoked', async (assert) => {
@@ -90,7 +90,7 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      await click(appHeader.$nav.$item[0].element as HTMLElement);
+      await click(appHeader.$nav.$item[0]);
 
       assert.ok(push.calledOnce);
     });
@@ -117,7 +117,7 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       assert.notOk(appHeader.$nav.$item[0].expanded);
 
-      await click(appHeader.$nav.$item[0].element as HTMLElement);
+      await click(appHeader.$nav.$item[0]);
       assert.ok(appHeader.$nav.$item[0].expanded);
 
       // double fire click + pointerup
@@ -125,11 +125,11 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      await click(appHeader.$nav.$item[0]?.$menu?.$item[0]?.element as HTMLElement);
+      await click(appHeader.$nav.$item[0]?.$menu?.$item[0]);
       await triggerEvent(
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
-        appHeader.$nav.$item[0]?.$menu?.$item[0]?.element as HTMLElement,
+        appHeader.$nav.$item[0]?.$menu?.$item[0],
         'pointerup'
       );
 
@@ -154,17 +154,17 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      assert.dom(appHeader.$menu.element).exists();
+      assert.dom(appHeader.$menu).exists();
 
-      assert.dom(appHeader.$brand.element).exists();
-      assert.dom(appHeader.$brand.element).hasText('brand');
-      assert.dom(appHeader.$nav.element).exists();
+      assert.dom(appHeader.$brand).exists();
+      assert.dom(appHeader.$brand).hasText('brand');
+      assert.dom(appHeader.$nav).exists();
       assert
-        .dom(appHeader.$nav.element)
+        .dom(appHeader.$nav)
         .hasText('German to the rescue: Donaudampfschifffarhtskaptiänsbindenfüllfederhalter');
 
-      assert.dom(appHeader.$aux.element).exists();
-      assert.dom(appHeader.$aux.element).hasText('aux');
+      assert.dom(appHeader.$aux).exists();
+      assert.dom(appHeader.$aux).hasText('aux');
     });
 
     test('toggle the popover', async (assert) => {
@@ -182,10 +182,10 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       assert.notOk(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle?.element as HTMLElement);
+      await click(appHeader.$menu?.$toggle);
       assert.ok(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle?.element as HTMLElement);
+      await click(appHeader.$menu?.$toggle);
       assert.notOk(appHeader.$menu.$popover.expanded);
     });
 
@@ -205,13 +205,13 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      assert.dom(appHeader.$menu.element).exists();
+      assert.dom(appHeader.$menu).exists();
       assert.notOk(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle?.element as HTMLElement);
+      await click(appHeader.$menu?.$toggle);
       assert.ok(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$nav.$item[0].element as HTMLElement);
+      await click(appHeader.$nav.$item[0]);
       assert.ok(push.calledOnce);
       assert.notOk(appHeader.$menu.$popover.expanded);
     });
@@ -235,15 +235,15 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      assert.dom(appHeader.$menu.element).exists();
+      assert.dom(appHeader.$menu).exists();
       assert.notOk(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle?.element as HTMLElement);
+      await click(appHeader.$menu?.$toggle);
       assert.ok(appHeader.$menu.$popover.expanded);
 
       assert.notOk(appHeader.$nav.$item[0].expanded);
 
-      await click(appHeader.$nav.$item[0].element as HTMLElement);
+      await click(appHeader.$nav.$item[0]);
       assert.ok(appHeader.$nav.$item[0].expanded);
     });
   });

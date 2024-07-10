@@ -31,11 +31,11 @@ module('Rendering | <Form.Phone>', function (hooks) {
     assert.dom(input.control).isNotDisabled();
     assert.dom(input.control).hasAttribute('type', 'tel');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Telefon');
-    assert.dom(field.$description.element).hasText("How'd you gonna called?");
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Telefon');
+    assert.dom(field.$description).hasText("How'd you gonna called?");
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

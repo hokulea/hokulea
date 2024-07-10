@@ -20,7 +20,7 @@ export class FormPageObject extends PageObject<HTMLFormElement> {
   $fields = sel(FieldPageObject.SELECTOR, FieldPageObject);
 
   field(name: string) {
-    return this.$fields.find((field) => field.name === name);
+    return this.$fields.find((field) => field.name === name) as FieldPageObject;
   }
 
   async submit() {

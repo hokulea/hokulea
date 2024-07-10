@@ -51,9 +51,9 @@ module('Rendering | <List>', function (hooks) {
 
       const input = new ListPageObject();
 
-      assert.dom(input.$option.elements[0]).hasText('Banana');
-      assert.dom(input.$option.elements[1]).hasText('Apple');
-      assert.dom(input.$option.elements[2]).hasText('Pear');
+      assert.dom(input.$option[0]).hasText('Banana');
+      assert.dom(input.$option[1]).hasText('Apple');
+      assert.dom(input.$option[2]).hasText('Pear');
     });
 
     test('renders selection', async function (assert) {
@@ -69,7 +69,7 @@ module('Rendering | <List>', function (hooks) {
 
       const input = new ListPageObject();
 
-      assert.dom(input.$option.elements[1]).hasAria('selected', 'true');
+      assert.dom(input.$option[1]).hasAria('selected', 'true');
     });
 
     test('triggers @update', async function (assert) {
@@ -124,9 +124,9 @@ module('Rendering | <List>', function (hooks) {
 
       const input = new ListPageObject();
 
-      assert.dom(input.$option.elements[0]).hasText('Banana');
-      assert.dom(input.$option.elements[1]).hasText('Apple');
-      assert.dom(input.$option.elements[2]).hasText('Pear');
+      assert.dom(input.$option[0]).hasText('Banana');
+      assert.dom(input.$option[1]).hasText('Apple');
+      assert.dom(input.$option[2]).hasText('Pear');
     });
 
     test('renders selection', async function (assert) {
@@ -144,7 +144,7 @@ module('Rendering | <List>', function (hooks) {
 
       const input = new ListPageObject();
 
-      assert.dom(input.$option.elements[1]).hasAria('selected', 'true');
+      assert.dom(input.$option[1]).hasAria('selected', 'true');
     });
 
     test('triggers @update', async function (assert) {

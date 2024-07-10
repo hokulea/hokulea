@@ -15,8 +15,8 @@ module('Rendering | <Form>', function (hooks) {
 
     const form = new FormPageObject();
 
-    assert.dom(form.element).exists();
-    assert.dom(form.element).hasTagName('form');
+    assert.dom(form).exists();
+    assert.dom(form).hasTagName('form');
   });
 
   test('it accepts html attributes', async function (assert) {
@@ -25,7 +25,7 @@ module('Rendering | <Form>', function (hooks) {
     const form = new FormPageObject();
 
     assert
-      .dom(form.element)
+      .dom(form)
       .hasClass('foo', 'it accepts custom HTML classes')
       .hasAttribute('autocomplete', 'off', 'it accepts arbitrary HTML attributes');
   });
@@ -41,7 +41,7 @@ module('Rendering | <Form>', function (hooks) {
 
     const form = new FormPageObject();
 
-    assert.dom(form.$submit.element).exists();
+    assert.dom(form.$submit).exists();
     assert.strictEqual(form.$submit.intent, Intent.Action);
     assert.strictEqual(form.$submit.importance, Importance.Supreme);
   });
@@ -57,7 +57,7 @@ module('Rendering | <Form>', function (hooks) {
 
     const form = new FormPageObject();
 
-    assert.dom(form.$reset.element).exists();
+    assert.dom(form.$reset).exists();
     assert.strictEqual(form.$reset.intent, Intent.Action);
     assert.strictEqual(form.$reset.importance, Importance.Supreme);
   });

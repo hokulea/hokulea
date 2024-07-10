@@ -31,11 +31,11 @@ module('Rendering | <Form.Email>', function (hooks) {
     assert.dom(input.control).isNotDisabled();
     assert.dom(input.control).hasAttribute('type', 'email');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Email');
-    assert.dom(field.$description.element).hasText('Primärer Kontakt');
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Email');
+    assert.dom(field.$description).hasText('Primärer Kontakt');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

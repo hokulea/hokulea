@@ -36,11 +36,11 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
 
     const field = form.$fields[0];
 
-    assert.dom(field.element).hasTagName('fieldset');
-    assert.dom(field.$label.element).hasTagName('legend');
+    assert.dom(field).hasTagName('fieldset');
+    assert.dom(field.$label).hasTagName('legend');
 
-    assert.dom(field.$label.element).hasText('Welches ist dein Lieblingshaustier?');
-    assert.dom(field.$description.element).hasText('Stofftiere zählen nicht ;)');
+    assert.dom(field.$label).hasText('Welches ist dein Lieblingshaustier?');
+    assert.dom(field.$description).hasText('Stofftiere zählen nicht ;)');
 
     assert.strictEqual(field.$choices.$options.length, 4);
   });
@@ -62,7 +62,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     const form = new FormPageObject();
     const field = form.$fields[0];
 
-    assert.dom(field.$choices.$options[0].$control.element).hasAttribute('required');
+    assert.dom(field.$choices.$options[0].$control).hasAttribute('required');
   });
 
   test('disabling one option', async function (assert) {
@@ -82,8 +82,8 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     const form = new FormPageObject();
     const field = form.$fields[0];
 
-    assert.dom(field.$choices.$options[0].$control.element).isDisabled();
-    assert.dom(field.$choices.$options[1].$control.element).isNotDisabled();
+    assert.dom(field.$choices.$options[0].$control).isDisabled();
+    assert.dom(field.$choices.$options[1].$control).isNotDisabled();
   });
 
   test('disabling the field', async function (assert) {
@@ -109,7 +109,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     const field = form.$fields[0];
 
     for (const option of field.$choices.$options) {
-      assert.dom(option.$control.element).isDisabled();
+      assert.dom(option.$control).isDisabled();
     }
   });
 
@@ -130,13 +130,15 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     const form = new FormPageObject();
     const field = form.$fields[0];
 
-    assert.dom(field.$choices.$options[2].$label.element).hasText('Crocodile');
-    assert.dom(field.$choices.$options[2].$label.element).hasTagName('label');
-    assert.dom(field.$choices.$options[2].$description.element).hasText('Like a dinosaur');
+    assert.dom(field.$choices.$options[2].$label).hasText('Crocodile');
+    assert.dom(field.$choices.$options[2].$label).hasTagName('label');
+    assert.dom(field.$choices.$options[2].$description).hasText('Like a dinosaur');
 
-    assert.strictEqual(
-      field.$choices.$options[2].$label.element.getAttribute('for'),
-      field.$choices.$options[2].$control.element.getAttribute('id')
-    );
+    assert
+      .dom(field.$choices.$options[2].$label)
+      .hasAttribute(
+        'for',
+        field.$choices.$options[2].$control.element?.getAttribute('id') as string
+      );
   });
 });

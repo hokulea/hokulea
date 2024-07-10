@@ -31,11 +31,11 @@ module('Rendering | <Form.Password>', function (hooks) {
     assert.dom(input.control).isNotDisabled();
     assert.dom(input.control).hasAttribute('type', 'password');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Passwort');
-    assert.dom(field.$description.element).hasText('Für den Login');
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Passwort');
+    assert.dom(field.$description).hasText('Für den Login');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

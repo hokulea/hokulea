@@ -31,11 +31,11 @@ module('Rendering | <Form.Date>', function (hooks) {
     assert.dom(input.control).isNotDisabled();
     assert.dom(input.control).hasAttribute('type', 'date');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Geburtstag');
-    assert.dom(field.$description.element).hasText('Wann bist du geboren?');
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Geburtstag');
+    assert.dom(field.$description).hasText('Wann bist du geboren?');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

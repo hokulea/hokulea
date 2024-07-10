@@ -60,9 +60,9 @@ module('Rendering | <Menu>', function (hooks) {
 
     const menu = new MenuPageObject();
 
-    assert.dom(menu.$item.elements[0]).hasText('Banana');
-    assert.dom(menu.$item.elements[1]).hasText('Apple');
-    assert.dom(menu.$item.elements[2]).hasText('Pear');
+    assert.dom(menu.$item[0]).hasText('Banana');
+    assert.dom(menu.$item[1]).hasText('Apple');
+    assert.dom(menu.$item[2]).hasText('Pear');
   });
 
   test('renders item options', async function (assert) {
@@ -84,37 +84,29 @@ module('Rendering | <Menu>', function (hooks) {
 
     const menu = new MenuPageObject();
 
-    assert.dom(menu.$item.elements[1]).hasAria('disabled', 'false', 'Second item is not disabled');
+    assert.dom(menu.$item[1]).hasAria('disabled', 'false', 'Second item is not disabled');
 
     // stepping over items
-    await focus(menu.$item.elements[0]);
-    assert.dom(menu.$item.elements[0]).hasAttribute('tabindex', '0', 'Focus the first item');
+    await focus(menu.$item[0]);
+    assert.dom(menu.$item[0]).hasAttribute('tabindex', '0', 'Focus the first item');
 
-    await triggerKeyEvent(menu.element as HTMLElement, 'keydown', 'ArrowDown');
-    assert
-      .dom(menu.$item.elements[1])
-      .hasAttribute('tabindex', '0', '`ArrowDown` to activate second item');
+    await triggerKeyEvent(menu, 'keydown', 'ArrowDown');
+    assert.dom(menu.$item[1]).hasAttribute('tabindex', '0', '`ArrowDown` to activate second item');
 
-    await triggerKeyEvent(menu.element as HTMLElement, 'keydown', 'ArrowDown');
-    assert
-      .dom(menu.$item.elements[2])
-      .hasAttribute('tabindex', '0', '`ArrowDown` to activate third item');
+    await triggerKeyEvent(menu, 'keydown', 'ArrowDown');
+    assert.dom(menu.$item[2]).hasAttribute('tabindex', '0', '`ArrowDown` to activate third item');
 
     context.disabled = true;
 
     await rerender();
 
-    assert.dom(menu.$item.elements[1]).hasAria('disabled', 'true', 'Second item is disabled');
+    assert.dom(menu.$item[1]).hasAria('disabled', 'true', 'Second item is disabled');
 
-    await triggerKeyEvent(menu.element as HTMLElement, 'keydown', 'Home');
-    assert
-      .dom(menu.$item.elements[0])
-      .hasAttribute('tabindex', '0', '`Home` to activate the first item');
+    await triggerKeyEvent(menu, 'keydown', 'Home');
+    assert.dom(menu.$item[0]).hasAttribute('tabindex', '0', '`Home` to activate the first item');
 
-    await triggerKeyEvent(menu.element as HTMLElement, 'keydown', 'ArrowDown');
-    assert
-      .dom(menu.$item.elements[2])
-      .hasAttribute('tabindex', '0', '`ArrowDown` to activate third item');
+    await triggerKeyEvent(menu, 'keydown', 'ArrowDown');
+    assert.dom(menu.$item[2]).hasAttribute('tabindex', '0', '`ArrowDown` to activate third item');
   });
 
   test('it supports keyboard navigation', async function (assert) {

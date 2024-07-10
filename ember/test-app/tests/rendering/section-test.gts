@@ -18,11 +18,11 @@ module('Rendering | <Section>', function (hooks) {
 
     const section = new SectionPageObject();
 
-    assert.dom(section.element).exists();
-    assert.dom(section.$header.element).hasText('title');
-    assert.dom(section.$title.element).hasTagName('h2');
+    assert.dom(section).exists();
+    assert.dom(section.$header).hasText('title');
+    assert.dom(section.$title).hasTagName('h2');
 
-    assert.dom(section.element).includesText('Hello World');
+    assert.dom(section).includesText('Hello World');
   });
 
   test('without header', async function (assert) {
@@ -34,10 +34,10 @@ module('Rendering | <Section>', function (hooks) {
 
     const section = new SectionPageObject();
 
-    assert.dom(section.element).exists();
-    assert.dom(section.$header.element).doesNotExist();
+    assert.dom(section).exists();
+    assert.dom(section.$header).doesNotExist();
 
-    assert.dom(section.element).includesText('Hello World');
+    assert.dom(section).includesText('Hello World');
   });
 
   test('can do different levels', async function (assert) {
@@ -49,9 +49,9 @@ module('Rendering | <Section>', function (hooks) {
 
     const section = new SectionPageObject();
 
-    assert.dom(section.element).exists();
-    assert.dom(section.$header.element).hasText('title');
-    assert.dom(section.$title.element).hasTagName('h3');
+    assert.dom(section).exists();
+    assert.dom(section.$header).hasText('title');
+    assert.dom(section.$title).hasTagName('h3');
   });
 
   test('catches incorrect level', async function (assert) {

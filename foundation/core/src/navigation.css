@@ -22,88 +22,15 @@ a:active {
   color: var(--navigation-links-active);
 }
 
-.menu:is(:not([popover]),[popover]:popover-open) {
-  all: unset;
-
-  user-select: none;
-
-  display: flex;
-  flex-direction: column;
-
-  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-  width: fit-content;
-  padding: var(--spacing-container-3);
-
-  background-color: var(--surface-popover);
-  border: var(--control-border);
-  border-radius: var(--shape-radius-container);
-
-  &:popover-open {
-    translate: 0 calc(var(--spacing-container-3) * -1 - var(--control-border-width));
-  }
-
-  [role="menuitem"] {
-    all: unset;
-
-    display: inline-flex;
-    gap: var(--spacing-primitive-3);
-
-    padding-block: var(--spacing-primitive-4);
-    padding-inline: var(--spacing-primitive-3);
-
-    color: var(--control-text);
-
-    border-radius: calc(var(--shape-radius-container) - var(--spacing-container-3) / 2);
-
-    &[aria-disabled="disabled"] {
-      color: var(--control-disabled-text);
-    }
-
-    &:focus {
-      background-color: var(--control-hover-background);
-      outline: none;
-    }
-
-    &[aria-haspopup]::after {
-      --chevron-right: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>');
-
-      content: '';
-
-      display: block;
-
-      width: 1rem;
-      height: 1rem;
-
-      background: currentcolor;
-
-      mask: var(--chevron-right) center center / 100% auto no-repeat;
-    }
-  }
-
-  &[aria-disabled="true"] {
-    color: var(--control-disabled-text);
-    background-color: var(--control-disabled-background);
-  }
-}
-
 .app-header {
+  composes: page-content from './layouts/page.css';
+
   position: sticky;
+  z-index: 1;
   top: 0;
 
-  display: flex;
-  gap: var(--spacing-container1);
-  align-items: baseline;
-
-  padding-inline: var(--spacing-container0);
-
   background: var(--surface-container);
-
-  & > * {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    min-width: 0;
-  }
+  box-shadow: var(--shape-shadow-container);
 
   [part="brand"] {
     align-items: center;
@@ -124,117 +51,132 @@ a:active {
     }
   }
 
-  &[data-sensing] > :is(nav, [part="aux"]) {
-    visibility: hidden;
-  }
+  & > div {
+    display: flex;
+    gap: var(--spacing-container1);
+    align-items: baseline;
 
-  & > nav {
-    flex-grow: 1;
-
-    &[data-position="center"] {
-      justify-content: center;
+    & > * {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      min-width: 0;
     }
 
-    &[data-position="end"] {
-      justify-content: end;
-    }
-  }
 
-  :is(a,button) {
-    color: var(--typography-main);
-    text-decoration: none;
-    background: transparent;
 
-    &:hover, &[aria-current="page"] {
-      color: var(--navigation-links-base);
+    &[data-sensing] > :is(nav, [part="aux"]) {
+      visibility: hidden;
     }
 
-    &:focus-visible {
-      outline: none;
+    & > nav {
+      flex-grow: 1;
 
-      span {
-        outline: var(--control-focus-stroke);
-        outline-offset: var(--spacing-primitive-4);
+      &[data-position="center"] {
+        justify-content: center;
       }
-    }
-  }
 
-  & > :is(nav, [part="menu"]) > [part="item"] {
-    flex-shrink: 0;
-
-    min-width: 0;
-    padding-block: var(--spacing-container0);
-    padding-inline: var(--spacing-container-4);
-
-    white-space: nowrap;
-  }
-
-  & > :is([part="aux"],[part="menu"]) {
-    margin-inline-start: auto;
-  }
-
-  /* Popover menu */
-
-  & > [part="menu"] > [popover] {
-    flex-direction: column;
-
-    min-width: 33vw;
-    max-width: 66vw;
-    height: 100vh;
-
-    color: var(--typography-main);
-
-    background-color: var(--surface-base);
-
-    &::backdrop {
-      background-color: rgb(0 0 0 / 12%);
-    }
-
-    &:popover-open {
-      display: flex;
-    }
-
-    & > header {
-      display: flex;
-      padding-inline: var(--spacing-container0);
-      background: var(--surface-container);
-    }
-
-    nav {
-      padding-block: var(--spacing-container-4);
-      padding-inline: var(--spacing-container0);
-    }
-
-    [part="aux"] {
-      margin-block-start: auto;
-      padding: var(--spacing-container0);
-    }
-
-    :not(header) [part="item"] {
-      display: list-item;
-      padding-block: var(--spacing-container-4);
-      list-style-position: inside;
-
-      &::marker {
-        margin: none;
+      &[data-position="end"] {
+        justify-content: end;
       }
     }
 
-    :not(header) :is(a, span, button) {
-      text-align: start;
-      /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-      text-indent: 0.85em;
-      list-style-type: none;
+    :is(a,button) {
+      color: var(--typography-main);
+      text-decoration: none;
+      background: transparent;
+
+      &:hover, &[aria-current="page"] {
+        color: var(--navigation-links-base);
+      }
+
+      &:focus-visible {
+        outline: none;
+
+        span {
+          outline: var(--control-focus-stroke);
+          outline-offset: var(--spacing-primitive-4);
+        }
+      }
     }
 
-    details > div {
-      display: flex;
+    & > :is(nav, [part="menu"]) > [part="item"] {
+      flex-shrink: 0;
+
+      min-width: 0;
+      padding-block: var(--spacing-container0);
+      padding-inline: var(--spacing-container-4);
+
+      white-space: nowrap;
+    }
+
+    & > :is([part="aux"],[part="menu"]) {
+      margin-inline-start: auto;
+    }
+
+    /* Popover menu */
+
+    & > [part="menu"] > [popover] {
       flex-direction: column;
-      padding-inline-start: 0.85em;
-    }
 
-    *:focus-visible {
-      outline: var(--control-focus-stroke);
+      min-width: 33vw;
+      max-width: 66vw;
+      height: 100vh;
+
+      color: var(--typography-main);
+
+      background-color: var(--surface-base);
+
+      &::backdrop {
+        background-color: rgb(0 0 0 / 12%);
+      }
+
+      &:popover-open {
+        display: flex;
+      }
+
+      & > header {
+        display: flex;
+        padding-inline: var(--spacing-container0);
+        background: var(--surface-container);
+      }
+
+      nav {
+        padding-block: var(--spacing-container-4);
+        padding-inline: var(--spacing-container0);
+      }
+
+      [part="aux"] {
+        margin-block-start: auto;
+        padding: var(--spacing-container0);
+      }
+
+      :not(header) [part="item"] {
+        display: list-item;
+        padding-block: var(--spacing-container-4);
+        list-style-position: inside;
+
+        &::marker {
+          margin: none;
+        }
+      }
+
+      :not(header) :is(a, span, button) {
+        text-align: start;
+        /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+        text-indent: 0.85em;
+        list-style-type: none;
+      }
+
+      details > div {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0.85em;
+      }
+
+      *:focus-visible {
+        outline: var(--control-focus-stroke);
+      }
     }
   }
 }

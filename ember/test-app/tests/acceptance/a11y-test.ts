@@ -69,14 +69,41 @@ module('Acceptance | a11y', function (hooks) {
     });
   });
 
-  module('Navigation', function () {
-    test('Navigation passes a11y audit', async function (assert) {
-      await visit('/navigation');
+  module('Controls', function () {
+    test('Inputs passes a11y audit', async function (assert) {
+      await visit('/controls');
 
       setRunOptions({
         rules: {
           // eslint-disable-next-line @typescript-eslint/naming-convention
           'color-contrast': {
+            enabled: false
+          },
+          label: {
+            enabled: false
+          },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'select-name': {
+            enabled: false
+          }
+        }
+      });
+
+      await a11yAudit();
+      assert.true(true, 'no a11y errors found!');
+    });
+
+    test('Composites passes a11y audit', async function (assert) {
+      await visit('/controls/composites');
+
+      setRunOptions({
+        rules: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'color-contrast': {
+            enabled: false
+          },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'aria-input-field-name': {
             enabled: false
           }
         }

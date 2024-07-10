@@ -1,0 +1,12 @@
+.page-content {
+  display: grid;
+  grid-template-columns:
+    minmax(var(--spacing-container0), 1fr)
+    minmax(200px, var(--sizing-max-content-width, 100%))
+    minmax(var(--spacing-container0), 1fr)
+  ;
+
+  & > * {
+    grid-column: 2 / 3;
+  }
+}

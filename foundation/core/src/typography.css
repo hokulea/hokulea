@@ -5,7 +5,7 @@
   /* Prose */
 
   /* Todo: Put this into tokens, feed from themes */
-  font-family: Inter, sans-serif;
+  font-family: var(--typo-prose-family, Inter, sans-serif);
 
   /*
     Base font size
@@ -15,6 +15,7 @@
     We need to keep it at hardcoded `16px` for now to respect the existing design
   */
   font-size: var(--sizing-global-base);
+  font-feature-settings: var(--typo-prose-feature-settings);
   line-height: var(--line-height);
   color: var(--typography-main);
 }
@@ -29,8 +30,12 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--typo-heading-family, Inter, sans-serif);
+  font-feature-settings: var(--typo-heading-feature-settings);
+  font-weight: var(--typo-heading-weight, initial);
   line-height: calc(0.8 * var(--line-height));
   hyphens: auto;
+  letter-spacing: var(--typo-heading-tracking, normal);
 }
 
 h1 {
@@ -65,4 +70,13 @@ code {
 
   background-color: var(--typography-code-background);
   border-radius: 4px;
+}
+
+.display {
+  font-family: var(--typo-display-family);
+  font-feature-settings: var(--typo-display-feature-settings);
+  font-weight: var(--typo-display-weight, initial);
+  line-height: calc(0.8 * var(--line-height));
+  hyphens: auto;
+  letter-spacing: var(--typo-display-tracking, normal);
 }

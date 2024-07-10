@@ -1,3 +1,4 @@
 :root {
   --shape-stroke: var(--shape-stroke-color) var(--shape-stroke-style) var(--shape-stroke-width);
+  --shape-shadow-container: 0 0 2px 2px rgb(0 0 0 / 15%);
 }

@@ -17,7 +17,7 @@ container or on individual elements if they differ from the global one.
 ```
 */
 .flow {
-  --flow-space: 0;
+  --flow-space: 1em;
 
   display: flex;
   flex-direction: column;

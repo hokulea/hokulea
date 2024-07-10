@@ -43,8 +43,8 @@ module.exports = {
       doc.html = doc.html.replace(/<h1(.+)>(.+)<\/h1>/, '');
     }
 
-    return `<Page @title="${title}" @toc="${encodeURIComponent(
+    return `<Article @title="${title}" @toc="${encodeURIComponent(
       JSON.stringify(doc.toc)
-    )}">${doc.html}</Page>`;
+    )}">${doc.html}</Article>`;
   }
 };

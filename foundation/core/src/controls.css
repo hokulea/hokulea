@@ -50,8 +50,11 @@
 .input {
   composes: control;
   composes: focus;
+
   height: 1em;
+
   line-height: 1em;
+  vertical-align: middle;
 
   &::placeholder {
     color: var(--control-placeholder);
@@ -125,6 +128,8 @@
 
   height: auto;
   padding: 0;
+
+  vertical-align: middle;
 
   & > .input {
     flex-grow: 1;
@@ -215,6 +220,71 @@
 
   :not(&[aria-disabled="true"]):is(&:focus, &) [role="option"]:hover {
     background-color: var(--control-hover-background);
+  }
+
+  &[aria-disabled="true"] {
+    color: var(--control-disabled-text);
+    background-color: var(--control-disabled-background);
+  }
+}
+
+
+.menu:is(:not([popover]),[popover]:popover-open) {
+  all: unset;
+
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  width: fit-content;
+  padding: var(--spacing-container-3);
+
+  background-color: var(--surface-popover);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-container);
+
+  &:popover-open {
+    translate: 0 calc(var(--spacing-container-3) * -1 - var(--control-border-width));
+  }
+
+  [role="menuitem"] {
+    all: unset;
+
+    display: inline-flex;
+    gap: var(--spacing-primitive-3);
+
+    padding-block: var(--spacing-primitive-4);
+    padding-inline: var(--spacing-primitive-3);
+
+    color: var(--control-text);
+
+    border-radius: calc(var(--shape-radius-container) - var(--spacing-container-3) / 2);
+
+    &[aria-disabled="disabled"] {
+      color: var(--control-disabled-text);
+    }
+
+    &:focus {
+      background-color: var(--control-hover-background);
+      outline: none;
+    }
+
+    &[aria-haspopup]::after {
+      --chevron-right: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>');
+
+      content: '';
+
+      display: block;
+
+      width: 1rem;
+      height: 1rem;
+
+      background: currentcolor;
+
+      mask: var(--chevron-right) center center / 100% auto no-repeat;
+    }
   }
 
   &[aria-disabled="true"] {

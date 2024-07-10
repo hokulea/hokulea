@@ -17,13 +17,11 @@
     h1 {
       padding-block: var(--spacing-container-3);
     }
-
-
   }
 
-  /* section& > header h1:not(:has(+ *)) {
-
-  } */
+  section& > header :is(h1, p):not(:has(+ *)) {
+    padding-block-end: 0;
+  }
 
   main& {
     > header {

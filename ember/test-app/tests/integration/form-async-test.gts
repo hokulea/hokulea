@@ -67,8 +67,8 @@ module('Integration | <Form> | Async state', function (hooks) {
         <template>
           <Form @data={{data}} as |form|>
             <form.Text
-              @name='givenName'
-              @label='Given Name'
+              @name="givenName"
+              @label="Given Name"
               @validate={{validateFieldCallbackAsync}}
             />
 
@@ -116,8 +116,8 @@ module('Integration | <Form> | Async state', function (hooks) {
         <template>
           <Form @data={{data}} as |form|>
             <form.Text
-              @name='givenName'
-              @label='Given Name'
+              @name="givenName"
+              @label="Given Name"
               @validate={{validateFieldCallbackAsync}}
             />
             {{#if form.validationState}}
@@ -172,7 +172,7 @@ module('Integration | <Form> | Async state', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} @submit={{submitHandler}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name="givenName" @label="Given Name" />
             {{#if form.submissionState}}
               <div data-test-submission-state>{{form.submissionState.state}}</div>
               {{#if form.submissionState.isResolved}}
@@ -220,7 +220,7 @@ module('Integration | <Form> | Async state', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} @submit={{submitHandler}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
+            <form.Text @name="givenName" @label="Given Name" />
             {{#if form.submissionState}}
               <div data-test-submission-state>{{form.submissionState.state}}</div>
               {{#if form.submissionState.isRejected}}
@@ -269,8 +269,8 @@ module('Integration | <Form> | Async state', function (hooks) {
         <template>
           <Form @data={{data}} @submit={{submitHandler}} as |form|>
             <form.Text
-              @name='givenName'
-              @label='Given Name'
+              @name="givenName"
+              @label="Given Name"
               @validate={{validateFieldCallbackAsync}}
             />
             {{#if form.validationState}}

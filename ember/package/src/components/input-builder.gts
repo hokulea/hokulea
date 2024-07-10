@@ -41,15 +41,15 @@ const TextInput: TOC<InputBuilderSignature> = <template>
   {{! template-lint-disable no-unsupported-role-attributes }}
   <span
     class={{styles.inputBuilder}}
-    aria-disabled={{if @disabled 'true'}}
+    aria-disabled={{if @disabled "true"}}
     data-input-builder
     data-test-input-builder
   >
     {{yield
       (hash
-        Prefix=(component Affix class=styles.prefix identity='prefix')
-        Affix=(component Affix class=styles.affix identity='affix')
-        Suffix=(component Affix class=styles.suffix identity='suffix')
+        Prefix=(component Affix class=styles.prefix identity="prefix")
+        Affix=(component Affix class=styles.affix identity="affix")
+        Suffix=(component Affix class=styles.suffix identity="suffix")
       )
     }}
   </span>

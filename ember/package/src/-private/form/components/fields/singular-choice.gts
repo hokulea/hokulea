@@ -104,8 +104,8 @@ export default class SingularChoiceField<
 
   <template>
     <this.Field
-      @element={{element 'fieldset'}}
-      @labelComponent={{component Label element=(element 'legend')}}
+      @element={{element "fieldset"}}
+      @labelComponent={{component Label element=(element "legend")}}
       @name={{@name}}
       @label={{@label}}
       @description={{@description}}

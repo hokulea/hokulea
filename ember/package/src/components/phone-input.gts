@@ -15,12 +15,12 @@ export interface PhoneInputSignature {
 const PhoneInput: TOC<PhoneInputSignature> = <template>
   <input
     class={{styles.input}}
-    type='tel'
+    type="tel"
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
     ...attributes
-    {{on 'input' (pick 'target.value' @update)}}
+    {{on "input" (pick "target.value" @update)}}
   />
 </template>;
 

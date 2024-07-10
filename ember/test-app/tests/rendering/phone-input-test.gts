@@ -22,13 +22,13 @@ module('Rendering | <PhoneInput>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><PhoneInput placeholder='abc' /></template>);
+    await render(<template><PhoneInput placeholder="abc" /></template>);
 
     const input = new PhoneInputPageObject();
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
 
-    await render(<template><PhoneInput name='form-name' /></template>);
+    await render(<template><PhoneInput name="form-name" /></template>);
 
     assert.dom(input.control).hasAttribute('name', 'form-name');
   });
@@ -46,7 +46,7 @@ module('Rendering | <PhoneInput>', function (hooks) {
   });
 
   test('accepts value', async function (assert) {
-    await render(<template><PhoneInput @value='Han Solo' /></template>);
+    await render(<template><PhoneInput @value="Han Solo" /></template>);
 
     const input = new PhoneInputPageObject();
 
@@ -56,7 +56,7 @@ module('Rendering | <PhoneInput>', function (hooks) {
   test('triggers @update when value changes', async function (assert) {
     const handleUpdate = sinon.spy();
 
-    await render(<template><PhoneInput @value='Han Solo' @update={{handleUpdate}} /></template>);
+    await render(<template><PhoneInput @value="Han Solo" @update={{handleUpdate}} /></template>);
 
     const input = new PhoneInputPageObject();
 

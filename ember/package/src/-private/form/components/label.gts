@@ -16,7 +16,7 @@ export interface LabelSignature {
 }
 
 const Label: TOC<LabelSignature> = <template>
-  {{#let (if @element @element (element 'label')) as |Element|}}
+  {{#let (if @element @element (element "label")) as |Element|}}
     {{! @glint-expect-error https://github.com/typed-ember/glint/issues/610 }}
     <Element class={{styles.label}} data-test-label ...attributes>
       {{yield}}

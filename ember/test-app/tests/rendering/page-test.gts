@@ -12,7 +12,7 @@ module('Rendering | <Page>', (hooks) => {
   test('it renders', async (assert) => {
     await render(
       <template>
-        <Page @title='title' @description='description'>Hello World</Page>
+        <Page @title="title" @description="description">Hello World</Page>
       </template>
     );
 

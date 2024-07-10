@@ -15,12 +15,12 @@ export interface EmailInputSignature {
 const EmailInput: TOC<EmailInputSignature> = <template>
   <input
     class={{styles.input}}
-    type='email'
+    type="email"
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
     ...attributes
-    {{on 'input' (pick 'target.value' @update)}}
+    {{on "input" (pick "target.value" @update)}}
   />
 </template>;
 

@@ -20,7 +20,7 @@ module('Rendering | <Form>', function (hooks) {
   });
 
   test('it accepts html attributes', async function (assert) {
-    await render(<template><Form class='foo' autocomplete='off' /></template>);
+    await render(<template><Form class="foo" autocomplete="off" /></template>);
 
     const form = new FormPageObject();
 

@@ -22,7 +22,7 @@ interface NavLinkSignature {
 }
 
 const NavLink: TOC<NavLinkSignature> = <template>
-  <a href={{@link.url}} {{on 'click' @link.open}} aria-current={{if @link.isActive 'page'}}>
+  <a href={{@link.url}} {{on "click" @link.open}} aria-current={{if @link.isActive "page"}}>
     {{yield}}
   </a>
 </template>;
@@ -36,7 +36,7 @@ class PageElement extends Component<{ Element: HTMLElement; Blocks: { default: [
   }
 
   <template>
-    {{#let (element (if this.useMain 'main' 'section')) as |Element|}}
+    {{#let (element (if this.useMain "main" "section")) as |Element|}}
       <Element ...attributes>
         {{yield}}
       </Element>
@@ -70,37 +70,37 @@ class Page extends Component<PageSignature> {
   <template>
     <PageElement class={{styles.page}} ...attributes data-test-page>
       {{#if
-        (or @title @description (has-block 'title') (has-block 'description') (has-block 'nav'))
+        (or @title @description (has-block "title") (has-block "description") (has-block "nav"))
       }}
         <header class={{styles.pageContent}}>
           <h1 class={{typo.display}}>
-            {{#if (has-block 'title')}}
-              {{yield to='title'}}
+            {{#if (has-block "title")}}
+              {{yield to="title"}}
             {{else if @title}}
               {{@title}}
             {{/if}}
           </h1>
 
-          {{#if (or (has-block 'description') @description)}}
+          {{#if (or (has-block "description") @description)}}
             <p>
-              {{#if (has-block 'description')}}
-                {{yield to='description'}}
+              {{#if (has-block "description")}}
+                {{yield to="description"}}
               {{else if @description}}
                 {{@description}}
               {{/if}}
             </p>
           {{/if}}
 
-          {{#if (has-block 'nav')}}
+          {{#if (has-block "nav")}}
             <nav>
-              {{yield NavLink to='nav'}}
+              {{yield NavLink to="nav"}}
             </nav>
           {{/if}}
         </header>
       {{/if}}
 
-      <div class='{{styles.pageContent}} {{styles.flow}}' part='content'>
-        {{yield to='content'}}
+      <div class="{{styles.pageContent}} {{styles.flow}}" part="content">
+        {{yield to="content"}}
         {{yield}}
       </div>
     </PageElement>

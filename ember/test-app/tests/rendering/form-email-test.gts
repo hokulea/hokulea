@@ -15,7 +15,7 @@ module('Rendering | <Form.Email>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Email @label='Email' @description='Primärer Kontakt' @name='email' />
+          <f.Email @label="Email" @description="Primärer Kontakt" @name="email" />
         </Form>
       </template>
     );
@@ -42,7 +42,7 @@ module('Rendering | <Form.Email>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Email @name='email' @label='Email' placeholder='abc' />
+          <f.Email @name="email" @label="Email" placeholder="abc" />
         </Form>
       </template>
     );
@@ -57,7 +57,7 @@ module('Rendering | <Form.Email>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Email @name='email' @label='Email' disabled />
+          <f.Email @name="email" @label="Email" disabled />
         </Form>
       </template>
     );
@@ -70,7 +70,7 @@ module('Rendering | <Form.Email>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Email @name='email' @label='Email' @disabled={{true}} />
+          <f.Email @name="email" @label="Email" @disabled={{true}} />
         </Form>
       </template>
     );

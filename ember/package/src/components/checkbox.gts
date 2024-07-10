@@ -15,12 +15,12 @@ export interface CheckboxSignature {
 const Checkbox: TOC<CheckboxSignature> = <template>
   <input
     class={{styles.choice}}
-    type='checkbox'
+    type="checkbox"
     checked={{@value}}
     disabled={{@disabled}}
     data-test-choice
     ...attributes
-    {{on 'input' (pick 'target.checked' @update)}}
+    {{on "input" (pick "target.checked" @update)}}
   />
 </template>;
 

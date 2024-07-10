@@ -22,7 +22,7 @@ interface ListLabelSignature {
 }
 
 const ListLabel: TOC<ListLabelSignature> = <template>
-  <Label @element={{element 'span'}} id={{@id}}>{{yield}}</Label>
+  <Label @element={{element "span"}} id={{@id}}>{{yield}}</Label>
 </template>;
 
 export interface ListFieldSignature<

@@ -22,13 +22,13 @@ module('Rendering | <DateInput>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><DateInput placeholder='abc' /></template>);
+    await render(<template><DateInput placeholder="abc" /></template>);
 
     const input = new DateInputPageObject();
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
 
-    await render(<template><DateInput name='form-name' /></template>);
+    await render(<template><DateInput name="form-name" /></template>);
 
     assert.dom(input.control).hasAttribute('name', 'form-name');
   });
@@ -46,7 +46,7 @@ module('Rendering | <DateInput>', function (hooks) {
   });
 
   test('accepts value', async function (assert) {
-    await render(<template><DateInput @value='1970-01-01' /></template>);
+    await render(<template><DateInput @value="1970-01-01" /></template>);
 
     const input = new DateInputPageObject();
 
@@ -56,7 +56,7 @@ module('Rendering | <DateInput>', function (hooks) {
   test('triggers @update when value changes', async function (assert) {
     const handleUpdate = sinon.spy();
 
-    await render(<template><DateInput @value='1970-01-01' @update={{handleUpdate}} /></template>);
+    await render(<template><DateInput @value="1970-01-01" @update={{handleUpdate}} /></template>);
 
     const input = new DateInputPageObject();
 

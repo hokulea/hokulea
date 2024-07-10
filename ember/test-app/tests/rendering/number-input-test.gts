@@ -22,13 +22,13 @@ module('Rendering | <NumberInput>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><NumberInput placeholder='abc' /></template>);
+    await render(<template><NumberInput placeholder="abc" /></template>);
 
     const input = new NumberInputPageObject();
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
 
-    await render(<template><NumberInput name='form-name' /></template>);
+    await render(<template><NumberInput name="form-name" /></template>);
 
     assert.dom(input.control).hasAttribute('name', 'form-name');
   });

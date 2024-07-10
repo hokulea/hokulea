@@ -16,15 +16,15 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
       <template>
         <Form @data={{data}} as |f|>
           <f.MultipleChoice
-            @label='Welche Haustiere hast du?'
-            @description='Stofftiere zählen nicht ;)'
-            @name='pets'
+            @label="Welche Haustiere hast du?"
+            @description="Stofftiere zählen nicht ;)"
+            @name="pets"
             as |r|
           >
-            <r.Option @value='rhino' @label='Rhino' required />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+            <r.Option @value="rhino" @label="Rhino" required />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.MultipleChoice>
         </Form>
       </template>
@@ -49,11 +49,11 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
-            <r.Option @value='rhino' @label='Rhino' required />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+          <f.MultipleChoice @name="pets" @label="Welche Haustiere hast du?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" required />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.MultipleChoice>
         </Form>
       </template>
@@ -69,11 +69,11 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
-            <r.Option @value='rhino' @label='Rhino' disabled />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+          <f.MultipleChoice @name="pets" @label="Welche Haustiere hast du?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" disabled />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.MultipleChoice>
         </Form>
       </template>
@@ -91,15 +91,15 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
       <template>
         <Form @data={{data}} as |f|>
           <f.MultipleChoice
-            @name='pets'
-            @label='Welche Haustiere hast du?'
+            @name="pets"
+            @label="Welche Haustiere hast du?"
             @disabled={{true}}
             as |r|
           >
-            <r.Option @value='rhino' @label='Rhino' />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+            <r.Option @value="rhino" @label="Rhino" />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.MultipleChoice>
         </Form>
       </template>
@@ -117,11 +117,11 @@ module('Rendering | <Form.MultipleChoice>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.MultipleChoice @name='pets' @label='Welche Haustiere hast du?' as |r|>
-            <r.Option @value='rhino' @label='Rhino' />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+          <f.MultipleChoice @name="pets" @label="Welche Haustiere hast du?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.MultipleChoice>
         </Form>
       </template>

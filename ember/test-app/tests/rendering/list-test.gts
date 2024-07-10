@@ -22,7 +22,7 @@ module('Rendering | <List>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><List name='form-name' /></template>);
+    await render(<template><List name="form-name" /></template>);
 
     const input = new ListPageObject();
 
@@ -42,7 +42,7 @@ module('Rendering | <List>', function (hooks) {
       await render(
         <template>
           <List as |l|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+            {{#each (array "Banana" "Apple" "Pear") as |item|}}
               <l.Option @value={{item}}>{{item}}</l.Option>
             {{/each}}
           </List>
@@ -59,8 +59,8 @@ module('Rendering | <List>', function (hooks) {
     test('renders selection', async function (assert) {
       await render(
         <template>
-          <List @value='Apple' as |l|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+          <List @value="Apple" as |l|>
+            {{#each (array "Banana" "Apple" "Pear") as |item|}}
               <l.Option @value={{item}}>{{item}}</l.Option>
             {{/each}}
           </List>
@@ -78,7 +78,7 @@ module('Rendering | <List>', function (hooks) {
       await render(
         <template>
           <List @update={{handleUpdate}} as |l|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+            {{#each (array "Banana" "Apple" "Pear") as |item|}}
               <l.Option @value={{item}}>{{item}}</l.Option>
             {{/each}}
           </List>

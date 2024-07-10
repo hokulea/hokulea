@@ -6,13 +6,13 @@ import { Page } from '@hokulea/ember';
 
 export class ActionsRoute extends Route<object> {
   <template>
-    <Page @title='Page' @description='a little explanation'>
+    <Page @title="Page" @description="a little explanation">
       <:nav as |Link|>
-        <Link @link={{link 'index'}}>Index</Link>
+        <Link @link={{link "index"}}>Index</Link>
         nav
       </:nav>
       <:content>
-        <Page @title='Content Area' @description='a second explanation'>
+        <Page @title="Content Area" @description="a second explanation">
           A subpage
         </Page>
       </:content>

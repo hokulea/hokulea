@@ -17,14 +17,14 @@ export interface CurrencyInputSignature {
 const CurrencyInput: TOC<CurrencyInputSignature> = <template>
   <InputBuilder @disabled={{@disabled}} as |b|>
     <input
-      class='{{styles.input}} {{styles.currency}}'
-      type='text'
-      inputmode='decimal'
+      class="{{styles.input}} {{styles.currency}}"
+      type="text"
+      inputmode="decimal"
       value={{@value}}
       disabled={{@disabled}}
       data-test-input
       ...attributes
-      {{on 'input' (pick 'target.value' (pickAsNumber @update))}}
+      {{on "input" (pick "target.value" (pickAsNumber @update))}}
     />
     <b.Affix>€</b.Affix>
   </InputBuilder>

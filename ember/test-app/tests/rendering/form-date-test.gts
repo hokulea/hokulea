@@ -15,7 +15,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Date @label='Geburtstag' @description='Wann bist du geboren?' @name='birthday' />
+          <f.Date @label="Geburtstag" @description="Wann bist du geboren?" @name="birthday" />
         </Form>
       </template>
     );
@@ -42,7 +42,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Date @name='birthday' @label='Geburtstag' placeholder='abc' />
+          <f.Date @name="birthday" @label="Geburtstag" placeholder="abc" />
         </Form>
       </template>
     );
@@ -57,7 +57,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Date @name='birthday' @label='Geburtstag' disabled />
+          <f.Date @name="birthday" @label="Geburtstag" disabled />
         </Form>
       </template>
     );
@@ -70,7 +70,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Date @name='birthday' @label='Geburtstag' @disabled={{true}} />
+          <f.Date @name="birthday" @label="Geburtstag" @disabled={{true}} />
         </Form>
       </template>
     );

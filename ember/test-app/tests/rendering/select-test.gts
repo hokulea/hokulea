@@ -22,7 +22,7 @@ module('Rendering | <Select>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><Select name='form-name' /></template>);
+    await render(<template><Select name="form-name" /></template>);
 
     const input = new SelectPageObject();
 
@@ -46,7 +46,7 @@ module('Rendering | <Select>', function (hooks) {
       await render(
         <template>
           <Select as |s|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+            {{#each (array "Banana" "Apple" "Pear") as |item|}}
               <s.Option @value={{item}} />
             {{/each}}
           </Select>
@@ -63,8 +63,8 @@ module('Rendering | <Select>', function (hooks) {
     test('renders selection', async function (assert) {
       await render(
         <template>
-          <Select @value='Apple' as |s|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+          <Select @value="Apple" as |s|>
+            {{#each (array "Banana" "Apple" "Pear") as |item|}}
               <s.Option @value={{item}} />
             {{/each}}
           </Select>
@@ -82,7 +82,7 @@ module('Rendering | <Select>', function (hooks) {
       await render(
         <template>
           <Select @update={{handleUpdate}} as |s|>
-            {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+            {{#each (array "Banana" "Apple" "Pear") as |item|}}
               <s.Option @value={{item}} />
             {{/each}}
           </Select>

@@ -33,7 +33,7 @@ export default class RadioField<
   };
 
   <template>
-    <this.Field @label='' @name={{@name}} @validate={{@validate}} as |f|>
+    <this.Field @label="" @name={{@name}} @validate={{@validate}} as |f|>
       <div class={{styles.choices}}>
         <div class={{styles.choice}}>
           <span>

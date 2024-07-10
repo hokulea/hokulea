@@ -39,20 +39,20 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |f|>
-            <f.Text @name='givenName' @label='Given Name' />
-            <f.Text @name='familyName' @label='Family Name' />
-            <f.SingularChoice @name='gender' @label='Gender' as |group|>
-              <group.Option @value='male' @label='Male' />
-              <group.Option @value='female' @label='Female' />
-              <group.Option @value='other' @label='Other' />
+            <f.Text @name="givenName" @label="Given Name" />
+            <f.Text @name="familyName" @label="Family Name" />
+            <f.SingularChoice @name="gender" @label="Gender" as |group|>
+              <group.Option @value="male" @label="Male" />
+              <group.Option @value="female" @label="Female" />
+              <group.Option @value="other" @label="Other" />
             </f.SingularChoice>
-            <f.Number @name='age' @label='Age' />
-            <f.Select @name='country' @label='Country' as |s|>
-              <s.Option @value='USA'>United States</s.Option>
-              <s.Option @value='GER'>Germany</s.Option>
+            <f.Number @name="age" @label="Age" />
+            <f.Select @name="country" @label="Country" as |s|>
+              <s.Option @value="USA">United States</s.Option>
+              <s.Option @value="GER">Germany</s.Option>
             </f.Select>
-            <f.TextArea @name='comments' @label='Comments' />
-            <f.Checkbox @name='acceptTerms' @label='Terms accepted' />
+            <f.TextArea @name="comments" @label="Comments" />
+            <f.Checkbox @name="acceptTerms" @label="Terms accepted" />
           </Form>
         </template>
       );
@@ -77,10 +77,10 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |form|>
-            <form.Field @name='givenName' @label='Given Name' as |field|>
+            <form.Field @name="givenName" @label="Given Name" as |field|>
               <div data-test-given-name>{{field.value}}</div>
             </form.Field>
-            <form.Field @name='familyName' @label='Family Name' as |field|>
+            <form.Field @name="familyName" @label="Family Name" as |field|>
               <div data-test-family-name>{{field.value}}</div>
             </form.Field>
           </Form>
@@ -107,8 +107,8 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{ctx.data}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
           </Form>
         </template>
       );
@@ -138,8 +138,8 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
           </Form>
         </template>
       );
@@ -170,8 +170,8 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
           </Form>
         </template>
       );
@@ -198,8 +198,8 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
           </Form>
         </template>
       );
@@ -232,20 +232,20 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} @submit={{submitHandler}} as |f|>
-            <f.Text @name='givenName' @label='Given Name' />
-            <f.Text @name='familyName' @label='Family Name' />
-            <f.SingularChoice @name='gender' @label='Gender' as |group|>
-              <group.Option @value='male' @label='Male' />
-              <group.Option @value='female' @label='Female' />
-              <group.Option @value='other' @label='Other' />
+            <f.Text @name="givenName" @label="Given Name" />
+            <f.Text @name="familyName" @label="Family Name" />
+            <f.SingularChoice @name="gender" @label="Gender" as |group|>
+              <group.Option @value="male" @label="Male" />
+              <group.Option @value="female" @label="Female" />
+              <group.Option @value="other" @label="Other" />
             </f.SingularChoice>
-            <f.Number @name='age' @label='Age' />
-            <f.Select @name='country' @label='Country' as |s|>
-              <s.Option @value='USA'>United States</s.Option>
-              <s.Option @value='GER'>Germany</s.Option>
+            <f.Number @name="age" @label="Age" />
+            <f.Select @name="country" @label="Country" as |s|>
+              <s.Option @value="USA">United States</s.Option>
+              <s.Option @value="GER">Germany</s.Option>
             </f.Select>
-            <f.TextArea @name='comments' @label='Comments' />
-            <f.Checkbox @name='acceptTerms' @label='Terms accepted' />
+            <f.TextArea @name="comments" @label="Comments" />
+            <f.Checkbox @name="acceptTerms" @label="Terms accepted" />
           </Form>
         </template>
       );
@@ -306,8 +306,8 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} @submit={{submitHandler}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
 
             <Button @push={{form.submit}} data-test-submit>Submit</Button>
           </Form>
@@ -339,12 +339,12 @@ module('Integration | <Form> | Data', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |form|>
-            <form.Field @name='givenName' @label='' as |field|>
-              <label for='given-name'>First name:</label>
-              <input type='text' value={{field.value}} id='given-name' data-test-given-name />
+            <form.Field @name="givenName" @label="" as |field|>
+              <label for="given-name">First name:</label>
+              <input type="text" value={{field.value}} id="given-name" data-test-given-name />
               <button
-                type='button'
-                {{on 'click' (fn field.setValue 'Nicole')}}
+                type="button"
+                {{on "click" (fn field.setValue "Nicole")}}
                 data-test-custom-control
               >
                 Update
@@ -370,9 +370,9 @@ module('Integration | <Form> | Data', function (hooks) {
 
       await render(
         <template>
-          <Form @data={{data}} @dataMode='mutable' as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+          <Form @data={{data}} @dataMode="mutable" as |form|>
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
           </Form>
         </template>
       );
@@ -390,9 +390,9 @@ module('Integration | <Form> | Data', function (hooks) {
 
       await render(
         <template>
-          <Form @data={{data}} @dataMode='mutable' @submit={{submitHandler}} as |form|>
-            <form.Text @name='givenName' @label='Given Name' />
-            <form.Text @name='familyName' @label='Family Name' />
+          <Form @data={{data}} @dataMode="mutable" @submit={{submitHandler}} as |form|>
+            <form.Text @name="givenName" @label="Given Name" />
+            <form.Text @name="familyName" @label="Family Name" />
           </Form>
         </template>
       );

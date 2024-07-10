@@ -22,13 +22,13 @@ module('Rendering | <EmailInput>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><EmailInput placeholder='abc' /></template>);
+    await render(<template><EmailInput placeholder="abc" /></template>);
 
     const input = new EmailInputPageObject();
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
 
-    await render(<template><EmailInput name='form-name' /></template>);
+    await render(<template><EmailInput name="form-name" /></template>);
 
     assert.dom(input.control).hasAttribute('name', 'form-name');
   });
@@ -46,7 +46,7 @@ module('Rendering | <EmailInput>', function (hooks) {
   });
 
   test('accepts value', async function (assert) {
-    await render(<template><EmailInput @value='han.solo@smuglers-of-the.galaxy' /></template>);
+    await render(<template><EmailInput @value="han.solo@smuglers-of-the.galaxy" /></template>);
 
     const input = new EmailInputPageObject();
 
@@ -58,7 +58,7 @@ module('Rendering | <EmailInput>', function (hooks) {
 
     await render(
       <template>
-        <EmailInput @value='han.solo@smuglers-of-the.galaxy' @update={{handleUpdate}} />
+        <EmailInput @value="han.solo@smuglers-of-the.galaxy" @update={{handleUpdate}} />
       </template>
     );
 

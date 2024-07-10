@@ -23,7 +23,7 @@ module('Rendering | <Checkbox>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><Checkbox name='form-name' /></template>);
+    await render(<template><Checkbox name="form-name" /></template>);
 
     const input = new CheckboxPageObject();
 

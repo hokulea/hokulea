@@ -7,12 +7,12 @@ import TokenList from '../token-list';
 import type { TOC } from '@ember/component/template-only';
 
 const IndicatorTokens: TOC = <template>
-  <Page @title='Sizing'>
+  <Page @title="Sizing">
     Learn more about [hokuleas sizing system](../foundation/sizing.md).
 
     <TokenList>
-      <PlainToken @name='--sizing-ratio' />
-      <PlainToken @name='--sizing-factor' />
+      <PlainToken @name="--sizing-ratio" />
+      <PlainToken @name="--sizing-factor" />
     </TokenList>
 
     <h2>Global Sizing</h2>

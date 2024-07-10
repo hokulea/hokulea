@@ -69,7 +69,7 @@ export default class Select extends Component<SelectSignature> {
       disabled={{@disabled}}
       data-test-select
       ...attributes
-      {{on 'input' this.select}}
+      {{on "input" this.select}}
     >
       {{yield (hash Option=(component Option isSelected=this.isSelected))}}
     </select>

@@ -32,25 +32,6 @@ a:active {
   background: var(--surface-container);
   box-shadow: var(--shape-shadow-container);
 
-  [part="brand"] {
-    align-items: center;
-    padding-block: var(--spacing-container0);
-    font-size: var(--s0);
-    font-weight: bold;
-
-    &, a&:link, a&:visited {
-      color: var(--navigation-links-base);
-    }
-
-    a&:hover {
-      color: var(--navigation-links-hover);
-    }
-
-    a&:active {
-      color: var(--navigation-links-active);
-    }
-  }
-
   & > div {
     display: flex;
     gap: var(--spacing-container1);
@@ -63,7 +44,24 @@ a:active {
       min-width: 0;
     }
 
+    [part="brand"] {
+      align-items: center;
+      padding-block: var(--spacing-container0);
+      font-size: var(--s0);
+      font-weight: bold;
 
+      &, a&:link, a&:visited {
+        color: var(--navigation-links-base);
+      }
+
+      a&:hover {
+        color: var(--navigation-links-hover);
+      }
+
+      a&:active {
+        color: var(--navigation-links-active);
+      }
+    }
 
     &[data-sensing] > :is(nav, [part="aux"]) {
       visibility: hidden;

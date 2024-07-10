@@ -8,16 +8,22 @@
   & > header {
     p {
       color: var(--typography-subtle);
+
+      &:not(:has(+ nav)) {
+        padding-block-end: var(--spacing-container0);
+      }
     }
 
     h1 {
       padding-block: var(--spacing-container-3);
     }
+
+
   }
 
-  section& > header h1:not(:has(+ *)) {
-    padding-block-end: 0;
-  }
+  /* section& > header h1:not(:has(+ *)) {
+
+  } */
 
   main& {
     > header {

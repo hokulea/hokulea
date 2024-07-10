@@ -55,9 +55,9 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      assert.dom(input.$option.elements[0]).hasText('Banana');
-      assert.dom(input.$option.elements[1]).hasText('Apple');
-      assert.dom(input.$option.elements[2]).hasText('Pear');
+      assert.dom(input.$option[0]).hasText('Banana');
+      assert.dom(input.$option[1]).hasText('Apple');
+      assert.dom(input.$option[2]).hasText('Pear');
     });
 
     test('renders selection', async function (assert) {
@@ -73,7 +73,7 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      assert.dom(input.$option.elements[1]).hasProperty('selected', true);
+      assert.dom(input.$option[1]).hasProperty('selected', true);
     });
 
     test('triggers @update', async function (assert) {
@@ -91,7 +91,7 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      await select(input.element as HTMLSelectElement, 'Apple');
+      await select(input, 'Apple');
 
       assert.ok(handleUpdate.calledWith('Apple'));
     });
@@ -128,9 +128,9 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      assert.dom(input.$option.elements[0]).hasText('Banana');
-      assert.dom(input.$option.elements[1]).hasText('Apple');
-      assert.dom(input.$option.elements[2]).hasText('Pear');
+      assert.dom(input.$option[0]).hasText('Banana');
+      assert.dom(input.$option[1]).hasText('Apple');
+      assert.dom(input.$option[2]).hasText('Pear');
     });
 
     test('renders selection', async function (assert) {
@@ -148,7 +148,7 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      assert.dom(input.$option.elements[1]).hasProperty('selected', true);
+      assert.dom(input.$option[1]).hasProperty('selected', true);
     });
 
     test('triggers @update', async function (assert) {
@@ -166,7 +166,7 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      await select(input.element as HTMLSelectElement, `${items[1].id}`);
+      await select(input, `${items[1].id}`);
 
       assert.ok(handleUpdate.calledWith(`${items[1].id}`));
     });

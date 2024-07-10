@@ -22,8 +22,8 @@ module('Rendering | <Button>', function (hooks) {
 
     const button = new ButtonPageObject();
 
-    assert.dom(button.element).exists();
-    assert.dom(button.element).hasText('Hello World');
+    assert.dom(button).exists();
+    assert.dom(button).hasText('Hello World');
 
     assert.strictEqual(button.intent, Intent.Action);
     assert.strictEqual(button.importance, Importance.Supreme);
@@ -59,7 +59,7 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.element).hasAria('disabled', 'true');
+      assert.dom(button).hasAria('disabled', 'true');
     });
   });
 
@@ -73,8 +73,8 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      // assert.dom(button.element).hasTagName('span');
-      assert.dom(button.element).hasTagName('button');
+      // assert.dom(button).hasTagName('span');
+      assert.dom(button).hasTagName('button');
     });
 
     test('it renders as <button>, when a function is given', async function (assert) {
@@ -84,7 +84,7 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.element).hasTagName('button');
+      assert.dom(button).hasTagName('button');
     });
 
     test('it renders as <a>, when a link is given', async function (assert) {
@@ -94,7 +94,7 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.element).hasTagName('a');
+      assert.dom(button).hasTagName('a');
     });
 
     test('it will invoke functions', async function (assert) {
@@ -142,11 +142,11 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.$before.element).exists();
-      assert.dom(button.$label.element).exists();
-      assert.dom(button.$after.element).doesNotExist();
-      assert.dom(button.$before.element).hasText('Hello');
-      assert.dom(button.$label.element).hasText('Label');
+      assert.dom(button.$before).exists();
+      assert.dom(button.$label).exists();
+      assert.dom(button.$after).doesNotExist();
+      assert.dom(button.$before).hasText('Hello');
+      assert.dom(button.$label).hasText('Label');
     });
 
     test('it has an after slot', async function (assert) {
@@ -161,11 +161,11 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.$before.element).doesNotExist();
-      assert.dom(button.$label.element).exists();
-      assert.dom(button.$after.element).exists();
-      assert.dom(button.$label.element).hasText('Label');
-      assert.dom(button.$after.element).hasText('Afterwards');
+      assert.dom(button.$before).doesNotExist();
+      assert.dom(button.$label).exists();
+      assert.dom(button.$after).exists();
+      assert.dom(button.$label).hasText('Label');
+      assert.dom(button.$after).hasText('Afterwards');
     });
 
     test('it works with label slot', async function (assert) {
@@ -179,10 +179,10 @@ module('Rendering | <Button>', function (hooks) {
 
       const button = new ButtonPageObject();
 
-      assert.dom(button.$before.element).doesNotExist();
-      assert.dom(button.$label.element).exists();
-      assert.dom(button.$after.element).doesNotExist();
-      assert.dom(button.$label.element).hasText('Label');
+      assert.dom(button.$before).doesNotExist();
+      assert.dom(button.$label).exists();
+      assert.dom(button.$after).doesNotExist();
+      assert.dom(button.$label).hasText('Label');
     });
   });
 });

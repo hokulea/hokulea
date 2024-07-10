@@ -32,7 +32,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     const form = new FormPageObject();
 
-    assert.dom(form.element).hasAttribute('novalidate');
+    assert.dom(form).hasAttribute('novalidate');
   });
 
   test('@submit is not called when validation fails', async function (assert) {
@@ -88,8 +88,8 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     const form = new FormPageObject();
 
-    await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Nicole');
-    await fillIn(form.field('familyName')?.$control.element as HTMLInputElement, 'Nicole');
+    await fillIn(form.field('givenName').$control, 'Nicole');
+    await fillIn(form.field('familyName').$control, 'Nicole');
 
     await form.submit();
 
@@ -111,19 +111,19 @@ module('Integration | <Form> | Native validation', function (hooks) {
     const form = new FormPageObject();
 
     assert
-      .dom(form.field('givenName')?.$errors.element)
+      .dom(form.field('givenName').$errors)
       .doesNotExist('validation errors are not rendered before validation happens');
     assert
-      .dom(form.field('familyName')?.$errors.element)
+      .dom(form.field('familyName').$errors)
       .doesNotExist('validation errors are not rendered before validation happens');
 
     await form.submit();
 
     assert
-      .dom(form.field('givenName')?.$errors.element)
+      .dom(form.field('givenName').$errors)
       .exists({ count: 1 }, 'validation errors appear when validation fails');
     assert
-      .dom(form.field('familyName')?.$errors.element)
+      .dom(form.field('familyName').$errors)
       .doesNotExist('validation errors are not rendered when validation succeeds');
   });
 
@@ -142,7 +142,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await form.submit();
 
-    assert.dom(form.field('givenName')?.$errors.element).exists({ count: 1 }).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
+    assert.dom(form.field('givenName').$errors).exists({ count: 1 }).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
   });
 
   test('works with setCustomValidity', async function (this: RenderingTestContext, assert) {
@@ -158,18 +158,18 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     const form = new FormPageObject();
 
-    const input = form.field('givenName')?.$control.element as HTMLInputElement;
+    const input = form.field('givenName').$control.element as HTMLInputElement;
 
     input.setCustomValidity('This is a custom error message');
 
     await form.submit();
 
     assert
-      .dom(form.field('givenName')?.$errors.element)
+      .dom(form.field('givenName').$errors)
       .exists({ count: 1 }, 'validation errors appear when validation fails');
 
     assert
-      .dom(form.field('givenName')?.$errors.element)
+      .dom(form.field('givenName').$errors)
       .exists({ count: 1 })
       .hasText('This is a custom error message');
   });
@@ -189,7 +189,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await form.submit();
 
-    assert.dom(form.field('givenName')?.$control.element).hasAria('invalid', 'true');
+    assert.dom(form.field('givenName').$control).hasAria('invalid', 'true');
   });
 
   test('native validation errors are merged with custom validation errors', async function (assert) {
@@ -236,25 +236,21 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await form.submit();
 
-    assert.strictEqual(form.field('givenName')?.$errors.elements.length, 3);
+    assert.strictEqual(form.field('givenName').$errors.length, 3);
 
-    assert.strictEqual(form.field('givenName')?.$errors[0].type, 'native');
-    assert.strictEqual(form.field('givenName')?.$errors[0].value, 'foo123');
-    assert.dom(form.field('givenName')?.$errors[0].element).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
+    assert.strictEqual(form.field('givenName').$errors[0].type, 'native');
+    assert.strictEqual(form.field('givenName').$errors[0].value, 'foo123');
+    assert.dom(form.field('givenName').$errors[0]).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
 
-    assert.strictEqual(form.field('givenName')?.$errors[1].type, 'uppercase');
-    assert.strictEqual(form.field('givenName')?.$errors[1].value, 'foo123');
-    assert
-      .dom(form.field('givenName')?.$errors[1].element)
-      .hasText('Given name must be upper case!');
+    assert.strictEqual(form.field('givenName').$errors[1].type, 'uppercase');
+    assert.strictEqual(form.field('givenName').$errors[1].value, 'foo123');
+    assert.dom(form.field('givenName').$errors[1]).hasText('Given name must be upper case!');
 
-    assert.strictEqual(form.field('givenName')?.$errors[2].type, 'notFoo');
-    assert.strictEqual(form.field('givenName')?.$errors[2].value, 'foo123');
-    assert
-      .dom(form.field('givenName')?.$errors[2].element)
-      .hasText('Foo is an invalid given name!');
+    assert.strictEqual(form.field('givenName').$errors[2].type, 'notFoo');
+    assert.strictEqual(form.field('givenName').$errors[2].value, 'foo123');
+    assert.dom(form.field('givenName').$errors[2]).hasText('Foo is an invalid given name!');
 
-    assert.dom(form.field('familyName')?.$errors.element).doesNotExist();
+    assert.dom(form.field('familyName').$errors).doesNotExist();
   });
 
   test('no validation errors render when form data is valid', async function (assert) {
@@ -301,8 +297,8 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await form.submit();
 
-    assert.dom(form.field('givenName')?.$errors.element).doesNotExist();
-    assert.dom(form.field('familyName')?.$errors.element).doesNotExist();
+    assert.dom(form.field('givenName').$errors).doesNotExist();
+    assert.dom(form.field('familyName').$errors).doesNotExist();
   });
 
   test('opt out of native validation using @ignoreNativeValidation', async function (assert) {
@@ -333,11 +329,11 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await form.submit();
 
-    assert.strictEqual(form.field('givenName')?.$errors.type, 'uppercase');
-    assert.strictEqual(form.field('givenName')?.$errors.value, 'john');
-    assert.dom(form.field('givenName')?.$errors.element).hasText('Given name must be upper case!');
+    assert.strictEqual(form.field('givenName').$errors.type, 'uppercase');
+    assert.strictEqual(form.field('givenName').$errors.value, 'john');
+    assert.dom(form.field('givenName').$errors).hasText('Given name must be upper case!');
 
-    assert.dom(form.field('familyName')?.$errors.element).doesNotExist();
+    assert.dom(form.field('familyName').$errors).doesNotExist();
   });
 
   module(`@validateOn`, function () {
@@ -357,28 +353,28 @@ module('Integration | <Form> | Native validation', function (hooks) {
         const form = new FormPageObject();
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist('validation errors are not rendered before form is filled in');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist('validation errors are not rendered before form is filled in');
 
-        await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, '123');
+        await fillIn(form.field('givenName').$control, '123');
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist('validation errors are not rendered before validation happens on focusout');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist('validation errors are not rendered before validation happens on focusout');
 
-        await blur(form.field('givenName')?.$control.element as HTMLInputElement);
+        await blur(form.field('givenName').$control);
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .exists({ count: 1 }, 'validation errors appear on focusout when validation fails');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist('validation errors are not rendered for untouched fields');
       });
     });
@@ -399,19 +395,19 @@ module('Integration | <Form> | Native validation', function (hooks) {
         const form = new FormPageObject();
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist('validation errors are not rendered before validation happens on change');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist('validation errors are not rendered before validation happens on change');
 
-        await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, '123');
+        await fillIn(form.field('givenName').$control, '123');
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .exists({ count: 1 }, 'validation errors appear on focusout when validation fails');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist('validation errors are not rendered for untouched fields');
       });
     });
@@ -434,34 +430,34 @@ module('Integration | <Form> | Native validation', function (hooks) {
         const form = new FormPageObject();
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist('validation errors are not rendered before before form is filled in');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist('validation errors are not rendered before before form is filled in');
 
-        await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, '123');
+        await fillIn(form.field('givenName').$control, '123');
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
 
-        await blur(form.field('givenName')?.$control.element as HTMLInputElement);
+        await blur(form.field('givenName').$control);
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
@@ -469,34 +465,34 @@ module('Integration | <Form> | Native validation', function (hooks) {
         await form.submit();
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .exists({ count: 1 }, 'validation errors appear on submit when validation fails');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .exists({ count: 1 }, 'validation errors appear on submit when validation fails');
 
-        await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Tony');
+        await fillIn(form.field('givenName').$control, 'Tony');
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .exists(
             { count: 1 },
             'validation errors do not disappear until revalidation happens on focusout'
           );
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .exists(
             { count: 1 },
             'validation errors do not disappear until revalidation happens on focusout'
           );
 
-        await blur(form.field('givenName')?.$control.element as HTMLInputElement);
+        await blur(form.field('givenName').$control);
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist('validation errors disappear after successful revalidation on focusout');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .exists(
             { count: 1 },
             'validation errors do not disappear until revalidation happens on focusout'
@@ -520,38 +516,38 @@ module('Integration | <Form> | Native validation', function (hooks) {
         const form = new FormPageObject();
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens before form is filled in'
           );
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens before form is filled in'
           );
 
-        await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, '123');
+        await fillIn(form.field('givenName').$control, '123');
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
 
-        await blur(form.field('givenName')?.$control.element as HTMLInputElement);
+        await blur(form.field('givenName').$control);
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .doesNotExist(
             'validation errors are not rendered before initial validation happens on submit'
           );
@@ -559,19 +555,19 @@ module('Integration | <Form> | Native validation', function (hooks) {
         await form.submit();
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .exists({ count: 1 }, 'validation errors appear on submit when validation fails');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .exists({ count: 1 }, 'validation errors appear on submit when validation fails');
 
-        await fillIn(form.field('givenName')?.$control.element as HTMLInputElement, 'Tony');
+        await fillIn(form.field('givenName').$control, 'Tony');
 
         assert
-          .dom(form.field('givenName')?.$errors.element)
+          .dom(form.field('givenName').$errors)
           .doesNotExist('validation errors disappear after successful revalidation on change');
         assert
-          .dom(form.field('familyName')?.$errors.element)
+          .dom(form.field('familyName').$errors)
           .exists(
             { count: 1 },
             'validation errors do not disappear until revalidation happens on change'

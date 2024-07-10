@@ -31,11 +31,11 @@ module('Rendering | <Form.TextArea>', function (hooks) {
     assert.dom(input.control).isNotDisabled();
     assert.dom(input.control).hasTagName('textarea');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Notizen');
-    assert.dom(field.$description.element).hasText('Für dich selbst');
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Notizen');
+    assert.dom(field.$description).hasText('Für dich selbst');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

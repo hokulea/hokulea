@@ -38,13 +38,13 @@ module('Rendering | <Form.Currency>', function (hooks) {
     assert.dom(input.control).hasAttribute('type', 'text');
     assert.dom(input.control).hasAttribute('inputmode', 'decimal');
 
-    assert.dom(input.$affix.element).hasText('€');
+    assert.dom(input.$affix).hasText('€');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Eigenanteil');
-    assert.dom(field.$description.element).hasText('Wieviel zahlst du selbst?');
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Eigenanteil');
+    assert.dom(field.$description).hasText('Wieviel zahlst du selbst?');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

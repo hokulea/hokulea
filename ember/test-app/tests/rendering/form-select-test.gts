@@ -38,11 +38,11 @@ module('Rendering | <Form.Select>', function (hooks) {
     assert.dom(input.control).isNotDisabled();
     assert.dom(input.control).hasTagName('select');
 
-    assert.dom(field.$label.element).hasTagName('label');
-    assert.dom(field.$label.element).hasText('Deine Lieblingsfrucht?');
-    assert.dom(field.$description.element).hasText('Aus dem Obstkorb');
+    assert.dom(field.$label).hasTagName('label');
+    assert.dom(field.$label).hasText('Deine Lieblingsfrucht?');
+    assert.dom(field.$description).hasText('Aus dem Obstkorb');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert.dom(field.$label).hasAttribute('for', input.control.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {

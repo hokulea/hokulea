@@ -35,11 +35,13 @@ module('Rendering | <Form.List>', function (hooks) {
     assert.dom(input.control).exists();
     assert.dom(input.control).doesNotHaveAria('disabled');
 
-    assert.dom(field.$label.element).hasTagName('span');
-    assert.dom(field.$label.element).hasText('Your Starter Pokemon?');
-    assert.dom(field.$description.element).hasText('Gen 1');
+    assert.dom(field.$label).hasTagName('span');
+    assert.dom(field.$label).hasText('Your Starter Pokemon?');
+    assert.dom(field.$description).hasText('Gen 1');
 
-    assert.strictEqual(field.$label.element?.getAttribute('for'), input.control.getAttribute('id'));
+    assert
+      .dom(input.control)
+      .hasAria('labelledby', field.$label.element?.getAttribute('id') as string);
   });
 
   test('html attributes work', async function (assert) {
@@ -52,7 +54,7 @@ module('Rendering | <Form.List>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control.element;
+    const input = form.$fields[0].$control;
 
     assert.dom(input).hasAttribute('placeholder', 'abc');
   });
@@ -67,7 +69,7 @@ module('Rendering | <Form.List>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control.element;
+    const input = form.$fields[0].$control;
 
     assert.dom(input).hasAria('disabled', 'true');
   });
@@ -89,9 +91,9 @@ module('Rendering | <Form.List>', function (hooks) {
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
 
-      assert.dom(input.$option.elements[0]).hasText('Bulbasaur');
-      assert.dom(input.$option.elements[1]).hasText('Charmander');
-      assert.dom(input.$option.elements[2]).hasText('Squirtle');
+      assert.dom(input.$option[0]).hasText('Bulbasaur');
+      assert.dom(input.$option[1]).hasText('Charmander');
+      assert.dom(input.$option[2]).hasText('Squirtle');
     });
 
     test('renders selection', async function (assert) {
@@ -112,7 +114,7 @@ module('Rendering | <Form.List>', function (hooks) {
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
 
-      assert.dom(input.$option.elements[1]).hasAria('selected', 'true');
+      assert.dom(input.$option[1]).hasAria('selected', 'true');
     });
   });
 
@@ -148,9 +150,9 @@ module('Rendering | <Form.List>', function (hooks) {
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
 
-      assert.dom(input.$option.elements[0]).hasText('Bulbasaur');
-      assert.dom(input.$option.elements[1]).hasText('Charmander');
-      assert.dom(input.$option.elements[2]).hasText('Squirtle');
+      assert.dom(input.$option[0]).hasText('Bulbasaur');
+      assert.dom(input.$option[1]).hasText('Charmander');
+      assert.dom(input.$option[2]).hasText('Squirtle');
     });
 
     test('renders selection', async function (assert) {
@@ -171,7 +173,7 @@ module('Rendering | <Form.List>', function (hooks) {
       const form = new FormPageObject();
       const input = form.$fields[0].$control as ListPageObject;
 
-      assert.dom(input.$option.elements[1]).hasAria('selected', 'true');
+      assert.dom(input.$option[1]).hasAria('selected', 'true');
     });
   });
 });

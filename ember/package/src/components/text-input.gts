@@ -15,12 +15,12 @@ export interface TextInputSignature {
 const TextInput: TOC<TextInputSignature> = <template>
   <input
     class={{styles.input}}
-    type='text'
+    type="text"
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
     ...attributes
-    {{on 'input' (pick 'target.value' @update)}}
+    {{on "input" (pick "target.value" @update)}}
   />
 </template>;
 

@@ -18,9 +18,9 @@ module('Rendering | <Form.Currency>', function (hooks) {
       <template>
         <Form @data={{data}} as |f|>
           <f.Currency
-            @label='Eigenanteil'
-            @description='Wieviel zahlst du selbst?'
-            @name='contribution'
+            @label="Eigenanteil"
+            @description="Wieviel zahlst du selbst?"
+            @name="contribution"
           />
         </Form>
       </template>
@@ -51,7 +51,7 @@ module('Rendering | <Form.Currency>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Currency @name='contribution' @label='Eigenanteil' placeholder='abc' />
+          <f.Currency @name="contribution" @label="Eigenanteil" placeholder="abc" />
         </Form>
       </template>
     );
@@ -66,7 +66,7 @@ module('Rendering | <Form.Currency>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Currency @name='contribution' @label='Eigenanteil' disabled />
+          <f.Currency @name="contribution" @label="Eigenanteil" disabled />
         </Form>
       </template>
     );
@@ -79,7 +79,7 @@ module('Rendering | <Form.Currency>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Currency @name='contribution' @label='Eigenanteil' @disabled={{true}} />
+          <f.Currency @name="contribution" @label="Eigenanteil" @disabled={{true}} />
         </Form>
       </template>
     );

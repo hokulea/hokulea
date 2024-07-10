@@ -15,12 +15,12 @@ export interface PasswordInputSignature {
 const PasswordInput: TOC<PasswordInputSignature> = <template>
   <input
     class={{styles.input}}
-    type='password'
+    type="password"
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
     ...attributes
-    {{on 'input' (pick 'target.value' @update)}}
+    {{on "input" (pick "target.value" @update)}}
   />
 </template>;
 

@@ -15,12 +15,12 @@ export interface DateInputSignature {
 const DateInput: TOC<DateInputSignature> = <template>
   <input
     class={{styles.input}}
-    type='date'
+    type="date"
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
     ...attributes
-    {{on 'input' (pick 'target.value' @update)}}
+    {{on "input" (pick "target.value" @update)}}
   />
 </template>;
 

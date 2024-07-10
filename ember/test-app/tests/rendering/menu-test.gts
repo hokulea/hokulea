@@ -32,7 +32,7 @@ module('Rendering | <Menu>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><Menu dir='ltr' /></template>);
+    await render(<template><Menu dir="ltr" /></template>);
 
     const menu = new MenuPageObject();
 
@@ -51,7 +51,7 @@ module('Rendering | <Menu>', function (hooks) {
     await render(
       <template>
         <Menu as |m|>
-          {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+          {{#each (array "Banana" "Apple" "Pear") as |item|}}
             <m.Item>{{item}}</m.Item>
           {{/each}}
         </Menu>
@@ -112,9 +112,9 @@ module('Rendering | <Menu>', function (hooks) {
   test('it supports keyboard navigation', async function (assert) {
     await render(
       <template>
-        <button type='button' popovertarget='refactormenu'>Refactor</button>
+        <button type="button" popovertarget="refactormenu">Refactor</button>
 
-        <Menu id='refactormenu' popover as |m|>
+        <Menu id="refactormenu" popover as |m|>
           <RefactorMenuFactory @menu={{m}} />
         </Menu>
       </template>
@@ -126,8 +126,8 @@ module('Rendering | <Menu>', function (hooks) {
   test('it supports pointer navigation', async function (assert) {
     await render(
       <template>
-        <button type='button' popovertarget='refactormenu'>Refactor</button>
-        <Menu id='refactormenu' popover as |m|>
+        <button type="button" popovertarget="refactormenu">Refactor</button>
+        <Menu id="refactormenu" popover as |m|>
           <RefactorMenuFactory @menu={{m}} />
         </Menu>
       </template>

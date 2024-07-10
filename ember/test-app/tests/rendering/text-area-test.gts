@@ -22,13 +22,13 @@ module('Rendering | <TextArea>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><TextArea placeholder='abc' /></template>);
+    await render(<template><TextArea placeholder="abc" /></template>);
 
     const input = new TextAreaPageObject();
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
 
-    await render(<template><TextArea name='form-name' /></template>);
+    await render(<template><TextArea name="form-name" /></template>);
 
     assert.dom(input.control).hasAttribute('name', 'form-name');
   });
@@ -46,7 +46,7 @@ module('Rendering | <TextArea>', function (hooks) {
   });
 
   test('accepts value', async function (assert) {
-    await render(<template><TextArea @value='Han Solo' /></template>);
+    await render(<template><TextArea @value="Han Solo" /></template>);
 
     const input = new TextAreaPageObject();
 
@@ -56,7 +56,7 @@ module('Rendering | <TextArea>', function (hooks) {
   test('triggers @update when value changes', async function (assert) {
     const handleUpdate = sinon.spy();
 
-    await render(<template><TextArea @value='Han Solo' @update={{handleUpdate}} /></template>);
+    await render(<template><TextArea @value="Han Solo" @update={{handleUpdate}} /></template>);
 
     const input = new TextAreaPageObject();
 

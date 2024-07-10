@@ -25,13 +25,13 @@ module('Rendering | <CurrencyInput>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><CurrencyInput placeholder='abc' /></template>);
+    await render(<template><CurrencyInput placeholder="abc" /></template>);
 
     const input = new CurrencyInputPageObject();
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
 
-    await render(<template><CurrencyInput name='form-name' /></template>);
+    await render(<template><CurrencyInput name="form-name" /></template>);
 
     assert.dom(input.control).hasAttribute('name', 'form-name');
   });

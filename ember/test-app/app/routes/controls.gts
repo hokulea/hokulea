@@ -6,10 +6,10 @@ import { Page } from '@hokulea/ember';
 
 export class ControlsRoute extends Route<object> {
   <template>
-    <Page @title='Controls'>
+    <Page @title="Controls">
       <:nav as |Item|>
-        <Item @link={{link 'controls.index'}}>Inputs</Item>
-        <Item @link={{link 'controls.composites'}}>Composites</Item>
+        <Item @link={{link "controls.index"}}>Inputs</Item>
+        <Item @link={{link "controls.composites"}}>Composites</Item>
       </:nav>
       <:content>
         {{outlet}}

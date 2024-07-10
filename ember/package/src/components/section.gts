@@ -32,12 +32,12 @@ function elementForLevel(level?: string) {
 }
 
 const Section: TOC<SectionSignature> = <template>
-  <section class='{{styles.section}} {{layouts.flow}}' data-test-section ...attributes>
+  <section class="{{styles.section}} {{layouts.flow}}" data-test-section ...attributes>
     {{#if @title}}
-      <header data-test-section='header' part='header'>
+      <header data-test-section="header" part="header">
         {{#if @title}}
           {{#let (element (elementForLevel @level)) as |Headline|}}
-            <Headline data-test-section='title' class={{styles.sectionTitle}}>{{@title}}</Headline>
+            <Headline data-test-section="title" class={{styles.sectionTitle}}>{{@title}}</Headline>
           {{/let}}
         {{/if}}
       </header>

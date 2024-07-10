@@ -16,12 +16,12 @@ export interface NumberInputSignature {
 const NumberInput: TOC<NumberInputSignature> = <template>
   <input
     class={{styles.input}}
-    type='number'
+    type="number"
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
     ...attributes
-    {{on 'input' (pick 'target.value' (pickAsNumber @update))}}
+    {{on "input" (pick "target.value" (pickAsNumber @update))}}
   />
 </template>;
 

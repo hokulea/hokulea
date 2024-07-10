@@ -15,12 +15,12 @@ export interface RadioSignature {
 const Radio: TOC<RadioSignature> = <template>
   <input
     class={{styles.choice}}
-    type='radio'
+    type="radio"
     checked={{@value}}
     disabled={{@disabled}}
     data-test-choice
     ...attributes
-    {{on 'input' (pick 'target.checked' @update)}}
+    {{on "input" (pick "target.checked" @update)}}
   />
 </template>;
 

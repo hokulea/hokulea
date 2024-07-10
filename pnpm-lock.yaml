@@ -71,8 +71,8 @@ importers:
   configs/prettier:
     dependencies:
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.2.5)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.2.5)
     devDependencies:
       eslint:
         specifier: ^8.56.0
@@ -1035,8 +1035,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(@types/eslint@8.56.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.5.2)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.2.5)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.2.5)
       '@hokulea/core':
         specifier: workspace:*
         version: link:../../foundation/core
@@ -1144,8 +1144,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(@babel/eslint-parser@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.5.2)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.2.5)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.2.5)
       '@gossi/config-targets':
         specifier: ^0.9.0
         version: 0.9.0
@@ -1259,8 +1259,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(@typescript-eslint/eslint-plugin@7.5.0)(@typescript-eslint/parser@7.5.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.4)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.2.5)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.2.5)
       '@gossi/config-stylelint':
         specifier: ^0.9.0
         version: 0.9.0(stylelint@16.6.1)
@@ -5396,8 +5396,8 @@ packages:
       - typescript
     dev: true
 
-  /@gossi/config-prettier@0.8.0(prettier@3.2.5):
-    resolution: {integrity: sha512-iwhdCsLUL0Rttkq/CGWOOIy95kOEEfnr2H7N/STqDEdSLOh7I+CYahevyClFRy+lz5cVvwqGKK1bnwqXDLkTZQ==}
+  /@gossi/config-prettier@0.9.0(prettier@3.2.5):
+    resolution: {integrity: sha512-mkqTbNWOmKurB72ajCPAzeQMmKz+gs04teVriCHUJxFK41+1Usrc9gD59x8bCCABVX11C9f8HPIdyV1FGMELdQ==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
       prettier: ^3.0.0

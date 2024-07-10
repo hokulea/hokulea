@@ -306,7 +306,7 @@ export default class Field<
 
   <template>
     {{#let
-      (uniqueId) (uniqueId) (fn @triggerValidationFor @name) (if @element @element (element 'div'))
+      (uniqueId) (uniqueId) (fn @triggerValidationFor @name) (if @element @element (element "div"))
       as |fieldId errorId triggerValidation Element|
     }}
       <Element class={{styles.field}} data-test-field={{@name}}>

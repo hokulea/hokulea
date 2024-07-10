@@ -37,7 +37,7 @@ class Option<V> extends Component<OptionSignature<V>> {
   }
 
   <template>
-    <span role='option' aria-selected={{if (@isSelected @value) 'true'}}>
+    <span role="option" aria-selected={{if (@isSelected @value) "true"}}>
       {{yield}}
     </span>
   </template>

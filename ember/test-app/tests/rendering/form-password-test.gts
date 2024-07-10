@@ -15,7 +15,7 @@ module('Rendering | <Form.Password>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Password @label='Passwort' @description='Für den Login' @name='password' />
+          <f.Password @label="Passwort" @description="Für den Login" @name="password" />
         </Form>
       </template>
     );
@@ -42,7 +42,7 @@ module('Rendering | <Form.Password>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Password @name='password' @label='Passwort' placeholder='abc' />
+          <f.Password @name="password" @label="Passwort" placeholder="abc" />
         </Form>
       </template>
     );
@@ -57,7 +57,7 @@ module('Rendering | <Form.Password>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Password @name='password' @label='Passwort' disabled />
+          <f.Password @name="password" @label="Passwort" disabled />
         </Form>
       </template>
     );
@@ -70,7 +70,7 @@ module('Rendering | <Form.Password>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Password @name='password' @label='Passwort' @disabled={{true}} />
+          <f.Password @name="password" @label="Passwort" @disabled={{true}} />
         </Form>
       </template>
     );

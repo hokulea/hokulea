@@ -28,17 +28,17 @@ function noop() {
 
 export class ControlsRoute extends Route<object> {
   <template>
-    <Page @title='Inputs'>
+    <Page @title="Inputs">
 
-      <Section @title='Text'>
+      <Section @title="Text">
         <p>
           <TextInput />
-          <TextInput @value='text' />
+          <TextInput @value="text" />
           <TextInput disabled />
         </p>
       </Section>
 
-      <Section @title='Number'>
+      <Section @title="Number">
         <p>
           <NumberInput />
           <NumberInput @value={{1234}} />
@@ -46,7 +46,7 @@ export class ControlsRoute extends Route<object> {
         </p>
       </Section>
 
-      <Section @title='CurrencyInput'>
+      <Section @title="CurrencyInput">
         <p>
           <CurrencyInput />
           <CurrencyInput @value={{1234}} />
@@ -54,49 +54,49 @@ export class ControlsRoute extends Route<object> {
         </p>
       </Section>
 
-      <Section @title='Phone'>
+      <Section @title="Phone">
         <p>
           <PhoneInput />
-          <PhoneInput @value='+49160412341234' />
+          <PhoneInput @value="+49160412341234" />
           <PhoneInput disabled />
         </p>
       </Section>
 
-      <Section @title='Email'>
+      <Section @title="Email">
         <p>
           <EmailInput />
-          <EmailInput @value='admin@example.com' />
+          <EmailInput @value="admin@example.com" />
           <EmailInput disabled />
         </p>
       </Section>
 
-      <Section @title='Date'>
+      <Section @title="Date">
         <p>
           <DateInput />
-          <DateInput @value='1970-01-01' />
+          <DateInput @value="1970-01-01" />
           <DateInput disabled />
         </p>
       </Section>
 
-      <Section @title='Password'>
+      <Section @title="Password">
         <p>
           <PasswordInput />
-          <PasswordInput @value='secret' />
+          <PasswordInput @value="secret" />
           <PasswordInput disabled />
         </p>
       </Section>
 
-      <Section @title='Select'>
+      <Section @title="Select">
         <p>
           <Select as |s|>
-            <s.Option @value='Banana' />
-            <s.Option @value='Apple' />
-            <s.Option @value='Pear' />
+            <s.Option @value="Banana" />
+            <s.Option @value="Apple" />
+            <s.Option @value="Pear" />
           </Select>
         </p>
       </Section>
 
-      <Section @title='Radio'>
+      <Section @title="Radio">
         <p>
           <Radio />
           <Radio checked />
@@ -104,7 +104,7 @@ export class ControlsRoute extends Route<object> {
         </p>
       </Section>
 
-      <Section @title='Checkbox'>
+      <Section @title="Checkbox">
         <p>
           <Checkbox />
           <Checkbox checked />
@@ -112,19 +112,19 @@ export class ControlsRoute extends Route<object> {
         </p>
       </Section>
 
-      <Section @title='Textarea'>
+      <Section @title="Textarea">
         <TextArea />
       </Section>
 
-      <Section @title='Input + Button'>
+      <Section @title="Input + Button">
         <p>
           <TextInput />
-          <DateInput @value='1970-01-01' />
+          <DateInput @value="1970-01-01" />
           <Button @push={{(noop)}}>Start</Button>
         </p>
       </Section>
 
-      <Section @title='Builder'>
+      <Section @title="Builder">
         <p>
           <InputBuilder as |b|>
             <b.Prefix>Pre</b.Prefix>
@@ -138,7 +138,7 @@ export class ControlsRoute extends Route<object> {
         </p>
       </Section>
 
-      <Section @title='Extended Builder'>
+      <Section @title="Extended Builder">
         <p>
           <InputBuilder as |b|>
             <b.Prefix>Pre</b.Prefix>

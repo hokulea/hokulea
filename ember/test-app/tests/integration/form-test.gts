@@ -21,8 +21,8 @@ module('Integration | <Form>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Text @name='givenName' @label='Given Name' />
-          <f.Text @name='givenName' @label='Family Name' />
+          <f.Text @name="givenName" @label="Given Name" />
+          <f.Text @name="givenName" @label="Family Name" />
         </Form>
       </template>
     );

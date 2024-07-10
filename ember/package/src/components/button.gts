@@ -79,26 +79,26 @@ export interface ButtonSignature {
 
 const Button: TOC<ButtonSignature> = <template>
   <CommandElement
-    @element={{element 'button'}}
+    @element={{element "button"}}
     @command={{@push}}
-    class='{{styles.button}}'
-    type={{if (isLink @push) 'button'}}
-    data-intent={{if @intent @intent 'action'}}
-    data-importance={{if @importance @importance 'supreme'}}
+    class="{{styles.button}}"
+    type={{if (isLink @push) "button"}}
+    data-intent={{if @intent @intent "action"}}
+    data-importance={{if @importance @importance "supreme"}}
     data-spacing={{@spacing}}
     {{disabled when=(if @disabled @disabled false)}}
     data-test-button
     ...attributes
   >
-    {{#if (has-block 'before')}}
-      <span data-test-button='before'>
-        {{yield to='before'}}
+    {{#if (has-block "before")}}
+      <span data-test-button="before">
+        {{yield to="before"}}
       </span>
     {{/if}}
 
-    <span data-test-button='label'>
-      {{#if (has-block 'label')}}
-        {{yield to='label'}}
+    <span data-test-button="label">
+      {{#if (has-block "label")}}
+        {{yield to="label"}}
       {{/if}}
 
       {{#if (has-block)}}
@@ -106,9 +106,9 @@ const Button: TOC<ButtonSignature> = <template>
       {{/if}}
     </span>
 
-    {{#if (has-block 'after')}}
-      <span data-test-button='after'>
-        {{yield to='after'}}
+    {{#if (has-block "after")}}
+      <span data-test-button="after">
+        {{yield to="after"}}
       </span>
     {{/if}}
   </CommandElement>

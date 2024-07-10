@@ -20,7 +20,7 @@ module('Rendering | <Form.List>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.List @label='Your Starter Pokemon?' @description='Gen 1' @name='starterPokemon' />
+          <f.List @label="Your Starter Pokemon?" @description="Gen 1" @name="starterPokemon" />
         </Form>
       </template>
     );
@@ -48,7 +48,7 @@ module('Rendering | <Form.List>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' placeholder='abc' />
+          <f.List @name="starterPokemon" @label="Your Starter Pokemon?" placeholder="abc" />
         </Form>
       </template>
     );
@@ -63,7 +63,7 @@ module('Rendering | <Form.List>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.List @name='starterPokemon' @label='Your Starter Pokemon?' @disabled={{true}} />
+          <f.List @name="starterPokemon" @label="Your Starter Pokemon?" @disabled={{true}} />
         </Form>
       </template>
     );
@@ -79,8 +79,8 @@ module('Rendering | <Form.List>', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |f|>
-            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
-              {{#each (array 'Bulbasaur' 'Charmander' 'Squirtle') as |item|}}
+            <f.List @name="starterPokemon" @label="Your Starter Pokemon?" as |l|>
+              {{#each (array "Bulbasaur" "Charmander" "Squirtle") as |item|}}
                 <l.Option @value={{item}}>{{item}}</l.Option>
               {{/each}}
             </f.List>
@@ -102,8 +102,8 @@ module('Rendering | <Form.List>', function (hooks) {
       await render(
         <template>
           <Form @data={{pokemonData}} as |f|>
-            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
-              {{#each (array 'Bulbasaur' 'Charmander' 'Squirtle') as |item|}}
+            <f.List @name="starterPokemon" @label="Your Starter Pokemon?" as |l|>
+              {{#each (array "Bulbasaur" "Charmander" "Squirtle") as |item|}}
                 <l.Option @value={{item}}>{{item}}</l.Option>
               {{/each}}
             </f.List>
@@ -138,7 +138,7 @@ module('Rendering | <Form.List>', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |f|>
-            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
+            <f.List @name="starterPokemon" @label="Your Starter Pokemon?" as |l|>
               {{#each items as |item|}}
                 <l.Option @value={{item}}>{{item.name}}</l.Option>
               {{/each}}
@@ -161,7 +161,7 @@ module('Rendering | <Form.List>', function (hooks) {
       await render(
         <template>
           <Form @data={{pokemonData}} as |f|>
-            <f.List @name='starterPokemon' @label='Your Starter Pokemon?' as |l|>
+            <f.List @name="starterPokemon" @label="Your Starter Pokemon?" as |l|>
               {{#each items as |item|}}
                 <l.Option @value={{item}}>{{item.name}}</l.Option>
               {{/each}}

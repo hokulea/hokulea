@@ -15,11 +15,11 @@ export interface TextAreaSignature {
 const TextArea: TOC<TextAreaSignature> = <template>
   <textarea
     class={{styles.textarea}}
-    type='text'
+    type="text"
     disabled={{@disabled}}
     data-test-textarea
     ...attributes
-    {{on 'input' (pick 'target.value' @update)}}
+    {{on "input" (pick "target.value" @update)}}
   >{{@value}}</textarea>
 </template>;
 

@@ -12,7 +12,7 @@ module('Rendering | <Section>', function (hooks) {
   test('it renders', async function (assert) {
     await render(
       <template>
-        <Section @title='title'>Hello World</Section>
+        <Section @title="title">Hello World</Section>
       </template>
     );
 
@@ -43,7 +43,7 @@ module('Rendering | <Section>', function (hooks) {
   test('can do different levels', async function (assert) {
     await render(
       <template>
-        <Section @title='title' @level='3'>Hello World</Section>
+        <Section @title="title" @level="3">Hello World</Section>
       </template>
     );
 
@@ -66,7 +66,7 @@ module('Rendering | <Section>', function (hooks) {
 
     await render(
       <template>
-        <Section @title='title' @level='7'>Hello World</Section>
+        <Section @title="title" @level="7">Hello World</Section>
       </template>
     );
   });

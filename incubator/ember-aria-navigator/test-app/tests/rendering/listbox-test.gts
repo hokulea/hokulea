@@ -30,9 +30,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
     await render(
       <template>
-        <div role='listbox' {{listbox items=options}}>
+        <div role="listbox" {{listbox items=options}}>
           {{#each options as |option|}}
-            <p role='option'>{{option}}</p>
+            <p role="option">{{option}}</p>
           {{/each}}
         </div>
       </template>
@@ -51,9 +51,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
     await render(
       <template>
-        <div role='listbox' {{listbox items=options disabled=context.disabled}}>
+        <div role="listbox" {{listbox items=options disabled=context.disabled}}>
           {{#each options as |option|}}
-            <p role='option'>{{option}}</p>
+            <p role="option">{{option}}</p>
           {{/each}}
         </div>
       </template>
@@ -74,9 +74,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options}}>
+          <div role="listbox" {{listbox items=options}}>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -90,9 +90,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options}}>
+          <div role="listbox" {{listbox items=options}}>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -109,9 +109,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox select=selectSpy}} data-test-listbox>
+          <div role="listbox" {{listbox select=selectSpy}} data-test-listbox>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -134,9 +134,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options select=selectSpy}} data-test-listbox>
+          <div role="listbox" {{listbox items=options select=selectSpy}} data-test-listbox>
             {{#each options as |option|}}
-              <p role='option'>{{option.value}}</p>
+              <p role="option">{{option.value}}</p>
             {{/each}}
           </div>
         </template>
@@ -152,9 +152,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options}}>
+          <div role="listbox" {{listbox items=options}}>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -168,9 +168,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options}}>
+          <div role="listbox" {{listbox items=options}}>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -187,9 +187,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox select=selectSpy multi=true}} data-test-listbox>
+          <div role="listbox" {{listbox select=selectSpy multi=true}} data-test-listbox>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -220,12 +220,12 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
       await render(
         <template>
           <div
-            role='listbox'
+            role="listbox"
             {{listbox items=options select=selectSpy multi=true}}
             data-test-listbox
           >
             {{#each options as |option|}}
-              <p role='option'>{{option.value}}</p>
+              <p role="option">{{option.value}}</p>
             {{/each}}
           </div>
         </template>
@@ -246,9 +246,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options multi=true}}>
+          <div role="listbox" {{listbox items=options multi=true}}>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>
@@ -262,9 +262,9 @@ module('Rendering | Modifier | {{listbox}}', (hooks) => {
 
       await render(
         <template>
-          <div role='listbox' {{listbox items=options multi=true}}>
+          <div role="listbox" {{listbox items=options multi=true}}>
             {{#each options as |option|}}
-              <p role='option'>{{option}}</p>
+              <p role="option">{{option}}</p>
             {{/each}}
           </div>
         </template>

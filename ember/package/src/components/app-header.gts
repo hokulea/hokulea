@@ -33,25 +33,25 @@ const NavLink: TOC<{
   Blocks: MenuItemBlocks;
 }> = <template>
   {{#if @push}}
-    <CommandElement @command={{@push}} aria-current='{{if (isActive @push) "page"}}' part='item'>
+    <CommandElement @command={{@push}} aria-current="{{if (isActive @push) 'page'}}" part="item">
       <span>{{yield}}</span>
     </CommandElement>
   {{else}}
-    <span part='item'>{{yield}}</span>
+    <span part="item">{{yield}}</span>
   {{/if}}
 </template>;
 
 const NavItem: TOC<NavItemSignature> = <template>
   {{#if (has-block)}}
     <NavLink @push={{asLink @push}}>{{yield}}</NavLink>
-  {{else if (and (has-block 'menu') (has-block 'label'))}}
-    {{#let (popover position='bottom-start') as |p|}}
-      <button type='button' aria-haspopup='menu' part='item' {{p.trigger}}>
-        <span>{{yield to='label'}}</span>
+  {{else if (and (has-block "menu") (has-block "label"))}}
+    {{#let (popover position="bottom-start") as |p|}}
+      <button type="button" aria-haspopup="menu" part="item" {{p.trigger}}>
+        <span>{{yield to="label"}}</span>
       </button>
 
       <Menu {{p.target}} as |m|>
-        {{yield m to='menu'}}
+        {{yield m to="menu"}}
       </Menu>
     {{/let}}
   {{/if}}
@@ -60,12 +60,12 @@ const NavItem: TOC<NavItemSignature> = <template>
 const PopoverNavItem: TOC<NavItemSignature> = <template>
   {{#if (has-block)}}
     <NavLink @push={{asLink @push}}>{{yield}}</NavLink>
-  {{else if (and (has-block 'menu') (has-block 'label'))}}
+  {{else if (and (has-block "menu") (has-block "label"))}}
     <details>
-      <summary part='item'>{{yield to='label'}}</summary>
+      <summary part="item">{{yield to="label"}}</summary>
 
       <div>
-        {{yield (hash Item=PopoverNavItem) to='menu'}}
+        {{yield (hash Item=PopoverNavItem) to="menu"}}
       </div>
     </details>
   {{/if}}
@@ -162,37 +162,37 @@ export default class AppHeader extends Component<AppHeaderSignature> {
           data-sensing={{if (and this.sensing (not this.topNavShown)) true}}
           {{this.flipflop}}
         >
-          {{#if (has-block 'brand')}}
-            <CommandElement @command={{@home}} part='brand' id={{brandId}}>
-              {{yield to='brand'}}
+          {{#if (has-block "brand")}}
+            <CommandElement @command={{@home}} part="brand" id={{brandId}}>
+              {{yield to="brand"}}
             </CommandElement>
           {{/if}}
 
           {{#if (or this.topNavShown this.sensing)}}
             <nav data-position={{if @position @position}} aria-labelledby={{brandId}}>
-              {{yield (hash Item=NavItem) to='nav'}}
+              {{yield (hash Item=NavItem) to="nav"}}
             </nav>
 
-            {{#if (has-block 'aux')}}
-              <span part='aux'>
-                {{yield (hash Item=NavItem) to='aux'}}
+            {{#if (has-block "aux")}}
+              <span part="aux">
+                {{yield (hash Item=NavItem) to="aux"}}
               </span>
             {{/if}}
           {{/if}}
 
           {{#if (not this.topNavShown)}}
-            <span part='menu'>
+            <span part="menu">
               {{#let (popover) as |p|}}
-                <button type='button' {{p.trigger}} data-test-toggle>
-                  <Icon @icon={{if p.opened 'x' 'menu'}} data-test-toggle='icon' />
+                <button type="button" {{p.trigger}} data-test-toggle>
+                  <Icon @icon={{if p.opened "x" "menu"}} data-test-toggle="icon" />
                 </button>
 
                 <section popover {{p.target}} {{this.closeWhenLink}}>
                   {{! template-lint-disable no-duplicate-landmark-elements no-nested-landmark }}
                   <header>
-                    {{#if (has-block 'brand')}}
-                      <CommandElement @command={{@home}} part='brand'>
-                        {{yield to='brand'}}
+                    {{#if (has-block "brand")}}
+                      <CommandElement @command={{@home}} part="brand">
+                        {{yield to="brand"}}
                       </CommandElement>
                     {{/if}}
                   </header>
@@ -200,13 +200,13 @@ export default class AppHeader extends Component<AppHeaderSignature> {
 
                   {{! template-lint-disable no-duplicate-landmark-elements }}
                   <nav aria-labelledby={{brandId}}>
-                    {{yield (hash Item=PopoverNavItem) to='nav'}}
+                    {{yield (hash Item=PopoverNavItem) to="nav"}}
                   </nav>
                   {{! template-lint-enable no-duplicate-landmark-elements }}
 
-                  {{#if (has-block 'aux')}}
-                    <span part='aux'>
-                      {{yield (hash Item=PopoverNavItem) to='aux'}}
+                  {{#if (has-block "aux")}}
+                    <span part="aux">
+                      {{yield (hash Item=PopoverNavItem) to="aux"}}
                     </span>
                   {{/if}}
                 </section>

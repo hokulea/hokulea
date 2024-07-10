@@ -41,16 +41,16 @@ export default class IconButton extends Component<IconButtonSignature> {
   <template>
     <CommandElement
       @command={{@push}}
-      class='{{styles.iconButton}}'
-      data-intent={{if @intent @intent 'action'}}
-      data-importance={{if @importance @importance 'supreme'}}
+      class="{{styles.iconButton}}"
+      data-intent={{if @intent @intent "action"}}
+      data-importance={{if @importance @importance "supreme"}}
       data-spacing={{@spacing}}
       aria-label={{this.label}}
       {{disabled when=(if @disabled @disabled false)}}
       data-test-icon-button
       ...attributes
     >
-      <Icon @icon={{@icon}} data-test-icon-button='icon' />
+      <Icon @icon={{@icon}} data-test-icon-button="icon" />
     </CommandElement>
   </template>
 }

@@ -5,7 +5,7 @@ import { Card, Page, Section } from '@hokulea/ember';
 
 export class ContentRoute extends Route<object> {
   <template>
-    <Page @title='Content'>
+    <Page @title="Content">
       <Card>A Card with sample text</Card>
 
       <Card>
@@ -13,15 +13,15 @@ export class ContentRoute extends Route<object> {
         <:body>Makro, Meso, Micro - but also contents</:body>
       </Card>
 
-      <Section @title='Section'>
+      <Section @title="Section">
         <p>with sample "content"</p>
       </Section>
 
-      <Section @title='Training'>
+      <Section @title="Training">
         <p>Planning, Diagnostics, Control, Documentation</p>
       </Section>
 
-      <Section @title='Training'>
+      <Section @title="Training">
         <Card>
           <:header>Planning</:header>
           <:body>Makro, Meso, Micro - but also contents</:body>
@@ -33,7 +33,7 @@ export class ContentRoute extends Route<object> {
         </Card>
       </Section>
 
-      <Section @title='Section'>
+      <Section @title="Section">
         <Card>... with a card</Card>
       </Section>
     </Page>

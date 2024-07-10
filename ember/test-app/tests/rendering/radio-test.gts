@@ -23,7 +23,7 @@ module('Rendering | <Radio>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><Radio name='form-name' /></template>);
+    await render(<template><Radio name="form-name" /></template>);
 
     const input = new RadioPageObject();
 

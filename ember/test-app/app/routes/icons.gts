@@ -5,12 +5,12 @@ import { Icon, Page } from '@hokulea/ember';
 
 export class ActionsRoute extends Route<object> {
   <template>
-    <Page @title='Icons'>
+    <Page @title="Icons">
 
       <p>
-        <Icon @icon='activity' />
+        <Icon @icon="activity" />
         with some text and the best icon in the world:
-        <Icon @icon='unicycle' />
+        <Icon @icon="unicycle" />
         A Unicycle
       </p>
     </Page>

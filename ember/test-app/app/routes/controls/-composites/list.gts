@@ -31,44 +31,44 @@ export default class ListComposite extends Component {
       .options { display: flex; flex-direction: row; align-items: center; gap:
       var(--spacing-primitive-2);}
     </style>
-    <div class='with-controls'>
+    <div class="with-controls">
       <List @multiple={{this.listMultiple}} as |l|>
         {{#each this.listItems as |i|}}
           <l.Option @value={{i}}>{{i}}</l.Option>
         {{/each}}
       </List>
 
-      <div class='controls'>
+      <div class="controls">
         <label>
-          <Checkbox @value={{this.listMultiple}} @update={{set this 'listMultiple'}} />
+          <Checkbox @value={{this.listMultiple}} @update={{set this "listMultiple"}} />
           Multi Select
         </label>
 
-        <div class='options'>
+        <div class="options">
           <p>Set Items to:</p>
-          <Button @push={{set this 'listItems' FRUITS}} @spacing='-1'>Fruits</Button>
-          <Button @push={{set this 'listItems' POKEMON}} @spacing='-1'>Pokemon</Button>
+          <Button @push={{set this "listItems" FRUITS}} @spacing="-1">Fruits</Button>
+          <Button @push={{set this "listItems" POKEMON}} @spacing="-1">Pokemon</Button>
         </div>
 
         {{! template-lint-disable no-unnecessary-curly-parens }}
         <Form
-          @data={{hash item=''}}
+          @data={{hash item=""}}
           @submit={{(fn appendItem this.listItems)}}
-          class='inline-form'
+          class="inline-form"
           as |f|
         >
-          <f.Text @label='Item' @name='item' />
-          <f.Submit @spacing='-1'>+</f.Submit>
+          <f.Text @label="Item" @name="item" />
+          <f.Submit @spacing="-1">+</f.Submit>
         </Form>
 
         <Form
           @data={{hash position=0}}
           @submit={{(fn removeItem this.listItems)}}
-          class='inline-form'
+          class="inline-form"
           as |f|
         >
-          <f.Text @label='Remove At' @name='position' />
-          <f.Submit @spacing='-1'>-</f.Submit>
+          <f.Text @label="Remove At" @name="position" />
+          <f.Submit @spacing="-1">-</f.Submit>
         </Form>
       </div>
     </div>

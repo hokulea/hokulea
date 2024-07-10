@@ -25,7 +25,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
     );
@@ -42,7 +42,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
     );
@@ -61,7 +61,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} @invalidated={{invalidHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
     );
@@ -80,8 +80,8 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} @submit={{submitHandler}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
-          <form.Text @name='familyName' @label='Family Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
+          <form.Text @name="familyName" @label="Family Name" required />
         </Form>
       </template>
     );
@@ -102,8 +102,8 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
-          <form.Text @name='familyName' @label='Family Name' />
+          <form.Text @name="givenName" @label="Given Name" required />
+          <form.Text @name="familyName" @label="Family Name" />
         </Form>
       </template>
     );
@@ -133,7 +133,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
     );
@@ -151,7 +151,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
     );
@@ -180,7 +180,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required />
+          <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
     );
@@ -221,13 +221,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
       <template>
         <Form @data={{data}} @validate={{validateForm}} as |form|>
           <form.Text
-            @name='givenName'
-            @label='Given Name'
+            @name="givenName"
+            @label="Given Name"
             @validate={{validateField}}
             required
-            pattern='^[A-Za-z]+$'
+            pattern="^[A-Za-z]+$"
           />
-          <form.Text @name='familyName' @label='Family Name' />
+          <form.Text @name="familyName" @label="Family Name" />
         </Form>
       </template>
     );
@@ -282,13 +282,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
       <template>
         <Form @data={{data}} @validate={{validateForm}} as |form|>
           <form.Text
-            @name='givenName'
-            @label='Given Name'
+            @name="givenName"
+            @label="Given Name"
             @validate={{validateField}}
             required
-            pattern='^[A-Za-z]+$'
+            pattern="^[A-Za-z]+$"
           />
-          <form.Text @name='familyName' @label='Family Name' />
+          <form.Text @name="familyName" @label="Family Name" />
         </Form>
       </template>
     );
@@ -319,8 +319,8 @@ module('Integration | <Form> | Native validation', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} @validate={{validateForm}} @ignoreNativeValidation={{true}} as |form|>
-          <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-          <form.Text @name='familyName' @label='Family Name' required />
+          <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+          <form.Text @name="familyName" @label="Family Name" required />
         </Form>
       </template>
     );
@@ -343,9 +343,9 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @validateOn='focusout' as |form|>
-              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            <Form @data={{data}} @validateOn="focusout" as |form|>
+              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+              <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>
         );
@@ -385,9 +385,9 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @validateOn='change' as |form|>
-              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            <Form @data={{data}} @validateOn="change" as |form|>
+              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+              <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>
         );
@@ -420,9 +420,9 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @revalidateOn='focusout' as |form|>
-              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            <Form @data={{data}} @revalidateOn="focusout" as |form|>
+              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+              <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>
         );
@@ -506,9 +506,9 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @revalidateOn='change' as |form|>
-              <form.Text @name='givenName' @label='Given Name' required pattern='^[A-Za-z]+$' />
-              <form.Text @name='familyName' @label='Family Name' required pattern='^[A-Za-z]+$' />
+            <Form @data={{data}} @revalidateOn="change" as |form|>
+              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+              <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>
         );

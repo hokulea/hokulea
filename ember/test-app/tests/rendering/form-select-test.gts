@@ -19,9 +19,9 @@ module('Rendering | <Form.Select>', function (hooks) {
       <template>
         <Form @data={{data}} as |f|>
           <f.Select
-            @label='Deine Lieblingsfrucht?'
-            @description='Aus dem Obstkorb'
-            @name='favoriteFruit'
+            @label="Deine Lieblingsfrucht?"
+            @description="Aus dem Obstkorb"
+            @name="favoriteFruit"
           />
         </Form>
       </template>
@@ -49,7 +49,7 @@ module('Rendering | <Form.Select>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' placeholder='abc' />
+          <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" placeholder="abc" />
         </Form>
       </template>
     );
@@ -64,7 +64,7 @@ module('Rendering | <Form.Select>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' disabled />
+          <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" disabled />
         </Form>
       </template>
     );
@@ -77,7 +77,7 @@ module('Rendering | <Form.Select>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' @disabled={{true}} />
+          <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" @disabled={{true}} />
         </Form>
       </template>
     );
@@ -90,8 +90,8 @@ module('Rendering | <Form.Select>', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |f|>
-            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
-              {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+            <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" as |s|>
+              {{#each (array "Banana" "Apple" "Pear") as |item|}}
                 <s.Option @value={{item}} />
               {{/each}}
             </f.Select>
@@ -113,8 +113,8 @@ module('Rendering | <Form.Select>', function (hooks) {
       await render(
         <template>
           <Form @data={{fruitData}} as |f|>
-            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
-              {{#each (array 'Banana' 'Apple' 'Pear') as |item|}}
+            <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" as |s|>
+              {{#each (array "Banana" "Apple" "Pear") as |item|}}
                 <s.Option @value={{item}} />
               {{/each}}
             </f.Select>
@@ -151,7 +151,7 @@ module('Rendering | <Form.Select>', function (hooks) {
       await render(
         <template>
           <Form @data={{data}} as |f|>
-            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
+            <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" as |s|>
               {{#each items as |item|}}
                 <s.Option @value={{item.id}}>{{item.name}}</s.Option>
               {{/each}}
@@ -174,7 +174,7 @@ module('Rendering | <Form.Select>', function (hooks) {
       await render(
         <template>
           <Form @data={{fruitData}} as |f|>
-            <f.Select @name='favoriteFruit' @label='Deine Lieblingsfrucht?' as |s|>
+            <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" as |s|>
               {{#each items as |item|}}
                 <s.Option @value={{item.id}}>{{item.name}}</s.Option>
               {{/each}}

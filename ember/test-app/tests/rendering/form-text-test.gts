@@ -15,7 +15,7 @@ module('Rendering | <Form.Text>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Text @label='Vorname' @description='Wie heißt du?' @name='givenName' />
+          <f.Text @label="Vorname" @description="Wie heißt du?" @name="givenName" />
         </Form>
       </template>
     );
@@ -42,7 +42,7 @@ module('Rendering | <Form.Text>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Text @name='givenName' @label='Vorname' placeholder='abc' />
+          <f.Text @name="givenName" @label="Vorname" placeholder="abc" />
         </Form>
       </template>
     );
@@ -57,7 +57,7 @@ module('Rendering | <Form.Text>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Text @name='givenName' @label='Vorname' disabled />
+          <f.Text @name="givenName" @label="Vorname" disabled />
         </Form>
       </template>
     );
@@ -70,7 +70,7 @@ module('Rendering | <Form.Text>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Text @name='givenName' @label='Vorname' @disabled={{true}} />
+          <f.Text @name="givenName" @label="Vorname" @disabled={{true}} />
         </Form>
       </template>
     );

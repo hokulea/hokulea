@@ -27,7 +27,7 @@ export interface ErrorsSignature<VALUE> {
 
 export default class Errors<VALUE> extends Component<ErrorsSignature<VALUE>> {
   <template>
-    <div id={{@id}} aria-live='assertive' class={{styles.errors}} ...attributes>
+    <div id={{@id}} aria-live="assertive" class={{styles.errors}} ...attributes>
       {{! <span><Icon @icon='dismiss-circle' @style='filled' /></span> }}
       {{#if (has-block)}}
         {{yield @errors}}
@@ -37,8 +37,8 @@ export default class Errors<VALUE> extends Component<ErrorsSignature<VALUE>> {
             {{#if e.message}}
               <p
                 data-test-error
-                data-test-error-type='{{e.type}}'
-                data-test-error-value='{{e.value}}'
+                data-test-error-type="{{e.type}}"
+                data-test-error-value="{{e.value}}"
               >{{e.message}}</p>
             {{/if}}
           {{/each}}

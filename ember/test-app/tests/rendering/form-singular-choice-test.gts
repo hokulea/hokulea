@@ -16,15 +16,15 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
       <template>
         <Form @data={{data}} as |f|>
           <f.SingularChoice
-            @label='Welches ist dein Lieblingshaustier?'
-            @description='Stofftiere zählen nicht ;)'
-            @name='pet'
+            @label="Welches ist dein Lieblingshaustier?"
+            @description="Stofftiere zählen nicht ;)"
+            @name="pet"
             as |r|
           >
-            <r.Option @value='rhino' @label='Rhino' required />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+            <r.Option @value="rhino" @label="Rhino" required />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.SingularChoice>
         </Form>
       </template>
@@ -49,11 +49,11 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
-            <r.Option @value='rhino' @label='Rhino' required />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+          <f.SingularChoice @name="pet" @label="Welches ist dein Lieblingshaustier?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" required />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.SingularChoice>
         </Form>
       </template>
@@ -69,11 +69,11 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
-            <r.Option @value='rhino' @label='Rhino' disabled />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+          <f.SingularChoice @name="pet" @label="Welches ist dein Lieblingshaustier?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" disabled />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.SingularChoice>
         </Form>
       </template>
@@ -91,15 +91,15 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
       <template>
         <Form @data={{data}} as |f|>
           <f.SingularChoice
-            @name='pet'
-            @label='Welches ist dein Lieblingshaustier?'
+            @name="pet"
+            @label="Welches ist dein Lieblingshaustier?"
             @disabled={{true}}
             as |r|
           >
-            <r.Option @value='rhino' @label='Rhino' />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+            <r.Option @value="rhino" @label="Rhino" />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.SingularChoice>
         </Form>
       </template>
@@ -117,11 +117,11 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.SingularChoice @name='pet' @label='Welches ist dein Lieblingshaustier?' as |r|>
-            <r.Option @value='rhino' @label='Rhino' />
-            <r.Option @value='tiger' @label='Tiger' />
-            <r.Option @value='crocodile' @label='Crocodile' @description='Like a dinosaur' />
-            <r.Option @value='kangaroo' @label='Kangaroo' />
+          <f.SingularChoice @name="pet" @label="Welches ist dein Lieblingshaustier?" as |r|>
+            <r.Option @value="rhino" @label="Rhino" />
+            <r.Option @value="tiger" @label="Tiger" />
+            <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+            <r.Option @value="kangaroo" @label="Kangaroo" />
           </f.SingularChoice>
         </Form>
       </template>

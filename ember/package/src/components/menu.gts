@@ -83,27 +83,27 @@ class MenuItem extends Component<MenuItemSignature> {
   }
 
   <template>
-    {{#if (has-block 'menu')}}
-      {{#let (popover position='right-start') as |p|}}
+    {{#if (has-block "menu")}}
+      {{#let (popover position="right-start") as |p|}}
         <button
-          type='button'
-          role='menuitem'
-          aria-haspopup='menu'
+          type="button"
+          role="menuitem"
+          aria-haspopup="menu"
           {{disabled when=(if @disabled @disabled false)}}
           {{p.trigger}}
         >
-          {{~yield to='label'~}}
+          {{~yield to="label"~}}
         </button>
 
         <Menu {{p.target}} as |m|>
-          {{yield m to='menu'}}
+          {{yield m to="menu"}}
         </Menu>
       {{/let}}
     {{else}}
       <CommandElement
         @command={{@push}}
         {{disabled when=(if @disabled @disabled false)}}
-        role='menuitem'
+        role="menuitem"
       >
         {{~yield~}}
       </CommandElement>

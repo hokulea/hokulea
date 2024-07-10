@@ -563,8 +563,8 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
       data-test-form
       ...attributes
       {{this.registerForm}}
-      {{on 'submit' this.submit}}
-      {{on 'reset' this.reset}}
+      {{on "submit" this.submit}}
+      {{on "reset" this.reset}}
       {{this.attachValidation this.fieldValidationEvent this.handleFieldValidation}}
       {{this.attachValidation this.fieldRevalidationEvent this.handleFieldRevalidation}}
     >

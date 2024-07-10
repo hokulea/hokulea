@@ -15,7 +15,7 @@ module('Rendering | <Form.TextArea>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.TextArea @label='Notizen' @description='Für dich selbst' @name='notes' />
+          <f.TextArea @label="Notizen" @description="Für dich selbst" @name="notes" />
         </Form>
       </template>
     );
@@ -42,7 +42,7 @@ module('Rendering | <Form.TextArea>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.TextArea @name='notes' @label='Notizen' placeholder='abc' />
+          <f.TextArea @name="notes" @label="Notizen" placeholder="abc" />
         </Form>
       </template>
     );
@@ -57,7 +57,7 @@ module('Rendering | <Form.TextArea>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.TextArea @name='notes' @label='Notizen' disabled />
+          <f.TextArea @name="notes" @label="Notizen" disabled />
         </Form>
       </template>
     );
@@ -70,7 +70,7 @@ module('Rendering | <Form.TextArea>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.TextArea @name='notes' @label='Notizen' @disabled={{true}} />
+          <f.TextArea @name="notes" @label="Notizen" @disabled={{true}} />
         </Form>
       </template>
     );

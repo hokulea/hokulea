@@ -8,12 +8,12 @@ import MenuComposite from './-composites/menu';
 
 export class ControlsRoute extends Route<object> {
   <template>
-    <Page @title='Composites'>
-      <Section @title='List'>
+    <Page @title="Composites">
+      <Section @title="List">
         <ListComposite />
       </Section>
 
-      <Section @title='Menu'>
+      <Section @title="Menu">
         <MenuComposite />
       </Section>
     </Page>

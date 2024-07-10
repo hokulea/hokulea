@@ -17,26 +17,26 @@ module('Rendering | Modifier | {{menu}}', (hooks) => {
     test('tabindex attribute is set', async function (assert) {
       await render(
         <template>
-          <button type='button' popovertarget='refactormenu'>Refactor</button>
-          <div role='menu' id='refactormenu' popover {{menu}}>
-            <button type='button' role='menuitem'>Format Document</button>
-            <button type='button' role='menuitem'>Refactor...</button>
-            <button type='button' role='menuitem'>Source Action...</button>
+          <button type="button" popovertarget="refactormenu">Refactor</button>
+          <div role="menu" id="refactormenu" popover {{menu}}>
+            <button type="button" role="menuitem">Format Document</button>
+            <button type="button" role="menuitem">Refactor...</button>
+            <button type="button" role="menuitem">Source Action...</button>
             <hr />
-            <button type='button' role='menuitem' popovertarget='sharemenu'>Share</button>
-            <div role='menu' id='sharemenu' popover {{menu}}>
-              <button type='button' role='menuitem'>Code</button>
-              <button type='button' role='menuitem' popovertarget='socialmenu'>Social</button>
-              <div role='menu' id='socialmenu' popover {{menu}}>
-                <button type='button' role='menuitem'>Twitter</button>
-                <button type='button' role='menuitem'>Mastodon</button>
-                <button type='button' role='menuitem'>Bsky</button>
+            <button type="button" role="menuitem" popovertarget="sharemenu">Share</button>
+            <div role="menu" id="sharemenu" popover {{menu}}>
+              <button type="button" role="menuitem">Code</button>
+              <button type="button" role="menuitem" popovertarget="socialmenu">Social</button>
+              <div role="menu" id="socialmenu" popover {{menu}}>
+                <button type="button" role="menuitem">Twitter</button>
+                <button type="button" role="menuitem">Mastodon</button>
+                <button type="button" role="menuitem">Bsky</button>
               </div>
             </div>
             <hr />
-            <button type='button' role='menuitem'>Cut</button>
-            <button type='button' role='menuitem'>Copy</button>
-            <button type='button' role='menuitem'>Paste</button>
+            <button type="button" role="menuitem">Cut</button>
+            <button type="button" role="menuitem">Copy</button>
+            <button type="button" role="menuitem">Paste</button>
           </div>
         </template>
       );
@@ -53,26 +53,26 @@ module('Rendering | Modifier | {{menu}}', (hooks) => {
 
       await render(
         <template>
-          <button type='button' popovertarget='refactormenu'>Refactor</button>
-          <div role='menu' id='refactormenu' popover {{menu disabled=context.disabled}}>
-            <button type='button' role='menuitem'>Format Document</button>
-            <button type='button' role='menuitem'>Refactor...</button>
-            <button type='button' role='menuitem'>Source Action...</button>
+          <button type="button" popovertarget="refactormenu">Refactor</button>
+          <div role="menu" id="refactormenu" popover {{menu disabled=context.disabled}}>
+            <button type="button" role="menuitem">Format Document</button>
+            <button type="button" role="menuitem">Refactor...</button>
+            <button type="button" role="menuitem">Source Action...</button>
             <hr />
-            <button type='button' role='menuitem' popovertarget='sharemenu'>Share</button>
-            <div role='menu' id='sharemenu' popover {{menu}}>
-              <button type='button' role='menuitem'>Code</button>
-              <button type='button' role='menuitem' popovertarget='socialmenu'>Social</button>
-              <div role='menu' id='socialmenu' popover {{menu}}>
-                <button type='button' role='menuitem'>Twitter</button>
-                <button type='button' role='menuitem'>Mastodon</button>
-                <button type='button' role='menuitem'>Bsky</button>
+            <button type="button" role="menuitem" popovertarget="sharemenu">Share</button>
+            <div role="menu" id="sharemenu" popover {{menu}}>
+              <button type="button" role="menuitem">Code</button>
+              <button type="button" role="menuitem" popovertarget="socialmenu">Social</button>
+              <div role="menu" id="socialmenu" popover {{menu}}>
+                <button type="button" role="menuitem">Twitter</button>
+                <button type="button" role="menuitem">Mastodon</button>
+                <button type="button" role="menuitem">Bsky</button>
               </div>
             </div>
             <hr />
-            <button type='button' role='menuitem'>Cut</button>
-            <button type='button' role='menuitem'>Copy</button>
-            <button type='button' role='menuitem'>Paste</button>
+            <button type="button" role="menuitem">Cut</button>
+            <button type="button" role="menuitem">Copy</button>
+            <button type="button" role="menuitem">Paste</button>
           </div>
         </template>
       );
@@ -91,26 +91,26 @@ module('Rendering | Modifier | {{menu}}', (hooks) => {
     test('it supports keyboard navigation', async function (assert) {
       await render(
         <template>
-          <button type='button' popovertarget='refactormenu'>Refactor</button>
-          <div role='menu' id='refactormenu' popover {{menu}}>
-            <button type='button' role='menuitem'>Format Document</button>
-            <button type='button' role='menuitem'>Refactor...</button>
-            <button type='button' role='menuitem'>Source Action...</button>
+          <button type="button" popovertarget="refactormenu">Refactor</button>
+          <div role="menu" id="refactormenu" popover {{menu}}>
+            <button type="button" role="menuitem">Format Document</button>
+            <button type="button" role="menuitem">Refactor...</button>
+            <button type="button" role="menuitem">Source Action...</button>
             <hr />
-            <button type='button' role='menuitem' popovertarget='sharemenu'>Share</button>
-            <div role='menu' id='sharemenu' popover {{menu}}>
-              <button type='button' role='menuitem'>Code</button>
-              <button type='button' role='menuitem' popovertarget='socialmenu'>Social</button>
-              <div role='menu' id='socialmenu' popover {{menu}}>
-                <button type='button' role='menuitem'>Twitter</button>
-                <button type='button' role='menuitem'>Mastodon</button>
-                <button type='button' role='menuitem'>Bsky</button>
+            <button type="button" role="menuitem" popovertarget="sharemenu">Share</button>
+            <div role="menu" id="sharemenu" popover {{menu}}>
+              <button type="button" role="menuitem">Code</button>
+              <button type="button" role="menuitem" popovertarget="socialmenu">Social</button>
+              <div role="menu" id="socialmenu" popover {{menu}}>
+                <button type="button" role="menuitem">Twitter</button>
+                <button type="button" role="menuitem">Mastodon</button>
+                <button type="button" role="menuitem">Bsky</button>
               </div>
             </div>
             <hr />
-            <button type='button' role='menuitem'>Cut</button>
-            <button type='button' role='menuitem'>Copy</button>
-            <button type='button' role='menuitem'>Paste</button>
+            <button type="button" role="menuitem">Cut</button>
+            <button type="button" role="menuitem">Copy</button>
+            <button type="button" role="menuitem">Paste</button>
           </div>
         </template>
       );
@@ -121,26 +121,26 @@ module('Rendering | Modifier | {{menu}}', (hooks) => {
     test('it supports pointer navigation', async function (assert) {
       await render(
         <template>
-          <button type='button' popovertarget='refactormenu'>Refactor</button>
-          <div role='menu' id='refactormenu' popover {{menu}}>
-            <button type='button' role='menuitem'>Format Document</button>
-            <button type='button' role='menuitem'>Refactor...</button>
-            <button type='button' role='menuitem'>Source Action...</button>
+          <button type="button" popovertarget="refactormenu">Refactor</button>
+          <div role="menu" id="refactormenu" popover {{menu}}>
+            <button type="button" role="menuitem">Format Document</button>
+            <button type="button" role="menuitem">Refactor...</button>
+            <button type="button" role="menuitem">Source Action...</button>
             <hr />
-            <button type='button' role='menuitem' popovertarget='sharemenu'>Share</button>
-            <div role='menu' id='sharemenu' popover {{menu}}>
-              <button type='button' role='menuitem'>Code</button>
-              <button type='button' role='menuitem' popovertarget='socialmenu'>Social</button>
-              <div role='menu' id='socialmenu' popover {{menu}}>
-                <button type='button' role='menuitem'>Twitter</button>
-                <button type='button' role='menuitem'>Mastodon</button>
-                <button type='button' role='menuitem'>Bsky</button>
+            <button type="button" role="menuitem" popovertarget="sharemenu">Share</button>
+            <div role="menu" id="sharemenu" popover {{menu}}>
+              <button type="button" role="menuitem">Code</button>
+              <button type="button" role="menuitem" popovertarget="socialmenu">Social</button>
+              <div role="menu" id="socialmenu" popover {{menu}}>
+                <button type="button" role="menuitem">Twitter</button>
+                <button type="button" role="menuitem">Mastodon</button>
+                <button type="button" role="menuitem">Bsky</button>
               </div>
             </div>
             <hr />
-            <button type='button' role='menuitem'>Cut</button>
-            <button type='button' role='menuitem'>Copy</button>
-            <button type='button' role='menuitem'>Paste</button>
+            <button type="button" role="menuitem">Cut</button>
+            <button type="button" role="menuitem">Copy</button>
+            <button type="button" role="menuitem">Paste</button>
           </div>
         </template>
       );

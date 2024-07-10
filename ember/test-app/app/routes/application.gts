@@ -11,15 +11,15 @@ function noop() {
 
 export class ApplicationRoute extends Route<object> {
   <template>
-    <AppHeader @position='center' @home={{link 'application'}}>
+    <AppHeader @position="center" @home={{link "application"}}>
       <:brand>Hokulea</:brand>
       <:nav as |n|>
-        <n.Item @push={{link 'actions'}}>Actions</n.Item>
-        <n.Item @push={{link 'content'}}>Content</n.Item>
+        <n.Item @push={{link "actions"}}>Actions</n.Item>
+        <n.Item @push={{link "content"}}>Content</n.Item>
         <n.Item>lalala</n.Item>
-        <n.Item @push={{link 'controls'}}>Controls</n.Item>
-        <n.Item @push={{link 'forms'}}>Forms</n.Item>
-        <n.Item @push={{link 'icons'}}>Icons</n.Item>
+        <n.Item @push={{link "controls"}}>Controls</n.Item>
+        <n.Item @push={{link "forms"}}>Forms</n.Item>
+        <n.Item @push={{link "icons"}}>Icons</n.Item>
         <n.Item>
           <:label>Let's go down</:label>
           <:menu as |m|>

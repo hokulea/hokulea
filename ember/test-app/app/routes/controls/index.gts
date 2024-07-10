@@ -1,5 +1,3 @@
-import { array } from '@ember/helper';
-
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';
 

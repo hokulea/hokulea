@@ -13,7 +13,7 @@ function pick<V = unknown>(path: string, action?: (value: V) => void) {
   };
 }
 
-const or = (a: unknown, b: unknown) => a || b;
+const or = (...conditions: unknown[]) => conditions.reduce((a, b) => a || b, false);
 
 const and = (a: unknown, b: unknown) => a && b;
 

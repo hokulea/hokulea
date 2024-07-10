@@ -1,3 +1,103 @@
 @import './layouts/elements.css';
 
 @import './layouts/flow.css';
+
+@import './layouts/page.css';
+
+.page {
+  & > header {
+    p {
+      color: var(--typography-subtle);
+
+      &:not(:has(+ nav)) {
+        padding-block-end: var(--spacing-container0);
+      }
+    }
+
+    h1 {
+      padding-block: var(--spacing-container-3);
+    }
+  }
+
+  section& > header :is(h1, p):not(:has(+ *)) {
+    padding-block-end: 0;
+  }
+
+  main& {
+    > header {
+      background-color: var(--surface-container);
+
+      &:has(nav) {
+        box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        margin-right: calc(var(--spacing-primitive-1) * -1);
+        margin-left: calc(var(--spacing-primitive-1) * -1);
+
+        a {
+          position: relative;
+
+          padding: var(--spacing-primitive0) var(--spacing-primitive-1);
+
+          color: var(--typography-main);
+          text-decoration: none;
+
+          background: 0 0;
+          border: 0;
+
+          &::after {
+            content: "";
+
+            position: absolute;
+            right: var(--spacing-primitive-1);
+            bottom: 0;
+            left: var(--spacing-primitive-1);
+
+            height: 2px;
+
+            border-color: transparent;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 1px 1px 0 0;
+          }
+
+          &[aria-current="page"] {
+            color: var(--navigation-links-base);
+
+            &::after {
+              border-color: var(--navigation-links-base);
+            }
+          }
+        }
+      }
+    }
+
+    > [part="content"] > section {
+      display: grid;
+      grid-template-columns: subgrid;
+
+      > :is([part="content"], header) {
+        grid-template-columns: subgrid;
+      }
+    }
+
+    > [part="content"] > section > header h1 {
+      padding-block-start: 0;
+    }
+  }
+
+  & > [part="content"] {
+    padding-block: var(--spacing-container0);
+
+    & > main:has(header) + *:not(:empty) {
+      /* Can't use prop here, as it will cascade its value, something we don't want */
+
+      /* --flow-space: 2em; */
+
+      margin-block-start: 2em;
+    }
+  }
+}

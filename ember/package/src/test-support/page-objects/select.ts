@@ -3,16 +3,12 @@ import { select } from '@ember/test-helpers';
 import { PageObject, selector as sel } from 'fractal-page-object';
 
 import type { Target } from '@ember/test-helpers';
-import type { ElementLike, GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class SelectPageObject extends PageObject<HTMLSelectElement> {
   static SELECTOR = '[data-test-select]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? SelectPageObject.SELECTOR, parent, index);
   }
 

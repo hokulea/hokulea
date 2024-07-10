@@ -5,16 +5,12 @@ import { PageObject, selector as sel } from 'fractal-page-object';
 import { FieldPageObject } from './-private/field';
 import { ButtonPageObject } from './button';
 
-import type { GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class FormPageObject extends PageObject<HTMLFormElement> {
   static SELECTOR = '[data-test-form]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | Element | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? FormPageObject.SELECTOR, parent, index);
   }
 

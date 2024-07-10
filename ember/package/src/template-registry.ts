@@ -31,6 +31,8 @@ import type Menu from './components/menu';
 // @ts-ignore
 import type NumberInput from './components/number-input';
 // @ts-ignore
+import type Page from './components/page';
+// @ts-ignore
 import type PasswordInput from './components/password-input';
 // @ts-ignore
 import type PhoneInput from './components/phone-input';
@@ -60,6 +62,7 @@ export default interface HokuleaRegistry {
   List: typeof List;
   Menu: typeof Menu;
   NumberInput: typeof NumberInput;
+  Page: typeof Page;
   PasswordInput: typeof PasswordInput;
   PhoneInput: typeof PhoneInput;
   Radio: typeof Radio;

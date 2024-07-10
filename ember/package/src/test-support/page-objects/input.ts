@@ -1,19 +1,15 @@
 import { PageObject } from 'fractal-page-object';
 
-import type { ElementLike, GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
-export interface Input extends GenericPageObject {
+export interface Input extends PageObject {
   control: HTMLInputElement;
 }
 
 export class InputPageObject extends PageObject<HTMLInputElement> implements Input {
   static SELECTOR = '[data-test-input]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? InputPageObject.SELECTOR, parent, index);
   }
 

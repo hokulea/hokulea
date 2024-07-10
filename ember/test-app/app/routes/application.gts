@@ -18,10 +18,8 @@ export class ApplicationRoute extends Route<object> {
         <n.Item @push={{link 'content'}}>Content</n.Item>
         <n.Item>lalala</n.Item>
         <n.Item @push={{link 'controls'}}>Controls</n.Item>
-        <n.Item @push={{link 'aria'}}>Aria</n.Item>
         <n.Item @push={{link 'forms'}}>Forms</n.Item>
         <n.Item @push={{link 'icons'}}>Icons</n.Item>
-        <n.Item @push={{link 'navigation'}}>Navigation</n.Item>
         <n.Item>
           <:label>Let's go down</:label>
           <:menu as |m|>
@@ -43,9 +41,7 @@ export class ApplicationRoute extends Route<object> {
       </:aux>
     </AppHeader>
 
-    <main>
-      {{outlet}}
-    </main>
+    {{outlet}}
   </template>
 }
 

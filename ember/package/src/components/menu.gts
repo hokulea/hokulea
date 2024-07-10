@@ -8,7 +8,7 @@ import { menu } from 'ember-aria-navigator';
 import { CommandElement } from 'ember-command';
 import { TrackedArray } from 'tracked-built-ins';
 
-import styles from '@hokulea/core/navigation.module.css';
+import styles from '@hokulea/core/controls.module.css';
 
 import disabled from '../-private/modifiers/disabled';
 import popover from '../helpers/popover';

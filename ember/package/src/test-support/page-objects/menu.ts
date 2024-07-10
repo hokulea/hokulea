@@ -1,20 +1,12 @@
 import { globalSelector, PageObject, selector as sel } from 'fractal-page-object';
 
 import type { Menu, MenuElement, MenuItem, MenuItemElement } from './-menu';
-import type {
-  ElementLike,
-  GenericPageObject,
-  PageObjectConstructor
-} from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class MenuItemPageObject extends PageObject<MenuItemElement> implements MenuItem {
   static SELECTOR = '[role="menuitem"]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? MenuItemPageObject.SELECTOR, parent, index);
   }
 
@@ -22,7 +14,7 @@ export class MenuItemPageObject extends PageObject<MenuItemElement> implements M
     return Boolean(this.element?.hasAttribute('aria-disabled'));
   }
 
-  get expanded() {
+  get expanded(): boolean {
     return Boolean(this.menu?.element?.matches(':popover-open'));
   }
 
@@ -34,13 +26,10 @@ export class MenuItemPageObject extends PageObject<MenuItemElement> implements M
     return this.element?.getAttribute('popovertarget');
   }
 
-  protected get menu() {
+  protected get menu(): Menu | undefined {
     return this.menuId
-      ? globalSelector<MenuElement, Menu>(
-          `#${this.menuId}`,
-          // eslint-disable-next-line @typescript-eslint/no-use-before-define
-          MenuPageObject as unknown as PageObjectConstructor<MenuElement, Menu>
-        )
+      ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        globalSelector<MenuElement, Menu>(`#${this.menuId}`, MenuPageObject)
       : undefined;
   }
 
@@ -52,11 +41,7 @@ export class MenuItemPageObject extends PageObject<MenuItemElement> implements M
 export class MenuPageObject extends PageObject<MenuElement> implements Menu {
   static SELECTOR = '[data-test-menu]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? MenuPageObject.SELECTOR, parent, index);
   }
 
@@ -64,8 +49,5 @@ export class MenuPageObject extends PageObject<MenuElement> implements Menu {
     return this.element as HTMLDivElement;
   }
 
-  $item = sel<MenuItemElement, MenuItem>(
-    MenuItemPageObject.SELECTOR,
-    MenuItemPageObject as unknown as PageObjectConstructor<MenuItemElement, MenuItem>
-  );
+  $item = sel<MenuItemElement, MenuItem>(MenuItemPageObject.SELECTOR, MenuItemPageObject);
 }

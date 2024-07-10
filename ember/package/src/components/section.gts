@@ -3,6 +3,7 @@ import { assert } from '@ember/debug';
 import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/content.module.css';
+import layouts from '@hokulea/core/layouts.module.css';
 
 import type { TOC } from '@ember/component/template-only';
 
@@ -31,7 +32,7 @@ function elementForLevel(level?: string) {
 }
 
 const Section: TOC<SectionSignature> = <template>
-  <section class={{styles.section}} data-test-section ...attributes>
+  <section class='{{styles.section}} {{layouts.flow}}' data-test-section ...attributes>
     {{#if @title}}
       <header data-test-section='header' part='header'>
         {{#if @title}}

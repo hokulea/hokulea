@@ -53,6 +53,9 @@ export { default as Form } from './components/form';
 export { default as AppHeader } from './components/app-header';
 
 // @ts-ignore
+export { default as Page } from './components/page';
+
+// @ts-ignore
 export { default as Menu } from './components/menu';
 
 // content

@@ -1,18 +1,22 @@
 import { link } from 'ember-link';
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
 
 import { Button, Menu, popover } from '@hokulea/ember';
 
-const noop = () => {
-  // eslint-disable-next-line no-console
-  console.log('noop');
-};
+import type { TOC } from '@ember/component/template-only';
 
-export class NavigationRoute extends Route<object> {
-  <template>
-    <h2>Navigation</h2>
+function noop() {
+  return () => {
+    // eslint-disable-next-line no-console
+    console.log('noop');
+  };
+}
 
+const MenuComposite: TOC<object> = <template>
+  {{! template-lint-disable no-forbidden-elements }}
+  <style>
+    .with-controls { display: grid; grid-template-columns: auto 45%; gap: 1rem; }
+  </style>
+  <div class='with-controls'>
     <p>
       <Menu as |m|>
         <m.Item @push={{noop}}>Home</m.Item>
@@ -55,7 +59,7 @@ export class NavigationRoute extends Route<object> {
         </Menu>
       {{/let}}
     </p>
-  </template>
-}
+  </div>
+</template>;
 
-export default CompatRoute(NavigationRoute);
+export default MenuComposite;

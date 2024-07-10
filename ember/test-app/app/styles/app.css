@@ -24,10 +24,5 @@
   --typo-display-feature-settings: "liga" 1, "calt" 1, "salt" 1, "kern" 1;
   --typo-display-weight: 300;
   --typo-display-tracking: -0.003em;
-}
-
-main {
-  display: grid;
-  gap: var(--spacing-container0);
-  padding: var(--spacing-container0);
+  --sizing-max-content-width: 60rem;
 }

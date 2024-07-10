@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { hash } from '@ember/helper';
+import { uniqueId } from '@ember/helper';
 
 import { type CommandAction, CommandElement } from 'ember-command';
 import { keepLatestTask, timeout } from 'ember-concurrency';
@@ -102,7 +103,6 @@ export default class AppHeader extends Component<AppHeaderSignature> {
       return;
     }
 
-    const parent = element.parentElement as HTMLElement;
     let headerWidth = [...element.children]
       .filter((elem) => elem.getAttribute('part') !== 'menu')
       .map((e) => Math.floor(e.scrollWidth))
@@ -117,7 +117,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
       Number.parseInt(getComputedStyle(element).getPropertyValue('gap'), 10) *
       (element.childElementCount - 1);
 
-    this.topNavShown = parent.clientWidth >= headerWidth;
+    this.topNavShown = element.clientWidth >= headerWidth;
     this.sensing = false;
   });
 
@@ -155,62 +155,66 @@ export default class AppHeader extends Component<AppHeaderSignature> {
   });
 
   <template>
-    <header
-      class={{styles.appHeader}}
-      data-sensing={{if (and this.sensing (not this.topNavShown)) true}}
-      data-test-app-header
-      {{this.flipflop}}
-      ...attributes
-    >
-      {{#if (has-block 'brand')}}
-        <CommandElement @command={{@home}} part='brand'>
-          {{yield to='brand'}}
-        </CommandElement>
-      {{/if}}
+    {{#let (uniqueId) as |brandId|}}
+      <header class={{styles.appHeader}} data-test-app-header ...attributes>
+        <div
+          class={{styles.appHeaderContent}}
+          data-sensing={{if (and this.sensing (not this.topNavShown)) true}}
+          {{this.flipflop}}
+        >
+          {{#if (has-block 'brand')}}
+            <CommandElement @command={{@home}} part='brand' id={{brandId}}>
+              {{yield to='brand'}}
+            </CommandElement>
+          {{/if}}
 
-      {{#if (or this.topNavShown this.sensing)}}
-        <nav data-position={{if @position @position}}>
-          {{yield (hash Item=NavItem) to='nav'}}
-        </nav>
+          {{#if (or this.topNavShown this.sensing)}}
+            <nav data-position={{if @position @position}} aria-labelledby={{brandId}}>
+              {{yield (hash Item=NavItem) to='nav'}}
+            </nav>
 
-        {{#if (has-block 'aux')}}
-          <span part='aux'>
-            {{yield (hash Item=NavItem) to='aux'}}
-          </span>
-        {{/if}}
-      {{/if}}
+            {{#if (has-block 'aux')}}
+              <span part='aux'>
+                {{yield (hash Item=NavItem) to='aux'}}
+              </span>
+            {{/if}}
+          {{/if}}
 
-      {{#if (not this.topNavShown)}}
-        <span part='menu'>
-          {{#let (popover) as |p|}}
-            <button type='button' {{p.trigger}} data-test-toggle>
-              <Icon @icon={{if p.opened 'x' 'menu'}} data-test-toggle='icon' />
-            </button>
+          {{#if (not this.topNavShown)}}
+            <span part='menu'>
+              {{#let (popover) as |p|}}
+                <button type='button' {{p.trigger}} data-test-toggle>
+                  <Icon @icon={{if p.opened 'x' 'menu'}} data-test-toggle='icon' />
+                </button>
 
-            <section popover {{p.target}} {{this.closeWhenLink}}>
-              <div>
-                {{#if (has-block 'brand')}}
-                  <CommandElement @command={{@home}} part='brand'>
-                    {{yield to='brand'}}
-                  </CommandElement>
-                {{/if}}
-              </div>
+                <section popover {{p.target}} {{this.closeWhenLink}}>
+                  {{! template-lint-disable no-duplicate-landmark-elements no-nested-landmark }}
+                  <header>
+                    {{#if (has-block 'brand')}}
+                      <CommandElement @command={{@home}} part='brand'>
+                        {{yield to='brand'}}
+                      </CommandElement>
+                    {{/if}}
+                  </header>
+                  {{! template-lint-enable no-duplicate-landmark-elements no-nested-landmark }}
 
-              {{! template-lint-disable no-duplicate-landmark-elements }}
-              <nav>
-                {{yield (hash Item=PopoverNavItem) to='nav'}}
-              </nav>
-              {{! template-lint-enable no-duplicate-landmark-elements }}
+                  {{! template-lint-disable no-duplicate-landmark-elements }}
+                  <nav aria-labelledby={{brandId}}>
+                    {{yield (hash Item=PopoverNavItem) to='nav'}}
+                  </nav>
+                  {{! template-lint-enable no-duplicate-landmark-elements }}
 
-              {{#if (has-block 'aux')}}
-                <span part='aux'>
-                  {{yield (hash Item=PopoverNavItem) to='aux'}}
-                </span>
-              {{/if}}
-            </section>
-          {{/let}}
-        </span>
-      {{/if}}
-    </header>
+                  {{#if (has-block 'aux')}}
+                    <span part='aux'>
+                      {{yield (hash Item=PopoverNavItem) to='aux'}}
+                    </span>
+                  {{/if}}
+                </section>
+              {{/let}}
+            </span>
+          {{/if}}
+        </div>
+      </header>
+    {{/let}}
   </template>
 }

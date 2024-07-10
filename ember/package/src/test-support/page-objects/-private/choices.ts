@@ -1,15 +1,11 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import type { ElementLike, GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class ChoicesPageObject extends PageObject<HTMLDivElement | HTMLFieldSetElement> {
   static SELECTOR = '[data-test-choices]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? ChoicesPageObject.SELECTOR, parent, index);
   }
 

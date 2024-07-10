@@ -2,18 +2,14 @@ import { click } from '@ember/test-helpers';
 
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import type { ElementLike, GenericPageObject } from 'fractal-page-object/dist/-private/types';
+import type { ElementLike } from 'fractal-page-object';
 
 export class ButtonPageObject extends PageObject<
   HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement
 > {
   static SELECTOR = '[data-test-button]';
 
-  constructor(
-    selector?: string,
-    parent?: GenericPageObject | ElementLike | null,
-    index?: number | null
-  ) {
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? ButtonPageObject.SELECTOR, parent, index);
   }
 

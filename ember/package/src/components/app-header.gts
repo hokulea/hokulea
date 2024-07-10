@@ -188,6 +188,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
                 </button>
 
                 <section popover {{p.target}} {{this.closeWhenLink}}>
+                  {{! template-lint-disable no-duplicate-landmark-elements }}
                   <header>
                     {{#if (has-block 'brand')}}
                       <CommandElement @command={{@home}} part='brand'>
@@ -195,6 +196,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
                       </CommandElement>
                     {{/if}}
                   </header>
+                  {{! template-lint-enable no-duplicate-landmark-elements }}
 
                   {{! template-lint-disable no-duplicate-landmark-elements }}
                   <nav aria-labelledby={{brandId}}>

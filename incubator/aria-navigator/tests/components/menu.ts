@@ -8,7 +8,7 @@ export function createMenuElement(parent: HTMLElement) {
   const element = document.createElement('div');
 
   element.role = 'menu';
-  element.classList.add(styles.menu);
+  element.classList.add(styles.menu as string);
 
   parent.append(element);
 

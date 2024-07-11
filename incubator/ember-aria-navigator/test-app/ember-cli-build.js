@@ -18,6 +18,10 @@ module.exports = function (defaults) {
 
     'ember-cli-babel': {
       enableTypeScriptTransform: true
+    },
+
+    prember: {
+      urls: ['/', '/listbox', '/menu']
     }
   });
 
@@ -36,6 +40,7 @@ module.exports = function (defaults) {
 
   const { maybeEmbroider } = require('@embroider/test-setup');
 
-  return maybeEmbroider(app);
-  // return app.toTree();
+  const compiledApp = maybeEmbroider(app);
+
+  return require('prember').prerender(app, compiledApp);
 };

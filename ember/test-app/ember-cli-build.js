@@ -47,6 +47,14 @@ module.exports = function (defaults) {
       }
     },
     ...HOKULEA_CONFIG
+
+    // Turns out prember (and or `ember-cli-fastboot`) has some issues with
+    // `glimmer-scoped-css`, that forces me to deactivate this:
+    // https://github.com/cardstack/glimmer-scoped-css/issues/25
+    //
+    // prember: {
+    //   urls: ['/', '/actions', '/content', '/controls', '/controls/composites', '/forms', '/icons']
+    // }
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');

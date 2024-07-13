@@ -1,8 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import iconTags from 'lucide-static/tags.json';
+import { icons } from '@phosphor-icons/core';
 
-const iconNames = Object.keys(iconTags);
+const iconNames = icons.map((entry) => entry.name);
 
 // import type { IconSignature } from './icon';
 interface IconSignature {
@@ -46,7 +46,7 @@ const Template = (args: IconArgs) => {
 export const Default = {
   render: Template.bind({}),
   args: {
-    icon: 'activity'
+    icon: 'acorn'
   }
 };
 
@@ -62,6 +62,6 @@ export const WithText = {
     }
   }),
   args: {
-    icon: 'activity'
+    icon: 'acorn'
   }
 };

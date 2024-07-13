@@ -1,8 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import iconTags from 'lucide-static/tags.json';
+import { icons } from '@phosphor-icons/core';
 
-const iconNames = Object.keys(iconTags);
+const iconNames = icons.map((entry) => entry.name);
 
 // import type { IconSignature } from './icon';
 interface IconSignature {
@@ -27,6 +27,21 @@ export default {
       name: 'Icon',
       options: iconNames.sort(),
       control: 'select'
+    },
+    style: {
+      name: 'Style',
+      options: ['thin', 'light', 'regular', 'bold', 'fill', 'duotone'],
+      control: {
+        type: 'radio',
+        labels: {
+          thin: 'thin',
+          light: 'light',
+          regular: 'regular (default)',
+          bold: 'bold',
+          fill: 'fill',
+          duotone: 'duotone'
+        }
+      }
     }
   }
 };
@@ -36,17 +51,17 @@ type IconArgs = Partial<IconSignature['Args']>;
 
 const Template = (args: IconArgs) => {
   return {
-    template: hbs`<Icon @icon={{this.icon}}/>`,
+    template: hbs`<Icon @icon={{this.icon}} @style={{this.style}}/>`,
     context: {
       ...args
     }
   };
 };
 
-export const Default = {
+export const Showcase = {
   render: Template.bind({}),
   args: {
-    icon: 'activity'
+    icon: 'acorn'
   }
 };
 
@@ -54,7 +69,7 @@ export const WithText = {
   render: (args: IconArgs) => ({
     template: hbs`
       <p>
-        <Icon @icon={{this.icon}} />
+        <Icon @icon={{this.icon}} @style={{this.style}} />
         Text next to the icon
       </p>`,
     context: {
@@ -62,6 +77,6 @@ export const WithText = {
     }
   }),
   args: {
-    icon: 'activity'
+    icon: 'acorn'
   }
 };

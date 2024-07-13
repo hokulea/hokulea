@@ -64,14 +64,10 @@ export default class Select extends Component<SelectSignature> {
   };
 
   <template>
-    <select
-      class={{styles.select}}
-      disabled={{@disabled}}
-      data-test-select
-      ...attributes
-      {{on "input" this.select}}
-    >
-      {{yield (hash Option=(component Option isSelected=this.isSelected))}}
-    </select>
+    <span class={{styles.select}}>
+      <select disabled={{@disabled}} data-test-select ...attributes {{on "input" this.select}}>
+        {{yield (hash Option=(component Option isSelected=this.isSelected))}}
+      </select>
+    </span>
   </template>
 }

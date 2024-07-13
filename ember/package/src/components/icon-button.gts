@@ -22,6 +22,10 @@ export interface IconButtonSignature {
     label: string;
     /** The name of the icon */
     icon: string;
+    /**
+     * @defaultValue regular
+     */
+    iconStyle?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';
   };
   Blocks: {
     default: [];
@@ -50,7 +54,7 @@ export default class IconButton extends Component<IconButtonSignature> {
       data-test-icon-button
       ...attributes
     >
-      <Icon @icon={{@icon}} data-test-icon-button="icon" />
+      <Icon @icon={{@icon}} @style={{@iconStyle}} data-test-icon-button="icon" />
     </CommandElement>
   </template>
 }

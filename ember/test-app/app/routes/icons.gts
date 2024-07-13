@@ -8,8 +8,10 @@ export class ActionsRoute extends Route<object> {
     <Page @title="Icons">
 
       <p>
-        <Icon @icon="activity" />
-        with some text and the best icon in the world:
+        <Icon @icon="pulse" />
+        with some text
+        <Icon @icon="acorn" />
+        and the best icon in the world:
         <Icon @icon="unicycle" />
         A Unicycle
       </p>

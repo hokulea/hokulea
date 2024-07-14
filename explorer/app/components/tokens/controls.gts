@@ -1,4 +1,4 @@
-import Page from '../page';
+import Article from '../article';
 import ColorToken from '../token/color';
 import DimensionToken from '../token/dimension';
 import StrokeToken from '../token/stroke';
@@ -7,7 +7,7 @@ import TokenList from '../token-list';
 import type { TOC } from '@ember/component/template-only';
 
 const Card: TOC = <template>
-  <Page @title="Controls">
+  <Article @title="Controls">
     <TokenList>
       <StrokeToken @name="--control-border" />
       <ColorToken @name="--control-background" />
@@ -41,7 +41,7 @@ const Card: TOC = <template>
     <TokenList>
       <ColorToken @name="--control-selected-background" />
     </TokenList>
-  </Page>
+  </Article>
 </template>;
 
 export default Card;

@@ -1,14 +1,20 @@
-import Page from '../page';
+import Article from '../article';
 import Intents from '../reference/intents';
 
 import type { TOC } from '@ember/component/template-only';
 
 const IntentTokens: TOC = <template>
-  <Page @title="Intents">
-    Tokens to express user intentions. Learn more about [intents](../foundation/intents.md).
+  <Article @title="Intents">
+    <p>Tokens to express user intentions. Learn more about
+      <a
+        href="#"
+        data-sb-kind="documentation-foundation-intents"
+        data-sb-story="intents"
+      >intents</a>.
+    </p>
 
     <Intents />
-  </Page>
+  </Article>
 </template>;
 
 export default IntentTokens;

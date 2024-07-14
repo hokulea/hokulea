@@ -20,6 +20,7 @@ export class ApplicationRoute extends Route<object> {
         <n.Item @push={{link "controls"}}>Controls</n.Item>
         <n.Item @push={{link "forms"}}>Forms</n.Item>
         <n.Item @push={{link "icons"}}>Icons</n.Item>
+        <n.Item @push={{link "windows"}}>Windows</n.Item>
         <n.Item>
           <:label>Let's go down</:label>
           <:menu as |m|>

@@ -62,6 +62,7 @@ export default {
       'components/input-builder.js',
       'components/text-area.js',
       'components/form.js',
+      'components/popover.js',
       'helpers/popover.js'
     ]),
 
@@ -98,6 +99,7 @@ export default {
       'components/input-builder.js',
       'components/text-area.js',
       'components/form.js',
+      'components/popover.js',
       'helpers/popover.js'
     ]),
 

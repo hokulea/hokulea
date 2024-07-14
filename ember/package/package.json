@@ -165,6 +165,7 @@
       "./components/page.js": "./dist/_app_/components/page.js",
       "./components/password-input.js": "./dist/_app_/components/password-input.js",
       "./components/phone-input.js": "./dist/_app_/components/phone-input.js",
+      "./components/popover.js": "./dist/_app_/components/popover.js",
       "./components/radio.js": "./dist/_app_/components/radio.js",
       "./components/section.js": "./dist/_app_/components/section.js",
       "./components/select.js": "./dist/_app_/components/select.js",

@@ -16,4 +16,5 @@ Router.map(function () {
   });
   this.route('forms');
   this.route('icons');
+  this.route('windows');
 });

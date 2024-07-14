@@ -18,6 +18,7 @@ export { ListPageObject } from './page-objects/list';
 export { MenuPageObject } from './page-objects/menu';
 export { PagePageObject } from './page-objects/page';
 export { PillButtonPageObject } from './page-objects/pill-button';
+export { PopoverPageObject } from './page-objects/popover';
 export { SectionPageObject } from './page-objects/section';
 export { SelectPageObject } from './page-objects/select';
 export { TextAreaPageObject } from './page-objects/text-area';

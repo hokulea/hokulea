@@ -67,6 +67,11 @@ export { default as Card } from './components/card';
 // @ts-ignore
 export { default as Section } from './components/section';
 
+// window
+
+// @ts-ignore
+export { default as Popover } from './components/popover';
+
 // behavior
 
 export { default as popover } from './helpers/popover';

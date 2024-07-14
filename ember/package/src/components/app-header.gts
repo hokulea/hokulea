@@ -127,10 +127,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
       (element.childElementCount - 1);
 
     this.topNavShown = element.clientWidth >= headerWidth;
-
     this.sensing = false;
-
-    console.log('topNavShown', element.clientWidth >= headerWidth, this.sensing);
   });
 
   flipflop = modifier((element: HTMLElement) => {

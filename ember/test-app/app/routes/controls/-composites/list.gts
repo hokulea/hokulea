@@ -23,7 +23,6 @@ export default class ListComposite extends Component {
   @tracked listItems = FRUITS;
 
   <template>
-    {{! template-lint-disable no-forbidden-elements }}
     <style>
       .with-controls { display: grid; grid-template-columns: auto 45%; gap: 1rem; } .controls
       {display: flex; flex-direction: column; gap: var(--spacing-container-2);} .inline-form {

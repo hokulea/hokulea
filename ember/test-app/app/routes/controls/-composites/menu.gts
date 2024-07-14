@@ -12,7 +12,6 @@ function noop() {
 }
 
 const MenuComposite: TOC<object> = <template>
-  {{! template-lint-disable no-forbidden-elements }}
   <style>
     .with-controls { display: grid; grid-template-columns: auto 45%; gap: 1rem; }
   </style>

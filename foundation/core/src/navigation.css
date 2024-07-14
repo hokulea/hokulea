@@ -126,6 +126,10 @@ a:active {
       padding-inline: var(--spacing-container-4);
 
       white-space: nowrap;
+
+      &[aria-haspopup="menu"] + [role="menu"] {
+        display: none;
+      }
     }
 
     & > :is([part="aux"],[part="menu"]) {

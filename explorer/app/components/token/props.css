@@ -1,7 +1,7 @@
 .box {
   display: flex;
 
-  padding: var(--spacing-container-padding-2);
+  padding: var(--spacing-container-2);
 
   background-color: var(--surface-container);
   border: var(--shape-stroke);

@@ -99,7 +99,16 @@ export default class AppHeader extends Component<AppHeaderSignature> {
 
     this.sensing = true;
 
-    if (![...element.children].find((elem) => elem.tagName.toLowerCase() === 'nav')) {
+    // wait till sensing is flushed to the browser and made elements visible
+    await timeout(0);
+
+    const relevantChildren = [...element.children].filter(
+      (elem) => elem.tagName.toLowerCase() === 'nav' || elem.getAttribute('part') === 'aux'
+    );
+
+    if (relevantChildren.length === 0) {
+      this.sensing = false;
+
       return;
     }
 
@@ -118,7 +127,10 @@ export default class AppHeader extends Component<AppHeaderSignature> {
       (element.childElementCount - 1);
 
     this.topNavShown = element.clientWidth >= headerWidth;
+
     this.sensing = false;
+
+    console.log('topNavShown', element.clientWidth >= headerWidth, this.sensing);
   });
 
   flipflop = modifier((element: HTMLElement) => {
@@ -157,11 +169,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
   <template>
     {{#let (uniqueId) as |brandId|}}
       <header class={{styles.appHeader}} data-test-app-header ...attributes>
-        <div
-          class={{styles.appHeaderContent}}
-          data-sensing={{if (and this.sensing (not this.topNavShown)) true}}
-          {{this.flipflop}}
-        >
+        <div class={{styles.appHeaderContent}} data-sensing={{this.sensing}} {{this.flipflop}}>
           {{#if (has-block "brand")}}
             <CommandElement @command={{@home}} part="brand" id={{brandId}}>
               {{yield to="brand"}}
@@ -184,7 +192,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
             <span part="menu">
               {{#let (popover) as |p|}}
                 <button type="button" {{p.trigger}} data-test-toggle>
-                  <Icon @icon={{if p.opened "x" "menu"}} data-test-toggle="icon" />
+                  <Icon @icon={{if p.opened "x" "list"}} data-test-toggle="icon" />
                 </button>
 
                 <section popover {{p.target}} {{this.closeWhenLink}}>

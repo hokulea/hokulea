@@ -4,7 +4,7 @@
   gap: var(--s-3);
   align-items: center;
 
-  padding: var(--spacing-container-padding0);
+  padding: var(--spacing-container0);
 
   background-color: var(--surface-container);
   border: var(--shape-stroke);

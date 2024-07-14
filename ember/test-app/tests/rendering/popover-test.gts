@@ -19,6 +19,6 @@ module('Rendering | <Popover>', (hooks) => {
     const icon = new PopoverPageObject();
 
     assert.dom(icon).exists();
-    assert.dom(icon).hasText('Look ma, ! am here');
+    assert.dom(icon).hasText('Look ma, I am here');
   });
 });

@@ -4,7 +4,7 @@ import { registerDestructor } from '@ember/destroyable';
 import { hash } from '@ember/helper';
 import { next } from '@ember/runloop';
 
-import { menu } from 'ember-aria-navigator';
+import { menu } from 'ember-aria-voyager';
 import { CommandElement } from 'ember-command';
 import { TrackedArray } from 'tracked-built-ins';
 

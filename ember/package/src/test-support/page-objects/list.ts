@@ -1,6 +1,6 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { selectListbox } from 'ember-aria-navigator/test-support';
+import { selectListbox } from 'ember-aria-voyager/test-support';
 
 import type { Target } from '@ember/test-helpers';
 import type { ElementLike } from 'fractal-page-object';

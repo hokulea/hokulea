@@ -15,8 +15,6 @@ module.exports = function (defaults) {
       app: sideWatch('app', {
         watching: [
           '../package/dist',
-          '../../incubator/aria-navigator/dist',
-          '../../incubator/ember-aria-navigator/package/dist',
           '../../foundation/core/dist',
           '../../foundation/tokens/dist',
           '../../themes/moana/dist'

@@ -15,7 +15,7 @@ import { MenuPageObject } from '@hokulea/ember/test-support';
 import {
   testMenuKeyboardNavigation,
   testMenuPointerNavigation
-} from 'ember-aria-navigator/test-support';
+} from 'ember-aria-voyager/test-support';
 
 import { RefactorMenuFactory } from './-menu';
 

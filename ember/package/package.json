@@ -57,7 +57,7 @@
     "change-case": "^5.4.4",
     "debug": "^4.3.2",
     "decorator-transforms": "^1.1.0",
-    "ember-aria-navigator": "workspace:*",
+    "ember-aria-voyager": "^0.0.1",
     "ember-async-data": "^1.0.3",
     "ember-phosphor-icons": "^0.3.0",
     "ember-provide-consume-context": "^0.3.2",

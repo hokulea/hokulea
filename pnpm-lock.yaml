@@ -241,8 +241,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(@babel/core@7.24.7)
       ember-aria-voyager:
-        specifier: ^0.0.1
-        version: 0.0.1(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(ember-source@5.9.0)
+        specifier: ^0.0.2
+        version: 0.0.2(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(ember-source@5.9.0)
       ember-async-data:
         specifier: ^1.0.3
         version: 1.0.3(ember-source@5.9.0)
@@ -516,8 +516,8 @@ importers:
         specifier: ^6.1.1
         version: 6.1.1(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(@glint/template@1.4.0)(qunit@2.21.0)(webpack@5.92.0)
       ember-aria-voyager:
-        specifier: ^0.0.1
-        version: 0.0.1(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(ember-source@5.9.0)
+        specifier: ^0.0.2
+        version: 0.0.2(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(ember-source@5.9.0)
       ember-auto-import:
         specifier: ^2.7.3
         version: 2.7.3(@glint/template@1.4.0)(webpack@5.92.0)
@@ -10434,8 +10434,8 @@ packages:
       - webpack
     dev: true
 
-  /ember-aria-voyager@0.0.1(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(ember-source@5.9.0):
-    resolution: {integrity: sha512-saBjkaIuKadqnMyv8wkvXgxNRop37eXkOu6Wt/8MfcZZTbYQcEpzoICB9LvAUpa3BLNlnYD/aw9gLCAuMcYwXA==}
+  /ember-aria-voyager@0.0.2(@babel/core@7.24.7)(@ember/test-helpers@3.3.0)(ember-source@5.9.0):
+    resolution: {integrity: sha512-02NrVLn6YhbwMvA2ADx/ff9t2a4Hut4/m7zYwRDzTDnQ33+3ms4WoV7jQyJkpsZJ43dyr3mnWYVsW2j0V6LKyA==}
     engines: {node: '>= 18.*'}
     peerDependencies:
       '@ember/test-helpers': ^3.3.0

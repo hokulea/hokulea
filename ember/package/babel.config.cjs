@@ -1,15 +1,5 @@
 'use strict';
 
-// module.exports = {
-//   presets: ['@babel/preset-typescript'],
-//   plugins: [
-//     'ember-template-imports/src/babel-plugin',
-//     '@embroider/addon-dev/template-colocation-plugin',
-//     ['@babel/plugin-proposal-decorators', { legacy: true }],
-//     '@babel/plugin-proposal-class-properties'
-//   ]
-// };
-
 module.exports = {
   plugins: [
     [
@@ -25,6 +15,7 @@ module.exports = {
       }
     ],
     require.resolve('ember-concurrency/async-arrow-task-transform'),
-    ['module:decorator-transforms', { runtime: { import: 'decorator-transforms/runtime' } }]
+    ['module:decorator-transforms', { runtime: { import: 'decorator-transforms/runtime' } }],
+    ...require('ember-cli-code-coverage').buildBabelPlugin()
   ]
 };

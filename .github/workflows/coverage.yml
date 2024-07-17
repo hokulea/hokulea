@@ -2,9 +2,9 @@ name: 'Coverage'
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 
 jobs:
   coverage:
@@ -13,11 +13,14 @@ jobs:
     steps:
       - name: Setup
         uses: wyvox/action@v1
+      - name: Build package
+        run: COVERAGE=true pnpm build
       - name: coverage
-        uses: paambaati/codeclimate-action@v2.7.5
+        uses: paambaati/codeclimate-action@v8.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+          COVERAGE: true
         with:
-          coverageCommand: yarn coverage
+          coverageCommand: pnpm run -r --parallel --aggregate-output test
           coverageLocations: |
-            ${{github.workspace}}/coverage/*.lcov:lcov
+            ${{github.workspace}}/ember/test-app/coverage/lcov.info:lcov

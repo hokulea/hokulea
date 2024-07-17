@@ -31,6 +31,9 @@
     "node": ">= 20.*"
   },
   "pnpm": {
+    "patchedDependencies": {
+      "ember-cli-code-coverage@3.0.0": "patches/ember-cli-code-coverage@3.0.0.patch"
+    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "react",

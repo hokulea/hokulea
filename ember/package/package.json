@@ -1,7 +1,7 @@
 {
   "name": "@hokulea/ember",
-  "version": "0.0.0",
-  "description": "The default blueprint for Embroider v2 addons.",
+  "version": "0.0.1",
+  "description": "Hokulea Design System for Ember",
   "keywords": [
     "ember-addon",
     "ember-css-modules-plugin"
@@ -10,7 +10,7 @@
   "files": [
     "addon-main.js",
     "dist",
-    "lib"
+    "declarations"
   ],
   "exports": {
     ".": {

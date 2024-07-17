@@ -1,7 +1,7 @@
 {
   "name": "@hokulea/config-testem",
   "description": "Hokulea testem config",
-  "version": "0.0.8",
+  "version": "0.0.0",
   "private": true,
   "main": "testem.js",
   "scripts": {

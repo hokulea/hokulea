@@ -1045,15 +1045,6 @@ importers:
         specifier: ^5.5.2
         version: 5.5.2
 
-  plugins/ember-template-imports:
-    dependencies:
-      ember-source:
-        specifier: ~5.9.0
-        version: 5.9.0(@babel/core@7.24.7)(@glimmer/component@1.1.2)(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.92.0)
-      ember-template-imports:
-        specifier: ^3.4.1
-        version: 3.4.2
-
   plugins/rollup-plugin-postcss:
     dependencies:
       '@hokulea/config-targets':

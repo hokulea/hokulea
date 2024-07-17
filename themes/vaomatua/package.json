@@ -1,6 +1,7 @@
 {
   "name": "@hokulea/theme-vaomatua",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "private": true,
   "description": "Vaomatua theme for hokulea",
   "license": "MIT",
   "keywords": [

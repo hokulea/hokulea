@@ -1,10 +1,14 @@
 {
   "name": "@hokulea/theme-moana",
-  "version": "0.0.0",
-  "description": "Moana theme for hokulea",
+  "version": "0.0.1",
+  "description": "Moana theme for Hokulea",
   "license": "MIT",
   "keywords": [
     "theemo-theme"
+  ],
+  "files": [
+    "package.json",
+    "dist"
   ],
   "theemo": {
     "name": "moana",
@@ -38,7 +42,5 @@
   },
   "volta": {
     "extends": "../../package.json"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@hokulea/theme-moana@0.0.0"
+  }
 }

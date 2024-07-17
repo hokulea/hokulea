@@ -1,5 +1,6 @@
 {
   "name": "@hokulea/rollup-plugin-postcss",
+  "version": "0.0.0",
   "private": true,
   "description": "postcss rollup plugin from hokulea",
   "keywords": [

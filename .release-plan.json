@@ -1,0 +1,26 @@
+{
+  "solution": {
+    "@hokulea/ember": {
+      "impact": "patch",
+      "oldVersion": "0.0.1",
+      "newVersion": "0.0.2",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember/package/package.json"
+    },
+    "@hokulea/core": {
+      "oldVersion": "0.0.1"
+    },
+    "@hokulea/tokens": {
+      "oldVersion": "0.0.1"
+    },
+    "@hokulea/theme-moana": {
+      "oldVersion": "0.0.1"
+    }
+  },
+  "description": "## Release (2024-07-18)\n\n@hokulea/ember 0.0.2 (patch)\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#175](https://github.com/hokulea/hokulea/pull/175) Fix release ([@gossi](https://github.com/gossi))\n  * [#173](https://github.com/hokulea/hokulea/pull/173) Install release-plan ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+}

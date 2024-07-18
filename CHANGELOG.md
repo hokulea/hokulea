@@ -2,6 +2,21 @@
 
 ## Release (2024-07-18)
 
+@hokulea/ember 0.0.4 (patch)
+
+#### :memo: Documentation
+* `@hokulea/ember`
+  * [#181](https://github.com/hokulea/hokulea/pull/181) Add readme for hokulea in ember ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* [#179](https://github.com/hokulea/hokulea/pull/179) Fix pnpm and renovate ([@gossi](https://github.com/gossi))
+* [#178](https://github.com/hokulea/hokulea/pull/178) Fix Release Plan ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2024-07-18)
+
 @hokulea/ember 0.0.3 (patch)
 
 #### :house: Internal

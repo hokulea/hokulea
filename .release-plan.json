@@ -2,12 +2,12 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "patch",
-      "oldVersion": "0.0.2",
-      "newVersion": "0.0.3",
+      "oldVersion": "0.0.3",
+      "newVersion": "0.0.4",
       "constraints": [
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :memo: Documentation"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
@@ -22,5 +22,5 @@
       "oldVersion": "0.0.1"
     }
   },
-  "description": "## Release (2024-07-18)\n\n@hokulea/ember 0.0.3 (patch)\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#176](https://github.com/hokulea/hokulea/pull/176) Fix release ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-07-18)\n\n@hokulea/ember 0.0.4 (patch)\n\n#### :memo: Documentation\n* `@hokulea/ember`\n  * [#181](https://github.com/hokulea/hokulea/pull/181) Add readme for hokulea in ember ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#179](https://github.com/hokulea/hokulea/pull/179) Fix pnpm and renovate ([@gossi](https://github.com/gossi))\n* [#178](https://github.com/hokulea/hokulea/pull/178) Fix Release Plan ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

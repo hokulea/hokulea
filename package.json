@@ -1,44 +1,49 @@
 {
   "name": "hokulea",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hokulea/hokulea.git"
+  },
   "scripts": {
-    "api:prepare": "yarn lerna-run api:prepare",
-    "api:doc": "yarn api-documenter markdown -i temp/ -o api/",
-    "api:cleanup": "mv temp/* api/ && rm -rf temp",
     "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
-    "lint:css": "pnpm run -r --parallel --aggregate-output lint:css",
-    "lint:js": "pnpm run -r --parallel --aggregate-output lint:js",
-    "lint:hbs": "pnpm run -r --parallel --aggregate-output lint:hbs",
-    "lint:types": "pnpm run -r --parallel --aggregate-output lint:types",
-    "start": "turbo run start --parallel",
-    "storybook": "pnpm run --filter @hokulea/explorer storybook",
+    "api:cleanup": "mv temp/* api/ && rm -rf temp",
+    "api:doc": "yarn api-documenter markdown -i temp/ -o api/",
+    "api:prepare": "yarn lerna-run api:prepare",
     "build": "turbo run --filter @hokulea/ember build",
     "build:storybook": "turbo run --filter @hokulea/explorer build",
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
-    "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+    "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "lint:css": "pnpm run -r --parallel --aggregate-output lint:css",
+    "lint:hbs": "pnpm run -r --parallel --aggregate-output lint:hbs",
+    "lint:js": "pnpm run -r --parallel --aggregate-output lint:js",
+    "lint:types": "pnpm run -r --parallel --aggregate-output lint:types",
+    "start": "turbo run start --parallel",
+    "storybook": "pnpm run --filter @hokulea/explorer storybook"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "release-plan": "^0.9.0",
     "turbo": "^1.11.3"
-  },
-  "volta": {
-    "node": "20.10.0",
-    "pnpm": "8.15.1"
   },
   "packageManager": "pnpm@8.15.1",
   "engines": {
     "node": ">= 20.*"
   },
+  "volta": {
+    "node": "20.10.0",
+    "pnpm": "8.15.1"
+  },
   "pnpm": {
-    "patchedDependencies": {
-      "ember-cli-code-coverage@3.0.0": "patches/ember-cli-code-coverage@3.0.0.patch"
-    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "react",
         "react-dom"
       ]
+    },
+    "patchedDependencies": {
+      "ember-cli-code-coverage@3.0.0": "patches/ember-cli-code-coverage@3.0.0.patch"
     }
   }
 }

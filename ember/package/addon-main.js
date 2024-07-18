@@ -1,7 +1,9 @@
 'use strict';
 
 const { addonV1Shim } = require('@embroider/addon-shim');
+// eslint-disable-next-line n/no-unpublished-require
 const { HokuleaCssModulesPlugin } = require('./lib/css-modules-plugin.js');
+// eslint-disable-next-line n/no-unpublished-require
 const { importAssets } = require('./lib/index.js');
 
 function isEngine(parent) {

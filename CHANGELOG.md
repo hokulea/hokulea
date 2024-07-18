@@ -2,6 +2,17 @@
 
 ## Release (2024-07-18)
 
+@hokulea/ember 0.0.3 (patch)
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#176](https://github.com/hokulea/hokulea/pull/176) Fix release ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2024-07-18)
+
 @hokulea/ember 0.0.2 (patch)
 
 #### :house: Internal

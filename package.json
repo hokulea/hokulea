@@ -27,7 +27,6 @@
     "release-plan": "^0.9.0",
     "turbo": "^1.11.3"
   },
-  "packageManager": "pnpm@8.15.1",
   "engines": {
     "node": ">= 20.*"
   },

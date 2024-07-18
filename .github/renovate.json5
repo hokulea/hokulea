@@ -1,11 +1,19 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
     ":automergeLinters",
     ":automergeTesters",
     ":dependencyDashboard",
     ":maintainLockFilesWeekly",
-    ":pinOnlyDevDependencies"
+    ":pinOnlyDevDependencies",
+    "github>gossi/frontend-configs//config/renovate.json5"
+  ],
+  "automerge": true,
+  "masterIssue": true,
+  "rangeStrategy": "auto",
+  "labels": [
+    "dependencies"
   ],
   "packageRules": [
     ////////////////////////////////////////
@@ -20,6 +28,27 @@
       ],
       "schedule": [
         "after 9pm on sunday"
+      ]
+    },
+    //
+    // Labels
+    //
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "addLabels": [
+        "internal"
+      ]
+    },
+    {
+      "matchDepTypes": [
+        "dependencies",
+        "peerDependencies",
+        "optionalDependencies"
+      ],
+      "addLabels": [
+        "enhancement"
       ]
     },
     // This library needs to be bumped, because otherwise we would not

@@ -1,19 +1,32 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.0.3",
-      "newVersion": "0.0.4",
+      "impact": "minor",
+      "oldVersion": "0.0.4",
+      "newVersion": "0.1.0",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "oldVersion": "0.0.1"
+      "impact": "patch",
+      "oldVersion": "0.0.1",
+      "newVersion": "0.0.2",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        }
+      ],
+      "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
       "oldVersion": "0.0.1"
@@ -22,5 +35,5 @@
       "oldVersion": "0.0.1"
     }
   },
-  "description": "## Release (2024-07-18)\n\n@hokulea/ember 0.0.4 (patch)\n\n#### :memo: Documentation\n* `@hokulea/ember`\n  * [#181](https://github.com/hokulea/hokulea/pull/181) Add readme for hokulea in ember ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#179](https://github.com/hokulea/hokulea/pull/179) Fix pnpm and renovate ([@gossi](https://github.com/gossi))\n* [#178](https://github.com/hokulea/hokulea/pull/178) Fix Release Plan ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-07-19)\n\n@hokulea/ember 0.1.0 (minor)\n@hokulea/core 0.0.2 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#184](https://github.com/hokulea/hokulea/pull/184) Add `part` attribute for `<Card>` as styling API ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/core`\n  * [#183](https://github.com/hokulea/hokulea/pull/183) fix menu visibility for app-header ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

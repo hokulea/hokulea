@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2024-07-19)
+
+@hokulea/ember 0.1.0 (minor)
+@hokulea/core 0.0.2 (patch)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`
+  * [#184](https://github.com/hokulea/hokulea/pull/184) Add `part` attribute for `<Card>` as styling API ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/core`
+  * [#183](https://github.com/hokulea/hokulea/pull/183) fix menu visibility for app-header ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-07-18)
 
 @hokulea/ember 0.0.4 (patch)

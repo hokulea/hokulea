@@ -127,9 +127,11 @@ a:active {
 
       white-space: nowrap;
 
-      &[aria-haspopup="menu"] + [role="menu"] {
+      /* This is an attempt to hide this during SSR */
+
+      /* &[aria-haspopup="menu"] + [role="menu"] {
         display: none;
-      }
+      } */
     }
 
     & > :is([part="aux"],[part="menu"]) {

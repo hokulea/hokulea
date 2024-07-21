@@ -70,7 +70,7 @@ importers:
         specifier: ^8.56.0
         version: 8.57.0
       postcss:
-        specifier: ^8.4.33
+        specifier: ^8.4.38
         version: 8.4.38
       prettier:
         specifier: ^3.2.5
@@ -403,7 +403,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       postcss:
-        specifier: ^8.4.33
+        specifier: ^8.4.38
         version: 8.4.38
       prettier:
         specifier: ^3.2.5
@@ -972,7 +972,7 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       postcss:
-        specifier: ^8.4.33
+        specifier: ^8.4.38
         version: 8.4.38
       prettier:
         specifier: ^3.2.5
@@ -7591,7 +7591,7 @@ packages:
       caniuse-lite: 1.0.30001606
       fraction.js: 4.3.7
       normalize-range: 0.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       postcss: 8.4.38
       postcss-value-parser: 4.2.0
     dev: false
@@ -18646,7 +18646,7 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   /prelude-ls@1.2.1:

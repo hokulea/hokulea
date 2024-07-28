@@ -2,10 +2,12 @@ import Component from '@glimmer/component';
 import { assert } from '@ember/debug';
 
 import CommandElement from 'ember-command/components/command-element';
+import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
 import disabled from '../-private/modifiers/disabled';
+import { isLink } from './-button';
 import Icon from './icon';
 
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
@@ -44,8 +46,10 @@ export default class IconButton extends Component<IconButtonSignature> {
 
   <template>
     <CommandElement
+      @element={{element "button"}}
       @command={{@push}}
       class="{{styles.iconButton}}"
+      type={{if (isLink @push) "button"}}
       data-intent={{if @intent @intent "action"}}
       data-importance={{if @importance @importance "supreme"}}
       data-spacing={{@spacing}}

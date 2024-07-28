@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.0.4",
-      "newVersion": "0.1.0",
+      "oldVersion": "0.1.0",
+      "newVersion": "0.2.0",
       "constraints": [
         {
           "impact": "minor",
@@ -12,14 +12,18 @@
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
       "impact": "patch",
-      "oldVersion": "0.0.1",
-      "newVersion": "0.0.2",
+      "oldVersion": "0.0.2",
+      "newVersion": "0.0.3",
       "constraints": [
         {
           "impact": "patch",
@@ -35,5 +39,5 @@
       "oldVersion": "0.0.1"
     }
   },
-  "description": "## Release (2024-07-19)\n\n@hokulea/ember 0.1.0 (minor)\n@hokulea/core 0.0.2 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#184](https://github.com/hokulea/hokulea/pull/184) Add `part` attribute for `<Card>` as styling API ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/core`\n  * [#183](https://github.com/hokulea/hokulea/pull/183) fix menu visibility for app-header ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-07-28)\n\n@hokulea/ember 0.2.0 (minor)\n@hokulea/core 0.0.3 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#192](https://github.com/hokulea/hokulea/pull/192) Add API for popover ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#197](https://github.com/hokulea/hokulea/pull/197) Style `cursor` for `<Menu>` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#195](https://github.com/hokulea/hokulea/pull/195) Make `<IconButton>` a `<button>` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

@@ -1,5 +1,23 @@
 # Changelog
 
+## Release (2024-07-28)
+
+@hokulea/ember 0.2.0 (minor)
+@hokulea/core 0.0.3 (patch)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#192](https://github.com/hokulea/hokulea/pull/192) Add API for popover ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember-test-app`, `@hokulea/core`
+  * [#197](https://github.com/hokulea/hokulea/pull/197) Style `cursor` for `<Menu>` ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#195](https://github.com/hokulea/hokulea/pull/195) Make `<IconButton>` a `<button>` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-07-19)
 
 @hokulea/ember 0.1.0 (minor)

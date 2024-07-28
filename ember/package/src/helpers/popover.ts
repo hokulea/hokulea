@@ -5,14 +5,21 @@ import { uniqueId } from '@ember/helper';
 import { computePosition, flip, type Placement } from '@floating-ui/dom';
 import { modifier } from 'ember-modifier';
 
+interface PopoverArgs {
+  position?: Placement;
+  opened?: () => void;
+  closed?: () => void;
+}
+
 class State {
   @tracked id = uniqueId();
   @tracked opened = false;
 }
 
-const popover = helper((_, { position }: { position?: Placement }) => {
+const popover = helper((_, { position, opened, closed }: PopoverArgs) => {
   const state = new State();
   let triggerElement: HTMLElement | undefined = undefined;
+  let targetElement: HTMLElement | undefined = undefined;
 
   return {
     trigger: modifier((element: HTMLElement) => {
@@ -21,6 +28,7 @@ const popover = helper((_, { position }: { position?: Placement }) => {
     }),
     target: modifier((element: HTMLElement, __, { manual }: { manual?: boolean }) => {
       element.setAttribute('popover', manual ? 'manual' : '');
+      targetElement = element;
 
       if (element.id) {
         state.id = element.id;
@@ -31,17 +39,23 @@ const popover = helper((_, { position }: { position?: Placement }) => {
       const toggleHandler = (event: ToggleEvent) => {
         state.opened = event.newState === 'open';
 
-        if (position && event.newState === 'open' && triggerElement) {
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          computePosition(triggerElement, element, {
-            placement: position,
-            middleware: [flip()]
-          }).then(({ x, y }): void => {
-            Object.assign(element.style, {
-              left: `${String(x)}px`,
-              top: `${String(y)}px`
+        if (event.newState === 'open') {
+          if (position && triggerElement) {
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            computePosition(triggerElement, element, {
+              placement: position,
+              middleware: [flip()]
+            }).then(({ x, y }): void => {
+              Object.assign(element.style, {
+                left: `${String(x)}px`,
+                top: `${String(y)}px`
+              });
             });
-          });
+          }
+
+          opened?.();
+        } else if (event.newState === 'closed') {
+          closed?.();
         }
       };
 
@@ -55,6 +69,12 @@ const popover = helper((_, { position }: { position?: Placement }) => {
     }),
     get opened() {
       return state.opened;
+    },
+    open: () => {
+      targetElement?.showPopover();
+    },
+    close: () => {
+      targetElement?.hidePopover();
     }
   };
 });

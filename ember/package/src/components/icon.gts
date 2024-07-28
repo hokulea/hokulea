@@ -46,7 +46,12 @@ export default class Icon extends Component<IconSignature> {
   }
 
   <template>
-    <span class={{styles.icon}} data-test-icon={{@icon}} data-test-icon-style={{this.style}}>
+    <span
+      class={{styles.icon}}
+      data-test-icon={{@icon}}
+      data-test-icon-style={{this.style}}
+      ...attributes
+    >
       {{#if this.phosphorIcon}}
         <this.PhIcon @weight={{@style}} />
       {{else if svgJar}}

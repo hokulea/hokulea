@@ -24,9 +24,13 @@ export class ApplicationRoute extends Route<object> {
         <n.Item>
           <:label>Let's go down</:label>
           <:menu as |m|>
-            <m.Item>One</m.Item>
-            <m.Item @push={{noop}}>Two</m.Item>
-            <m.Item>Three</m.Item>
+            <m.Item @push={{link "actions"}}>Actions</m.Item>
+            <m.Item @push={{link "content"}}>Content</m.Item>
+            <m.Item @push={{noop}}>lalala</m.Item>
+            <m.Item @push={{link "controls"}}>Controls</m.Item>
+            <m.Item @push={{link "forms"}}>Forms</m.Item>
+            <m.Item @push={{link "icons"}}>Icons</m.Item>
+            <m.Item @push={{link "windows"}}>Windows</m.Item>
             <m.Item>
               <:label>Down down</:label>
               <:menu as |mm|>

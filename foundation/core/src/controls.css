@@ -280,6 +280,8 @@
   [role="menuitem"] {
     all: unset;
 
+    cursor: default;
+
     display: inline-flex;
     gap: var(--spacing-primitive-3);
     justify-content: space-between;

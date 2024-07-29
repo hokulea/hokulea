@@ -34,7 +34,7 @@
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.25.0",
     "@ember/optional-features": "^2.0.0",
-    "@ember/string": "^3.1.1",
+    "@ember/string": "^4.0.0",
     "@ember/test-helpers": "^3.3.0",
     "@embroider/compat": "^3.5.6",
     "@embroider/core": "^3.4.14",

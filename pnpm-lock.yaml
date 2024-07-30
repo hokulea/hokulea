@@ -129,8 +129,8 @@ importers:
         specifier: ^16.3.1
         version: 16.3.1(typescript@5.5.2)
       stylelint-config-clean-order:
-        specifier: ^5.4.1
-        version: 5.4.2(stylelint@16.3.1)
+        specifier: ^6.0.0
+        version: 6.1.0(stylelint@16.3.1)
 
   configs/targets:
     dependencies:
@@ -20678,6 +20678,16 @@ packages:
     dependencies:
       stylelint: 16.3.1(typescript@5.5.2)
       stylelint-order: 6.0.4(stylelint@16.3.1)
+    dev: false
+
+  /stylelint-config-clean-order@6.1.0(stylelint@16.3.1):
+    resolution: {integrity: sha512-Xe1U0stw57Evdcx+7q7XYAniyE7XAKv/bwfH9LcsFCcKTPZflzTiJLXGkQUsPMlA4cfMyxEebqm5bRN2doTD3w==}
+    peerDependencies:
+      stylelint: '>=14'
+    dependencies:
+      stylelint: 16.3.1(typescript@5.5.2)
+      stylelint-order: 6.0.4(stylelint@16.3.1)
+    dev: true
 
   /stylelint-config-recommended@14.0.0(stylelint@16.3.1):
     resolution: {integrity: sha512-jSkx290CglS8StmrLp2TxAppIajzIBZKYm3IxT89Kg6fGlxbPiTiyH9PS5YUuVAFwaJLl1ikiXX0QWjI0jmgZQ==}

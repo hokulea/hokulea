@@ -415,7 +415,7 @@ importers:
         specifier: ^4.0.2
         version: 4.0.2(postcss@8.4.38)
       stylelint:
-        specifier: ^16.3.1
+        specifier: ^16.6.1
         version: 16.6.1(typescript@5.5.2)
       typescript:
         specifier: ^5.5.2
@@ -650,7 +650,7 @@ importers:
         specifier: ^18.0.0
         version: 18.0.0
       stylelint:
-        specifier: ^16.3.1
+        specifier: ^16.6.1
         version: 16.6.1(typescript@5.5.2)
       tracked-built-ins:
         specifier: ^3.3.0
@@ -990,7 +990,7 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1
       stylelint:
-        specifier: ^16.3.1
+        specifier: ^16.6.1
         version: 16.6.1(typescript@5.5.2)
 
   foundation/tokens:
@@ -1042,7 +1042,7 @@ importers:
         specifier: ^3.9.1
         version: 3.9.2
       stylelint:
-        specifier: ^16.3.1
+        specifier: ^16.6.1
         version: 16.6.1(typescript@5.5.2)
       typescript:
         specifier: ^5.5.2

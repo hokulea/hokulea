@@ -43,7 +43,7 @@
     "rollup-plugin-css-only": "^4.5.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-multi-input": "^1.4.1",
-    "stylelint": "^16.1.0"
+    "stylelint": "^16.3.1"
   },
   "engines": {
     "node": ">= 20.*"

@@ -15,7 +15,7 @@
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
     "stylelint": "^16.3.1",
-    "stylelint-config-clean-order": "^5.4.1"
+    "stylelint-config-clean-order": "^6.0.0"
   },
   "peerDependencies": {
     "stylelint": "^16.1.0"

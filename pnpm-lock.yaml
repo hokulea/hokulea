@@ -597,7 +597,7 @@ importers:
         version: 3.0.1(@babel/core@7.24.7)
       ember-sinon-qunit:
         specifier: ^7.4.0
-        version: 7.4.0(ember-source@5.9.0)(qunit@2.21.0)(sinon@17.0.1)
+        version: 7.4.0(ember-source@5.9.0)(qunit@2.21.0)(sinon@18.0.0)
       ember-source:
         specifier: ~5.9.0
         version: 5.9.0(@babel/core@7.24.7)(@glimmer/component@1.1.2)(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.92.0)
@@ -647,8 +647,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       sinon:
-        specifier: ^17.0.1
-        version: 17.0.1
+        specifier: ^18.0.0
+        version: 18.0.0
       stylelint:
         specifier: ^16.2.1
         version: 16.3.1(typescript@5.5.2)
@@ -11632,7 +11632,7 @@ packages:
       - supports-color
     dev: true
 
-  /ember-sinon-qunit@7.4.0(ember-source@5.9.0)(qunit@2.21.0)(sinon@17.0.1):
+  /ember-sinon-qunit@7.4.0(ember-source@5.9.0)(qunit@2.21.0)(sinon@18.0.0):
     resolution: {integrity: sha512-BcH2scgJ4Vpq5Fnjeq5Z2ESnHLsmcfFRaq/gOujy3my+8w7WTtrHyaUgWzmd5mLw+tfCYssAUEalQhk1ZNpV+g==}
     peerDependencies:
       ember-source: '>=3.28.0'
@@ -11643,7 +11643,7 @@ packages:
       '@types/sinon': 10.0.20
       ember-source: 5.9.0(@babel/core@7.24.7)(@glimmer/component@1.1.2)(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.92.0)
       qunit: 2.21.0
-      sinon: 17.0.1
+      sinon: 18.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -16706,16 +16706,6 @@ packages:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
     dev: true
 
-  /nise@5.1.9:
-    resolution: {integrity: sha512-qOnoujW4SV6e40dYxJOb3uvuoPHtmLzIk4TFo+j0jPJoC+5Z9xja5qH5JZobEPsa8+YYphMrOSwnrshEhG2qww==}
-    dependencies:
-      '@sinonjs/commons': 3.0.1
-      '@sinonjs/fake-timers': 11.2.2
-      '@sinonjs/text-encoding': 0.7.2
-      just-extend: 6.2.0
-      path-to-regexp: 6.2.2
-    dev: true
-
   /nise@6.0.0:
     resolution: {integrity: sha512-K8ePqo9BFvN31HXwEtTNGzgrPpmvgciDsFz8aztFjt4LqKO/JeFD8tBOeuDiCMXrIl/m1YvfH8auSpxfaD09wg==}
     dependencies:
@@ -20050,17 +20040,6 @@ packages:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
     dependencies:
       is-arrayish: 0.3.2
-    dev: true
-
-  /sinon@17.0.1:
-    resolution: {integrity: sha512-wmwE19Lie0MLT+ZYNpDymasPHUKTaZHUH/pKEubRXIzySv9Atnlw+BUMGCzWgV7b7wO+Hw6f1TEOr0IUnmU8/g==}
-    dependencies:
-      '@sinonjs/commons': 3.0.1
-      '@sinonjs/fake-timers': 11.2.2
-      '@sinonjs/samsam': 8.0.0
-      diff: 5.2.0
-      nise: 5.1.9
-      supports-color: 7.2.0
     dev: true
 
   /sinon@18.0.0:

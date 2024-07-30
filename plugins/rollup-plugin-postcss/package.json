@@ -15,7 +15,7 @@
     "cssnano": "^7.0.0",
     "postcss-import": "^16.0.0",
     "postcss-lightningcss": "^1.0.0",
-    "postcss-load-config": "^5.0.2",
+    "postcss-load-config": "^6.0.0",
     "postcss-modules": "^6.0.0",
     "postcss": "^8.4.33"
   },

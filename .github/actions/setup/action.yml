@@ -8,14 +8,21 @@ runs:
   using: 'composite'
   steps:
     - run: echo $COVERAGE
+      shell: bash
+
     - name: Install pnpm
       uses: pnpm/action-setup@v4
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version-file: '.node-version'
         cache: 'pnpm'
+
     - name: Install dependencies
       run: pnpm install
+      shell: bash
+
     - name: Build package
       run: pnpm build
+      shell: bash

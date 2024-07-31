@@ -4,6 +4,7 @@ import { registerDestructor } from '@ember/destroyable';
 import { hash } from '@ember/helper';
 import { next } from '@ember/runloop';
 import { service } from '@ember/service';
+import { htmlSafe } from '@ember/template';
 
 import { menu } from 'ember-aria-voyager';
 import { CommandElement } from 'ember-command';
@@ -156,7 +157,7 @@ export default class Menu extends Component<MenuSignature> {
       data-test-menu
       ...attributes
       {{menu items=this.items disabled=@disabled}}
-      style={{if this.shallHide "display: none"}}
+      style={{if this.shallHide (htmlSafe "display: none")}}
     >
       {{yield
         (hash

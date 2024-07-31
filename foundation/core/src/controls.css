@@ -204,6 +204,8 @@
 
   user-select: none;
 
+  overflow: auto;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
 
@@ -275,6 +277,15 @@
 
   &:popover-open {
     translate: 0 calc(var(--spacing-container-3) * -1 - var(--control-border-width));
+  }
+
+  > hr {
+    height: 1px;
+    margin-block: calc(var(--spacing-container-3) / 2);
+    margin-inline: calc(var(--spacing-container-3) * -1);
+
+    opacity: 0.4;
+    background-color: var(--control-border-color);
   }
 
   [role="menuitem"] {

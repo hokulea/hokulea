@@ -32,7 +32,7 @@
     "@theemo/build": "^0.2.2",
     "@theemo/figma": "^0.2.2",
     "@theemo/style-dictionary": "^0.2.2",
-    "@hokulea/config-style-dictionary": "*",
+    "@hokulea/config-style-dictionary": "workspace:*",
     "concurrently": "^8.2.2",
     "inflection": "^3.0.0",
     "style-dictionary": "^3.9.1"

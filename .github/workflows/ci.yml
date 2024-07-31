@@ -12,8 +12,16 @@ jobs:
     name: lint:js
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: wyvox/action@v1
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:js
@@ -22,8 +30,16 @@ jobs:
     name: lint:css
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: wyvox/action@v1
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:css
@@ -32,8 +48,16 @@ jobs:
     name: lint:hbs
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: wyvox/action@v1
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:hbs
@@ -42,8 +66,16 @@ jobs:
     name: lint:types
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: wyvox/action@v1
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:types
@@ -52,8 +84,16 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: wyvox/action@v1
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
       - name: Build package
         run: pnpm build
       - name: Test

@@ -10,7 +10,7 @@
     "lint:js": "eslint ."
   },
   "dependencies": {
-    "@hokulea/config-targets": "*",
+    "@hokulea/config-targets": "workspace:*",
     "concat-with-sourcemaps": "^1.1.0",
     "cssnano": "^7.0.0",
     "postcss-import": "^16.0.0",

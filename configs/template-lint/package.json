@@ -9,8 +9,8 @@
     "@gossi/config-template-lint": "^0.8.0"
   },
   "devDependencies": {
-    "@hokulea/config-eslint": "*",
-    "@hokulea/config-prettier": "*",
+    "@hokulea/config-eslint": "workspace:*",
+    "@hokulea/config-prettier": "workspace:*",
     "ember-template-lint": "^6.0.0",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5"

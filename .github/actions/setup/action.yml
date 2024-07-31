@@ -7,9 +7,6 @@ name: 'Setup'
 runs:
   using: 'composite'
   steps:
-    - run: echo $COVERAGE
-      shell: bash
-
     - name: Install pnpm
       uses: pnpm/action-setup@v4
 
@@ -18,6 +15,9 @@ runs:
       with:
         node-version-file: '.node-version'
         cache: 'pnpm'
+        # This creates an .npmrc that reads the NODE_AUTH_TOKEN environment variable
+        # necessary for publish
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Install dependencies
       run: pnpm install

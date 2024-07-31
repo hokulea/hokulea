@@ -16,21 +16,6 @@ jobs:
         uses: ./.github/actions/setup
         env:
           COVERAGE: true
-
-      # - uses: actions/checkout@v4
-      # - name: Install pnpm
-      #   uses: pnpm/action-setup@v4
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version-file: '.node-version'
-      #     cache: 'pnpm'
-      # - name: Install dependencies
-      #   run: pnpm install
-      # - name: Build package
-      #   run: COVERAGE=true pnpm build
-      - run: pnpm run -r --parallel --aggregate-output test
-      - run: ls ./ember/test-app/coverage
       - name: coverage
         uses: paambaati/codeclimate-action@v8.0.0
         env:

@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 concurrency:
   group: publish-${{ github.head_ref || github.ref }}
@@ -43,10 +42,9 @@ jobs:
       pull-requests: write
 
     steps:
+      - uses: actions/checkout@v4
       - name: Setup
-        uses: wyvox/action@v1
-      - name: Build package
-        run: pnpm build
+        uses: ./.github/actions/setup
       - name: npm publish
         run: pnpm release-plan publish
         env:

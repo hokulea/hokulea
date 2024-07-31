@@ -12,36 +12,18 @@ jobs:
     name: lint:js
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build package
-        run: pnpm build
+      - name: Setup
+        uses: ./.github/actions/setup
       - run: pnpm run -r --parallel --aggregate-output lint:js
 
   lint-css:
     name: lint:css
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build package
-        run: pnpm build
+      - name: Setup
+        uses: ./.github/actions/setup
+        env:
+          COVERAGE: true
       - run: pnpm run -r --parallel --aggregate-output lint:css
 
   lint-hbs:

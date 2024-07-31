@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request_target: # This workflow has permissions on the repo, do NOT run code from PRs in this workflow. See https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
     types:
       - labeled
@@ -46,18 +45,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        # We need to download lots of history so that
-        # github-changelog can discover what's changed since the last release
-        with:
-          fetch-depth: 0
-          ref: 'main'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 8
-      - run: pnpm install --frozen-lockfile
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: "Generate Explanation and Prep Changelogs"
         id: explanation

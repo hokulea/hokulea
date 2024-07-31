@@ -16,7 +16,11 @@ module.exports = async function () {
         }
       },
       {
-        name: 'SSR',
+        name: 'SSR'
+      },
+      {
+        name: 'ember-release',
+        command: 'pnpm _syncPnpm; ember test --reporter xunit',
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('release')

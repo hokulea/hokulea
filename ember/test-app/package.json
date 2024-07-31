@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.25.2",
-    "@babel/eslint-parser": "7.25.0",
+    "@babel/eslint-parser": "7.25.1",
     "@ember/optional-features": "2.1.0",
     "@ember/string": "4.0.0",
     "@ember/test-helpers": "3.3.0",

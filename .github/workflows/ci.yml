@@ -20,6 +20,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:js
@@ -36,6 +38,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:css
@@ -52,6 +56,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:hbs
@@ -68,6 +74,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - name: Build package
         run: pnpm build
       - run: pnpm run -r --parallel --aggregate-output lint:types
@@ -84,6 +92,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - name: Build package
         run: pnpm build
       - name: Test

@@ -7,7 +7,6 @@ name: 'Setup'
 runs:
   using: 'composite'
   steps:
-    - uses: actions/checkout@v4
     - run: echo $COVERAGE
     - name: Install pnpm
       uses: pnpm/action-setup@v4
@@ -18,3 +17,5 @@ runs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
+    - name: Build package
+      run: pnpm build

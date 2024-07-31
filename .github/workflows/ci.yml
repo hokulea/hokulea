@@ -12,6 +12,7 @@ jobs:
     name: lint:js
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/setup
       - run: pnpm run -r --parallel --aggregate-output lint:js
@@ -20,6 +21,7 @@ jobs:
     name: lint:css
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/setup
         env:

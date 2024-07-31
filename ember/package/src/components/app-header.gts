@@ -3,6 +3,8 @@ import { tracked } from '@glimmer/tracking';
 import { hash } from '@ember/helper';
 import { uniqueId } from '@ember/helper';
 
+import { provide } from 'ember-provide-consume-context';
+
 import { type CommandAction, CommandElement } from 'ember-command';
 import { keepLatestTask, timeout } from 'ember-concurrency';
 import { Link } from 'ember-link';
@@ -93,6 +95,11 @@ interface AppHeaderSignature {
 export default class AppHeader extends Component<AppHeaderSignature> {
   @tracked topNavShown = true;
   @tracked sensing = false;
+
+  @provide('hokulea-app-header')
+  get appHeader() {
+    return true;
+  }
 
   detectOverflow = keepLatestTask(async (element: HTMLElement) => {
     await timeout(30);
@@ -192,29 +199,29 @@ export default class AppHeader extends Component<AppHeaderSignature> {
                   <Icon @icon={{if p.opened "x" "list"}} data-test-toggle="icon" />
                 </button>
 
-                <section popover {{p.target}} {{this.closeWhenLink}}>
-                  {{! template-lint-disable no-duplicate-landmark-elements no-nested-landmark }}
-                  <header>
+                <div popover {{p.target}} {{this.closeWhenLink}}>
+                  <div data-menu-header>
                     {{#if (has-block "brand")}}
-                      <CommandElement @command={{@home}} part="brand">
+                      <span part="brand">
                         {{yield to="brand"}}
-                      </CommandElement>
+                      </span>
                     {{/if}}
-                  </header>
-                  {{! template-lint-enable no-duplicate-landmark-elements no-nested-landmark }}
+                  </div>
 
-                  {{! template-lint-disable no-duplicate-landmark-elements }}
-                  <nav aria-labelledby={{brandId}}>
-                    {{yield (hash Item=PopoverNavItem) to="nav"}}
-                  </nav>
-                  {{! template-lint-enable no-duplicate-landmark-elements }}
+                  <div data-menu-content>
+                    {{! template-lint-disable no-duplicate-landmark-elements }}
+                    <nav aria-labelledby={{brandId}}>
+                      {{yield (hash Item=PopoverNavItem) to="nav"}}
+                    </nav>
+                    {{! template-lint-enable no-duplicate-landmark-elements }}
 
-                  {{#if (has-block "aux")}}
-                    <span part="aux">
-                      {{yield (hash Item=PopoverNavItem) to="aux"}}
-                    </span>
-                  {{/if}}
-                </section>
+                    {{#if (has-block "aux")}}
+                      <span part="aux">
+                        {{yield (hash Item=PopoverNavItem) to="aux"}}
+                      </span>
+                    {{/if}}
+                  </div>
+                </div>
               {{/let}}
             </span>
           {{/if}}

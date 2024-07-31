@@ -363,6 +363,9 @@ importers:
       ember-cli-code-coverage:
         specifier: ^3.0.0
         version: 3.0.0(patch_hash=vtzzfjlpvtb4fhhsc7ygoahdhq)(@embroider/compat@3.5.6(@embroider/core@3.4.14(@glint/template@1.4.0))(@glint/template@1.4.0))(@embroider/core@3.4.14(@glint/template@1.4.0))
+      ember-cli-fastboot:
+        specifier: ^4.1.5
+        version: 4.1.5(ember-source@5.9.0(@babel/core@7.25.2)(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.92.0))
       ember-cli-htmlbars:
         specifier: ^6.3.0
         version: 6.3.0

@@ -11,9 +11,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
-    "dev": "concurrently 'npm:dev:*'",
-    "dev:test-app": "ember serve -e test -p 4300",
-    "dev:package": "pnpm run --filter='@hokulea/ember' start",
+    "dev": "ember serve",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:css": "stylelint 'app/**/*.css' --allow-empty-input --cache",

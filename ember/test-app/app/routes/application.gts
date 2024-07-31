@@ -26,7 +26,9 @@ export class ApplicationRoute extends Route<object> {
           <:menu as |m|>
             <m.Item @push={{link "actions"}}>Actions</m.Item>
             <m.Item @push={{link "content"}}>Content</m.Item>
+            <hr />
             <m.Item @push={{noop}}>lalala</m.Item>
+            <hr />
             <m.Item @push={{link "controls"}}>Controls</m.Item>
             <m.Item @push={{link "forms"}}>Forms</m.Item>
             <m.Item @push={{link "icons"}}>Icons</m.Item>

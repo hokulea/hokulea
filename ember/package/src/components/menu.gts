@@ -4,6 +4,8 @@ import { registerDestructor } from '@ember/destroyable';
 import { hash } from '@ember/helper';
 import { next } from '@ember/runloop';
 
+import { consume } from 'ember-provide-consume-context';
+
 import { menu } from 'ember-aria-voyager';
 import { CommandElement } from 'ember-command';
 import { TrackedArray } from 'tracked-built-ins';
@@ -16,6 +18,8 @@ import popover from '../helpers/popover';
 import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu';
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
+import { service } from '@ember/service';
+import type FastBoot from 'ember-cli-fastboot/services/fastboot';
 
 export type MenuDefaultBlock = {
   Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
@@ -123,7 +127,15 @@ export interface MenuSignature {
 }
 
 export default class Menu extends Component<MenuSignature> {
+  @service declare fastboot?: FastBoot;
+
+  @consume('hokulea-app-header') declare withinAppHeader: boolean;
+
   @tracked items: MenuItem[] = new TrackedArray();
+
+  get shallHide() {
+    return this.fastboot?.isFastBoot && this.withinAppHeader;
+  }
 
   registerItem = (item: MenuItem) => {
     // eslint-disable-next-line ember/no-runloop
@@ -145,6 +157,7 @@ export default class Menu extends Component<MenuSignature> {
       data-test-menu
       ...attributes
       {{menu items=this.items disabled=@disabled}}
+      popover={{this.shallHide}}
     >
       {{yield
         (hash

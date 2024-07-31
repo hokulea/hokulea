@@ -141,28 +141,48 @@ a:active {
     /* Popover menu */
 
     & > [part="menu"] > [popover] {
+      pointer-events: none;
+
       flex-direction: column;
 
-      min-width: 33vw;
-      max-width: 66vw;
+      width: 100vw;
       height: 100vh;
 
-      color: var(--typography-main);
-
-      background-color: var(--surface-base);
-
-      &::backdrop {
-        background-color: rgb(0 0 0 / 12%);
-      }
+      background-color: transparent;
 
       &:popover-open {
         display: flex;
       }
 
-      & > header {
+      & > [data-menu-header] {
+        pointer-events: none;
+
         display: flex;
+
         padding-inline: var(--spacing-container0);
+
+        visibility: hidden;
         background: var(--surface-container);
+      }
+
+      & > [data-menu-content] {
+        pointer-events: auto;
+
+        overflow: auto;
+        overscroll-behavior: contain;
+        display: grid;
+        grid-template-columns: minmax(var(--spacing-container0),1fr) minmax(200px, 66vw) minmax(var(--spacing-container0),1fr);
+        flex-grow: 1;
+
+        padding-block: var(--spacing-container4);
+
+        color: var(--typography-main);
+
+        background-color: var(--surface-base);
+
+        > * {
+          grid-column: 2 / 3;
+        }
       }
 
       nav {

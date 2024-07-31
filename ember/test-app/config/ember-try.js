@@ -20,6 +20,11 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('release')
+          },
+          dependenciesMeta: {
+            '@hokulea/ember': {
+              injected: true
+            }
           }
         }
       },
@@ -28,6 +33,11 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('beta')
+          },
+          dependenciesMeta: {
+            '@hokulea/ember': {
+              injected: true
+            }
           }
         }
       },
@@ -36,6 +46,11 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': await getChannelURL('canary')
+          },
+          dependenciesMeta: {
+            '@hokulea/ember': {
+              injected: true
+            }
           }
         }
       },

@@ -1,6 +1,6 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { IconPageObject } from './icon';
+import { IconButtonPageObject } from './icon-button';
 import { MenuItemPageObject } from './menu';
 
 import type { Menu, MenuItem, MenuItemElement } from './-menu';
@@ -76,15 +76,10 @@ export class AppHeaderPageObject extends PageObject<HTMLElement> {
   $menu = sel(
     '[part="menu"]',
     class extends PageObject<HTMLSpanElement> {
-      $toggle = sel(
-        '[data-test-toggle]',
-        class extends PageObject<HTMLButtonElement> {
-          $icon = sel('[data-test-toggle="icon"]', IconPageObject);
-        }
-      );
+      $toggle = sel('[data-test-toggle]', IconButtonPageObject);
 
       $popover = sel(
-        'section',
+        '[popover]',
         class extends PageObject<HTMLElement> {
           get expanded() {
             return Boolean(this.element?.matches(':popover-open'));

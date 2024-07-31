@@ -3,18 +3,17 @@ import { tracked } from '@glimmer/tracking';
 import { hash } from '@ember/helper';
 import { uniqueId } from '@ember/helper';
 
-import { provide } from 'ember-provide-consume-context';
-
 import { type CommandAction, CommandElement } from 'ember-command';
 import { keepLatestTask, timeout } from 'ember-concurrency';
 import { Link } from 'ember-link';
 import { modifier } from 'ember-modifier';
+import { provide } from 'ember-provide-consume-context';
 
 import styles from '@hokulea/core/navigation.module.css';
 
 import { and, not, or } from '../-private/helpers';
 import popover from '../helpers/popover';
-import Icon from './icon';
+import IconButton from './icon-button';
 import Menu from './menu';
 
 import type { MenuItemArgs, MenuItemBlocks, MenuItemSignature } from './-menu';
@@ -195,9 +194,13 @@ export default class AppHeader extends Component<AppHeaderSignature> {
           {{#if (not this.topNavShown)}}
             <span part="menu">
               {{#let (popover) as |p|}}
-                <button type="button" {{p.trigger}} data-test-toggle>
-                  <Icon @icon={{if p.opened "x" "list"}} data-test-toggle="icon" />
-                </button>
+                <IconButton
+                  @importance="plain"
+                  @icon={{if p.opened "x" "list"}}
+                  {{p.trigger}}
+                  data-test-toggle
+                  @label="toggle"
+                />
 
                 <div popover {{p.target}} {{this.closeWhenLink}}>
                   <div data-menu-header>

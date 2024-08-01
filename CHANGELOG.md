@@ -1,5 +1,28 @@
 # Changelog
 
+## Release (2024-08-01)
+
+@hokulea/ember 0.3.0 (minor)
+@hokulea/core 0.1.0 (minor)
+@hokulea/theme-moana 0.0.2 (patch)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`
+  * [#221](https://github.com/hokulea/hokulea/pull/221) Improve `<AppHeader>` ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/theme-moana`
+  * [#227](https://github.com/hokulea/hokulea/pull/227) fix theme ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#226](https://github.com/hokulea/hokulea/pull/226) Fix deprecation warning ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/config-postcss`, `@hokulea/config-style-dictionary`, `@hokulea/config-stylelint`, `@hokulea/config-targets`, `@hokulea/config-template-lint`, `@hokulea/config-testem`, `@hokulea/config-theemo`, `@hokulea/config-typescript`, `@hokulea/rollup-plugin-postcss`, `@hokulea/theme-moana`
+  * [#219](https://github.com/hokulea/hokulea/pull/219) Remove volta for corepack ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-07-28)
 
 @hokulea/ember 0.2.0 (minor)

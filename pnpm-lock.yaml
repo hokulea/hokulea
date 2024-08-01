@@ -696,8 +696,8 @@ importers:
         specifier: 7.24.7
         version: 7.24.7(@babel/core@7.25.2)
       '@chromatic-com/storybook':
-        specifier: 1.3.1
-        version: 1.3.1(react@17.0.2)
+        specifier: 1.6.1
+        version: 1.6.1(react@17.0.2)
       '@ember/optional-features':
         specifier: 2.1.0
         version: 2.1.0
@@ -1843,8 +1843,8 @@ packages:
     resolution: {integrity: sha512-YTnYtra7W9e6/oAZEHj0bJehPRUlLH9/fbpT5LfB0NhQXyALCRkRs3zH9v07IYhkgpqX6Z78FnuccZr/l4Fs4Q==}
     engines: {node: '>=6.9.0'}
 
-  '@chromatic-com/storybook@1.3.1':
-    resolution: {integrity: sha512-v8pFYFkU+0ZScZ2FBJCCGZxmqCgSBlb3HxXFgR5XFODaHa3m8wP61Tywn0GN67/7P5tp6YVSrMKPAvhX8JReqA==}
+  '@chromatic-com/storybook@1.6.1':
+    resolution: {integrity: sha512-x1x1NB3j4xpfeSWKr96emc+7ZvfsvH+/WVb3XCjkB24PPbT8VZXb3mJSAQMrSzuQ8+eQE9kDogYHH9Fj3tb/Cw==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
 
   '@cnakazawa/watch@1.0.4':
@@ -4611,6 +4611,18 @@ packages:
 
   chromatic@11.3.0:
     resolution: {integrity: sha512-q1ZtJDJrjLGnz60ivpC16gmd7KFzcaA4eTb7gcytCqbaKqlHhCFr1xQmcUDsm14CK7JsqdkFU6S+JQdOd2ZNJg==}
+    hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.*.* || ^1.0.0
+      '@chromatic-com/playwright': ^0.*.* || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
+
+  chromatic@11.7.0:
+    resolution: {integrity: sha512-Afblm4MWK6GXutxHPJVWKoY1PxCD98Uw0S3/f1a2wu4VTQy97g4+G8vPVqutSMpZFGzG5NjH9QdzKPFMmZczpw==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -13223,9 +13235,9 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@chromatic-com/storybook@1.3.1(react@17.0.2)':
+  '@chromatic-com/storybook@1.6.1(react@17.0.2)':
     dependencies:
-      chromatic: 11.3.0
+      chromatic: 11.7.0
       filesize: 10.1.1
       jsonfile: 6.1.0
       react-confetti: 6.1.0(react@17.0.2)
@@ -17166,6 +17178,8 @@ snapshots:
   chownr@2.0.0: {}
 
   chromatic@11.3.0: {}
+
+  chromatic@11.7.0: {}
 
   chrome-trace-event@1.0.3: {}
 

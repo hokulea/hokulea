@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.1.0",
-      "newVersion": "0.2.0",
+      "oldVersion": "0.2.0",
+      "newVersion": "0.3.0",
       "constraints": [
         {
           "impact": "minor",
@@ -21,13 +21,13 @@
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "patch",
-      "oldVersion": "0.0.2",
-      "newVersion": "0.0.3",
+      "impact": "minor",
+      "oldVersion": "0.0.3",
+      "newVersion": "0.1.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
@@ -36,8 +36,21 @@
       "oldVersion": "0.0.1"
     },
     "@hokulea/theme-moana": {
-      "oldVersion": "0.0.1"
+      "impact": "patch",
+      "oldVersion": "0.0.1",
+      "newVersion": "0.0.2",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./themes/moana/package.json"
     }
   },
-  "description": "## Release (2024-07-28)\n\n@hokulea/ember 0.2.0 (minor)\n@hokulea/core 0.0.3 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#192](https://github.com/hokulea/hokulea/pull/192) Add API for popover ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#197](https://github.com/hokulea/hokulea/pull/197) Style `cursor` for `<Menu>` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#195](https://github.com/hokulea/hokulea/pull/195) Make `<IconButton>` a `<button>` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-08-01)\n\n@hokulea/ember 0.3.0 (minor)\n@hokulea/core 0.1.0 (minor)\n@hokulea/theme-moana 0.0.2 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#221](https://github.com/hokulea/hokulea/pull/221) Improve `<AppHeader>` ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/theme-moana`\n  * [#227](https://github.com/hokulea/hokulea/pull/227) fix theme ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#226](https://github.com/hokulea/hokulea/pull/226) Fix deprecation warning ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/config-postcss`, `@hokulea/config-style-dictionary`, `@hokulea/config-stylelint`, `@hokulea/config-targets`, `@hokulea/config-template-lint`, `@hokulea/config-testem`, `@hokulea/config-theemo`, `@hokulea/config-typescript`, `@hokulea/rollup-plugin-postcss`, `@hokulea/theme-moana`\n  * [#219](https://github.com/hokulea/hokulea/pull/219) Remove volta for corepack ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

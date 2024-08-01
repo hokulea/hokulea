@@ -42,7 +42,7 @@
     "prettier": "^3.2.1",
     "style-dictionary": "3.9.2",
     "stylelint": "16.6.1",
-    "typescript": "5.5.2"
+    "typescript": "5.5.4"
   },
   "exports": {
     ".": {

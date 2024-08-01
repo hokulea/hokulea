@@ -101,7 +101,7 @@
     "sinon": "18.0.0",
     "stylelint": "16.6.1",
     "tracked-built-ins": "3.3.0",
-    "typescript": "5.5.2",
+    "typescript": "5.5.4",
     "webpack": "5.92.0"
   },
   "engines": {

@@ -140,7 +140,7 @@
     "rollup-plugin-postcss": "4.0.2",
     "stylelint": "16.6.1",
     "typescript": "5.5.4",
-    "webpack": "5.92.0"
+    "webpack": "5.93.0"
   },
   "ember": {
     "edition": "octane"

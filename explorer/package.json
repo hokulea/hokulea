@@ -115,7 +115,7 @@
     "storybook": "8.0.6",
     "stylelint": "16.6.1",
     "typescript": "5.5.4",
-    "webpack": "5.92.0"
+    "webpack": "5.93.0"
   },
   "engines": {
     "node": ">= 20.*"

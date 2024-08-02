@@ -537,7 +537,7 @@ importers:
         version: 2.7.4(@glint/template@1.4.0)(webpack@5.93.0)
       ember-cli:
         specifier: 5.10.0
-        version: 5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6)
+        version: 5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)
       ember-cli-app-version:
         specifier: 7.0.0
         version: 7.0.0(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -549,7 +549,7 @@ importers:
         version: 3.0.0(patch_hash=vtzzfjlpvtb4fhhsc7ygoahdhq)(@embroider/compat@3.6.0(@embroider/core@3.4.14(@glint/template@1.4.0))(@glint/template@1.4.0))(@embroider/core@3.4.14(@glint/template@1.4.0))
       ember-cli-dependency-checker:
         specifier: 3.3.2
-        version: 3.3.2(ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6))
+        version: 3.3.2(ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6))
       ember-cli-fastboot:
         specifier: 4.1.5
         version: 4.1.5(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -697,7 +697,7 @@ importers:
         version: 7.24.7(@babel/core@7.25.2)
       '@chromatic-com/storybook':
         specifier: 1.6.1
-        version: 1.6.1(react@17.0.2)
+        version: 1.6.1(react@18.3.1)
       '@ember/optional-features':
         specifier: 2.1.0
         version: 2.1.0
@@ -742,13 +742,13 @@ importers:
         version: link:../configs/typescript
       '@storybook/addon-designs':
         specifier: 8.0.3
-        version: 8.0.3(@storybook/blocks@8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@storybook/theming@8.0.6(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        version: 8.0.3(@storybook/blocks@8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/addon-essentials':
         specifier: 8.2.7
         version: 8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
       '@storybook/addon-links':
         specifier: 8.2.7
-        version: 8.2.7(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
+        version: 8.2.7(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
       '@storybook/addon-storysource':
         specifier: 8.2.7
         version: 8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
@@ -757,7 +757,7 @@ importers:
         version: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
       '@storybook/ember':
         specifier: 8.2.7
-        version: 8.2.7(@babel/core@7.25.2)(babel-plugin-ember-modules-api-polyfill@3.5.0)(babel-plugin-htmlbars-inline-precompile@5.3.1)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(esbuild@0.20.2)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))(typescript@5.5.4)(webpack@5.93.0(esbuild@0.20.2))
+        version: 8.2.7(@babel/core@7.25.2)(babel-plugin-ember-modules-api-polyfill@3.5.0)(babel-plugin-htmlbars-inline-precompile@5.3.1)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(esbuild@0.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))(typescript@5.5.4)(webpack@5.93.0(esbuild@0.20.2))
       '@storybook/ember-cli-storybook':
         specifier: 0.6.1
         version: 0.6.1
@@ -796,7 +796,7 @@ importers:
         version: 2.7.4(@glint/template@1.4.0)(webpack@5.93.0(esbuild@0.20.2))
       ember-cli:
         specifier: 5.10.0
-        version: 5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6)
+        version: 5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)
       ember-cli-app-version:
         specifier: 7.0.0
         version: 7.0.0(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))
@@ -805,7 +805,7 @@ importers:
         version: 8.2.0(@babel/core@7.25.2)
       ember-cli-dependency-checker:
         specifier: 3.3.2
-        version: 3.3.2(ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6))
+        version: 3.3.2(ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6))
       ember-cli-htmlbars:
         specifier: 6.3.0
         version: 6.3.0
@@ -927,11 +927,11 @@ importers:
         specifier: ^3.1.2
         version: 3.1.2
       react:
-        specifier: 17.0.2
-        version: 17.0.2
+        specifier: 18.3.1
+        version: 18.3.1
       react-dom:
-        specifier: 17.0.2
-        version: 17.0.2(react@17.0.2)
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
       storybook:
         specifier: 8.2.7
         version: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
@@ -3171,9 +3171,6 @@ packages:
 
   '@storybook/csf@0.1.11':
     resolution: {integrity: sha512-dHYFQH3mA+EtnCkHXzicbLgsvzYjcDJ1JWsogbItZogkPHgSJM/Wr71uMkcvw8v9mmCyP4NpXJuu6bPoVsOnzg==}
-
-  '@storybook/csf@0.1.3':
-    resolution: {integrity: sha512-IPZvXXo4b3G+gpmgBSBqVM81jbp2ePOKsvhgJdhyZJtkYQCII7rg9KKLQhvBQM5sLaF1eU6r0iuwmyynC9d9SA==}
 
   '@storybook/ember-cli-storybook@0.6.1':
     resolution: {integrity: sha512-BVOSqm7VcFppM0z0/9VYnzCbzGRyA0LSLgroY8r0t/+0OP6hZN58Aok0sar80ooU3C9+hwSmmp1TkYrLijUQMg==}
@@ -9740,13 +9737,13 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.1 || ^18.0.0
 
-  react-dom@17.0.2:
-    resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: 17.0.2
+      react: ^18.3.1
 
-  react@17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -10129,8 +10126,8 @@ packages:
     resolution: {integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==}
     engines: {node: '>=10'}
 
-  scheduler@0.20.2:
-    resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
+  scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
   schema-utils@2.7.1:
     resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
@@ -13071,12 +13068,12 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@chromatic-com/storybook@1.6.1(react@17.0.2)':
+  '@chromatic-com/storybook@1.6.1(react@18.3.1)':
     dependencies:
       chromatic: 11.7.0
       filesize: 10.1.1
       jsonfile: 6.1.0
-      react-confetti: 6.1.0(react@17.0.2)
+      react-confetti: 6.1.0(react@18.3.1)
       strip-ansi: 7.1.0
     transitivePeerDependencies:
       - '@chromatic-com/cypress'
@@ -13654,9 +13651,9 @@ snapshots:
       - canvas
       - utf-8-validate
 
-  '@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@17.0.2)':
+  '@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@18.3.1)':
     dependencies:
-      react: 17.0.2
+      react: 18.3.1
     optional: true
 
   '@esbuild/aix-ppc64@0.20.2':
@@ -13755,11 +13752,11 @@ snapshots:
     dependencies:
       lit: 2.8.0
 
-  '@figspec/react@1.0.3(react@17.0.2)':
+  '@figspec/react@1.0.3(react@18.3.1)':
     dependencies:
       '@figspec/components': 1.0.3
       '@lit-labs/react': 1.2.1
-      react: 17.0.2
+      react: 18.3.1
 
   '@floating-ui/core@1.6.0':
     dependencies:
@@ -14165,11 +14162,11 @@ snapshots:
       jju: 1.4.0
       read-yaml-file: 1.1.0
 
-  '@mdx-js/react@3.0.1(@types/react@18.2.74)(react@17.0.2)':
+  '@mdx-js/react@3.0.1(@types/react@18.2.74)(react@18.3.1)':
     dependencies:
       '@types/mdx': 2.0.12
       '@types/react': 18.2.74
-      react: 17.0.2
+      react: 18.3.1
 
   '@mole-inc/bin-wrapper@8.0.1':
     dependencies:
@@ -14353,19 +14350,19 @@ snapshots:
     dependencies:
       prettier: 3.2.5
 
-  '@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.74)(react@17.0.2)':
+  '@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.74)(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.0
-      react: 17.0.2
+      react: 18.3.1
     optionalDependencies:
       '@types/react': 18.2.74
     optional: true
 
-  '@radix-ui/react-slot@1.0.2(@types/react@18.2.74)(react@17.0.2)':
+  '@radix-ui/react-slot@1.0.2(@types/react@18.2.74)(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.0
-      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.74)(react@17.0.2)
-      react: 17.0.2
+      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.74)(react@18.3.1)
+      react: 18.3.1
     optionalDependencies:
       '@types/react': 18.2.74
     optional: true
@@ -14539,28 +14536,28 @@ snapshots:
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
       ts-dedent: 2.2.0
 
-  '@storybook/addon-designs@8.0.3(@storybook/blocks@8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@storybook/theming@8.0.6(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@storybook/addon-designs@8.0.3(@storybook/blocks@8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@figspec/react': 1.0.3(react@17.0.2)
+      '@figspec/react': 1.0.3(react@18.3.1)
     optionalDependencies:
-      '@storybook/blocks': 8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
-      '@storybook/components': 8.0.6(@types/react@18.2.74)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@storybook/theming': 8.0.6(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      '@storybook/blocks': 8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
+      '@storybook/components': 8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/theming': 8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@storybook/addon-docs@8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
     dependencies:
       '@babel/core': 7.25.2
-      '@mdx-js/react': 3.0.1(@types/react@18.2.74)(react@17.0.2)
-      '@storybook/blocks': 8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
+      '@mdx-js/react': 3.0.1(@types/react@18.2.74)(react@18.3.1)
+      '@storybook/blocks': 8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
       '@storybook/csf-plugin': 8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
+      '@storybook/react-dom-shim': 8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
       '@types/react': 18.2.74
       fs-extra: 11.2.0
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       rehype-external-links: 3.0.0
       rehype-slug: 6.0.0
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
@@ -14589,14 +14586,14 @@ snapshots:
       '@storybook/global': 5.0.0
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
 
-  '@storybook/addon-links@8.2.7(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
+  '@storybook/addon-links@8.2.7(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
     dependencies:
       '@storybook/csf': 0.1.11
       '@storybook/global': 5.0.0
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
       ts-dedent: 2.2.0
     optionalDependencies:
-      react: 17.0.2
+      react: 18.3.1
 
   '@storybook/addon-measure@8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
     dependencies:
@@ -14626,26 +14623,26 @@ snapshots:
       memoizerific: 1.11.3
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
 
-  '@storybook/blocks@8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
+  '@storybook/blocks@8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
     dependencies:
       '@storybook/csf': 0.1.11
       '@storybook/global': 5.0.0
-      '@storybook/icons': 1.2.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@storybook/icons': 1.2.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/lodash': 4.17.0
       color-convert: 2.0.1
       dequal: 2.0.3
       lodash: 4.17.21
-      markdown-to-jsx: 7.4.7(react@17.0.2)
+      markdown-to-jsx: 7.4.7(react@18.3.1)
       memoizerific: 1.11.3
       polished: 4.3.1
-      react-colorful: 5.6.1(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react-colorful: 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
       telejson: 7.2.0
       ts-dedent: 2.2.0
       util-deprecate: 1.0.2
     optionalDependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@storybook/builder-webpack5@8.2.7(esbuild@0.20.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))(typescript@5.5.4)':
     dependencies:
@@ -14730,18 +14727,18 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.74)(react@17.0.2)
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.74)(react@18.3.1)
       '@storybook/client-logger': 8.0.6
-      '@storybook/csf': 0.1.3
+      '@storybook/csf': 0.1.11
       '@storybook/global': 5.0.0
-      '@storybook/icons': 1.2.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@storybook/theming': 8.0.6(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@storybook/icons': 1.2.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/theming': 8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/types': 8.0.6
       memoizerific: 1.11.3
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       util-deprecate: 1.0.2
     transitivePeerDependencies:
       - '@types/react'
@@ -14789,11 +14786,6 @@ snapshots:
     dependencies:
       type-fest: 2.19.0
 
-  '@storybook/csf@0.1.3':
-    dependencies:
-      type-fest: 2.19.0
-    optional: true
-
   '@storybook/ember-cli-storybook@0.6.1':
     dependencies:
       broccoli-funnel: 3.0.8
@@ -14806,7 +14798,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/ember@8.2.7(@babel/core@7.25.2)(babel-plugin-ember-modules-api-polyfill@3.5.0)(babel-plugin-htmlbars-inline-precompile@5.3.1)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(esbuild@0.20.2)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))(typescript@5.5.4)(webpack@5.93.0(esbuild@0.20.2))':
+  '@storybook/ember@8.2.7(@babel/core@7.25.2)(babel-plugin-ember-modules-api-polyfill@3.5.0)(babel-plugin-htmlbars-inline-precompile@5.3.1)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(esbuild@0.20.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))(typescript@5.5.4)(webpack@5.93.0(esbuild@0.20.2))':
     dependencies:
       '@babel/core': 7.25.2
       '@storybook/builder-webpack5': 8.2.7(esbuild@0.20.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))(typescript@5.5.4)
@@ -14816,8 +14808,8 @@ snapshots:
       babel-plugin-htmlbars-inline-precompile: 5.3.1
       ember-source: 5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2))
       find-up: 5.0.0
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
       ts-dedent: 2.2.0
     transitivePeerDependencies:
@@ -14832,19 +14824,19 @@ snapshots:
 
   '@storybook/global@5.0.0': {}
 
-  '@storybook/icons@1.2.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@storybook/icons@1.2.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@storybook/manager-api@8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
     dependencies:
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
 
-  '@storybook/react-dom-shim@8.2.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
+  '@storybook/react-dom-shim@8.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
     dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
 
   '@storybook/source-loader@8.2.7(storybook@8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2)))':
@@ -14855,15 +14847,15 @@ snapshots:
       prettier: 3.2.5
       storybook: 8.2.7(@babel/preset-env@7.24.4(@babel/core@7.25.2))
 
-  '@storybook/theming@8.0.6(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@17.0.2)
+      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.3.1)
       '@storybook/client-logger': 8.0.6
       '@storybook/global': 5.0.0
       memoizerific: 1.11.3
     optionalDependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     optional: true
 
   '@storybook/types@8.0.6':
@@ -16994,7 +16986,7 @@ snapshots:
       ora: 3.4.0
       through2: 3.0.2
 
-  consolidate@0.16.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6):
+  consolidate@0.16.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6):
     dependencies:
       bluebird: 3.7.2
     optionalDependencies:
@@ -17003,8 +16995,8 @@ snapshots:
       handlebars: 4.7.8
       lodash: 4.17.21
       mustache: 4.2.0
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       underscore: 1.13.6
 
   constant-case@3.0.4:
@@ -17881,10 +17873,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-dependency-checker@3.3.2(ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6)):
+  ember-cli-dependency-checker@3.3.2(ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)):
     dependencies:
       chalk: 2.4.2
-      ember-cli: 5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6)
+      ember-cli: 5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)
       find-yarn-workspace-root: 1.2.1
       is-git-url: 1.0.0
       resolve: 1.22.8
@@ -18101,7 +18093,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6):
+  ember-cli@5.10.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6):
     dependencies:
       '@pnpm/find-workspace-dir': 6.0.3
       broccoli: 3.5.2
@@ -18180,7 +18172,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.12.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6)
+      testem: 3.12.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       walk-sync: 3.0.0
@@ -21562,9 +21554,9 @@ snapshots:
 
   markdown-link@0.1.1: {}
 
-  markdown-to-jsx@7.4.7(react@17.0.2):
+  markdown-to-jsx@7.4.7(react@18.3.1):
     dependencies:
-      react: 17.0.2
+      react: 18.3.1
 
   markdown-toc@1.2.0:
     dependencies:
@@ -23173,27 +23165,25 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-colorful@5.6.1(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+  react-colorful@5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
-  react-confetti@6.1.0(react@17.0.2):
+  react-confetti@6.1.0(react@18.3.1):
     dependencies:
-      react: 17.0.2
+      react: 18.3.1
       tween-functions: 1.2.0
 
-  react-dom@17.0.2(react@17.0.2):
+  react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
-      react: 17.0.2
-      scheduler: 0.20.2
+      react: 18.3.1
+      scheduler: 0.23.2
 
-  react@17.0.2:
+  react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
 
   read-cache@1.0.0:
     dependencies:
@@ -23686,10 +23676,9 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
-  scheduler@0.20.2:
+  scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
 
   schema-utils@2.7.1:
     dependencies:
@@ -24496,7 +24485,7 @@ snapshots:
       glob: 7.2.3
       minimatch: 3.1.2
 
-  testem@3.12.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6):
+  testem@3.12.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6):
     dependencies:
       '@xmldom/xmldom': 0.8.10
       backbone: 1.6.0
@@ -24504,7 +24493,7 @@ snapshots:
       charm: 1.0.2
       commander: 2.20.3
       compression: 1.7.4
-      consolidate: 0.16.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(underscore@1.13.6)
+      consolidate: 0.16.0(coffee-script@1.12.7)(ejs@3.1.9)(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)
       execa: 1.0.0
       express: 4.19.2
       fireworm: 0.7.2

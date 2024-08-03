@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   check-plan:
-    name: "Check Release Plan"
+    name: 'Check Release Plan'
     runs-on: ubuntu-latest
     outputs:
       command: ${{ steps.check-release.outputs.command }}
@@ -45,10 +45,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        # We need to download lots of history so that
+        # github-changelog can discover what's changed since the last release
+        with:
+          fetch-depth: 0
+          ref: 'main'
       - name: Setup
         uses: ./.github/actions/setup
 
-      - name: "Generate Explanation and Prep Changelogs"
+      - name: 'Generate Explanation and Prep Changelogs'
         id: explanation
         run: |
           set +e
@@ -70,7 +75,7 @@ jobs:
       - uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "Prepare Release using 'release-plan'"
-          labels: "internal"
+          labels: 'internal'
           branch: release-preview
           title: Prepare Release
           body: |

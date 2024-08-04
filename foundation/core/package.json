@@ -2,6 +2,7 @@
   "name": "@hokulea/core",
   "version": "0.1.0",
   "description": "Hokulea generic core layer (CSS + JS)",
+  "license": "MIT",
   "files": [
     "dist",
     "src"

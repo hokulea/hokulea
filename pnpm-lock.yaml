@@ -1097,17 +1097,17 @@ importers:
         specifier: workspace:*
         version: link:../../configs/style-dictionary
       '@theemo/build':
-        specifier: 0.2.2
-        version: 0.2.2
+        specifier: ^0.2.4
+        version: 0.2.4
       '@theemo/cli':
-        specifier: 0.2.2
-        version: 0.2.2(typescript@5.5.4)
+        specifier: ^0.2.4
+        version: 0.2.4(typescript@5.5.4)
       '@theemo/figma':
-        specifier: 0.2.2
-        version: 0.2.2
+        specifier: ^0.2.3
+        version: 0.2.3
       '@theemo/style-dictionary':
-        specifier: 0.2.2
-        version: 0.2.2(style-dictionary@3.9.2)
+        specifier: ^0.2.3
+        version: 0.2.3(style-dictionary@3.9.2)
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -3334,26 +3334,43 @@ packages:
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
     engines: {node: '>=10'}
 
-  '@theemo/build@0.2.2':
-    resolution: {integrity: sha512-zVBNNDKQLlG3oRb0Nuj3UOAAiHH1RXicqIAV59/ylFRpRJe+cuwVlZ31xMLXTFqVSaZXH0pwi+LZRSy6aMvykw==}
+  '@theemo/build@0.2.4':
+    resolution: {integrity: sha512-L+hnZXS1J/2DQNHjH5zFxObZD1V7e3iEwJD8sysD/huGYwDomuq7lF6xtZVH9Z1yhq7LuOHYutwSudtNb4MZAA==}
+    engines: {node: '>=18.0.0'}
 
-  '@theemo/cli@0.2.2':
-    resolution: {integrity: sha512-TwIimM6b9u1AmAUCA2foNx3hO0x1/J2C2Uj3qt9zPvnoFBn6N3BBICRKndDjIyMHFTbWWIZyqwfCPQbw2n5QJQ==}
+  '@theemo/cli@0.2.4':
+    resolution: {integrity: sha512-mbkWkJj6GWhfyKp2TX1O46hrtsJL3IcYfbm5W0wBG8R8jrMA4i9/fw2pR54hyMM8AMSK97JWYQbbpHxPtaJ2Mw==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@theemo/figma@0.2.2':
-    resolution: {integrity: sha512-B1dwTKgfkGyC8DVBxTHASGsbfSQ11eXp0PlHvOh7tUiB6bGB7deqIF6FA9XadPhUtQ9QL9eFIw8Zzgw+vw2Mmw==}
+  '@theemo/figma@0.2.3':
+    resolution: {integrity: sha512-VtHXeQiwUrsePsMgbsFxqrfPdfPwiYPm9gudUKLy6Nvsc8a+ZQ2TkxJ/U3zCxvFWq8lfvxJj7VdXaUNdDt1G6Q==}
+    engines: {node: '>=18.0.0'}
 
   '@theemo/style-dictionary@0.2.2':
     resolution: {integrity: sha512-L/kd5ydX556uC6Fx8obnzDpFT18Iu7skljFzUV0fYgYIzthCr0UdLQRuuVB9iGxR18R4BA+QmoING3wFB1dC7w==}
     peerDependencies:
       style-dictionary: '>= 3'
 
+  '@theemo/style-dictionary@0.2.3':
+    resolution: {integrity: sha512-eFR4lbbcb/IjyPDbfLPeVbqSXmTOb5l7JIxF3z3yewwpKgqFsuUaihspZIK2OXR+gqEJdlMOE8Pp6nNM+tisGA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      style-dictionary: '>= 3'
+
   '@theemo/sync@0.2.2':
     resolution: {integrity: sha512-YXe+QSA6PLgGiCrP4ZJCVK5stzVHPFdyaXecMz2P4zhny1gWhoR9U55jhnZFpscxGfwtLm1UIZZ9cCl8igPNJw==}
 
+  '@theemo/sync@0.2.3':
+    resolution: {integrity: sha512-5BbHBviD+lccZj+rs80IbZcuQO55Viv72McPN9wynl93gfZuWMoF684ZbVd2CrxHNFNplXUGia1a6kNxVqsgjg==}
+    engines: {node: '>=18.0.0'}
+
   '@theemo/tokens@0.2.2':
     resolution: {integrity: sha512-4/jSKxurQr+DX2wBbjL4/QL7wRBMkQI5B6VYC/id10ebhVEnRLuYYU45JNSbH2qGm0hxBWlClPuuv7Cn68Ppuw==}
+
+  '@theemo/tokens@0.2.3':
+    resolution: {integrity: sha512-nuOncC6MxZGQQl/jglU/aIjouU4ILP6/wwgRKgFD6vm4ze+0YrkuDTUSt1/Hm1eozjHwM9J3EnSs1Gntq7QmLw==}
+    engines: {node: '>=18.0.0'}
 
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
@@ -4742,9 +4759,9 @@ packages:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
 
-  commander@11.1.0:
-    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
-    engines: {node: '>=16'}
+  commander@12.1.0:
+    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+    engines: {node: '>=18'}
 
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -5360,6 +5377,10 @@ packages:
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
+  deepmerge-ts@7.1.0:
+    resolution: {integrity: sha512-q6bNsfNBtgr8ZOQqmZbl94MmYWm+QcDNIkqCxVWiw1vKvf+y/N2dZQKdnDXn4c5Ygt/y63tDof6OCN+2YwWVEg==}
+    engines: {node: '>=16.0.0'}
+
   deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
@@ -5438,6 +5459,10 @@ packages:
   detect-indent@6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
     engines: {node: '>=8'}
+
+  detect-indent@7.0.1:
+    resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
+    engines: {node: '>=12.20'}
 
   detect-libc@1.0.3:
     resolution: {integrity: sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==}
@@ -7437,6 +7462,10 @@ packages:
   is-plain-obj@2.1.0:
     resolution: {integrity: sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==}
     engines: {node: '>=8'}
+
+  is-plain-obj@4.1.0:
+    resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
+    engines: {node: '>=12'}
 
   is-plain-object@2.0.4:
     resolution: {integrity: sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==}
@@ -10328,6 +10357,10 @@ packages:
     resolution: {integrity: sha512-vzn8aSqKgytVik0iwdBEi+zevbTYZogewTUM6dtpmGwEcdzbub/TX4bCzRhebDCRC3QzXgJsLRKB2V/Oof7HXg==}
     engines: {node: '>=0.10.0'}
 
+  sort-keys@5.0.0:
+    resolution: {integrity: sha512-Pdz01AvCAottHTPQGzndktFNdbRA75BgOfeT1hH+AMnJFv8lynkPi42rfeEhpx1saTEI3YNMWxfqu0sFD1G8pw==}
+    engines: {node: '>=12'}
+
   sort-object-keys@1.1.3:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
 
@@ -10991,8 +11024,8 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
-  type-fest@4.15.0:
-    resolution: {integrity: sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==}
+  type-fest@4.23.0:
+    resolution: {integrity: sha512-ZiBujro2ohr5+Z/hZWHESLz3g08BBdrdLMieYFULJO+tWc437sn8kQsWLJoZErY8alNhxre9K4p3GURAG11n+w==}
     engines: {node: '>=16'}
 
   type-is@1.6.18:
@@ -11440,6 +11473,14 @@ packages:
   write-file-atomic@5.0.1:
     resolution: {integrity: sha512-+QU2zd6OTD8XWIJCbffaiQeH9U73qIqafo1x6V1snCWYGJf6cVE0cDR4D8xRzcEnfI21IFrUPzPGtcPf8AC+Rw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  write-json-file@6.0.0:
+    resolution: {integrity: sha512-MNHcU3f9WxnNyR6MxsYSj64Jz0+dwIpisWKWq9gqLj/GwmA9INg3BZ3vt70/HB3GEwrnDQWr4RPrywnhNzmUFA==}
+    engines: {node: '>=18'}
+
+  write-package@7.1.0:
+    resolution: {integrity: sha512-DqUx8GI3r9BFWwU2DPKddL1E7xWfbFED82mLVhGXKlFEPe8IkBftzO7WfNwHtk7oGDHDeuH/o8VMpzzfMwmLUA==}
+    engines: {node: '>=18'}
 
   ws@7.5.9:
     resolution: {integrity: sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==}
@@ -14956,15 +14997,16 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@theemo/build@0.2.2':
+  '@theemo/build@0.2.4':
     dependencies:
       read-pkg: 9.0.1
+      write-package: 7.1.0
 
-  '@theemo/cli@0.2.2(typescript@5.5.4)':
+  '@theemo/cli@0.2.4(typescript@5.5.4)':
     dependencies:
-      '@theemo/build': 0.2.2
-      '@theemo/sync': 0.2.2
-      commander: 11.1.0
+      '@theemo/build': 0.2.4
+      '@theemo/sync': 0.2.3
+      commander: 12.1.0
       cosmiconfig: 9.0.0(typescript@5.5.4)
       dotenv: 16.4.5
       esm: 3.2.25
@@ -14972,10 +15014,10 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@theemo/figma@0.2.2':
+  '@theemo/figma@0.2.3':
     dependencies:
-      '@theemo/sync': 0.2.2
-      '@theemo/tokens': 0.2.2
+      '@theemo/sync': 0.2.3
+      '@theemo/tokens': 0.2.3
       colord: 2.9.3
       figma-api: 1.11.0
       lodash.isempty: 4.4.0
@@ -14989,11 +15031,26 @@ snapshots:
       '@theemo/tokens': 0.2.2
       style-dictionary: 3.9.2
 
+  '@theemo/style-dictionary@0.2.3(style-dictionary@3.9.2)':
+    dependencies:
+      '@theemo/sync': 0.2.3
+      '@theemo/tokens': 0.2.3
+      style-dictionary: 3.9.2
+
   '@theemo/sync@0.2.2':
     dependencies:
       '@theemo/tokens': 0.2.2
 
+  '@theemo/sync@0.2.3':
+    dependencies:
+      '@theemo/tokens': 0.2.3
+
   '@theemo/tokens@0.2.2':
+    dependencies:
+      colord: 2.9.3
+      lodash.merge: 4.6.2
+
+  '@theemo/tokens@0.2.3':
     dependencies:
       colord: 2.9.3
       lodash.merge: 4.6.2
@@ -16896,7 +16953,7 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  commander@11.1.0: {}
+  commander@12.1.0: {}
 
   commander@2.20.3: {}
 
@@ -17441,6 +17498,8 @@ snapshots:
 
   deep-is@0.1.4: {}
 
+  deepmerge-ts@7.1.0: {}
+
   deepmerge@4.3.1: {}
 
   defaults@1.0.4:
@@ -17509,6 +17568,8 @@ snapshots:
   detect-file@1.0.0: {}
 
   detect-indent@6.1.0: {}
+
+  detect-indent@7.0.1: {}
 
   detect-libc@1.0.3: {}
 
@@ -20836,6 +20897,8 @@ snapshots:
 
   is-plain-obj@2.1.0: {}
 
+  is-plain-obj@4.1.0: {}
+
   is-plain-object@2.0.4:
     dependencies:
       isobject: 3.0.1
@@ -22266,7 +22329,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.24.7
       index-to-position: 0.1.2
-      type-fest: 4.15.0
+      type-fest: 4.23.0
 
   parse-passwd@1.0.0: {}
 
@@ -23208,7 +23271,7 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.0
       read-pkg: 9.0.1
-      type-fest: 4.15.0
+      type-fest: 4.23.0
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -23228,7 +23291,7 @@ snapshots:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.0
       parse-json: 8.1.0
-      type-fest: 4.15.0
+      type-fest: 4.23.0
       unicorn-magic: 0.1.0
 
   read-yaml-file@1.1.0:
@@ -23957,6 +24020,10 @@ snapshots:
   sort-keys@1.1.2:
     dependencies:
       is-plain-obj: 1.1.0
+
+  sort-keys@5.0.0:
+    dependencies:
+      is-plain-obj: 4.1.0
 
   sort-object-keys@1.1.3: {}
 
@@ -24834,7 +24901,7 @@ snapshots:
 
   type-fest@2.19.0: {}
 
-  type-fest@4.15.0: {}
+  type-fest@4.23.0: {}
 
   type-is@1.6.18:
     dependencies:
@@ -25385,6 +25452,21 @@ snapshots:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 4.1.0
+
+  write-json-file@6.0.0:
+    dependencies:
+      detect-indent: 7.0.1
+      is-plain-obj: 4.1.0
+      sort-keys: 5.0.0
+      write-file-atomic: 5.0.1
+
+  write-package@7.1.0:
+    dependencies:
+      deepmerge-ts: 7.1.0
+      read-pkg: 9.0.1
+      sort-keys: 5.0.0
+      type-fest: 4.23.0
+      write-json-file: 6.0.0
 
   ws@7.5.9: {}
 

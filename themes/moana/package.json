@@ -28,11 +28,11 @@
     "clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
-    "@theemo/cli": "0.2.2",
-    "@theemo/build": "0.2.2",
-    "@theemo/figma": "0.2.2",
-    "@theemo/style-dictionary": "0.2.2",
     "@hokulea/config-style-dictionary": "workspace:*",
+    "@theemo/build": "^0.2.4",
+    "@theemo/cli": "^0.2.4",
+    "@theemo/figma": "^0.2.3",
+    "@theemo/style-dictionary": "^0.2.3",
     "concurrently": "^8.2.2",
     "inflection": "3.0.0",
     "style-dictionary": "3.9.2"
@@ -42,7 +42,5 @@
   },
   "volta": {
     "extends": "../../package.json"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "@hokulea/theme-moana@0.0.2"
+  }
 }

@@ -24,7 +24,7 @@
     "clean-magic": "yarn clean && yarn magic"
   },
   "devDependencies": {
-    "style-dictionary": "3.9.2",
+    "style-dictionary": "4.0.1",
     "theemo": "0.1.3"
   },
   "volta": {

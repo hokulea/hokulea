@@ -35,7 +35,7 @@
     "@hokulea/config-style-dictionary": "workspace:*",
     "concurrently": "^8.2.2",
     "inflection": "3.0.0",
-    "style-dictionary": "3.9.2"
+    "style-dictionary": "4.0.1"
   },
   "engines": {
     "node": ">= 20"

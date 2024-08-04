@@ -14,3 +14,5 @@ Highlights:
 🧪 Research driven<br>
 
 [Hokulea on Github](https://github.com/hokulea/hokulea)
+
+<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-light.svg" alt="Deploys by Netlify" /> </a>

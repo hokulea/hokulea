@@ -10,7 +10,7 @@
     "@hokulea/config-targets": "workspace:*",
     "postcss-each": "^1.1.0",
     "postcss-modules": "^6.0.0",
-    "postcss-preset-env": "^9.3.0"
+    "postcss-preset-env": "^10.0.0"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "workspace:*",

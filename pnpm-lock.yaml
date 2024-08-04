@@ -1027,8 +1027,8 @@ importers:
         specifier: 1.4.12
         version: 1.4.12
       '@theemo/style-dictionary':
-        specifier: 0.2.2
-        version: 0.2.2(style-dictionary@3.9.2)
+        specifier: 0.2.3
+        version: 0.2.3(style-dictionary@3.9.2)
       '@types/eslint':
         specifier: 8.56.7
         version: 8.56.7
@@ -3331,26 +3331,15 @@ packages:
     resolution: {integrity: sha512-VtHXeQiwUrsePsMgbsFxqrfPdfPwiYPm9gudUKLy6Nvsc8a+ZQ2TkxJ/U3zCxvFWq8lfvxJj7VdXaUNdDt1G6Q==}
     engines: {node: '>=18.0.0'}
 
-  '@theemo/style-dictionary@0.2.2':
-    resolution: {integrity: sha512-L/kd5ydX556uC6Fx8obnzDpFT18Iu7skljFzUV0fYgYIzthCr0UdLQRuuVB9iGxR18R4BA+QmoING3wFB1dC7w==}
-    peerDependencies:
-      style-dictionary: '>= 3'
-
   '@theemo/style-dictionary@0.2.3':
     resolution: {integrity: sha512-eFR4lbbcb/IjyPDbfLPeVbqSXmTOb5l7JIxF3z3yewwpKgqFsuUaihspZIK2OXR+gqEJdlMOE8Pp6nNM+tisGA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       style-dictionary: '>= 3'
 
-  '@theemo/sync@0.2.2':
-    resolution: {integrity: sha512-YXe+QSA6PLgGiCrP4ZJCVK5stzVHPFdyaXecMz2P4zhny1gWhoR9U55jhnZFpscxGfwtLm1UIZZ9cCl8igPNJw==}
-
   '@theemo/sync@0.2.3':
     resolution: {integrity: sha512-5BbHBviD+lccZj+rs80IbZcuQO55Viv72McPN9wynl93gfZuWMoF684ZbVd2CrxHNFNplXUGia1a6kNxVqsgjg==}
     engines: {node: '>=18.0.0'}
-
-  '@theemo/tokens@0.2.2':
-    resolution: {integrity: sha512-4/jSKxurQr+DX2wBbjL4/QL7wRBMkQI5B6VYC/id10ebhVEnRLuYYU45JNSbH2qGm0hxBWlClPuuv7Cn68Ppuw==}
 
   '@theemo/tokens@0.2.3':
     resolution: {integrity: sha512-nuOncC6MxZGQQl/jglU/aIjouU4ILP6/wwgRKgFD6vm4ze+0YrkuDTUSt1/Hm1eozjHwM9J3EnSs1Gntq7QmLw==}
@@ -14946,30 +14935,15 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@theemo/style-dictionary@0.2.2(style-dictionary@3.9.2)':
-    dependencies:
-      '@theemo/sync': 0.2.2
-      '@theemo/tokens': 0.2.2
-      style-dictionary: 3.9.2
-
   '@theemo/style-dictionary@0.2.3(style-dictionary@3.9.2)':
     dependencies:
       '@theemo/sync': 0.2.3
       '@theemo/tokens': 0.2.3
       style-dictionary: 3.9.2
 
-  '@theemo/sync@0.2.2':
-    dependencies:
-      '@theemo/tokens': 0.2.2
-
   '@theemo/sync@0.2.3':
     dependencies:
       '@theemo/tokens': 0.2.3
-
-  '@theemo/tokens@0.2.2':
-    dependencies:
-      colord: 2.9.3
-      lodash.merge: 4.6.2
 
   '@theemo/tokens@0.2.3':
     dependencies:

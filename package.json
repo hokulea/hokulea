@@ -1,6 +1,7 @@
 {
   "name": "hokulea",
   "private": true,
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/hokulea/hokulea.git"

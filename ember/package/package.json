@@ -2,6 +2,7 @@
   "name": "@hokulea/ember",
   "version": "0.3.0",
   "description": "Hokulea Design System for Ember",
+  "license": "MIT",
   "keywords": [
     "ember-addon",
     "ember-css-modules-plugin"

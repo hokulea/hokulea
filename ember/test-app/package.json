@@ -114,8 +114,5 @@
     "paths": [
       "lib/setup-ast-transforms"
     ]
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

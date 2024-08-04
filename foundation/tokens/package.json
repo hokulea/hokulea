@@ -36,7 +36,7 @@
     "@swc/cli": "0.1.65",
     "@swc/core": "1.4.12",
     "@theemo/style-dictionary": "0.2.2",
-    "@theemo/tokens": "0.2.2",
+    "@theemo/tokens": "0.2.3",
     "@types/eslint": "8.56.7",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",

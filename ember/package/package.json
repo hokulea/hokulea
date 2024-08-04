@@ -176,8 +176,5 @@
       "./components/text-input.js": "./dist/_app_/components/text-input.js",
       "./helpers/popover.js": "./dist/_app_/helpers/popover.js"
     }
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

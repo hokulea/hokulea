@@ -2,6 +2,16 @@
 
 ## Release (2024-08-05)
 
+
+
+#### :house: Internal
+* [#263](https://github.com/hokulea/hokulea/pull/263) Update to `turborepo@2` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2024-08-05)
+
 @hokulea/ember 0.3.1 (patch)
 @hokulea/core 0.1.1 (patch)
 @hokulea/tokens 0.0.2 (patch)

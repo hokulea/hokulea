@@ -204,6 +204,8 @@
 
   user-select: none;
 
+  position: relative; /* so items have the list as `offsetParent` */
+
   overflow: auto;
   overscroll-behavior: contain;
   display: flex;

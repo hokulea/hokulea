@@ -249,8 +249,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(@babel/core@7.25.2)
       ember-aria-voyager:
-        specifier: ^0.0.2
-        version: 0.0.2(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
+        specifier: ^0.0.3
+        version: 0.0.3(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-async-data:
         specifier: ^1.0.3
         version: 1.0.3(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -530,8 +530,8 @@ importers:
         specifier: 6.1.1
         version: 6.1.1(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0)
       ember-aria-voyager:
-        specifier: 0.0.2
-        version: 0.0.2(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
+        specifier: 0.0.3
+        version: 0.0.3(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-auto-import:
         specifier: 2.7.4
         version: 2.7.4(@glint/template@1.4.0)(webpack@5.93.0)
@@ -3882,8 +3882,8 @@ packages:
   aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
 
-  aria-voyager@0.0.1:
-    resolution: {integrity: sha512-fvM7JOzwLe55/lIYGAQzFaMZ/AKGajrTol1HmZLbtgWIVbEaCmKKn+0DUql+n4oRaXaTzHD01TxRsXYDcvaN7w==}
+  aria-voyager@0.0.2:
+    resolution: {integrity: sha512-9dgdr4iHYNbPHlni/VgHqGSQJJTKaLZmwcnccIuyMdV1U1fUDBA7dV7e2/2fL2V8d1IjkXe/R5GeMWJ6qZL2IA==}
     engines: {node: '>= 18.*'}
 
   arr-diff@4.0.0:
@@ -5556,8 +5556,8 @@ packages:
       qunit:
         optional: true
 
-  ember-aria-voyager@0.0.2:
-    resolution: {integrity: sha512-02NrVLn6YhbwMvA2ADx/ff9t2a4Hut4/m7zYwRDzTDnQ33+3ms4WoV7jQyJkpsZJ43dyr3mnWYVsW2j0V6LKyA==}
+  ember-aria-voyager@0.0.3:
+    resolution: {integrity: sha512-wp9P1l8g6CxyNriWleDSQnH2uT1xmFq7CB0omWJJBW/R6tTHQ0jwBiPSHZdH0R23rwlGuyxiwVGEDCZWe6vTHA==}
     engines: {node: '>= 18.*'}
     peerDependencies:
       '@ember/test-helpers': ^3.3.0
@@ -11165,6 +11165,10 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    hasBin: true
+
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
@@ -15533,10 +15537,10 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  aria-voyager@0.0.1:
+  aria-voyager@0.0.2:
     dependencies:
       lodash.isequal: 4.5.0
-      uuid: 9.0.1
+      uuid: 10.0.0
 
   arr-diff@4.0.0: {}
 
@@ -17606,10 +17610,10 @@ snapshots:
       - supports-color
       - webpack
 
-  ember-aria-voyager@0.0.2(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)):
+  ember-aria-voyager@0.0.3(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)):
     dependencies:
       '@embroider/addon-shim': 1.8.9
-      aria-voyager: 0.0.1
+      aria-voyager: 0.0.2
       dom-element-descriptors: 0.5.1
       ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.10.1(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       lodash.isequal: 4.5.0
@@ -24976,6 +24980,8 @@ snapshots:
   utila@0.4.0: {}
 
   utils-merge@1.0.1: {}
+
+  uuid@10.0.0: {}
 
   uuid@8.3.2: {}
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2024-08-11)
+
+@hokulea/ember 0.3.2 (patch)
+@hokulea/core 0.1.2 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember-test-app`, `@hokulea/core`
+  * [#268](https://github.com/hokulea/hokulea/pull/268) Styling Fixes ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* [#263](https://github.com/hokulea/hokulea/pull/263) Update to `turborepo@2` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-08-05)
 
 @hokulea/ember 0.3.1 (patch)

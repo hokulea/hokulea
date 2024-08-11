@@ -2,60 +2,34 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "patch",
-      "oldVersion": "0.3.0",
-      "newVersion": "0.3.1",
+      "oldVersion": "0.3.1",
+      "newVersion": "0.3.2",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @hokulea/core"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
       "impact": "patch",
-      "oldVersion": "0.1.0",
-      "newVersion": "0.1.1",
+      "oldVersion": "0.1.1",
+      "newVersion": "0.1.2",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
-      "impact": "patch",
-      "oldVersion": "0.0.1",
-      "newVersion": "0.0.2",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./foundation/tokens/package.json"
+      "oldVersion": "0.0.2"
     },
     "@hokulea/theme-moana": {
-      "impact": "patch",
-      "oldVersion": "0.0.2",
-      "newVersion": "0.0.3",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./themes/moana/package.json"
+      "oldVersion": "0.0.3"
     }
   },
-  "description": "## Release (2024-08-05)\n\n@hokulea/ember 0.3.1 (patch)\n@hokulea/core 0.1.1 (patch)\n@hokulea/tokens 0.0.2 (patch)\n@hokulea/theme-moana 0.0.3 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/core`\n  * [#240](https://github.com/hokulea/hokulea/pull/240) Better Icon Alignment ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`\n  * [#257](https://github.com/hokulea/hokulea/pull/257) Add missing licenses ([@gossi](https://github.com/gossi))\n* Other\n  * [#254](https://github.com/hokulea/hokulea/pull/254) OSS inlo ([@gossi](https://github.com/gossi))\n  * [#249](https://github.com/hokulea/hokulea/pull/249) Lock `style-dictionary` to `<4` ([@gossi](https://github.com/gossi))\n  * [#246](https://github.com/hokulea/hokulea/pull/246) Use shared renovate config ([@gossi](https://github.com/gossi))\n  * [#244](https://github.com/hokulea/hokulea/pull/244) Fix release-plan ([@gossi](https://github.com/gossi))\n* `@hokulea/config-eslint`, `@hokulea/config-postcss`, `@hokulea/config-prettier`, `@hokulea/config-style-dictionary`, `@hokulea/config-stylelint`, `@hokulea/config-targets`, `@hokulea/config-template-lint`, `@hokulea/config-testem`, `@hokulea/config-theemo`, `@hokulea/config-typescript`, `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/explorer`, `@hokulea/core`, `@hokulea/tokens`, `@hokulea/rollup-plugin-postcss`, `@hokulea/theme-moana`, `@hokulea/theme-vaomatua`\n  * [#253](https://github.com/hokulea/hokulea/pull/253) Remove volta mentions ([@gossi](https://github.com/gossi))\n* `@hokulea/theme-moana`\n  * [#250](https://github.com/hokulea/hokulea/pull/250) Update theemo ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-08-11)\n\n@hokulea/ember 0.3.2 (patch)\n@hokulea/core 0.1.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#268](https://github.com/hokulea/hokulea/pull/268) Styling Fixes ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#263](https://github.com/hokulea/hokulea/pull/263) Update to `turborepo@2` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

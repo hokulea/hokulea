@@ -13,7 +13,7 @@
   */
   --ratio: var(--sizing-ratio, 1.3);
   --factor: var(--sizing-factor, 0.8);
-  --sizing-global-base: calc(0.5vw + 1em * var(--factor));
+  --sizing-global-base: calc(0.5vw + 1rem * var(--factor));
   --sizing-local-base: 1em;
 
   /* computed tokens */

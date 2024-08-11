@@ -14,26 +14,31 @@
 
   font-weight: 500;
   line-height: 1;
-  color: var(--button-base-text);
-  text-decoration: none;
   vertical-align: middle;
 
-  background-color: var(--button-base-background);
   border: var(--control-border);
-  border-color: var(--button-base-border);
   border-width: 2px;
 
-  &:hover {
-    color: var(--button-hover-text);
+  &:is(a, span, button), & {
+    color: var(--button-base-text);
     text-decoration: none;
-    background-color: var(--button-hover-background);
-    border-color: var(--button-hover-border);
-  }
+    background-color: var(--button-base-background);
+    border-color: var(--button-base-border);
 
-  &:active {
-    color: var(--button-active-text);
-    background-color: var(--button-active-background);
-    border-color: var(--button-active-border);
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:hover {
+      color: var(--button-hover-text);
+      text-decoration: none;
+      background-color: var(--button-hover-background);
+      border-color: var(--button-hover-border);
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:active {
+      color: var(--button-active-text);
+      background-color: var(--button-active-background);
+      border-color: var(--button-active-border);
+    }
   }
 
   &[aria-disabled="true"] {

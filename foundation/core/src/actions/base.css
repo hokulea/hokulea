@@ -25,6 +25,7 @@
     background-color: var(--button-base-background);
     border-color: var(--button-base-border);
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &:hover {
       color: var(--button-hover-text);
       text-decoration: none;
@@ -32,6 +33,7 @@
       border-color: var(--button-hover-border);
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &:active {
       color: var(--button-active-text);
       background-color: var(--button-active-background);

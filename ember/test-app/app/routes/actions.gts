@@ -1,3 +1,4 @@
+import { link } from 'ember-link';
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';
 
@@ -10,25 +11,25 @@ export class ActionsRoute extends Route<object> {
       <Section @title="Buttons">
 
         <p>
-          <Button>Supreme</Button>
-          <Button @importance="subtle">Subtle</Button>
-          <Button @importance="plain">Plain</Button>
+          <Button @push={{link "actions"}}>Supreme</Button>
+          <Button @importance="subtle" @push={{link "actions"}}>Subtle</Button>
+          <Button @importance="plain" @push={{link "actions"}}>Plain</Button>
         </p>
 
         <p>
-          <Button @intent="alternative">Supreme</Button>
+          <Button @intent="alternative" @push={{link "actions"}}>Supreme</Button>
           <Button @intent="alternative" @importance="subtle">Subtle</Button>
           <Button @intent="alternative" @importance="plain">Plain</Button>
         </p>
 
         <p>
-          <Button @intent="highlight">Supreme</Button>
+          <Button @intent="highlight" @push={{link "actions"}}>Supreme</Button>
           <Button @intent="highlight" @importance="subtle">Subtle</Button>
           <Button @intent="highlight" @importance="plain">Plain</Button>
         </p>
 
         <p>
-          <Button @intent="danger">Supreme</Button>
+          <Button @intent="danger" @push={{link "actions"}}>Supreme</Button>
           <Button @intent="danger" @importance="subtle">Subtle</Button>
           <Button @intent="danger" @importance="plain">Plain</Button>
         </p>

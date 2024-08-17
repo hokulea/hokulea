@@ -1,28 +1,10 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.3.1",
-      "newVersion": "0.3.2",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @hokulea/core"
-        }
-      ],
-      "pkgJSONPath": "./ember/package/package.json"
+      "oldVersion": "0.3.2"
     },
     "@hokulea/core": {
-      "impact": "patch",
-      "oldVersion": "0.1.1",
-      "newVersion": "0.1.2",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        }
-      ],
-      "pkgJSONPath": "./foundation/core/package.json"
+      "oldVersion": "0.1.2"
     },
     "@hokulea/tokens": {
       "oldVersion": "0.0.2"
@@ -31,5 +13,5 @@
       "oldVersion": "0.0.3"
     }
   },
-  "description": "## Release (2024-08-11)\n\n@hokulea/ember 0.3.2 (patch)\n@hokulea/core 0.1.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#268](https://github.com/hokulea/hokulea/pull/268) Styling Fixes ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#263](https://github.com/hokulea/hokulea/pull/263) Update to `turborepo@2` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "\n\n\n\n"
 }

@@ -17,7 +17,7 @@ jobs:
         env:
           COVERAGE: true
       - name: coverage
-        uses: paambaati/codeclimate-action@v8.0.0
+        uses: paambaati/codeclimate-action@v9.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
           COVERAGE: true

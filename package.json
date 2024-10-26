@@ -38,9 +38,6 @@
         "react",
         "react-dom"
       ]
-    },
-    "patchedDependencies": {
-      "ember-cli-code-coverage@3.0.0": "patches/ember-cli-code-coverage@3.0.0.patch"
     }
   }
 }

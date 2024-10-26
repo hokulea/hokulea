@@ -35,7 +35,7 @@
     "@hokulea/config-stylelint": "workspace:*",
     "@hokulea/config-targets": "workspace:*",
     "@hokulea/rollup-plugin-postcss": "workspace:*",
-    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-commonjs": "26.0.3",
     "eslint": "^8.56.0",
     "fast-glob": "3.3.2",
     "postcss": "8.4.41",

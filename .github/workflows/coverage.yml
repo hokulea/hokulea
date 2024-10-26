@@ -22,10 +22,6 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
           COVERAGE: true
         with:
-          coverageCommand: pnpm run -r --parallel --aggregate-output test
+          coverageCommand: pnpm run -r --parallel --aggregate-output test && ls -l ember/test-app && ls -l ember/test-app/coverage
           coverageLocations: |
             ${{github.workspace}}/ember/test-app/coverage/lcov.info:lcov
-      - name: ls
-        run: ls -l ember/test-app
-      - name: ls coverage
-        run: ls -l ember/test-app/coverage

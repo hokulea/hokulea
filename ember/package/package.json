@@ -59,7 +59,7 @@
     "change-case": "^5.4.4",
     "debug": "^4.3.2",
     "decorator-transforms": "^2.0.0",
-    "ember-aria-voyager": "^0.0.3",
+    "ember-aria-voyager": "^0.0.4",
     "ember-async-data": "^1.0.3",
     "ember-phosphor-icons": "^0.3.0",
     "ember-provide-consume-context": "^0.3.2",

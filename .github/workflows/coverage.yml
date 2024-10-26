@@ -25,3 +25,7 @@ jobs:
           coverageCommand: pnpm run -r --parallel --aggregate-output test
           coverageLocations: |
             ${{github.workspace}}/ember/test-app/coverage/lcov.info:lcov
+      - name: ls
+        run: ls -l ember/test-app
+      - name: ls coverage
+        run: ls -l ember/test-app/coverage

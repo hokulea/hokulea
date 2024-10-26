@@ -14,8 +14,10 @@
     "build": "turbo run --filter @hokulea/ember build",
     "build:storybook": "turbo run --filter @hokulea/explorer build",
     "clean": "concurrently 'npm:clean:*'",
+    "clean:declarations": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'declarations' -type d -exec rm -rf '{}' +",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
     "lint:css": "pnpm run -r --parallel --aggregate-output lint:css",
     "lint:hbs": "pnpm run -r --parallel --aggregate-output lint:hbs",
     "lint:js": "pnpm run -r --parallel --aggregate-output lint:js",
@@ -26,21 +28,18 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "release-plan": "0.9.2",
-    "turbo": "^2.0.14"
+    "turbo": "^2.2.3"
   },
   "engines": {
     "node": ">= 20.*"
   },
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.12.2",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
         "react",
         "react-dom"
       ]
-    },
-    "patchedDependencies": {
-      "ember-cli-code-coverage@3.0.0": "patches/ember-cli-code-coverage@3.0.0.patch"
     }
   }
 }

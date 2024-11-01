@@ -43,6 +43,60 @@ import type {
 import type { BoundField } from '../-private/form/components/field';
 import type { WithBoundArgs } from '@glint/template';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export interface FormBuilder<DATA extends UserData, SUBMISSION_VALUE> {
+  Checkbox: WithBoundArgs<typeof CheckboxField<DATA>, 'Field'>;
+  Currency: WithBoundArgs<typeof CurrencyField<DATA>, 'Field'>;
+  Date: WithBoundArgs<typeof DateField<DATA>, 'Field'>;
+  Email: WithBoundArgs<typeof EmailField<DATA>, 'Field'>;
+  List: WithBoundArgs<typeof ListField<DATA>, 'Field'>;
+  MultipleChoice: WithBoundArgs<typeof MultipleChoiceField<DATA>, 'Field'>;
+  Number: WithBoundArgs<typeof NumberField<DATA>, 'Field'>;
+  Password: WithBoundArgs<typeof PasswordField<DATA>, 'Field'>;
+  Phone: WithBoundArgs<typeof PhoneField<DATA>, 'Field'>;
+  Select: WithBoundArgs<typeof SelectField<DATA>, 'Field'>;
+  SingularChoice: WithBoundArgs<typeof SingularChoiceField<DATA>, 'Field'>;
+  Text: WithBoundArgs<typeof TextField<DATA>, 'Field'>;
+  TextArea: WithBoundArgs<typeof TextAreaField<DATA>, 'Field'>;
+  Field: BoundField<DATA>;
+  Submit: typeof Submit;
+  Reset: typeof Reset;
+
+  /**
+   * The (async) validation state as `TrackedAsyncData`.
+   *
+   * Use derived state like `.isPending` to render the UI conditionally.
+   */
+  validationState?: TrackedAsyncData<ErrorRecord<DATA>>;
+
+  /**
+   * The (async) submission state as `TrackedAsyncData`.
+   *
+   * Use derived state like `.isPending` to render the UI conditionally.
+   */
+  submissionState?: TrackedAsyncData<SUBMISSION_VALUE>;
+
+  /**
+   * Will be true if at least one form field is invalid.
+   */
+  invalid: boolean;
+
+  /**
+   * An ErrorRecord, for custom rendering of error output
+   */
+  rawErrors?: ErrorRecord<DATA>;
+
+  /**
+   * Yielded action that will trigger form validation and submission, same as when triggering the native `submit` event on the form.
+   */
+  submit: () => void;
+
+  /**
+   * Yielded action that will reset form state, same as when triggering the native `reset` event on the form.
+   */
+  reset: () => void;
+}
+
 type ValidateOn = 'change' | 'focusout' | 'submit' | 'input';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -98,60 +152,7 @@ export interface FormSignature<DATA extends UserData, SUBMISSION_VALUE> {
     invalidated?: (data: FormData<DATA>, errors: ErrorRecord<FormData<DATA>>) => void;
   };
   Blocks: {
-    default: [
-      {
-        Checkbox: WithBoundArgs<typeof CheckboxField<DATA>, 'Field'>;
-        Currency: WithBoundArgs<typeof CurrencyField<DATA>, 'Field'>;
-        Date: WithBoundArgs<typeof DateField<DATA>, 'Field'>;
-        Email: WithBoundArgs<typeof EmailField<DATA>, 'Field'>;
-        List: WithBoundArgs<typeof ListField<DATA>, 'Field'>;
-        MultipleChoice: WithBoundArgs<typeof MultipleChoiceField<DATA>, 'Field'>;
-        Number: WithBoundArgs<typeof NumberField<DATA>, 'Field'>;
-        Password: WithBoundArgs<typeof PasswordField<DATA>, 'Field'>;
-        Phone: WithBoundArgs<typeof PhoneField<DATA>, 'Field'>;
-        Select: WithBoundArgs<typeof SelectField<DATA>, 'Field'>;
-        SingularChoice: WithBoundArgs<typeof SingularChoiceField<DATA>, 'Field'>;
-        Text: WithBoundArgs<typeof TextField<DATA>, 'Field'>;
-        TextArea: WithBoundArgs<typeof TextAreaField<DATA>, 'Field'>;
-        Field: BoundField<DATA>;
-        Submit: typeof Submit;
-        Reset: typeof Reset;
-
-        /**
-         * The (async) validation state as `TrackedAsyncData`.
-         *
-         * Use derived state like `.isPending` to render the UI conditionally.
-         */
-        validationState?: TrackedAsyncData<ErrorRecord<DATA>>;
-
-        /**
-         * The (async) submission state as `TrackedAsyncData`.
-         *
-         * Use derived state like `.isPending` to render the UI conditionally.
-         */
-        submissionState?: TrackedAsyncData<SUBMISSION_VALUE>;
-
-        /**
-         * Will be true if at least one form field is invalid.
-         */
-        invalid: boolean;
-
-        /**
-         * An ErrorRecord, for custom rendering of error output
-         */
-        rawErrors?: ErrorRecord<DATA>;
-
-        /**
-         * Yielded action that will trigger form validation and submission, same as when triggering the native `submit` event on the form.
-         */
-        submit: () => void;
-
-        /**
-         * Yielded action that will reset form state, same as when triggering the native `reset` event on the form.
-         */
-        reset: () => void;
-      }
-    ];
+    default: [FormBuilder<DATA, SUBMISSION_VALUE>];
   };
 }
 

@@ -366,13 +366,13 @@ importers:
         version: 6.3.0
       ember-command:
         specifier: 2.0.5
-        version: 2.0.5(gej5nvazozczuv5whg2eaxvqtu)
+        version: 2.0.5(7b4e47mpo5hkgzokdislz4bwoa)
       ember-concurrency:
         specifier: 4.0.2
         version: 4.0.2(@babel/core@7.25.2)(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-link:
-        specifier: 3.2.0
-        version: 3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
+        specifier: 3.3.0
+        version: 3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
       ember-modifier:
         specifier: 4.2.0
         version: 4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -559,7 +559,7 @@ importers:
         version: 2.1.1
       ember-command:
         specifier: 2.0.5
-        version: 2.0.5(gej5nvazozczuv5whg2eaxvqtu)
+        version: 2.0.5(7b4e47mpo5hkgzokdislz4bwoa)
       ember-concurrency:
         specifier: 4.0.2
         version: 4.0.2(@babel/core@7.25.2)(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -573,8 +573,8 @@ importers:
         specifier: 0.8.6
         version: 0.8.6(@glint/environment-ember-loose@1.4.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(ember-cli-htmlbars@6.3.0)(ember-modifier@4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))))(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-link:
-        specifier: 3.2.0
-        version: 3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
+        specifier: 3.3.0
+        version: 3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
       ember-load-initializers:
         specifier: 2.1.2
         version: 2.1.2(@babel/core@7.25.2)
@@ -812,7 +812,7 @@ importers:
         version: 2.1.1
       ember-command:
         specifier: 2.0.5
-        version: 2.0.5(so7lyfd44tzme7m2rjckq64o7a)
+        version: 2.0.5(j5ndbwl44e523ynubozkbp5owy)
       ember-concurrency:
         specifier: 4.0.2
         version: 4.0.2(@babel/core@7.25.2)(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))
@@ -823,8 +823,8 @@ importers:
         specifier: 0.8.6
         version: 0.8.6(@glint/environment-ember-loose@1.4.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(ember-cli-htmlbars@6.3.0)(ember-modifier@4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))))(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))
       ember-link:
-        specifier: 3.2.0
-        version: 3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2)))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
+        specifier: 3.3.0
+        version: 3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2)))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
       ember-load-initializers:
         specifier: 2.1.2
         version: 2.1.2(@babel/core@7.25.2)
@@ -5772,9 +5772,9 @@ packages:
     resolution: {integrity: sha512-uNmv1cPG/4qsac8oIf5txJ2FZ8p88LEpG4P3dNcjsJS98Y8hd0GPMFwVqpnzI78Lz7VYRGQWY4jnE4qm5R3j4g==}
     engines: {node: 12.* || 14.* || >= 16}
 
-  ember-link@3.2.0:
-    resolution: {integrity: sha512-csqVhY+rblg1ypy3hUhEbsAha3rMwPU1tivHD1MNkDQU5ASgknegWxDB0XlBzBaZpjBe6jugliEnLKGTH/TBBg==}
-    engines: {node: '>= 16.*'}
+  ember-link@3.3.0:
+    resolution: {integrity: sha512-QwKlpR05YvBS2c+UV++U115lTg7VanZ3vnrplbORYl8M6BDgtlC1P4KZo31mmGsDqNqiy0J84zWgfuhSEzz53Q==}
+    engines: {node: '>= 20.*'}
     peerDependencies:
       '@ember/test-helpers': ^2.9.3 || ^3.0.0
       '@glimmer/tracking': ^1.1.2
@@ -17578,13 +17578,13 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-command@2.0.5(gej5nvazozczuv5whg2eaxvqtu):
+  ember-command@2.0.5(7b4e47mpo5hkgzokdislz4bwoa):
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.9(@glint/template@1.4.0)
       '@glimmer/component': 1.1.2(@babel/core@7.25.2)
       ember-element-helper: 0.8.6(@glint/environment-ember-loose@1.4.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(ember-cli-htmlbars@6.3.0)(ember-modifier@4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))))(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
-      ember-link: 3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
+      ember-link: 3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
       ember-sweet-owner: 0.2.0(@glint/template@1.4.0)
     optionalDependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
@@ -17593,13 +17593,13 @@ snapshots:
       - ember-polaris-service
       - supports-color
 
-  ember-command@2.0.5(so7lyfd44tzme7m2rjckq64o7a):
+  ember-command@2.0.5(j5ndbwl44e523ynubozkbp5owy):
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.9(@glint/template@1.4.0)
       '@glimmer/component': 1.1.2(@babel/core@7.25.2)
       ember-element-helper: 0.8.6(@glint/environment-ember-loose@1.4.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(ember-cli-htmlbars@6.3.0)(ember-modifier@4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))))(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))
-      ember-link: 3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2)))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
+      ember-link: 3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2)))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)
       ember-sweet-owner: 0.2.0(@glint/template@1.4.0)
     optionalDependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2))
@@ -17727,7 +17727,7 @@ snapshots:
       - '@glint/template'
       - supports-color
 
-  ember-link@3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2)))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0):
+  ember-link@3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2)))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0):
     dependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))(webpack@5.93.0(esbuild@0.20.2))
       '@embroider/addon-shim': 1.8.9
@@ -17738,7 +17738,7 @@ snapshots:
       - '@glint/template'
       - supports-color
 
-  ember-link@3.2.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0):
+  ember-link@3.3.0(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glimmer/tracking@1.1.2)(@glint/template@1.4.0):
     dependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
       '@embroider/addon-shim': 1.8.9

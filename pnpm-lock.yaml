@@ -365,8 +365,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0
       ember-command:
-        specifier: 2.0.3
-        version: 2.0.3(gej5nvazozczuv5whg2eaxvqtu)
+        specifier: 2.0.5
+        version: 2.0.5(gej5nvazozczuv5whg2eaxvqtu)
       ember-concurrency:
         specifier: 4.0.2
         version: 4.0.2(@babel/core@7.25.2)(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -558,8 +558,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       ember-command:
-        specifier: 2.0.3
-        version: 2.0.3(gej5nvazozczuv5whg2eaxvqtu)
+        specifier: 2.0.5
+        version: 2.0.5(gej5nvazozczuv5whg2eaxvqtu)
       ember-concurrency:
         specifier: 4.0.2
         version: 4.0.2(@babel/core@7.25.2)(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -811,8 +811,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       ember-command:
-        specifier: 2.0.3
-        version: 2.0.3(so7lyfd44tzme7m2rjckq64o7a)
+        specifier: 2.0.5
+        version: 2.0.5(so7lyfd44tzme7m2rjckq64o7a)
       ember-concurrency:
         specifier: 4.0.2
         version: 4.0.2(@babel/core@7.25.2)(@glimmer/tracking@1.1.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0(esbuild@0.20.2)))
@@ -5707,8 +5707,9 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  ember-command@2.0.3:
-    resolution: {integrity: sha512-6pD5BTeElnb3i/dkjh0wB8XvoJ5h2G5Wud770RM2VXFoWgl6STpRtkB/M0F1C79PG+9Jw+D8e9QwlWt7RAJ/nw==}
+  ember-command@2.0.5:
+    resolution: {integrity: sha512-cN1TJBaFcrmH5X1dYRerJVNcg63kEPS8TyHTOYXMt1k/X0TgkfKY57MN9M0QGMaiwY38I991ZBHnxXeBWRKt8Q==}
+    engines: {node: '>= 20.*'}
     peerDependencies:
       '@ember/test-helpers': '>=2.9.0'
       '@glimmer/component': ^1.1.2
@@ -17577,7 +17578,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-command@2.0.3(gej5nvazozczuv5whg2eaxvqtu):
+  ember-command@2.0.5(gej5nvazozczuv5whg2eaxvqtu):
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.9(@glint/template@1.4.0)
@@ -17592,7 +17593,7 @@ snapshots:
       - ember-polaris-service
       - supports-color
 
-  ember-command@2.0.3(so7lyfd44tzme7m2rjckq64o7a):
+  ember-command@2.0.5(so7lyfd44tzme7m2rjckq64o7a):
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.9(@glint/template@1.4.0)

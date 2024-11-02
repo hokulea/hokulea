@@ -45,6 +45,8 @@ export { default as TextArea } from './components/text-area';
 
 export type { FieldValidateCallback, FormValidateCallback } from './-private/form';
 // @ts-ignore
+export type { FormBuilder } from './components/form';
+// @ts-ignore
 export { default as Form } from './components/form';
 
 // navigation

@@ -522,8 +522,8 @@ importers:
         specifier: ^8.2.2
         version: 8.2.2
       ember-a11y-testing:
-        specifier: 6.1.1
-        version: 6.1.1(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0)
+        specifier: 7.0.2
+        version: 7.0.2(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0)
       ember-aria-voyager:
         specifier: 0.0.5
         version: 0.0.5(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -5549,11 +5549,11 @@ packages:
   electron-to-chromium@1.5.4:
     resolution: {integrity: sha512-orzA81VqLyIGUEA77YkVA1D+N+nNfl2isJVjjmOyrlxuooZ19ynb+dOlaDTqd/idKRS9lDCSBmtzM+kyCsMnkA==}
 
-  ember-a11y-testing@6.1.1:
-    resolution: {integrity: sha512-bDpw5+B2q++xwz5DWcbYB6dXp6nNe4jBwDkT6CqMESiVWWsSKPHs3ygt1Y89ESucesRIiv/49gNKMftZNsCpkw==}
+  ember-a11y-testing@7.0.2:
+    resolution: {integrity: sha512-Nv7+WIPkkILYMarLQHiXiHwnRtmtAOq2r4d8DZptKJPrl7mLdD1fM3gwzpbG0mTu81LtDmG+yULD+mBYxzP13A==}
     engines: {node: 16.* || >= 18}
     peerDependencies:
-      '@ember/test-helpers': ^3.0.3
+      '@ember/test-helpers': ^3.0.3 || ^4.0.2
       qunit: '>= 2'
     peerDependenciesMeta:
       qunit:
@@ -16966,7 +16966,7 @@ snapshots:
 
   electron-to-chromium@1.5.4: {}
 
-  ember-a11y-testing@6.1.1(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0):
+  ember-a11y-testing@7.0.2(@babel/core@7.25.2)(@ember/test-helpers@3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0):
     dependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
       '@ember/test-waiters': 3.1.0
@@ -16979,7 +16979,7 @@ snapshots:
       ember-cli-typescript: 4.2.1
       ember-cli-version-checker: 5.1.2
       ember-destroyable-polyfill: 2.0.3(@babel/core@7.25.2)
-      fs-extra: 10.1.0
+      fs-extra: 11.2.0
       validate-peer-dependencies: 2.2.0
     optionalDependencies:
       qunit: 2.21.1

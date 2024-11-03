@@ -34,9 +34,9 @@ const rangeArgTypes = {
 const Template = (args: FieldArgs) => {
   return {
     template: hbs`
-      <Form @data={{hash age=undefined}} @submit={{this.submit}} as |f|>
+      <Form @data={{hash fruitAmount=undefined}} @submit={{this.submit}} as |f|>
         <f.Range
-          @name="age"
+          @name="fruitAmount"
           @label={{this.label}}
           @description={{this.description}}
           @disabled={{this.disabled}}
@@ -66,8 +66,8 @@ export const Description = {
   render: () => {
     return {
       template: hbs`
-        <Form @data={{hash age=''}} as |f|>
-          <f.Range @name="age" @label="How many fruits do you want?" @description="You have chosen a fruit before, don't you?" />
+        <Form @data={{hash fruitAmount=undefined}} as |f|>
+          <f.Range @name="fruitAmount" @label="How many fruits do you want?" @description="You have chosen a fruit before, don't you?" />
         </Form>
       `
     };
@@ -84,8 +84,8 @@ export const Placeholder = {
   render: () => {
     return {
       template: hbs`
-        <Form @data={{hash age=''}} as |f|>
-          <f.Range @name="age" @label="How many fruits do you want?" placeholder="You have chosen a fruit before, don't you?" />
+        <Form @data={{hash fruitAmount=undefined}} as |f|>
+          <f.Range @name="fruitAmount" @label="How many fruits do you want?" placeholder="You have chosen a fruit before, don't you?" />
         </Form>
       `
     };
@@ -102,8 +102,8 @@ export const Disabled = {
   render: () => {
     return {
       template: hbs`
-        <Form @data={{hash age=''}} as |f|>
-          <f.Range @name="age" @label="How many fruits do you want?" @disabled={{true}} />
+        <Form @data={{hash fruitAmount=undefined}} as |f|>
+          <f.Range @name="fruitAmount" @label="How many fruits do you want?" @disabled={{true}} />
         </Form>
       `
     };

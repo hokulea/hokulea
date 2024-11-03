@@ -1,0 +1,58 @@
+import { on } from '@ember/modifier';
+
+import { modifier } from 'ember-modifier';
+
+import styles from '@hokulea/core/controls.module.css';
+
+import { pick } from '../-private/helpers';
+import { pickAsNumber } from './-input';
+
+import type { InputArgs } from './-input';
+import type { TOC } from '@ember/component/template-only';
+
+function applyProgressStyle(range: HTMLInputElement) {
+  const min = Number.parseFloat(range.min) || 0;
+  const max = Number.parseFloat(range.max) || 100;
+  const currentVal = Number.parseFloat(range.value);
+  const progress = ((currentVal - min) / (max - min)) * 100;
+
+  range.style.setProperty('--_hokulea-slider-progress', `${progress}%`);
+}
+
+const progressStyle = modifier((element: HTMLInputElement) => {
+  applyProgressStyle(element);
+
+  const listenForProgressChange = () => {
+    applyProgressStyle(element);
+  };
+
+  element.addEventListener('input', listenForProgressChange);
+
+  return () => element.removeEventListener('input', listenForProgressChange);
+});
+
+export interface RangeInputSignature {
+  Element: HTMLInputElement;
+  Args: InputArgs<number> & {
+    min?: number;
+    max?: number;
+    step?: number | 'any';
+    orientation?: 'horizontal' | 'vertical';
+  };
+}
+
+const RangeInput: TOC<RangeInputSignature> = <template>
+  <input
+    class={{styles.range}}
+    type="range"
+    value={{@value}}
+    disabled={{@disabled}}
+    data-test-input
+    data-orientation={{@orientation}}
+    ...attributes
+    {{progressStyle}}
+    {{on "input" (pick "target.value" (pickAsNumber @update))}}
+  />
+</template>;
+
+export default RangeInput;

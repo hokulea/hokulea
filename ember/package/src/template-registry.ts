@@ -41,6 +41,8 @@ import type Popover from './components/popover';
 // @ts-ignore
 import type Radio from './components/radio';
 // @ts-ignore
+import type RangeInput from './components/range-input';
+// @ts-ignore
 import type Section from './components/section';
 // @ts-ignore
 import type Select from './components/select';
@@ -69,6 +71,7 @@ export default interface HokuleaRegistry {
   PhoneInput: typeof PhoneInput;
   Popover: typeof Popover;
   Radio: typeof Radio;
+  RangeInput: typeof RangeInput;
   Section: typeof Section;
   Select: typeof Select;
   TextArea: typeof TextArea;

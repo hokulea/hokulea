@@ -22,6 +22,7 @@ import MultipleChoiceField from '../-private/form/components/fields/multiple-cho
 import NumberField from '../-private/form/components/fields/number';
 import PasswordField from '../-private/form/components/fields/password';
 import PhoneField from '../-private/form/components/fields/phone';
+import RangeField from '../-private/form/components/fields/range';
 import SelectField from '../-private/form/components/fields/select';
 import SingularChoiceField from '../-private/form/components/fields/singular-choice';
 import TextField from '../-private/form/components/fields/text';
@@ -52,6 +53,7 @@ export interface FormBuilder<DATA extends UserData, SUBMISSION_VALUE> {
   List: WithBoundArgs<typeof ListField<DATA>, 'Field'>;
   MultipleChoice: WithBoundArgs<typeof MultipleChoiceField<DATA>, 'Field'>;
   Number: WithBoundArgs<typeof NumberField<DATA>, 'Field'>;
+  Range: WithBoundArgs<typeof RangeField<DATA>, 'Field'>;
   Password: WithBoundArgs<typeof PasswordField<DATA>, 'Field'>;
   Phone: WithBoundArgs<typeof PhoneField<DATA>, 'Field'>;
   Select: WithBoundArgs<typeof SelectField<DATA>, 'Field'>;
@@ -187,6 +189,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
   ListField = ListField<DATA>;
   MultipleChoiceField = MultipleChoiceField<DATA>;
   NumberField = NumberField<DATA>;
+  RangeField = RangeField<DATA>;
   PasswordField = PasswordField<DATA>;
   PhoneField = PhoneField<DATA>;
   SelectField = SelectField<DATA>;
@@ -596,6 +599,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
             List=(component this.ListField Field=WiredField)
             MultipleChoice=(component this.MultipleChoiceField Field=WiredField)
             Number=(component this.NumberField Field=WiredField)
+            Range=(component this.RangeField Field=WiredField)
             Password=(component this.PasswordField Field=WiredField)
             Phone=(component this.PhoneField Field=WiredField)
             Select=(component this.SelectField Field=WiredField)

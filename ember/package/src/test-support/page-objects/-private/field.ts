@@ -8,6 +8,7 @@ import { SelectPageObject } from '../select';
 import { TextAreaPageObject } from '../text-area';
 import { ChoicesPageObject } from './choices';
 
+import type { RangeInputPageObject } from '../input';
 import type { ElementLike } from 'fractal-page-object';
 
 export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetElement> {
@@ -48,6 +49,7 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
 
   get $control():
     | InputPageObject
+    | RangeInputPageObject
     | InputBuilderPageObject
     | SelectPageObject
     | TextAreaPageObject
@@ -58,6 +60,10 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
 
     if (this.$checkbox.element) {
       return this.$checkbox;
+    }
+
+    if (this.$input.element?.type === 'range') {
+      return this.$input as RangeInputPageObject;
     }
 
     if (this.$input.element) {

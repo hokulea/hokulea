@@ -1,5 +1,23 @@
 # Changelog
 
+## Release (2024-11-03)
+
+@hokulea/ember 0.4.0 (minor)
+@hokulea/core 0.2.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`
+  * [#293](https://github.com/hokulea/hokulea/pull/293) New Component: `<RangeInput>` ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#287](https://github.com/hokulea/hokulea/pull/287) Provide `FormBuilder` interface for `Form` construction ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#276](https://github.com/hokulea/hokulea/pull/276) Update `ember-cli-code-coverage` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-08-11)
 
 @hokulea/ember 0.3.2 (patch)

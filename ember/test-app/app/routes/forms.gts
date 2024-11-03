@@ -12,6 +12,7 @@ const data = {
   receiptNumber: '',
   price: '',
   fruit: '',
+  fruitAmount: undefined,
   pokemon: '',
   graduation: '',
   pets: [],
@@ -54,6 +55,8 @@ export class FormsRoute extends Route<object> {
           <s.Option @value="Banana" />
           <s.Option @value="Pear">🍐 Pear</s.Option>
         </f.Select>
+
+        <f.Range @name="fruitAmount" @label="How many fruits do you want?" min={{1}} max={{5}} />
 
         <f.List @name="pokemon" @label="Starter Pokemon" as |l|>
           <l.Option @value="Bulbasaur">🟢 Bulbasaur</l.Option>

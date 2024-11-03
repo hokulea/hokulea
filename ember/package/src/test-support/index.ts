@@ -10,6 +10,7 @@ export {
   NumberInputPageObject,
   PasswordInputPageObject,
   PhoneInputPageObject,
+  RangeInputPageObject,
   TextInputPageObject
 } from './page-objects/input';
 export type { InputBuilderPageObject } from './page-objects/input-builder';

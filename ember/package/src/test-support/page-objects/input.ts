@@ -18,6 +18,11 @@ export class InputPageObject extends PageObject<HTMLInputElement> implements Inp
   }
 }
 
+export class RangeInputPageObject extends InputPageObject {
+  get orientation(): string | undefined {
+    return this.control.dataset.orientation;
+  }
+}
 export const NumberInputPageObject = InputPageObject;
 export const TextInputPageObject = InputPageObject;
 export const PhoneInputPageObject = InputPageObject;

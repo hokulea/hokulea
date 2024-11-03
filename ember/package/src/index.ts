@@ -21,6 +21,8 @@ export { default as List } from './components/list';
 // @ts-ignore
 export { default as NumberInput } from './components/number-input';
 // @ts-ignore
+export { default as RangeInput } from './components/range-input';
+// @ts-ignore
 export { default as PhoneInput } from './components/phone-input';
 // @ts-ignore
 export { default as TextInput } from './components/text-input';

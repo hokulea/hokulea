@@ -13,6 +13,7 @@ import {
   PasswordInput,
   PhoneInput,
   Radio,
+  RangeInput,
   Section,
   Select,
   TextArea,
@@ -109,6 +110,20 @@ export class ControlsRoute extends Route<object> {
           <Checkbox />
           <Checkbox checked />
           <Checkbox disabled />
+        </p>
+      </Section>
+
+      <Section @title="Range">
+        <p>
+          <RangeInput />
+          <RangeInput @value={{10}} />
+          <RangeInput disabled />
+          some text
+          <RangeInput />
+        </p>
+        <p>
+          <RangeInput @orientation="vertical" />
+          some text
         </p>
       </Section>
 

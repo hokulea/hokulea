@@ -74,6 +74,151 @@
   } */
 }
 
+/*
+  styling range:
+
+- https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/
+- https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+- http://danielstern.ca/range.css
+- https://maame.hashnode.dev/custom-input-range-slider
+- https://pratha001.medium.com/input-range-slider-bb1743b516dc
+*/
+.range {
+  &::-moz-range-track {
+    height: calc(var(--control-border-width) * 4);
+
+    background-color: var(--control-selected-background);
+    background-image: linear-gradient(var(--range-progress-background), var(--range-progress-background));
+    background-repeat: no-repeat;
+    /* stylelint-disable-next-line custom-property-pattern */
+    background-size: var(--_hokulea-slider-progress, 0) 100%;
+    border-radius: var(--control-border-width);
+  }
+
+  &::-moz-range-thumb {
+    aspect-ratio: 1;
+    height: 1em;
+    margin-top: calc(var(--control-border-width) / 0.5 - .5em);
+
+    appearance: none;
+    background-color: var(--range-thumb-background);
+    border-width: 0;
+    border-radius: 50%;
+  }
+
+  &[data-orientation="vertical"] {
+    &::-moz-range-track {
+      width: calc(var(--control-border-width) * 4);
+      height: unset;
+      background-position: bottom;
+      /* stylelint-disable-next-line custom-property-pattern */
+      background-size: 100% var(--_hokulea-slider-progress, 0);
+    }
+
+    &::-moz-range-thumb {
+      margin-top: unset;
+      margin-left: calc(var(--control-border-width) / 0.5 - .5em);
+    }
+  }
+
+  &:focus-visible::-moz-range-thumb {
+    outline: var(--control-focus-stroke);
+    outline-offset: var(--control-focus-stroke-offset);
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.range {
+  &::-webkit-slider-container {
+    height: 1em;
+    line-height: 1em;
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: calc(var(--control-border-width) * 4);
+
+    background-color: var(--control-selected-background);
+    background-image: linear-gradient(var(--range-progress-background), var(--range-progress-background));
+    background-repeat: no-repeat;
+    /* stylelint-disable-next-line custom-property-pattern */
+    background-size: var(--_hokulea-slider-progress, 0) 100%;
+    border-radius: var(--control-border-width);
+  }
+
+  &::-webkit-slider-thumb {
+    aspect-ratio: 1;
+    height: 1em;
+    margin-top: calc(var(--control-border-width) / 0.5 - .5em);
+
+    appearance: none;
+    background-color: var(--range-thumb-background);
+    border-radius: 50%;
+  }
+
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  &[data-orientation="vertical"] {
+    &::-webkit-slider-runnable-track {
+      width: calc(var(--control-border-width) * 4);
+      height: unset;
+      background-position: bottom;
+      /* stylelint-disable-next-line custom-property-pattern */
+      background-size: 100% var(--_hokulea-slider-progress, 0);
+    }
+
+    &::-webkit-slider-thumb {
+      margin-top: unset;
+      margin-left: calc(var(--control-border-width) / 0.5 - .5em);
+    }
+  }
+
+  &:focus-visible::-webkit-slider-thumb {
+    outline: var(--control-focus-stroke);
+    outline-offset: var(--control-focus-stroke-offset);
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.range {
+  --range-progress-background: var(--control-focus-selected-background);
+  --range-thumb-background: var(--intent-action-supreme-base-background);
+
+  cursor: pointer;
+  user-select: none;
+
+  padding-block: var(--spacing-primitive0);
+
+  vertical-align: middle;
+
+  appearance: none;
+  background: transparent;
+  border: var(--control-border-width) solid transparent;
+
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  &[data-orientation="vertical"] {
+    direction: rtl;
+    writing-mode: vertical-lr;
+  }
+
+  &:hover {
+    --range-progress-background: var(--control-hover-background);
+    --range-thumb-background: var(--intent-action-supreme-hover-background);
+  }
+
+  &:active {
+    --range-progress-background: var(--control-active-background);
+    --range-thumb-background: var(--intent-action-supreme-active-background);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled, &[aria-disabled="true"] {
+    --range-progress-background: var(--control-disabled-background);
+    --range-thumb-background: var(--intent-action-supreme-disabled-background);
+  }
+}
+
 .select {
   composes: control;
   composes: focus-within;

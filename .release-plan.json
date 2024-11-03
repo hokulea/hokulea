@@ -1,25 +1,33 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.3.1",
-      "newVersion": "0.3.2",
+      "impact": "minor",
+      "oldVersion": "0.3.2",
+      "newVersion": "0.4.0",
       "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "patch",
-      "oldVersion": "0.1.1",
-      "newVersion": "0.1.2",
+      "impact": "minor",
+      "oldVersion": "0.1.2",
+      "newVersion": "0.2.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
@@ -31,5 +39,5 @@
       "oldVersion": "0.0.3"
     }
   },
-  "description": "## Release (2024-08-11)\n\n@hokulea/ember 0.3.2 (patch)\n@hokulea/core 0.1.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#268](https://github.com/hokulea/hokulea/pull/268) Styling Fixes ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#263](https://github.com/hokulea/hokulea/pull/263) Update to `turborepo@2` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-11-03)\n\n@hokulea/ember 0.4.0 (minor)\n@hokulea/core 0.2.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#293](https://github.com/hokulea/hokulea/pull/293) New Component: `<RangeInput>` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#287](https://github.com/hokulea/hokulea/pull/287) Provide `FormBuilder` interface for `Form` construction ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#276](https://github.com/hokulea/hokulea/pull/276) Update `ember-cli-code-coverage` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

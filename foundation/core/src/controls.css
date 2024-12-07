@@ -482,3 +482,94 @@
     background-color: var(--control-disabled-background);
   }
 }
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+
+  &:has([role="tablist"][aria-orientation="vertical"]) {
+    flex-direction: row;
+  }
+
+  /* margin-right: calc(var(--spacing-primitive-1) * -1);
+  margin-left: calc(var(--spacing-primitive-1) * -1); */
+
+  [role="tablist"] {
+    /* stylelint-disable-next-line custom-property-pattern */
+    --_border: var(--shape-stroke-width) var(--control-border-style) var(--control-border-color);
+
+    display: flex;
+    flex-direction: row;
+    /* stylelint-disable-next-line custom-property-pattern */
+    border-block-end: var(--_border);
+    box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
+
+    [role="tab"] {
+      position: relative;
+
+      padding: var(--spacing-container0) var(--spacing-container-1);
+
+      color: var(--typography-main);
+      text-decoration: none;
+
+      appearance: none;
+      background: 0 0;
+      border: 0;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        right: var(--spacing-primitive-1);
+        bottom: 0;
+        left: var(--spacing-primitive-1);
+
+        height: 2px;
+
+        border-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 1px 1px 0 0;
+      }
+
+      &[aria-selected="true"] {
+        color: var(--navigation-links-base);
+
+        &::after {
+          border-color: var(--navigation-links-base);
+        }
+      }
+
+      &:focus-visible {
+        outline: none;
+
+        span {
+          outline: var(--control-focus-stroke);
+          outline-offset: var(--spacing-primitive-4);
+        }
+      }
+    }
+
+    &[aria-orientation="vertical"] {
+      flex-direction: column;
+      border-block-end: 0;
+      /* stylelint-disable-next-line custom-property-pattern */
+      border-inline-end: var(--_border);
+      box-shadow: 1px 0 0 rgb(0 0 0 / 6%);
+
+      [role="tab"] {
+        padding: var(--spacing-container-1) var(--spacing-container0);
+
+        &::after {
+          inset: var(--spacing-container-1) 0 var(--spacing-container-1) auto;
+          width: 2px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  [role="tabpanel"] {
+    padding: var(--spacing-container-1);
+  }
+}

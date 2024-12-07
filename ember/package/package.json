@@ -63,6 +63,7 @@
     "ember-async-data": "^1.0.3",
     "ember-phosphor-icons": "^0.3.0",
     "ember-provide-consume-context": "^0.3.2",
+    "ember-stargate": "^0.6.0",
     "read-pkg-up": "7.0.1",
     "tracked-built-ins": "^3.3.0"
   },
@@ -174,6 +175,7 @@
       "./components/range-input.js": "./dist/_app_/components/range-input.js",
       "./components/section.js": "./dist/_app_/components/section.js",
       "./components/select.js": "./dist/_app_/components/select.js",
+      "./components/tabs.js": "./dist/_app_/components/tabs.js",
       "./components/text-area.js": "./dist/_app_/components/text-area.js",
       "./components/text-input.js": "./dist/_app_/components/text-input.js",
       "./helpers/popover.js": "./dist/_app_/helpers/popover.js"

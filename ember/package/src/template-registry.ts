@@ -47,6 +47,8 @@ import type Section from './components/section';
 // @ts-ignore
 import type Select from './components/select';
 // @ts-ignore
+import type Tabs from './components/tabs';
+// @ts-ignore
 import type TextArea from './components/text-area';
 // @ts-ignore
 import type TextInput from './components/text-input';
@@ -74,6 +76,7 @@ export default interface HokuleaRegistry {
   RangeInput: typeof RangeInput;
   Section: typeof Section;
   Select: typeof Select;
+  Tabs: typeof Tabs;
   TextArea: typeof TextArea;
   TextInput: typeof TextInput;
   InputBuilder: typeof InputBuilder;

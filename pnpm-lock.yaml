@@ -244,8 +244,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(@babel/core@7.25.2)
       ember-aria-voyager:
-        specifier: ^0.0.5
-        version: 0.0.5(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
+        specifier: ^0.1.0
+        version: 0.1.0(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-async-data:
         specifier: ^1.0.3
         version: 1.0.3(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -525,8 +525,8 @@ importers:
         specifier: 7.0.2
         version: 7.0.2(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0)
       ember-aria-voyager:
-        specifier: 0.0.5
-        version: 0.0.5(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
+        specifier: 0.1.0
+        version: 0.1.0(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-auto-import:
         specifier: 2.8.1
         version: 2.8.1(@glint/template@1.4.0)(webpack@5.93.0)
@@ -3880,8 +3880,8 @@ packages:
   aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
 
-  aria-voyager@0.0.4:
-    resolution: {integrity: sha512-pwsJuUvWg1jyKQ01cL86ukJOmOFDFhEB7lAAlNkDV1X0tpD7MJ5yN5uCUF5MasbN7om/pY3lNtv2+8+yzFDbXw==}
+  aria-voyager@0.1.0:
+    resolution: {integrity: sha512-Vw/xXh4z9ij4bMRjfK7zUtvzyN5o50ek5cgGbT/rieHpl/3ykVW0uYIpp0waSSq3+r7ipaWA0drNIz7GkNPcRg==}
     engines: {node: '>= 18.*'}
 
   arr-diff@4.0.0:
@@ -5558,8 +5558,8 @@ packages:
       qunit:
         optional: true
 
-  ember-aria-voyager@0.0.5:
-    resolution: {integrity: sha512-lllqqgTRayWGo9BMu/sSis6bda3lWj7ToA7FSPz3M6qLM3sieTgXtuJ5R5nYYnh8JgvYAF69yGg/VghJDv1HYA==}
+  ember-aria-voyager@0.1.0:
+    resolution: {integrity: sha512-eGZvA3eDBD/JdQtkm1FmYiM9mKvEQ+DvRssFgiQq/hH6eYSZEGiwoWsJPPczVX5l++lqj5AemUZvEpilBBx7Jg==}
     engines: {node: '>= 18.*'}
     peerDependencies:
       '@ember/test-helpers': ^4.0.0
@@ -14937,7 +14937,7 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  aria-voyager@0.0.4:
+  aria-voyager@0.1.0:
     dependencies:
       lodash.isequal: 4.5.0
       uuid: 11.0.2
@@ -16980,10 +16980,10 @@ snapshots:
       - supports-color
       - webpack
 
-  ember-aria-voyager@0.0.5(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)):
+  ember-aria-voyager@0.1.0(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)):
     dependencies:
       '@embroider/addon-shim': 1.8.9
-      aria-voyager: 0.0.4
+      aria-voyager: 0.1.0
       dom-element-descriptors: 0.5.1
       ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       lodash.isequal: 4.5.0

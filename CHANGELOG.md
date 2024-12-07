@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-12-07)
+
+@hokulea/ember 0.4.1 (patch)
+
+#### :house: Internal
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#294](https://github.com/hokulea/hokulea/pull/294) Update `ember-aria-voyager` to `v0.1.0` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-11-03)
 
 @hokulea/ember 0.4.0 (minor)

@@ -4,7 +4,7 @@ import { registerDestructor } from '@ember/destroyable';
 import { hash } from '@ember/helper';
 import { next } from '@ember/runloop';
 
-import { listbox } from 'ember-aria-voyager';
+import { ariaListbox } from 'ember-aria-voyager';
 import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
@@ -94,7 +94,7 @@ export default class List<V> extends Component<ListSignature<V>> {
       data-test-list
       ...attributes
       {{!@glint-ignore}}
-      {{listbox
+      {{ariaListbox
         items=this.items
         selection=@value
         multi=@multiple

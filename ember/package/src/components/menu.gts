@@ -6,7 +6,7 @@ import { next } from '@ember/runloop';
 import { service } from '@ember/service';
 import { htmlSafe } from '@ember/template';
 
-import { menu } from 'ember-aria-voyager';
+import { ariaMenu } from 'ember-aria-voyager';
 import { CommandElement } from 'ember-command';
 import { consume } from 'ember-provide-consume-context';
 import { TrackedArray } from 'tracked-built-ins';
@@ -156,7 +156,7 @@ export default class Menu extends Component<MenuSignature> {
       class={{styles.menu}}
       data-test-menu
       ...attributes
-      {{menu items=this.items disabled=@disabled}}
+      {{ariaMenu items=this.items disabled=@disabled}}
       style={{if this.shallHide (htmlSafe "display: none")}}
     >
       {{yield

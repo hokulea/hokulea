@@ -540,13 +540,13 @@
         }
       }
 
-      &:focus-visible {
+      &:focus-visible  {
         outline: none;
 
-        span {
-          outline: var(--control-focus-stroke);
-          outline-offset: var(--spacing-primitive-4);
-        }
+          span {
+            outline: var(--control-focus-stroke);
+            outline-offset: var(--spacing-primitive-4);
+          }
       }
     }
 

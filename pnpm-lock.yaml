@@ -244,8 +244,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(@babel/core@7.25.2)
       ember-aria-voyager:
-        specifier: ^0.1.0
-        version: 0.1.0(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
+        specifier: ^0.2.2
+        version: 0.2.2(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-async-data:
         specifier: ^1.0.3
         version: 1.0.3(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
@@ -528,8 +528,8 @@ importers:
         specifier: 7.0.2
         version: 7.0.2(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(@glint/template@1.4.0)(qunit@2.21.1)(webpack@5.93.0)
       ember-aria-voyager:
-        specifier: 0.1.0
-        version: 0.1.0(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
+        specifier: 0.2.2
+        version: 0.2.2(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       ember-auto-import:
         specifier: 2.8.1
         version: 2.8.1(@glint/template@1.4.0)(webpack@5.93.0)
@@ -598,7 +598,7 @@ importers:
         version: 3.0.1(@babel/core@7.25.2)
       ember-sinon-qunit:
         specifier: 7.5.0
-        version: 7.5.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.21.1)(sinon@18.0.1)
+        version: 7.5.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.21.1)(sinon@19.0.2)
       ember-source:
         specifier: 5.12.0
         version: 5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)
@@ -648,8 +648,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       sinon:
-        specifier: 18.0.1
-        version: 18.0.1
+        specifier: 19.0.2
+        version: 19.0.2
       stylelint:
         specifier: 16.6.1
         version: 16.6.1(typescript@5.5.4)
@@ -3008,9 +3008,6 @@ packages:
   '@sinonjs/commons@3.0.1':
     resolution: {integrity: sha512-K3mCHKQ9sVh8o1C9cxkwxaOmXoAMlDxC1mYyHrjqOWEcBjYr76t96zL2zlj5dUGZ3HSw240X1qgH3Mjf1yJWpQ==}
 
-  '@sinonjs/fake-timers@11.2.2':
-    resolution: {integrity: sha512-G2piCSxQ7oWOxwGSAyFHfPIsyeJGXYtc6mFbnFA+kRXkiEnTl8c/8jul2S329iFBnDI9HGoeWWAZvuvOkZccgw==}
-
   '@sinonjs/fake-timers@13.0.4':
     resolution: {integrity: sha512-wpUq+QiKxrWk7U2pdvNSY9fNX62/k+7eEdlQMO0A3rU8tQ+vvzY/WzBhMz+GbQlATXZlXWYQqFWNFcn1SVvThA==}
 
@@ -3893,8 +3890,8 @@ packages:
   aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
 
-  aria-voyager@0.1.0:
-    resolution: {integrity: sha512-Vw/xXh4z9ij4bMRjfK7zUtvzyN5o50ek5cgGbT/rieHpl/3ykVW0uYIpp0waSSq3+r7ipaWA0drNIz7GkNPcRg==}
+  aria-voyager@0.1.1:
+    resolution: {integrity: sha512-FYcHH52C+CYBeT02OTr1G7zkW1KLbFQDhPNirhrTQX/eSYfCgy9EbwuVx8+L5MqmlDZ9hqpWU9K93rVkn8KIbA==}
     engines: {node: '>= 18.*'}
 
   arr-diff@4.0.0:
@@ -5571,8 +5568,8 @@ packages:
       qunit:
         optional: true
 
-  ember-aria-voyager@0.1.0:
-    resolution: {integrity: sha512-eGZvA3eDBD/JdQtkm1FmYiM9mKvEQ+DvRssFgiQq/hH6eYSZEGiwoWsJPPczVX5l++lqj5AemUZvEpilBBx7Jg==}
+  ember-aria-voyager@0.2.2:
+    resolution: {integrity: sha512-PqNIgJaJWc6Pd9e7psniJxZDe43hgZc6nT/VG2UV5XGjdVDPDsAQhIV/SdwuIEbo84ofhQqs+wj5KXUPEn5TEg==}
     engines: {node: '>= 18.*'}
     peerDependencies:
       '@ember/test-helpers': ^4.0.0
@@ -10275,9 +10272,6 @@ packages:
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
 
-  sinon@18.0.1:
-    resolution: {integrity: sha512-a2N2TDY1uGviajJ6r4D1CyRAkzE9NNVlYOV1wX5xQDuAk0ONgzgRl0EjCQuRCPxOwp13ghsMwt9Gdldujs39qw==}
-
   sinon@19.0.2:
     resolution: {integrity: sha512-euuToqM+PjO4UgXeLETsfQiuoyPXlqFezr6YZDFwHR3t4qaX0fZUe1MfPMznTL5f8BWrVS89KduLdMUsxFCO6g==}
 
@@ -13909,10 +13903,6 @@ snapshots:
     dependencies:
       type-detect: 4.0.8
 
-  '@sinonjs/fake-timers@11.2.2':
-    dependencies:
-      '@sinonjs/commons': 3.0.1
-
   '@sinonjs/fake-timers@13.0.4':
     dependencies:
       '@sinonjs/commons': 3.0.1
@@ -14988,7 +14978,7 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  aria-voyager@0.1.0:
+  aria-voyager@0.1.1:
     dependencies:
       lodash.isequal: 4.5.0
       uuid: 11.0.2
@@ -17031,10 +17021,10 @@ snapshots:
       - supports-color
       - webpack
 
-  ember-aria-voyager@0.1.0(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)):
+  ember-aria-voyager@0.2.2(@babel/core@7.25.2)(@ember/test-helpers@4.0.4(@babel/core@7.25.2)(@glint/template@1.4.0)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)))(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)):
     dependencies:
       '@embroider/addon-shim': 1.8.9
-      aria-voyager: 0.1.0
+      aria-voyager: 0.1.1
       dom-element-descriptors: 0.5.1
       ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))
       lodash.isequal: 4.5.0
@@ -17935,14 +17925,14 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-sinon-qunit@7.5.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.21.1)(sinon@18.0.1):
+  ember-sinon-qunit@7.5.0(@babel/core@7.25.2)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.21.1)(sinon@19.0.2):
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@types/sinon': 17.0.3
       decorator-transforms: 2.0.0(@babel/core@7.25.2)
       ember-source: 5.12.0(@glimmer/component@1.1.2(@babel/core@7.25.2))(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.93.0)
       qunit: 2.21.1
-      sinon: 18.0.1
+      sinon: 19.0.2
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -23250,15 +23240,6 @@ snapshots:
   simple-swizzle@0.2.2:
     dependencies:
       is-arrayish: 0.3.2
-
-  sinon@18.0.1:
-    dependencies:
-      '@sinonjs/commons': 3.0.1
-      '@sinonjs/fake-timers': 11.2.2
-      '@sinonjs/samsam': 8.0.2
-      diff: 5.2.0
-      nise: 6.1.1
-      supports-color: 7.2.0
 
   sinon@19.0.2:
     dependencies:

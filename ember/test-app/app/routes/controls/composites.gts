@@ -1,7 +1,7 @@
 import Route from 'ember-polaris-routing/route';
 import CompatRoute from 'ember-polaris-routing/route/compat';
 
-import { Page, Section, Tabs } from '@hokulea/ember';
+import { Page, Tabs } from '@hokulea/ember';
 
 import ListComposite from './-composites/list';
 import MenuComposite from './-composites/menu';
@@ -13,16 +13,11 @@ export class ControlsRoute extends Route<object> {
         <t.Tab @label="List">
           <ListComposite />
         </t.Tab>
+
+        <t.Tab @label="Menu">
+          <MenuComposite />
+        </t.Tab>
       </Tabs>
-
-      <Section @title="List">
-        <ListComposite />
-      </Section>
-
-      <Section @title="Menu">
-        <MenuComposite />
-      </Section>
-
     </Page>
   </template>
 }

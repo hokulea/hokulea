@@ -1,8 +1,6 @@
 import { tracked } from '@glimmer/tracking';
 import { hash } from '@ember/helper';
-import { render } from '@ember/test-helpers';
-import { settled } from '@ember/test-helpers';
-import { click } from '@ember/test-helpers';
+import { render, settled } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 

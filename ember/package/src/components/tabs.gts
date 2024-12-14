@@ -64,7 +64,7 @@ class Tab extends Component<TabSignature> {
   <template>
     {{#let (uniqueId) as |id|}}
       <Portal @target={{@tablist}}>
-        {{! template-lint-disable require-button-type }}
+        {{! template-lint-disable require-button-type require-context-role }}
         <button role="tab" aria-controls={{id}} id="{{id}}-label" {{attachValue @value}}>
           <span>
             {{#if (has-block "label")}}
@@ -120,8 +120,6 @@ export default class Tabs extends Component<TabsSignature> {
   }
 
   get selection() {
-    console.log('selection', this.items, this.args.selection ?? this.internalSelection?.id);
-
     return this.args.selection ?? this.internalSelection?.id;
   }
 
@@ -140,8 +138,6 @@ export default class Tabs extends Component<TabsSignature> {
   };
 
   select = (id: string | unknown) => {
-    console.log('select', id);
-
     const tab = this.tabs.find((t) => t.id === id) as Tab;
 
     this.internalSelection = tab;

@@ -21,6 +21,8 @@ const eq = (a: unknown, b: unknown) => a === b;
 
 const not = (a: boolean) => !a;
 
+const notEq = (a: unknown, b: unknown) => a !== b;
+
 const asString = (value: unknown): string => {
   return value as string;
 };
@@ -33,4 +35,4 @@ const asBoolean = (value: unknown): boolean => {
   return value as boolean;
 };
 
-export { and, asBoolean, asNumber, asString, eq, not, or, pick };
+export { and, asBoolean, asNumber, asString, eq, not, notEq, or, pick };

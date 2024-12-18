@@ -62,6 +62,9 @@ export { default as Page } from './components/page';
 // @ts-ignore
 export { default as Menu } from './components/menu';
 
+// @ts-ignore
+export { default as Tabs } from './components/tabs';
+
 // content
 
 // @ts-ignore

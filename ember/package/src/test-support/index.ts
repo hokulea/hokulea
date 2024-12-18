@@ -22,4 +22,5 @@ export { PillButtonPageObject } from './page-objects/pill-button';
 export { PopoverPageObject } from './page-objects/popover';
 export { SectionPageObject } from './page-objects/section';
 export { SelectPageObject } from './page-objects/select';
+export { TabsPageObject } from './page-objects/tabs';
 export { TextAreaPageObject } from './page-objects/text-area';

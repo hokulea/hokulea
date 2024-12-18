@@ -1,5 +1,25 @@
 # Changelog
 
+## Release (2024-12-18)
+
+@hokulea/ember 0.5.0 (minor)
+@hokulea/core 0.3.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`
+  * [#296](https://github.com/hokulea/hokulea/pull/296) Add Tabs ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`
+  * [#297](https://github.com/hokulea/hokulea/pull/297) Fix focus styles for `<Page>` ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#294](https://github.com/hokulea/hokulea/pull/294) Update `ember-aria-voyager` to `v0.1.0` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-11-03)
 
 @hokulea/ember 0.4.0 (minor)

@@ -5,6 +5,7 @@ import { Page, Tabs } from '@hokulea/ember';
 
 import ListComposite from './-composites/list';
 import MenuComposite from './-composites/menu';
+import TabsComposite from './-composites/tabs';
 
 export class ControlsRoute extends Route<object> {
   <template>
@@ -16,6 +17,10 @@ export class ControlsRoute extends Route<object> {
 
         <t.Tab @label="Menu">
           <MenuComposite />
+        </t.Tab>
+
+        <t.Tab @label="Tabs">
+          <TabsComposite />
         </t.Tab>
       </Tabs>
     </Page>

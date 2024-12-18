@@ -58,7 +58,7 @@ class Tab extends Component<TabSignature> {
 
   @cached
   get id() {
-    return this.args.value ?? guidFor(this);
+    return this.args.value ?? this.args.label ?? guidFor(this);
   }
 
   <template>
@@ -141,7 +141,7 @@ export default class Tabs extends Component<TabsSignature> {
     const tab = this.tabs.find((t) => t.id === id) as Tab;
 
     this.internalSelection = tab;
-    this.args.update?.(tab.args.value ?? undefined);
+    this.args.update?.(tab.args.value ?? tab.args.label ?? undefined);
   };
 
   <template>

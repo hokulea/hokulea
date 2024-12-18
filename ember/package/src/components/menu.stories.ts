@@ -12,21 +12,28 @@ export default {
   controls: { hideNoControlsWarning: true }
 };
 
-// function parseOptionalBooleanArg(arg) {
-//   return typeof arg === 'boolean' ? arg : typeof arg === 'string' ? JSON.parse(arg) : undefined;
-// }
+const baseArgTypes = {
+  disabled: {
+    name: 'Disabled',
+    control: 'boolean'
+  }
+};
 
-// function parseArgs(args) {
-//   return {
-//     ...args,
-//     disabled: parseOptionalBooleanArg(args.disabled)
-//   };
-// }
+function parseOptionalBooleanArg(arg) {
+  return typeof arg === 'boolean' ? arg : typeof arg === 'string' ? JSON.parse(arg) : undefined;
+}
+
+function parseArgs(args) {
+  return {
+    ...args,
+    disabled: parseOptionalBooleanArg(args.disabled)
+  };
+}
 
 export const Menu = {
-  render: () => ({
+  render: (args: object) => ({
     template: hbs`
-      <Menu as |m|>
+      <Menu @disabled={{this.disabled}} as |m|>
         <m.Item>Rename Symbol</m.Item>
         <m.Item>Format Document</m.Item>
         <m.Item>Refactor...</m.Item>
@@ -57,16 +64,18 @@ export const Menu = {
         <m.Item>Copy</m.Item>
         <m.Item>Paste</m.Item>
       </Menu>
-    `
-  })
+    `,
+    context: parseArgs(args)
+  }),
+  argTypes: baseArgTypes
 };
 
 export const ButtonMenu = {
-  render: () => ({
+  render: (args) => ({
     template: hbs`
       {{#let (popover position='bottom-start') as |p|}}
         <Button {{p.trigger}}>Open Menu</Button>
-        <Menu {{p.target}} as |m|>
+        <Menu @disabled={{this.disabled}} {{p.target}} as |m|>
           <m.Item>Rename Symbol</m.Item>
           <m.Item>Format Document</m.Item>
           <m.Item>Refactor...</m.Item>
@@ -98,6 +107,8 @@ export const ButtonMenu = {
           <m.Item>Paste</m.Item>
         </Menu>
       {{/let}}
-    `
-  })
+    `,
+    context: parseArgs(args)
+  }),
+  argTypes: baseArgTypes
 };

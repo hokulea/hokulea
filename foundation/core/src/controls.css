@@ -486,13 +486,11 @@
 .tabs {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-container-1);
 
-  &:has([role="tablist"][aria-orientation="vertical"]) {
+  &:has(> [role="tablist"][aria-orientation="vertical"]) {
     flex-direction: row;
   }
-
-  /* margin-right: calc(var(--spacing-primitive-1) * -1);
-  margin-left: calc(var(--spacing-primitive-1) * -1); */
 
   [role="tablist"] {
     /* stylelint-disable-next-line custom-property-pattern */
@@ -552,13 +550,18 @@
 
     &[aria-orientation="vertical"] {
       flex-direction: column;
+      flex-shrink: 0;
+
       border-block-end: 0;
       /* stylelint-disable-next-line custom-property-pattern */
       border-inline-end: var(--_border);
       box-shadow: 1px 0 0 rgb(0 0 0 / 6%);
 
       [role="tab"] {
+        width: 100%;
         padding: var(--spacing-container-1) var(--spacing-container0);
+        padding-inline-start: 0;
+        text-align: start;
 
         &::after {
           inset: var(--spacing-container-1) 0 var(--spacing-container-1) auto;
@@ -567,9 +570,30 @@
         }
       }
     }
+
+    &[aria-disabled="true"] {
+      [role="tab"] {
+        color: var(--control-disabled-text);
+
+        &[aria-selected="true"] {
+          &::after {
+            border-color: var(--control-disabled-text);
+          }
+        }
+      }
+    }
   }
 
-  [role="tabpanel"] {
-    padding: var(--spacing-container-1);
+  /* stylelint-disable-next-line no-descending-specificity */
+  [dir="rtl"] &,
+  &[dir="rtl"] {
+    [role="tablist"][aria-orientation="vertical"] {
+      [role="tab"] {
+        &::after {
+          inset: var(--spacing-container-1) auto var(--spacing-container-1) 0;
+        }
+      }
+    }
   }
 }
+

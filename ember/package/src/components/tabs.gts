@@ -64,8 +64,13 @@ class Tab extends Component<TabSignature> {
   <template>
     {{#let (uniqueId) as |id|}}
       <Portal @target={{@tablist}}>
-        {{! template-lint-disable require-button-type require-context-role }}
-        <button role="tab" aria-controls={{id}} id="{{id}}-label" {{attachValue @value}}>
+        <button
+          type="button"
+          role="tab"
+          aria-controls={{id}}
+          id="{{id}}-label"
+          {{attachValue @value}}
+        >
           <span>
             {{#if (has-block "label")}}
               {{yield to="label"}}

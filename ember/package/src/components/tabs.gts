@@ -64,6 +64,7 @@ class Tab extends Component<TabSignature> {
   <template>
     {{#let (uniqueId) as |id|}}
       <Portal @target={{@tablist}}>
+        {{! template-lint-disable require-context-role }}
         <button
           type="button"
           role="tab"

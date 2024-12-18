@@ -23,7 +23,9 @@ interface NavLinkSignature {
 
 const NavLink: TOC<NavLinkSignature> = <template>
   <a href={{@link.url}} {{on "click" @link.open}} aria-current={{if @link.isActive "page"}}>
-    {{yield}}
+    <span>
+      {{yield}}
+    </span>
   </a>
 </template>;
 

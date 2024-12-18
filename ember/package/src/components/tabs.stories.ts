@@ -31,7 +31,7 @@ export const Showcase = {
   render: (args) => ({
     template: hbs`
       <h1>Unicycling Disciplines</h1>
-      from: <a href="https://stichtingeenwieleren.nl/unicyclingdisciplines/" target="_blank">https://stichtingeenwieleren.nl/unicyclingdisciplines/</a>
+      from: <a href="https://stichtingeenwieleren.nl/unicyclingdisciplines/" target="_blank" rel="noopener noreferrer">https://stichtingeenwieleren.nl/unicyclingdisciplines/</a>
 
       <Tabs @disabled={{this.disabled}} @orientation={{this.orientation}} @behavior={{this.behavior}} @update={{this.update}} as |t|>
         <t.Tab @label="Freestyle">

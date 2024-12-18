@@ -2,6 +2,17 @@
 
 ## Release (2024-12-18)
 
+@hokulea/ember 0.5.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`
+  * [#298](https://github.com/hokulea/hokulea/pull/298) Fix button type for tabs ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2024-12-18)
+
 @hokulea/ember 0.5.0 (minor)
 @hokulea/core 0.3.0 (minor)
 

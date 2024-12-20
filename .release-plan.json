@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "patch",
-      "oldVersion": "0.5.0",
-      "newVersion": "0.5.1",
+      "oldVersion": "0.5.1",
+      "newVersion": "0.5.2",
       "constraints": [
         {
           "impact": "patch",
@@ -22,5 +22,5 @@
       "oldVersion": "0.0.3"
     }
   },
-  "description": "## Release (2024-12-18)\n\n@hokulea/ember 0.5.1 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`\n  * [#298](https://github.com/hokulea/hokulea/pull/298) Fix button type for tabs ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-12-20)\n\n@hokulea/ember 0.5.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#300](https://github.com/hokulea/hokulea/pull/300) fix `<RangeInput>`: update progress style with `@value` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

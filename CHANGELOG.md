@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-12-20)
+
+@hokulea/ember 0.5.2 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#300](https://github.com/hokulea/hokulea/pull/300) fix `<RangeInput>`: update progress style with `@value` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-12-18)
 
 @hokulea/ember 0.5.1 (patch)

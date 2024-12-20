@@ -10,17 +10,17 @@ import { pickAsNumber } from './-input';
 import type { InputArgs } from './-input';
 import type { TOC } from '@ember/component/template-only';
 
-function applyProgressStyle(range: HTMLInputElement) {
+function applyProgressStyle(range: HTMLInputElement, value?: number) {
   const min = Number.parseFloat(range.min) || 0;
   const max = Number.parseFloat(range.max) || 100;
-  const currentVal = Number.parseFloat(range.value);
+  const currentVal = value ?? Number.parseFloat(range.value);
   const progress = ((currentVal - min) / (max - min)) * 100;
 
   range.style.setProperty('--_hokulea-slider-progress', `${progress}%`);
 }
 
-const progressStyle = modifier((element: HTMLInputElement) => {
-  applyProgressStyle(element);
+const progressStyle = modifier((element: HTMLInputElement, [value]: [number?]) => {
+  applyProgressStyle(element, value);
 
   const listenForProgressChange = () => {
     applyProgressStyle(element);
@@ -50,7 +50,7 @@ const RangeInput: TOC<RangeInputSignature> = <template>
     data-test-input
     data-orientation={{@orientation}}
     ...attributes
-    {{progressStyle}}
+    {{progressStyle @value}}
     {{on "input" (pick "target.value" (pickAsNumber @update))}}
   />
 </template>;

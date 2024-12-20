@@ -1,5 +1,7 @@
+import { tracked } from '@glimmer/tracking';
 import { render } from '@ember/test-helpers';
 import { fillIn } from '@ember/test-helpers';
+import { rerender } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
@@ -76,5 +78,27 @@ module('Rendering | <RangeInput>', function (hooks) {
     await fillIn(input, '43');
 
     assert.ok(handleUpdate.calledWith(43));
+  });
+
+  test('@value updates progress style', async function (assert) {
+    const context = new (class {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      @tracked value = 40;
+    })();
+
+    await render(<template><RangeInput @value={{context.value}} max="100" /></template>);
+
+    const input = new RangeInputPageObject();
+
+    assert.dom(input.control).hasValue('40');
+    assert.dom(input.control).hasAttribute('style', '--_hokulea-slider-progress: 40%;');
+
+    context.value = 60;
+
+    await rerender();
+
+    assert.dom(input.control).hasValue('60');
+    assert.dom(input.control).hasAttribute('style', '--_hokulea-slider-progress: 60%;');
   });
 });

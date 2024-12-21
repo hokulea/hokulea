@@ -739,8 +739,8 @@ importers:
         specifier: workspace:*
         version: link:../configs/typescript
       '@storybook/addon-designs':
-        specifier: 8.0.3
-        version: 8.0.3(@storybook/blocks@8.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.8(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 8.0.4
+        version: 8.0.4(@storybook/blocks@8.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.8(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/addon-essentials':
         specifier: 8.2.8
         version: 8.2.8(storybook@8.2.8(@babel/preset-env@7.24.4(@babel/core@7.25.2)))
@@ -3035,12 +3035,12 @@ packages:
     peerDependencies:
       storybook: ^8.2.8
 
-  '@storybook/addon-designs@8.0.3':
-    resolution: {integrity: sha512-uArLGYDwiRDjgJHgMotOLGGYK4hq1hBb0PfTJrlBnPy6evky9khrqf4KmXrIh4ViOyZ5t01THe1DnBj52DwrEQ==}
+  '@storybook/addon-designs@8.0.4':
+    resolution: {integrity: sha512-BrEWks1BRnZis2e8OoE1LhFS+x2d094Tzpbb3jQBve2IfDv/X006RSuy1WyplNxskdYdBESCH45MlRn4lhP5ew==}
     peerDependencies:
-      '@storybook/blocks': ^8.0.0
-      '@storybook/components': ^8.0.0
-      '@storybook/theming': ^8.0.0
+      '@storybook/blocks': ^8.0.0 || ^8.1.0-0 || ^8.2.0-0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+      '@storybook/components': ^8.0.0 || ^8.1.0-0 || ^8.2.0-0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+      '@storybook/theming': ^8.0.0 || ^8.1.0-0 || ^8.2.0-0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:
@@ -13936,7 +13936,7 @@ snapshots:
       storybook: 8.2.8(@babel/preset-env@7.24.4(@babel/core@7.25.2))
       ts-dedent: 2.2.0
 
-  '@storybook/addon-designs@8.0.3(@storybook/blocks@8.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.8(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@storybook/addon-designs@8.0.4(@storybook/blocks@8.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.8(@babel/preset-env@7.24.4(@babel/core@7.25.2))))(@storybook/components@8.0.6(@types/react@18.2.74)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@storybook/theming@8.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@figspec/react': 1.0.3(react@18.3.1)
     optionalDependencies:

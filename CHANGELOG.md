@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2024-12-20)
 
 @hokulea/ember 0.5.2 (patch)

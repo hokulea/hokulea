@@ -75,6 +75,7 @@ module('Rendering | <Button>', function (hooks) {
 
       // assert.dom(button).hasTagName('span');
       assert.dom(button).hasTagName('button');
+      assert.dom(button).hasAttribute('type', 'button');
     });
 
     test('it renders as <button>, when a function is given', async function (assert) {
@@ -85,6 +86,7 @@ module('Rendering | <Button>', function (hooks) {
       const button = new ButtonPageObject();
 
       assert.dom(button).hasTagName('button');
+      assert.dom(button).hasAttribute('type', 'button');
     });
 
     test('it renders as <a>, when a link is given', async function (assert) {
@@ -95,6 +97,7 @@ module('Rendering | <Button>', function (hooks) {
       const button = new ButtonPageObject();
 
       assert.dom(button).hasTagName('a');
+      assert.dom(button).doesNotHaveAttribute('type', 'button');
     });
 
     test('it will invoke functions', async function (assert) {

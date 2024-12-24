@@ -3,6 +3,7 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
+import { not } from '../-private/helpers';
 import disabled from '../-private/modifiers/disabled';
 import { isLink } from './-button';
 
@@ -39,7 +40,7 @@ const Button: TOC<ButtonSignature> = <template>
     @element={{element "button"}}
     @command={{@push}}
     class="{{styles.button}}"
-    type={{if (isLink @push) "button"}}
+    type={{if (not (isLink @push)) "button"}}
     data-intent={{if @intent @intent "action"}}
     data-importance={{if @importance @importance "supreme"}}
     data-spacing={{@spacing}}

@@ -6,6 +6,7 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
+import { not } from '../-private/helpers';
 import disabled from '../-private/modifiers/disabled';
 import { isLink } from './-button';
 import Icon from './icon';
@@ -49,7 +50,7 @@ export default class IconButton extends Component<IconButtonSignature> {
       @element={{element "button"}}
       @command={{@push}}
       class="{{styles.iconButton}}"
-      type={{if (isLink @push) "button"}}
+      type={{if (not (isLink @push)) "button"}}
       data-intent={{if @intent @intent "action"}}
       data-importance={{if @importance @importance "supreme"}}
       data-spacing={{@spacing}}

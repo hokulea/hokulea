@@ -77,6 +77,39 @@ module('Rendering | <Tabs>', function (hooks) {
     assert.dom(input.$tabpanel[1]).hasText('World Content');
   });
 
+  test('state is yielded', async (assert) => {
+    await render(
+      <template>
+        <Tabs as |t|>
+          <t.Tab @label="Hello" as |state|>
+            Hello Content
+            {{#if state.active}}<i data-test-active="hello"></i>{{/if}}
+            {{#if state.selected}}<i data-test-selected="hello"></i>{{/if}}
+          </t.Tab>
+          <t.Tab @label="World" @value="world" as |state|>
+            World Content
+            {{#if state.active}}<i data-test-active="world"></i>{{/if}}
+            {{#if state.selected}}<i data-test-selected="world"></i>{{/if}}
+          </t.Tab>
+        </Tabs>
+      </template>
+    );
+
+    const input = new TabsPageObject();
+
+    assert.dom('[data-test-active="hello"]').exists();
+    assert.dom('[data-test-selected="hello"]').exists();
+    assert.dom('[data-test-active="world"]').doesNotExist();
+    assert.dom('[data-test-selected="world"]').doesNotExist();
+
+    await input.select('world');
+
+    assert.dom('[data-test-active="hello"]').doesNotExist();
+    assert.dom('[data-test-selected="hello"]').doesNotExist();
+    assert.dom('[data-test-active="world"]').exists();
+    assert.dom('[data-test-selected="world"]').exists();
+  });
+
   module('Navigation', () => {
     test('it supports keyboard navigation', async (assert) => {
       await render(<template><TestTabs @amount={{5}} /></template>);

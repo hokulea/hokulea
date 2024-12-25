@@ -2,6 +2,17 @@
 
 ## Release (2024-12-25)
 
+@hokulea/ember 0.6.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#309](https://github.com/hokulea/hokulea/pull/309) yield state for tabs ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2024-12-25)
+
 @hokulea/ember 0.5.3 (patch)
 
 #### :bug: Bug Fix

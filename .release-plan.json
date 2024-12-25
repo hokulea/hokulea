@@ -1,13 +1,13 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.5.2",
-      "newVersion": "0.5.3",
+      "impact": "minor",
+      "oldVersion": "0.5.3",
+      "newVersion": "0.6.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
@@ -22,5 +22,5 @@
       "oldVersion": "0.0.3"
     }
   },
-  "description": "## Release (2024-12-25)\n\n@hokulea/ember 0.5.3 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#308](https://github.com/hokulea/hokulea/pull/308) Fix `type` on buttons ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-12-25)\n\n@hokulea/ember 0.6.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/ember-test-app`\n  * [#309](https://github.com/hokulea/hokulea/pull/309) yield state for tabs ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

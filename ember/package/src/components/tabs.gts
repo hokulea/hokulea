@@ -14,7 +14,7 @@ import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
 
-import { notEq } from '../-private/helpers';
+import { eq, not } from '../-private/helpers';
 
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
@@ -28,6 +28,11 @@ const attachValue = modifier((element, [value]) => {
   }
 });
 
+interface State {
+  active: boolean;
+  selected: boolean;
+}
+
 type TabSignature = {
   Element: HTMLDivElement;
   Args: {
@@ -37,11 +42,12 @@ type TabSignature = {
     label?: string;
     value?: unknown;
     selection?: unknown;
+    activeItem?: string | unknown;
   };
   Blocks: {
-    default?: [];
-    label?: [];
-    content?: [];
+    default?: [State];
+    label?: [State];
+    content?: [State];
   };
 };
 
@@ -62,7 +68,10 @@ class Tab extends Component<TabSignature> {
   }
 
   <template>
-    {{#let (uniqueId) as |id|}}
+    {{#let
+      (uniqueId) (hash active=(eq this.id @activeItem) selected=(eq this.id @selection))
+      as |id state|
+    }}
       <Portal @target={{@tablist}}>
         {{! template-lint-disable require-context-role }}
         <button
@@ -74,7 +83,7 @@ class Tab extends Component<TabSignature> {
         >
           <span>
             {{#if (has-block "label")}}
-              {{yield to="label"}}
+              {{yield state to="label"}}
             {{else}}
               {{@label}}
             {{/if}}
@@ -87,12 +96,12 @@ class Tab extends Component<TabSignature> {
         role="tabpanel"
         aria-labelledby="{{id}}-label"
         local-class="content"
-        hidden={{notEq this.id @selection}}
+        hidden={{not state.selected}}
       >
         {{#if (has-block "content")}}
-          {{yield to="content"}}
+          {{yield state to="content"}}
         {{else}}
-          {{yield}}
+          {{yield state}}
         {{/if}}
       </section>
     {{/let}}
@@ -111,7 +120,10 @@ interface TabsSignature {
   Blocks: {
     default: [
       {
-        Tab: WithBoundArgs<typeof Tab, 'selection' | 'tablist' | 'register' | 'unregister'>;
+        Tab: WithBoundArgs<
+          typeof Tab,
+          'selection' | 'activeItem' | 'tablist' | 'register' | 'unregister'
+        >;
       }
     ];
   };
@@ -120,6 +132,7 @@ interface TabsSignature {
 export default class Tabs extends Component<TabsSignature> {
   @tracked tabs: Tab[] = new TrackedArray();
   @tracked internalSelection?: Tab;
+  @tracked activeItem?: string | unknown;
 
   get items() {
     return this.tabs.map((t) => t.id);
@@ -150,6 +163,10 @@ export default class Tabs extends Component<TabsSignature> {
     this.args.update?.(tab.args.value ?? tab.args.label ?? undefined);
   };
 
+  activateItem = (id: string | unknown) => {
+    this.activeItem = id;
+  };
+
   <template>
     <div class={{styles.tabs}} data-test-tabs>
       {{#let (uniqueId) as |tablistId|}}
@@ -161,6 +178,7 @@ export default class Tabs extends Component<TabsSignature> {
             items=this.items
             select=this.select
             selection=this.selection
+            activateItem=this.activateItem
             disabled=@disabled
             behavior=@behavior
             orientation=@orientation
@@ -175,6 +193,7 @@ export default class Tabs extends Component<TabsSignature> {
               unregister=this.unregister
               tablist=tablistId
               selection=this.selection
+              activeItem=this.activeItem
             )
           )
         }}

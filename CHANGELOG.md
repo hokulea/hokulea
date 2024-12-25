@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-12-25)
+
+@hokulea/ember 0.5.3 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/ember-test-app`
+  * [#308](https://github.com/hokulea/hokulea/pull/308) Fix `type` on buttons ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-12-20)
 
 @hokulea/ember 0.5.2 (patch)

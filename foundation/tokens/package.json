@@ -39,8 +39,8 @@
     "@theemo/tokens": "0.2.3",
     "@types/eslint": "8.56.11",
     "concurrently": "^8.2.2",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.1",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
     "style-dictionary": "3.9.2",
     "stylelint": "16.6.1",
     "typescript": "5.5.4"

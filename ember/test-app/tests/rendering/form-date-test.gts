@@ -1,6 +1,9 @@
 import { render } from '@ember/test-helpers';
+import { fillIn } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
+
+import Sinon from 'sinon';
 
 import { Form } from '@hokulea/ember';
 
@@ -76,5 +79,44 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     assert.dom(input.control).isDisabled();
+  });
+
+  test('data is shown', async function (assert) {
+    const existingData = {
+      birthday: '1970-01-01'
+    };
+
+    await render(
+      <template>
+        <Form @data={{existingData}} as |f|>
+          <f.Date @name="birthday" @label="Geburtstag" />
+        </Form>
+      </template>
+    );
+
+    const form = new FormPageObject();
+    const input = form.$fields[0].$control;
+
+    assert.dom(input.control).hasValue('1970-01-01');
+  });
+
+  test('data is submitted', async function (assert) {
+    const submit = Sinon.spy();
+
+    await render(
+      <template>
+        <Form @data={{data}} @submit={{submit}} as |f|>
+          <f.Date @name="birthday" @label="Geburtstag" />
+        </Form>
+      </template>
+    );
+
+    const form = new FormPageObject();
+    const input = form.$fields[0].$control;
+
+    await fillIn(input, '1970-01-01');
+    await form.submit();
+
+    assert.ok(submit.calledWith({ birthday: '1970-01-01' }));
   });
 });

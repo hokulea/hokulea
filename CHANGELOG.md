@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2025-01-29)
+
+@hokulea/ember 0.6.1 (patch)
+@hokulea/core 0.3.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`
+  * [#312](https://github.com/hokulea/hokulea/pull/312) Tiny styling fixes for form controls ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-12-25)
 
 @hokulea/ember 0.6.0 (minor)

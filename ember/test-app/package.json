@@ -33,7 +33,7 @@
     "@babel/eslint-parser": "7.25.1",
     "@ember/optional-features": "2.2.0",
     "@ember/string": "4.0.0",
-    "@ember/test-helpers": "4.0.4",
+    "@ember/test-helpers": "4.0.5",
     "@embroider/compat": "3.6.5",
     "@embroider/core": "3.4.19",
     "@embroider/broccoli-side-watch": "0.0.2-unstable.fad2387",

@@ -95,7 +95,7 @@
     "@babel/eslint-parser": "7.25.1",
     "@babel/plugin-transform-typescript": "7.25.2",
     "@babel/runtime": "7.25.0",
-    "@ember/test-helpers": "4.0.4",
+    "@ember/test-helpers": "4.0.5",
     "@embroider/addon-dev": "5.0.0",
     "@glint/core": "1.4.0",
     "@glint/environment-ember-loose": "1.4.0",

@@ -34,7 +34,7 @@
     "@theemo/figma": "^0.2.3",
     "@theemo/style-dictionary": "^0.2.3",
     "concurrently": "^8.2.2",
-    "inflection": "3.0.0",
+    "inflection": "3.0.2",
     "style-dictionary": "3.9.2"
   },
   "engines": {

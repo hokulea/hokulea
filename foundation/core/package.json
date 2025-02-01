@@ -37,7 +37,7 @@
     "@hokulea/rollup-plugin-postcss": "workspace:*",
     "@rollup/plugin-commonjs": "26.0.3",
     "eslint": "^8.56.0",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "postcss": "8.4.49",
     "prettier": "^3.2.5",
     "rollup": "4.20.0",

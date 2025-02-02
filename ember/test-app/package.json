@@ -43,7 +43,7 @@
     "@glimmer/tracking": "1.1.2",
     "@glint/core": "1.5.2",
     "@glint/environment-ember-loose": "1.5.2",
-    "@glint/environment-ember-template-imports": "1.4.0",
+    "@glint/environment-ember-template-imports": "1.5.2",
     "@glint/template": "1.4.0",
     "@hokulea/config-eslint": "workspace:*",
     "@hokulea/config-prettier": "workspace:*",

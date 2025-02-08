@@ -40,7 +40,7 @@
     "@embroider/broccoli-side-watch": "0.0.2-unstable.fad2387",
     "@glimmer/component": "1.1.2",
     "@glimmer/tracking": "1.1.2",
-    "@glint/template": "1.4.0",
+    "@glint/template": "1.5.2",
     "@hokulea/config-eslint": "workspace:*",
     "@hokulea/config-postcss": "workspace:*",
     "@hokulea/config-prettier": "workspace:*",

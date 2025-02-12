@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "patch",
-      "oldVersion": "0.6.0",
-      "newVersion": "0.6.1",
+      "oldVersion": "0.6.1",
+      "newVersion": "0.6.2",
       "constraints": [
         {
           "impact": "patch",
@@ -18,8 +18,8 @@
     },
     "@hokulea/core": {
       "impact": "patch",
-      "oldVersion": "0.3.0",
-      "newVersion": "0.3.1",
+      "oldVersion": "0.3.1",
+      "newVersion": "0.3.2",
       "constraints": [
         {
           "impact": "patch",
@@ -35,5 +35,5 @@
       "oldVersion": "0.0.3"
     }
   },
-  "description": "## Release (2025-01-29)\n\n@hokulea/ember 0.6.1 (patch)\n@hokulea/core 0.3.1 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#312](https://github.com/hokulea/hokulea/pull/312) Tiny styling fixes for form controls ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-02-12)\n\n@hokulea/ember 0.6.2 (patch)\n@hokulea/core 0.3.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#334](https://github.com/hokulea/hokulea/pull/334) Fix tabs: `@selection` and padding ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

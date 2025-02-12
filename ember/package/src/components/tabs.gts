@@ -78,6 +78,7 @@ class Tab extends Component<TabSignature> {
           type="button"
           role="tab"
           aria-controls={{id}}
+          aria-selected={{if state.selected "true"}}
           id="{{id}}-label"
           {{attachValue @value}}
         >

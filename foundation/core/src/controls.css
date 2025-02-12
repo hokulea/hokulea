@@ -493,7 +493,7 @@
 .tabs {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-container-1);
+  gap: var(--spacing-primitive-1);
 
   &:has(> [role="tablist"][aria-orientation="vertical"]) {
     flex-direction: row;
@@ -512,7 +512,7 @@
     [role="tab"] {
       position: relative;
 
-      padding: var(--spacing-container0) var(--spacing-container-1);
+      padding: var(--spacing-primitive0) var(--spacing-primitive-1);
 
       color: var(--typography-main);
       text-decoration: none;
@@ -566,12 +566,12 @@
 
       [role="tab"] {
         width: 100%;
-        padding: var(--spacing-container-1) var(--spacing-container0);
+        padding: var(--spacing-primitive-1) var(--spacing-primitive0);
         padding-inline-start: 0;
         text-align: start;
 
         &::after {
-          inset: var(--spacing-container-1) 0 var(--spacing-container-1) auto;
+          inset: var(--spacing-primitive-1) 0 var(--spacing-primitive-1) auto;
           width: 2px;
           height: auto;
         }
@@ -597,7 +597,7 @@
     [role="tablist"][aria-orientation="vertical"] {
       [role="tab"] {
         &::after {
-          inset: var(--spacing-container-1) auto var(--spacing-container-1) 0;
+          inset: var(--spacing-primitive-1) auto var(--spacing-primitive-1) 0;
         }
       }
     }

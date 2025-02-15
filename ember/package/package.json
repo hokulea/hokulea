@@ -62,7 +62,7 @@
     "ember-aria-voyager": "^0.2.4",
     "ember-async-data": "^1.0.3",
     "ember-phosphor-icons": "^0.3.0",
-    "ember-provide-consume-context": "^0.3.2",
+    "ember-provide-consume-context": "^0.7.0",
     "ember-stargate": "^0.6.0",
     "read-pkg-up": "7.0.1",
     "tracked-built-ins": "^3.3.0"

@@ -51,7 +51,7 @@
     "@hokulea/config-targets": "workspace:*",
     "@hokulea/config-template-lint": "workspace:*",
     "@hokulea/config-typescript": "workspace:*",
-    "@types/qunit": "2.19.10",
+    "@types/qunit": "2.19.12",
     "@types/sinon": "17.0.3",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",

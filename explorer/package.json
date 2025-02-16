@@ -96,7 +96,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "loader.js": "4.7.0",
     "markdown-it-abbr": "2.0.0",
-    "markdown-it-anchor": "9.0.1",
+    "markdown-it-anchor": "9.2.0",
     "markdown-it-compiler": "0.1.0",
     "markdown-it-custom-block": "0.1.2",
     "markdown-it-deflist": "3.0.0",

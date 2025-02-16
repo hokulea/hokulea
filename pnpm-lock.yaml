@@ -883,8 +883,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       markdown-it-anchor:
-        specifier: 9.0.1
-        version: 9.0.1(@types/markdown-it@14.0.0)(markdown-it@14.1.0)
+        specifier: 9.2.0
+        version: 9.2.0(@types/markdown-it@14.0.0)(markdown-it@14.1.0)
       markdown-it-compiler:
         specifier: 0.1.0
         version: 0.1.0
@@ -8092,8 +8092,8 @@ packages:
   markdown-it-abbr@2.0.0:
     resolution: {integrity: sha512-of7C8pXSjXjDojW4neNP+jD7inUYH/DO0Ca+K/4FUEccg0oHAEX/nfscw0jfz66PJbYWOAT9U8mjO21X5p6aAw==}
 
-  markdown-it-anchor@9.0.1:
-    resolution: {integrity: sha512-cBt7aAzmkfX8X7FqAe8EBryiKmToXgMQEEMqkXzWCm0toDtfDYIGboKeTKd8cpNJArJtutrf+977wFJTsvNGmQ==}
+  markdown-it-anchor@9.2.0:
+    resolution: {integrity: sha512-sa2ErMQ6kKOA4l31gLGYliFQrMKkqSO0ZJgGhDHKijPf0pNFM9vghjAh3gn26pS4JDRs7Iwa9S36gxm3vgZTzg==}
     peerDependencies:
       '@types/markdown-it': '*'
       markdown-it: '*'
@@ -20918,7 +20918,7 @@ snapshots:
 
   markdown-it-abbr@2.0.0: {}
 
-  markdown-it-anchor@9.0.1(@types/markdown-it@14.0.0)(markdown-it@14.1.0):
+  markdown-it-anchor@9.2.0(@types/markdown-it@14.0.0)(markdown-it@14.1.0):
     dependencies:
       '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0

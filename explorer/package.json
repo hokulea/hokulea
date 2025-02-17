@@ -57,7 +57,7 @@
     "@storybook/ember-cli-storybook": "0.6.1",
     "@storybook/manager-api": "8.2.8",
     "@storybook/types": "8.2.8",
-    "@types/qunit": "2.19.10",
+    "@types/qunit": "2.19.12",
     "@types/rsvp": "4.0.9",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",

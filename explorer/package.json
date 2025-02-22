@@ -36,7 +36,7 @@
     "@chromatic-com/storybook": "1.9.0",
     "@ember/optional-features": "2.2.0",
     "@ember/test-helpers": "4.0.5",
-    "@ember/string": "4.0.0",
+    "@ember/string": "4.0.1",
     "@embroider/broccoli-side-watch": "0.0.2-unstable.fad2387",
     "@glimmer/component": "1.1.2",
     "@glimmer/tracking": "1.1.2",

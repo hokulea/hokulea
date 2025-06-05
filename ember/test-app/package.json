@@ -29,8 +29,8 @@
     "@hokulea/tokens": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "7.25.2",
-    "@babel/eslint-parser": "7.25.1",
+    "@babel/core": "7.27.4",
+    "@babel/eslint-parser": "7.27.5",
     "@ember/optional-features": "2.2.0",
     "@ember/string": "4.0.1",
     "@ember/test-helpers": "4.0.5",

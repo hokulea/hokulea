@@ -37,20 +37,7 @@
       "$type": "color"
     },
     "border-style": {
-      "$value": [
-        {
-          "value": "solid",
-          "features": {
-            "color-scheme": "light"
-          }
-        },
-        {
-          "value": "solid",
-          "features": {
-            "color-scheme": "dark"
-          }
-        }
-      ],
+      "$value": "solid",
       "$description": "",
       "$type": "content"
     },
@@ -74,7 +61,8 @@
           }
         }
       ],
-      "$description": ""
+      "$description": "",
+      "$type": "color"
     },
     "placeholder": {
       "$value": [
@@ -91,7 +79,8 @@
           }
         }
       ],
-      "$description": ""
+      "$description": "",
+      "$type": "color"
     },
     "accent": {
       "$value": [
@@ -127,7 +116,8 @@
             }
           }
         ],
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       },
       "background": {
         "$value": [
@@ -208,20 +198,7 @@
         "$type": "color"
       },
       "stroke-style": {
-        "$value": [
-          {
-            "value": "solid",
-            "features": {
-              "color-scheme": "light"
-            }
-          },
-          {
-            "value": "solid",
-            "features": {
-              "color-scheme": "dark"
-            }
-          }
-        ],
+        "$value": "solid",
         "$description": "",
         "$type": "content"
       },

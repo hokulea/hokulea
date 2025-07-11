@@ -3,109 +3,110 @@
     "primitive0": {
       "$value": "{ls0}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive-1": {
       "$value": "{ls-1}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive-2": {
       "$value": "{ls-2}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive-3": {
       "$value": "{ls-3}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive-4": {
       "$value": "{ls-4}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive1": {
       "$value": "{ls1}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive2": {
       "$value": "{ls2}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive3": {
       "$value": "{ls3}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "primitive4": {
       "$value": "{ls4}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container-4": {
       "$value": "{s-4}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container-3": {
       "$value": "{s-3}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container-2": {
       "$value": "{s-2}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container-1": {
       "$value": "{s-1}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container0": {
       "$value": "{s0}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container1": {
       "$value": "{s1}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container2": {
       "$value": "{s2}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container3": {
       "$value": "{s3}",
       "$description": "",
-      "dynamic": true
+      "dynamic": true,
+      "$type": "number"
     },
     "container4": {
       "$value": "{s4}",
       "$description": "",
-      "dynamic": true
-    },
-    "density": {
-      "base": {
-        "$value": 1,
-        "$description": "",
-        "$type": "number"
-      },
-      "compact": {
-        "$value": 0.8,
-        "$description": "",
-        "$type": "number"
-      },
-      "comfortable": {
-        "$value": 1.2,
-        "$description": "",
-        "$type": "number"
-      }
+      "dynamic": true,
+      "$type": "number"
     }
   }
 }

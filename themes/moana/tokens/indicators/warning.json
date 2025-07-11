@@ -11,6 +11,62 @@
               }
             },
             {
+              "value": "#b28000",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": [
+            {
+              "value": "#b28000",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#b28000",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": [
+            {
+              "value": "#664900",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#0c0e10",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "supreme": {
+        "background": {
+          "$value": [
+            {
+              "value": "#ffb700",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
               "value": "#ffe299",
               "features": {
                 "color-scheme": "dark"
@@ -41,69 +97,13 @@
         "text": {
           "$value": [
             {
-              "value": "#664900",
+              "value": "#0c0e10",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#664900",
-              "features": {
-                "color-scheme": "dark"
-              }
-            }
-          ],
-          "$description": "",
-          "$type": "color"
-        }
-      },
-      "supreme": {
-        "background": {
-          "$value": [
-            {
-              "value": "#b28000",
-              "features": {
-                "color-scheme": "light"
-              }
-            },
-            {
-              "value": "#b28000",
-              "features": {
-                "color-scheme": "dark"
-              }
-            }
-          ],
-          "$description": "",
-          "$type": "color"
-        },
-        "border": {
-          "$value": [
-            {
-              "value": "#b28000",
-              "features": {
-                "color-scheme": "light"
-              }
-            },
-            {
-              "value": "#b28000",
-              "features": {
-                "color-scheme": "dark"
-              }
-            }
-          ],
-          "$description": "",
-          "$type": "color"
-        },
-        "text": {
-          "$value": [
-            {
-              "value": "#e9edee",
-              "features": {
-                "color-scheme": "light"
-              }
-            },
-            {
-              "value": "#e9edee",
+              "value": "#0c0e10",
               "features": {
                 "color-scheme": "dark"
               }

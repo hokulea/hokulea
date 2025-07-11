@@ -1,17 +1,33 @@
 {
   "shape": {
+    "shadow": {
+      "container": {
+        "$value": {
+          "color": "rgba(0, 0, 0, 0.25)",
+          "offsetX": "0",
+          "offsetY": "0",
+          "blur": "2px",
+          "spread": "4px"
+        },
+        "$description": "",
+        "$type": "shadow"
+      }
+    },
     "radius": {
       "primitive": {
         "$value": "{ls-3}",
-        "$description": ""
+        "$description": "",
+        "$type": "number"
       },
       "container": {
         "$value": "{spacing.container-2}",
-        "$description": ""
+        "$description": "",
+        "$type": "number"
       },
       "container-nested": {
         "$value": "{spacing.container-3}",
-        "$description": ""
+        "$description": "",
+        "$type": "number"
       }
     },
     "stroke": {

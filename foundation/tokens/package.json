@@ -13,7 +13,7 @@
     "build:js": "swc src/ -d dist/",
     "build:dts": "tsc -d --emitDeclarationOnly",
     "build:tokens": "pnpm tokens:build",
-    "tokens:build": "style-dictionary build --config sd.js && pnpm tokens:format && pnpm tokens:export",
+    "tokens:build": "style-dictionary build --config sd.mjs && pnpm tokens:format && pnpm tokens:export",
     "tokens:format": "pnpm lint:css:fix src/tokens.css && pnpm lint:js:fix src/tokens.ts",
     "tokens:export": "mkdir -p dist && cp src/tokens.css dist/tokens.css",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",

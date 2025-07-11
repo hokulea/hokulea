@@ -36,7 +36,7 @@
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
     "sync": "theemo sync",
-    "build": "pnpm build:sd && pnpm build:theme",
+    "build": "pnpm build:css && pnpm build:theme",
     "build:css": "style-dictionary build -c config.mjs",
     "build:theme": "theemo build",
     "magic": "pnpm sync && pnpm build",

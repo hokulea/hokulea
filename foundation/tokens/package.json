@@ -24,7 +24,7 @@
     "lint:js:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@theemo/tokens": "^0.2.1"
+    "@theemo/tokens": "^1.0.1"
   },
   "devDependencies": {
     "@hokulea/theme-moana": "workspace:*",
@@ -35,13 +35,13 @@
     "@hokulea/config-typescript": "workspace:*",
     "@swc/cli": "0.1.65",
     "@swc/core": "1.4.12",
-    "@theemo/style-dictionary": "0.2.3",
-    "@theemo/tokens": "0.2.3",
+    "@theemo/style-dictionary": "^1.0.1",
+    "@theemo/tokens": "^1.0.1",
     "@types/eslint": "8.56.12",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "prettier": "^3.2.1",
-    "style-dictionary": "3.9.2",
+    "style-dictionary": "5.0.0",
     "stylelint": "16.6.1",
     "typescript": "5.5.4"
   },

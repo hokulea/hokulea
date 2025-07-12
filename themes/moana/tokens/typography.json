@@ -174,7 +174,8 @@
             }
           }
         ],
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       },
       "background": {
         "$value": [
@@ -191,7 +192,8 @@
             }
           }
         ],
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       }
     }
   }

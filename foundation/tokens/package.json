@@ -13,7 +13,7 @@
     "build:js": "swc src/ -d dist/",
     "build:dts": "tsc -d --emitDeclarationOnly",
     "build:tokens": "pnpm tokens:build",
-    "tokens:build": "style-dictionary build --config sd.js && pnpm tokens:format && pnpm tokens:export",
+    "tokens:build": "style-dictionary build --config sd.mjs && pnpm tokens:format && pnpm tokens:export",
     "tokens:format": "pnpm lint:css:fix src/tokens.css && pnpm lint:js:fix src/tokens.ts",
     "tokens:export": "mkdir -p dist && cp src/tokens.css dist/tokens.css",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
@@ -24,7 +24,7 @@
     "lint:js:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@theemo/tokens": "^0.2.1"
+    "@theemo/tokens": "^1.0.1"
   },
   "devDependencies": {
     "@hokulea/theme-moana": "workspace:*",
@@ -35,13 +35,13 @@
     "@hokulea/config-typescript": "workspace:*",
     "@swc/cli": "0.1.65",
     "@swc/core": "1.4.12",
-    "@theemo/style-dictionary": "0.2.3",
-    "@theemo/tokens": "0.2.3",
+    "@theemo/style-dictionary": "^1.0.1",
+    "@theemo/tokens": "^1.0.1",
     "@types/eslint": "8.56.12",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "prettier": "^3.2.1",
-    "style-dictionary": "3.9.2",
+    "style-dictionary": "5.0.0",
     "stylelint": "16.6.1",
     "typescript": "5.5.4"
   },
@@ -56,6 +56,6 @@
     }
   },
   "engines": {
-    "node": ">= 20.*"
+    "node": "^20.11.0 || >=22"
   }
 }

@@ -2,16 +2,27 @@
   "name": "@hokulea/config-theemo",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    ".": "./index.mjs"
+  },
   "scripts": {
     "lint:js": "eslint ."
+  },
+  "peerDependencies": {
+    "@theemo/cli": "^1.0.1",
+    "@theemo/figma": "^1.0.1",
+    "@theemo/style-dictionary": "^1.0.1"
   },
   "devDependencies": {
     "@hokulea/config-eslint": "workspace:*",
     "@hokulea/config-prettier": "workspace:*",
+    "@theemo/cli": "^1.0.1",
+    "@theemo/figma": "^1.0.1",
+    "@theemo/style-dictionary": "^1.0.1",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5"
   },
   "engines": {
-    "node": ">= 20.*"
+    "node": "^20.11.0 || >=22"
   }
 }

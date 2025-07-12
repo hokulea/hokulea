@@ -36,7 +36,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -91,7 +92,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -146,7 +148,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -183,7 +186,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "border": {
             "$value": [
@@ -200,7 +204,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -239,7 +244,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "border": {
             "$value": [
@@ -312,7 +318,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -367,7 +374,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -404,7 +412,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "border": {
             "$value": [
@@ -421,7 +430,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           },
           "text": {
             "$value": [
@@ -520,7 +530,8 @@
                 }
               }
             ],
-            "$description": ""
+            "$description": "",
+            "$type": "color"
           }
         }
       }

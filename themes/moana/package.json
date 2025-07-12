@@ -12,30 +12,46 @@
   ],
   "theemo": {
     "name": "moana",
-    "colorSchemes": [
-      "light",
-      "dark"
-    ],
-    "file": "dist/moana.css"
+    "file": "dist/moana.css",
+    "features": [
+      {
+        "name": "color-scheme",
+        "browserFeature": "color-scheme",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "name": "density",
+        "options": [
+          "compact",
+          "comfortable",
+          "spacious"
+        ],
+        "defaultOption": "comfortable"
+      }
+    ]
   },
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
     "sync": "theemo sync",
-    "build": "pnpm build:sd && pnpm build:theme",
-    "build:sd": "style-dictionary build",
+    "build": "pnpm build:css && pnpm build:theme",
+    "build:css": "style-dictionary build -c config.mjs",
     "build:theme": "theemo build",
     "magic": "pnpm sync && pnpm build",
     "clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
     "@hokulea/config-style-dictionary": "workspace:*",
-    "@theemo/build": "^0.2.4",
-    "@theemo/cli": "^0.2.4",
-    "@theemo/figma": "^0.2.3",
-    "@theemo/style-dictionary": "^0.2.3",
+    "@hokulea/config-theemo": "workspace:*",
+    "@theemo/build": "^1.0.1",
+    "@theemo/cli": "^1.0.1",
+    "@theemo/figma": "^1.0.1",
+    "@theemo/style-dictionary": "^1.0.1",
     "concurrently": "^8.2.2",
     "inflection": "3.0.2",
-    "style-dictionary": "3.9.2"
+    "style-dictionary": "5.0.0"
   },
   "engines": {
     "node": ">= 20"

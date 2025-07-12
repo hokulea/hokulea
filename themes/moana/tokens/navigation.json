@@ -3,15 +3,18 @@
     "links": {
       "base": {
         "$value": "{intent.action.plain.base.text}",
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       },
       "hover": {
         "$value": "{intent.action.plain.hover.text}",
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       },
       "active": {
         "$value": "{intent.action.plain.active.text}",
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       }
     }
   }

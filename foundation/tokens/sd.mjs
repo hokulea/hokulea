@@ -1,13 +1,18 @@
-const StyleDictionary = require('style-dictionary');
-const { registerTheemo, makeConstrainedFilter } = require('@theemo/style-dictionary');
-const { isConstrainedValue } = require('@theemo/tokens');
+import StyleDictionary from 'style-dictionary';
+import { fileHeader, formattedVariables } from 'style-dictionary/utils';
+
+import {
+  isConstrainedByPlatform,
+  isConstrainedToken,
+  registerTheemo
+} from '@theemo/style-dictionary';
 
 registerTheemo(StyleDictionary);
 
 function filterTokenProperties(token) {
   return {
     name: token.name,
-    description: token.comment,
+    description: token.description,
     value: token.value,
     type: token.type,
     figmaName: token.figmaName
@@ -16,7 +21,7 @@ function filterTokenProperties(token) {
 
 StyleDictionary.registerFormat({
   name: 'typescript/info',
-  formatter: function ({ dictionary }) {
+  format: function ({ dictionary }) {
     const entries = Object.fromEntries(
       dictionary.allTokens.map(filterTokenProperties).map(function (token) {
         return [token.name, token];
@@ -34,19 +39,20 @@ export const tokens: Tokens = ${JSON.stringify(entries, null, 2)}`;
 
 StyleDictionary.registerFormat({
   name: 'css/tokens',
-  formatter: function ({ dictionary, options = {}, file }) {
-    const selector = options.selector ? options.selector : `:root`;
+  format: function ({ dictionary, options = {}, file }) {
+    const selector = options.selector ?? `:root`;
     const { outputReferences } = options;
 
     return (
-      StyleDictionary.formatHelpers.fileHeader({
+      fileHeader({
         file,
         formatting: {
           header: `/* stylelint-disable max-line-length */\n/**\n`
-        }
+        },
+        options
       }) +
       `${selector} {\n` +
-      StyleDictionary.formatHelpers.formattedVariables({
+      formattedVariables({
         format: 'css',
         dictionary,
         outputReferences
@@ -56,15 +62,24 @@ StyleDictionary.registerFormat({
   }
 });
 
-const config = {
+export default {
   source: [`node_modules/@hokulea/theme-moana/tokens/**/*.json`],
+  preprocessors: ['theemo/token'],
   platforms: {
     web: {
       transformGroup: 'theemo',
       buildPath: './src/',
+      constraints: {
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      options: {
+        useCSSColorTransform: false
+      },
       files: [
         {
-          format: 'css/tokens',
+          format: 'css/variables',
           destination: 'tokens.css',
           options: {
             outputReferences: true,
@@ -77,22 +92,15 @@ const config = {
             }
           },
           filter: (token) => {
-            const filterLightColorSchemeValue = makeConstrainedFilter({
-              features: {
-                'color-scheme': 'light'
-              }
-            });
-
-            return !isConstrainedValue(token.value) || filterLightColorSchemeValue(token);
+            return !isConstrainedToken(token) || isConstrainedByPlatform(token);
           }
         },
         {
           format: 'typescript/info',
-          destination: 'tokens.ts'
+          destination: 'tokens.ts',
+          filter: isConstrainedByPlatform
         }
       ]
     }
   }
 };
-
-module.exports = config;

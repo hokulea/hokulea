@@ -3,21 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "description": "postcss config for hokulea",
+  "type": "module",
   "scripts": {
-    "lint:js": "eslint ."
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@hokulea/config-targets": "workspace:*",
+    "@gossi/config-targets": "^1.1.0",
     "postcss-each": "^1.1.0",
-    "postcss-modules": "^6.0.0",
+    "postcss-lightningcss": "^1.0.1",
+    "postcss-modules": "^6.0.1",
     "postcss-preset-env": "^10.0.0"
   },
   "devDependencies": {
-    "@hokulea/config-eslint": "workspace:*",
-    "@hokulea/config-prettier": "workspace:*",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.5",
-    "postcss": "8.5.3"
+    "@gossi/config-eslint": "^1.2.0",
+    "@gossi/config-prettier": "^1.1.0",
+    "eslint": "^9.31.0",
+    "postcss": "8.5.3",
+    "prettier": "^3.6.2"
   },
   "peerDependencies": {
     "lightningcss": "^1.22.1",

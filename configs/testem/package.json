@@ -3,15 +3,21 @@
   "description": "Hokulea testem config",
   "version": "0.0.0",
   "private": true,
-  "main": "testem.js",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.cjs"
+  },
   "scripts": {
-    "lint:js": "eslint ."
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@hokulea/config-eslint": "workspace:*",
-    "@hokulea/config-prettier": "workspace:*",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.5"
+    "@gossi/config-eslint": "^1.2.0",
+    "@gossi/config-prettier": "^1.1.0",
+    "eslint": "^9.31.0",
+    "prettier": "^3.6.2"
   },
   "engines": {
     "node": "^20.11.0 || >=22"

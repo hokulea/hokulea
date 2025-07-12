@@ -5,7 +5,7 @@ import { styleDictionaryWriter } from '@theemo/style-dictionary';
 const { FIGMA_SECRET, DEV } = process.env;
 
 const NESTED_TOPICS = new Set(['intents', 'indicators']);
-const DYNAMIC = [
+const DYNAMIC = new Set([
   's-4',
   's-3',
   's-2',
@@ -42,7 +42,7 @@ const DYNAMIC = [
   'spacing.container2',
   'spacing.container3',
   'spacing.container4'
-];
+]);
 
 function cleanTopic(topic) {
   if (topic) {
@@ -59,7 +59,7 @@ function normalizeNumericValue(value) {
   }
 
   if (typeof value === 'number') {
-    return parseFloat(parseFloat(value).toFixed(2));
+    return Number.parseFloat(Number.parseFloat(value).toFixed(2));
   }
 
   return value;
@@ -113,7 +113,7 @@ export function theemoConfig(figmaFileIds) {
             getPropertiesForToken(token) {
               let dynamics = {};
 
-              if (DYNAMIC.includes(token.name)) {
+              if (DYNAMIC.has(token.name)) {
                 dynamics = {
                   dynamic: true
                 };

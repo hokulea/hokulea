@@ -11,7 +11,7 @@
       "matchPackageNames": [
         "style-dictionary"
       ],
-      "allowedVersions": "<4"
+      "allowedVersions": "5.0.0"
     },
     {
       "matchPackageNames": [

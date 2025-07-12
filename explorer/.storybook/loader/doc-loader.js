@@ -1,4 +1,3 @@
-// eslint-disable-next-line n/no-missing-require
 const { getOptions } = require('loader-utils');
 
 const { compileMarkdown } = require('./md-compiler');

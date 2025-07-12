@@ -1,13 +1,18 @@
 import path from 'node:path';
 
 import Case from 'case';
-import { precompile } from 'ember-source/dist/ember-template-compiler';
+// @ts-ignore
+import emberTemplateCompiler from 'ember-source/dist/ember-template-compiler.js';
 
-import markdownCompilerConfig from './config/md-compiler';
-import hbsBabelLoader from './loader/hbs-loader';
+// @ts-ignore
+import markdownCompilerConfig from './config/md-compiler.js';
+// @ts-ignore
+import hbsBabelLoader from './loader/hbs-loader.js';
 
 import type { StorybookConfig } from '@storybook/ember';
 import type { RuleSetRule } from 'webpack';
+
+const precompile = emberTemplateCompiler.precompile;
 
 const config: StorybookConfig = {
   // stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -19,12 +24,10 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@storybook/addon-designs',
     '@chromatic-com/storybook'
   ],
   framework: {
-    // @ts-expect-error this _IS_ the name
     name: '@storybook/ember',
     options: {}
   },
@@ -40,7 +43,7 @@ const config: StorybookConfig = {
     presets: [['@babel/preset-typescript']],
     plugins: [
       [
-        require.resolve('babel-plugin-htmlbars-inline-precompile'),
+        import.meta.resolve('babel-plugin-htmlbars-inline-precompile'),
         {
           precompile,
           modules: {
@@ -54,12 +57,13 @@ const config: StorybookConfig = {
       '@babel/plugin-proposal-class-properties'
     ]
   }),
+  // @ts-ignore
   experimental_indexers: async (existingIndexers) => {
     const docIndexer = {
       test: /\/documentation\/.*\.md$/,
       createIndex: async (fileName: string) => {
         const nav = path
-          .relative(path.resolve(__dirname, '../../documentation'), fileName)
+          .relative(path.resolve(import.meta.dirname, '../../documentation'), fileName)
           .replace('.md', '')
           .split('/')
           .map((name) => Case.capital(name));
@@ -93,10 +97,10 @@ const config: StorybookConfig = {
       use: [
         hbsBabelLoader,
         {
-          loader: path.resolve(__dirname, 'loader/doc-loader'),
+          loader: path.resolve(import.meta.dirname, 'loader/doc-loader'),
           options: {
             root: 'Documentation',
-            dir: path.resolve(__dirname, '../../documentation'),
+            dir: path.resolve(import.meta.dirname, '../../documentation'),
             compiler: markdownCompilerConfig
           }
         }

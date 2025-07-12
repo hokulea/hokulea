@@ -140,7 +140,7 @@
     "prettier": "^3.2.5",
     "rollup": "4.34.7",
     "rollup-plugin-postcss": "4.0.2",
-    "stylelint": "16.6.1",
+    "stylelint": "16.21.1",
     "typescript": "5.5.4",
     "webpack": "5.93.0"
   },

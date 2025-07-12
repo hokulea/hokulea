@@ -14,7 +14,7 @@
     "@hokulea/config-prettier": "workspace:*",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
-    "stylelint": "16.6.1",
+    "stylelint": "16.21.1",
     "stylelint-config-clean-order": "6.1.0"
   },
   "peerDependencies": {

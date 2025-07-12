@@ -12,8 +12,16 @@ export class ActionsRoute extends Route<object> {
 
   <template>
     <style>
-      .popover {width: 100%; height: 100%; display: grid; place-items: center;} .cols {display:
-      grid; grid-template-columns: auto max-content;}
+      .popover {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: auto max-content;
+      }
     </style>
     <Page @title="Windows">
       <Section @title="Popovers">

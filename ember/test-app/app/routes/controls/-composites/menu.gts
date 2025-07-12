@@ -13,7 +13,11 @@ function noop() {
 
 const MenuComposite: TOC<object> = <template>
   <style>
-    .with-controls { display: grid; grid-template-columns: auto 45%; gap: 1rem; }
+    .with-controls {
+      display: grid;
+      grid-template-columns: auto 45%;
+      gap: 1rem;
+    }
   </style>
   <div class="with-controls">
     <p>

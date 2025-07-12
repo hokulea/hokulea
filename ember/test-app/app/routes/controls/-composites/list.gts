@@ -24,11 +24,29 @@ export default class ListComposite extends Component {
 
   <template>
     <style>
-      .with-controls { display: grid; grid-template-columns: auto 45%; gap: 1rem; } .controls
-      {display: flex; flex-direction: column; gap: var(--spacing-container-2);} .inline-form {
-      flex-direction: row; } .inline-form > :deep(div) { flex-direction: row; align-items: center; }
-      .options { display: flex; flex-direction: row; align-items: center; gap:
-      var(--spacing-primitive-2);}
+      .with-controls {
+        display: grid;
+        grid-template-columns: auto 45%;
+        gap: 1rem;
+      }
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-container-2);
+      }
+      .inline-form {
+        flex-direction: row;
+      }
+      .inline-form > :deep(div) {
+        flex-direction: row;
+        align-items: center;
+      }
+      .options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-primitive-2);
+      }
     </style>
     <div class="with-controls">
       <List @multiple={{this.listMultiple}} as |l|>

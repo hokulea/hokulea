@@ -1,19 +1,18 @@
-import each from 'postcss-each';
-import lightning from 'postcss-lightningcss';
-import presetEnv from 'postcss-preset-env';
+import postcssEach from 'postcss-each';
+import postcssPresetEnv from 'postcss-preset-env';
 
 import { browsers } from '@gossi/config-targets';
 
-function plugins({ minify }) {
+function plugins() {
   return [
     // https://www.npmjs.com/package/postcss-each
     // adds @each construct
-    each,
+    postcssEach,
 
     // https://github.com/csstools/postcss-preset-env
     // Adds vendor prefixes based on Can I Use and polyfills new features
     // Inspired by https://github.com/moxystudio/postcss-preset-moxy/blob/master/index.js
-    presetEnv({
+    postcssPresetEnv({
       browsers,
 
       // https://cssdb.org/
@@ -41,10 +40,9 @@ function plugins({ minify }) {
         // e.g.when dealing with quirks, therefore we disable removing them.
         remove: false
       }
-    }),
-    lightning({
-      minify
     })
+    // will be added in @hokulea/rollup-plugin-postcss
+    // require('postcss-modules')
   ];
 }
 

@@ -7,11 +7,11 @@ const packageJson = require('./package');
 
 const sideWatch = require('@embroider/broccoli-side-watch');
 const postCSSPlugins = hokuleaPostCSSConfig.plugins;
-const postCSSModulesIndex = hokuleaPostCSSConfig.plugins.indexOf(require('postcss-modules'));
+// const postCSSModulesIndex = hokuleaPostCSSConfig.plugins.indexOf(require('postcss-modules'));
 
-if (postCSSModulesIndex !== -1) {
-  postCSSPlugins.splice(postCSSModulesIndex, 1);
-}
+// if (postCSSModulesIndex !== -1) {
+//   postCSSPlugins.splice(postCSSModulesIndex, 1);
+// }
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {

@@ -41,12 +41,12 @@
           position: relative;
 
           padding: var(--spacing-primitive0) var(--spacing-primitive-1);
+          border: 0;
 
           color: var(--typography-main);
           text-decoration: none;
 
           background: 0 0;
-          border: 0;
 
           &::after {
             content: "";
@@ -57,7 +57,6 @@
             left: var(--spacing-primitive-1);
 
             height: 2px;
-
             border-color: transparent;
             border-style: solid;
             border-width: 1px;

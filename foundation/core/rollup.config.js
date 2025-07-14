@@ -1,10 +1,10 @@
 import commonjs from '@rollup/plugin-commonjs';
 import fg from 'fast-glob';
 import css from 'rollup-plugin-css-only';
-import del from 'rollup-plugin-delete';
+// import del from 'rollup-plugin-delete';
 import multiInput from 'rollup-plugin-multi-input';
 
-import { browsers as targets } from '@hokulea/config-targets';
+import { browsers as targets } from '@gossi/config-targets';
 import hokuleaRollupPostcss from '@hokulea/rollup-plugin-postcss';
 
 const production = Boolean(process.env.HOKULEA_RELEASE);
@@ -19,6 +19,7 @@ export default [
 
   // ...for ESM
   {
+    // eslint-disable-next-line import-x/no-named-as-default-member
     input: fg.globSync('./src/!(foundation).css'),
     output: {
       dir: 'dist',
@@ -37,6 +38,7 @@ export default [
 
   // ...for CJS
   {
+    // eslint-disable-next-line import-x/no-named-as-default-member
     input: fg.globSync('./src/!(foundation).css'),
     output: {
       dir: 'dist',

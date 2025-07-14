@@ -7,13 +7,25 @@
   "files": [
     "dist"
   ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
+    }
+  },
   "scripts": {
-    "start": "swc src/ -d dist/ -w",
-    "build": "pnpm build:tokens && pnpm build:js && pnpm build:dts",
-    "build:js": "swc src/ -d dist/",
-    "build:dts": "tsc -d --emitDeclarationOnly",
+    "start": "tsdown --watch",
+    "build": "pnpm build:tokens && pnpm build:js",
+    "build:js": "tsdown",
     "build:tokens": "pnpm tokens:build",
-    "tokens:build": "style-dictionary build --config sd.mjs && pnpm tokens:format && pnpm tokens:export",
+    "tokens:build": "style-dictionary build && pnpm tokens:format && pnpm tokens:export",
     "tokens:format": "pnpm lint:css:fix src/tokens.css && pnpm lint:js:fix src/tokens.ts",
     "tokens:export": "mkdir -p dist && cp src/tokens.css dist/tokens.css",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
@@ -27,33 +39,22 @@
     "@theemo/tokens": "^1.0.1"
   },
   "devDependencies": {
-    "@hokulea/theme-moana": "workspace:*",
-    "@hokulea/config-eslint": "workspace:*",
-    "@hokulea/config-prettier": "workspace:*",
-    "@hokulea/config-stylelint": "workspace:*",
+    "@gossi/config-eslint": "^1.3.0",
+    "@gossi/config-prettier": "^1.1.0",
+    "@gossi/config-stylelint": "^1.1.0",
     "@hokulea/config-style-dictionary": "workspace:*",
     "@hokulea/config-typescript": "workspace:*",
-    "@swc/cli": "0.1.65",
-    "@swc/core": "1.4.12",
+    "@hokulea/theme-moana": "workspace:*",
     "@theemo/style-dictionary": "^1.0.1",
     "@theemo/tokens": "^1.0.1",
     "@types/eslint": "8.56.12",
     "concurrently": "^8.2.2",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.1",
+    "eslint": "^9.31.0",
+    "prettier": "^3.6.2",
     "style-dictionary": "5.0.0",
-    "stylelint": "16.6.1",
+    "stylelint": "16.21.1",
+    "tsdown": "^0.12.9",
     "typescript": "5.5.4"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*.js"
-    }
   },
   "engines": {
     "node": "^20.11.0 || >=22"

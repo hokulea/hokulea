@@ -1,8 +1,6 @@
-'use strict';
+import config from '@gossi/config-stylelint';
 
-const config = require('@hokulea/config-stylelint');
-
-module.exports = {
+export default {
   ...config,
   rules: {
     ...config.rules,
@@ -13,6 +11,12 @@ module.exports = {
           ...config.rules['property-no-unknown'][1].ignoreProperties
           // 'anchor-name'
         ]
+      }
+    ],
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [...config.rules['at-rule-no-unknown'][1].ignoreAtRules, 'each']
       }
     ]
   }

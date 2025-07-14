@@ -201,7 +201,7 @@ a:active {
         list-style-position: inside;
 
         &::marker {
-          margin: none;
+          margin: 0;
         }
       }
 

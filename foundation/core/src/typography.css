@@ -64,12 +64,12 @@ code {
   display: inline-block;
 
   padding: 0.2em;
+  border-radius: 4px;
 
   font-size: 90%;
   color: var(--typography-code-text);
 
   background-color: var(--typography-code-background);
-  border-radius: 4px;
 }
 
 .display {

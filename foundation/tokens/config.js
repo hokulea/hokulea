@@ -23,9 +23,11 @@ StyleDictionary.registerFormat({
   name: 'typescript/info',
   format: function ({ dictionary }) {
     const entries = Object.fromEntries(
-      dictionary.allTokens.map(filterTokenProperties).map(function (token) {
-        return [token.name, token];
-      })
+      dictionary.allTokens
+        .map((element) => filterTokenProperties(element))
+        .map(function (token) {
+          return [token.name, token];
+        })
     );
 
     return `/* eslint-disable @typescript-eslint/naming-convention */
@@ -33,7 +35,7 @@ import { type Token } from './';
 
 type Tokens = Record<string, Token>;
 
-export const tokens: Tokens = ${JSON.stringify(entries, null, 2)}`;
+export const tokens: Tokens = ${JSON.stringify(entries, undefined, 2)}`;
   }
 });
 

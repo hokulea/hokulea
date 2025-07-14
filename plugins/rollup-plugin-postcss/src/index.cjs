@@ -1,9 +1,11 @@
-const path = require('path');
-const { Buffer } = require('buffer');
+const path = require('node:path');
+const { Buffer } = require('node:buffer');
 const Concat = require('concat-with-sourcemaps');
 const postcss = require('postcss');
 const loadPostcssConfig = require('postcss-load-config');
+const cssModules = require('postcss-modules');
 
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = (options = {}) => {
   const extracted = new Map();
   const sourceMap = options.sourceMap ?? false; // or 'inline'
@@ -44,7 +46,7 @@ module.exports = (options = {}) => {
       };
 
       const modulesOptions = options.modules ?? {};
-      const postcssModules = require('postcss-modules')({
+      const postcssModules = cssModules({
         ...modulesOptions,
 
         localsConvention: 'camelCase',
@@ -78,7 +80,7 @@ module.exports = (options = {}) => {
               });
 
               return fileRelativePath;
-            } catch (e) {
+            } catch {
               console.warn(`Could not resolve import "${file}" from "${importer}"`);
             }
           }
@@ -95,16 +97,17 @@ module.exports = (options = {}) => {
       const plugins = postcssConfig.plugins;
 
       // `postcss-modules`
-      let cssModulesPosition = plugins.findIndex((plugin) => plugin == require('postcss-modules'));
+      let cssModulesPosition = plugins.findIndex((plugin) => plugin == cssModules);
 
       if (cssModulesPosition === -1) {
         // do nothing here, huh?
+        plugins.push(postcssModules);
       } else {
         plugins[cssModulesPosition] = postcssModules;
       }
 
       // `postcss-import`
-      if (!plugins.find((plugin) => plugin === require('postcss-import'))) {
+      if (!plugins.includes(require('postcss-import'))) {
         plugins.unshift(require('postcss-import'));
       }
 
@@ -159,13 +162,7 @@ module.exports = (options = {}) => {
     augmentChunkHash() {
       if (extracted.size === 0) return;
 
-      const extractedValue = [...extracted].reduce(
-        (object, [key, value]) => ({
-          ...object,
-          [key]: value
-        }),
-        {}
-      );
+      const extractedValue = Object.fromEntries([...extracted].map(([key, value]) => [key, value]));
 
       return JSON.stringify(extractedValue);
     },
@@ -177,7 +174,7 @@ module.exports = (options = {}) => {
      * 2. Postprocessing on the concatenated file to remove duplicates and other
      *    CSS optimizations with `cssnano` and `lightningcss`
      */
-    async generateBundle(options_ /*, _bundle*/) {
+    async generateBundle(options_ /* , _bundle */) {
       if (extracted.size === 0 || !options_.dir || !output) {
         return;
       }
@@ -194,7 +191,7 @@ module.exports = (options = {}) => {
 
       for (const result of entries) {
         const relative = path.relative(dir, result.id);
-        const map = result.map || null;
+        const map = result.map || undefined;
 
         if (map) {
           map.file = fileName;

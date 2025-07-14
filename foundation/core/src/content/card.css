@@ -1,7 +1,7 @@
 .card {
-  background-color: var(--surface-container);
   border: var(--shape-stroke);
   border-radius: var(--shape-radius-container);
+  background-color: var(--surface-container);
 }
 
 .item {
@@ -11,12 +11,13 @@
 .header {
   composes: item;
 
-  background-color: var(--surface-container1);
   border: var(--shape-stroke);
   border-width: 0;
   border-block-end-width: var(--shape-stroke-width);
   border-start-start-radius: var(--shape-radius-container);
   border-start-end-radius: var(--shape-radius-container);
+
+  background-color: var(--surface-container1);
 }
 
 .body {

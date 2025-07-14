@@ -24,7 +24,7 @@ container or on individual elements if they differ from the global one.
   justify-content: flex-start;
 
   & > * {
-    margin-block: 0 0;
+    margin-block: 0;
   }
 
   & > * + *:not(:empty) {

@@ -20,9 +20,8 @@ import {
 import type { TOC } from '@ember/component/template-only';
 import type { TablistBehavior } from 'ember-aria-voyager';
 
-const range = (amount: number) => [...Array(amount).keys()];
+const range = (amount: number) => Array.from({ length: amount }, (_, i) => i + 1);
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const TestTabs: TOC<{
   Element: HTMLElement;
   Args: { amount: number; behavior?: TablistBehavior };
@@ -171,7 +170,7 @@ module('Rendering | <Tabs>', function (hooks) {
     test('@selection works', async (assert) => {
       const handleUpdate = sinon.spy();
       const context = new (class {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         @tracked selection: unknown = undefined;
       })();

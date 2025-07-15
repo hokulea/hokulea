@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-module */
 'use strict';
 
-module.exports = require('@hokulea/config-targets');
+module.exports = require('@gossi/config-targets');

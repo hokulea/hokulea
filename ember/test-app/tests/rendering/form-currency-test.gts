@@ -7,6 +7,7 @@ import { Form } from '@hokulea/ember';
 import { FormPageObject } from '@hokulea/ember/test-support';
 
 import type { InputBuilderPageObject } from '@hokulea/ember/test-support';
+import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
 
 module('Rendering | <Form.Currency>', function (hooks) {
   setupRenderingTest(hooks);
@@ -30,7 +31,7 @@ module('Rendering | <Form.Currency>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
     const input = field.$control as InputBuilderPageObject;
 
     assert.dom(input.control).exists();
@@ -57,7 +58,7 @@ module('Rendering | <Form.Currency>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control;
+    const input = (form.$fields[0] as FieldPageObject).$control;
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
   });
@@ -72,7 +73,7 @@ module('Rendering | <Form.Currency>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control;
+    const input = (form.$fields[0] as FieldPageObject).$control;
 
     assert.dom(input.control).isDisabled();
 

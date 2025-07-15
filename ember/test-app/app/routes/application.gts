@@ -5,7 +5,6 @@ import CompatRoute from 'ember-polaris-routing/route/compat';
 import { AppHeader } from '@hokulea/ember';
 
 function noop() {
-  // eslint-disable-next-line no-console
   console.log('noop');
 }
 

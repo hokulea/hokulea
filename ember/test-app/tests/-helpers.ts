@@ -1,9 +1,8 @@
 export function setContainerWidth(hooks: NestedHooks, width: number) {
-  // eslint-disable-next-line @typescript-eslint/init-declarations
   let initialWidth: number;
 
   hooks.beforeEach(function () {
-    let container = document.querySelector('#ember-testing') as HTMLDivElement;
+    const container = document.querySelector('#ember-testing') as HTMLDivElement;
 
     initialWidth = container.scrollWidth;
 
@@ -13,7 +12,7 @@ export function setContainerWidth(hooks: NestedHooks, width: number) {
   });
 
   hooks.afterEach(function () {
-    let container = document.querySelector('#ember-testing') as HTMLDivElement;
+    const container = document.querySelector('#ember-testing') as HTMLDivElement;
 
     Object.assign(container.style, {
       width: `${initialWidth.toString()}px`
@@ -22,11 +21,10 @@ export function setContainerWidth(hooks: NestedHooks, width: number) {
 }
 
 export function setContainerHeight(hooks: NestedHooks, height: number) {
-  // eslint-disable-next-line @typescript-eslint/init-declarations
   let initialHeight: number;
 
   hooks.beforeEach(function () {
-    let container = document.querySelector('#ember-testing') as HTMLDivElement;
+    const container = document.querySelector('#ember-testing') as HTMLDivElement;
 
     initialHeight = container.scrollHeight;
 
@@ -36,7 +34,7 @@ export function setContainerHeight(hooks: NestedHooks, height: number) {
   });
 
   hooks.afterEach(function () {
-    let container = document.querySelector('#ember-testing') as HTMLDivElement;
+    const container = document.querySelector('#ember-testing') as HTMLDivElement;
 
     Object.assign(container.style, {
       height: `${initialHeight.toString()}px`

@@ -1,13 +1,17 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
   "globalEnv": ["COVERAGE"],
   "tasks": {
     "build": {
-      "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "storybook-static/**"]
     },
     "start": {
-      "dependsOn": ["^start"]
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true,
+      "outputs": ["dist/**/*"]
     },
     "test": {
       "dependsOn": ["^build"]

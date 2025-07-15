@@ -195,6 +195,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('native validation errors are merged with custom validation errors', async function (assert) {
     const data = { givenName: 'foo123', familyName: 'Smith' };
     const validateForm = ({ givenName }: { givenName: string }) =>
+      // eslint-disable-next-line unicorn/no-negated-condition
       givenName.charAt(0).toUpperCase() !== givenName.charAt(0)
         ? {
             givenName: [
@@ -238,16 +239,16 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     assert.strictEqual(form.field('givenName').$errors.length, 3);
 
-    assert.strictEqual(form.field('givenName').$errors[0].type, 'native');
-    assert.strictEqual(form.field('givenName').$errors[0].value, 'foo123');
+    assert.strictEqual(form.field('givenName').$errors[0]?.type, 'native');
+    assert.strictEqual(form.field('givenName').$errors[0]?.value, 'foo123');
     assert.dom(form.field('givenName').$errors[0]).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
 
-    assert.strictEqual(form.field('givenName').$errors[1].type, 'uppercase');
-    assert.strictEqual(form.field('givenName').$errors[1].value, 'foo123');
+    assert.strictEqual(form.field('givenName').$errors[1]?.type, 'uppercase');
+    assert.strictEqual(form.field('givenName').$errors[1]?.value, 'foo123');
     assert.dom(form.field('givenName').$errors[1]).hasText('Given name must be upper case!');
 
-    assert.strictEqual(form.field('givenName').$errors[2].type, 'notFoo');
-    assert.strictEqual(form.field('givenName').$errors[2].value, 'foo123');
+    assert.strictEqual(form.field('givenName').$errors[2]?.type, 'notFoo');
+    assert.strictEqual(form.field('givenName').$errors[2]?.value, 'foo123');
     assert.dom(form.field('givenName').$errors[2]).hasText('Foo is an invalid given name!');
 
     assert.dom(form.field('familyName').$errors).doesNotExist();
@@ -256,8 +257,9 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('no validation errors render when form data is valid', async function (assert) {
     const data = { givenName: 'John', familyName: 'Smith' };
     const validateForm = ({ givenName }: { givenName: string }) =>
-      givenName.charAt(0).toUpperCase() !== givenName.charAt(0)
-        ? {
+      givenName.charAt(0).toUpperCase() === givenName.charAt(0)
+        ? undefined
+        : {
             givenName: [
               {
                 type: 'uppercase',
@@ -265,8 +267,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
                 message: 'First name must be upper case!'
               }
             ]
-          }
-        : undefined;
+          };
     const validateField = (givenName: string) =>
       givenName.toLowerCase().startsWith('foo')
         ? [
@@ -304,8 +305,9 @@ module('Integration | <Form> | Native validation', function (hooks) {
   test('opt out of native validation using @ignoreNativeValidation', async function (assert) {
     const data: TestFormData = { givenName: 'john' };
     const validateForm = ({ givenName }: TestFormData) =>
-      givenName?.charAt(0).toUpperCase() !== givenName?.charAt(0)
-        ? {
+      givenName?.charAt(0).toUpperCase() === givenName?.charAt(0)
+        ? undefined
+        : {
             givenName: [
               {
                 type: 'uppercase',
@@ -313,8 +315,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
                 message: 'Given name must be upper case!'
               }
             ]
-          }
-        : undefined;
+          };
 
     await render(
       <template>

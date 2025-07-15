@@ -1,5 +1,5 @@
 {
-  "extends": "@hokulea/config-typescript/tsconfig.json",
+  "extends": "@ember/app-tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "noEmit": true,
@@ -10,7 +10,10 @@
       "@hokulea/ember-test-app/*": [
         "app/*"
       ]
-    }
+    },
+    "types": [
+      "ember-source/types"
+    ]
   },
   "include": [
     "app/**/*",

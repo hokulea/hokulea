@@ -1,8 +1,10 @@
+/* eslint-disable unicorn/prefer-module */
 'use strict';
 
 const getChannelURL = require('ember-source-channel-url');
 const { embroiderSafe, embroiderOptimized } = require('@embroider/test-setup');
 
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = async function () {
   return {
     usePnpm: true,
@@ -11,7 +13,7 @@ module.exports = async function () {
         name: 'CSR',
         npm: {
           devDependencies: {
-            'ember-cli-fastboot': null
+            'ember-cli-fastboot': undefined
           }
         }
       },

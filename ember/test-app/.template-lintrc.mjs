@@ -1,9 +1,15 @@
-'use strict';
+import config from '@gossi/config-template-lint';
 
-const config = require('@hokulea/config-template-lint');
-
-module.exports = {
+export default {
   ...config,
+  rules: {
+    ...config.rules,
+    'no-passed-in-event-handlers': {
+      ignore: {
+        Form: ['submit']
+      }
+    }
+  },
   overrides: [
     ...config.overrides,
     {

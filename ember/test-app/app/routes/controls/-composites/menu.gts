@@ -6,7 +6,6 @@ import type { TOC } from '@ember/component/template-only';
 
 function noop() {
   return () => {
-    // eslint-disable-next-line no-console
     console.log('noop');
   };
 }

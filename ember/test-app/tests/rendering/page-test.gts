@@ -91,10 +91,10 @@ module('Rendering | <Page>', (hooks) => {
 
     assert.dom(main).exists();
     assert.dom(main).hasTagName('main');
-    assert.dom(main.$title).hasText('Main');
+    assert.dom(main?.$title).hasText('Main');
 
     assert.dom(section).exists();
     assert.dom(section).hasTagName('section');
-    assert.dom(section.$title).hasText('Section');
+    assert.dom(section?.$title).hasText('Section');
   });
 });

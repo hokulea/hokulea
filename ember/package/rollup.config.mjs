@@ -1,14 +1,17 @@
 import { Addon } from '@embroider/addon-dev/rollup';
+import { resolve } from 'node:path';
 
 import { babel } from '@rollup/plugin-babel';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 const addon = new Addon({
   srcDir: 'src',
   destDir: 'dist'
 });
 
-const extensions = ['.js', '.ts', '.gts', '.gjs', '.hbs', '.json'];
+const configs = {
+  babel: resolve(import.meta.dirname, './babel.publish.config.mjs'),
+  ts: resolve(import.meta.dirname, './tsconfig.publish.json')
+};
 
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
@@ -103,16 +106,11 @@ export default {
     // This babel config should *not* apply presets or compile away ES modules.
     // It exists only to provide development niceties for you, like automatic
     // template colocation.
-    //
-    // By default, this will load the actual babel config from the file
-    // babel.config.json.
-    nodeResolve({
-      extensions
-    }),
+    // compile TypeScript to latest JavaScript, including Babel transpilation
     babel({
+      extensions: ['.js', '.gjs', '.ts', '.gts'],
       babelHelpers: 'bundled',
-      extensions,
-      configFile: './babel.publish.config.mjs'
+      configFile: configs.babel
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
@@ -120,6 +118,15 @@ export default {
 
     // Ensure that .gjs files are properly integrated as Javascript
     addon.gjs({ inline_source_map: true }),
+
+    // Ensure that standalone .hbs files are properly integrated as Javascript.
+    // addon.hbs(),
+
+    // Ensure that .gjs files are properly integrated as Javascript
+    // addon.gjs(),
+
+    // Emit .d.ts declaration files
+    addon.declarations('declarations', `glint --declaration --project ${configs.ts}`),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.

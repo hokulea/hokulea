@@ -8,12 +8,17 @@ import config from '@hokulea/ember-test-app/config/environment';
 
 import { forceModulesToBeLoaded, sendCoverage } from 'ember-cli-code-coverage/test-support';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 setApplication(Application.create(config.APP));
 
+// eslint-disable-next-line import-x/namespace
 setup(QUnit.assert);
 
 start();
 
+// eslint-disable-next-line import-x/namespace
 QUnit.done(async function () {
   forceModulesToBeLoaded();
   await sendCoverage();

@@ -22,11 +22,11 @@ module('Rendering | <List>', function (hooks) {
   });
 
   test('html attributes work', async function (assert) {
-    await render(<template><List name="form-name" /></template>);
+    await render(<template><List part="form-name" /></template>);
 
     const input = new ListPageObject();
 
-    assert.dom(input.control).hasAttribute('name', 'form-name');
+    assert.dom(input.control).hasAttribute('part', 'form-name');
   });
 
   test('disabling the input', async function (assert) {
@@ -162,7 +162,7 @@ module('Rendering | <List>', function (hooks) {
 
       const input = new ListPageObject();
 
-      await input.select(items[1].name);
+      await input.select(items[1]?.name as string);
 
       assert.ok(handleUpdate.calledWith(items[1]));
     });

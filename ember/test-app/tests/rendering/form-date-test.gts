@@ -1,5 +1,4 @@
-import { render } from '@ember/test-helpers';
-import { fillIn } from '@ember/test-helpers';
+import { fillIn, render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
@@ -8,6 +7,8 @@ import Sinon from 'sinon';
 import { Form } from '@hokulea/ember';
 
 import { FormPageObject } from '@hokulea/ember/test-support';
+
+import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
 
 module('Rendering | <Form.Date>', function (hooks) {
   setupRenderingTest(hooks);
@@ -27,7 +28,7 @@ module('Rendering | <Form.Date>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
     const input = field.$control;
 
     assert.dom(input.control).exists();
@@ -51,7 +52,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control;
+    const input = (form.$fields[0] as FieldPageObject).$control;
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
   });
@@ -66,7 +67,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control;
+    const input = (form.$fields[0] as FieldPageObject).$control;
 
     assert.dom(input.control).isDisabled();
 
@@ -95,7 +96,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control;
+    const input = (form.$fields[0] as FieldPageObject).$control;
 
     assert.dom(input.control).hasValue('1970-01-01');
   });
@@ -112,7 +113,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control;
+    const input = (form.$fields[0] as FieldPageObject).$control;
 
     await fillIn(input, '1970-01-01');
     await form.submit();

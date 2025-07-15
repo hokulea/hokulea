@@ -1,14 +1,13 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-// eslint-disable-next-line n/no-missing-require
 const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/ember/lib');
-// eslint-disable-next-line n/no-missing-require
 const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
 const sideWatch = require('@embroider/broccoli-side-watch');
 const { GlimmerScopedCSSWebpackPlugin } = require('glimmer-scoped-css/webpack');
 
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     trees: {

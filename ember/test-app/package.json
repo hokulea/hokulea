@@ -60,7 +60,7 @@
     "@types/sinon": "17.0.3",
     "broccoli-asset-rev": "3.0.0",
     "concurrently": "^8.2.2",
-    "ember-a11y-testing": "7.1.0",
+    "ember-a11y-testing": "7.1.2",
     "ember-aria-voyager": "^0.2.4",
     "ember-auto-import": "2.10.0",
     "ember-cli": "5.12.0",

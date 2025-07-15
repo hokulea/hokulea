@@ -1,11 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import { tracked } from '@glimmer/tracking';
 import { array } from '@ember/helper';
-import { render } from '@ember/test-helpers';
-import { rerender } from '@ember/test-helpers';
-import { focus } from '@ember/test-helpers';
-import { triggerKeyEvent } from '@ember/test-helpers';
+import { focus, render, rerender, triggerKeyEvent } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
@@ -18,6 +13,8 @@ import {
 } from 'ember-aria-voyager/test-support';
 
 import { RefactorMenuFactory } from './-menu';
+
+import type { MenuItem } from '@hokulea/ember/test-support/page-objects/-menu';
 
 module('Rendering | <Menu>', function (hooks) {
   setupRenderingTest(hooks);
@@ -67,7 +64,7 @@ module('Rendering | <Menu>', function (hooks) {
 
   test('renders item options', async function (assert) {
     const context = new (class {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       @tracked disabled = false;
     })();
@@ -87,7 +84,7 @@ module('Rendering | <Menu>', function (hooks) {
     assert.dom(menu.$item[1]).hasAria('disabled', 'false', 'Second item is not disabled');
 
     // stepping over items
-    await focus(menu.$item[0]);
+    await focus(menu.$item[0] as MenuItem);
     assert.dom(menu.$item[0]).hasAttribute('tabindex', '0', 'Focus the first item');
 
     await triggerKeyEvent(menu, 'keydown', 'ArrowDown');

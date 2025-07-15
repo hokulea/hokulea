@@ -12,9 +12,10 @@ export default class GlobalScaleDemoComponent extends Component {
   @tracked fontSize!: string;
   @tracked viewportWidth!: number;
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   setup = modifier((element: GlobalSizingElement, [update]: [() => void]) => {
     // "public" API:
-    // eslint-disable-next-line no-param-reassign
+
     element.update = () => {
       update();
     };
@@ -22,7 +23,7 @@ export default class GlobalScaleDemoComponent extends Component {
     // listen for changes
     window.addEventListener('resize', update);
 
-    const mutationObserver = new window.MutationObserver(update);
+    const mutationObserver = new globalThis.MutationObserver(update);
 
     let elem: HTMLElement | null = element as HTMLElement;
 
@@ -46,6 +47,8 @@ export default class GlobalScaleDemoComponent extends Component {
   @action
   update() {
     this.viewportWidth = window.innerWidth;
-    this.fontSize = window.getComputedStyle(document.documentElement).getPropertyValue('font-size');
+    this.fontSize = globalThis
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue('font-size');
   }
 }

@@ -25,5 +25,6 @@ export default class IndicatorsComponent extends Component {
     return colors;
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   compileName = helper(([prop]: [string]) => `--indicator-${this.indicator}-${prop}`);
 }

@@ -1,4 +1,4 @@
-import { click, render, triggerEvent } from '@ember/test-helpers';
+import { click, render, type Target, triggerEvent } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
@@ -95,7 +95,7 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      await click(appHeader.$nav.$item[0]);
+      await click(appHeader.$nav.$item[0] as Target);
 
       assert.ok(push.calledOnce);
     });
@@ -120,10 +120,10 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       const appHeader = new AppHeaderPageObject();
 
-      assert.notOk(appHeader.$nav.$item[0].expanded);
+      assert.notOk(appHeader.$nav.$item[0]?.expanded);
 
-      await click(appHeader.$nav.$item[0]);
-      assert.ok(appHeader.$nav.$item[0].expanded);
+      await click(appHeader.$nav.$item[0] as Target);
+      assert.ok(appHeader.$nav.$item[0]?.expanded);
 
       // double fire click + pointerup
       // https://github.com/emberjs/ember-test-helpers/issues/267
@@ -138,7 +138,7 @@ module('Rendering | <AppHeader>', (hooks) => {
         'pointerup'
       );
 
-      assert.notOk(appHeader.$nav.$item[0].expanded);
+      assert.notOk(appHeader.$nav.$item[0]?.expanded);
       assert.ok(push.calledOnce);
     });
   });
@@ -187,10 +187,10 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       assert.notOk(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle);
+      await click(appHeader.$menu.$toggle);
       assert.ok(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle);
+      await click(appHeader.$menu.$toggle);
       assert.notOk(appHeader.$menu.$popover.expanded);
     });
 
@@ -213,10 +213,10 @@ module('Rendering | <AppHeader>', (hooks) => {
       assert.dom(appHeader.$menu).exists();
       assert.notOk(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle);
+      await click(appHeader.$menu.$toggle);
       assert.ok(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$nav.$item[0]);
+      await click(appHeader.$nav.$item[0] as Target);
       assert.ok(push.calledOnce);
       assert.notOk(appHeader.$menu.$popover.expanded);
     });
@@ -243,13 +243,13 @@ module('Rendering | <AppHeader>', (hooks) => {
       assert.dom(appHeader.$menu).exists();
       assert.notOk(appHeader.$menu.$popover.expanded);
 
-      await click(appHeader.$menu?.$toggle);
+      await click(appHeader.$menu.$toggle);
       assert.ok(appHeader.$menu.$popover.expanded);
 
-      assert.notOk(appHeader.$nav.$item[0].expanded);
+      assert.notOk(appHeader.$nav.$item[0]?.expanded);
 
-      await click(appHeader.$nav.$item[0]);
-      assert.ok(appHeader.$nav.$item[0].expanded);
+      await click(appHeader.$nav.$item[0] as Target);
+      assert.ok(appHeader.$nav.$item[0]?.expanded);
     });
   });
 });

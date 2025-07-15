@@ -27,5 +27,6 @@ export default class IntentsComponent extends Component {
     return colors;
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   compileName = helper(([prop]: [string]) => `--intent-${this.intent}-${this.importance}-${prop}`);
 }

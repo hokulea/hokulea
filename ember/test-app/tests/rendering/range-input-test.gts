@@ -1,7 +1,5 @@
 import { tracked } from '@glimmer/tracking';
-import { render } from '@ember/test-helpers';
-import { fillIn } from '@ember/test-helpers';
-import { rerender } from '@ember/test-helpers';
+import { fillIn, render, rerender } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 

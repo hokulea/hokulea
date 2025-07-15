@@ -8,6 +8,7 @@ import config from '@hokulea/explorer/config/environment';
 
 setApplication(Application.create(config.APP));
 
+// eslint-disable-next-line import-x/namespace
 setup(QUnit.assert);
 
 start();

@@ -19,7 +19,6 @@ module('Acceptance | a11y', function (hooks) {
       // `aria-disabled` usage for disabled buttons. This needs investigation.
       setRunOptions({
         rules: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
           'color-contrast': {
             enabled: false
           }
@@ -37,7 +36,6 @@ module('Acceptance | a11y', function (hooks) {
 
       setRunOptions({
         rules: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
           'color-contrast': {
             enabled: false
           }
@@ -57,7 +55,6 @@ module('Acceptance | a11y', function (hooks) {
 
       setRunOptions({
         rules: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
           'color-contrast': {
             enabled: false
           }
@@ -75,14 +72,13 @@ module('Acceptance | a11y', function (hooks) {
 
       setRunOptions({
         rules: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
           'color-contrast': {
             enabled: false
           },
           label: {
             enabled: false
           },
-          // eslint-disable-next-line @typescript-eslint/naming-convention
+
           'select-name': {
             enabled: false
           }
@@ -98,11 +94,10 @@ module('Acceptance | a11y', function (hooks) {
 
       setRunOptions({
         rules: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
           'color-contrast': {
             enabled: false
           },
-          // eslint-disable-next-line @typescript-eslint/naming-convention
+
           'aria-input-field-name': {
             enabled: false
           }

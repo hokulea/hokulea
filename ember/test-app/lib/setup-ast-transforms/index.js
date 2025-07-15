@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable unicorn/prefer-module */
 'use strict';
 
 const { installScopedCSS } = require('glimmer-scoped-css');

@@ -2,7 +2,9 @@ import { assert } from '@ember/debug';
 
 import { element } from 'ember-element-helper';
 
+// eslint-disable-next-line import-x/no-duplicates
 import styles from '@hokulea/core/content.module.css';
+// eslint-disable-next-line import-x/no-duplicates
 import layouts from '@hokulea/core/layouts.module.css';
 
 import type { TOC } from '@ember/component/template-only';

@@ -2,10 +2,10 @@
   display: flex;
 
   padding: var(--spacing-container-2);
-
-  background-color: var(--surface-container);
   border: var(--shape-stroke);
   border-radius: var(--shape-radius-container);
+
+  background-color: var(--surface-container);
 }
 
 .demo {
@@ -13,10 +13,10 @@
 
   aspect-ratio: 1;
   width: var(--s4);
-
-  background-color: var(--surface-container);
   border: var(--shape-stroke-information);
   border-radius: var(--shape-radius-primitive);
+
+  background-color: var(--surface-container);
 }
 
 

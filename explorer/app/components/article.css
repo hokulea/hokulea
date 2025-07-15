@@ -3,7 +3,7 @@
 
   box-sizing: content-box;
   max-width: var(--center-max-width);
-  margin-inline: auto auto;
+  margin-inline: auto;
 }
 
 .article {

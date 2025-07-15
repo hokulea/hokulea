@@ -36,6 +36,7 @@ export default {
 export const Default = {
   render: (args: { position: string }) => ({
     template: hbs`
+      {{!-- template-lint-disable no-inline-styles --}}
       <div style="display: grid; width: 100%; height: 100vh; place-items: center;">
         {{#let (popover position=this.position) as |p|}}
           <Button {{p.trigger}}>Hello there</Button>

@@ -1,20 +1,17 @@
 import { Addon } from '@embroider/addon-dev/rollup';
+import { resolve } from 'node:path';
 
 import { babel } from '@rollup/plugin-babel';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-
-import { browsers as targets } from '@hokulea/config-targets';
-import hokuleaRollupPostcss from '@hokulea/rollup-plugin-postcss';
-
-const development = Boolean(process.env.ROLLUP_WATCH);
-const production = !development;
 
 const addon = new Addon({
   srcDir: 'src',
   destDir: 'dist'
 });
 
-const extensions = ['.js', '.ts', '.gts', '.gjs', '.hbs', '.json'];
+const configs = {
+  babel: resolve(import.meta.dirname, './babel.publish.config.mjs'),
+  ts: resolve(import.meta.dirname, './tsconfig.publish.json')
+};
 
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
@@ -68,12 +65,6 @@ export default {
       'helpers/popover.js'
     ]),
 
-    hokuleaRollupPostcss({
-      targets,
-      sourceMap: development,
-      minify: production
-    }),
-
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
@@ -115,15 +106,11 @@ export default {
     // This babel config should *not* apply presets or compile away ES modules.
     // It exists only to provide development niceties for you, like automatic
     // template colocation.
-    //
-    // By default, this will load the actual babel config from the file
-    // babel.config.json.
-    nodeResolve({
-      extensions
-    }),
+    // compile TypeScript to latest JavaScript, including Babel transpilation
     babel({
+      extensions: ['.js', '.gjs', '.ts', '.gts'],
       babelHelpers: 'bundled',
-      extensions
+      configFile: configs.babel
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
@@ -131,6 +118,15 @@ export default {
 
     // Ensure that .gjs files are properly integrated as Javascript
     addon.gjs({ inline_source_map: true }),
+
+    // Ensure that standalone .hbs files are properly integrated as Javascript.
+    // addon.hbs(),
+
+    // Ensure that .gjs files are properly integrated as Javascript
+    // addon.gjs(),
+
+    // Emit .d.ts declaration files
+    addon.declarations('declarations', `glint --declaration --project ${configs.ts}`),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.

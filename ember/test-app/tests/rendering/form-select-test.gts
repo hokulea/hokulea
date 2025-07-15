@@ -8,6 +8,7 @@ import { Form } from '@hokulea/ember';
 import { FormPageObject } from '@hokulea/ember/test-support';
 
 import type { SelectPageObject } from '@hokulea/ember/test-support';
+import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
 
 module('Rendering | <Form.Select>', function (hooks) {
   setupRenderingTest(hooks);
@@ -31,7 +32,7 @@ module('Rendering | <Form.Select>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
     const input = field.$control;
 
     assert.dom(input.control).exists();
@@ -49,15 +50,15 @@ module('Rendering | <Form.Select>', function (hooks) {
     await render(
       <template>
         <Form @data={{data}} as |f|>
-          <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" placeholder="abc" />
+          <f.Select @name="favoriteFruit" @label="Deine Lieblingsfrucht?" part="abc" />
         </Form>
       </template>
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control.element;
+    const input = (form.$fields[0] as FieldPageObject).$control.element;
 
-    assert.dom(input).hasAttribute('placeholder', 'abc');
+    assert.dom(input).hasAttribute('part', 'abc');
   });
 
   test('disabling the input', async function (assert) {
@@ -70,7 +71,7 @@ module('Rendering | <Form.Select>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = form.$fields[0].$control.element;
+    const input = (form.$fields[0] as FieldPageObject).$control.element;
 
     assert.dom(input).isDisabled();
 
@@ -100,7 +101,7 @@ module('Rendering | <Form.Select>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = form.$fields[0].$control as SelectPageObject;
+      const input = (form.$fields[0] as FieldPageObject).$control as SelectPageObject;
 
       assert.dom(input.$option.elements[0]).hasText('Banana');
       assert.dom(input.$option.elements[1]).hasText('Apple');
@@ -123,7 +124,7 @@ module('Rendering | <Form.Select>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = form.$fields[0].$control as SelectPageObject;
+      const input = (form.$fields[0] as FieldPageObject).$control as SelectPageObject;
 
       assert.dom(input.$option.elements[1]).hasProperty('selected', true);
     });
@@ -161,7 +162,7 @@ module('Rendering | <Form.Select>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = form.$fields[0].$control as SelectPageObject;
+      const input = (form.$fields[0] as FieldPageObject).$control as SelectPageObject;
 
       assert.dom(input.$option.elements[0]).hasText('Banana');
       assert.dom(input.$option.elements[1]).hasText('Apple');
@@ -169,7 +170,7 @@ module('Rendering | <Form.Select>', function (hooks) {
     });
 
     test('renders selection', async function (assert) {
-      const fruitData = { favoriteFruit: `${items[1].id}` };
+      const fruitData = { favoriteFruit: `${items[1]?.id}` };
 
       await render(
         <template>
@@ -184,7 +185,7 @@ module('Rendering | <Form.Select>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = form.$fields[0].$control as SelectPageObject;
+      const input = (form.$fields[0] as FieldPageObject).$control as SelectPageObject;
 
       assert.dom(input.$option.elements[1]).hasProperty('selected', true);
     });

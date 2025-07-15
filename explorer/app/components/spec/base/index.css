@@ -4,10 +4,10 @@
   gap: var(--s-4);
 
   padding: var(--spacing-container0);
-
-  background-color: var(--surface-container1);
   border: var(--shape-stroke);
   border-radius: var(--shape-radius-container);
+
+  background-color: var(--surface-container1);
 
   p {
     font-weight: 500;

@@ -5,9 +5,9 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import Checkbox from '../../../../components/checkbox';
-import Description from '../description';
-import Label from '../label';
+import Checkbox from '../../../../components/checkbox.gts';
+import Description from '../description.gts';
+import Label from '../label.gts';
 
 import type { RadioSignature } from '../../../../components/radio';
 import type { FormData, FormKey, UserData } from '../../';

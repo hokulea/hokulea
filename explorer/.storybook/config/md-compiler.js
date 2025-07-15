@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable unicorn/prefer-module */
 const customBlock = require('markdown-it-custom-block');
 
 module.exports = {
@@ -32,11 +34,7 @@ module.exports = {
     //   md.renderer.rules.code_inline = wrap(md.renderer.rules.code_inline)
   },
   format(doc) {
-    const title = doc.attributes.title
-      ? doc.attributes.title
-      : doc.toc && doc.toc.length > 0
-        ? doc.toc[0].content
-        : '';
+    const title = doc.attributes.title ?? (doc.toc && doc.toc.length > 0 ? doc.toc[0].content : '');
 
     // strip first <h1> off of html
     if (!doc.attributes.title) {

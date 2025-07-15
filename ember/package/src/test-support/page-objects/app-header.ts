@@ -1,9 +1,9 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { IconButtonPageObject } from './icon-button';
-import { MenuItemPageObject } from './menu';
+import { IconButtonPageObject } from './icon-button.ts';
+import { MenuItemPageObject } from './menu.ts';
 
-import type { Menu, MenuItem, MenuItemElement } from './-menu';
+import type { Menu, MenuItem, MenuItemElement } from './-menu.ts';
 import type { ElementLike } from 'fractal-page-object';
 
 class AppNavPageObject extends PageObject<HTMLElement> implements Menu<HTMLElement> {

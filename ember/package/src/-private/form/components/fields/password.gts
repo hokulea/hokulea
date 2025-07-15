@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import PasswordInput from '../../../../components/password-input';
-import { asString } from '../../../helpers';
+import PasswordInput from '../../../../components/password-input.gts';
+import { asString } from '../../../helpers.ts';
 
-import type { PasswordInputSignature } from '../../../../components/password-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { PasswordInputSignature } from '../../../../components/password-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface PasswordFieldSignature<
   DATA extends UserData,

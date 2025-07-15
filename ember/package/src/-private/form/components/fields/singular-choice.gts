@@ -5,10 +5,10 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import Radio from '../../../../components/radio';
-import { eq } from '../../../helpers';
-import Description from '../description';
-import Label from '../label';
+import Radio from '../../../../components/radio.gts';
+import { eq } from '../../../helpers.ts';
+import Description from '../description.gts';
+import Label from '../label.gts';
 
 import type { RadioSignature } from '../../../../components/radio';
 import type { FormData, FormKey, UserData } from '../../';

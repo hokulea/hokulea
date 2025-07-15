@@ -15,7 +15,7 @@ export default {
 };
 
 export const Showcase = {
-  render: (args) => ({
+  render: (args: object) => ({
     template: hbs`
       <Page @title={{this.title}} @description={{this.description}}>
         <p>{{this.content}}</p>

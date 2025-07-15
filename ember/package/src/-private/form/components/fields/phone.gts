@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import PhoneInput from '../../../../components/phone-input';
-import { asString } from '../../../helpers';
+import PhoneInput from '../../../../components/phone-input.gts';
+import { asString } from '../../../helpers.ts';
 
-import type { PhoneInputSignature } from '../../../../components/phone-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { PhoneInputSignature } from '../../../../components/phone-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface PhoneFieldSignature<
   DATA extends UserData,

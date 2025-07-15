@@ -1,6 +1,7 @@
+/* eslint-disable unicorn/prefer-module */
 'use strict';
 
-const { browsers } = require('../../configs/targets');
+const { browsers } = require('@gossi/config-targets');
 
 module.exports = {
   browsers

@@ -214,6 +214,7 @@ module('Integration | <Form> | Async state', function (hooks) {
       const data: TestFormData = { givenName: 'Tony', familyName: 'Ward' };
       const submitHandler = (): Promise<string> =>
         new Promise((_resolve, reject) => {
+          // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
           setTimeout(() => reject('ERROR'), 10);
         });
 

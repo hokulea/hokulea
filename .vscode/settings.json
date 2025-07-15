@@ -4,7 +4,7 @@
     "foundation/tokens/src/tokens.css"
   ],
   // "stylelint.configFile": "configs/stylelint/index.js",
-  "stylelint.configBasedir": "configs/stylelint/",
+  // "stylelint.configBasedir": "configs/stylelint/",
   "stylelint.packageManager": "pnpm",
   "stylelint.validate": [
     "css",

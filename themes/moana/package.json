@@ -7,9 +7,9 @@
     "theemo-theme"
   ],
   "files": [
-    "package.json",
     "dist"
   ],
+  "type": "module",
   "theemo": {
     "name": "moana",
     "file": "dist/moana.css",
@@ -36,13 +36,17 @@
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
     "sync": "theemo sync",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
     "build": "pnpm build:css && pnpm build:theme",
-    "build:css": "style-dictionary build -c config.mjs",
+    "build:css": "style-dictionary build",
     "build:theme": "theemo build",
     "magic": "pnpm sync && pnpm build",
     "clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
+    "@gossi/config-eslint": "^1.3.0",
+    "@gossi/config-prettier": "^1.1.0",
     "@hokulea/config-style-dictionary": "workspace:*",
     "@hokulea/config-theemo": "workspace:*",
     "@theemo/build": "^1.0.1",
@@ -50,10 +54,12 @@
     "@theemo/figma": "^1.0.1",
     "@theemo/style-dictionary": "^1.0.1",
     "concurrently": "^8.2.2",
+    "eslint": "^9.31.0",
     "inflection": "3.0.2",
+    "prettier": "^3.6.2",
     "style-dictionary": "5.0.0"
   },
   "engines": {
-    "node": ">= 20"
+    "node": "^20.11.0 || >=22"
   }
 }

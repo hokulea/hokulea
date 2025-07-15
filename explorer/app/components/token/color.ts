@@ -10,7 +10,7 @@ export interface TokenArgs {
   name: string;
 }
 
-const BODY_STYLES = window.getComputedStyle(document.body);
+const BODY_STYLES = globalThis.getComputedStyle(document.body);
 
 export default class TokenComponent extends Component<TokenArgs> {
   @tracked value?: string;
@@ -19,9 +19,10 @@ export default class TokenComponent extends Component<TokenArgs> {
     return findDescription(this.args.name);
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   setup = modifier((_element, [update]: [() => void]) => {
     // listen for changes
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const media = globalThis.matchMedia('(prefers-color-scheme: dark)');
 
     media.addEventListener('change', update);
 

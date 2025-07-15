@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import TextInput from '../../../../components/text-input';
-import { asString } from '../../../helpers';
+import TextInput from '../../../../components/text-input.gts';
+import { asString } from '../../../helpers.ts';
 
-import type { TextInputSignature } from '../../../../components/text-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { TextInputSignature } from '../../../../components/text-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface TextFieldSignature<
   DATA extends UserData,

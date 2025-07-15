@@ -1,6 +1,6 @@
 import { globalSelector, PageObject, selector as sel } from 'fractal-page-object';
 
-import type { Menu, MenuElement, MenuItem, MenuItemElement } from './-menu';
+import type { Menu, MenuElement, MenuItem, MenuItemElement } from './-menu.ts';
 import type { ElementLike } from 'fractal-page-object';
 
 export class MenuItemPageObject extends PageObject<MenuItemElement> implements MenuItem {

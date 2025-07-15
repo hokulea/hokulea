@@ -4,10 +4,10 @@ import { modifier } from 'ember-modifier';
 
 import styles from '@hokulea/core/controls.module.css';
 
-import { pick } from '../-private/helpers';
-import { pickAsNumber } from './-input';
+import { pick } from '../-private/helpers.ts';
+import { pickAsNumber } from './-input.ts';
 
-import type { InputArgs } from './-input';
+import type { InputArgs } from './-input.ts';
 import type { TOC } from '@ember/component/template-only';
 
 function applyProgressStyle(range: HTMLInputElement, value?: number) {

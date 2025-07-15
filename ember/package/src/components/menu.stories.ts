@@ -1,5 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
+import { parseOptionalBooleanArg } from '../-private/stories.ts';
+
 export default {
   title: 'Components/Controls/Menu',
   component: 'Menu',
@@ -19,11 +21,9 @@ const baseArgTypes = {
   }
 };
 
-function parseOptionalBooleanArg(arg) {
-  return typeof arg === 'boolean' ? arg : typeof arg === 'string' ? JSON.parse(arg) : undefined;
-}
+type Args = Record<string, unknown> & { disabled: boolean | string };
 
-function parseArgs(args) {
+function parseArgs(args: Args) {
   return {
     ...args,
     disabled: parseOptionalBooleanArg(args.disabled)
@@ -31,7 +31,7 @@ function parseArgs(args) {
 }
 
 export const Menu = {
-  render: (args: object) => ({
+  render: (args: Args) => ({
     template: hbs`
       <Menu @disabled={{this.disabled}} as |m|>
         <m.Item>Rename Symbol</m.Item>
@@ -71,7 +71,7 @@ export const Menu = {
 };
 
 export const ButtonMenu = {
-  render: (args) => ({
+  render: (args: Args) => ({
     template: hbs`
       {{#let (popover position='bottom-start') as |p|}}
         <Button {{p.trigger}}>Open Menu</Button>

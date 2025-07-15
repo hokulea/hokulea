@@ -19,7 +19,6 @@ export interface BoxSignature<E extends Element = HTMLDivElement> {
 export default class Box<E extends Element = HTMLDivElement> extends Component<BoxSignature<E>> {
   <template>
     {{#let (if @element @element (element "div")) as |Element|}}
-      {{! @glint-expect-error https://github.com/typed-ember/glint/issues/610 }}
       <Element class={{styles.container}} ...attributes>
         {{yield}}
       </Element>

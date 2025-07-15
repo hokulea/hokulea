@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { type Token } from './';
 
 type Tokens = Record<string, Token>;

@@ -166,9 +166,9 @@ module('Rendering | <Select>', function (hooks) {
 
       const input = new SelectPageObject();
 
-      await select(input, `${items[1].id}`);
+      await select(input, `${items[1]?.id}`);
 
-      assert.ok(handleUpdate.calledWith(`${items[1].id}`));
+      assert.ok(handleUpdate.calledWith(`${items[1]?.id}`));
     });
   });
 });

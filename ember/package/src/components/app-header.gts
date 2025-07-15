@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { hash } from '@ember/helper';
-import { uniqueId } from '@ember/helper';
+import { hash, uniqueId } from '@ember/helper';
 
 import { type CommandAction, CommandElement } from 'ember-command';
 import { keepLatestTask, timeout } from 'ember-concurrency';
@@ -11,10 +10,10 @@ import { provide } from 'ember-provide-consume-context';
 
 import styles from '@hokulea/core/navigation.module.css';
 
-import { and, not, or } from '../-private/helpers';
-import popover from '../helpers/popover';
-import IconButton from './icon-button';
-import Menu from './menu';
+import { and, not, or } from '../-private/helpers.ts';
+import popover from '../helpers/popover.ts';
+import IconButton from './icon-button.gts';
+import Menu from './menu.gts';
 
 import type { MenuItemArgs, MenuItemBlocks, MenuItemSignature } from './-menu';
 import type { TOC } from '@ember/component/template-only';
@@ -24,7 +23,7 @@ const asLink = (value: unknown): Link => {
 };
 
 const isActive = (commandable: CommandAction) => {
-  return commandable instanceof Link && (commandable as Link).isActive;
+  return commandable instanceof Link && commandable.isActive;
 };
 
 interface NavItemSignature extends MenuItemSignature {}
@@ -96,6 +95,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
   @tracked sensing = false;
 
   @provide('hokulea-app-header')
+  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
   get appHeader() {
     return true;
   }
@@ -139,10 +139,12 @@ export default class AppHeader extends Component<AppHeaderSignature> {
   flipflop = modifier((element: HTMLElement) => {
     const sensor = () => this.detectOverflow.perform(element);
 
-    sensor();
+    void sensor();
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     window.addEventListener('resize', sensor);
 
     return () => {
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       window.removeEventListener('resize', sensor);
     };
   });

@@ -94,6 +94,7 @@ type ButtonArgs = Partial<ButtonSignature['Args']>;
 function parseArgs(args: ButtonArgs): ButtonArgs {
   return {
     ...args,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     disabled:
       typeof args.disabled === 'boolean'
         ? args.disabled
@@ -142,6 +143,7 @@ export const Stack = {
   render: () => {
     return {
       template: hbs`
+        {{!-- template-lint-disable no-inline-styles --}}
         <div style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;">
           <Button @importance="supreme" @push={{this.push}}>
             Supreme

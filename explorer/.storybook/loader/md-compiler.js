@@ -1,15 +1,15 @@
+/* eslint-disable no-undef */
+/* eslint-disable unicorn/prefer-module */
 const MarkdownItCompiler = require('markdown-it-compiler');
 
 let compiler;
 
 const getCompiler = function (config) {
   const options = {
-    ...{
-      options: {
-        linkify: true,
-        html: true,
-        typographer: true
-      }
+    options: {
+      linkify: true,
+      html: true,
+      typographer: true
     },
     ...config
   };

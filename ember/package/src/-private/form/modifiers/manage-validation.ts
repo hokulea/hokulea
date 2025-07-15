@@ -4,46 +4,31 @@ import Modifier from 'ember-modifier';
 import type { FormData, FormKey, UserData } from '../';
 
 export interface NamedOptions<DATA extends UserData> {
-  /*
-   * @internal
-   */
+  /** @internal */
   invalid: boolean;
 
-  /*
-   * @internal
-   */
+  /** @internal */
   errorMessageId: string;
 
-  /*
-   * @internal
-   */
+  /** @internal */
   showErrorsFor: (field: FormKey<FormData<DATA>>) => boolean;
 
-  /**
-   * @internal
-   */
+  /** @internal */
   name: FormKey<FormData<DATA>>;
 }
 
+type ValidationElements =
+  | HTMLInputElement
+  | HTMLSelectElement
+  | HTMLTextAreaElement
+  | HTMLDivElement;
+
 export interface ManagaValidationSignature<DATA extends UserData> {
-  Element: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | HTMLDivElement;
+  Element: ValidationElements;
   Args: {
     Named: NamedOptions<DATA>;
   };
 }
-
-// import Modifier from 'ember-modifier';
-// import { renderToCanvas, VertexArray, RenderOptions } from 'neat-webgl-library';
-
-// type Positional = [model: VertexArray];
-
-// export interface Render3DModelSignature {
-//   Element: HTMLCanvasElement;
-//   Args: {
-//     Positional: Positional;
-//     Named: RenderOptions;
-//   };
-// }
 
 export default class ManageValidationModifier<DATA extends UserData> extends Modifier<
   ManagaValidationSignature<DATA>
@@ -63,10 +48,10 @@ export default class ManageValidationModifier<DATA extends UserData> extends Mod
       }
 
       if (element.parentElement && 'inputBuilder' in element.parentElement.dataset) {
-        element.parentElement.setAttribute('data-invalid', invalid ? 'true' : 'false');
+        element.parentElement.dataset.invalid = invalid ? 'true' : 'false';
       }
     }
 
-    return undefined;
+    return;
   }
 }

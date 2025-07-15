@@ -28,12 +28,12 @@
   display: inline-block; /* Safari needs to set display explicitely when `all: unset` is given */
 
   padding: var(--spacing-primitive0);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
 
   color: var(--control-text);
 
   background-color: var(--control-background);
-  border: var(--control-border);
-  border-radius: var(--shape-radius-primitive);
 
 
   /* Reset this for safari */
@@ -86,24 +86,24 @@
 .range {
   &::-moz-range-track {
     height: calc(var(--control-border-width) * 4);
+    border-radius: var(--control-border-width);
 
     background-color: var(--control-selected-background);
     background-image: linear-gradient(var(--range-progress-background), var(--range-progress-background));
     background-repeat: no-repeat;
     /* stylelint-disable-next-line custom-property-pattern */
     background-size: var(--_hokulea-slider-progress, 0) 100%;
-    border-radius: var(--control-border-width);
   }
 
   &::-moz-range-thumb {
     aspect-ratio: 1;
     height: 1em;
     margin-top: calc(var(--control-border-width) / 0.5 - .5em);
+    border-width: 0;
+    border-radius: 50%;
 
     appearance: none;
     background-color: var(--range-thumb-background);
-    border-width: 0;
-    border-radius: 50%;
   }
 
   &[data-orientation="vertical"] {
@@ -136,23 +136,23 @@
 
   &::-webkit-slider-runnable-track {
     height: calc(var(--control-border-width) * 4);
+    border-radius: var(--control-border-width);
 
     background-color: var(--control-selected-background);
     background-image: linear-gradient(var(--range-progress-background), var(--range-progress-background));
     background-repeat: no-repeat;
     /* stylelint-disable-next-line custom-property-pattern */
     background-size: var(--_hokulea-slider-progress, 0) 100%;
-    border-radius: var(--control-border-width);
   }
 
   &::-webkit-slider-thumb {
     aspect-ratio: 1;
     height: 1em;
     margin-top: calc(var(--control-border-width) / 0.5 - .5em);
+    border-radius: 50%;
 
     appearance: none;
     background-color: var(--range-thumb-background);
-    border-radius: 50%;
   }
 
   /* stylelint-disable-next-line no-duplicate-selectors */
@@ -186,12 +186,12 @@
   user-select: none;
 
   padding-block: var(--spacing-primitive0);
+  border: var(--control-border-width) solid transparent;
 
   vertical-align: middle;
 
   appearance: none;
   background: transparent;
-  border: var(--control-border-width) solid transparent;
 
   /* stylelint-disable-next-line no-duplicate-selectors */
   &[data-orientation="vertical"] {
@@ -275,11 +275,11 @@
 
   aspect-ratio: 1;
   height: 0.9em;
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
 
   accent-color: var(--control-accent);
   background: var(--control-background);
-  border: var(--control-border);
-  border-radius: var(--shape-radius-primitive);
 }
 
 
@@ -313,8 +313,8 @@
 
   & > .input {
     flex-grow: 1;
-    background: unset;
     border: unset;
+    background: unset;
 
     /* Reset this for safari */
     @supports (-webkit-hyphens:none) {
@@ -364,10 +364,10 @@
   flex-direction: column;
 
   padding-block: var(--spacing-container-3);
-
-  background-color: var(--control-background);
   border: var(--control-border);
   border-radius: var(--shape-radius-primitive);
+
+  background-color: var(--control-background);
 
   [role="option"] {
     display: inline-flex;
@@ -424,10 +424,10 @@
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   width: fit-content;
   padding: var(--spacing-container-3);
-
-  background-color: var(--surface-popover);
   border: var(--control-border);
   border-radius: var(--shape-radius-container);
+
+  background-color: var(--surface-popover);
 
   &:popover-open {
     translate: 0 calc(var(--spacing-container-3) * -1 - var(--control-border-width));
@@ -453,10 +453,9 @@
 
     padding-block: var(--spacing-primitive-4);
     padding-inline: var(--spacing-primitive-3);
+    border-radius: calc(var(--shape-radius-container) - var(--spacing-container-3) / 2);
 
     color: var(--control-text);
-
-    border-radius: calc(var(--shape-radius-container) - var(--spacing-container-3) / 2);
 
     &[aria-disabled="disabled"] {
       color: var(--control-disabled-text);
@@ -513,13 +512,13 @@
       position: relative;
 
       padding: var(--spacing-primitive0) var(--spacing-primitive-1);
+      border: 0;
 
       color: var(--typography-main);
       text-decoration: none;
 
       appearance: none;
       background: 0 0;
-      border: 0;
 
       &::after {
         content: "";
@@ -530,7 +529,6 @@
         left: var(--spacing-primitive-1);
 
         height: 2px;
-
         border-color: transparent;
         border-style: solid;
         border-width: 1px;
@@ -562,6 +560,7 @@
       border-block-end: 0;
       /* stylelint-disable-next-line custom-property-pattern */
       border-inline-end: var(--_border);
+
       box-shadow: 1px 0 0 rgb(0 0 0 / 6%);
 
       [role="tab"] {

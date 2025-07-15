@@ -2,7 +2,7 @@ import { PageObject, selector as sel } from 'fractal-page-object';
 
 import type { ElementLike } from 'fractal-page-object';
 
-class OptionPageObject extends PageObject<HTMLDivElement> {
+export class OptionPageObject extends PageObject<HTMLDivElement> {
   $label = sel<HTMLLabelElement | HTMLLegendElement>('[data-test-label]');
   $description = sel<HTMLParagraphElement>('[data-test-description]');
   $control = sel<HTMLInputElement>('input');

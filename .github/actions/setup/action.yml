@@ -26,3 +26,7 @@ runs:
     - name: Build package
       run: pnpm build
       shell: bash
+
+    - name: Install dependencies (again for injected deps)
+      run: pnpm install
+      shell: bash

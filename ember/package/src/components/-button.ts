@@ -18,7 +18,7 @@ const LINK_PROPERTIES = [
 ];
 
 function getAllPropertyNames(obj: object) {
-  let names: string[] = [];
+  const names: string[] = [];
 
   do {
     names.push(...Object.getOwnPropertyNames(obj));

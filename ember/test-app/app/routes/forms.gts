@@ -20,8 +20,7 @@ const data = {
   terms: false
 };
 
-const submit = async (formData: unknown) => {
-  // eslint-disable-next-line no-console
+const submit = (formData: unknown) => {
   console.log(formData);
 };
 

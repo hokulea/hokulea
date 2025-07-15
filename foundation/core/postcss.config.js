@@ -1,1 +1,5 @@
-module.exports = require('@hokulea/config-postcss');
+import { plugins } from '@hokulea/config-postcss';
+
+export default {
+  plugins: plugins()
+};

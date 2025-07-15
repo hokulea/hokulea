@@ -6,7 +6,7 @@ export interface TokenArgs {
   name: string;
 }
 
-const BODY_STYLES = window.getComputedStyle(document.body);
+const BODY_STYLES = globalThis.getComputedStyle(document.body);
 
 export default class TokenComponent extends Component<TokenArgs> {
   get description(): string | undefined {

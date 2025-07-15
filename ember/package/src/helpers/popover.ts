@@ -18,8 +18,8 @@ class State {
 
 const popover = helper((_, { position, opened, closed }: PopoverArgs) => {
   const state = new State();
-  let triggerElement: HTMLElement | undefined = undefined;
-  let targetElement: HTMLElement | undefined = undefined;
+  let triggerElement: HTMLElement | undefined;
+  let targetElement: HTMLElement | undefined;
 
   return {
     trigger: modifier((element: HTMLElement) => {

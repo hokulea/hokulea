@@ -2,11 +2,11 @@ import { on } from '@ember/modifier';
 
 import styles from '@hokulea/core/controls.module.css';
 
-import { pick } from '../-private/helpers';
-import { pickAsNumber } from './-input';
-import InputBuilder from './input-builder';
+import { pick } from '../-private/helpers.ts';
+import { pickAsNumber } from './-input.ts';
+import InputBuilder from './input-builder.gts';
 
-import type { InputArgs } from './-input';
+import type { InputArgs } from './-input.ts';
 import type { TOC } from '@ember/component/template-only';
 
 export interface CurrencyInputSignature {

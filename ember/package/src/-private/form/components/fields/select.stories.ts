@@ -1,8 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { baseArgTypes, parseArgs } from './stories-utils';
+import { baseArgTypes, parseArgs } from './stories-utils.ts';
 
-import type { FieldArgs } from './stories-utils';
+import type { FieldArgs } from './stories-utils.ts';
 
 export default {
   title: 'Components/Form/Select',

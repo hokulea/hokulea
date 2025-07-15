@@ -22,7 +22,6 @@ import {
 
 function noop() {
   return () => {
-    // eslint-disable-next-line no-console
     console.log('noop');
   };
 }

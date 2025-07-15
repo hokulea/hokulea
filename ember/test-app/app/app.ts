@@ -3,6 +3,7 @@ import Application from '@ember/application';
 import loadInitializers from 'ember-load-initializers';
 import Resolver from 'ember-resolver';
 
+import '@hokulea/core/index.css';
 import config from '@hokulea/ember-test-app/config/environment';
 
 export default class App extends Application {

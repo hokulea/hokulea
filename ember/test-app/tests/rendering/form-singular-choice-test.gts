@@ -6,6 +6,8 @@ import { Form } from '@hokulea/ember';
 
 import { FormPageObject } from '@hokulea/ember/test-support';
 
+import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
+
 module('Rendering | <Form.SingularChoice>', function (hooks) {
   setupRenderingTest(hooks);
 
@@ -34,7 +36,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
 
     assert.dom(field).hasTagName('fieldset');
     assert.dom(field.$label).hasTagName('legend');
@@ -60,9 +62,9 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
 
-    assert.dom(field.$choices.$options[0].$control).hasAttribute('required');
+    assert.dom(field.$choices.$options[0]?.$control).hasAttribute('required');
   });
 
   test('disabling one option', async function (assert) {
@@ -80,10 +82,10 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
 
-    assert.dom(field.$choices.$options[0].$control).isDisabled();
-    assert.dom(field.$choices.$options[1].$control).isNotDisabled();
+    assert.dom(field.$choices.$options[0]?.$control).isDisabled();
+    assert.dom(field.$choices.$options[1]?.$control).isNotDisabled();
   });
 
   test('disabling the field', async function (assert) {
@@ -106,7 +108,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
 
     for (const option of field.$choices.$options) {
       assert.dom(option.$control).isDisabled();
@@ -128,17 +130,17 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0];
+    const field = form.$fields[0] as FieldPageObject;
 
-    assert.dom(field.$choices.$options[2].$label).hasText('Crocodile');
-    assert.dom(field.$choices.$options[2].$label).hasTagName('label');
-    assert.dom(field.$choices.$options[2].$description).hasText('Like a dinosaur');
+    assert.dom(field.$choices.$options[2]?.$label).hasText('Crocodile');
+    assert.dom(field.$choices.$options[2]?.$label).hasTagName('label');
+    assert.dom(field.$choices.$options[2]?.$description).hasText('Like a dinosaur');
 
     assert
-      .dom(field.$choices.$options[2].$label)
+      .dom(field.$choices.$options[2]?.$label)
       .hasAttribute(
         'for',
-        field.$choices.$options[2].$control.element?.getAttribute('id') as string
+        field.$choices.$options[2]?.$control.element?.getAttribute('id') as string
       );
   });
 });

@@ -7,9 +7,11 @@
     "dist",
     "src"
   ],
+  "type": "module",
   "exports": {
     "./index.css": "./dist/index.css",
     "./*.module.css": {
+      "types": "./src/css-module.d.ts",
       "import": "./dist/*.css.js",
       "require": "./dist/*.css.cjs"
     },
@@ -29,22 +31,22 @@
     "start": "rollup --config --watch"
   },
   "devDependencies": {
-    "@hokulea/config-eslint": "workspace:*",
-    "@hokulea/config-prettier": "workspace:*",
+    "@gossi/config-eslint": "^1.3.0",
+    "@gossi/config-prettier": "^1.1.0",
+    "@gossi/config-stylelint": "^1.1.0",
+    "@gossi/config-targets": "^1.1.0",
     "@hokulea/config-postcss": "workspace:*",
-    "@hokulea/config-stylelint": "workspace:*",
-    "@hokulea/config-targets": "workspace:*",
     "@hokulea/rollup-plugin-postcss": "workspace:*",
     "@rollup/plugin-commonjs": "26.0.3",
-    "eslint": "^8.56.0",
+    "eslint": "^9.31.0",
     "fast-glob": "3.3.3",
     "postcss": "8.5.3",
-    "prettier": "^3.2.5",
-    "rollup": "4.34.7",
+    "prettier": "^3.6.2",
+    "rollup": "4.45.0",
     "rollup-plugin-css-only": "4.5.2",
     "rollup-plugin-delete": "2.1.0",
     "rollup-plugin-multi-input": "1.4.1",
-    "stylelint": "16.6.1"
+    "stylelint": "16.21.1"
   },
   "engines": {
     "node": "^20.11.0 || >=22"

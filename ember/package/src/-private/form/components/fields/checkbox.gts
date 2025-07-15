@@ -2,14 +2,14 @@ import Component from '@glimmer/component';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import Checkbox from '../../../../components/checkbox';
-import { asBoolean } from '../../../helpers';
-import Description from '../description';
-import Label from '../label';
+import Checkbox from '../../../../components/checkbox.gts';
+import { asBoolean } from '../../../helpers.ts';
+import Description from '../description.gts';
+import Label from '../label.gts';
 
-import type { CheckboxSignature } from '../../../../components/checkbox';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { CheckboxSignature } from '../../../../components/checkbox.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface RadioFieldSignature<
   DATA extends UserData,

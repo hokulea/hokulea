@@ -2,22 +2,26 @@
   "name": "@hokulea/config-style-dictionary",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "exports": {
-    ".": "./index.mjs"
+    ".": "./src/index.js"
   },
   "scripts": {
-    "lint:js": "eslint ."
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
   },
   "peerDependencies": {
     "@theemo/style-dictionary": "^1.0.1",
     "style-dictionary": "^5.0.0"
   },
   "devDependencies": {
-    "@hokulea/config-eslint": "workspace:*",
-    "@hokulea/config-prettier": "workspace:*",
+    "@gossi/config-eslint": "^1.3.0",
+    "@gossi/config-prettier": "^1.1.0",
     "@theemo/style-dictionary": "^1.0.1",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.5",
+    "eslint": "^9.31.0",
+    "prettier": "^3.6.2",
     "style-dictionary": "^5.0.0"
   },
   "engines": {

@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import RangeInput from '../../../../components/range-input';
-import { asNumber } from '../../../helpers';
+import RangeInput from '../../../../components/range-input.gts';
+import { asNumber } from '../../../helpers.ts';
 
-import type { RangeInputSignature } from '../../../../components/range-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { RangeInputSignature } from '../../../../components/range-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface RangeFieldSignature<
   DATA extends UserData,

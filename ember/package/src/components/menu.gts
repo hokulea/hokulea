@@ -13,10 +13,10 @@ import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
 
-import disabled from '../-private/modifiers/disabled';
-import popover from '../helpers/popover';
+import disabled from '../-private/modifiers/disabled.ts';
+import popover from '../helpers/popover.ts';
 
-import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu';
+import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu.ts';
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
 import type FastBoot from 'ember-cli-fastboot/services/fastboot';
@@ -134,6 +134,7 @@ export default class Menu extends Component<MenuSignature> {
   @tracked items: MenuItem[] = new TrackedArray();
 
   get shallHide() {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-boolean-literal-compare
     return this.fastboot?.isFastBoot && this.withinAppHeader === true;
   }
 

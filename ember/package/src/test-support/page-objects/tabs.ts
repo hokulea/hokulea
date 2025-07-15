@@ -2,9 +2,9 @@ import { PageObject, selector as sel } from 'fractal-page-object';
 
 import { selectTab } from 'ember-aria-voyager/test-support';
 
-// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { TabValue } from '../../components/tabs';
+import { TabValue } from '../../components/tabs.gts';
 
 import type { ElementLike } from 'fractal-page-object';
 
@@ -25,6 +25,7 @@ export class TabsPageObject extends PageObject<HTMLDivElement> {
 
   async select(value: unknown) {
     // @ts-expect-error this is internal API
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const tab = this.$tab.find((t) => t.element[TabValue] === value);
 
     if (tab) {

@@ -93,7 +93,6 @@ export default class List<V> extends Component<ListSignature<V>> {
       class={{styles.list}}
       data-test-list
       ...attributes
-      {{!@glint-ignore}}
       {{ariaListbox
         items=this.items
         selection=@value

@@ -1,15 +1,25 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { CheckboxPageObject } from '../choice';
-import { InputPageObject } from '../input';
-import { InputBuilderPageObject } from '../input-builder';
-import { ListPageObject } from '../list';
-import { SelectPageObject } from '../select';
-import { TextAreaPageObject } from '../text-area';
-import { ChoicesPageObject } from './choices';
+import { CheckboxPageObject } from '../choice.ts';
+import { InputPageObject } from '../input.ts';
+import { InputBuilderPageObject } from '../input-builder.ts';
+import { ListPageObject } from '../list.ts';
+import { SelectPageObject } from '../select.ts';
+import { TextAreaPageObject } from '../text-area.ts';
+import { ChoicesPageObject } from './choices.ts';
 
 import type { RangeInputPageObject } from '../input';
 import type { ElementLike } from 'fractal-page-object';
+
+export class FieldError extends PageObject<HTMLDivElement> {
+  get type() {
+    return this.element?.getAttribute('data-test-error-type');
+  }
+
+  get value() {
+    return this.element?.getAttribute('data-test-error-value');
+  }
+}
 
 export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetElement> {
   static SELECTOR = '[data-test-field]';
@@ -34,18 +44,7 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
   private $list = sel(ListPageObject.SELECTOR, ListPageObject);
 
   $choices = sel(ChoicesPageObject.SELECTOR, ChoicesPageObject);
-  $errors = sel(
-    '[data-test-error]',
-    class extends PageObject<HTMLDivElement> {
-      get type() {
-        return this.element?.getAttribute('data-test-error-type');
-      }
-
-      get value() {
-        return this.element?.getAttribute('data-test-error-value');
-      }
-    }
-  );
+  $errors = sel('[data-test-error]', FieldError);
 
   get $control():
     | InputPageObject

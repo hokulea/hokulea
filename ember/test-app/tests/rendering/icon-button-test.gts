@@ -1,5 +1,4 @@
-import { render } from '@ember/test-helpers';
-import { setupOnerror } from '@ember/test-helpers';
+import { render, setupOnerror } from '@ember/test-helpers';
 import { module, skip, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 

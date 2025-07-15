@@ -7,10 +7,13 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import CaptureEventsModifier from '../modifiers/capture-events';
-import Description from './description';
-import Errors from './errors';
-import Label from './label';
+import CaptureEventsModifier from '../modifiers/capture-events.ts';
+import ManageValidationModifier, {
+  type ManagaValidationSignature
+} from '../modifiers/manage-validation.ts';
+import Description from './description.gts';
+import Errors from './errors.gts';
+import Label from './label.gts';
 
 import type {
   ErrorRecord,
@@ -21,10 +24,9 @@ import type {
   UnregisterFieldCallback,
   UserData,
   ValidationError
-} from '../';
-import type { CaptureEventsModifierSignature } from '../modifiers/capture-events';
-import type { ManagaValidationSignature } from '../modifiers/manage-validation';
-import type { LabelSignature } from './label';
+} from '../index.ts';
+import type { CaptureEventsModifierSignature } from '../modifiers/capture-events.ts';
+import type { LabelSignature } from './label.gts';
 import type { ComponentLike, ModifierLike, WithBoundArgs } from '@glint/template';
 
 export type BoundField<
@@ -35,12 +37,12 @@ export type BoundField<
   | 'data'
   | 'set'
   | 'errors'
+  | 'showErrorsFor'
   | 'registerField'
   | 'unregisterField'
   | 'triggerValidationFor'
   | 'fieldValidationEvent'
   | 'fieldRevalidationEvent'
-  | 'manageValidation'
 >;
 
 export interface FieldArgs<
@@ -168,60 +170,38 @@ export interface FieldSignature<
 > {
   Element: HTMLDivElement;
   Args: FieldArgs<DATA, KEY> & {
-    /*
-     * @internal
-     */
+    /** @internal */
     data: FormData<DATA>;
 
-    /*
-     * @internal
-     */
+    /** @internal */
     set: (key: KEY, value: DATA[KEY]) => void;
 
-    /*
-     * @internal
-     */
+    /** @internal */
     errors?: ErrorRecord<DATA, KEY>;
 
-    /*
-     * @internal
-     */
+    /** @internal */
+    showErrorsFor: (field: FormKey<FormData<DATA>>) => boolean;
+
+    /** @internal */
     registerField: RegisterFieldCallback<FormData<DATA>, KEY>;
 
-    /*
-     * @internal
-     */
+    /** @internal */
     unregisterField: UnregisterFieldCallback<FormData<DATA>, KEY>;
 
-    /*
-     * @internal
-     */
+    /** @internal */
     triggerValidationFor(name: KEY): Promise<void>;
 
-    /*
-     * @internal
-     */
+    /** @internal */
     fieldValidationEvent: 'focusout' | 'change' | 'input' | undefined;
 
-    /*
-     * @internal
-     */
+    /** @internal */
     fieldRevalidationEvent: 'focusout' | 'change' | 'input' | undefined;
 
-    /**
-     * @internal
-     */
+    /** @internal */
     element?: ComponentLike<{ Element: HTMLElement; Blocks: { default: [] } }>;
 
-    /**
-     * @internal
-     */
+    /** @internal */
     labelComponent?: ComponentLike<LabelSignature>;
-
-    /**
-     * @internal
-     */
-    manageValidation: WithBoundArgs<ModifierLike<ManagaValidationSignature<DATA>>, 'showErrorsFor'>;
   };
   Blocks: {
     default: [FieldBlock<DATA, KEY>];
@@ -233,6 +213,7 @@ export default class Field<
   KEY extends FormKey<FormData<DATA>> = FormKey<FormData<DATA>>
 > extends Component<FieldSignature<DATA, KEY>> {
   // Label = this.args.labelComponent ?? Label;
+  ManagaValidationModifier = ManageValidationModifier<DATA>;
 
   constructor(owner: unknown, args: FieldSignature<DATA, KEY>['Args']) {
     super(owner, args);
@@ -271,6 +252,7 @@ export default class Field<
     assert(
       `Only string values are expected for ${String(this.args.name)}, but you passed ${typeof this
         .value}`,
+      // eslint-disable-next-line unicorn/no-typeof-undefined
       typeof this.value === 'undefined' || typeof this.value === 'string'
     );
 
@@ -282,6 +264,7 @@ export default class Field<
       `Only string or number values are expected for ${String(
         this.args.name
       )}, but you passed ${typeof this.value}`,
+      // eslint-disable-next-line unicorn/no-typeof-undefined
       typeof this.value === 'undefined' ||
         typeof this.value === 'string' ||
         typeof this.value === 'number'
@@ -294,6 +277,7 @@ export default class Field<
     assert(
       `Only boolean values are expected for ${String(this.args.name)}, but you passed ${typeof this
         .value}`,
+      // eslint-disable-next-line unicorn/no-typeof-undefined
       typeof this.value === 'undefined' || typeof this.value === 'boolean'
     );
 
@@ -301,7 +285,7 @@ export default class Field<
   }
 
   setValue = (value: DATA[KEY]): void => {
-    this.args.set(this.args.name, value as DATA[KEY]);
+    this.args.set(this.args.name, value);
   };
 
   <template>
@@ -335,7 +319,11 @@ export default class Field<
               triggerValidation=triggerValidation
             )
             manageValidation=(modifier
-              @manageValidation invalid=this.invalid errorMessageId=errorId name=@name
+              this.ManagaValidationModifier
+              invalid=this.invalid
+              errorMessageId=errorId
+              name=@name
+              showErrorsFor=@showErrorsFor
             )
           )
         }}

@@ -2,7 +2,7 @@ import { click } from '@ember/test-helpers';
 
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { IconPageObject } from './icon';
+import { IconPageObject } from './icon.ts';
 
 import type { ElementLike } from 'fractal-page-object';
 

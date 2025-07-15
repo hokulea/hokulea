@@ -7,7 +7,7 @@ import { Button, Tabs } from '@hokulea/ember';
 export default class TabsComposite extends Component<object> {
   @tracked selection = 'Freestyle';
 
-  select = (discipline: string | unknown) => {
+  select = (discipline: string & {}) => {
     this.selection = discipline as string;
   };
 

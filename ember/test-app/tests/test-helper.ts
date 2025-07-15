@@ -10,7 +10,6 @@ import { forceModulesToBeLoaded, sendCoverage } from 'ember-cli-code-coverage/te
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 setApplication(Application.create(config.APP));
 
 // eslint-disable-next-line import-x/namespace

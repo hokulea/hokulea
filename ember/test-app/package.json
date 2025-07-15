@@ -94,7 +94,7 @@
     "ember-try": "^3.0.0",
     "eslint": "^9.31.0",
     "eslint-plugin-ember": "^12.6.0",
-    "eslint-plugin-qunit": "^8.2.3",
+    "eslint-plugin-qunit": "^8.2.4",
     "fractal-page-object": "1.0.0",
     "glimmer-scoped-css": "0.7.0",
     "loader.js": "4.7.0",

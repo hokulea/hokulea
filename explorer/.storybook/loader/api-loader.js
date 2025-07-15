@@ -1,23 +1,24 @@
-// eslint-disable-next-line n/no-missing-require
+/* eslint-disable no-undef */
+/* eslint-disable unicorn/prefer-module */
 const { getOptions } = require('loader-utils');
 
 const { compileMarkdown } = require('./md-compiler');
 
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 const translateLinks = function (html) {
   // internal links
-  let output = html.replace(/<a href="\.\/([^"]+)\.md">/g, (_match, target) => {
+  let output = html.replaceAll(/<a href="\.\/([^"]+)\.md">/g, (_match, target) => {
     const parts = target.split('.');
     const kind = (parts.length === 3 ? parts.slice(0, -1) : parts).join('-');
-    const story = parts.length === 3 ? parts[parts.length - 1] : 'overview';
+    const story = parts.length === 3 ? parts.at(-1) : 'overview';
 
     return `<a href="#" data-sb-kind="api-hokulea-${kind}" data-sb-story="${story}">`;
   });
 
   // external links
-  output = output.replace(/<a href="[^#]+">/g, (link) => link.replace('>', ' target="_blank">'));
+  output = output.replaceAll(/<a href="[^#]+">/g, (link) => link.replace('>', ' target="_blank">'));
 
   return output;
 };
@@ -44,8 +45,8 @@ const loadPackage = (fileName) => {
   }
 };
 
-const getPackageObject = (package, path) => {
-  let node = package.members[0];
+const getPackageObject = (pkg, path) => {
+  let node = pkg.members[0];
 
   // traverse members from here
   while (path.length > 0) {
@@ -67,12 +68,12 @@ const getPackageObject = (package, path) => {
 
 const sanitizeMarkdown = (contents) => {
   // remove first 4 lines and make first heading a h1
-  let source = contents.replace(/^([^\n]*\n){4}/gi, '');
+  let source = contents.replaceAll(/^([^\n]*\n){4}/gi, '');
 
-  source = source.replace(/^##/g, '#');
+  source = source.replaceAll(/^##/g, '#');
 
   // trim code blocks
-  source = source.replace(
+  source = source.replaceAll(
     /(```)([^`]+)(```)/g,
     (_match, begin, code, end) => `${begin}${code.trim()}\n${end.trim()}`
   );
@@ -99,9 +100,9 @@ const loader = function (source) {
 
   // find package
   const packageFileName = `${dir}/${segments[0]}.api.json`;
-  const package = loadPackage(packageFileName);
+  const pkg = loadPackage(packageFileName);
 
-  if (!package) {
+  if (!pkg) {
     return '';
   }
 
@@ -109,7 +110,7 @@ const loader = function (source) {
   // Forward slash is used in storybook for creating hierarchy
   // hack: use homoglyph, e.g. ／
   // https://www.irongeek.com/homoglyph-attack-generator.php
-  const packageName = package.name.replace('/', '／');
+  const packageName = pkg.name.replace('/', '／');
 
   // package overview
   if (segments.length === 1) {
@@ -127,7 +128,7 @@ const loader = function (source) {
   }
 
   // package entity (class, interface, etc.)
-  const entity = getPackageObject(package, [...segments.slice(1, 2)]);
+  const entity = getPackageObject(pkg, segments.slice(1, 2));
 
   if (segments.length === 2) {
     return `
@@ -145,7 +146,7 @@ const loader = function (source) {
 
   // entity member (property, method, ...)
   if (segments.length === 3) {
-    const member = getPackageObject(package, [...segments.slice(1)]);
+    const member = getPackageObject(pkg, segments.slice(1));
 
     return `
     import { hbs } from 'ember-cli-htmlbars';
@@ -156,7 +157,7 @@ const loader = function (source) {
       decorators: [withLinks]
     };
 
-    ${generateStoryCode(segments[segments.length - 1], member.name, doc.html)}
+    ${generateStoryCode(segments.at(-1), member.name, doc.html)}
     `;
   }
 };

@@ -24,11 +24,15 @@ const preview = {
     }
   },
   decorators: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     (storyFn, { globals }) => {
       return {
         template: hbs`<Storybook @globals={{this.globals}} @story={{this.story}}/>`,
         context: {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           globals,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
           story: storyFn()
         }
       };

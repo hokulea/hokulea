@@ -6,6 +6,7 @@ const hokuleaPostCSSConfig = require('@hokulea/config-postcss');
 const packageJson = require('./package');
 
 const sideWatch = require('@embroider/broccoli-side-watch');
+
 const postCSSPlugins = hokuleaPostCSSConfig.plugins;
 // const postCSSModulesIndex = hokuleaPostCSSConfig.plugins.indexOf(require('postcss-modules'));
 
@@ -13,6 +14,7 @@ const postCSSPlugins = hokuleaPostCSSConfig.plugins;
 //   postCSSPlugins.splice(postCSSModulesIndex, 1);
 // }
 
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     trees: {

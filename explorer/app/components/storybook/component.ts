@@ -1,4 +1,3 @@
-// eslint-disable-next-line ember/no-classic-components
 import Component from '@glimmer/component';
 // eslint-disable-next-line ember/no-classic-components
 import EmberComponent from '@ember/component';
@@ -30,7 +29,6 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     super(owner, args);
 
     // render original story
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     owner.register(
       'component:story',
       // eslint-disable-next-line ember/no-classic-classes, ember/require-tagless-components
@@ -61,6 +59,6 @@ export default class StorybookComponent extends Component<StorybookArgs> {
     document.body.classList.add(`wm-${globals.writingMode}`);
 
     // global: density
-    document.documentElement.dataset.density = globals.density !== 'default' ? globals.density : '';
+    document.documentElement.dataset.density = globals.density === 'default' ? '' : globals.density;
   }
 }

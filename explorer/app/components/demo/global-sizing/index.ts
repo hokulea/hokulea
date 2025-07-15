@@ -8,7 +8,7 @@ import type { GlobalSizingElement } from '../../reference/global-sizing';
 
 export default class GlobalScaleDemoComponent extends Component {
   @tracked version?: 'clamp' | 'static';
-  // eslint-disable-next-line @typescript-eslint/naming-convention
+
   private sizingElement?: GlobalSizingElement;
 
   @action
@@ -37,6 +37,7 @@ export default class GlobalScaleDemoComponent extends Component {
     this.update();
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   link = modifier((elem: GlobalSizingElement) => {
     this.sizingElement = elem;
   });

@@ -11,7 +11,7 @@ export interface TokenArgs {
   compute?: boolean;
 }
 
-const BODY_STYLES = window.getComputedStyle(document.body);
+const BODY_STYLES = globalThis.getComputedStyle(document.body);
 
 export default class TokenComponent extends Component<TokenArgs> {
   private demo?: HTMLElement;
@@ -25,11 +25,12 @@ export default class TokenComponent extends Component<TokenArgs> {
     return this.args.compute ?? true;
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   setup = modifier((element: HTMLElement, [update]: [() => void]) => {
     // listen for changes
     window.addEventListener('resize', update);
 
-    const mutationObserver = new window.MutationObserver(update);
+    const mutationObserver = new globalThis.MutationObserver(update);
 
     this.demo = element;
 

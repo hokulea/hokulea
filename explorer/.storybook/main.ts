@@ -1,17 +1,18 @@
 import path from 'node:path';
 
 import Case from 'case';
-// @ts-ignore
+// @ts-expect-error its a js file
 import emberTemplateCompiler from 'ember-source/dist/ember-template-compiler.js';
 
-// @ts-ignore
+// @ts-expect-error its a js file
 import markdownCompilerConfig from './config/md-compiler.js';
-// @ts-ignore
+// @ts-expect-error its a js file
 import hbsBabelLoader from './loader/hbs-loader.js';
 
 import type { StorybookConfig } from '@storybook/ember';
 import type { RuleSetRule } from 'webpack';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
 const precompile = emberTemplateCompiler.precompile;
 
 const config: StorybookConfig = {
@@ -22,11 +23,7 @@ const config: StorybookConfig = {
     // '../../api/*.md',
     '../../ember/package/src/**/*.stories.ts'
   ],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-designs',
-    '@chromatic-com/storybook'
-  ],
+  addons: ['@storybook/addon-links', '@storybook/addon-designs', '@chromatic-com/storybook'],
   framework: {
     name: '@storybook/ember',
     options: {}
@@ -35,16 +32,19 @@ const config: StorybookConfig = {
     disableWhatsNewNotifications: true
   },
   docs: {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     autodocs: 'tag'
   },
   staticDirs: ['../dist'],
-  babel: async (options: Record<string, unknown>) => ({
+  babel: (options: Record<string, unknown>) => ({
     ...options,
     presets: [['@babel/preset-typescript']],
     plugins: [
       [
         import.meta.resolve('babel-plugin-htmlbars-inline-precompile'),
         {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           precompile,
           modules: {
             'ember-cli-htmlbars': 'hbs',
@@ -57,11 +57,12 @@ const config: StorybookConfig = {
       '@babel/plugin-proposal-class-properties'
     ]
   }),
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  experimental_indexers: async (existingIndexers) => {
+  experimental_indexers: (existingIndexers) => {
     const docIndexer = {
       test: /\/documentation\/.*\.md$/,
-      createIndex: async (fileName: string) => {
+      createIndex: (fileName: string) => {
         const nav = path
           .relative(path.resolve(import.meta.dirname, '../../documentation'), fileName)
           .replace('.md', '')
@@ -82,7 +83,8 @@ const config: StorybookConfig = {
 
     return [...(existingIndexers ?? []), docIndexer];
   },
-  webpack: async (config) => {
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  webpack: (config) => {
     // remove storybook *.md loader
     if (config.module?.rules) {
       for (const rule of config.module.rules) {
@@ -101,6 +103,7 @@ const config: StorybookConfig = {
           options: {
             root: 'Documentation',
             dir: path.resolve(import.meta.dirname, '../../documentation'),
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             compiler: markdownCompilerConfig
           }
         }

@@ -5,8 +5,8 @@
   align-items: center;
 
   padding: var(--spacing-container0);
-
-  background-color: var(--surface-container);
   border: var(--shape-stroke);
   border-radius: var(--shape-radius-container);
+
+  background-color: var(--surface-container);
 }

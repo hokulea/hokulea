@@ -10,7 +10,7 @@ export interface TokenArgs {
   name: string;
 }
 
-const BODY_STYLES = window.getComputedStyle(document.body);
+const BODY_STYLES = globalThis.getComputedStyle(document.body);
 
 export default class TokenComponent extends Component<TokenArgs> {
   private demo?: HTMLElement;
@@ -20,11 +20,12 @@ export default class TokenComponent extends Component<TokenArgs> {
     return findDescription(this.args.name);
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   setup = modifier((element: HTMLElement, [update]: [() => void]) => {
     // listen for changes
     window.addEventListener('resize', update);
 
-    const mutationObserver = new window.MutationObserver(update);
+    const mutationObserver = new globalThis.MutationObserver(update);
 
     this.demo = element;
 
@@ -63,7 +64,6 @@ export default class TokenComponent extends Component<TokenArgs> {
   private compute(): string | undefined {
     const width = this.demo?.getBoundingClientRect().width;
 
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return width ? `${Math.round(width * 100) / 100}px` : undefined;
   }
 }

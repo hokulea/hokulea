@@ -54,25 +54,25 @@ jobs:
       - name: Test
         run: pnpm run -r --parallel --aggregate-output test
 
-  # test-ember:
-  #   name: Test Ember
-  #   runs-on: ubuntu-latest
+  test-ember:
+    name: Test Ember
+    runs-on: ubuntu-latest
 
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       try-scenario:
-  #         - CSR
-  #         - SSR
-  #         - ember-release
-  #         - ember-beta
-  #         - ember-canary
-  #         - embroider-safe
-  #         - embroider-optimized
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Setup
-  #       uses: ./.github/actions/setup
-  #     - name: Try Scenario
-  #       run: pnpm exec ember try:one ${{ matrix.try-scenario }} --skip-cleanup
-  #       working-directory: ember/test-app
+    strategy:
+      fail-fast: false
+      matrix:
+        try-scenario:
+          - CSR
+          - SSR
+          - ember-release
+          - ember-beta
+          - ember-canary
+          - embroider-safe
+          - embroider-optimized
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Try Scenario
+        run: pnpm exec ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+        working-directory: ember/test-app

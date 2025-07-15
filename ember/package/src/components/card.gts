@@ -1,6 +1,6 @@
 import styles from '@hokulea/core/content.module.css';
 
-import { or } from '../-private/helpers';
+import { or } from '../-private/helpers.ts';
 
 import type { TOC } from '@ember/component/template-only';
 

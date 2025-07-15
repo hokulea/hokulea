@@ -1,8 +1,7 @@
 import Component from '@glimmer/component';
 import { cached, tracked } from '@glimmer/tracking';
 import { registerDestructor } from '@ember/destroyable';
-import { hash } from '@ember/helper';
-import { uniqueId } from '@ember/helper';
+import { hash, uniqueId } from '@ember/helper';
 import { guidFor } from '@ember/object/internals';
 import { next } from '@ember/runloop';
 
@@ -14,7 +13,7 @@ import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
 
-import { eq, not } from '../-private/helpers';
+import { eq, not } from '../-private/helpers.ts';
 
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
@@ -33,6 +32,8 @@ interface State {
   selected: boolean;
 }
 
+type Item = string & {};
+
 type TabSignature = {
   Element: HTMLDivElement;
   Args: {
@@ -42,7 +43,7 @@ type TabSignature = {
     label?: string;
     value?: unknown;
     selection?: unknown;
-    activeItem?: string | unknown;
+    activeItem?: Item;
   };
   Blocks: {
     default?: [State];
@@ -133,7 +134,7 @@ interface TabsSignature {
 export default class Tabs extends Component<TabsSignature> {
   @tracked tabs: Tab[] = new TrackedArray();
   @tracked internalSelection?: Tab;
-  @tracked activeItem?: string | unknown;
+  @tracked activeItem?: Item;
 
   get items() {
     return this.tabs.map((t) => t.id);
@@ -157,14 +158,15 @@ export default class Tabs extends Component<TabsSignature> {
     });
   };
 
-  select = (id: string | unknown) => {
-    const tab = this.tabs.find((t) => t.id === id) as Tab;
+  select = (id: Item) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const tab = this.tabs.find((t) => t.id === id)!;
 
     this.internalSelection = tab;
     this.args.update?.(tab.args.value ?? tab.args.label ?? undefined);
   };
 
-  activateItem = (id: string | unknown) => {
+  activateItem = (id: Item) => {
     this.activeItem = id;
   };
 

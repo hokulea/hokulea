@@ -3,9 +3,9 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
-import { not } from '../-private/helpers';
-import disabled from '../-private/modifiers/disabled';
-import { isLink } from './-button';
+import { not } from '../-private/helpers.ts';
+import disabled from '../-private/modifiers/disabled.ts';
+import { isLink } from './-button.ts';
 
 import type { TOC } from '@ember/component/template-only';
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';

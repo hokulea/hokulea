@@ -3,12 +3,6 @@ import { Addon } from '@embroider/addon-dev/rollup';
 import { babel } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
-import { browsers as targets } from '@hokulea/config-targets';
-import hokuleaRollupPostcss from '@hokulea/rollup-plugin-postcss';
-
-const development = Boolean(process.env.ROLLUP_WATCH);
-const production = !development;
-
 const addon = new Addon({
   srcDir: 'src',
   destDir: 'dist'
@@ -68,12 +62,6 @@ export default {
       'helpers/popover.js'
     ]),
 
-    hokuleaRollupPostcss({
-      targets,
-      sourceMap: development,
-      minify: production
-    }),
-
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
@@ -123,7 +111,8 @@ export default {
     }),
     babel({
       babelHelpers: 'bundled',
-      extensions
+      extensions,
+      configFile: './babel.publish.config.mjs'
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.

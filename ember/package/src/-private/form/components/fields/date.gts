@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import DateInput from '../../../../components/date-input';
-import { asString } from '../../../helpers';
+import DateInput from '../../../../components/date-input.gts';
+import { asString } from '../../../helpers.ts';
 
-import type { DateInputSignature } from '../../../../components/date-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { DateInputSignature } from '../../../../components/date-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface DateFieldSignature<
   DATA extends UserData,

@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import CurrencyInput from '../../../../components/currency-input';
-import { asNumber } from '../../../helpers';
+import CurrencyInput from '../../../../components/currency-input.gts';
+import { asNumber } from '../../../helpers.ts';
 
-import type { CurrencyInputSignature } from '../../../../components/currency-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { CurrencyInputSignature } from '../../../../components/currency-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface CurrencyFieldSignature<
   DATA extends UserData,

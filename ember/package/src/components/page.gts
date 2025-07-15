@@ -4,10 +4,12 @@ import { on } from '@ember/modifier';
 import { element } from 'ember-element-helper';
 import { consume, provide } from 'ember-provide-consume-context';
 
+// eslint-disable-next-line import-x/no-duplicates
 import styles from '@hokulea/core/layouts.module.css';
+// eslint-disable-next-line import-x/no-duplicates
 import typo from '@hokulea/core/typography.module.css';
 
-import { or } from '../-private/helpers';
+import { or } from '../-private/helpers.ts';
 
 import type { TOC } from '@ember/component/template-only';
 import type { Link } from 'ember-link';
@@ -33,6 +35,7 @@ class PageElement extends Component<{ Element: HTMLElement; Blocks: { default: [
   @consume('page-root') declare useMain: boolean;
 
   @provide('page-inside')
+  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
   get pageInside() {
     return true;
   }

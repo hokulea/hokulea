@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import Select from '../../../../components/select';
-import { asString } from '../../../helpers';
+import Select from '../../../../components/select.gts';
+import { asString } from '../../../helpers.ts';
 
-import type { SelectSignature, Value } from '../../../../components/select';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { SelectSignature, Value } from '../../../../components/select.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface SelectFieldSignature<
   DATA extends UserData,

@@ -18,6 +18,7 @@ export interface CaptureEventsModifierSignature {
 }
 
 const CaptureEventsModifier = modifier<CaptureEventsModifierSignature>(
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   (element, _pos, { event, triggerValidation }) => {
     if (event) {
       element.addEventListener(event, triggerValidation, { passive: true });
@@ -27,7 +28,7 @@ const CaptureEventsModifier = modifier<CaptureEventsModifierSignature>(
       };
     }
 
-    return undefined;
+    return;
   }
 );
 

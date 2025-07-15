@@ -26,6 +26,7 @@ module.exports = {
    * Add hokulea assets
    */
   included(parent) {
+    // eslint-disable-next-line unicorn/prefer-reflect-apply
     this._super.included.apply(this, arguments);
 
     // the assets are included only in the app of a related package

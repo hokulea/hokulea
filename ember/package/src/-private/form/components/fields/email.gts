@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import EmailInput from '../../../../components/email-input';
-import { asString } from '../../../helpers';
+import EmailInput from '../../../../components/email-input.gts';
+import { asString } from '../../../helpers.ts';
 
-import type { EmailInputSignature } from '../../../../components/email-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { EmailInputSignature } from '../../../../components/email-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface EmailFieldSignature<
   DATA extends UserData,

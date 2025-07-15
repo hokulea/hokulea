@@ -2,10 +2,13 @@ import { triggerEvent } from '@ember/test-helpers';
 
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { FieldPageObject } from './-private/field';
-import { ButtonPageObject } from './button';
+import { FieldPageObject } from './-private/field.ts';
+import { ButtonPageObject } from './button.ts';
 
 import type { ElementLike } from 'fractal-page-object';
+
+export type { OptionPageObject } from './-private/choices.ts';
+export type { FieldError } from './-private/field.ts';
 
 export class FormPageObject extends PageObject<HTMLFormElement> {
   static SELECTOR = '[data-test-form]';

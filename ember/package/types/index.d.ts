@@ -1,6 +1,3 @@
-import 'ember-source/types';
-import 'ember-source/types/preview';
-
 import type HokuleaRegistry from '../src/template-registry';
 import type EmberElementHelperRegistry from 'ember-element-helper/template-registry';
 

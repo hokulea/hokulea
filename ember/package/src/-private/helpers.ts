@@ -3,7 +3,7 @@ import { get } from '@ember/object';
 /* Shamelessly stolen from: https://github.com/DockYard/ember-composable-helpers/blob/master/addon/helpers/pick.js */
 function pick<V = unknown>(path: string, action?: (value: V) => void) {
   return function (event: object): V | void {
-    let value = get(event, path) as V;
+    const value = get(event, path) as V;
 
     if (!action) {
       return value;
@@ -13,6 +13,7 @@ function pick<V = unknown>(path: string, action?: (value: V) => void) {
   };
 }
 
+// eslint-disable-next-line unicorn/no-array-reduce, @typescript-eslint/prefer-nullish-coalescing
 const or = (...conditions: unknown[]) => conditions.reduce((a, b) => a || b, false);
 
 const and = (a: unknown, b: unknown) => a && b;

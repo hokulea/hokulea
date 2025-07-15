@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
 
-import NumberInput from '../../../../components/number-input';
-import { asNumber } from '../../../helpers';
+import NumberInput from '../../../../components/number-input.gts';
+import { asNumber } from '../../../helpers.ts';
 
-import type { NumberInputSignature } from '../../../../components/number-input';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { NumberInputSignature } from '../../../../components/number-input.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 
 export interface NumberFieldSignature<
   DATA extends UserData,

@@ -2,6 +2,10 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from '@storybook/addon-actions';
 
+import { parseOptionalBooleanArg } from '../-private/stories.ts';
+
+import type { InputArgs } from './-input.ts';
+
 export default {
   title: 'Components/Controls/Select',
   component: 'Select',
@@ -14,11 +18,9 @@ export default {
   controls: { hideNoControlsWarning: true }
 };
 
-function parseOptionalBooleanArg(arg) {
-  return typeof arg === 'boolean' ? arg : typeof arg === 'string' ? JSON.parse(arg) : undefined;
-}
+type Args = InputArgs<boolean> & { disabled: boolean | string };
 
-function parseArgs(args) {
+function parseArgs(args: Args) {
   return {
     ...args,
     disabled: parseOptionalBooleanArg(args.disabled)
@@ -26,7 +28,7 @@ function parseArgs(args) {
 }
 
 export const Showcase = {
-  render: (args) => ({
+  render: (args: Args) => ({
     template: hbs`
       <Select @update={{this.update}} @disabled={{this.disabled}} as |l|>
         {{#each (array 'Apple' 'Banana' 'Pineapple') as |i|}}

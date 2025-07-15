@@ -3,12 +3,12 @@ import { uniqueId } from '@ember/helper';
 
 import { element } from 'ember-element-helper';
 
-import List from '../../../../components/list';
-import Label from '../label';
+import List from '../../../../components/list.gts';
+import Label from '../label.gts';
 
-import type { ListSignature } from '../../../../components/list';
-import type { FormData, FormKey, UserData } from '../../';
-import type { BoundField, FieldArgs } from '../field';
+import type { ListSignature } from '../../../../components/list.gts';
+import type { FormData, FormKey, UserData } from '../../index.ts';
+import type { BoundField, FieldArgs } from '../field.gts';
 import type { TOC } from '@ember/component/template-only';
 
 interface ListLabelSignature {
@@ -64,7 +64,7 @@ export default class ListField<
           @value={{this.asValue f.value}}
           @update={{this.setValue f.setValue}}
           @disabled={{@disabled}}
-          name={{@name}}
+          {{!-- name={{@name}} --}}
           aria-labelledby={{labelId}}
           {{f.manageValidation}}
           {{f.captureEvents}}

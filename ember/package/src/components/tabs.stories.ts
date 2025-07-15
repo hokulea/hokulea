@@ -2,6 +2,11 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from '@storybook/addon-actions';
 
+import { parseOptionalBooleanArg } from '../-private/stories.ts';
+
+import type { InputArgs } from './-input.ts';
+import type { Orientation, TablistBehavior } from 'ember-aria-voyager';
+
 export default {
   title: 'Components/Controls/Tabs',
   component: 'tabs',
@@ -13,11 +18,14 @@ export default {
   }
 };
 
-function parseOptionalBooleanArg(arg) {
-  return typeof arg === 'boolean' ? arg : typeof arg === 'string' ? JSON.parse(arg) : undefined;
-}
+type Args = InputArgs<boolean> & {
+  disabled: boolean | string;
+  selection?: unknown;
+  behavior?: TablistBehavior;
+  orientation?: Orientation;
+};
 
-function parseArgs(args) {
+function parseArgs(args: Args) {
   return {
     ...args,
     behavior: {
@@ -28,7 +36,7 @@ function parseArgs(args) {
 }
 
 export const Showcase = {
-  render: (args) => ({
+  render: (args: Args) => ({
     template: hbs`
       <h1>Unicycling Disciplines</h1>
       from: <a href="https://stichtingeenwieleren.nl/unicyclingdisciplines/" target="_blank" rel="noopener noreferrer">https://stichtingeenwieleren.nl/unicyclingdisciplines/</a>

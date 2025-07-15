@@ -3,7 +3,7 @@ import Component from '@glimmer/component';
 import styles from '@hokulea/core/forms.module.css';
 
 // import Icon from '../../../components/icon';
-import type { ValidationError } from '../';
+import type { ValidationError } from '../index.ts';
 
 export interface ErrorsSignature<VALUE> {
   Element: HTMLDivElement;

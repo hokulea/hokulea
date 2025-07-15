@@ -1,8 +1,8 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { InputPageObject } from './input';
+import { InputPageObject } from './input.ts';
 
-import type { Input } from './input';
+import type { Input } from './input.ts';
 import type { ElementLike } from 'fractal-page-object';
 
 export class InputBuilderPageObject extends PageObject<HTMLInputElement> implements Input {

@@ -2,6 +2,10 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from '@storybook/addon-actions';
 
+import { parseOptionalBooleanArg } from '../-private/stories.ts';
+
+import type { InputArgs } from './-input.ts';
+
 export default {
   title: 'Components/Controls/DateInput',
   component: 'Card',
@@ -14,17 +18,15 @@ export default {
   controls: { hideNoControlsWarning: true }
 };
 
-function parseOptionalBooleanArg(arg) {
-  return typeof arg === 'boolean' ? arg : typeof arg === 'string' ? JSON.parse(arg) : undefined;
-}
+type Args = InputArgs<boolean> & { disabled: boolean | string; value: string | Date };
 
-function parseArgs(args) {
-  let value: string | undefined = undefined;
+function parseArgs(args: Args) {
+  let value: string | undefined;
 
   if (args.value) {
     const isoString = new Date(args.value).toISOString();
 
-    value = isoString.substring(0, isoString.indexOf('T'));
+    value = isoString.slice(0, Math.max(0, isoString.indexOf('T')));
   }
 
   return {
@@ -35,7 +37,7 @@ function parseArgs(args) {
 }
 
 export const Showcase = {
-  render: (args) => ({
+  render: (args: Args) => ({
     template: hbs`<DateInput @value={{this.value}} @update={{this.update}} @disabled={{this.disabled}} placeholder={{this.placeholder}}/>`,
     context: {
       ...parseArgs(args),

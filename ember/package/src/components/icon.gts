@@ -33,11 +33,11 @@ export default class Icon extends Component<IconSignature> {
     return icons.find((entry) => entry.name === this.args.icon);
   }
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   get PhIcon(): typeof PhIcon {
     const icon = `Ph${pascalCase(this.args.icon)}`;
 
     // @ts-expect-error no index signature is given but we are ok with this
+    // eslint-disable-next-line import-x/namespace
     return phIcons[icon] as typeof PhIcon;
   }
 

@@ -122,6 +122,7 @@ const Template = (args: IconButtonArgs) => {
     `,
     context: {
       ...args,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       disabled:
         typeof args.disabled === 'boolean'
           ? args.disabled

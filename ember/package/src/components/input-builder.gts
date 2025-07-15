@@ -26,11 +26,8 @@ export interface InputBuilderSignature {
   Blocks: {
     default: [
       {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         Affix: WithBoundArgs<typeof Affix, 'class' | 'identity'>;
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         Prefix: WithBoundArgs<typeof Affix, 'class' | 'identity'>;
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         Suffix: WithBoundArgs<typeof Affix, 'class' | 'identity'>;
       }
     ];

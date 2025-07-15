@@ -6,10 +6,10 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
-import { not } from '../-private/helpers';
-import disabled from '../-private/modifiers/disabled';
-import { isLink } from './-button';
-import Icon from './icon';
+import { not } from '../-private/helpers.ts';
+import disabled from '../-private/modifiers/disabled.ts';
+import { isLink } from './-button.ts';
+import Icon from './icon.gts';
 
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
@@ -39,6 +39,7 @@ export default class IconButton extends Component<IconButtonSignature> {
   get label() {
     assert(
       'Please provide a `@label` to `<IconButton>` for accessibility reasons.',
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       this.args.label !== undefined
     );
 

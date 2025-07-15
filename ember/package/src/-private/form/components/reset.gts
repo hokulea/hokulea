@@ -1,6 +1,6 @@
 import styles from '@hokulea/core/actions.module.css';
 
-import disabled from '../../modifiers/disabled';
+import disabled from '../../modifiers/disabled.ts';
 
 import type { TOC } from '@ember/component/template-only';
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';

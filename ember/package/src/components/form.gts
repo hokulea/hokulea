@@ -11,26 +11,26 @@ import { TrackedObject } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import { mergeErrorRecord } from '../-private/form';
-import Field from '../-private/form/components/field';
-import CheckboxField from '../-private/form/components/fields/checkbox';
-import CurrencyField from '../-private/form/components/fields/currency';
-import DateField from '../-private/form/components/fields/date';
-import EmailField from '../-private/form/components/fields/email';
-import ListField from '../-private/form/components/fields/list';
-import MultipleChoiceField from '../-private/form/components/fields/multiple-choice';
-import NumberField from '../-private/form/components/fields/number';
-import PasswordField from '../-private/form/components/fields/password';
-import PhoneField from '../-private/form/components/fields/phone';
-import RangeField from '../-private/form/components/fields/range';
-import SelectField from '../-private/form/components/fields/select';
-import SingularChoiceField from '../-private/form/components/fields/singular-choice';
-import TextField from '../-private/form/components/fields/text';
-import TextAreaField from '../-private/form/components/fields/text-area';
-import Reset from '../-private/form/components/reset';
-import Submit from '../-private/form/components/submit';
-import ManagaValidationModifier from '../-private/form/modifiers/manage-validation';
+import Field from '../-private/form/components/field.gts';
+import CheckboxField from '../-private/form/components/fields/checkbox.gts';
+import CurrencyField from '../-private/form/components/fields/currency.gts';
+import DateField from '../-private/form/components/fields/date.gts';
+import EmailField from '../-private/form/components/fields/email.gts';
+import ListField from '../-private/form/components/fields/list.gts';
+import MultipleChoiceField from '../-private/form/components/fields/multiple-choice.gts';
+import NumberField from '../-private/form/components/fields/number.gts';
+import PasswordField from '../-private/form/components/fields/password.gts';
+import PhoneField from '../-private/form/components/fields/phone.gts';
+import RangeField from '../-private/form/components/fields/range.gts';
+import SelectField from '../-private/form/components/fields/select.gts';
+import SingularChoiceField from '../-private/form/components/fields/singular-choice.gts';
+import TextField from '../-private/form/components/fields/text.gts';
+import TextAreaField from '../-private/form/components/fields/text-area.gts';
+import Reset from '../-private/form/components/reset.gts';
+import Submit from '../-private/form/components/submit.gts';
+import { mergeErrorRecord } from '../-private/form/index.ts';
 
+import type { BoundField } from '../-private/form/components/field.gts';
 import type {
   ErrorRecord,
   FieldRegistrationData,
@@ -40,11 +40,9 @@ import type {
   FormValidateCallback,
   UserData,
   ValidationError
-} from '../-private/form';
-import type { BoundField } from '../-private/form/components/field';
+} from '../-private/form/index.ts';
 import type { WithBoundArgs } from '@glint/template';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export interface FormBuilder<DATA extends UserData, SUBMISSION_VALUE> {
   Checkbox: WithBoundArgs<typeof CheckboxField<DATA>, 'Field'>;
   Currency: WithBoundArgs<typeof CurrencyField<DATA>, 'Field'>;
@@ -101,7 +99,6 @@ export interface FormBuilder<DATA extends UserData, SUBMISSION_VALUE> {
 
 type ValidateOn = 'change' | 'focusout' | 'submit' | 'input';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export interface FormSignature<DATA extends UserData, SUBMISSION_VALUE> {
   Element: HTMLFormElement;
   Args: {
@@ -177,7 +174,6 @@ class FieldData<DATA extends FormData, KEY extends FormKey<DATA> = FormKey<DATA>
   validate?: FieldValidateCallback<DATA, KEY>;
 }
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Component<
   FormSignature<DATA, SUBMISSION_VALUE>
 > {
@@ -196,7 +192,6 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
   SingularChoiceField = SingularChoiceField<DATA>;
   TextField = TextField<DATA>;
   TextAreaField = TextAreaField<DATA>;
-  ManagaValidationModifier = ManagaValidationModifier<DATA>;
 
   formElement?: HTMLFormElement;
 
@@ -210,11 +205,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
     await this.validateWithState();
     this.showAllValidations = true;
 
-    if (!this.validationErrorsExist) {
-      if (this.args.submit) {
-        this.submissionState = new TrackedAsyncData(this.args.submit(this.effectiveData));
-      }
-    } else {
+    if (this.validationErrorsExist) {
       assert(
         'Validation errors expected to be present. If you see this, please report it as a bug to ember-headless-form!',
         // with optional chaining this leads to a NPE
@@ -222,10 +213,14 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
         this.validationState && this.validationState.isResolved
       );
       this.args.invalidated?.(this.effectiveData, this.validationState.value);
+    } else {
+      if (this.args.submit) {
+        this.submissionState = new TrackedAsyncData(this.args.submit(this.effectiveData));
+      }
     }
   };
 
-  reset = async (e?: Event): Promise<void> => {
+  reset = (e?: Event): void => {
     e?.preventDefault();
 
     for (const key of Object.keys(this.internalData)) {
@@ -244,7 +239,6 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
 
   @cached
   get effectiveData(): DATA {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     const obj: DATA = this.args.data ?? ({} as DATA);
 
     if (this.args.dataMode === 'mutable') {
@@ -378,11 +372,10 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
    * Call the passed validation callbacks, defined both on the whole form as well as on field level, and return the merged result for all fields.
    */
   async validate(): Promise<ErrorRecord<FormData<DATA>>> {
-    const nativeValidation = this.args.ignoreNativeValidation !== true ? this.validateNative() : {};
-    const customFormValidation = await this.args.validate?.(
-      this.effectiveData,
-      Array.from(this.fields.keys())
-    );
+    const nativeValidation = this.args.ignoreNativeValidation === true ? {} : this.validateNative();
+    const customFormValidation = await this.args.validate?.(this.effectiveData, [
+      ...this.fields.keys()
+    ]);
     const customFieldValidations: ErrorRecord<FormData<DATA>>[] = [];
 
     for (const [name, field] of this.fields) {
@@ -499,7 +492,6 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
    * Validation will be triggered, and the particular field will be marked to show eventual validation errors.
    */
   handleFieldValidation = async (e: Event | string): Promise<void> => {
-    // eslint-disable-next-line @typescript-eslint/init-declarations
     let name: string;
 
     if (typeof e === 'string') {
@@ -556,7 +548,7 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
         return () => el.removeEventListener(eventName, handler);
       }
 
-      return undefined;
+      return;
     }
   );
 
@@ -578,12 +570,12 @@ export default class Form<DATA extends UserData, SUBMISSION_VALUE> extends Compo
           data=this.effectiveData
           set=this.set
           errors=this.visibleErrors
+          showErrorsFor=this.showErrorsFor
           registerField=this.registerField
           unregisterField=this.unregisterField
           triggerValidationFor=this.handleFieldValidation
           fieldValidationEvent=this.fieldValidationEvent
           fieldRevalidationEvent=this.fieldRevalidationEvent
-          manageValidation=(modifier this.ManagaValidationModifier showErrorsFor=this.showErrorsFor)
         )
         as |WiredField|
       }}

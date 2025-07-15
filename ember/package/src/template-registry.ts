@@ -1,58 +1,30 @@
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error, @typescript-eslint/ban-ts-comment */
-
-// @ts-ignore
-import type AppHeader from './components/app-header';
-// @ts-ignore
-import type Box from './components/box';
-// @ts-ignore
-import type Button from './components/button';
-// @ts-ignore
-import type Card from './components/card';
-// @ts-ignore
-import type Checkbox from './components/checkbox';
-// @ts-ignore
-import type CurrencyInput from './components/currency-input';
-// @ts-ignore
-import type DateInput from './components/date-input';
-// @ts-ignore
-import type EmailInput from './components/email-input';
-// @ts-ignore
-import type Form from './components/form';
-// @ts-ignore
-import type Icon from './components/icon';
-// @ts-ignore
-import type IconButton from './components/icon-button';
-// @ts-ignore
-import type InputBuilder from './components/input-builder';
-// @ts-ignore
-import type List from './components/list';
-// @ts-ignore
-import type Menu from './components/menu';
-// @ts-ignore
-import type NumberInput from './components/number-input';
-// @ts-ignore
-import type Page from './components/page';
-// @ts-ignore
-import type PasswordInput from './components/password-input';
-// @ts-ignore
-import type PhoneInput from './components/phone-input';
-// @ts-ignore
-import type Popover from './components/popover';
-// @ts-ignore
-import type Radio from './components/radio';
-// @ts-ignore
-import type RangeInput from './components/range-input';
-// @ts-ignore
-import type Section from './components/section';
-// @ts-ignore
-import type Select from './components/select';
-// @ts-ignore
-import type Tabs from './components/tabs';
-// @ts-ignore
-import type TextArea from './components/text-area';
-// @ts-ignore
-import type TextInput from './components/text-input';
-import type popover from './helpers/popover';
+import type AppHeader from './components/app-header.gts';
+import type Box from './components/box.gts';
+import type Button from './components/button.gts';
+import type Card from './components/card.gts';
+import type Checkbox from './components/checkbox.gts';
+import type CurrencyInput from './components/currency-input.gts';
+import type DateInput from './components/date-input.gts';
+import type EmailInput from './components/email-input.gts';
+import type Form from './components/form.gts';
+import type Icon from './components/icon.gts';
+import type IconButton from './components/icon-button.gts';
+import type InputBuilder from './components/input-builder.gts';
+import type List from './components/list.gts';
+import type Menu from './components/menu.gts';
+import type NumberInput from './components/number-input.gts';
+import type Page from './components/page.gts';
+import type PasswordInput from './components/password-input.gts';
+import type PhoneInput from './components/phone-input.gts';
+import type Popover from './components/popover.gts';
+import type Radio from './components/radio.gts';
+import type RangeInput from './components/range-input.gts';
+import type Section from './components/section.gts';
+import type Select from './components/select.gts';
+import type Tabs from './components/tabs.gts';
+import type TextArea from './components/text-area.gts';
+import type TextInput from './components/text-input.gts';
+import type popover from './helpers/popover.ts';
 
 export default interface HokuleaRegistry {
   AppHeader: typeof AppHeader;

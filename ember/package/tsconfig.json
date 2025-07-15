@@ -1,21 +1,20 @@
 {
-  "extends": "@hokulea/config-typescript/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "declarationDir": "./declarations",
-    "skipLibCheck": true
-  },
-  "include": [
-    "src/**/*",
-    "types/**/*"
-  ],
-  "exclude": [
-    "src/**/*.stories.ts"
-  ],
+  "extends": "@ember/app-tsconfig",
   "glint": {
     "environment": [
       "ember-loose",
       "ember-template-imports"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ],
+  "compilerOptions": {
+    "rootDir": ".",
+    "types": [
+      "ember-source/types"
     ]
   }
 }

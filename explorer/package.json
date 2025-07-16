@@ -48,6 +48,7 @@
     "@gossi/config-template-lint": "^1.1.0",
     "@hokulea/config-postcss": "workspace:*",
     "@hokulea/config-typescript": "workspace:*",
+    "@iconify-json/ph": "^1.2.2",
     "@storybook/addon-designs": "10.0.1",
     "@storybook/addon-links": "9.0.16",
     "@storybook/addon-storysource": "8.6.14",

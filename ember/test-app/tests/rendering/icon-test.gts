@@ -2,6 +2,10 @@ import { render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
+import Unicycle from '~icons/custom/unicycle';
+import Acorn from '~icons/ph/acorn';
+import PulseThin from '~icons/ph/pulse-thin';
+
 import { Icon } from '@hokulea/ember';
 
 import { IconPageObject } from '@hokulea/ember/test-support';
@@ -10,32 +14,29 @@ module('Rendering | <Icon>', (hooks) => {
   setupRenderingTest(hooks);
 
   test('it renders with defaults', async (assert) => {
-    await render(<template><Icon @icon="acorn" /></template>);
+    await render(<template><Icon @icon={{Acorn}} /></template>);
 
     const icon = new IconPageObject();
 
     assert.dom(icon).exists();
-    assert.strictEqual(icon.name, 'acorn');
-    assert.strictEqual(icon.style, 'regular');
+    assert.dom(icon.$svg).hasAttribute('data-name', 'ph:acorn');
   });
 
   test('with different style', async (assert) => {
-    await render(<template><Icon @icon="acorn" @style="thin" /></template>);
+    await render(<template><Icon @icon={{PulseThin}} /></template>);
 
     const icon = new IconPageObject();
 
     assert.dom(icon).exists();
-    assert.strictEqual(icon.name, 'acorn');
-    assert.strictEqual(icon.style, 'thin');
+    assert.dom(icon.$svg).hasAttribute('data-name', 'ph:pulse-thin');
   });
 
   test('with custom icon', async (assert) => {
-    await render(<template><Icon @icon="unicycle" /></template>);
+    await render(<template><Icon @icon={{Unicycle}} /></template>);
 
     const icon = new IconPageObject();
 
     assert.dom(icon).exists();
-    assert.strictEqual(icon.name, 'unicycle');
-    assert.strictEqual(icon.style, 'custom');
+    assert.dom(icon.$svg).hasAttribute('data-name', 'custom:unicycle');
   });
 });

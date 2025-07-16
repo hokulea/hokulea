@@ -1,14 +1,15 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { icons } from '@phosphor-icons/core';
 import { action } from '@storybook/addon-actions';
 
 import { Importance, Intent, Spacing } from '@hokulea/tokens';
 
+import { getIconSvg, listIcons } from './-stories.ts';
+
 import type { Importances, Intents, Spacings } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
 
-const iconNames = icons.map((entry) => entry.name);
+const iconNames = listIcons();
 
 // import type { IconButtonSignature } from './icon-button';
 interface IconButtonSignature {
@@ -84,21 +85,6 @@ export default {
       name: 'Icon',
       options: iconNames.sort(),
       control: 'select'
-    },
-    iconStyle: {
-      name: 'Icon Style',
-      options: ['thin', 'light', 'regular', 'bold', 'fill', 'duotone'],
-      control: {
-        type: 'radio',
-        labels: {
-          thin: 'thin',
-          light: 'light',
-          regular: 'regular (default)',
-          bold: 'bold',
-          fill: 'fill',
-          duotone: 'duotone'
-        }
-      }
     }
   }
 };
@@ -117,7 +103,6 @@ const Template = (args: IconButtonArgs) => {
         @disabled={{this.disabled}}
         @label={{this.label}}
         @icon={{this.icon}}
-        @iconStyle={{this.iconStyle}}
       />
     `,
     context: {
@@ -129,7 +114,8 @@ const Template = (args: IconButtonArgs) => {
           : typeof args.disabled === 'string'
             ? JSON.parse(args.disabled)
             : undefined,
-      push: action('button pushed')
+      push: action('button pushed'),
+      icon: getIconSvg(args.icon as string)
     }
   };
 };

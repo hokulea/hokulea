@@ -52,16 +52,12 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.8.7",
-    "@embroider/macros": "^1.16.5",
     "@floating-ui/dom": "^1.6.3",
     "@hokulea/core": "workspace:*",
-    "@phosphor-icons/core": "^2.1.1",
-    "change-case": "^5.4.4",
     "debug": "^4.3.2",
     "decorator-transforms": "^2.0.0",
     "ember-aria-voyager": "^0.2.4",
     "ember-async-data": "^1.0.3",
-    "ember-phosphor-icons": "^0.3.0",
     "ember-provide-consume-context": "^0.7.0",
     "ember-stargate": "^0.6.0",
     "read-pkg-up": "7.0.1",
@@ -74,14 +70,10 @@
     "ember-element-helper": "^0.8.5",
     "ember-link": "^3.2.0",
     "ember-modifier": "^4.2.0",
-    "ember-svg-jar": "^2.4.9",
     "fractal-page-object": "^1.0.0"
   },
   "peerDependenciesMeta": {
     "@ember/test-helpers": {
-      "optional": true
-    },
-    "ember-svg-jar": {
       "optional": true
     },
     "fractal-page-object": {
@@ -109,6 +101,7 @@
     "@gossi/config-targets": "^1.1.0",
     "@gossi/config-template-lint": "^1.1.0",
     "@hokulea/tokens": "workspace:*",
+    "@iconify-json/ph": "^1.2.2",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.3.1",
     "@storybook/addon-actions": "8.2.8",
@@ -124,13 +117,13 @@
     "ember-link": "3.3.0",
     "ember-modifier": "4.2.0",
     "ember-source": "5.12.0",
-    "ember-svg-jar": "2.6.3",
     "ember-template-imports": "4.3.0",
     "ember-template-lint": "^7.9.1",
     "eslint": "^9.31.0",
     "eslint-plugin-ember": "^12.6.0",
     "eslint-plugin-storybook": "^9.0.17",
     "fractal-page-object": "1.0.0",
+    "iconify-icon": "^3.0.0",
     "postcss": "8.5.3",
     "prettier": "^3.6.2",
     "rollup": "4.45.0",

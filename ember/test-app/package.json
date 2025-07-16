@@ -56,6 +56,8 @@
     "@gossi/config-stylelint": "^1.1.0",
     "@gossi/config-targets": "^1.1.0",
     "@gossi/config-template-lint": "^1.1.0",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify/types": "^2.0.0",
     "@types/qunit": "2.19.12",
     "@types/sinon": "17.0.3",
     "broccoli-asset-rev": "3.0.0",
@@ -87,7 +89,6 @@
     "ember-sinon-qunit": "7.5.0",
     "ember-source": "5.12.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-svg-jar": "2.6.3",
     "ember-template-imports": "4.3.0",
     "ember-template-lint": "^7.9.1",
     "ember-theemo": "^1.0.1",
@@ -105,6 +106,7 @@
     "stylelint": "16.21.1",
     "tracked-built-ins": "3.4.0",
     "typescript": "5.5.4",
+    "unplugin-icons": "^22.1.0",
     "webpack": "5.93.0"
   },
   "engines": {

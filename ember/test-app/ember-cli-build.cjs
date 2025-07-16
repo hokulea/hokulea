@@ -6,6 +6,21 @@ const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
 const sideWatch = require('@embroider/broccoli-side-watch');
 const { GlimmerScopedCSSWebpackPlugin } = require('glimmer-scoped-css/webpack');
+const icons = require('unplugin-icons/webpack').default;
+const { FileSystemIconLoader } = require('unplugin-icons/loaders');
+
+const iconCollection = {
+  custom: FileSystemIconLoader('./assets/icons')
+};
+const iconify = icons({
+  autoInstall: true,
+  compiler: 'raw',
+  customCollections: iconCollection,
+  // this is for testing purposes
+  iconCustomizer(collection, icon, props) {
+    props['data-name'] = `${collection}:${icon}`;
+  }
+});
 
 // eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = function (defaults) {
@@ -37,7 +52,11 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: Object.keys(packageJson.dependencies),
       webpack: {
-        plugins: [new HokuleaAssetLoaderWebpackPlugin(), new GlimmerScopedCSSWebpackPlugin()]
+        plugins: [
+          new HokuleaAssetLoaderWebpackPlugin(),
+          new GlimmerScopedCSSWebpackPlugin(),
+          iconify
+        ]
       }
     },
     ...HOKULEA_CONFIG
@@ -59,7 +78,8 @@ module.exports = function (defaults) {
         plugins: [
           theemoPlugin(),
           new HokuleaAssetLoaderWebpackPlugin(),
-          new GlimmerScopedCSSWebpackPlugin()
+          new GlimmerScopedCSSWebpackPlugin(),
+          iconify
         ]
       }
     }

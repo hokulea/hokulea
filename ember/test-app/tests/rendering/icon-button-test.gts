@@ -4,6 +4,9 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import sinon from 'sinon';
 
+import Acorn from '~icons/ph/acorn';
+import AcornThin from '~icons/ph/acorn-thin';
+
 import { IconButton } from '@hokulea/ember';
 import { Importance, Intent, Spacing } from '@hokulea/tokens';
 
@@ -34,7 +37,7 @@ module('Rendering | <IconButton>', (hooks) => {
   });
 
   test('it renders with defaults', async (assert) => {
-    await render(<template><IconButton @icon="acorn" @label="Hello" /></template>);
+    await render(<template><IconButton @icon={{Acorn}} @label="Hello" /></template>);
 
     const button = new IconButtonPageObject();
 
@@ -44,20 +47,18 @@ module('Rendering | <IconButton>', (hooks) => {
     assert.strictEqual(button.intent, Intent.Action);
     assert.strictEqual(button.importance, Importance.Supreme);
 
-    assert.strictEqual(button.$icon.name, 'acorn');
-    assert.strictEqual(button.$icon.style, 'regular');
+    assert.dom(button.$icon).exists();
+    assert.dom(button.$icon.$svg).hasAttribute('data-name', 'ph:acorn');
   });
 
   module('Styling', function () {
     test('it can change the icon style', async (assert) => {
-      await render(
-        <template><IconButton @icon="acorn" @label="Hello" @iconStyle="thin" /></template>
-      );
+      await render(<template><IconButton @icon={{AcornThin}} @label="Hello" /></template>);
 
       const button = new IconButtonPageObject();
 
-      assert.strictEqual(button.$icon.name, 'acorn');
-      assert.strictEqual(button.$icon.style, 'thin');
+      assert.dom(button.$icon).exists();
+      assert.dom(button.$icon.$svg).hasAttribute('data-name', 'ph:acorn-thin');
     });
 
     test('it can change the intent', async (assert) => {

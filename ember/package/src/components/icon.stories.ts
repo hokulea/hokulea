@@ -1,8 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { icons } from '@phosphor-icons/core';
+import { getIconSvg, listIcons } from './-stories';
 
-const iconNames = icons.map((entry) => entry.name);
+const iconNames = listIcons();
 
 // import type { IconSignature } from './icon';
 interface IconSignature {
@@ -27,33 +27,18 @@ export default {
       name: 'Icon',
       options: iconNames.sort(),
       control: 'select'
-    },
-    style: {
-      name: 'Style',
-      options: ['thin', 'light', 'regular', 'bold', 'fill', 'duotone'],
-      control: {
-        type: 'radio',
-        labels: {
-          thin: 'thin',
-          light: 'light',
-          regular: 'regular (default)',
-          bold: 'bold',
-          fill: 'fill',
-          duotone: 'duotone'
-        }
-      }
     }
   }
 };
 
 /* Use signature args directly, once */
-type IconArgs = Partial<IconSignature['Args']>;
+type IconArgs = IconSignature['Args'];
 
 const Template = (args: IconArgs) => {
   return {
-    template: hbs`<Icon @icon={{this.icon}} @style={{this.style}}/>`,
+    template: hbs`<Icon @icon={{this.icon}} />`,
     context: {
-      ...args
+      icon: getIconSvg(args.icon)
     }
   };
 };
@@ -69,11 +54,11 @@ export const WithText = {
   render: (args: IconArgs) => ({
     template: hbs`
       <p>
-        <Icon @icon={{this.icon}} @style={{this.style}} />
+        <Icon @icon={{this.icon}} />
         Text next to the icon
       </p>`,
     context: {
-      ...args
+      icon: getIconSvg(args.icon)
     }
   }),
   args: {

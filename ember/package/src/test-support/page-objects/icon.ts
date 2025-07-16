@@ -1,4 +1,4 @@
-import { PageObject } from 'fractal-page-object';
+import { PageObject, selector as sel } from 'fractal-page-object';
 
 import type { ElementLike } from 'fractal-page-object';
 
@@ -9,11 +9,6 @@ export class IconPageObject extends PageObject<HTMLSpanElement> {
     super(selector ?? IconPageObject.SELECTOR, parent, index);
   }
 
-  get name(): string | null | undefined {
-    return this.element?.getAttribute('data-test-icon');
-  }
-
-  get style(): string | null | undefined {
-    return this.element?.getAttribute('data-test-icon-style');
-  }
+  $svg = sel<SVGSVGElement>('svg');
+  // $svg = sel<HTMLElement>('svg');
 }

@@ -23,12 +23,11 @@ export interface IconButtonSignature {
     spacing?: Spacing | Spacings;
     disabled?: boolean;
     label: string;
-    /** The name of the icon */
-    icon: string;
     /**
-     * @defaultValue regular
+     * A string containing a `<svg>` element.
+     * Make sure to use `currentColor` to comply with the styling
      */
-    iconStyle?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';
+    icon: string;
   };
   Blocks: {
     default: [];
@@ -60,7 +59,7 @@ export default class IconButton extends Component<IconButtonSignature> {
       data-test-icon-button
       ...attributes
     >
-      <Icon @icon={{@icon}} @style={{@iconStyle}} data-test-icon-button="icon" />
+      <Icon @icon={{@icon}} data-test-icon-button="icon" />
     </CommandElement>
   </template>
 }

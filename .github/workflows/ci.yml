@@ -58,7 +58,7 @@ jobs:
       # For the Try Scenarios
       - id: set-matrix
         run: echo "matrix=$(pnpm -s dlx @embroider/try list)" >> $GITHUB_OUTPUT
-        working-directory: ember/test-app
+        working-directory: ember/package
 
   test-ember-classic-scenarios:
     name: Test Ember

@@ -1,5 +1,35 @@
 # Changelog
 
+## Release (2025-07-17)
+
+* @hokulea/ember 0.7.0 (minor)
+* @hokulea/core 0.4.0 (minor)
+* @hokulea/tokens 0.1.0 (minor)
+* @hokulea/theme-moana 0.1.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`
+  * [#360](https://github.com/hokulea/hokulea/pull/360) Make `@hokulea/ember` compatible with vite ([@gossi](https://github.com/gossi))
+  * [#359](https://github.com/hokulea/hokulea/pull/359) Use Generic SVG icons, preferrable Iconify ([@gossi](https://github.com/gossi))
+* `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`
+  * [#356](https://github.com/hokulea/hokulea/pull/356) Use `theemo@v1` ([@gossi](https://github.com/gossi))
+
+#### :memo: Documentation
+* `@hokulea/ember`
+  * [#364](https://github.com/hokulea/hokulea/pull/364) Install Documentation ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* Other
+  * [#365](https://github.com/hokulea/hokulea/pull/365) Update `release-plan` to `v0.17` ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`
+  * [#363](https://github.com/hokulea/hokulea/pull/363) Remove concurrently ([@gossi](https://github.com/gossi))
+  * [#358](https://github.com/hokulea/hokulea/pull/358) Use `@gossi/config` v1 ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#362](https://github.com/hokulea/hokulea/pull/362) Turn off code coverage (until it is rdy again) ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-02-12)
 
 @hokulea/ember 0.6.2 (patch)

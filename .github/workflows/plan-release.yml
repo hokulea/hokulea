@@ -1,4 +1,4 @@
-name: Release Plan Review
+name: Plan Release
 on:
   push:
     branches:

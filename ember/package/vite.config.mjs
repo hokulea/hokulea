@@ -11,6 +11,9 @@ import { theemo } from '@theemo/vite';
 const isCompat = Boolean(process.env.ENABLE_COMPAT_BUILD);
 
 export default defineConfig({
+  define: {
+    __CI__: JSON.stringify(process.env.CI === 'true')
+  },
   resolve: {
     alias: [
       {

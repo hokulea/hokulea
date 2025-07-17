@@ -252,9 +252,6 @@ importers:
       '@theemo/vite':
         specifier: ^1.0.1
         version: 1.0.1
-      '@types/node':
-        specifier: ^24.0.14
-        version: 24.0.14
       '@types/qunit':
         specifier: 2.19.12
         version: 2.19.12

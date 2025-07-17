@@ -4,13 +4,11 @@ import {
   setupRenderingTest as upstreamSetupRenderingTest,
   setupTest as upstreamSetupTest
 } from 'ember-qunit';
-// @ts-expect-error TS go drunk, you are home!
-import process from 'node:process';
 
 import type EmberResolver from 'ember-resolver';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-export const testButNotOnCI = process.env.CI ? skip : test;
+// @ts-expect-error this __CI__ is set by vite at build time
+export const testButNotOnCI = __CI__ ? skip : test;
 
 interface SetupTestOptions {
   /**

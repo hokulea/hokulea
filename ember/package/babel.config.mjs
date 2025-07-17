@@ -2,12 +2,14 @@ import { babelCompatSupport, templateCompatSupport } from '@embroider/compat/bab
 import { buildMacros } from '@embroider/macros/babel';
 import { fileURLToPath } from 'node:url';
 
+import emberCliCodeCoverage from 'ember-cli-code-coverage';
 import emberConcurrency from 'ember-concurrency/async-arrow-task-transform';
 
 const macros = buildMacros();
 
 // For scenario testing
-const isCompat = Boolean(process.env.ENABLE_COMPAT_BUILD);
+const compatBuild = Boolean(process.env.ENABLE_COMPAT_BUILD);
+const coverageBuild = Boolean(process.env.COVERAGE);
 
 export default {
   plugins: [
@@ -22,7 +24,7 @@ export default {
     [
       'babel-plugin-ember-template-compilation',
       {
-        transforms: [...(isCompat ? templateCompatSupport() : macros.templateMacros)]
+        transforms: [...(compatBuild ? templateCompatSupport() : macros.templateMacros)]
       }
     ],
     emberConcurrency,
@@ -34,7 +36,8 @@ export default {
         }
       }
     ],
-    ...(isCompat ? babelCompatSupport() : macros.babelMacros)
+    ...(compatBuild ? babelCompatSupport() : macros.babelMacros),
+    ...(coverageBuild ? emberCliCodeCoverage.buildBabelPlugin() : [])
   ],
 
   generatorOpts: {

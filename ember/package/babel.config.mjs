@@ -2,6 +2,8 @@ import { babelCompatSupport, templateCompatSupport } from '@embroider/compat/bab
 import { buildMacros } from '@embroider/macros/babel';
 import { fileURLToPath } from 'node:url';
 
+import emberConcurrency from 'ember-concurrency/async-arrow-task-transform';
+
 const macros = buildMacros();
 
 // For scenario testing
@@ -23,6 +25,7 @@ export default {
         transforms: [...(isCompat ? templateCompatSupport() : macros.templateMacros)]
       }
     ],
+    emberConcurrency,
     [
       'module:decorator-transforms',
       {

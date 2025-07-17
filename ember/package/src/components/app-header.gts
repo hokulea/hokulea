@@ -6,7 +6,6 @@ import { type CommandAction, CommandElement } from 'ember-command';
 import { keepLatestTask, timeout } from 'ember-concurrency';
 import { Link } from 'ember-link';
 import { modifier } from 'ember-modifier';
-import { provide } from 'ember-provide-consume-context';
 
 import styles from '@hokulea/core/navigation.module.css';
 
@@ -93,12 +92,6 @@ interface AppHeaderSignature {
 export default class AppHeader extends Component<AppHeaderSignature> {
   @tracked topNavShown = true;
   @tracked sensing = false;
-
-  @provide('hokulea-app-header')
-  // eslint-disable-next-line @typescript-eslint/class-literal-property-style
-  get appHeader() {
-    return true;
-  }
 
   detectOverflow = keepLatestTask(async (element: HTMLElement) => {
     await timeout(30);

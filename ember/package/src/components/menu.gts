@@ -8,7 +8,6 @@ import { htmlSafe } from '@ember/template';
 
 import { ariaMenu } from 'ember-aria-voyager';
 import { CommandElement } from 'ember-command';
-import { consume } from 'ember-provide-consume-context';
 import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
@@ -129,13 +128,10 @@ export interface MenuSignature {
 export default class Menu extends Component<MenuSignature> {
   @service declare fastboot?: FastBoot;
 
-  @consume('hokulea-app-header') declare withinAppHeader: boolean;
-
   @tracked items: MenuItem[] = new TrackedArray();
 
-  get shallHide() {
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-boolean-literal-compare
-    return this.fastboot?.isFastBoot && this.withinAppHeader === true;
+  get hideInSSR() {
+    return this.fastboot?.isFastBoot;
   }
 
   registerItem = (item: MenuItem) => {
@@ -158,7 +154,7 @@ export default class Menu extends Component<MenuSignature> {
       data-test-menu
       ...attributes
       {{ariaMenu items=this.items disabled=@disabled}}
-      style={{if this.shallHide (htmlSafe "display: none")}}
+      style={{if this.hideInSSR (htmlSafe "display: none")}}
     >
       {{yield
         (hash

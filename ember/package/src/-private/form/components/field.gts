@@ -27,6 +27,7 @@ import type {
 } from '../index.ts';
 import type { CaptureEventsModifierSignature } from '../modifiers/capture-events.ts';
 import type { LabelSignature } from './label.gts';
+import type Owner from '@ember/owner';
 import type { ComponentLike, ModifierLike, WithBoundArgs } from '@glint/template';
 
 export type BoundField<
@@ -215,7 +216,7 @@ export default class Field<
   // Label = this.args.labelComponent ?? Label;
   ManagaValidationModifier = ManageValidationModifier<DATA>;
 
-  constructor(owner: unknown, args: FieldSignature<DATA, KEY>['Args']) {
+  constructor(owner: Owner, args: FieldSignature<DATA, KEY>['Args']) {
     super(owner, args);
 
     assert(

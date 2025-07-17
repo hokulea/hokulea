@@ -24,8 +24,8 @@
   },
   "scripts": {
     "build": "rollup --config",
-    "lint": "concurrently -g 'npm:lint:*(!fix)'",
-    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
     "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
     "lint:css:fix": "stylelint 'src/**/*.css' --allow-empty-input --fix",
     "start": "rollup --config --watch"

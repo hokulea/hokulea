@@ -62,7 +62,8 @@ export default {
       'components/text-area.js',
       'components/form.js',
       'components/popover.js',
-      'helpers/popover.js'
+      'helpers/popover.js',
+      'services/-hokulea.js'
     ]),
 
     // These are the modules that should get reexported into the traditional
@@ -95,7 +96,8 @@ export default {
       'components/text-area.js',
       'components/form.js',
       'components/popover.js',
-      'helpers/popover.js'
+      'helpers/popover.js',
+      'services/-hokulea.js'
     ]),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from

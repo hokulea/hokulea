@@ -3,11 +3,11 @@ declare module '@storybook/ember' {
     AnnotatedStoryFn,
     Args,
     ComponentAnnotations,
-    StoryAnnotations,
-    WebRenderer
-  } from '@storybook/types';
+    StoryAnnotations
+  } from 'storybook/internal/csf';
+  import type { WebRenderer } from 'storybook/internal/types';
 
-  export type { Args, ArgTypes, Parameters, StrictArgs } from '@storybook/types';
+  export type { Args, ArgTypes, Parameters, StrictArgs } from 'storybook/internal/csf';
 
   interface OptionsArgs {
     template: unknown;

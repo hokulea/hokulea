@@ -4,8 +4,7 @@
   "description": "Hokulea Design System for Ember",
   "license": "MIT",
   "keywords": [
-    "ember-addon",
-    "ember-css-modules-plugin"
+    "ember-addon"
   ],
   "author": "gossi",
   "files": [
@@ -14,6 +13,13 @@
     "dist",
     "declarations"
   ],
+  "imports": {
+    "#app/*": "./app/*",
+    "#src": "./src/index.ts",
+    "#src/*": "./src/*",
+    "#test-support": "./src/test-support/index.ts",
+    "#tests/*": "./tests/*"
+  },
   "exports": {
     ".": {
       "types": "./declarations/index.d.ts",
@@ -34,9 +40,8 @@
     }
   },
   "scripts": {
-    "build": "concurrently -g 'npm:build:*'",
-    "build:js": "rollup --config",
-    "build:types": "glint --declaration",
+    "build": "rollup --config",
+    "dev": "vite dev",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
@@ -46,29 +51,26 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
-    "start": "concurrently 'npm:start:*'",
-    "start:js": "rollup --config --watch --no-watch.clearScreen",
-    "start:types": "glint --declaration --watch"
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "vite build --mode=development --out-dir dist-tests && testem --file testem.cjs ci --port 0"
   },
   "dependencies": {
-    "@embroider/addon-shim": "^1.8.7",
-    "@floating-ui/dom": "^1.6.3",
+    "@embroider/addon-shim": "^1.10.0",
+    "@floating-ui/dom": "^1.7.1",
     "@hokulea/core": "workspace:*",
-    "debug": "^4.3.2",
-    "decorator-transforms": "^2.0.0",
+    "decorator-transforms": "^2.3.0",
     "ember-aria-voyager": "^0.2.4",
-    "ember-async-data": "^1.0.3",
-    "ember-provide-consume-context": "^0.7.0",
-    "ember-stargate": "^0.6.0",
-    "read-pkg-up": "7.0.1",
-    "tracked-built-ins": "^3.3.0"
+    "ember-async-data": "^2.0.1",
+    "ember-stargate": "^1.0.1",
+    "tracked-built-ins": "^4.0.0"
   },
   "peerDependencies": {
     "@ember/test-helpers": "^4.0.0",
     "ember-command": "^2.0.2",
     "ember-concurrency": "^4.0.2",
     "ember-element-helper": "^0.8.5",
-    "ember-link": "^3.2.0",
+    "ember-link": "^3.4.1",
     "ember-modifier": "^4.2.0",
     "fractal-page-object": "^1.0.0"
   },
@@ -87,10 +89,14 @@
     "@babel/runtime": "7.27.6",
     "@ember/app-tsconfig": "^1.0.3",
     "@ember/library-tsconfig": "^1.0.3",
-    "@ember/test-helpers": "4.0.5",
-    "@embroider/addon-dev": "8.1.0",
-    "@glimmer/component": "1.1.2",
-    "@glimmer/tracking": "1.1.2",
+    "@ember/render-modifiers": "^3.0.0",
+    "@ember/test-helpers": "5.2.2",
+    "@embroider/addon-dev": "^8.1.0",
+    "@embroider/compat": "^4.1.0",
+    "@embroider/core": "^4.1.1",
+    "@embroider/macros": "^1.18.0",
+    "@embroider/vite": "^1.1.5",
+    "@glimmer/component": "^2.0.0",
     "@glint/core": "^2.0.0-alpha.2",
     "@glint/environment-ember-loose": "^2.0.0-alpha.2",
     "@glint/environment-ember-template-imports": "^2.0.0-alpha.2",
@@ -100,23 +106,30 @@
     "@gossi/config-stylelint": "^1.1.0",
     "@gossi/config-targets": "^1.1.0",
     "@gossi/config-template-lint": "^1.1.0",
+    "@hokulea/core": "workspace:*",
+    "@hokulea/theme-moana": "workspace:*",
     "@hokulea/tokens": "workspace:*",
     "@iconify-json/ph": "^1.2.2",
     "@rollup/plugin-babel": "6.0.4",
-    "@rollup/plugin-node-resolve": "15.3.1",
-    "@storybook/addon-actions": "8.2.8",
     "@storybook/types": "^8.6.14",
+    "@theemo/ember": "^1.0.1",
+    "@theemo/vite": "^1.0.1",
     "@types/qunit": "2.19.12",
+    "@types/sinon": "^17.0.4",
     "concurrently": "^8.2.2",
     "ember-cli-code-coverage": "3.1.0",
     "ember-cli-fastboot": "4.1.5",
-    "ember-cli-htmlbars": "6.3.0",
+    "ember-cli-htmlbars": "^6.3.0",
     "ember-command": "2.0.7",
-    "ember-concurrency": "4.0.3",
+    "ember-concurrency": "4.0.4",
     "ember-element-helper": "^0.8.8",
-    "ember-link": "3.3.0",
-    "ember-modifier": "4.2.0",
-    "ember-source": "5.12.0",
+    "ember-link": "3.4.1",
+    "ember-modifier": "4.2.2",
+    "ember-qunit": "^9.0.3",
+    "ember-resolver": "^13.1.1",
+    "ember-route-template": "^1.0.3",
+    "ember-set-helper": "^3.0.1",
+    "ember-source": "6.5.0",
     "ember-template-imports": "4.3.0",
     "ember-template-lint": "^7.9.1",
     "eslint": "^9.31.0",
@@ -126,11 +139,16 @@
     "iconify-icon": "^3.0.0",
     "postcss": "8.5.3",
     "prettier": "^3.6.2",
+    "qunit": "^2.24.1",
+    "qunit-dom": "^3.4.0",
     "rollup": "4.45.0",
+    "sinon": "^21.0.0",
     "storybook": "^9.0.16",
     "stylelint": "16.21.1",
+    "testem": "^3.16.0",
     "typescript": "5.5.4",
-    "webpack": "5.93.0"
+    "unplugin-icons": "^22.1.0",
+    "vite": "^7.0.5"
   },
   "ember": {
     "edition": "octane"
@@ -169,7 +187,8 @@
       "./components/tabs.js": "./dist/_app_/components/tabs.js",
       "./components/text-area.js": "./dist/_app_/components/text-area.js",
       "./components/text-input.js": "./dist/_app_/components/text-input.js",
-      "./helpers/popover.js": "./dist/_app_/helpers/popover.js"
+      "./helpers/popover.js": "./dist/_app_/helpers/popover.js",
+      "./services/-hokulea.js": "./dist/_app_/services/-hokulea.js"
     }
   }
 }

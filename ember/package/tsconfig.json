@@ -7,14 +7,34 @@
     ]
   },
   "include": [
+    "app",
     "src/**/*",
     "tests/**/*",
     "types/**/*"
   ],
   "compilerOptions": {
     "rootDir": ".",
+    "paths": {
+      "#app/*": [
+        "./app/*"
+      ],
+      "#src": [
+        "./src/index.ts"
+      ],
+      "#src/*": [
+        "./src/*"
+      ],
+      "#test-support": [
+        "./src/test-support/index.ts"
+      ],
+      "#tests/*": [
+        "./tests/*"
+      ]
+    },
     "types": [
-      "ember-source/types"
+      "ember-source/types",
+      "vite/client",
+      "@embroider/core/virtual"
     ]
   }
 }

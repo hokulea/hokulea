@@ -1,7 +1,6 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const { HOKULEA_CONFIG, HokuleaAssetLoaderWebpackPlugin } = require('@hokulea/ember/lib');
 const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
 const sideWatch = require('@embroider/broccoli-side-watch');
@@ -52,14 +51,12 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: Object.keys(packageJson.dependencies),
       webpack: {
-        plugins: [
-          new HokuleaAssetLoaderWebpackPlugin(),
-          new GlimmerScopedCSSWebpackPlugin(),
-          iconify
-        ]
+        plugins: [new GlimmerScopedCSSWebpackPlugin(), iconify]
       }
     },
-    ...HOKULEA_CONFIG
+    theemo: {
+      defaultTheme: 'moana'
+    }
 
     // Turns out prember (and or `ember-cli-fastboot`) has some issues with
     // `glimmer-scoped-css`, that forces me to deactivate this:
@@ -75,12 +72,7 @@ module.exports = function (defaults) {
   return maybeEmbroider(app, {
     packagerOptions: {
       webpackConfig: {
-        plugins: [
-          theemoPlugin(),
-          new HokuleaAssetLoaderWebpackPlugin(),
-          new GlimmerScopedCSSWebpackPlugin(),
-          iconify
-        ]
+        plugins: [theemoPlugin(), new GlimmerScopedCSSWebpackPlugin(), iconify]
       }
     }
   });

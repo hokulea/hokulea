@@ -12,12 +12,6 @@
         "style-dictionary"
       ],
       "allowedVersions": "5.0.0"
-    },
-    {
-      "matchPackageNames": [
-        "read-pkg-up"
-      ],
-      "allowedVersions": "<8"
     }
   ]
 }

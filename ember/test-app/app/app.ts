@@ -4,7 +4,7 @@ import loadInitializers from 'ember-load-initializers';
 import Resolver from 'ember-resolver';
 
 import '@hokulea/core/index.css';
-import config from '@hokulea/ember-test-app/config/environment';
+import config from '@hokulea/ember-classic-app/config/environment';
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;

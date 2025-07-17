@@ -40,6 +40,10 @@
         "react",
         "react-dom"
       ]
+    },
+    "overrides": {
+      "@glimmer/component": "^2.0.0",
+      "ember-resources": "7.0.6"
     }
   }
 }

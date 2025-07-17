@@ -4,10 +4,10 @@
     "baseUrl": ".",
     "noEmit": true,
     "paths": {
-      "@hokulea/ember-test-app/tests/*": [
+      "@hokulea/ember-classic-app/tests/*": [
         "tests/*"
       ],
-      "@hokulea/ember-test-app/*": [
+      "@hokulea/ember-classic-app/*": [
         "app/*"
       ]
     },

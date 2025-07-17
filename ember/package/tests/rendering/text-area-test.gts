@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { TextArea } from '#src';
-
-import { TextAreaPageObject } from '#test-support' ;
+import { TextAreaPageObject } from '#test-support';
 
 module('Rendering | <TextArea>', function (hooks) {
   setupRenderingTest(hooks);

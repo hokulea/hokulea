@@ -2,7 +2,7 @@ import { render, setupOnerror } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { Form } from '#src' ;
+import { Form } from '#src';
 
 module('Integration | <Form>', function (hooks) {
   setupRenderingTest(hooks);

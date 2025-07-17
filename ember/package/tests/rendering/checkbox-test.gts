@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { Checkbox } from '#src';
-
-import { CheckboxPageObject } from '#test-support' ;
+import { CheckboxPageObject } from '#test-support';
 
 module('Rendering | <Checkbox>', function (hooks) {
   setupRenderingTest(hooks);

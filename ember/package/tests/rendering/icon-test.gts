@@ -2,13 +2,11 @@ import { render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
+import { Icon } from '#src';
+import { IconPageObject } from '#test-support';
 import Unicycle from '~icons/custom/unicycle';
 import Acorn from '~icons/ph/acorn';
 import PulseThin from '~icons/ph/pulse-thin';
-
-import { Icon } from '#src';
-
-import { IconPageObject } from '#test-support' ;
 
 module('Rendering | <Icon>', (hooks) => {
   setupRenderingTest(hooks);

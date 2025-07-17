@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { NumberInput } from '#src';
-
-import { NumberInputPageObject } from '#test-support' ;
+import { NumberInputPageObject } from '#test-support';
 
 module('Rendering | <NumberInput>', function (hooks) {
   setupRenderingTest(hooks);

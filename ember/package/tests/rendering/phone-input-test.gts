@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { PhoneInput } from '#src';
-
-import { PhoneInputPageObject } from '#test-support' ;
+import { PhoneInputPageObject } from '#test-support';
 
 module('Rendering | <PhoneInput>', function (hooks) {
   setupRenderingTest(hooks);

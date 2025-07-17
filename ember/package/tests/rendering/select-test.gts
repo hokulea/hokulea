@@ -6,8 +6,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { Select } from '#src';
-
-import { SelectPageObject } from '#test-support' ;
+import { SelectPageObject } from '#test-support';
 
 module('Rendering | <Select>', function (hooks) {
   setupRenderingTest(hooks);

@@ -4,9 +4,8 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import sinon from 'sinon';
 
-import { Form } from '#src' ;
-
-import { FormPageObject } from '#test-support' ;
+import { Form } from '#src';
+import { FormPageObject } from '#test-support';
 
 import type { RenderingTestContext } from '@ember/test-helpers';
 

@@ -7,9 +7,8 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import sinon from 'sinon';
 
-import { Button, Form } from '#src' ;
-
-import { FormPageObject } from '#test-support' ;
+import { Button, Form } from '#src';
+import { FormPageObject } from '#test-support';
 
 module('Integration | <Form> | Data', function (hooks) {
   setupRenderingTest(hooks);

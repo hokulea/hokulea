@@ -3,8 +3,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Form } from '#src';
-
-import { FormPageObject } from '#test-support' ;
+import { FormPageObject } from '#test-support';
 
 import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
 
@@ -36,7 +35,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
 
     assert.dom(field).hasTagName('fieldset');
     assert.dom(field.$label).hasTagName('legend');
@@ -62,7 +61,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
 
     assert.dom(field.$choices.$options[0]?.$control).hasAttribute('required');
   });
@@ -82,7 +81,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
 
     assert.dom(field.$choices.$options[0]?.$control).isDisabled();
     assert.dom(field.$choices.$options[1]?.$control).isNotDisabled();
@@ -108,7 +107,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
 
     for (const option of field.$choices.$options) {
       assert.dom(option.$control).isDisabled();
@@ -130,7 +129,7 @@ module('Rendering | <Form.SingularChoice>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
 
     assert.dom(field.$choices.$options[2]?.$label).hasText('Crocodile');
     assert.dom(field.$choices.$options[2]?.$label).hasTagName('label');

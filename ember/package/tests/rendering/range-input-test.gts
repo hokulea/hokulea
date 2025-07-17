@@ -6,8 +6,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { RangeInput } from '#src';
-
-import { RangeInputPageObject } from '#test-support' ;
+import { RangeInputPageObject } from '#test-support';
 
 module('Rendering | <RangeInput>', function (hooks) {
   setupRenderingTest(hooks);

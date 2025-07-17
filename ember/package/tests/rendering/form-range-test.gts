@@ -3,11 +3,10 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Form } from '#src';
+import { FormPageObject } from '#test-support';
 
-import { FormPageObject } from '#test-support' ;
-
-import type { InputBuilderPageObject } from '#test-support' ;
 import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
+import type { InputBuilderPageObject } from '#test-support';
 
 module('Rendering | <Form.Range>', function (hooks) {
   setupRenderingTest(hooks);
@@ -31,7 +30,7 @@ module('Rendering | <Form.Range>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
     const input = field.$control as InputBuilderPageObject;
 
     assert.dom(input.control).exists();
@@ -55,7 +54,7 @@ module('Rendering | <Form.Range>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input.control).hasAttribute('min', '1');
     assert.dom(input.control).hasAttribute('max', '10');
@@ -72,7 +71,7 @@ module('Rendering | <Form.Range>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input.control).isDisabled();
 

@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { PasswordInput } from '#src';
-
-import { PasswordInputPageObject } from '#test-support' ;
+import { PasswordInputPageObject } from '#test-support';
 
 module('Rendering | <PasswordInput>', function (hooks) {
   setupRenderingTest(hooks);

@@ -4,11 +4,10 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Form } from '#src';
+import { FormPageObject } from '#test-support';
 
-import { FormPageObject } from '#test-support' ;
-
-import type { ListPageObject } from '#test-support' ;
 import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
+import type { ListPageObject } from '#test-support';
 
 module('Rendering | <Form.List>', function (hooks) {
   setupRenderingTest(hooks);
@@ -30,7 +29,7 @@ module('Rendering | <Form.List>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
     const input = field.$control;
 
     assert.dom(input.control).exists();
@@ -55,7 +54,7 @@ module('Rendering | <Form.List>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input).hasAttribute('part', 'starter-pokemon');
   });
@@ -70,7 +69,7 @@ module('Rendering | <Form.List>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input).hasAria('disabled', 'true');
   });
@@ -90,7 +89,7 @@ module('Rendering | <Form.List>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = (form.$fields[0] as FieldPageObject).$control as ListPageObject;
+      const input = (form.$fields[0] as unknown as FieldPageObject).$control as ListPageObject;
 
       assert.dom(input.$option[0]).hasText('Bulbasaur');
       assert.dom(input.$option[1]).hasText('Charmander');
@@ -113,7 +112,7 @@ module('Rendering | <Form.List>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = (form.$fields[0] as FieldPageObject).$control as ListPageObject;
+      const input = (form.$fields[0] as unknown as FieldPageObject).$control as ListPageObject;
 
       assert.dom(input.$option[1]).hasAria('selected', 'true');
     });
@@ -149,7 +148,7 @@ module('Rendering | <Form.List>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = (form.$fields[0] as FieldPageObject).$control as ListPageObject;
+      const input = (form.$fields[0] as unknown as FieldPageObject).$control as ListPageObject;
 
       assert.dom(input.$option[0]).hasText('Bulbasaur');
       assert.dom(input.$option[1]).hasText('Charmander');
@@ -172,7 +171,7 @@ module('Rendering | <Form.List>', function (hooks) {
       );
 
       const form = new FormPageObject();
-      const input = (form.$fields[0] as FieldPageObject).$control as ListPageObject;
+      const input = (form.$fields[0] as unknown as FieldPageObject).$control as ListPageObject;
 
       assert.dom(input.$option[1]).hasAria('selected', 'true');
     });

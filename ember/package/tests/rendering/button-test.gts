@@ -5,9 +5,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { Button } from '#src';
+import { ButtonPageObject } from '#test-support';
+
 import { Importance, Intent, Spacing } from '@hokulea/tokens';
 
-import { ButtonPageObject } from '#test-support' ;
 import { linkFor, setupLink } from 'ember-link/test-support';
 
 module('Rendering | <Button>', function (hooks) {

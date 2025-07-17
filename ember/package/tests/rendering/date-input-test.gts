@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { DateInput } from '#src';
-
-import { DateInputPageObject } from '#test-support' ;
+import { DateInputPageObject } from '#test-support';
 
 module('Rendering | <DateInput>', function (hooks) {
   setupRenderingTest(hooks);

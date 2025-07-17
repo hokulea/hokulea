@@ -3,8 +3,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Page } from '#src';
-
-import { PagePageObject } from '#test-support' ;
+import { PagePageObject } from '#test-support';
 
 module('Rendering | <Page>', (hooks) => {
   setupRenderingTest(hooks);

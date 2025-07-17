@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { EmailInput } from '#src';
-
-import { EmailInputPageObject } from '#test-support' ;
+import { EmailInputPageObject } from '#test-support';
 
 module('Rendering | <EmailInput>', function (hooks) {
   setupRenderingTest(hooks);

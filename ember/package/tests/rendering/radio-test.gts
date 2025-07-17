@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { Radio } from '#src';
-
-import { RadioPageObject } from '#test-support' ;
+import { RadioPageObject } from '#test-support';
 
 module('Rendering | <Radio>', function (hooks) {
   setupRenderingTest(hooks);

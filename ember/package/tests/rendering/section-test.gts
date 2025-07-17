@@ -3,8 +3,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Section } from '#src';
-
-import { SectionPageObject } from '#test-support' ;
+import { SectionPageObject } from '#test-support';
 
 module('Rendering | <Section>', function (hooks) {
   setupRenderingTest(hooks);

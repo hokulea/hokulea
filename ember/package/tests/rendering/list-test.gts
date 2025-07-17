@@ -6,8 +6,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { List } from '#src';
-
-import { ListPageObject } from '#test-support' ;
+import { ListPageObject } from '#test-support';
 
 module('Rendering | <List>', function (hooks) {
   setupRenderingTest(hooks);

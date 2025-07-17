@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import Sinon from 'sinon';
 
 import { Form } from '#src';
-
-import { FormPageObject } from '#test-support' ;
+import { FormPageObject } from '#test-support';
 
 import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
 
@@ -28,7 +27,7 @@ module('Rendering | <Form.Date>', function (hooks) {
 
     assert.strictEqual(form.$fields.length, 1);
 
-    const field = form.$fields[0] as FieldPageObject;
+    const field = form.$fields[0] as unknown as FieldPageObject;
     const input = field.$control;
 
     assert.dom(input.control).exists();
@@ -52,7 +51,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input.control).hasAttribute('placeholder', 'abc');
   });
@@ -67,7 +66,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input.control).isDisabled();
 
@@ -96,7 +95,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     assert.dom(input.control).hasValue('1970-01-01');
   });
@@ -113,7 +112,7 @@ module('Rendering | <Form.Date>', function (hooks) {
     );
 
     const form = new FormPageObject();
-    const input = (form.$fields[0] as FieldPageObject).$control;
+    const input = (form.$fields[0] as unknown as FieldPageObject).$control;
 
     await fillIn(input, '1970-01-01');
     await form.submit();

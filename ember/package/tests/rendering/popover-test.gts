@@ -3,8 +3,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Popover } from '#src';
-
-import { PopoverPageObject } from '#test-support' ;
+import { PopoverPageObject } from '#test-support';
 
 module('Rendering | <Popover>', (hooks) => {
   setupRenderingTest(hooks);

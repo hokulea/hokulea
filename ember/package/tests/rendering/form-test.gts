@@ -3,9 +3,9 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Form } from '#src';
-import { Importance, Intent } from '@hokulea/tokens';
+import { FormPageObject } from '#test-support';
 
-import { FormPageObject } from '#test-support' ;
+import { Importance, Intent } from '@hokulea/tokens';
 
 module('Rendering | <Form>', function (hooks) {
   setupRenderingTest(hooks);

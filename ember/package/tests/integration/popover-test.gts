@@ -4,7 +4,7 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import sinon from 'sinon';
 
-import { Button, Popover, popover } from '#src' ;
+import { Button, Popover, popover } from '#src';
 
 module('Integration | (popover)', (hooks) => {
   setupRenderingTest(hooks);

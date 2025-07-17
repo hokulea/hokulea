@@ -5,8 +5,8 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Menu } from '#src';
+import { MenuPageObject } from '#test-support';
 
-import { MenuPageObject } from '#test-support' ;
 import {
   testMenuKeyboardNavigation,
   testMenuPointerNavigation

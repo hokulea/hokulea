@@ -5,8 +5,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import sinon from 'sinon';
 
 import { CurrencyInput } from '#src';
-
-import { CurrencyInputPageObject } from '#test-support' ;
+import { CurrencyInputPageObject } from '#test-support';
 
 module('Rendering | <CurrencyInput>', function (hooks) {
   setupRenderingTest(hooks);

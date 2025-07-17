@@ -122,6 +122,11 @@
   "ember": {
     "edition": "octane"
   },
+  "ember-addon": {
+    "paths": [
+      "lib/hokulea-css-modules-plugin"
+    ]
+  },
   "storybook": {
     "ignoreTestFiles": true
   },

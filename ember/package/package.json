@@ -4,8 +4,7 @@
   "description": "Hokulea Design System for Ember",
   "license": "MIT",
   "keywords": [
-    "ember-addon",
-    "ember-css-modules-plugin"
+    "ember-addon"
   ],
   "author": "gossi",
   "files": [

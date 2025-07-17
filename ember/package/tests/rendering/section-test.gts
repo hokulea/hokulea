@@ -54,6 +54,7 @@ module('Rendering | <Section>', function (hooks) {
     assert.dom(section.$title).hasTagName('h3');
   });
 
+  // https://github.com/hokulea/hokulea/issues/361
   testButNotOnCI('catches incorrect level', async function (assert) {
     // assert.expect(1);
 

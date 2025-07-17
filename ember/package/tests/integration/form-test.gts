@@ -8,6 +8,7 @@ import { testButNotOnCI } from '#tests/helpers.ts';
 module('Integration | <Form>', function (hooks) {
   setupRenderingTest(hooks);
 
+  // https://github.com/hokulea/hokulea/issues/361
   testButNotOnCI('@name must be unique among fields', async function (assert) {
     setupOnerror((e: Error) => {
       assert.strictEqual(

@@ -60,6 +60,7 @@ module('Integration | <Form> | Async state', function (hooks) {
   const stringify = (data: unknown) => JSON.stringify(data);
 
   module('validation', function () {
+    // https://github.com/hokulea/hokulea/issues/361
     testButNotOnCI('validation state is yielded - valid', async function (assert) {
       const data: TestFormData = { givenName: 'Tony', familyName: 'Ward' };
 
@@ -109,6 +110,7 @@ module('Integration | <Form> | Async state', function (hooks) {
         .hasText('{}', 'form.validationState.value has no errors');
     });
 
+    // https://github.com/hokulea/hokulea/issues/361
     testButNotOnCI('validation state is yielded - invalid', async function (assert) {
       const data: TestFormData = { givenName: 'Foo', familyName: 'Smith' };
 
@@ -162,6 +164,7 @@ module('Integration | <Form> | Async state', function (hooks) {
   });
 
   module('submission', function () {
+    // https://github.com/hokulea/hokulea/issues/361
     testButNotOnCI('submission state is yielded - resolved', async function (assert) {
       const data: TestFormData = { givenName: 'Tony', familyName: 'Ward' };
       const submitHandler = (): Promise<string> =>
@@ -210,6 +213,7 @@ module('Integration | <Form> | Async state', function (hooks) {
         .hasText('SUCCESS', 'form.submissionState.value has value returned by @onSubmit action');
     });
 
+    // https://github.com/hokulea/hokulea/issues/361
     testButNotOnCI('submission state is yielded - rejected', async function (assert) {
       const data: TestFormData = { givenName: 'Tony', familyName: 'Ward' };
       const submitHandler = (): Promise<string> =>
@@ -259,6 +263,7 @@ module('Integration | <Form> | Async state', function (hooks) {
         .hasText('"ERROR"', 'form.submissionState.error has error returned by @onSubmit action');
     });
 
+    // https://github.com/hokulea/hokulea/issues/361
     testButNotOnCI('validation and submission are sequential', async function (assert) {
       const data: TestFormData = { givenName: 'Tony', familyName: 'Ward' };
       const submitHandler = (): Promise<string> =>

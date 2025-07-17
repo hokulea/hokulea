@@ -1,39 +1,81 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.6.1",
-      "newVersion": "0.6.2",
+      "impact": "minor",
+      "oldVersion": "0.6.2",
+      "newVersion": "0.7.0",
+      "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         },
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :memo: Documentation"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "patch",
-      "oldVersion": "0.3.1",
-      "newVersion": "0.3.2",
+      "impact": "minor",
+      "oldVersion": "0.3.2",
+      "newVersion": "0.4.0",
+      "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
-      "oldVersion": "0.0.2"
+      "impact": "minor",
+      "oldVersion": "0.0.2",
+      "newVersion": "0.1.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./foundation/tokens/package.json"
     },
     "@hokulea/theme-moana": {
-      "oldVersion": "0.0.3"
+      "impact": "minor",
+      "oldVersion": "0.0.3",
+      "newVersion": "0.1.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./themes/moana/package.json"
     }
   },
-  "description": "## Release (2025-02-12)\n\n@hokulea/ember 0.6.2 (patch)\n@hokulea/core 0.3.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/ember-test-app`, `@hokulea/core`\n  * [#334](https://github.com/hokulea/hokulea/pull/334) Fix tabs: `@selection` and padding ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-07-17)\n\n* @hokulea/ember 0.7.0 (minor)\n* @hokulea/core 0.4.0 (minor)\n* @hokulea/tokens 0.1.0 (minor)\n* @hokulea/theme-moana 0.1.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#360](https://github.com/hokulea/hokulea/pull/360) Make `@hokulea/ember` compatible with vite ([@gossi](https://github.com/gossi))\n  * [#359](https://github.com/hokulea/hokulea/pull/359) Use Generic SVG icons, preferrable Iconify ([@gossi](https://github.com/gossi))\n* `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`\n  * [#356](https://github.com/hokulea/hokulea/pull/356) Use `theemo@v1` ([@gossi](https://github.com/gossi))\n\n#### :memo: Documentation\n* `@hokulea/ember`\n  * [#364](https://github.com/hokulea/hokulea/pull/364) Install Documentation ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`\n  * [#366](https://github.com/hokulea/hokulea/pull/366) Repository URL ([@gossi](https://github.com/gossi))\n  * [#335](https://github.com/hokulea/hokulea/pull/335) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n  * [#363](https://github.com/hokulea/hokulea/pull/363) Remove concurrently ([@gossi](https://github.com/gossi))\n  * [#358](https://github.com/hokulea/hokulea/pull/358) Use `@gossi/config` v1 ([@gossi](https://github.com/gossi))\n* Other\n  * [#365](https://github.com/hokulea/hokulea/pull/365) Update `release-plan` to `v0.17` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#362](https://github.com/hokulea/hokulea/pull/362) Turn off code coverage (until it is rdy again) ([@gossi](https://github.com/gossi))\n\n#### Committers: 2\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n- [@github-actions[bot]](https://github.com/apps/github-actions)\n"
 }

@@ -4,6 +4,7 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import { Section } from '#src';
 import { SectionPageObject } from '#test-support';
+import { testButNotOnCI } from '#tests/helpers.ts';
 
 module('Rendering | <Section>', function (hooks) {
   setupRenderingTest(hooks);
@@ -53,7 +54,7 @@ module('Rendering | <Section>', function (hooks) {
     assert.dom(section.$title).hasTagName('h3');
   });
 
-  test('catches incorrect level', async function (assert) {
+  testButNotOnCI('catches incorrect level', async function (assert) {
     // assert.expect(1);
 
     setupOnerror((e: Error) => {

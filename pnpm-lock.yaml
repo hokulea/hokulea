@@ -200,7 +200,7 @@ importers:
         version: 1.18.0(@glint/template@1.6.0-alpha.1)
       '@embroider/vite':
         specifier: ^1.1.5
-        version: 1.1.5(@embroider/core@4.1.1(@glint/template@1.6.0-alpha.1))(@glint/template@1.6.0-alpha.1)(rollup@4.45.0)(vite@7.0.5(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0))
+        version: 1.1.5(@embroider/core@4.1.1(@glint/template@1.6.0-alpha.1))(@glint/template@1.6.0-alpha.1)(rollup@4.45.0)(vite@7.0.5(@types/node@24.0.14)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0))
       '@glimmer/component':
         specifier: ^2.0.0
         version: 2.0.0
@@ -252,6 +252,9 @@ importers:
       '@theemo/vite':
         specifier: ^1.0.1
         version: 1.0.1
+      '@types/node':
+        specifier: ^24.0.14
+        version: 24.0.14
       '@types/qunit':
         specifier: 2.19.12
         version: 2.19.12
@@ -356,7 +359,7 @@ importers:
         version: 22.1.0
       vite:
         specifier: ^7.0.5
-        version: 7.0.5(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0)
+        version: 7.0.5(@types/node@24.0.14)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0)
 
   ember/test-app:
     dependencies:
@@ -3451,8 +3454,8 @@ packages:
   '@types/node@22.16.2':
     resolution: {integrity: sha512-Cdqa/eJTvt4fC4wmq1Mcc0CPUjp/Qy2FGqLza3z3pKymsI969TcZ54diNJv8UYUgeWxyb8FSbCkhdR6WqmUFhA==}
 
-  '@types/node@24.0.12':
-    resolution: {integrity: sha512-LtOrbvDf5ndC9Xi+4QZjVL0woFymF/xSTKZKPgrrl7H7XoeDvnD+E2IclKVDyaK9UM756W/3BXqSU+JEHopA9g==}
+  '@types/node@24.0.14':
+    resolution: {integrity: sha512-4zXMWD91vBLGRtHK3YbIoFMia+1nqEz72coM42C5ETjnNCa/heoj7NT1G67iAfOqMmcfhuCZ4uNpyz8EjlAejw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -13312,7 +13315,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@embroider/vite@1.1.5(@embroider/core@4.1.1(@glint/template@1.6.0-alpha.1))(@glint/template@1.6.0-alpha.1)(rollup@4.45.0)(vite@7.0.5(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0))':
+  '@embroider/vite@1.1.5(@embroider/core@4.1.1(@glint/template@1.6.0-alpha.1))(@glint/template@1.6.0-alpha.1)(rollup@4.45.0)(vite@7.0.5(@types/node@24.0.14)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0))':
     dependencies:
       '@babel/core': 7.28.0(supports-color@8.1.1)
       '@embroider/core': 4.1.1(@glint/template@1.6.0-alpha.1)
@@ -13330,7 +13333,7 @@ snapshots:
       send: 0.18.0
       source-map-url: 0.4.1
       terser: 5.30.3
-      vite: 7.0.5(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0)
+      vite: 7.0.5(@types/node@24.0.14)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0)
     transitivePeerDependencies:
       - '@glint/template'
       - bufferutil
@@ -14692,7 +14695,7 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/chai-as-promised@7.1.8':
     dependencies:
@@ -14706,17 +14709,17 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/cookie@0.4.1': {}
 
   '@types/cors@2.8.17':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/cross-spawn@6.0.6':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/css-modules@1.0.5': {}
 
@@ -14736,7 +14739,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.6':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       '@types/qs': 6.14.0
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.5
@@ -14750,25 +14753,25 @@ snapshots:
 
   '@types/fs-extra@5.1.0':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/fs-extra@8.1.5':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/fs-extra@9.0.13':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/glob@8.1.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/html-minifier-terser@6.1.0': {}
 
@@ -14781,13 +14784,13 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/linkify-it@5.0.0': {}
 
   '@types/loader-utils@2.0.6':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       '@types/webpack': 4.41.40
 
   '@types/markdown-it@14.0.0':
@@ -14813,7 +14816,7 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/node@24.0.12':
+  '@types/node@24.0.14':
     dependencies:
       undici-types: 7.8.0
 
@@ -14831,12 +14834,12 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/rimraf@2.0.5':
     dependencies:
       '@types/glob': 8.1.0
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/rsvp@4.0.9': {}
 
@@ -14845,12 +14848,12 @@ snapshots:
   '@types/send@0.17.5':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
 
   '@types/serve-static@1.15.8':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       '@types/send': 0.17.5
 
   '@types/sinon@17.0.3':
@@ -14879,13 +14882,13 @@ snapshots:
 
   '@types/webpack-sources@3.2.3':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       '@types/source-list-map': 0.1.6
       source-map: 0.7.4
 
   '@types/webpack@4.41.40':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       '@types/tapable': 1.0.12
       '@types/uglify-js': 3.17.5
       '@types/webpack-sources': 3.2.3
@@ -18787,7 +18790,7 @@ snapshots:
     dependencies:
       '@types/cookie': 0.4.1
       '@types/cors': 2.8.17
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.4.2
@@ -20915,7 +20918,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -25067,7 +25070,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@7.0.5(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0):
+  vite@7.0.5(@types/node@24.0.14)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.30.3)(yaml@2.8.0):
     dependencies:
       esbuild: 0.25.6
       fdir: 6.4.6(picomatch@4.0.2)
@@ -25076,7 +25079,7 @@ snapshots:
       rollup: 4.45.0
       tinyglobby: 0.2.14
     optionalDependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.14
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.30.1

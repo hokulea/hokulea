@@ -1,6 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export default {
   title: 'Components/Layout/Page',

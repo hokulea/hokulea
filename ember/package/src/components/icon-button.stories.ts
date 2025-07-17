@@ -1,6 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import { Importance, Intent, Spacing } from '@hokulea/tokens';
 

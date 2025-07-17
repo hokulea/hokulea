@@ -1,6 +1,5 @@
 import { link } from 'ember-link';
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
 
 import { AppHeader } from '@hokulea/ember';
 
@@ -8,7 +7,7 @@ function noop() {
   console.log('noop');
 }
 
-export class ApplicationRoute extends Route<object> {
+export default RouteTemplate(
   <template>
     <AppHeader @position="center" @home={{link "application"}}>
       <:brand>Hokulea</:brand>
@@ -49,6 +48,4 @@ export class ApplicationRoute extends Route<object> {
 
     {{outlet}}
   </template>
-}
-
-export default CompatRoute(ApplicationRoute);
+);

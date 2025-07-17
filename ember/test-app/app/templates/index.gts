@@ -1,10 +1,9 @@
 import { link } from 'ember-link';
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
 
 import { Page } from '@hokulea/ember';
 
-export class ActionsRoute extends Route<object> {
+export default RouteTemplate(
   <template>
     <Page @title="Page" @description="a little explanation">
       <:nav as |Link|>
@@ -18,6 +17,4 @@ export class ActionsRoute extends Route<object> {
       </:content>
     </Page>
   </template>
-}
-
-export default CompatRoute(ActionsRoute);
+);

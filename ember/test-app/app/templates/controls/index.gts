@@ -1,5 +1,4 @@
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
 
 import {
   Button,
@@ -21,12 +20,10 @@ import {
 } from '@hokulea/ember';
 
 function noop() {
-  return () => {
-    console.log('noop');
-  };
+  console.log('noop');
 }
 
-export class ControlsRoute extends Route<object> {
+export default RouteTemplate(
   <template>
     <Page @title="Inputs">
 
@@ -134,7 +131,7 @@ export class ControlsRoute extends Route<object> {
         <p>
           <TextInput />
           <DateInput @value="1970-01-01" />
-          <Button @push={{(noop)}}>Start</Button>
+          <Button @push={{noop}}>Start</Button>
         </p>
       </Section>
 
@@ -148,7 +145,7 @@ export class ControlsRoute extends Route<object> {
             <b.Suffix>Post</b.Suffix>
           </InputBuilder>
 
-          <Button @push={{(noop)}}>Start</Button>
+          <Button @push={{noop}}>Start</Button>
         </p>
       </Section>
 
@@ -170,6 +167,4 @@ export class ControlsRoute extends Route<object> {
 
     </Page>
   </template>
-}
-
-export default CompatRoute(ControlsRoute);
+);

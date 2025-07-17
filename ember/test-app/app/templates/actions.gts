@@ -1,15 +1,18 @@
 import { link } from 'ember-link';
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
+
+import Unicycle from '~icons/custom/unicycle';
+import Activity from '~icons/ph/activity';
+import ArrowRight from '~icons/ph/arrow-right';
+import Bike from '~icons/ph/person-simple-bike';
 
 import { Button, Icon, IconButton, Page, Section } from '@hokulea/ember';
 
-export class ActionsRoute extends Route<object> {
+export default RouteTemplate(
   <template>
     <Page @title="Actions">
 
       <Section @title="Buttons">
-
         <p>
           <Button @push={{link "actions"}}>Supreme</Button>
           <Button @importance="subtle" @push={{link "actions"}}>Subtle</Button>
@@ -39,32 +42,30 @@ export class ActionsRoute extends Route<object> {
         <p>
           lalala
           <Button>
-            <:before><Icon @icon="arrow-right" /></:before>
+            <:before><Icon @icon={{ArrowRight}} /></:before>
             <:label>Here</:label>
           </Button>
 
           <Button @intent="highlight" @spacing="-1">
-            <:before><Icon @icon="unicycle" /></:before>
+            <:before><Icon @icon={{Unicycle}} /></:before>
             <:label>greater</:label>
-            <:after><Icon @icon="bike" /></:after>
+            <:after><Icon @icon={{Bike}} /></:after>
           </Button>
 
           <Button @intent="alternative">
             <:label>Next</:label>
-            <:after><Icon @icon="arrow-right" /></:after>
+            <:after><Icon @icon={{ArrowRight}} /></:after>
           </Button>
         </p>
       </Section>
 
       <Section @title="Icon Button">
         <p>
-          <IconButton @icon="activity" @label="Let's go" />
-          <IconButton @icon="unicycle" @label="Let's ride" />
+          <IconButton @icon={{Activity}} @label="Let's go" />
+          <IconButton @icon={{Unicycle}} @label="Let's ride" />
         </p>
       </Section>
 
     </Page>
   </template>
-}
-
-export default CompatRoute(ActionsRoute);
+);

@@ -1,5 +1,4 @@
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
 
 import { Form, Page } from '@hokulea/ember';
 
@@ -24,7 +23,7 @@ const submit = (formData: unknown) => {
   console.log(formData);
 };
 
-export class FormsRoute extends Route<object> {
+export default RouteTemplate(
   <template>
     <Page @title="Forms">
       <Form @data={{data}} @submit={{submit}} as |f|>
@@ -87,6 +86,4 @@ export class FormsRoute extends Route<object> {
       </Form>
     </Page>
   </template>
-}
-
-export default CompatRoute(FormsRoute);
+);

@@ -1,5 +1,4 @@
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
 
 import Unicycle from '~icons/custom/unicycle';
 import Acorn from '~icons/ph/acorn';
@@ -7,7 +6,7 @@ import Pulse from '~icons/ph/pulse';
 
 import { Icon, Page } from '@hokulea/ember';
 
-export class ActionsRoute extends Route<object> {
+export default RouteTemplate(
   <template>
     <Page @title="Icons">
 
@@ -21,6 +20,4 @@ export class ActionsRoute extends Route<object> {
       </p>
     </Page>
   </template>
-}
-
-export default CompatRoute(ActionsRoute);
+);

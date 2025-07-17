@@ -4,7 +4,7 @@
 // eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: '@hokulea/ember-test-app',
+    modulePrefix: '@hokulea/ember-classic-app',
     environment,
     rootURL: '/',
     locationType: 'history',

@@ -1,11 +1,11 @@
+import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import Route from 'ember-polaris-routing/route';
-import CompatRoute from 'ember-polaris-routing/route/compat';
+import RouteTemplate from 'ember-route-template';
 
 import { Button, Form, Page, Popover, popover, Section } from '@hokulea/ember';
 
-export class ActionsRoute extends Route<object> {
+export class ActionsTemplate extends Component {
   @tracked data = {
     position: 'top-start'
   };
@@ -59,4 +59,4 @@ export class ActionsRoute extends Route<object> {
   </template>
 }
 
-export default CompatRoute(ActionsRoute);
+export default RouteTemplate(ActionsTemplate);

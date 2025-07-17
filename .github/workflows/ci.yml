@@ -95,6 +95,7 @@ jobs:
         uses: ./.github/actions/setup
       - name: Apply Scenario
         run: pnpm dlx @embroider/try apply ${{ matrix.name }}
+        working-directory: ember/package
       - name: Install Dependencies
         run: pnpm install --no-lockfile
       - name: Run Tests

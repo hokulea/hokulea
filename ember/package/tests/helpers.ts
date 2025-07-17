@@ -1,9 +1,8 @@
+import { skip, test } from 'qunit';
 import {
   setupApplicationTest as upstreamSetupApplicationTest,
   setupRenderingTest as upstreamSetupRenderingTest,
-  setupTest as upstreamSetupTest,
-  skip,
-  test
+  setupTest as upstreamSetupTest
 } from 'ember-qunit';
 // @ts-expect-error TS go drunk, you are home!
 import process from 'node:process';

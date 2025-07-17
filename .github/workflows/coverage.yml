@@ -1,10 +1,10 @@
-name: 'Coverage'
+name: Coverage
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+#   push:
+#     branches:
+#       - main
 
 jobs:
   coverage:
@@ -16,12 +16,7 @@ jobs:
         uses: ./.github/actions/setup
         env:
           COVERAGE: true
-      - name: coverage
-        uses: paambaati/codeclimate-action@v9.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-          COVERAGE: true
+      - uses: qltysh/qlty-action/coverage@v1
         with:
-          coverageCommand: pnpm run -r --parallel --aggregate-output test
-          coverageLocations: |
-            ${{github.workspace}}/ember/test-app/coverage/lcov.info:lcov
+          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          files: ${{github.workspace}}/ember/package/coverage/lcov.info

@@ -42,8 +42,8 @@
   "scripts": {
     "build": "rollup --config",
     "dev": "vite dev",
-    "lint": "concurrently -g 'npm:lint:*(!fix)'",
-    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
     "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
     "lint:css:fix": "stylelint 'src/**/*.css' --allow-empty-input --fix",
     "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
@@ -116,7 +116,6 @@
     "@theemo/vite": "^1.0.1",
     "@types/qunit": "2.19.12",
     "@types/sinon": "^17.0.4",
-    "concurrently": "^8.2.2",
     "ember-cli-code-coverage": "3.1.0",
     "ember-cli-fastboot": "4.1.5",
     "ember-cli-htmlbars": "^6.3.0",

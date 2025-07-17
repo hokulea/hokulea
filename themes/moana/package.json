@@ -36,6 +36,8 @@
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
     "sync": "theemo sync",
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "build": "pnpm build:css && pnpm build:theme",
@@ -53,7 +55,6 @@
     "@theemo/cli": "^1.0.1",
     "@theemo/figma": "^1.0.1",
     "@theemo/style-dictionary": "^1.0.1",
-    "concurrently": "^8.2.2",
     "eslint": "^9.31.0",
     "inflection": "3.0.2",
     "prettier": "^3.6.2",

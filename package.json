@@ -2,10 +2,8 @@
   "name": "hokulea",
   "private": true,
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hokulea/hokulea.git"
-  },
+  "author": "Thomas Gossmann",
+  "repository": "https://github.com/hokulea/hokulea",
   "scripts": {
     "api": "yarn api:prepare && yarn api:doc && yarn api:cleanup",
     "api:cleanup": "mv temp/* api/ && rm -rf temp",

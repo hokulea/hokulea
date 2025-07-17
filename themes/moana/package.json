@@ -9,6 +9,8 @@
   "files": [
     "dist"
   ],
+  "author": "Thomas Gossmann",
+  "repository": "https://github.com/hokulea/hokulea",
   "type": "module",
   "theemo": {
     "name": "moana",

@@ -7,6 +7,8 @@
   "keywords": [
     "theemo-theme"
   ],
+  "author": "Thomas Gossmann",
+  "repository": "https://github.com/hokulea/hokulea",
   "theemo": {
     "name": "vaomatua",
     "colorSchemes": [

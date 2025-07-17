@@ -6,7 +6,8 @@
   "keywords": [
     "ember-addon"
   ],
-  "author": "gossi",
+  "author": "Thomas Gossmann",
+  "repository": "https://github.com/hokulea/hokulea",
   "files": [
     "addon-main.cjs",
     "lib",

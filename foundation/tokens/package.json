@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "Hokulea Design Tokens",
   "license": "MIT",
-  "author": "gossi",
+  "author": "Thomas Gossmann",
+  "repository": "https://github.com/hokulea/hokulea",
   "files": [
     "dist"
   ],

@@ -42,3 +42,9 @@ export { default as Popover } from './components/popover.gts';
 
 // behavior
 export { default as popover } from './helpers/popover.ts';
+
+// - internal
+export {
+  /** @internal */
+  default as HokuleaService
+} from './services/-hokulea.ts';

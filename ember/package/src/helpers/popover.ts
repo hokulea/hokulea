@@ -59,11 +59,9 @@ const popover = helper((_, { position, opened, closed }: PopoverArgs) => {
         }
       };
 
-      // @ts-expect-error c'mon typescript
       element.addEventListener('toggle', toggleHandler);
 
       return () => {
-        // @ts-expect-error c'mon typescript
         element.removeEventListener('toggle', toggleHandler);
       };
     }),

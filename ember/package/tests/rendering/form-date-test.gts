@@ -7,7 +7,7 @@ import Sinon from 'sinon';
 import { Form } from '#src';
 import { FormPageObject } from '#test-support';
 
-import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
+import type { FieldPageObject } from '#test-support/page-objects/-private/field.ts';
 
 module('Rendering | <Form.Date>', function (hooks) {
   setupRenderingTest(hooks);

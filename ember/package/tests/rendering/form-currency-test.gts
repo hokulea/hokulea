@@ -5,8 +5,8 @@ import { setupRenderingTest } from 'ember-qunit';
 import { Form } from '#src';
 import { FormPageObject } from '#test-support';
 
-import type { FieldPageObject } from '@hokulea/ember/test-support/page-objects/-private/field';
 import type { InputBuilderPageObject } from '#test-support';
+import type { FieldPageObject } from '#test-support/page-objects/-private/field.ts';
 
 module('Rendering | <Form.Currency>', function (hooks) {
   setupRenderingTest(hooks);

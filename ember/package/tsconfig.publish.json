@@ -1,9 +1,18 @@
 {
   "extends": "@ember/library-tsconfig",
-  "include": ["src", "types"],
-  "exclude": ["**/*.stories.ts"],
+  "include": [
+    "src",
+    "types"
+  ],
+  "exclude": [
+    "**/*.stories.ts",
+    "app"
+  ],
   "glint": {
-    "environment": ["ember-loose", "ember-template-imports"]
+    "environment": [
+      "ember-loose",
+      "ember-template-imports"
+    ]
   },
   "compilerOptions": {
     "allowJs": true,
@@ -19,6 +28,8 @@
       imports to files on disk
     */
     "rootDir": "./src",
-    "types": ["ember-source/types"]
+    "types": [
+      "ember-source/types"
+    ]
   }
 }

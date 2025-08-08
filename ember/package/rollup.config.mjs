@@ -128,6 +128,10 @@ export default {
     // addon.gjs(),
 
     // Emit .d.ts declaration files
+    // apparently, running glint this way does something other than running
+    // glint itself on the CLI. Manually running it generates the types
+    // appropriately. Running it as param here will produce broken declarations
+    // It strips the `.gts` from the imports.
     addon.declarations('declarations', `glint --declaration --project ${configs.ts}`),
 
     // addons are allowed to contain imports of .css files, which we want rollup

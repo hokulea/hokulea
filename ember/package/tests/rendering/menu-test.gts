@@ -14,7 +14,7 @@ import {
 
 import { RefactorMenuFactory } from './-menu';
 
-import type { MenuItem } from '@hokulea/ember/test-support/page-objects/-menu';
+import type { MenuItem } from '#test-support/page-objects/-menu.ts';
 
 module('Rendering | <Menu>', function (hooks) {
   setupRenderingTest(hooks);

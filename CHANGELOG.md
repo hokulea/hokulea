@@ -1,5 +1,19 @@
 # Changelog
 
+## Release (2025-08-08)
+
+* @hokulea/ember 0.7.2 (patch)
+* @hokulea/tokens 0.1.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`
+  * [#380](https://github.com/hokulea/hokulea/pull/380) Fix AppHeader icons ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`, `@hokulea/tokens`
+  * [#378](https://github.com/hokulea/hokulea/pull/378) Fix declarations ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-07-18)
 
 * @hokulea/ember 0.7.1 (patch)

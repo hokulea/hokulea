@@ -2,13 +2,13 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "patch",
-      "oldVersion": "0.7.0",
-      "newVersion": "0.7.1",
+      "oldVersion": "0.7.1",
+      "newVersion": "0.7.2",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
@@ -17,11 +17,21 @@
       "oldVersion": "0.4.0"
     },
     "@hokulea/tokens": {
-      "oldVersion": "0.1.0"
+      "impact": "patch",
+      "oldVersion": "0.1.0",
+      "newVersion": "0.1.1",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        }
+      ],
+      "pkgJSONPath": "./foundation/tokens/package.json"
     },
     "@hokulea/theme-moana": {
       "oldVersion": "0.1.0"
     }
   },
-  "description": "## Release (2025-07-18)\n\n* @hokulea/ember 0.7.1 (patch)\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#368](https://github.com/hokulea/hokulea/pull/368) Export `HokuleaService` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-08-08)\n\n* @hokulea/ember 0.7.2 (patch)\n* @hokulea/tokens 0.1.1 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`\n  * [#380](https://github.com/hokulea/hokulea/pull/380) Fix AppHeader icons ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/tokens`\n  * [#378](https://github.com/hokulea/hokulea/pull/378) Fix declarations ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

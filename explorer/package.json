@@ -73,7 +73,7 @@
     "ember-cli-sri": "2.1.1",
     "ember-command": "2.0.7",
     "ember-concurrency": "4.0.4",
-    "ember-css-modules": "2.1.0",
+    "ember-css-modules": "2.1.1",
     "ember-element-helper": "0.8.6",
     "ember-link": "3.4.1",
     "ember-load-initializers": "2.1.2",

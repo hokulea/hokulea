@@ -27,6 +27,9 @@
       "#test-support": [
         "./src/test-support/index.ts"
       ],
+      "#test-support/*": [
+        "./src/test-support/*"
+      ],
       "#tests/*": [
         "./tests/*"
       ]

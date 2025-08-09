@@ -663,8 +663,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       '@storybook/addon-designs':
-        specifier: 10.0.1
-        version: 10.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@9.0.16(@testing-library/dom@10.4.0)(prettier@3.6.2))
+        specifier: 10.0.2
+        version: 10.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@9.0.16(@testing-library/dom@10.4.0)(prettier@3.6.2))
       '@storybook/addon-links':
         specifier: 9.0.16
         version: 9.0.16(react@18.3.1)(storybook@9.0.16(@testing-library/dom@10.4.0)(prettier@3.6.2))
@@ -3134,8 +3134,8 @@ packages:
   '@socket.io/component-emitter@3.1.0':
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
 
-  '@storybook/addon-designs@10.0.1':
-    resolution: {integrity: sha512-R+C9DRN7nYmPpPSMXzDNmdDY9XEclH90CYvSbCntNvizazlAUnZnkOaO0Bko/UK7guC+eEQ0bFYaxxndYu+dsA==}
+  '@storybook/addon-designs@10.0.2':
+    resolution: {integrity: sha512-MP7av/of6QMPH7bRjwjTC34GySy2bfyh3WwLWeztQOuNWMEFUOWzjh9iIyCiOBl7VADSXeL4SOJGIiGzQznFZw==}
     peerDependencies:
       '@storybook/addon-docs': ^0.0.0-0 || ^9.0.0 || ^9.1.0-0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -14371,7 +14371,7 @@ snapshots:
 
   '@socket.io/component-emitter@3.1.0': {}
 
-  '@storybook/addon-designs@10.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@9.0.16(@testing-library/dom@10.4.0)(prettier@3.6.2))':
+  '@storybook/addon-designs@10.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@9.0.16(@testing-library/dom@10.4.0)(prettier@3.6.2))':
     dependencies:
       '@figspec/react': 1.0.3(react@18.3.1)
       storybook: 9.0.16(@testing-library/dom@10.4.0)(prettier@3.6.2)

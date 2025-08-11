@@ -99,7 +99,7 @@
     "prettier": "^3.6.2",
     "qunit": "^2.24.1",
     "qunit-dom": "^3.4.0",
-    "sinon": "19.0.2",
+    "sinon": "19.0.5",
     "stylelint": "16.21.1",
     "tracked-built-ins": "3.4.0",
     "typescript": "5.9.2",

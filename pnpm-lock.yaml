@@ -516,7 +516,7 @@ importers:
         version: 3.0.1(@babel/core@7.28.0)
       ember-sinon-qunit:
         specifier: 7.5.0
-        version: 7.5.0(@babel/core@7.28.0)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.24.1)(sinon@19.0.2)
+        version: 7.5.0(@babel/core@7.28.0)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.24.1)(sinon@19.0.5)
       ember-source:
         specifier: 5.12.0
         version: 5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.93.0)
@@ -563,8 +563,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       sinon:
-        specifier: 19.0.2
-        version: 19.0.2
+        specifier: 19.0.5
+        version: 19.0.5
       stylelint:
         specifier: 16.21.1
         version: 16.21.1(typescript@5.9.2)
@@ -10275,8 +10275,8 @@ packages:
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
 
-  sinon@19.0.2:
-    resolution: {integrity: sha512-euuToqM+PjO4UgXeLETsfQiuoyPXlqFezr6YZDFwHR3t4qaX0fZUe1MfPMznTL5f8BWrVS89KduLdMUsxFCO6g==}
+  sinon@19.0.5:
+    resolution: {integrity: sha512-r15s9/s+ub/d4bxNXqIUmwp6imVSdTorIRaxoecYjqTVLZ8RuoXr/4EDGwIBo6Waxn7f2gnURX9zuhAfCwaF6Q==}
 
   sinon@21.0.0:
     resolution: {integrity: sha512-TOgRcwFPbfGtpqvZw+hyqJDvqfapr1qUlOizROIk4bBLjlsjlB00Pg6wMFXNtJRpu+eCZuVOaLatG7M8105kAw==}
@@ -17321,7 +17321,7 @@ snapshots:
       dom-element-descriptors: 0.5.1
       ember-modifier: 4.2.2(@babel/core@7.28.0)
       lodash.isequal: 4.5.0
-      sinon: 19.0.2
+      sinon: 19.0.5
     optionalDependencies:
       '@ember/test-helpers': 5.2.2(@babel/core@7.28.0)(@glint/template@1.6.0-alpha.2)
     transitivePeerDependencies:
@@ -18284,14 +18284,14 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-sinon-qunit@7.5.0(@babel/core@7.28.0)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.24.1)(sinon@19.0.2):
+  ember-sinon-qunit@7.5.0(@babel/core@7.28.0)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.93.0))(qunit@2.24.1)(sinon@19.0.5):
     dependencies:
       '@embroider/addon-shim': 1.10.0
       '@types/sinon': 17.0.4
       decorator-transforms: 2.3.0(@babel/core@7.28.0)
       ember-source: 5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.93.0)
       qunit: 2.24.1
-      sinon: 19.0.2
+      sinon: 19.0.5
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -23550,7 +23550,7 @@ snapshots:
     dependencies:
       is-arrayish: 0.3.2
 
-  sinon@19.0.2:
+  sinon@19.0.5:
     dependencies:
       '@sinonjs/commons': 3.0.1
       '@sinonjs/fake-timers': 13.0.5

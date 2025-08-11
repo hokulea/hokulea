@@ -24,7 +24,7 @@
     "storybook": "pnpm run --filter @hokulea/explorer storybook"
   },
   "devDependencies": {
-    "release-plan": "0.17.0",
+    "release-plan": "0.17.2",
     "turbo": "^2.2.3"
   },
   "engines": {

@@ -65,18 +65,19 @@ export async function validateSchema(
   return await schema['~standard'].validate(data);
 }
 
+export function normalizePathSegment(segment: PropertyKey | PathSegment): PropertyKey {
+  return typeof segment === 'object' ? segment.key : segment;
+}
+
 export function transformSchemaPath(
   path: (PropertyKey | PathSegment)[] | undefined
 ): string | undefined {
   return path === undefined
     ? undefined
     : path
+        .map((segment) => normalizePathSegment(segment))
         .map((segment) => {
-          const normalizedSegment = typeof segment === 'object' ? segment.key : segment;
-
-          return typeof normalizedSegment === 'number'
-            ? `[${normalizedSegment}]`
-            : normalizedSegment;
+          return typeof segment === 'number' ? `[${segment}]` : segment;
         })
         .join('.')
         .replaceAll('.[', '[');

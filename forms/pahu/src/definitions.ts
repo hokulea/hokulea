@@ -59,6 +59,8 @@ export type ValidationResult<Output = unknown> =
   | ValidationResultFailure<Output>
   | ValidationResultSuceess<Output>;
 
+export type ValidatedCallback = (event: ValidationMode, result: ValidationResult) => void;
+
 export type FieldElement =
   | HTMLInputElement
   | HTMLTextAreaElement

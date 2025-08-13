@@ -1,6 +1,7 @@
 import { VALIDATION_EVENTS } from './definitions';
 import {
   isValidationSchema,
+  normalizePathSegment,
   transformValidationResponse,
   validateNativeField,
   validateSchema
@@ -12,6 +13,7 @@ import type {
   Issue,
   UserData,
   UserValue,
+  ValidatedCallback,
   ValidationMode,
   ValidationResult
 } from './definitions';
@@ -75,13 +77,47 @@ type FieldValidator<DATA extends UserData, NAME extends string, VALUE> =
  * Configuration for a Field
  */
 export type FieldConfig<DATA extends UserData, NAME extends string, VALUE> = {
+  /**
+   * Register a field element
+   */
   element?: FieldElement;
+
+  /**
+   * Whether native validation is ignored
+   *
+   * This overrides the value set at the form
+   */
   ignoreNativeValidation?: boolean;
 
-  // validators?: Record<ValidationMode, FieldValidator>;
-  validate?: FieldValidator<DATA, NAME, VALUE>;
+  /**
+   * Validation happens when this event is triggered
+   *
+   * This overrides the value set at the form
+   */
   validateOn?: ValidationMode | undefined;
+
+  /**
+   * Revalidation happens when this event is triggered
+   *
+   * This overrides the value set at the form
+   */
   revalidateOn?: ValidationMode | undefined;
+
+  // validators?: Record<ValidationMode, FieldValidator>;
+  /**
+   * Validation for the field
+   */
+  validate?: FieldValidator<DATA, NAME, VALUE>;
+
+  /**
+   * Called when the form is validated.
+   *
+   * Happens when:
+   *
+   * - form is submitted, but invalid
+   * - a validation event is triggered
+   */
+  validated?: ValidatedCallback;
 } & GetField<DATA, NAME, VALUE>;
 
 /* Internal full config with the reference to the form */
@@ -106,6 +142,9 @@ export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
   /** Shall it ignore native (HTML) validation? */
   readonly ignoreNativeValidation: boolean;
   readonly issues: Issue[];
+
+  /** Whether this field has already been validated */
+  readonly validated: boolean;
 
   /**
    * Removes this field from the form and cleans up all held references
@@ -160,6 +199,7 @@ export class Field<
   #value?: GetValue<DATA, NAME, VALUE>;
   #issues: Issue[] = [];
   #element?: FieldElement;
+  #validated = false;
 
   constructor(config: FullFieldConfig<DATA, NAME, VALUE>) {
     this.updateConfig(config);
@@ -205,14 +245,14 @@ export class Field<
   #registerEventListeners(element: FieldElement) {
     for (const event of VALIDATION_EVENTS) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
-      element.addEventListener(event, this.validate);
+      element.addEventListener(event, this.handleValidation);
     }
   }
 
   #unregisterEventListeners(element: FieldElement) {
     for (const event of VALIDATION_EVENTS) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
-      element.removeEventListener(event, this.validate);
+      element.removeEventListener(event, this.handleValidation);
     }
   }
 
@@ -238,9 +278,27 @@ export class Field<
 
   // #region Validation
 
+  get validated(): boolean {
+    return this.#validated;
+  }
+
   get ignoreNativeValidation(): boolean {
     return Boolean(this.#config.ignoreNativeValidation);
   }
+
+  handleValidation = async (event: Event): Promise<void> => {
+    const validationEvent = this.#validated ? this.#config.revalidateOn : this.#config.revalidateOn;
+
+    console.log('handle validated', event.type);
+
+    if (event.type === validationEvent) {
+      const result = await this.validate();
+
+      console.log('call validated', event.type);
+
+      this.#config.validated?.(event.type, result);
+    }
+  };
 
   validate = async (): Promise<ValidationResult> => {
     const { value } = this;
@@ -259,8 +317,12 @@ export class Field<
 
     const issues = [...nativeValidation, ...customValidation].map((i) => ({
       ...i,
-      path: i.path ?? [this.name]
+      path: (i.path ?? [this.name]).map((segment) => normalizePathSegment(segment))
     }));
+
+    this.setIssues(issues);
+
+    this.#validated = true;
 
     if (issues.length === 0) {
       return {

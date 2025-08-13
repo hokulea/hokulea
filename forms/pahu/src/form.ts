@@ -2,8 +2,10 @@ import { VALIDATION_EVENTS } from './definitions';
 import { createField } from './field';
 import {
   isValidationSchema,
+  normalizePathSegment,
   transformSchemaPath,
   transformValidationResponse,
+  validateNativeForm,
   validateSchema
 } from './validation';
 
@@ -11,6 +13,7 @@ import type {
   Issue,
   UserData,
   UserValue,
+  ValidatedCallback,
   ValidationMode,
   ValidationResponse,
   ValidationResult
@@ -20,17 +23,17 @@ import type { StandardSchemaV1 } from '@standard-schema/spec';
 
 // #region Config & Types
 
-export type FormOutput = Record<string, FormDataEntryValue>;
+export type FormOutput<DATA extends UserData> = Record<string, FormDataEntryValue> & DATA;
 
 /**
  * Callback used for field level validation
  */
-export type FormValidateCallback = (data: {
-  data: FormOutput;
+export type FormValidateCallback<DATA extends UserData> = (data: {
+  data: FormOutput<DATA>;
 }) => ValidationResponse | Promise<ValidationResponse>;
 
 /** Validator for a Form. Either a callback function or pass a schema */
-type FormValidator = FormValidateCallback | StandardSchemaV1;
+type FormValidator<DATA extends UserData> = FormValidateCallback<DATA> | StandardSchemaV1;
 
 /**
  * Configuration for a Form
@@ -64,7 +67,7 @@ export type FormConfig<DATA extends UserData> = Readonly<{
   /**
    * Validation for the form
    */
-  validate?: FormValidator;
+  validate?: FormValidator<DATA>;
 
   /**
    * Called when the user has submitted the form and no validation errors have been determined.
@@ -72,9 +75,14 @@ export type FormConfig<DATA extends UserData> = Readonly<{
   submit?: (data: unknown) => void;
 
   /**
-   * Called when the user tried to submit the form, but validation failed
+   * Called when the form is validated.
+   *
+   * Happens when:
+   *
+   * - form is submitted, but invalid
+   * - a validation event is triggered
    */
-  invalidated?: (data: unknown, issues: Issue[]) => void;
+  validated?: ValidatedCallback;
 }>;
 
 const DEFAULT_CONFIG: Partial<FormConfig<UserData>> = {
@@ -136,13 +144,20 @@ interface FormAPI<DATA extends UserData> {
    * @param field the field to remove
    */
   removeField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
-    field: Field<DATA, NAME, VALUE>
+    field: FieldAPI<DATA, NAME, VALUE>
   ): void;
 
   /**
    * Validate the form
    */
   validate(): Promise<ValidationResult>;
+
+  /**
+   * Submit the form, will run validation
+   *
+   * Use `submit` and `invalidated` handlers
+   */
+  submit(): Promise<void>;
 }
 
 // #region Form
@@ -213,18 +228,28 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
     return Object.fromEntries(data.entries()) as Record<string, FormDataEntryValue>;
   };
 
-  getFieldValue = (name: string): unknown => {
-    const data = new FormData(this.#element);
-
-    if (data.has(name)) {
-      return data.get(name);
-    }
-
-    throw new Error(`Getting field value for '${name}': Field does not exist`);
+  #getFieldData = () => {
+    return Object.fromEntries(this.#fields.values().map((f) => [f.name, f.value]));
   };
 
-  handleSubmit = async (event: SubmitEvent): Promise<void> => {
-    event.preventDefault();
+  // getFieldValue = (name: string): unknown => {
+  //   const data = new FormData(this.#element);
+
+  //   if (data.has(name)) {
+  //     return data.get(name);
+  //   }
+
+  //   throw new Error(`Getting field value for '${name}': Field does not exist`);
+  // };
+
+  // #region Submissen
+
+  submit = async (): Promise<void> => {
+    await this.handleSubmit();
+  };
+
+  handleSubmit = async (event?: SubmitEvent): Promise<void> => {
+    event?.preventDefault();
 
     const validationResult = await this.validate();
 
@@ -233,7 +258,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
       this.#config.submit?.(validationResult.value);
     } else {
       this.invalid = true;
-      this.#config.invalidated?.(validationResult.value, validationResult.issues);
+      this.#config.validated?.('submit', validationResult);
     }
   };
 
@@ -254,7 +279,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
   }
 
   removeField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
-    field: Field<DATA, NAME, VALUE>
+    field: FieldAPI<DATA, NAME, VALUE>
   ): void {
     field.dispose();
     this.#unregisterField(field);
@@ -273,7 +298,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
   }
 
   #unregisterField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
-    field: Field<DATA, NAME, VALUE>
+    field: FieldAPI<DATA, NAME, VALUE>
   ): void {
     if (this.#fields.has(field.name)) {
       this.#fields.delete(field.name);
@@ -288,20 +313,22 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
 
   handleValidation = async (event: Event): Promise<void> => {
     if (event.type === this.#config.validateOn) {
-      await this.validate();
+      const result = await this.validate();
+
+      this.#config.validated?.(event.type, result);
     }
   };
 
   validate = async (): Promise<ValidationResult> => {
     const issues: Issue[] = [];
 
-    // issues.push(
-    //   this.ignoreNativeValidation
-    //     ? []
-    //     : transformValidationResponse(validateNativeForm(this.#config.element))
-    // );
+    issues.push(
+      ...(!this.ignoreNativeValidation && this.#element
+        ? transformValidationResponse(validateNativeForm(this.#element))
+        : [])
+    );
 
-    const data = this.#getFormData();
+    const data = { ...this.#getFormData(), ...this.#getFieldData() } as FormOutput<DATA>;
 
     if (isValidationSchema(this.#config.validate)) {
       issues.push(
@@ -321,9 +348,16 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
       }
     }
 
+    const normalizedIssues = issues
+      .filter((i) => i.path !== undefined)
+      .map((i) => ({
+        ...i,
+        path: i.path ? i.path.map((segment) => normalizePathSegment(segment)) : undefined
+      }));
+
     // attach issues to fields
     const issuesByField = Object.groupBy(
-      issues
+      normalizedIssues
         .filter((i) => i.path !== undefined)
         .map((i) => ({
           ...i,
@@ -350,7 +384,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
     return {
       success: false,
       value: data,
-      issues
+      issues: normalizedIssues
     };
   };
 

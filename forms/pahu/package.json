@@ -1,0 +1,59 @@
+{
+  "name": "@hokulea/pahu",
+  "version": "0.0.0",
+  "description": "Hokulea Headless Forms",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "repository": "https://github.com/hokulea/hokulea",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "imports": {
+    "#src": "./src/index.ts",
+    "#src/*": "./src/*",
+    "#tests/*": "./tests/*"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
+    "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "tsdown --watch",
+    "test": "vitest run",
+    "test:ui": "vitest --browser.provider=preview --no-browser.headless --browser.name=firefox"
+  },
+  "dependencies": {
+    "@standard-schema/spec": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/eslint-parser": "^7.27.5",
+    "@gossi/config-eslint": "^1.3.0",
+    "@gossi/config-prettier": "^1.1.0",
+    "@testing-library/dom": "10.4.1",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.30.1",
+    "playwright": "^1.54.2",
+    "prettier": "^3.5.3",
+    "tsdown": "^0.12.9",
+    "type-fest": "^4.41.0",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4",
+    "vitest-browser-html": "^0.1.2"
+  },
+  "engines": {
+    "node": "^20.11.0 || >=22"
+  }
+}

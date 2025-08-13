@@ -69,3 +69,49 @@ export type FieldElement =
   | HTMLFieldSetElement
   | HTMLObjectElement
   | HTMLOutputElement;
+
+/**
+ * Give you all the names of a form in dot-notation
+ *
+ * The types here even get array based types with a number. You can see this
+ * when hovering over the parameter for the `formName()` function below. It
+ * doesn't though infer available items an that array and suggest the
+ * appropriate indices
+ *
+ * Fixes welcome =)
+ */
+export type FormNames<T> = T extends object
+  ? {
+      [Key in keyof T & (string | number)]: T[Key] extends object[]
+        ? `${Key}[${number}].${FormNames<T[Key]>}`
+        : T extends object[]
+          ? `${FormNames<T[Key]>}`
+          : T[Key] extends object
+            ? `${Key}.${FormNames<T[Key]>}`
+            : `${Key}`;
+    }[keyof T & (string | number)]
+  : never;
+
+// type tests for `FormNames<T>`
+
+// type Profile = {
+//   username: string;
+//   profile: { givenName: string; familyName: string };
+//   emails: { email: string; verified: boolean; primary: boolean }[];
+// };
+
+// type Test = FormNames<Profile>;
+
+// function formName<DATA>(data: DATA, key: FormNames<DATA>) {}
+
+// formName(
+//   {
+//     username: '',
+//     profile: { givenName: '', familyName: '' },
+//     emails: [
+//       { email: 'a', verified: true, primary: true },
+//       { email: '', verified: false, primary: false }
+//     ]
+//   },
+//   ''
+// );

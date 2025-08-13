@@ -10,6 +10,7 @@ import {
 } from './validation';
 
 import type {
+  FormNames,
   Issue,
   UserData,
   UserValue,
@@ -130,7 +131,7 @@ interface FormAPI<DATA extends UserData> {
    */
   createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
     config: FieldConfig<DATA, NAME, VALUE> & {
-      name: keyof DATA;
+      name: FormNames<DATA>;
     }
   ): FieldAPI<DATA, NAME, VALUE>;
   createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
@@ -424,7 +425,23 @@ export function createForm<DATA extends UserData = UserData>(
   return new Form(config);
 }
 
-// const form = createForm({ data: { givenName: '' } });
+// some type tests below
+// uncomment for quick feedback - not all is testable with type tests (yet?)
+
+// const deepForm = createForm({
+//   data: {
+//     username: '',
+//     profile: { givenName: '', familyName: '' },
+//     emails: [
+//       { email: '', verified: true, primary: true },
+//       { email: '', verified: false, primary: false }
+//     ]
+//   }
+// });
+
+// deepForm.createField({ name: '' });
+
+// const form = form.createField({ givenName: '' });
 
 // const field = form.createField({ name: 'csie', value: 123 });
 // const f2 = form.createField({ name: 'givenName', value: 123 });

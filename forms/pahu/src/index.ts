@@ -1,4 +1,5 @@
-export type { FieldElement, UserData } from './definitions';
-export type { FieldConfig } from './field';
-export type { FormConfig } from './form';
+export type { SignalFactory } from './-utils';
+export type { FieldElement, FieldNames, UserData, UserValue } from './definitions';
+export type { FieldAPI, FieldConfig } from './field';
+export type { FormAPI, FormConfig } from './form';
 export { createForm } from './form';

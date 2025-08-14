@@ -8,7 +8,7 @@ import {
   validateSchema
 } from './validation';
 
-import type { Subscriber } from './-utils';
+import type { Signal, Subscriber } from './-utils';
 import type {
   FieldElement,
   FieldNames,
@@ -167,13 +167,6 @@ export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
    */
   updateConfig(config: Omit<FieldConfig<DATA, NAME, VALUE>, 'name'>): void;
 
-  /**
-   * Register a HTML element with the field
-   *
-   * @param element the HTML element
-   */
-  registerElement(element: FieldElement): void;
-
   setIssues(issues: Issue[]): void;
 
   /**
@@ -187,6 +180,16 @@ export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
    * Validate the field
    */
   validate(): Promise<ValidationResult>;
+
+  /** For advanced usage, mostly for framework integration */
+  subtle: {
+    /**
+     * Register a HTML element with the field
+     *
+     * @param element the HTML element
+     */
+    registerElement(element: FieldElement): void;
+  };
 }
 
 // #region Field
@@ -209,10 +212,11 @@ export class Field<
 {
   #config!: FieldConfig<DATA, NAME, VALUE>;
   #form: Form<DATA>;
-  #value?: GetValue<DATA, NAME, VALUE>;
-  #issues: Issue[] = [];
+  // #value?: GetValue<DATA, NAME, VALUE>;
+  #value: Signal<GetValue<DATA, NAME, VALUE>>;
+  #issues: Signal<Issue[]>;
   #element?: FieldElement;
-  #validated = false;
+  #validated: Signal<boolean>;
   #publisher = new Publisher<FieldEvents>();
   #linkedField?: Field<
     DATA,
@@ -222,6 +226,9 @@ export class Field<
 
   constructor(config: FullFieldConfig<DATA, NAME, VALUE>) {
     this.#form = config.form;
+    this.#value = this.#form.makeSignal<VALUE>();
+    this.#issues = this.#form.makeSignal<Issue[]>([]);
+    this.#validated = this.#form.makeSignal<boolean>(false);
     this.updateConfig(config);
   }
 
@@ -237,7 +244,7 @@ export class Field<
     } as FieldConfig<DATA, NAME, VALUE>;
 
     if (config.value) {
-      this.#value = config.value;
+      this.#value.set(config.value);
     }
 
     if (element) {
@@ -248,6 +255,12 @@ export class Field<
       this.#linkField(config.linkedField);
     }
   }
+
+  subtle = {
+    registerElement: (element: FieldElement): void => {
+      this.registerElement(element);
+    }
+  };
 
   dispose(): void {
     if (this.#element) {
@@ -315,11 +328,11 @@ export class Field<
   }
 
   setIssues = (issues: Issue[]): void => {
-    this.#issues = issues;
+    this.#issues.set(issues);
   };
 
   get issues(): Issue[] {
-    return this.#issues;
+    return this.#issues.get();
   }
 
   get name(): GetName<DATA, NAME, VALUE> {
@@ -327,11 +340,11 @@ export class Field<
   }
 
   get value(): GetValue<DATA, NAME, VALUE> | undefined {
-    return this.#value;
+    return this.#value.get();
   }
 
   setValue = (value: VALUE): void => {
-    this.#value = value;
+    this.#value.set(value);
 
     this.#publisher.notify('changed');
   };
@@ -339,7 +352,7 @@ export class Field<
   // #region Validation
 
   get validated(): boolean {
-    return this.#validated;
+    return this.#validated.get();
   }
 
   get ignoreNativeValidation(): boolean {
@@ -353,7 +366,9 @@ export class Field<
   };
 
   handleValidation = async (event: Event): Promise<void> => {
-    const validationEvent = this.#validated ? this.#config.revalidateOn : this.#config.revalidateOn;
+    const validationEvent = this.#validated.get()
+      ? this.#config.revalidateOn
+      : this.#config.revalidateOn;
 
     if (event.type === validationEvent) {
       const result = await this.validate();
@@ -384,7 +399,7 @@ export class Field<
 
     this.setIssues(issues);
 
-    this.#validated = true;
+    this.#validated.set(true);
 
     if (issues.length === 0) {
       return {

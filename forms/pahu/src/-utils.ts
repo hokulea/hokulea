@@ -1,10 +1,38 @@
+import type { FieldElement } from './definitions';
+
 // from https://github.com/tc39/proposal-signals
 export interface Signal<T> {
   // Get the value of the signal
   get(): T;
 
+  // Set the state Signal value to t
   set(t: T): void;
 }
+
+export type SignalFactory = <T>(t?: T) => Signal<T>;
+
+class State<T> implements Signal<T> {
+  #value?: T;
+
+  // Create a state Signal starting with the value t
+  constructor(t?: T) {
+    this.#value = t;
+  }
+
+  // Get the value of the signal
+  get(): T {
+    return this.#value as T;
+  }
+
+  // Set the state Signal value to t
+  set(t: T): void {
+    this.#value = t;
+  }
+}
+
+export const makeSignal: SignalFactory = <T>(t?: T) => {
+  return new State(t);
+};
 
 type MaybePromise<T> = T | Promise<T>;
 
@@ -43,4 +71,16 @@ export default class Publisher<Events extends Record<keyof Events, unknown[]>> {
 
     return this.#subscribers.get(event) as Set<Subscriber<Events, E>>;
   }
+}
+
+export function isFormFieldElement(el: Element): el is FieldElement {
+  return (
+    el instanceof HTMLInputElement ||
+    el instanceof HTMLTextAreaElement ||
+    el instanceof HTMLSelectElement ||
+    el instanceof HTMLButtonElement ||
+    el instanceof HTMLFieldSetElement ||
+    el instanceof HTMLObjectElement ||
+    el instanceof HTMLOutputElement
+  );
 }

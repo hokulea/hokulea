@@ -7,18 +7,6 @@ import type {
 } from './definitions';
 import type { StandardSchemaV1 } from '@standard-schema/spec';
 
-function isFormFieldElement(el: Element): el is FieldElement {
-  return (
-    el instanceof HTMLInputElement ||
-    el instanceof HTMLTextAreaElement ||
-    el instanceof HTMLSelectElement ||
-    el instanceof HTMLButtonElement ||
-    el instanceof HTMLFieldSetElement ||
-    el instanceof HTMLObjectElement ||
-    el instanceof HTMLOutputElement
-  );
-}
-
 export function validateNativeField(element: FieldElement): ValidationResponse {
   if (element.validity.valid) {
     return;
@@ -28,26 +16,6 @@ export function validateNativeField(element: FieldElement): ValidationResponse {
     path: [element.name],
     message: element.validationMessage
   };
-}
-
-export function validateNativeForm(form: HTMLFormElement): ValidationResponse {
-  if (form.checkValidity()) {
-    return;
-  }
-
-  const issues: Issue[] = [];
-
-  for (const el of form.elements) {
-    if (isFormFieldElement(el)) {
-      const issue = validateNativeField(el) as Issue | undefined;
-
-      if (issue) {
-        issues.push(issue);
-      }
-    }
-  }
-
-  return issues;
 }
 
 export function isValidationSchema(schema: unknown): schema is StandardSchemaV1 {

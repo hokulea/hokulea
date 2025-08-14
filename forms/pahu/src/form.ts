@@ -1,3 +1,4 @@
+import { isFormFieldElement, makeSignal } from './-utils';
 import { VALIDATION_EVENTS } from './definitions';
 import { createField } from './field';
 import {
@@ -5,10 +6,11 @@ import {
   normalizePathSegment,
   transformSchemaPath,
   transformValidationResponse,
-  validateNativeForm,
+  validateNativeField,
   validateSchema
 } from './validation';
 
+import type { Signal, SignalFactory } from './-utils';
 import type {
   FieldNames,
   Issue,
@@ -84,12 +86,20 @@ export type FormConfig<DATA extends UserData> = Readonly<{
    * - a validation event is triggered
    */
   validated?: ValidatedCallback;
+
+  /** For advanced usage, mostly for framework integration */
+  subtle?: {
+    signalFactory?: SignalFactory;
+  };
 }>;
 
 const DEFAULT_CONFIG: Partial<FormConfig<UserData>> = {
   validateOn: 'submit',
   revalidateOn: 'change',
-  ignoreNativeValidation: false
+  ignoreNativeValidation: false,
+  subtle: {
+    signalFactory: makeSignal
+  }
 };
 
 // #region API
@@ -166,6 +176,11 @@ export interface FormAPI<DATA extends UserData> {
    * Use `submit` and `invalidated` handlers
    */
   submit(): Promise<void>;
+
+  /** For advanced usage, mostly for framework integration */
+  subtle: {
+    registerElement(element: HTMLFormElement): void;
+  };
 }
 
 // #region Form
@@ -175,11 +190,23 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
   #config!: Omit<FormConfig<DATA>, 'element'>;
   #fields = new Map<string, Field<DATA>>();
   #element?: HTMLFormElement;
-
-  invalid = false;
+  #makeSignal!: SignalFactory;
+  #invalid: Signal<boolean>;
 
   constructor(config: FormConfig<DATA> = {}) {
     this.updateConfig(config);
+
+    this.#invalid = this.#makeSignal(false);
+  }
+
+  subtle = {
+    registerElement: (element: HTMLFormElement): void => {
+      this.registerElement(element);
+    }
+  };
+
+  makeSignal<T>(t?: T): Signal<T> {
+    return this.#makeSignal(t);
   }
 
   updateConfig(config: FormConfig<DATA>): void {
@@ -195,9 +222,15 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
       ...conf
     };
 
+    this.#makeSignal = this.#config.subtle?.signalFactory as SignalFactory;
+
     if (element) {
       this.registerElement(element);
     }
+  }
+
+  get invalid(): boolean {
+    return this.#invalid.get();
   }
 
   registerElement(element: HTMLFormElement): void {
@@ -252,10 +285,10 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
     const validationResult = await this.validate();
 
     if (validationResult.success) {
-      this.invalid = false;
+      this.#invalid.set(false);
       this.#config.submit?.(validationResult.value);
     } else {
-      this.invalid = true;
+      this.#invalid.set(true);
       this.#config.validated?.('submit', validationResult);
     }
   };
@@ -263,7 +296,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
   // #region Fields
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  createField(config: any): FieldAPI<DATA, any, any> {
+  createField = (config: any): FieldAPI<DATA, any, any> => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const field = createField<DATA, typeof config.name, typeof config.value>({
       ...config,
@@ -274,7 +307,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
     this.#registerField(field);
 
     return field;
-  }
+  };
 
   removeField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
     field: FieldAPI<DATA, NAME, VALUE>
@@ -350,11 +383,7 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
   validate = async (): Promise<ValidationResult> => {
     const issues: Issue[] = [];
 
-    issues.push(
-      ...(!this.ignoreNativeValidation && this.#element
-        ? transformValidationResponse(validateNativeForm(this.#element))
-        : [])
-    );
+    issues.push(...this.#validateNativeOnUnregisteredFields());
 
     const data = { ...this.#getFormData(), ...this.#getFieldData() } as FormOutput<DATA>;
 
@@ -415,6 +444,34 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
       issues: normalizedIssues
     };
   };
+
+  #validateNativeOnUnregisteredFields() {
+    if (!this.#element || this.ignoreNativeValidation) {
+      return [];
+    }
+
+    if (this.#element.checkValidity()) {
+      return [];
+    }
+
+    const issues: Issue[] = [];
+
+    for (const el of this.#element.elements) {
+      if (isFormFieldElement(el) && !this.#fields.has(el.name)) {
+        const issue = validateNativeField(el) as Issue | undefined;
+
+        if (issue) {
+          issues.push(issue);
+        }
+      }
+    }
+
+    return transformValidationResponse(issues);
+
+    // !this.ignoreNativeValidation && this.#element
+    // ? transformValidationResponse(validateNativeForm(this.#element))
+    // : [];
+  }
 
   /**
    * Return the event type that will be listened on for dynamic validation (i.e. *before* submitting)

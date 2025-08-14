@@ -1,5 +1,5 @@
 import { page, userEvent } from '@vitest/browser/context';
-import { expect, test, vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { createForm } from '#src';
 
@@ -19,6 +19,14 @@ test('cannot add another field with an existing name', () => {
   expect(() => form.createField({ name: 'givenName' })).toThrowError(
     `Cannot register Field. Field with name 'givenName' already exists`
   );
+});
+
+test('getting field', () => {
+  const form = createForm();
+  const givenName = form.createField({ name: 'givenName', value: 'John' });
+
+  expect(form.getFieldValue('givenName')).toBe('John');
+  expect(form.getFieldValue('does-notrexist')).toBeUndefined();
 });
 
 test('field removal', async () => {
@@ -95,4 +103,81 @@ test('re-registerElement()', async () => {
   await userEvent.tab(); // trigger the change event
 
   await vi.waitUntil(() => expect(validationHandler).not.toBeCalled());
+});
+
+describe('Linked fields', () => {
+  test('validation triggers', async () => {
+    const form = createForm();
+
+    const validationHandler = vi.fn();
+    const password = form.createField({ name: 'password', value: 'test123' });
+
+    form.createField({
+      name: 'confirm_password',
+      linkedField: 'password',
+      value: 'test123',
+      // eslint-disable-next-line @typescript-eslint/no-shadow
+      validate: ({ value, form }) => {
+        return value === form.getFieldValue('password') ? undefined : 'Passwords must match';
+      },
+      validated: validationHandler
+    });
+
+    password.setValue('test1234');
+
+    await vi.waitFor(() =>
+      expect(validationHandler).toBeCalledWith('link', {
+        success: false,
+        value: 'test123',
+        issues: [
+          {
+            path: ['confirm_password'],
+            message: 'Passwords must match'
+          }
+        ]
+      })
+    );
+  });
+
+  test('cleanup handlers', async () => {
+    const form = createForm();
+
+    const validationHandler = vi.fn();
+    const email = form.createField({ name: 'email', value: 'localhost@domain' });
+    const password = form.createField({ name: 'password', value: 'test123' });
+
+    const confirmPassword = form.createField({
+      name: 'confirm_password',
+      linkedField: 'email',
+      value: 'test123',
+      // eslint-disable-next-line @typescript-eslint/no-shadow
+      validate: ({ value, form }) => {
+        return value === form.getFieldValue('email') ? undefined : 'Passwords must match';
+      },
+      validated: validationHandler
+    });
+
+    email.setValue('test1234');
+
+    await vi.waitFor(() =>
+      expect(validationHandler).toBeCalledWith('link', {
+        success: false,
+        value: 'test123',
+        issues: [
+          {
+            path: ['confirm_password'],
+            message: 'Passwords must match'
+          }
+        ]
+      })
+    );
+
+    validationHandler.mockClear();
+    confirmPassword.updateConfig({linkedField: 'password'});
+
+    email.setValue('test1234');
+    await vi.waitFor(() => expect(validationHandler).not.toHaveBeenCalled());
+
+    expect(() => form.removeField(confirmPassword)).not.toThrow();
+  });
 });

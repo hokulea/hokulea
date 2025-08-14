@@ -1,3 +1,4 @@
+import Publisher from './-utils';
 import { VALIDATION_EVENTS } from './definitions';
 import {
   isValidationSchema,
@@ -7,8 +8,10 @@ import {
   validateSchema
 } from './validation';
 
+import type { Subscriber } from './-utils';
 import type {
   FieldElement,
+  FieldNames,
   FieldValidationResponse,
   Issue,
   UserData,
@@ -17,7 +20,7 @@ import type {
   ValidationMode,
   ValidationResult
 } from './definitions';
-import type { Form } from './form';
+import type { Form, FormAPI } from './form';
 import type { StandardSchemaV1 } from '@standard-schema/spec';
 
 // #region Config & Types
@@ -65,7 +68,7 @@ type GetValue<DATA extends UserData, NAME extends string, VALUE> = GetField<
 export type FieldValidateCallback<DATA extends UserData, NAME extends string, VALUE> = (data: {
   name: GetName<DATA, NAME, VALUE>;
   value?: GetValue<DATA, NAME, VALUE>;
-  form: Form<DATA>;
+  form: FormAPI<DATA>;
 }) => FieldValidationResponse | Promise<FieldValidationResponse>;
 
 /** Validator for a Field. Either a callback function or pass a schema */
@@ -118,6 +121,12 @@ export type FieldConfig<DATA extends UserData, NAME extends string, VALUE> = {
    * - a validation event is triggered
    */
   validated?: ValidatedCallback;
+
+  /**
+   * Link that field to another. When that other field changes its value, the
+   * validation for this field will be triggered, too.
+   */
+  linkedField?: FieldNames<DATA> | (string & {});
 } & GetField<DATA, NAME, VALUE>;
 
 /* Internal full config with the reference to the form */
@@ -156,7 +165,7 @@ export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
    *
    * @param config the new config
    */
-  updateConfig(config: FieldConfig<DATA, NAME, VALUE>): void;
+  updateConfig(config: Omit<FieldConfig<DATA, NAME, VALUE>, 'name'>): void;
 
   /**
    * Register a HTML element with the field
@@ -182,6 +191,10 @@ export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
 
 // #region Field
 
+export interface FieldEvents {
+  changed: [];
+}
+
 const DEFAULT_CONFIG: Partial<FieldConfig<UserData, string, UserData>> = {
   validateOn: undefined,
   revalidateOn: 'change',
@@ -200,10 +213,16 @@ export class Field<
   #issues: Issue[] = [];
   #element?: FieldElement;
   #validated = false;
+  #publisher = new Publisher<FieldEvents>();
+  #linkedField?: Field<
+    DATA,
+    keyof DATA & string,
+    keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
+  >;
 
   constructor(config: FullFieldConfig<DATA, NAME, VALUE>) {
-    this.updateConfig(config);
     this.#form = config.form;
+    this.updateConfig(config);
   }
 
   updateConfig(config: FieldConfig<DATA, NAME, VALUE>): void {
@@ -224,11 +243,19 @@ export class Field<
     if (element) {
       this.registerElement(element);
     }
+
+    if (config.linkedField) {
+      this.#linkField(config.linkedField);
+    }
   }
 
   dispose(): void {
     if (this.#element) {
       this.#unregisterEventListeners(this.#element);
+    }
+
+    if (this.#linkedField) {
+      this.#unlinkField(this.#linkedField);
     }
   }
 
@@ -256,6 +283,37 @@ export class Field<
     }
   }
 
+  subscribe<E extends keyof FieldEvents>(event: E, cb: Subscriber<FieldEvents, E>): void {
+    this.#publisher.subscribe(event, cb);
+  }
+
+  unsubscribe<E extends keyof FieldEvents>(event: E, cb: Subscriber<FieldEvents, E>): void {
+    this.#publisher.unsubscribe(event, cb);
+  }
+
+  #linkField(name: FieldNames<DATA> | (string & {})): void {
+    if (this.#linkedField) {
+      this.#unlinkField(this.#linkedField);
+    }
+
+    const linkedField = this.#form.getField(name);
+
+    if (linkedField) {
+      linkedField.subscribe('changed', this.handleLinkValidation);
+      this.#linkedField = linkedField;
+    }
+  }
+
+  #unlinkField(
+    field: Field<
+      DATA,
+      keyof DATA & string,
+      keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
+    >
+  ): void {
+    field.unsubscribe('changed', this.handleLinkValidation);
+  }
+
   setIssues = (issues: Issue[]): void => {
     this.#issues = issues;
   };
@@ -274,6 +332,8 @@ export class Field<
 
   setValue = (value: VALUE): void => {
     this.#value = value;
+
+    this.#publisher.notify('changed');
   };
 
   // #region Validation
@@ -286,15 +346,17 @@ export class Field<
     return Boolean(this.#config.ignoreNativeValidation);
   }
 
+  handleLinkValidation = async (): Promise<void> => {
+    const result = await this.validate();
+
+    this.#config.validated?.('link', result);
+  };
+
   handleValidation = async (event: Event): Promise<void> => {
     const validationEvent = this.#validated ? this.#config.revalidateOn : this.#config.revalidateOn;
 
-    console.log('handle validated', event.type);
-
     if (event.type === validationEvent) {
       const result = await this.validate();
-
-      console.log('call validated', event.type);
 
       this.#config.validated?.(event.type, result);
     }

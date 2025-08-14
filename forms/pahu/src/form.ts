@@ -10,7 +10,7 @@ import {
 } from './validation';
 
 import type {
-  FormNames,
+  FieldNames,
   Issue,
   UserData,
   UserValue,
@@ -97,7 +97,7 @@ const DEFAULT_CONFIG: Partial<FormConfig<UserData>> = {
 /**
  * Form
  */
-interface FormAPI<DATA extends UserData> {
+export interface FormAPI<DATA extends UserData> {
   /** Whether the form is currently invalid (due to failing validations) */
   readonly invalid: boolean;
 
@@ -131,7 +131,7 @@ interface FormAPI<DATA extends UserData> {
    */
   createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
     config: FieldConfig<DATA, NAME, VALUE> & {
-      name: FormNames<DATA>;
+      name: FieldNames<DATA>;
     }
   ): FieldAPI<DATA, NAME, VALUE>;
   createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
@@ -147,6 +147,13 @@ interface FormAPI<DATA extends UserData> {
   removeField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
     field: FieldAPI<DATA, NAME, VALUE>
   ): void;
+
+  /**
+   * Get's the value from a field
+   *
+   * @param name the field's name
+   */
+  getFieldValue(name: FieldNames<DATA> | (string & {})): unknown;
 
   /**
    * Validate the form
@@ -233,16 +240,6 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
     return Object.fromEntries(this.#fields.values().map((f) => [f.name, f.value]));
   };
 
-  // getFieldValue = (name: string): unknown => {
-  //   const data = new FormData(this.#element);
-
-  //   if (data.has(name)) {
-  //     return data.get(name);
-  //   }
-
-  //   throw new Error(`Getting field value for '${name}': Field does not exist`);
-  // };
-
   // #region Submissen
 
   submit = async (): Promise<void> => {
@@ -305,6 +302,36 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
       this.#fields.delete(field.name);
     }
   }
+
+  getField = (
+    name: FieldNames<DATA> | (string & {})
+  ):
+    | Field<
+        DATA,
+        keyof DATA & string,
+        keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
+      >
+    | undefined => {
+    if (this.#fields.has(name)) {
+      return this.#fields.get(name) as Field<
+        DATA,
+        keyof DATA & string,
+        keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
+      >;
+    }
+
+    return;
+  };
+
+  getFieldValue = (name: FieldNames<DATA> | (string & {})): unknown => {
+    const field = this.getField(name);
+
+    if (field) {
+      return field.value;
+    }
+
+    return;
+  };
 
   // #region Validation
 

@@ -59,7 +59,7 @@ export type ValidationResult<Output = unknown> =
   | ValidationResultFailure<Output>
   | ValidationResultSuceess<Output>;
 
-export type ValidatedCallback = (event: ValidationMode, result: ValidationResult) => void;
+export type ValidatedCallback = (event: ValidationMode | 'link', result: ValidationResult) => void;
 
 export type FieldElement =
   | HTMLInputElement
@@ -80,14 +80,14 @@ export type FieldElement =
  *
  * Fixes welcome =)
  */
-export type FormNames<T> = T extends object
+export type FieldNames<T> = T extends object
   ? {
       [Key in keyof T & (string | number)]: T[Key] extends object[]
-        ? `${Key}[${number}].${FormNames<T[Key]>}`
+        ? `${Key}[${number}].${FieldNames<T[Key]>}`
         : T extends object[]
-          ? `${FormNames<T[Key]>}`
+          ? `${FieldNames<T[Key]>}`
           : T[Key] extends object
-            ? `${Key}.${FormNames<T[Key]>}`
+            ? `${Key}.${FieldNames<T[Key]>}`
             : `${Key}`;
     }[keyof T & (string | number)]
   : never;

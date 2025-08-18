@@ -7,13 +7,13 @@ test('default options', () => {
   const form = createForm();
 
   expect(form.invalid).toBeFalsy();
-  expect(form.fieldValidationEvent).toBeUndefined();
+  expect(form.fieldValidationEvent).toBe('off');
   expect(form.fieldRevalidationEvent).toBe('change');
   expect(form.ignoreNativeValidation).toBeFalsy();
 });
 
 test('registerElement()', async () => {
-  const screen = await page.render('<form novalidate data-testid="f">...</form>');
+  const screen = page.render('<form novalidate data-testid="f">...</form>');
 
   const element = screen.getByTestId('f').element() as HTMLFormElement;
 
@@ -27,7 +27,7 @@ test('registerElement()', async () => {
 });
 
 test('re-registerElement()', async () => {
-  const screen = await page.render(`
+  const screen = page.render(`
     <form novalidate data-testid="a"></form>
     <form novalidate data-testid="b"></form>
   `);

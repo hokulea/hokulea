@@ -76,7 +76,7 @@ export function validateNativeFields(elements: FieldElement[]): Issue[] {
 
   return (
     elements
-      // filter out `<input type="radion">` with the same name, as they would all
+      // filter out `<input type="radio">` with the same name, as they would all
       // produce the same error
       .filter((elem) => {
         const { type, name } = elem;

@@ -42,14 +42,16 @@ describe('Field Name Types', () => {
     const form = createForm();
     const email = form.createField({ name: 'email' });
 
-    expectTypeOf(email.name).toEqualTypeOf<string>();
+    expectTypeOf(email.name).toExtend<string>();
+    expectTypeOf(email.name).toEqualTypeOf<'email'>();
   });
 
   test('Defined on the field, and data is present', () => {
     const form = createForm({ data: { givenName: '', familyName: '' } });
     const email = form.createField({ name: 'email' });
 
-    expectTypeOf(email.name).toEqualTypeOf<string>();
+    expectTypeOf(email.name).toExtend<string>();
+    expectTypeOf(email.name).toEqualTypeOf<'email'>();
   });
 
   test('Defined on the form in data', () => {

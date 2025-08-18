@@ -23,14 +23,15 @@ test('cannot add another field with an existing name', () => {
 
 test('getting field', () => {
   const form = createForm();
-  const givenName = form.createField({ name: 'givenName', value: 'John' });
+
+  form.createField({ name: 'givenName', value: 'John' });
 
   expect(form.getFieldValue('givenName')).toBe('John');
   expect(form.getFieldValue('does-notrexist')).toBeUndefined();
 });
 
 test('field removal', async () => {
-  const screen = await page.render(`
+  const screen = page.render(`
     <form novalidate data-testid="form">
       <input type="email" name="email">
     </form>
@@ -69,8 +70,8 @@ test('field removal', async () => {
   await vi.waitUntil(() => expect(validationHandler).not.toBeCalled());
 });
 
-test('re-registerElement()', async () => {
-  const screen = await page.render(`
+test('register multiple elements', async () => {
+  const screen = page.render(`
     <form novalidate data-testid="form">
       <input type="email" name="email" data-testid="email">
       <input type="email" name="email2" data-testid="email2">
@@ -97,12 +98,12 @@ test('re-registerElement()', async () => {
 
   validationHandler.mockClear();
 
-  email.registerElement(screen.getByTestId('email2').element() as HTMLInputElement);
+  email.subtle.registerElement(screen.getByTestId('email2').element() as HTMLInputElement);
 
   await userEvent.fill(fieldElement, 'bar');
   await userEvent.tab(); // trigger the change event
 
-  await vi.waitUntil(() => expect(validationHandler).not.toBeCalled());
+  await vi.waitUntil(() => expect(validationHandler).toBeCalled());
 });
 
 describe('Linked fields', () => {
@@ -144,7 +145,8 @@ describe('Linked fields', () => {
 
     const validationHandler = vi.fn();
     const email = form.createField({ name: 'email', value: 'localhost@domain' });
-    const password = form.createField({ name: 'password', value: 'test123' });
+
+    form.createField({ name: 'password', value: 'test123' });
 
     const confirmPassword = form.createField({
       name: 'confirm_password',
@@ -173,7 +175,7 @@ describe('Linked fields', () => {
     );
 
     validationHandler.mockClear();
-    confirmPassword.updateConfig({linkedField: 'password'});
+    confirmPassword.updateConfig({ linkedField: 'password' });
 
     email.setValue('test1234');
     await vi.waitFor(() => expect(validationHandler).not.toHaveBeenCalled());

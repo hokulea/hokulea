@@ -16,7 +16,7 @@ import type {
   Issue,
   UserData,
   UserValue,
-  ValidatedCallback,
+  ValidatedHandler,
   ValidationMode,
   ValidationResponse,
   ValidationResult
@@ -31,12 +31,12 @@ export type FormOutput<DATA extends UserData> = Record<string, FormDataEntryValu
 /**
  * Callback used for field level validation
  */
-export type FormValidateCallback<DATA extends UserData> = (data: {
+export type FormValidateHandler<DATA extends UserData> = (data: {
   data: FormOutput<DATA>;
 }) => ValidationResponse | Promise<ValidationResponse>;
 
 /** Validator for a Form. Either a callback function or pass a schema */
-type FormValidator<DATA extends UserData> = FormValidateCallback<DATA> | StandardSchemaV1;
+type FormValidator<DATA extends UserData> = FormValidateHandler<DATA> | StandardSchemaV1;
 
 /**
  * Configuration for a Form
@@ -85,7 +85,7 @@ export type FormConfig<DATA extends UserData> = {
    * - form is submitted, but invalid
    * - a validation event is triggered
    */
-  validated?: ValidatedCallback;
+  validated?: ValidatedHandler;
 
   /** For advanced usage, mostly for framework integration */
   subtle?: {

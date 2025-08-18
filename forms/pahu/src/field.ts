@@ -15,7 +15,7 @@ import type {
   Issue,
   UserData,
   UserValue,
-  ValidatedCallback,
+  ValidatedHandler,
   ValidationMode,
   ValidationResponse,
   ValidationResult
@@ -91,7 +91,7 @@ export type FieldConfig<DATA extends UserData, NAME extends string, VALUE> = {
    * - form is submitted, but invalid
    * - a validation event is triggered
    */
-  validated?: ValidatedCallback;
+  validated?: ValidatedHandler;
 
   /**
    * Link that field to another. When that other field changes its value, the

@@ -24,7 +24,8 @@ export { default as TextInput } from './components/text-input.gts';
 // forms
 export type { FieldValidateCallback, FormValidateCallback } from './-private/form/index.ts';
 export type { FormBuilder } from './components/form.gts';
-export { default as Form } from './components/form.gts';
+export { default as Form2 } from './components/form.gts';
+export { default as Form } from './components/form/form.gts';
 
 // navigation
 export { default as AppHeader } from './components/app-header.gts';

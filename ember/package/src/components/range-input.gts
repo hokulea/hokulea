@@ -49,9 +49,9 @@ const RangeInput: TOC<RangeInputSignature> = <template>
     disabled={{@disabled}}
     data-test-input
     data-orientation={{@orientation}}
-    ...attributes
+    {{on "input" (pick "target.value" (pickAsNumber @update)) capture=true}}
     {{progressStyle @value}}
-    {{on "input" (pick "target.value" (pickAsNumber @update))}}
+    ...attributes
   />
 </template>;
 

@@ -1,22 +1,5 @@
-import type {
-  FieldElement,
-  FieldValidationResponse,
-  Issue,
-  PathSegment,
-  ValidationResponse
-} from './definitions';
+import type { FieldElement, Issue, PathSegment, ValidationResponse } from './definitions';
 import type { StandardSchemaV1 } from '@standard-schema/spec';
-
-export function validateNativeField(element: FieldElement): ValidationResponse {
-  if (element.validity.valid) {
-    return;
-  }
-
-  return {
-    path: [element.name],
-    message: element.validationMessage
-  };
-}
 
 export function isValidationSchema(schema: unknown): schema is StandardSchemaV1 {
   return (
@@ -51,7 +34,7 @@ export function transformSchemaPath(
         .replaceAll('.[', '[');
 }
 
-export function transformValidationResponse(response: FieldValidationResponse): Issue[] {
+export function transformValidationResponse(response: ValidationResponse): Issue[] {
   const responses = Array.isArray(response) ? response : [response];
 
   const issues = responses
@@ -67,4 +50,49 @@ export function transformValidationResponse(response: FieldValidationResponse): 
     });
 
   return issues;
+}
+
+export function validateNativeField(element: FieldElement): ValidationResponse {
+  // custom controls (build with aria do not have a validity object to them)
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (!element.validity) {
+    return;
+  }
+
+  if (element.validity.valid) {
+    return;
+  }
+
+  return {
+    element: element,
+    ...('value' in element ? { value: element.value } : {}),
+    path: [element.name],
+    message: element.validationMessage
+  };
+}
+
+export function validateNativeFields(elements: FieldElement[]): Issue[] {
+  const seenRadioOptions = new Set<string>();
+
+  return (
+    elements
+      // filter out `<input type="radion">` with the same name, as they would all
+      // produce the same error
+      .filter((elem) => {
+        const { type, name } = elem;
+
+        if (type !== 'radio') {
+          return true;
+        }
+
+        if (!seenRadioOptions.has(name)) {
+          seenRadioOptions.add(name);
+
+          return true;
+        }
+
+        return false;
+      })
+      .flatMap((e) => transformValidationResponse(validateNativeField(e)))
+  );
 }

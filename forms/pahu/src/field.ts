@@ -4,7 +4,7 @@ import {
   isValidationSchema,
   normalizePathSegment,
   transformValidationResponse,
-  validateNativeField,
+  validateNativeFields,
   validateSchema
 } from './validation';
 
@@ -12,69 +12,40 @@ import type { Signal, Subscriber } from './-utils';
 import type {
   FieldElement,
   FieldNames,
-  FieldValidationResponse,
   Issue,
   UserData,
   UserValue,
   ValidatedCallback,
   ValidationMode,
+  ValidationResponse,
   ValidationResult
 } from './definitions';
 import type { Form, FormAPI } from './form';
 import type { StandardSchemaV1 } from '@standard-schema/spec';
 
-// #region Config & Types
+// #region Types
 
-/**
- * That is a known field as it is defined in `data` in the form.
- */
-type KnownField<DATA extends UserData, NAME extends keyof DATA> = {
-  name: NAME;
-  value?: DATA[NAME];
-};
-
-/**
- * That field isn't known per `data` in the form
- */
-type UnknownField<NAME extends string, VALUE extends UserValue> = {
-  name: NAME;
-  value?: VALUE;
-};
-
-/**
- * Utility to get either the known rsp unknown field
- */
-type GetField<DATA extends UserData, NAME extends string, VALUE> = NAME extends keyof DATA
-  ? KnownField<DATA, NAME>
-  : UnknownField<NAME, VALUE>;
-
-/** Get the name field */
-type GetName<DATA extends UserData, NAME extends string, VALUE> = GetField<
-  DATA,
-  NAME,
-  VALUE
->['name'];
-
-/** Get the value field */
-type GetValue<DATA extends UserData, NAME extends string, VALUE> = GetField<
-  DATA,
-  NAME,
-  VALUE
->['value'];
+export type FieldValue<DATA, NAME, VALUE> = NAME extends keyof DATA ? DATA[NAME] : VALUE;
 
 /**
  * Callback used for field level validation
  */
-export type FieldValidateCallback<DATA extends UserData, NAME extends string, VALUE> = (data: {
-  name: GetName<DATA, NAME, VALUE>;
-  value?: GetValue<DATA, NAME, VALUE>;
+export type FieldValidationHandler<
+  DATA extends UserData,
+  NAME extends string = FieldNames<DATA> | (string & {}),
+  VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue
+> = (data: {
+  name: NAME;
+  value?: FieldValue<DATA, NAME, VALUE>;
   form: FormAPI<DATA>;
-}) => FieldValidationResponse | Promise<FieldValidationResponse>;
+}) => ValidationResponse | Promise<ValidationResponse>;
 
 /** Validator for a Field. Either a callback function or pass a schema */
 type FieldValidator<DATA extends UserData, NAME extends string, VALUE> =
-  | FieldValidateCallback<DATA, NAME, VALUE>
+  | FieldValidationHandler<DATA, NAME, VALUE>
   | StandardSchemaV1;
+
+// #region Config
 
 /**
  * Configuration for a Field
@@ -97,14 +68,14 @@ export type FieldConfig<DATA extends UserData, NAME extends string, VALUE> = {
    *
    * This overrides the value set at the form
    */
-  validateOn?: ValidationMode | undefined;
+  validateOn?: ValidationMode;
 
   /**
    * Revalidation happens when this event is triggered
    *
    * This overrides the value set at the form
    */
-  revalidateOn?: ValidationMode | undefined;
+  revalidateOn?: ValidationMode;
 
   // validators?: Record<ValidationMode, FieldValidator>;
   /**
@@ -127,7 +98,19 @@ export type FieldConfig<DATA extends UserData, NAME extends string, VALUE> = {
    * validation for this field will be triggered, too.
    */
   linkedField?: FieldNames<DATA> | (string & {});
-} & GetField<DATA, NAME, VALUE>;
+
+  name: NAME | FieldNames<DATA>; // the `| FieldNames<DATA>` gives the autocomplete
+
+  // not happy about this, but here we are (see next comment)
+  value?: FieldValue<DATA, NAME, VALUE>;
+};
+// It would be much preferable to use the following intersection, which only
+// asks for the `value` property, when not being able to take it from DATA. That
+// would strengthen the types and throw a proper error.
+//
+// Unfortunately Ember seems to be incompatible with such a form of args
+// see: https://github.com/typed-ember/glint/issues/934
+//  & (NAME extends keyof DATA ? {} : { value?: FieldValue<DATA, NAME, VALUE> });
 
 /* Internal full config with the reference to the form */
 type FullFieldConfig<DATA extends UserData, NAME extends string, VALUE> = FieldConfig<
@@ -145,12 +128,14 @@ type FullFieldConfig<DATA extends UserData, NAME extends string, VALUE> = FieldC
  */
 export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
   /** Name of the field */
-  readonly name: GetName<DATA, NAME, VALUE>;
+  readonly name: NAME;
   /** Value of the field */
-  readonly value?: GetValue<DATA, NAME, VALUE>;
+  readonly value?: FieldValue<DATA, NAME, VALUE>;
   /** Shall it ignore native (HTML) validation? */
   readonly ignoreNativeValidation: boolean;
   readonly issues: Issue[];
+
+  readonly invalid: boolean;
 
   /** Whether this field has already been validated */
   readonly validated: boolean;
@@ -174,7 +159,7 @@ export interface FieldAPI<DATA extends UserData, NAME extends string, VALUE> {
    *
    * @param value the new value
    */
-  setValue(value: VALUE): void;
+  setValue(value: FieldValue<DATA, NAME, VALUE>): void;
 
   /**
    * Validate the field
@@ -206,27 +191,22 @@ const DEFAULT_CONFIG: Partial<FieldConfig<UserData, string, UserData>> = {
 
 export class Field<
   DATA extends UserData,
-  NAME extends string = keyof DATA & string,
+  NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue
 > implements FieldAPI<DATA, NAME, VALUE>
 {
   #config!: FieldConfig<DATA, NAME, VALUE>;
   #form: Form<DATA>;
-  // #value?: GetValue<DATA, NAME, VALUE>;
-  #value: Signal<GetValue<DATA, NAME, VALUE>>;
+  #value: Signal<FieldValue<DATA, NAME, VALUE>>;
   #issues: Signal<Issue[]>;
-  #element?: FieldElement;
+  #elements = new Set<FieldElement>();
   #validated: Signal<boolean>;
   #publisher = new Publisher<FieldEvents>();
-  #linkedField?: Field<
-    DATA,
-    keyof DATA & string,
-    keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
-  >;
+  #linkedField?: Field<DATA, NAME, VALUE>;
 
   constructor(config: FullFieldConfig<DATA, NAME, VALUE>) {
     this.#form = config.form;
-    this.#value = this.#form.makeSignal<VALUE>();
+    this.#value = this.#form.makeSignal<FieldValue<DATA, NAME, VALUE>>();
     this.#issues = this.#form.makeSignal<Issue[]>([]);
     this.#validated = this.#form.makeSignal<boolean>(false);
     this.updateConfig(config);
@@ -243,8 +223,8 @@ export class Field<
       ...conf
     } as FieldConfig<DATA, NAME, VALUE>;
 
-    if (config.value) {
-      this.#value.set(config.value);
+    if ('value' in config) {
+      this.#value.set(config.value as FieldValue<DATA, NAME, VALUE>);
     }
 
     if (element) {
@@ -263,9 +243,11 @@ export class Field<
   };
 
   dispose(): void {
-    if (this.#element) {
-      this.#unregisterEventListeners(this.#element);
+    for (const element of this.#elements) {
+      this.#unregisterEventListeners(element);
     }
+
+    this.#elements.clear();
 
     if (this.#linkedField) {
       this.#unlinkField(this.#linkedField);
@@ -273,19 +255,23 @@ export class Field<
   }
 
   registerElement(element: FieldElement): void {
-    if (this.#element) {
-      this.#unregisterEventListeners(this.#element);
+    if (!this.#elements.has(element)) {
+      this.#elements.add(element);
+      this.#registerEventListeners(element);
     }
+  }
 
-    this.#element = element;
-
-    this.#registerEventListeners(this.#element);
+  unregisterElement(element: FieldElement): void {
+    if (this.#elements.has(element)) {
+      this.#elements.delete(element);
+      this.#unregisterEventListeners(element);
+    }
   }
 
   #registerEventListeners(element: FieldElement) {
     for (const event of VALIDATION_EVENTS) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
-      element.addEventListener(event, this.handleValidation);
+      element.addEventListener(event, this.handleValidation, { passive: true });
     }
   }
 
@@ -309,7 +295,7 @@ export class Field<
       this.#unlinkField(this.#linkedField);
     }
 
-    const linkedField = this.#form.getField(name);
+    const linkedField = this.#form.getField(name) as Field<DATA, NAME, VALUE> | undefined;
 
     if (linkedField) {
       linkedField.subscribe('changed', this.handleLinkValidation);
@@ -317,13 +303,7 @@ export class Field<
     }
   }
 
-  #unlinkField(
-    field: Field<
-      DATA,
-      keyof DATA & string,
-      keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
-    >
-  ): void {
+  #unlinkField(field: Field<DATA, NAME, VALUE>): void {
     field.unsubscribe('changed', this.handleLinkValidation);
   }
 
@@ -335,15 +315,15 @@ export class Field<
     return this.#issues.get();
   }
 
-  get name(): GetName<DATA, NAME, VALUE> {
-    return this.#config.name;
+  get name(): NAME {
+    return this.#config.name as NAME;
   }
 
-  get value(): GetValue<DATA, NAME, VALUE> | undefined {
+  get value(): FieldValue<DATA, NAME, VALUE> | undefined {
     return this.#value.get();
   }
 
-  setValue = (value: VALUE): void => {
+  setValue = (value: FieldValue<DATA, NAME, VALUE>): void => {
     this.#value.set(value);
 
     this.#publisher.notify('changed');
@@ -353,6 +333,10 @@ export class Field<
 
   get validated(): boolean {
     return this.#validated.get();
+  }
+
+  get invalid(): boolean {
+    return this.issues.length > 0;
   }
 
   get ignoreNativeValidation(): boolean {
@@ -368,7 +352,7 @@ export class Field<
   handleValidation = async (event: Event): Promise<void> => {
     const validationEvent = this.#validated.get()
       ? this.#config.revalidateOn
-      : this.#config.revalidateOn;
+      : this.#config.validateOn;
 
     if (event.type === validationEvent) {
       const result = await this.validate();
@@ -381,9 +365,9 @@ export class Field<
     const { value } = this;
 
     const nativeValidation =
-      this.#element && !(this.ignoreNativeValidation || this.#form.ignoreNativeValidation)
-        ? transformValidationResponse(validateNativeField(this.#element))
-        : [];
+      this.ignoreNativeValidation || this.#form.ignoreNativeValidation
+        ? []
+        : validateNativeFields([...this.#elements]);
 
     const customValidation = isValidationSchema(this.#config.validate)
       ? // eslint-disable-next-line unicorn/no-await-expression-member

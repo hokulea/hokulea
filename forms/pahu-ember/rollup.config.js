@@ -39,7 +39,7 @@ export default {
     }),
 
     // Emit .d.ts declaration files
-    addon.declarations('declarations'),
+    // addon.declarations('declarations'),
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean()

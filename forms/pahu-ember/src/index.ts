@@ -3,45 +3,43 @@ import { cell } from 'ember-resources';
 
 import { createForm as upstreamCreateForm } from '@hokulea/pahu';
 
-import type { ModifierLike } from '@glint/template';
+import type { AttrValue } from '@glint/template';
 import type {
   FieldAPI as UpstreamFieldAPI,
   FieldConfig,
   FieldElement,
-  FieldNames,
   FormAPI as UpstreamFormAPI,
   FormConfig,
   SignalFactory,
   UserData
 } from '@hokulea/pahu';
+import type { FunctionBasedModifier } from 'ember-modifier';
 
 interface RegisterFormSignature {
   Element: HTMLFormElement;
+  Args: {
+    Positional: [];
+    Named: object;
+  };
 }
 
 interface RegisterFieldSignature {
   Element: FieldElement;
+  Args: {
+    Positional: [];
+    Named: object;
+  };
 }
 
-// `AttrValue` from Glint. We use this as "default" value type (over
-// `UserValue`) to not cause troubles for glint on unknown fields
-type AttrValue = string | number | boolean | null | undefined;
-
-type FieldAPI<DATA extends UserData, NAME extends string, VALUE> = {
+export type FieldAPI<DATA extends UserData, NAME extends string, VALUE> = {
   value: Exclude<VALUE, 'unknown'>;
-  registerField: ModifierLike<RegisterFieldSignature>;
+  registerField: FunctionBasedModifier<RegisterFieldSignature>;
 } & UpstreamFieldAPI<DATA, NAME, VALUE>;
 
-type FormAPI<DATA extends UserData = UserData> = {
-  registerForm: ModifierLike<RegisterFormSignature>;
+export type FormAPI<DATA extends UserData = UserData> = {
+  registerForm: FunctionBasedModifier<RegisterFormSignature>;
 
   createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue>(
-    config: FieldConfig<DATA, NAME, VALUE> & {
-      name: FieldNames<DATA>;
-    }
-  ): FieldAPI<DATA, NAME, VALUE>;
-  createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue>(
-    // eslint-disable-next-line @typescript-eslint/unified-signatures
     config: FieldConfig<DATA, NAME, VALUE>
   ): FieldAPI<DATA, NAME, VALUE>;
 } & UpstreamFormAPI<DATA>;

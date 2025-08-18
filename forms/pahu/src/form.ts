@@ -41,7 +41,7 @@ type FormValidator<DATA extends UserData> = FormValidateCallback<DATA> | Standar
 /**
  * Configuration for a Form
  */
-export type FormConfig<DATA extends UserData> = Readonly<{
+export type FormConfig<DATA extends UserData> = {
   /**
    * Register the `<form>` element
    */
@@ -91,7 +91,7 @@ export type FormConfig<DATA extends UserData> = Readonly<{
   subtle?: {
     signalFactory?: SignalFactory;
   };
-}>;
+};
 
 const DEFAULT_CONFIG: Partial<FormConfig<UserData>> = {
   validateOn: 'submit',
@@ -140,12 +140,6 @@ export interface FormAPI<DATA extends UserData> {
    * @param config The config for the field
    */
   createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
-    config: FieldConfig<DATA, NAME, VALUE> & {
-      name: FieldNames<DATA>;
-    }
-  ): FieldAPI<DATA, NAME, VALUE>;
-  createField<NAME extends string, VALUE = NAME extends keyof DATA ? DATA[NAME] : UserValue>(
-    // eslint-disable-next-line @typescript-eslint/unified-signatures
     config: FieldConfig<DATA, NAME, VALUE>
   ): FieldAPI<DATA, NAME, VALUE>;
 
@@ -176,6 +170,11 @@ export interface FormAPI<DATA extends UserData> {
    * Use `submit` and `invalidated` handlers
    */
   submit(): Promise<void>;
+
+  /**
+   * Reset the form
+   */
+  reset(): void;
 
   /** For advanced usage, mostly for framework integration */
   subtle: {
@@ -245,21 +244,21 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
 
   #registerEventListeners(element: HTMLFormElement) {
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    element.addEventListener('submit', this.handleSubmit);
+    element.addEventListener('submit', this.handleSubmit, false);
 
     for (const event of VALIDATION_EVENTS) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
-      element.addEventListener(event, this.handleValidation);
+      element.addEventListener(event, this.handleValidation, false);
     }
   }
 
   #unregisterEventListeners(element: HTMLFormElement) {
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    element.removeEventListener('submit', this.handleSubmit);
+    element.removeEventListener('submit', this.handleSubmit, false);
 
     for (const event of VALIDATION_EVENTS) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
-      element.removeEventListener(event, this.handleValidation);
+      element.removeEventListener(event, this.handleValidation, false);
     }
   }
 
@@ -291,6 +290,10 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
       this.#invalid.set(true);
       this.#config.validated?.('submit', validationResult);
     }
+  };
+
+  reset = (): void => {
+    this.#element?.reset();
   };
 
   // #region Fields
@@ -341,14 +344,14 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
   ):
     | Field<
         DATA,
-        keyof DATA & string,
+        FieldNames<DATA> | (string & {}),
         keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
       >
     | undefined => {
     if (this.#fields.has(name)) {
       return this.#fields.get(name) as Field<
         DATA,
-        keyof DATA & string,
+        FieldNames<DATA> | (string & {}),
         keyof DATA & string extends keyof DATA ? DATA[keyof DATA & string] : unknown
       >;
     }
@@ -467,39 +470,35 @@ export class Form<DATA extends UserData> implements FormAPI<DATA> {
     }
 
     return transformValidationResponse(issues);
-
-    // !this.ignoreNativeValidation && this.#element
-    // ? transformValidationResponse(validateNativeForm(this.#element))
-    // : [];
   }
 
   /**
    * Return the event type that will be listened on for dynamic validation (i.e. *before* submitting)
    */
-  get fieldValidationEvent(): ValidationMode | undefined {
+  get fieldValidationEvent(): ValidationMode {
     const { validateOn } = this.#config;
 
     return validateOn === 'submit'
       ? // no need for dynamic validation, as validation always happens on submit
-        undefined
-      : validateOn;
+        'off'
+      : (validateOn ?? 'off');
   }
 
   /**
    * Return the event type that will be listened on for dynamic *re*validation, i.e. updating the validation status of a field that has been previously marked as invalid
    */
-  get fieldRevalidationEvent(): ValidationMode | undefined {
+  get fieldRevalidationEvent(): ValidationMode {
     const { validateOn, revalidateOn } = this.#config;
 
     return revalidateOn === 'submit'
       ? // no need for dynamic validation, as validation always happens on submit
-        undefined
+        'off'
       : // when validation happens more frequently than revalidation, then we can ignore revalidation, because the validation handler will already cover us
         validateOn === 'input' ||
           (validateOn === 'change' && revalidateOn === 'focusout') ||
           validateOn === revalidateOn
-        ? undefined
-        : revalidateOn;
+        ? 'off'
+        : (revalidateOn ?? 'off');
   }
 }
 
@@ -508,37 +507,3 @@ export function createForm<DATA extends UserData = UserData>(
 ): FormAPI<DATA> {
   return new Form(config);
 }
-
-// some type tests below
-// uncomment for quick feedback - not all is testable with type tests (yet?)
-
-// const deepForm = createForm({
-//   data: {
-//     username: '',
-//     profile: { givenName: '', familyName: '' },
-//     emails: [
-//       { email: '', verified: true, primary: true },
-//       { email: '', verified: false, primary: false }
-//     ]
-//   }
-// });
-
-// deepForm.createField({ name: '' });
-
-// const form = form.createField({ givenName: '' });
-
-// const field = form.createField({ name: 'csie', value: 123 });
-// const f2 = form.createField({ name: 'givenName', value: 123 });
-
-// const f = form.createField({ name: 'oink', value: 123 });
-// const f3 = form.createField({
-//   name: 'oink2',
-//   value: '123',
-//   validate: ({ value }) => (value === 456 ? 'die alte hex' : undefined)
-// });
-
-// const email = form.createField({
-//   name: 'email',
-//   value: 'localhost@domain',
-//   validate: ({ value }) => (value.includes('@') ? undefined : 'Email must include an @ sign')
-// });

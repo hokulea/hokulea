@@ -548,8 +548,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       glimmer-scoped-css:
-        specifier: 0.7.0
-        version: 0.7.0
+        specifier: 0.8.1
+        version: 0.8.1
       loader.js:
         specifier: 4.7.0
         version: 4.7.0
@@ -6929,8 +6929,8 @@ packages:
     engines: {node: 18.* || 20.* || >= 22}
     hasBin: true
 
-  glimmer-scoped-css@0.7.0:
-    resolution: {integrity: sha512-NdCv5/KVsX0tidNKLRrYuRzR2A2x78lGBJz8NM4yBsgIw9bK9XBYiDw7J7wl0cWOh5xfLOEYRm2jDn+QpMLPMQ==}
+  glimmer-scoped-css@0.8.1:
+    resolution: {integrity: sha512-7n6kQr9+2yqMVWc1b04XlGQ1Eb4Ctq0FmPUVAeo/RhHU9De04zymEw4DI4fqZenLYF/AbnaDiLk9jrnv0kS/FA==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -19866,7 +19866,7 @@ snapshots:
       - bluebird
       - supports-color
 
-  glimmer-scoped-css@0.7.0:
+  glimmer-scoped-css@0.8.1:
     dependencies:
       '@embroider/addon-shim': 1.10.0
       js-string-escape: 1.0.1

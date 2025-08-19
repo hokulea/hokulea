@@ -48,7 +48,7 @@
     "rollup-plugin-css-only": "4.5.2",
     "rollup-plugin-delete": "2.2.0",
     "rollup-plugin-multi-input": "1.4.1",
-    "stylelint": "16.21.1"
+    "stylelint": "16.23.1"
   },
   "engines": {
     "node": "^20.11.0 || >=22"

@@ -75,7 +75,7 @@
     "ember-concurrency": "4.0.6",
     "ember-css-modules": "2.1.1",
     "ember-element-helper": "0.8.8",
-    "ember-link": "3.4.1",
+    "ember-link": "3.5.0",
     "ember-load-initializers": "2.1.2",
     "ember-modifier": "4.2.2",
     "ember-qunit": "^8.1.1",

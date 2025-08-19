@@ -52,7 +52,7 @@
     "eslint": "^9.31.0",
     "prettier": "^3.6.2",
     "style-dictionary": "5.0.0",
-    "stylelint": "16.21.1",
+    "stylelint": "16.23.1",
     "tsdown": "^0.12.9",
     "typescript": "5.9.2"
   },

@@ -53,6 +53,7 @@ export default class ListComposite extends Component {
         {{! template-lint-disable no-unnecessary-curly-parens }}
         <Form
           @data={{hash item=""}}
+          {{! @glint-ignore }}
           @submit={{(fn appendItem this.listItems)}}
           class="inline-form"
           as |f|
@@ -63,6 +64,7 @@ export default class ListComposite extends Component {
 
         <Form
           @data={{hash position=0}}
+          {{! @glint-ignore }}
           @submit={{(fn removeItem this.listItems)}}
           class="inline-form"
           as |f|

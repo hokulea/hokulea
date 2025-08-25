@@ -1,11 +1,11 @@
 import styles from '@hokulea/core/actions.module.css';
 
-import disabled from '../../modifiers/disabled.ts';
+import disabled from '../../-private/modifiers/disabled.ts';
 
 import type { TOC } from '@ember/component/template-only';
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
 
-export interface SubmitSignature {
+export interface ResetSignature {
   Element: HTMLButtonElement;
   Args: {
     intent?: Intent | Intents;
@@ -28,9 +28,9 @@ export interface SubmitSignature {
   };
 }
 
-const Submit: TOC<SubmitSignature> = <template>
+const Reset: TOC<ResetSignature> = <template>
   <button
-    type="submit"
+    type="reset"
     class={{styles.button}}
     data-intent={{if @intent @intent "action"}}
     data-importance={{if @importance @importance "supreme"}}
@@ -63,4 +63,4 @@ const Submit: TOC<SubmitSignature> = <template>
   </button>
 </template>;
 
-export default Submit;
+export default Reset;

@@ -84,3 +84,28 @@ fieldset.field {
     font-weight: 400;
   }
 }
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: .125em;
+  align-items: flex-start;
+
+  p {
+    display: flex;
+    gap: var(--spacing-container-4);
+  }
+
+  span[data-icon] {
+    color: var(--indicator-success-plain-text);
+
+    &[data-invalid] {
+      color: var(--indicator-error-plain-text);
+    }
+  }
+
+  span:not([data-icon]) {
+    font-size: var(--ls-1);
+    color: var(--typography-subtle);
+  }
+}

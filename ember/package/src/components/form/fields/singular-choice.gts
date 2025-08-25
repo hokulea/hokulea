@@ -5,19 +5,20 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import Radio from '../../../../components/radio.gts';
-import { eq } from '../../../helpers.ts';
+import { eq } from '../../../-private/helpers.ts';
+import Radio from '../../radio.gts';
 import Description from '../description.gts';
 import Label from '../label.gts';
 
-import type { RadioSignature } from '../../../../components/radio';
-import type { FormData, FormKey, UserData } from '../../';
+import type { RadioSignature } from '../../radio.gts';
 import type { BoundField, FieldArgs, FieldBlock } from '../field';
-import type { WithBoundArgs } from '@glint/template';
+import type { AttrValue, WithBoundArgs } from '@glint/template';
+import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
 
 export interface OptionSignature<
   DATA extends UserData,
-  KEY extends FormKey<FormData<DATA>> = FormKey<FormData<DATA>>
+  NAME extends string = FieldNames<DATA> | (string & {}),
+  VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue
 > {
   Element: RadioSignature['Element'];
   Args: {
@@ -32,7 +33,7 @@ export interface OptionSignature<
     disabled?: boolean;
 
     /** @internal */
-    field: FieldBlock<DATA, KEY>;
+    field: FieldBlock<DATA, NAME, VALUE>;
   };
   Blocks: {
     default: [];
@@ -41,10 +42,11 @@ export interface OptionSignature<
 
 class Option<
   DATA extends UserData,
-  KEY extends FormKey<FormData<DATA>> = FormKey<FormData<DATA>>
-> extends Component<OptionSignature<DATA, KEY>> {
+  NAME extends string = FieldNames<DATA> | (string & {}),
+  VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue
+> extends Component<OptionSignature<DATA, NAME, VALUE>> {
   select = () => {
-    this.args.field.setValue(this.args.value as DATA[KEY]);
+    this.args.field.setValue(this.args.value as FieldValue<DATA, NAME, VALUE>);
   };
 
   <template>
@@ -58,8 +60,7 @@ class Option<
             id={{id}}
             name={{@name}}
             value={{@value}}
-            {{@field.manageValidation}}
-            {{@field.captureEvents}}
+            {{@field.registerElement}}
             ...attributes
           />
         </span>
@@ -80,16 +81,17 @@ class Option<
 
 export interface SingularChoiceFieldSignature<
   DATA extends UserData,
-  KEY extends FormKey<FormData<DATA>> = FormKey<FormData<DATA>>
+  NAME extends string = FieldNames<DATA> | (string & {}),
+  VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue
 > {
-  Args: FieldArgs<DATA, KEY> & {
+  Args: FieldArgs<DATA, NAME, VALUE> & {
     disabled?: boolean;
-    Field: BoundField<DATA, KEY>;
+    Field: BoundField<DATA, NAME, VALUE>;
   };
   Blocks: {
     default: [
       {
-        Option: WithBoundArgs<typeof Option<DATA, KEY>, 'field' | 'name'>;
+        Option: WithBoundArgs<typeof Option<DATA, NAME, VALUE>, 'field' | 'name'>;
       }
     ];
   };
@@ -97,10 +99,11 @@ export interface SingularChoiceFieldSignature<
 
 export default class SingularChoiceField<
   DATA extends UserData,
-  KEY extends FormKey<FormData<DATA>> = FormKey<FormData<DATA>>
-> extends Component<SingularChoiceFieldSignature<DATA, KEY>> {
+  NAME extends string = FieldNames<DATA> | (string & {}),
+  VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue
+> extends Component<SingularChoiceFieldSignature<DATA, NAME, VALUE>> {
   Field = this.args.Field;
-  Option = Option<DATA, KEY>;
+  Option = Option<DATA, NAME, VALUE>;
 
   <template>
     <this.Field
@@ -109,7 +112,12 @@ export default class SingularChoiceField<
       @name={{@name}}
       @label={{@label}}
       @description={{@description}}
+      @value={{@value}}
+      @ignoreNativeValidation={{@ignoreNativeValidation}}
+      @validateOn={{@validateOn}}
+      @revalidateOn={{@revalidateOn}}
       @validate={{@validate}}
+      @validated={{@validated}}
       as |f|
     >
       <div class={{styles.choices}} data-test-choices>

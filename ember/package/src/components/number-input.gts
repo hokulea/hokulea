@@ -20,8 +20,8 @@ const NumberInput: TOC<NumberInputSignature> = <template>
     value={{@value}}
     disabled={{@disabled}}
     data-test-input
+    {{on "input" (pick "target.value" (pickAsNumber @update)) capture=true}}
     ...attributes
-    {{on "input" (pick "target.value" (pickAsNumber @update))}}
   />
 </template>;
 

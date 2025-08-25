@@ -21,6 +21,12 @@ export class FieldError extends PageObject<HTMLDivElement> {
   }
 }
 
+export class FieldRule extends PageObject<HTMLParagraphElement> {
+  get invalid() {
+    return Boolean(this.element?.getAttribute('data-test-rule-invalid'));
+  }
+}
+
 export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetElement> {
   static SELECTOR = '[data-test-field]';
 
@@ -45,6 +51,7 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
 
   $choices = sel(ChoicesPageObject.SELECTOR, ChoicesPageObject);
   $errors = sel('[data-test-error]', FieldError);
+  $rules = sel('[data-test-rule]', FieldRule);
 
   get $control():
     | InputPageObject

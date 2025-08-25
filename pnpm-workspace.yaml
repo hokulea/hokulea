@@ -1,7 +1,8 @@
 packages:
-  - 'configs/*'
-  - 'foundation/*'
-  - 'plugins/*'
-  - 'explorer'
-  - 'ember/*'
-  - 'themes/*'
+  - configs/*
+  - foundation/*
+  - plugins/*
+  - explorer
+  - ember/*
+  - forms/*
+  - themes/*

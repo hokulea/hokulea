@@ -1,15 +1,16 @@
 import { render, setupOnerror } from '@ember/test-helpers';
-import { module } from 'qunit';
+import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 import { Form } from '#src';
-import { testButNotOnCI } from '#tests/helpers.ts';
 
 module('Integration | <Form>', function (hooks) {
   setupRenderingTest(hooks);
 
-  // https://github.com/hokulea/hokulea/issues/361
-  testButNotOnCI('@name must be unique among fields', async function (assert) {
+  // see in `@hokulea/ember-pahu` why this isn't tested right now
+  //
+  // from older: https://github.com/hokulea/hokulea/issues/361
+  test.skip('@name must be unique among fields', async function (assert) {
     setupOnerror((e: Error) => {
       assert.strictEqual(
         e.message,

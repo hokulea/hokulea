@@ -3,11 +3,18 @@ import { tracked } from '@glimmer/tracking';
 
 import RouteTemplate from 'ember-route-template';
 
-import { Button, Form, Page, Popover, popover, Section } from '#src';
+import { Button, Form, type FormValidationHandler, Page, Popover, popover, Section } from '#src';
 
 export class ActionsRoute extends Component {
   @tracked data = {
     position: 'top-start'
+  };
+
+  changePosition: FormValidationHandler<typeof this.data> = ({ data }) => {
+    this.data = data;
+
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   };
 
   <template>
@@ -16,7 +23,7 @@ export class ActionsRoute extends Component {
         <div class="cols">
           <div class="popover">
             {{#let (popover position=this.data.position) as |p|}}
-              <Button {{p.trigger}}>Hello there</Button>
+              <Button {{p.trigger}}>Hello there {{this.data.position}}</Button>
 
               <Popover {{p.target}}>
                 Obi<br />
@@ -25,7 +32,7 @@ export class ActionsRoute extends Component {
               </Popover>
             {{/let}}
           </div>
-          <Form @data={{this.data}} @dataMode="mutable" as |f|>
+          <Form @data={{this.data}} @validateOn="input" @validate={{this.changePosition}} as |f|>
             <f.SingularChoice @name="position" @label="Position" as |c|>
               <c.Option @value="top-start" @label="top-start" />
               <c.Option @value="top" @label="top" />

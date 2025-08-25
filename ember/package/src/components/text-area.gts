@@ -18,8 +18,8 @@ const TextArea: TOC<TextAreaSignature> = <template>
     type="text"
     disabled={{@disabled}}
     data-test-textarea
+    {{on "input" (pick "target.value" @update) capture=true}}
     ...attributes
-    {{on "input" (pick "target.value" @update)}}
   >{{@value}}</textarea>
 </template>;
 

@@ -1,11 +1,13 @@
 import { action } from 'storybook/actions';
 
+import { parseOptionalBooleanArg } from '../../../-private/stories';
+
 export interface FieldArgs {
   label: string;
   description: string;
   placeholder: string;
-  disabled?: boolean | string;
-  required?: boolean | string;
+  disabled: boolean | string;
+  required: boolean | string;
   submit: (data: object) => void;
 }
 
@@ -39,10 +41,8 @@ export const argTypesWithPlaceholder = {
 export function parseArgs(args: FieldArgs): FieldArgs {
   return {
     ...args,
-    disabled:
-      typeof args.disabled === 'string' ? (JSON.parse(args.disabled) as boolean) : args.disabled,
-    required:
-      typeof args.required === 'string' ? (JSON.parse(args.required) as boolean) : args.disabled,
+    disabled: parseOptionalBooleanArg(args.disabled) ?? false,
+    required: parseOptionalBooleanArg(args.required) ?? false,
     submit: (data) => {
       if (data instanceof Event) {
         return;

@@ -13,6 +13,7 @@ export default RouteTemplate(
       <:content>
         <Page @title="Content Area" @description="a second explanation">
           A subpage
+
         </Page>
       </:content>
     </Page>

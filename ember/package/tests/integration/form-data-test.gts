@@ -158,17 +158,18 @@ module('Integration | <Form> | Data', function (hooks) {
     });
 
     test('form controls keep dirty state when updating data properties', async function (assert) {
-      class DummyData {
-        @tracked givenName = 'Tony';
-
-        @tracked familyName = 'Ward';
+      class Context {
+        @tracked data = {
+          givenName: 'Tony',
+          familyName: 'Ward'
+        };
       }
 
-      const data = new DummyData();
+      const context = new Context();
 
       await render(
         <template>
-          <Form @data={{data}} as |form|>
+          <Form @data={{context.data}} as |form|>
             <form.Text @name="givenName" @label="Given Name" />
             <form.Text @name="familyName" @label="Family Name" />
           </Form>
@@ -182,8 +183,10 @@ module('Integration | <Form> | Data', function (hooks) {
 
       await fillIn(form.field('givenName').$control, 'Palpatine');
 
-      data.givenName = 'Luke';
-      data.familyName = 'Skywalker';
+      context.data = {
+        givenName: 'Luke',
+        familyName: 'Skywalker'
+      };
 
       await rerender();
 
@@ -360,53 +363,6 @@ module('Integration | <Form> | Data', function (hooks) {
       assert.deepEqual(data, { givenName: 'Tony' }, 'data is not mutated');
 
       assert.dom('input[data-test-given-name]').hasValue('Nicole');
-    });
-  });
-
-  module('@dataMode="mutable"', function () {
-    test('mutates passed @data when form fields are updated', async function (assert) {
-      const data = { givenName: 'Tony', familyName: 'Ward' };
-
-      await render(
-        <template>
-          <Form @data={{data}} @dataMode="mutable" as |form|>
-            <form.Text @name="givenName" @label="Given Name" />
-            <form.Text @name="familyName" @label="Family Name" />
-          </Form>
-        </template>
-      );
-
-      const form = new FormPageObject();
-
-      await fillIn(form.field('givenName').$control, 'Luke');
-      assert.dom(form.field('givenName').$control).hasValue('Luke');
-      assert.strictEqual(data.givenName, 'Luke', 'data object is mutated after entering data');
-    });
-
-    test('@submit is called with same instance of @data', async function (assert) {
-      const data = { givenName: 'Tony', familyName: 'Ward' };
-      const submitHandler = sinon.spy();
-
-      await render(
-        <template>
-          <Form @data={{data}} @dataMode="mutable" @submit={{submitHandler}} as |form|>
-            <form.Text @name="givenName" @label="Given Name" />
-            <form.Text @name="familyName" @label="Family Name" />
-          </Form>
-        </template>
-      );
-
-      const form = new FormPageObject();
-
-      await fillIn(form.field('givenName').$control, 'Luke');
-
-      await form.submit();
-
-      assert.strictEqual(
-        submitHandler.firstCall.firstArg,
-        data,
-        '@submit is called with same instance of @data, not a copy'
-      );
     });
   });
 });

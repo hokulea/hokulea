@@ -16,6 +16,12 @@ export default [
       '@typescript-eslint/no-unsafe-member-access': 'off'
     }
   },
+  {
+    files: ['tests/**/*-test.gts'],
+    rules: {
+      'unicorn/prefer-dom-node-dataset': 'off'
+    }
+  },
   ...storybook.configs['flat/recommended'],
   ...storybook.configs['flat/csf']
 ];

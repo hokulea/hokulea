@@ -268,8 +268,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))
       ember-concurrency:
-        specifier: 4.0.6
-        version: 4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
+        specifier: 5.1.0
+        version: 5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
       ember-element-helper:
         specifier: ^0.8.8
         version: 0.8.8
@@ -359,7 +359,7 @@ importers:
         version: link:../../foundation/core
       '@hokulea/ember':
         specifier: workspace:*
-        version: file:ember/package(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-command@2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)))(ember-concurrency@4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))(ember-modifier@4.2.2(@babel/core@7.28.3))(fractal-page-object@1.0.0)
+        version: file:ember/package(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-command@2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)))(ember-concurrency@5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))(ember-modifier@4.2.2(@babel/core@7.28.3))(fractal-page-object@1.0.0)
       '@hokulea/theme-moana':
         specifier: workspace:*
         version: link:../../themes/moana
@@ -485,8 +485,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))
       ember-concurrency:
-        specifier: 4.0.6
-        version: 4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
+        specifier: 5.1.0
+        version: 5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
       ember-disable-prototype-extensions:
         specifier: 1.1.3
         version: 1.1.3
@@ -732,8 +732,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))
       ember-concurrency:
-        specifier: 4.0.6
-        version: 4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
+        specifier: 5.1.0
+        version: 5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
       ember-css-modules:
         specifier: 2.1.1
         version: 2.1.1
@@ -2622,7 +2622,7 @@ packages:
     peerDependencies:
       '@ember/test-helpers': ^5.0.0
       ember-command: ^2.0.2
-      ember-concurrency: ^4.0.2
+      ember-concurrency: ^5.0.0
       ember-element-helper: ^0.8.5
       ember-link: ^3.4.1
       ember-modifier: ^4.2.0
@@ -5871,8 +5871,8 @@ packages:
     resolution: {integrity: sha512-BtkjulweiXo9c3yVWrtexw2dTmBrvavD/xixNC6TKOBdrixUwU+6nuOO9dufDWsMxoid7MvtmDpzc9+mE8PdaA==}
     engines: {node: 10.* || >= 12.*}
 
-  ember-concurrency@4.0.6:
-    resolution: {integrity: sha512-Ikwl2YwXVe8aBwrT1deWTcUVxVu6KxS1qeU1ks3EML1Q/nxwKgxCkGqTJavxczawO8H/SIW45dV4r7z5Yqd2Xg==}
+  ember-concurrency@5.1.0:
+    resolution: {integrity: sha512-cnudfQnW7soEN98uEwGgfmmMM5PP8L3pefpQ81FewAtTFZhYyYKyJsMtkk8R/7AHCbcuX5cvY44yndHVF6Vshw==}
     engines: {node: 16.* || >= 18}
     peerDependencies:
       '@glint/template': '>= 1.0.0'
@@ -13880,7 +13880,7 @@ snapshots:
 
   '@handlebars/parser@2.0.0': {}
 
-  '@hokulea/ember@file:ember/package(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-command@2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)))(ember-concurrency@4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))(ember-modifier@4.2.2(@babel/core@7.28.3))(fractal-page-object@1.0.0)':
+  '@hokulea/ember@file:ember/package(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-command@2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)))(ember-concurrency@5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))(ember-modifier@4.2.2(@babel/core@7.28.3))(fractal-page-object@1.0.0)':
     dependencies:
       '@embroider/addon-shim': 1.10.0
       '@floating-ui/dom': 1.7.2
@@ -13889,7 +13889,7 @@ snapshots:
       ember-aria-voyager: 0.2.4(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))
       ember-async-data: 2.0.1(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
       ember-command: 2.0.7(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))
-      ember-concurrency: 4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
+      ember-concurrency: 5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
       ember-element-helper: 0.8.8
       ember-link: 3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)
       ember-modifier: 4.2.2(@babel/core@7.28.3)
@@ -18209,7 +18209,7 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-concurrency@4.0.6(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2):
+  ember-concurrency@5.1.0(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2):
     dependencies:
       '@babel/helper-module-imports': 7.27.1(supports-color@8.1.1)
       '@babel/helper-plugin-utils': 7.27.1

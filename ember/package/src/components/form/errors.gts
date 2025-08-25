@@ -2,7 +2,7 @@ import styles from '@hokulea/core/forms.module.css';
 
 import type { TOC } from '@ember/component/template-only';
 // import Icon from '../../../components/icon';
-import type { Issue } from '@hokulea/pahu';
+import type { Issue } from '@hokulea/ember-pahu';
 
 export interface ErrorsSignature {
   Element: HTMLDivElement;
@@ -33,7 +33,11 @@ const Errors: TOC<ErrorsSignature> = <template>
       <div>
         {{#each @errors as |e|}}
           {{#if e.message}}
-            <p data-test-error data-test-error-type="{{e.type}}">{{e.message}}</p>
+            <p
+              data-test-error
+              data-test-error-type="{{e.type}}"
+              data-test-error-value="{{e.value}}"
+            >{{e.message}}</p>
           {{/if}}
         {{/each}}
       </div>

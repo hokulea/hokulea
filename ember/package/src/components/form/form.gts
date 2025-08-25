@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { hash } from '@ember/helper';
 
 import styles from '@hokulea/core/forms.module.css';
-import { createForm, type FormAPI } from '@hokulea/pahu-ember';
+import { createForm } from '@hokulea/ember-pahu';
 
 import Field from './field.gts';
 import CheckboxField from './fields/checkbox.gts';
@@ -24,7 +24,7 @@ import Submit from './submit.gts';
 
 import type { BoundField } from './field.gts';
 import type { WithBoundArgs } from '@glint/template';
-import type { FormConfig, UserData } from '@hokulea/pahu';
+import type { FormAPI, FormConfig, UserData } from '@hokulea/ember-pahu';
 
 export interface FormBuilder<DATA extends UserData> {
   Checkbox: WithBoundArgs<typeof CheckboxField<DATA>, 'Field'>;
@@ -94,28 +94,20 @@ export default class Form<DATA extends UserData> extends Component<FormSignature
   TextAreaField = TextAreaField<DATA>;
   TextField = TextField<DATA>;
 
-  createForm = (): FormAPI<DATA> => {
-    const config: FormConfig<DATA> = {
-      data: this.args.data,
-      ignoreNativeValidation: this.args.ignoreNativeValidation,
-      validateOn: this.args.validateOn,
-      revalidateOn: this.args.revalidateOn,
-      submit: this.args.submit,
-      validate: this.args.validate,
-      validated: this.args.validated
-    };
-
-    const filteredConfig = Object.fromEntries(
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      Object.entries(config).filter(([_, v]) => v !== undefined)
-    ) as FormConfig<DATA>;
-
-    return createForm<DATA>(filteredConfig);
-  };
-
   <template>
-    {{#let (this.createForm) as |f|}}
-      <form novalidate class={{styles.form}} data-test-form ...attributes {{f.registerForm}}>
+    {{#let
+      (createForm
+        data=@data
+        ignoreNativeValidation=@ignoreNativeValidation
+        validateOn=@validateOn
+        revalidateOn=@revalidateOn
+        submit=@submit
+        validate=@validate
+        validated=@validated
+      )
+      as |f|
+    }}
+      <form novalidate class={{styles.form}} data-test-form ...attributes {{f.registerElement}}>
         {{#let (component this.Field form=f) as |WiredField|}}
           {{yield
             (hash

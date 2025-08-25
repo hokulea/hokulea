@@ -4,7 +4,7 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import sinon from 'sinon';
 
-import { Form } from '#src';
+import { type FieldValidationHandler, Form, type FormValidationHandler } from '#src';
 import { FormPageObject } from '#test-support';
 
 import type { RenderingTestContext } from '@ember/test-helpers';
@@ -59,7 +59,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await render(
       <template>
-        <Form @data={{data}} @invalidated={{invalidHandler}} as |form|>
+        <Form @data={{data}} @validated={{invalidHandler}} as |form|>
           <form.Text @name="givenName" @label="Given Name" required />
         </Form>
       </template>
@@ -69,7 +69,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     await form.submit();
 
-    assert.true(invalidHandler.calledOnce, '@invalidated was called when required field in empty');
+    assert.true(invalidHandler.calledOnce, '@validated was called when required field in empty');
   });
 
   test('@submit is called when validation passes', async function (assert) {
@@ -193,28 +193,25 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
   test('native validation errors are merged with custom validation errors', async function (assert) {
     const data = { givenName: 'foo123', familyName: 'Smith' };
-    const validateForm = ({ givenName }: { givenName: string }) =>
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    const validateForm: FormValidationHandler<typeof data> = ({ data }) =>
       // eslint-disable-next-line unicorn/no-negated-condition
-      givenName.charAt(0).toUpperCase() !== givenName.charAt(0)
+      data.givenName.charAt(0).toUpperCase() !== data.givenName.charAt(0)
         ? {
-            givenName: [
-              {
-                type: 'uppercase',
-                value: givenName,
-                message: 'Given name must be upper case!'
-              }
-            ]
+            path: ['givenName'],
+            type: 'uppercase',
+            value: data.givenName,
+            message: 'Given name must be upper case!'
           }
         : undefined;
-    const validateField = (givenName: string) =>
-      givenName.toLowerCase().startsWith('foo')
-        ? [
-            {
-              type: 'notFoo',
-              value: givenName,
-              message: 'Foo is an invalid given name!'
-            }
-          ]
+
+    const validateField: FieldValidationHandler<typeof data, 'givenName'> = ({ value }) =>
+      value?.toLowerCase().startsWith('foo')
+        ? {
+            type: 'notFoo',
+            value,
+            message: 'Foo is an invalid given name!'
+          }
         : undefined;
 
     await render(
@@ -223,6 +220,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
           <form.Text
             @name="givenName"
             @label="Given Name"
+            {{! @glint-ignore }}
             @validate={{validateField}}
             required
             pattern="^[A-Za-z]+$"
@@ -238,13 +236,13 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
     assert.strictEqual(form.field('givenName').$errors.length, 3);
 
-    assert.strictEqual(form.field('givenName').$errors[0]?.type, 'native');
+    assert.strictEqual(form.field('givenName').$errors[0]?.type, 'uppercase');
     assert.strictEqual(form.field('givenName').$errors[0]?.value, 'foo123');
-    assert.dom(form.field('givenName').$errors[0]).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
+    assert.dom(form.field('givenName').$errors[0]).hasText('Given name must be upper case!');
 
-    assert.strictEqual(form.field('givenName').$errors[1]?.type, 'uppercase');
+    assert.strictEqual(form.field('givenName').$errors[1]?.type, 'native');
     assert.strictEqual(form.field('givenName').$errors[1]?.value, 'foo123');
-    assert.dom(form.field('givenName').$errors[1]).hasText('Given name must be upper case!');
+    assert.dom(form.field('givenName').$errors[1]).hasAnyText(); // validation error message is browser and locale dependant, so testing against actual message would be very brittle.
 
     assert.strictEqual(form.field('givenName').$errors[2]?.type, 'notFoo');
     assert.strictEqual(form.field('givenName').$errors[2]?.value, 'foo123');
@@ -255,27 +253,26 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
   test('no validation errors render when form data is valid', async function (assert) {
     const data = { givenName: 'John', familyName: 'Smith' };
-    const validateForm = ({ givenName }: { givenName: string }) =>
-      givenName.charAt(0).toUpperCase() === givenName.charAt(0)
-        ? undefined
-        : {
-            givenName: [
-              {
-                type: 'uppercase',
-                value: givenName,
-                message: 'First name must be upper case!'
-              }
-            ]
-          };
-    const validateField = (givenName: string) =>
-      givenName.toLowerCase().startsWith('foo')
-        ? [
-            {
-              type: 'notFoo',
-              value: givenName,
-              message: 'Foo is an invalid first name!'
-            }
-          ]
+
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    const validateForm: FormValidationHandler<typeof data> = ({ data }) =>
+      // eslint-disable-next-line unicorn/no-negated-condition
+      data.givenName.charAt(0).toUpperCase() !== data.givenName.charAt(0)
+        ? {
+            path: ['givenName'],
+            type: 'uppercase',
+            value: data.givenName,
+            message: 'Given name must be upper case!'
+          }
+        : undefined;
+
+    const validateField: FieldValidationHandler<typeof data, 'givenName'> = ({ value }) =>
+      value?.toLowerCase().startsWith('foo')
+        ? {
+            type: 'notFoo',
+            value,
+            message: 'Foo is an invalid given name!'
+          }
         : undefined;
 
     await render(
@@ -284,6 +281,7 @@ module('Integration | <Form> | Native validation', function (hooks) {
           <form.Text
             @name="givenName"
             @label="Given Name"
+            {{! @glint-ignore }}
             @validate={{validateField}}
             required
             pattern="^[A-Za-z]+$"
@@ -303,18 +301,18 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
   test('opt out of native validation using @ignoreNativeValidation', async function (assert) {
     const data: TestFormData = { givenName: 'john' };
-    const validateForm = ({ givenName }: TestFormData) =>
-      givenName?.charAt(0).toUpperCase() === givenName?.charAt(0)
-        ? undefined
-        : {
-            givenName: [
-              {
-                type: 'uppercase',
-                value: givenName,
-                message: 'Given name must be upper case!'
-              }
-            ]
-          };
+
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    const validateForm: FormValidationHandler<typeof data> = ({ data }) =>
+      // eslint-disable-next-line unicorn/no-negated-condition
+      data.givenName?.charAt(0).toUpperCase() !== data.givenName?.charAt(0)
+        ? {
+            path: ['givenName'],
+            type: 'uppercase',
+            value: data.givenName,
+            message: 'Given name must be upper case!'
+          }
+        : undefined;
 
     await render(
       <template>
@@ -343,8 +341,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @validateOn="focusout" as |form|>
-              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+            <Form @data={{data}} as |form|>
+              <form.Text
+                @name="givenName"
+                @label="Given Name"
+                @validateOn="focusout"
+                required
+                pattern="^[A-Za-z]+$"
+              />
               <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>
@@ -385,8 +389,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @validateOn="change" as |form|>
-              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+            <Form @data={{data}} as |form|>
+              <form.Text
+                @name="givenName"
+                @label="Given Name"
+                @validateOn="change"
+                required
+                pattern="^[A-Za-z]+$"
+              />
               <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>
@@ -420,8 +430,14 @@ module('Integration | <Form> | Native validation', function (hooks) {
 
         await render(
           <template>
-            <Form @data={{data}} @revalidateOn="focusout" as |form|>
-              <form.Text @name="givenName" @label="Given Name" required pattern="^[A-Za-z]+$" />
+            <Form @data={{data}} as |form|>
+              <form.Text
+                @name="givenName"
+                @label="Given Name"
+                @revalidateOn="focusout"
+                required
+                pattern="^[A-Za-z]+$"
+              />
               <form.Text @name="familyName" @label="Family Name" required pattern="^[A-Za-z]+$" />
             </Form>
           </template>

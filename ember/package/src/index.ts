@@ -25,11 +25,11 @@ export { default as TextInput } from './components/text-input.gts';
 export type {
   FieldValidationHandler,
   FormBuilder,
-  FormValidateHandler,
+  FormValidationHandler,
   ValidatedHandler,
   ValidationResult
-} from './components/form/index.gts';
-export { Form } from './components/form/index.gts';
+} from './components/form/index.ts';
+export { Form } from './components/form/index.ts';
 
 // navigation
 export { default as AppHeader } from './components/app-header.gts';

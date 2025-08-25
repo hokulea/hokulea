@@ -16,8 +16,15 @@ import Rules from './rules.gts';
 
 import type { LabelSignature } from './label.gts';
 import type { AttrValue, ComponentLike, WithBoundArgs } from '@glint/template';
-import type { FieldConfig, FieldNames, FieldValue, Issue, UserData } from '@hokulea/pahu';
-import type { FieldAPI, FormAPI } from '@hokulea/pahu-ember';
+import type {
+  FieldAPI,
+  FieldConfig,
+  FieldNames,
+  FieldValue,
+  FormAPI,
+  Issue,
+  UserData
+} from '@hokulea/ember-pahu';
 
 export type BoundField<
   DATA extends UserData,
@@ -87,7 +94,7 @@ export interface FieldBlock<
    */
   invalid: boolean;
 
-  registerElement: FieldAPI<DATA, NAME, VALUE>['registerField'];
+  registerElement: FieldAPI<DATA, NAME, VALUE>['registerElement'];
 
   showErrors: boolean;
 
@@ -165,18 +172,7 @@ export default class Field<
     return this.rulesUsed ? 'input' : this.args.revalidateOn;
   }
 
-  createField = (): FieldAPI<DATA, NAME, VALUE> => {
-    const config = {
-      name: this.args.name as NAME | FieldNames<DATA>,
-      ignoreNativeValidation: this.args.ignoreNativeValidation,
-      linkedField: this.args.linkedField,
-      validateOn: this.validateOn,
-      revalidateOn: this.revalidateOn,
-      validate: this.args.validate,
-      validated: this.args.validated,
-      ...('value' in this.args ? { value: this.args.value as FieldValue<DATA, NAME, VALUE> } : {})
-    } as FieldConfig<DATA, NAME, VALUE>;
-
+  createOrUpdateField = (config: FieldConfig<DATA, NAME, VALUE>): FieldAPI<DATA, NAME, VALUE> => {
     const filteredConfig = Object.fromEntries(
       Object.entries(config).filter(([_, v]) => v !== undefined)
     ) as FieldConfig<DATA, NAME, VALUE>;
@@ -210,7 +206,16 @@ export default class Field<
       (uniqueId)
       (uniqueId)
       (if @element @element (element "div"))
-      (this.createField)
+      (this.createOrUpdateField
+        name=@name
+        ignoreNativeValidation=@ignoreNativeValidation
+        linkedField=@linkedField
+        validateOn=this.validateOn
+        revalidateOn=this.revalidateOn
+        validate=@validate
+        validated=@validated
+        value=@value
+      )
       (component Rules useRules=this.useRules)
       as |fieldId errorId Element field WiredRules|
     }}
@@ -232,7 +237,7 @@ export default class Field<
             id=fieldId
             errorId=errorId
             invalid=field.invalid
-            registerElement=field.registerField
+            registerElement=field.registerElement
             issues=field.issues
             validate=field.validate
             showErrors=this.showErrors

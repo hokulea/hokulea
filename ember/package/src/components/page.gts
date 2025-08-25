@@ -109,8 +109,11 @@ class Page extends Component<PageSignature> {
         {{/if}}
 
         <div class="{{styles.pageContent}} {{styles.flow}}" part="content">
-          {{yield to="content"}}
-          {{yield}}
+          {{#if (has-block "content")}}
+            {{yield to="content"}}
+          {{else if (has-block)}}
+            {{yield}}
+          {{/if}}
         </div>
       </Element>
     {{/let}}

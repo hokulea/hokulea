@@ -6,19 +6,17 @@ import Icon from '../icon.gts';
 
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
-import type { Issue } from '@hokulea/pahu';
+import type { Issue } from '@hokulea/ember-pahu';
 
 const ErrorIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256"
-height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M165.66
-101.66L139.31 128l26.35 26.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8
-0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128
-116.69l26.34-26.35a8 8 0 0 1 11.32 11.32M232 128A104 104 0 1 1 128 24a104.11
-104.11 0 0 1 104 104m-16 0a88 88 0 1 0-88 88a88.1 88.1 0 0 0 88-88"/></svg>`;
+height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M208.49
+191.51a12 12 0 0 1-17 17L128 145l-63.51 63.49a12 12 0 0 1-17-17L111 128L47.51
+64.49a12 12 0 0 1 17-17L128 111l63.51-63.52a12 12 0 0 1 17 17L145
+128Z"/></svg>`;
 const ValidIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256"
-height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66 98.34a8
-8 0 0 1 0 11.32l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112
-148.69l50.34-50.35a8 8 0 0 1 11.32 0M232 128A104 104 0 1 1 128 24a104.11 104.11
-0 0 1 104 104m-16 0a88 88 0 1 0-88 88a88.1 88.1 0 0 0 88-88"/></svg>`;
+height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m232.49
+80.49l-128 128a12 12 0 0 1-17 0l-56-56a12 12 0 1 1 17-17L96 183L215.51 63.51a12
+12 0 0 1 17 17Z"/></svg>`;
 
 interface RuleSignature {
   Args: {
@@ -39,7 +37,7 @@ class Rule extends Component<RuleSignature> {
   };
 
   <template>
-    <p>
+    <p data-test-rule data-test-rule-invalid={{(this.isInvalid)}}>
       <Icon
         @icon={{if (this.isInvalid) ErrorIcon ValidIcon}}
         data-invalid={{(this.isInvalid)}}

@@ -14,7 +14,7 @@ import { manageValidation } from '../manage-validation.ts';
 
 import type { BoundField, FieldArgs, FieldBlock, MultipleFieldBlock } from '../field';
 import type { AttrValue, WithBoundArgs } from '@glint/template';
-import type { FieldNames, FieldValue, UserData } from '@hokulea/pahu';
+import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
 import type { RadioSignature } from '#src/components/radio.gts';
 
 export interface OptionSignature<

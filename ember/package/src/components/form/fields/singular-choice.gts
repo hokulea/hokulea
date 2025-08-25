@@ -13,7 +13,7 @@ import Label from '../label.gts';
 
 import type { BoundField, FieldArgs, FieldBlock } from '../field';
 import type { AttrValue, WithBoundArgs } from '@glint/template';
-import type { FieldNames, FieldValue, UserData } from '@hokulea/pahu';
+import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
 import type { RadioSignature } from '#src/components/radio.gts';
 
 export interface OptionSignature<

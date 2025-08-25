@@ -3,7 +3,7 @@ import * as v from 'valibot';
 
 import { Form, Page } from '#src';
 
-import type { FieldValidationHandler } from '@hokulea/pahu';
+import type { FieldValidationHandler } from '#src';
 
 const passwordSchema = v.pipe(
   v.optional(v.string(), ''),

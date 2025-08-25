@@ -64,6 +64,7 @@
   "dependencies": {
     "@embroider/addon-shim": "^1.10.0",
     "@floating-ui/dom": "^1.7.1",
+    "@hokulea/core": "workspace:*",
     "@hokulea/ember-pahu": "^0.0.1",
     "decorator-transforms": "^2.3.0",
     "ember-aria-voyager": "^0.2.4",

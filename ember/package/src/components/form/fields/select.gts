@@ -4,7 +4,7 @@ import { asString } from '../../../-private/helpers.ts';
 import Select from '../../select.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { SelectSignature, Value } from '../../components/select.gts';
+import type { SelectSignature, Value } from '../../select.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';

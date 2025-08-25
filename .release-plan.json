@@ -1,37 +1,41 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.7.1",
-      "newVersion": "0.7.2",
+      "impact": "minor",
+      "oldVersion": "0.7.2",
+      "newVersion": "0.8.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "oldVersion": "0.4.0"
-    },
-    "@hokulea/tokens": {
-      "impact": "patch",
-      "oldVersion": "0.1.0",
-      "newVersion": "0.1.1",
+      "impact": "minor",
+      "oldVersion": "0.4.0",
+      "newVersion": "0.5.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
-      "pkgJSONPath": "./foundation/tokens/package.json"
+      "pkgJSONPath": "./foundation/core/package.json"
+    },
+    "@hokulea/tokens": {
+      "oldVersion": "0.1.1"
     },
     "@hokulea/theme-moana": {
       "oldVersion": "0.1.0"
     }
   },
-  "description": "## Release (2025-08-08)\n\n* @hokulea/ember 0.7.2 (patch)\n* @hokulea/tokens 0.1.1 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`\n  * [#380](https://github.com/hokulea/hokulea/pull/380) Fix AppHeader icons ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/tokens`\n  * [#378](https://github.com/hokulea/hokulea/pull/378) Fix declarations ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-08-25)\n\n* @hokulea/ember 0.8.0 (minor)\n* @hokulea/core 0.5.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#419](https://github.com/hokulea/hokulea/pull/419) Provide form rules with `@hokulea/pahu` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

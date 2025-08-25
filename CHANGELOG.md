@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2025-08-25)
+
+* @hokulea/ember 0.8.0 (minor)
+* @hokulea/core 0.5.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`
+  * [#419](https://github.com/hokulea/hokulea/pull/419) Provide form rules with `@hokulea/pahu` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-08-08)
 
 * @hokulea/ember 0.7.2 (patch)

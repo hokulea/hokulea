@@ -26,9 +26,9 @@ export type {
   FieldValidationHandler,
   FormBuilder,
   FormValidationHandler,
+  SubmitHandler,
   ValidatedHandler,
-  ValidationResult,
-  SubmitHandler
+  ValidationResult
 } from './components/form/index.ts';
 export { Form } from './components/form/index.ts';
 

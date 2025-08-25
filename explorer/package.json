@@ -58,7 +58,7 @@
     "@types/loader-utils": "^2.0.6",
     "@types/qunit": "2.19.12",
     "@types/rsvp": "4.0.9",
-    "babel-loader": "9.2.1",
+    "babel-loader": "10.0.0",
     "babel-plugin-htmlbars-inline-precompile": "^5.3.1",
     "broccoli-asset-rev": "3.0.0",
     "case": "1.6.3",

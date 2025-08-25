@@ -1,5 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
+import * as v from 'valibot';
+
 import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
 
 import type { FieldArgs } from './stories-utils.ts';
@@ -69,6 +71,43 @@ export const Placeholder = {
           <f.Password @name="password" @label="Your Password" placeholder="It's a secret" />
         </Form>
       `
+    };
+  },
+
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
+};
+
+export const Rules = {
+  render: () => {
+    return {
+      template: hbs`
+        <Form as |f|>
+          <f.Password @name="password" @label="Password" @validate={{this.passwordSchema}} required>
+            <:rules as |Rule|>
+              <Rule @key="type" @value="min_length">must be at least 8 characters</Rule>
+              <Rule @key="message" @value="upper">must contain at least one uppercase letter</Rule>
+              <Rule @key="message" @value="lower">must contain at least one lowercase letter</Rule>
+              <Rule @key="message" @value="number">must contain at least one number</Rule>
+              <Rule @key="message" @value="special">must contain at least one special character</Rule>
+            </:rules>
+          </f.Password>
+        </Form>
+      `,
+      context: {
+        passwordSchema: v.pipe(
+          v.optional(v.string(), ''),
+          v.string(),
+          v.minLength(8),
+          v.regex(/[A-Z]/, 'upper'),
+          v.regex(/[a-z]/, 'lower'),
+          v.regex(/[0-9]/, 'number'),
+          v.regex(/[^A-Za-z0-9]/, 'special')
+        )
+      }
     };
   },
 

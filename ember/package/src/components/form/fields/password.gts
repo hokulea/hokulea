@@ -1,15 +1,14 @@
 import Component from '@glimmer/component';
 
-import { asString } from '#src/-private/helpers.ts';
-import PasswordInput from '#src/components/password-input.gts';
-
+import { asString } from '../../../-private/helpers.ts';
+import PasswordInput from '../../password-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
+import type { PasswordInputSignature } from '../../password-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { RulesBlock } from '../rules.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
-import type { PasswordInputSignature } from '#src/components/password-input.gts';
 
 export interface PasswordFieldSignature<
   DATA extends UserData,

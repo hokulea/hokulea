@@ -1,15 +1,14 @@
 import Component from '@glimmer/component';
 
-import { asString } from '#src/-private/helpers.ts';
-import PhoneInput from '#src/components/phone-input.gts';
-
+import { asString } from '../../../-private/helpers.ts';
+import PhoneInput from '../../phone-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
+import type { PhoneInputSignature } from '../../phone-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { RulesBlock } from '../rules.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
-import type { PhoneInputSignature } from '#src/components/phone-input.gts';
 
 export interface PhoneFieldSignature<
   DATA extends UserData,

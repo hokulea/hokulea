@@ -5,10 +5,9 @@ import { next } from '@ember/runloop';
 
 import { element } from 'ember-element-helper';
 
-import { and } from '#src/-private/helpers.ts';
-
 import styles from '@hokulea/core/forms.module.css';
 
+import { and } from '../../-private/helpers.ts';
 import Description from './description.gts';
 import Errors from './errors.gts';
 import Label from './label.gts';

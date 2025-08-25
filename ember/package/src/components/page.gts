@@ -14,9 +14,9 @@ import typo from '@hokulea/core/typography.module.css';
 
 import { or } from '../-private/helpers.ts';
 
+import type HokuleaService from '../services/-hokulea.ts';
 import type { TOC } from '@ember/component/template-only';
 import type Owner from '@ember/owner';
-import type HokuleaService from '#src/services/-hokulea.ts';
 import type { Link } from 'ember-link';
 
 interface NavLinkSignature {

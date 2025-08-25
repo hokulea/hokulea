@@ -3,16 +3,15 @@ import { uniqueId } from '@ember/helper';
 
 import { element } from 'ember-element-helper';
 
-import List from '#src/components/list.gts';
-
+import List from '../../list.gts';
 import Label from '../label.gts';
 import { manageValidation } from '../manage-validation.ts';
 
+import type { ListSignature } from '../../list.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { TOC } from '@ember/component/template-only';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
-import type { ListSignature } from '#src/components/list.gts';
 
 interface ListLabelSignature {
   Element: HTMLLabelElement;

@@ -1,14 +1,13 @@
 import Component from '@glimmer/component';
 
-import { asString } from '#src/-private/helpers.ts';
-import TextArea from '#src/components/text-area.gts';
-
+import { asString } from '../../../-private/helpers.ts';
+import TextArea from '../../text-area.gts';
 import { manageValidation } from '../manage-validation.ts';
 
+import type { TextAreaSignature } from '../../text-area.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
-import type { TextAreaSignature } from '#src/components/text-area.gts';
 
 export interface TextAreaFieldSignature<
   DATA extends UserData,

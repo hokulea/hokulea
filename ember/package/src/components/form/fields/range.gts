@@ -1,14 +1,13 @@
 import Component from '@glimmer/component';
 
-import { asNumber } from '#src/-private/helpers.ts';
-import RangeInput from '#src/components/range-input.gts';
-
+import { asNumber } from '../../../-private/helpers.ts';
+import RangeInput from '../../range-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
+import type { RangeInputSignature } from '../../range-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
-import type { RangeInputSignature } from '#src/components/range-input.gts';
 
 export interface RangeFieldSignature<
   DATA extends UserData,

@@ -1,14 +1,13 @@
 import Component from '@glimmer/component';
 
-import { asNumber } from '#src/-private/helpers.ts';
-import NumberInput from '#src/components/number-input.gts';
-
+import { asNumber } from '../../../-private/helpers.ts';
+import NumberInput from '../../number-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
+import type { NumberInputSignature } from '../../number-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
-import type { NumberInputSignature } from '#src/components/number-input.gts';
 
 export interface NumberFieldSignature<
   DATA extends UserData,

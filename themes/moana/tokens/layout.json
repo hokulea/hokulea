@@ -90,5 +90,17 @@
       "$description": "",
       "$type": "color"
     }
+  },
+  "page": {
+    "max-content-width": {
+      "$value": 1200,
+      "$description": "",
+      "$type": "number"
+    },
+    "max-narrow-content-width": {
+      "$value": 800,
+      "$description": "",
+      "$type": "number"
+    }
   }
 }

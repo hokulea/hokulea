@@ -16,6 +16,22 @@
         "$description": "",
         "$type": "color"
       }
+    },
+    "item": {
+      "hover": {
+        "background": {
+          "$value": "{navigation.item.active.background}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "#2c373b",
+          "$description": "",
+          "$type": "color"
+        }
+      }
     }
   }
 }

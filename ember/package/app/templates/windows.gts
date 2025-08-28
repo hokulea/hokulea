@@ -23,7 +23,7 @@ export class ActionsRoute extends Component {
         <div class="cols">
           <div class="popover">
             {{#let (popover position=this.data.position) as |p|}}
-              <Button {{p.trigger}}>Hello there {{this.data.position}}</Button>
+              <Button {{p.trigger}}>Hello there</Button>
 
               <Popover {{p.target}}>
                 Obi<br />

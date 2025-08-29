@@ -30,12 +30,12 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--typo-heading-family, Inter, sans-serif);
-  font-feature-settings: var(--typo-heading-feature-settings);
-  font-weight: var(--typo-heading-weight, initial);
+  font-family: var(--typography-heading-family, Inter, sans-serif);
+  font-feature-settings: var(--typography-heading-feature-settings);
+  font-weight: var(--typography-heading-weight, initial);
   line-height: calc(0.8 * var(--line-height));
   hyphens: auto;
-  letter-spacing: var(--typo-heading-tracking, normal);
+  letter-spacing: var(--typography-heading-tracking, normal);
 }
 
 h1 {
@@ -73,10 +73,10 @@ code {
 }
 
 .display {
-  font-family: var(--typo-display-family);
-  font-feature-settings: var(--typo-display-feature-settings);
-  font-weight: var(--typo-display-weight, initial);
+  font-family: var(--typography-display-family);
+  font-feature-settings: var(--typography-display-feature-settings);
+  font-weight: var(--typography-display-weight, initial);
   line-height: calc(0.8 * var(--line-height));
   hyphens: auto;
-  letter-spacing: var(--typo-display-tracking, normal);
+  letter-spacing: var(--typography-display-tracking, normal);
 }

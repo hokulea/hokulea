@@ -1,3 +1,21 @@
+@font-face {
+  font-family: Inter;
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: swap;
+  src: url("/assets/Inter.var.woff2?3.13") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Inter Display";
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+  font-display: block;
+  src: url("/assets/InterDisplay.var.woff2?3.13") format("woff2-variations");
+}
+
+
+
 .popover {
   display: grid;
   place-items: center;
@@ -37,4 +55,17 @@
   flex-direction: row;
   gap: var(--spacing-primitive-2);
   align-items: center;
+}
+
+:root {
+  --typography-prose-family: "Inter", system-ui, sans-serif;
+  --typography-prose-feature-settings: "case" 1, "ss03" 1, "cv05" 1, "cv07", "kern" 1;
+  --typography-heading-feature-settings: "liga" 1, "calt" 1, "cv05" 1, "kern" 1;
+  --typography-heading-tracking: -0.018em;
+  --typography-heading-weight: 350;
+  --typography-display-family: "Inter Display", system-ui, sans-serif;
+  --typography-display-feature-settings: "liga" 1, "calt" 1, "salt" 1, "kern" 1;
+  --typography-display-weight: 300;
+  --typography-display-tracking: -0.003em;
+  --sizing-max-content-width: 60rem;
 }

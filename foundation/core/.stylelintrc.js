@@ -18,6 +18,12 @@ export default {
       {
         ignoreAtRules: [...config.rules['at-rule-no-unknown'][1].ignoreAtRules, 'each']
       }
+    ],
+    'custom-property-pattern': [
+      '^(🔒-)?([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+      {
+        message: (name) => `Expected custom property name "${name}" to be kebab-case`
+      }
     ]
   }
 };

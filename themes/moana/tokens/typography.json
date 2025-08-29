@@ -27,9 +27,9 @@
     "heading": {
       "$value": {
         "fontFamily": "Inter",
-        "fontSize": "24px",
+        "fontSize": "26px",
         "fontWeight": 400,
-        "letterSpacing": "-0.24px",
+        "letterSpacing": "-0.26px",
         "lineHeight": 1.21,
         "textTransform": "none"
       },
@@ -39,10 +39,10 @@
     "display": {
       "$value": {
         "fontFamily": "Inter Display",
-        "fontSize": "40px",
+        "fontSize": "44px",
         "fontWeight": 400,
-        "letterSpacing": "-0.8px",
-        "lineHeight": 1.17,
+        "letterSpacing": "-0.88px",
+        "lineHeight": 1.21,
         "textTransform": "none"
       },
       "$description": "",
@@ -93,7 +93,7 @@
           }
         },
         {
-          "value": "#d4dcdf",
+          "value": "#b7c4c9",
           "features": {
             "color-scheme": "dark"
           }

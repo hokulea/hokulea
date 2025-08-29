@@ -35,8 +35,12 @@ export { Form } from './components/form/index.ts';
 // navigation
 export { default as AppHeader } from './components/app-header.gts';
 export { default as Menu } from './components/menu.gts';
-export { default as Page } from './components/page.gts';
 export { default as Tabs } from './components/tabs.gts';
+
+// layouts
+export { default as FocusPage } from './components/focus-page.gts';
+export { default as Page } from './components/page.gts';
+export { default as SectionedPage } from './components/sectioned-page.gts';
 
 // content
 export { default as Box } from './components/box.gts';

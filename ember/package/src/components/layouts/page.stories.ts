@@ -1,9 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { action } from 'storybook/actions';
-
 export default {
-  title: 'Components/Layout/Page',
+  title: 'Components/Layouts/Page',
   component: 'page',
   parameters: {
     options: {
@@ -64,39 +62,5 @@ export const Details = () => {
         </:content>
       </Page>
     `
-  };
-};
-
-export const Nested = () => {
-  return {
-    template: hbs`
-      <Page>
-        <:title>Training</:title>
-        <:description>Ways of organizing your practice</:description>
-        <:nav as |Item|>
-          <Item @link={{this.link 'planning'}}>Planning</Item>
-          <Item @link={{this.link 'diagnostics'}}>Diagnostics</Item>
-          <Item @link={{this.link 'controlling'}}>Controlling</Item>
-          <Item @link={{this.link 'documentation'}}>Documentation</Item>
-        </:nav>
-        <:content>
-          <Page @title="Planning">
-            <p>Here about planning your practice in macro-, meso- and microcycles.</p>
-          </Page>
-        </:content>
-      </Page>
-    `,
-    context: {
-      link: (name: string) => {
-        return {
-          url: name,
-          open: (e: MouseEvent) => {
-            action('open link')(name);
-            e.preventDefault();
-          },
-          isActive: name === 'planning'
-        };
-      }
-    }
   };
 };

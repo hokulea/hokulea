@@ -23,6 +23,8 @@ a:active {
 }
 
 .app-header {
+  --🔒-max-content-width: var(--max-width, var(--layout-page-max-content-width));
+
   composes: page-content from './layouts/page.css';
 
   position: sticky;
@@ -118,7 +120,7 @@ a:active {
       }
     }
 
-    & > :is(nav, [part="menu"]) > [part="item"] {
+    & > :is(nav, [part="menu"], [part="aux"]) > [part="item"] {
       flex-shrink: 0;
 
       min-width: 0;
@@ -200,6 +202,7 @@ a:active {
         padding-block: var(--spacing-container-4);
         list-style-position: inside;
 
+        /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
         &::marker {
           margin: 0;
         }

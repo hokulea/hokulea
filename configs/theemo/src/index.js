@@ -44,6 +44,15 @@ const DYNAMIC = new Set([
   'spacing.container4'
 ]);
 
+const PIXEL_TOKENS = new Set([
+  'control.border-width',
+  'control.focus.stroke-offset',
+  'control.focus.stroke-width',
+  'shape.stroke.width',
+  'layout.page.max-content-width',
+  'layout.page.max-narrow-content-width'
+]);
+
 function cleanTopic(topic) {
   if (topic) {
     return topic.replace(/\s+\(.*\)/, '');
@@ -139,24 +148,12 @@ export function theemoConfig(figmaFileIds) {
 
       lexer: {
         normalizeToken(token) {
-          if (
-            [
-              'control.border-width',
-              'control.focus.stroke-offset',
-              'control.focus.stroke-width'
-            ].includes(token.name)
-          ) {
-            return {
-              ...token,
-              value: `${token.value[0].value}px`,
-              type: 'dimension'
-            };
-          }
+          if (PIXEL_TOKENS.has(token.name)) {
+            const value = Array.isArray(token.value) ? token.value[0].value : token.value;
 
-          if (['shape.stroke.width'].includes(token.name)) {
             return {
               ...token,
-              value: `${token.value}px`,
+              value: `${value}px`,
               type: 'dimension'
             };
           }

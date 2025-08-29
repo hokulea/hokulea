@@ -15,7 +15,10 @@ export class PagePageObject extends PageObject<
 
   $title = sel<HTMLHeadingElement>('header > h1');
   $description = sel<HTMLParagraphElement>('header > p');
-  $nav = sel<HTMLElement>('header > nav');
 
   $content = sel<HTMLElement>('[part="content"]');
+}
+
+export class SectionedPagePageObject extends PagePageObject {
+  $nav = sel<HTMLElement>('header > nav');
 }

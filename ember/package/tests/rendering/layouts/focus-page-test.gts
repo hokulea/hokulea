@@ -2,16 +2,16 @@ import { render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { Page } from '#src';
+import { FocusPage, Page } from '#src';
 import { PagePageObject } from '#test-support';
 
-module('Rendering | <Page>', (hooks) => {
+module('Rendering | Layouts | <FocusPage>', (hooks) => {
   setupRenderingTest(hooks);
 
   test('it renders', async (assert) => {
     await render(
       <template>
-        <Page @title="title" @description="description">Hello World</Page>
+        <FocusPage @title="title" @description="description">Hello World</FocusPage>
       </template>
     );
 
@@ -31,7 +31,7 @@ module('Rendering | <Page>', (hooks) => {
   test('without header', async (assert) => {
     await render(
       <template>
-        <Page>Hello World</Page>
+        <FocusPage>Hello World</FocusPage>
       </template>
     );
 
@@ -46,12 +46,11 @@ module('Rendering | <Page>', (hooks) => {
   test('with blocks', async (assert) => {
     await render(
       <template>
-        <Page>
+        <FocusPage>
           <:title>Title</:title>
           <:description>description</:description>
-          <:nav>nav here</:nav>
           <:content>Hello World</:content>
-        </Page>
+        </FocusPage>
       </template>
     );
 
@@ -71,7 +70,7 @@ module('Rendering | <Page>', (hooks) => {
   test('nested page', async (assert) => {
     await render(
       <template>
-        <Page>
+        <FocusPage>
           <:title>Main</:title>
           <:content>
             <Page>
@@ -79,7 +78,7 @@ module('Rendering | <Page>', (hooks) => {
               <:content>Content</:content>
             </Page>
           </:content>
-        </Page>
+        </FocusPage>
       </template>
     );
 

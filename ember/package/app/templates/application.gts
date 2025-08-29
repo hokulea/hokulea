@@ -1,7 +1,9 @@
 import { link } from 'ember-link';
 import RouteTemplate from 'ember-route-template';
 
-import { AppHeader } from '#src';
+import { AppHeader, Icon } from '#src';
+import GearIcon from '~icons/ph/gear';
+// import TIcon from '~icons/ph/text-t';
 
 function noop() {
   console.log('noop');
@@ -41,8 +43,13 @@ export default RouteTemplate(
           </:menu>
         </n.Item>
       </:nav>
-      <:aux>
-        at the end
+      <:aux as |n|>
+        <n.Item>
+          <:label><Icon @icon={{GearIcon}} /></:label>
+          <:menu>
+            Theme Options will be here<br />needs ButtonGroup
+          </:menu>
+        </n.Item>
       </:aux>
     </AppHeader>
 

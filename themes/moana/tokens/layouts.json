@@ -90,5 +90,19 @@
       "$description": "",
       "$type": "color"
     }
+  },
+  "layout": {
+    "page": {
+      "max-content-width": {
+        "$value": "1200px",
+        "$description": "",
+        "$type": "dimension"
+      },
+      "max-narrow-content-width": {
+        "$value": "800px",
+        "$description": "",
+        "$type": "dimension"
+      }
+    }
   }
 }

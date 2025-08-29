@@ -1,7 +1,7 @@
 import { link } from 'ember-link';
 import RouteTemplate from 'ember-route-template';
 
-import { Button, Icon, IconButton, Page, Section } from '#src';
+import { Button, FocusPage, Icon, IconButton, Section } from '#src';
 import Unicycle from '~icons/custom/unicycle';
 import Activity from '~icons/ph/activity';
 import ArrowRight from '~icons/ph/arrow-right';
@@ -9,7 +9,7 @@ import Bike from '~icons/ph/person-simple-bike';
 
 export default RouteTemplate(
   <template>
-    <Page @title="Actions">
+    <FocusPage @title="Actions">
 
       <Section @title="Buttons">
         <p>
@@ -65,6 +65,6 @@ export default RouteTemplate(
         </p>
       </Section>
 
-    </Page>
+    </FocusPage>
   </template>
 );

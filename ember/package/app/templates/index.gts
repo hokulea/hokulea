@@ -1,11 +1,11 @@
 import { link } from 'ember-link';
 import RouteTemplate from 'ember-route-template';
 
-import { Page } from '#src';
+import { Page, SectionedPage } from '#src';
 
 export default RouteTemplate(
   <template>
-    <Page @title="Page" @description="a little explanation">
+    <SectionedPage @title="Page" @description="a little explanation">
       <:nav as |Link|>
         <Link @link={{link "index"}}>Index</Link>
         nav
@@ -16,6 +16,6 @@ export default RouteTemplate(
 
         </Page>
       </:content>
-    </Page>
+    </SectionedPage>
   </template>
 );

@@ -91,16 +91,18 @@
       "$type": "color"
     }
   },
-  "page": {
-    "max-content-width": {
-      "$value": 1200,
-      "$description": "",
-      "$type": "number"
-    },
-    "max-narrow-content-width": {
-      "$value": 800,
-      "$description": "",
-      "$type": "number"
+  "layout": {
+    "page": {
+      "max-content-width": {
+        "$value": "1200px",
+        "$description": "",
+        "$type": "dimension"
+      },
+      "max-narrow-content-width": {
+        "$value": "800px",
+        "$description": "",
+        "$type": "dimension"
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { action } from 'storybook/actions';
 
 export default {
-  title: 'Components/Layout/Page',
+  title: 'Components/Layouts/SectionedPage',
   component: 'page',
   parameters: {
     options: {
@@ -17,9 +17,9 @@ export default {
 export const Showcase = {
   render: (args: object) => ({
     template: hbs`
-      <Page @title={{this.title}} @description={{this.description}}>
+      <SectionedPage @title={{this.title}} @description={{this.description}}>
         <p>{{this.content}}</p>
-      </Page>
+      </SectionedPage>
     `,
     context: args
   }),
@@ -46,9 +46,9 @@ export const Showcase = {
 export const Simple = () => {
   return {
     template: hbs`
-      <Page @title="Training">
+      <SectionedPage @title="Training">
         <p>Planning, Diagnostics, Control, Documentation</p>
-      </Page>
+      </SectionedPage>
     `
   };
 };
@@ -56,13 +56,13 @@ export const Simple = () => {
 export const Details = () => {
   return {
     template: hbs`
-      <Page @title="Training">
+      <SectionedPage @title="Training">
         <:title>Training</:title>
         <:description>Ways of organizing your practice</:description>
         <:content>
           <p>Planning, Diagnostics, Control, Documentation</p>
         </:content>
-      </Page>
+      </SectionedPage>
     `
   };
 };
@@ -70,7 +70,7 @@ export const Details = () => {
 export const Nested = () => {
   return {
     template: hbs`
-      <Page>
+      <SectionedPage>
         <:title>Training</:title>
         <:description>Ways of organizing your practice</:description>
         <:nav as |Item|>
@@ -84,7 +84,7 @@ export const Nested = () => {
             <p>Here about planning your practice in macro-, meso- and microcycles.</p>
           </Page>
         </:content>
-      </Page>
+      </SectionedPage>
     `,
     context: {
       link: (name: string) => {

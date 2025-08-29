@@ -2,16 +2,16 @@ import { render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { SectionedPage } from '#src';
+import { FocusPage, Page } from '#src';
 import { PagePageObject } from '#test-support';
 
-module('Rendering | <Page>', (hooks) => {
+module('Rendering | Layouts | <FocusPage>', (hooks) => {
   setupRenderingTest(hooks);
 
   test('it renders', async (assert) => {
     await render(
       <template>
-        <SectionedPage @title="title" @description="description">Hello World</SectionedPage>
+        <FocusPage @title="title" @description="description">Hello World</FocusPage>
       </template>
     );
 
@@ -31,7 +31,7 @@ module('Rendering | <Page>', (hooks) => {
   test('without header', async (assert) => {
     await render(
       <template>
-        <SectionedPage>Hello World</SectionedPage>
+        <FocusPage>Hello World</FocusPage>
       </template>
     );
 
@@ -46,12 +46,11 @@ module('Rendering | <Page>', (hooks) => {
   test('with blocks', async (assert) => {
     await render(
       <template>
-        <SectionedPage>
+        <FocusPage>
           <:title>Title</:title>
           <:description>description</:description>
-          <:nav>nav here</:nav>
           <:content>Hello World</:content>
-        </SectionedPage>
+        </FocusPage>
       </template>
     );
 
@@ -68,32 +67,32 @@ module('Rendering | <Page>', (hooks) => {
     assert.dom(page.$content).hasText('Hello World');
   });
 
-  // test('nested page', async (assert) => {
-  //   await render(
-  //     <template>
-  //       <SectionedPage>
-  //         <:title>Main</:title>
-  //         <:content>
-  //           <Page>
-  //             <:title>Section</:title>
-  //             <:content>Content</:content>
-  //           </Page>
-  //         </:content>
-  //       </SectionedPage>
-  //     </template>
-  //   );
+  test('nested page', async (assert) => {
+    await render(
+      <template>
+        <FocusPage>
+          <:title>Main</:title>
+          <:content>
+            <Page>
+              <:title>Section</:title>
+              <:content>Content</:content>
+            </Page>
+          </:content>
+        </FocusPage>
+      </template>
+    );
 
-  //   const pages = new PagePageObject();
-  //   const [main, section] = pages;
+    const pages = new PagePageObject();
+    const [main, section] = pages;
 
-  //   assert.strictEqual(pages.elements.length, 2);
+    assert.strictEqual(pages.elements.length, 2);
 
-  //   assert.dom(main).exists();
-  //   assert.dom(main).hasTagName('main');
-  //   assert.dom(main?.$title).hasText('Main');
+    assert.dom(main).exists();
+    assert.dom(main).hasTagName('main');
+    assert.dom(main?.$title).hasText('Main');
 
-  //   assert.dom(section).exists();
-  //   assert.dom(section).hasTagName('section');
-  //   assert.dom(section?.$title).hasText('Section');
-  // });
+    assert.dom(section).exists();
+    assert.dom(section).hasTagName('section');
+    assert.dom(section?.$title).hasText('Section');
+  });
 });

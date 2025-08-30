@@ -312,6 +312,9 @@ importers:
       fractal-page-object:
         specifier: 1.0.0
         version: 1.0.0
+      glimmer-scoped-css:
+        specifier: ^0.8.1
+        version: 0.8.1
       iconify-icon:
         specifier: ^3.0.0
         version: 3.0.0

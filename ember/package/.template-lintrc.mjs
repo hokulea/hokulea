@@ -10,6 +10,7 @@ export default {
       ignore: {
         Form: ['submit']
       }
-    }
+    },
+    'no-forbidden-elements': ['meta', 'html', 'script']
   }
 };

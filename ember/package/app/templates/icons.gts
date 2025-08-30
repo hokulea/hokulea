@@ -7,8 +7,8 @@ import Pulse from '~icons/ph/pulse';
 
 export default RouteTemplate(
   <template>
-    <Page @title="Icons">
-
+    <Page>
+      <h1>Icons</h1>
       <p>
         <Icon @icon={{Pulse}} />
         with some text

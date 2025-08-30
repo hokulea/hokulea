@@ -1,20 +1,16 @@
-import RouteTemplate from 'ember-route-template';
-
 import { Page, SectionedPage } from '#src';
 
-export default RouteTemplate(
-  <template>
-    <SectionedPage @title="Page" @description="a little explanation">
-      <:nav as |Link|>
-        <Link @href="/">Index</Link>
-        nav
-      </:nav>
-      <:content>
-        <Page @title="Content Area" @description="a second explanation">
-          A subpage
+<template>
+  <SectionedPage @title="Page" @description="a little explanation">
+    <:nav as |Link|>
+      <Link @href="/">Index</Link>
+      nav
+    </:nav>
+    <:content>
+      <Page @title="Content Area" @description="a second explanation">
+        A subpage
 
-        </Page>
-      </:content>
-    </SectionedPage>
-  </template>
-);
+      </Page>
+    </:content>
+  </SectionedPage>
+</template>

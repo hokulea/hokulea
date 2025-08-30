@@ -9,7 +9,7 @@ import { AppHeaderPageObject } from '#test-support';
 
 import { linkFor, setupLink } from 'ember-link/test-support';
 
-import { setContainerWidth } from '../../-helpers.ts';
+import { setContainerWidth } from '../../helpers.ts';
 
 module('Rendering | Navigation | <AppHeader>', (hooks) => {
   setupRenderingTest(hooks);

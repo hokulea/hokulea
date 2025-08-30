@@ -2,9 +2,7 @@ import { PageObject, selector as sel } from 'fractal-page-object';
 
 import { selectTab } from 'ember-aria-voyager/test-support';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { TabValue } from '../../components/tabs.gts';
+import { TabValue } from '../../components/controls/tabs.gts';
 
 import type { ElementLike } from 'fractal-page-object';
 

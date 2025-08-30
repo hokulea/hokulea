@@ -44,7 +44,7 @@
     "fast-glob": "3.3.3",
     "postcss": "8.5.6",
     "prettier": "^3.6.2",
-    "rollup": "4.48.0",
+    "rollup": "4.49.0",
     "rollup-plugin-css-only": "4.5.2",
     "rollup-plugin-delete": "2.2.0",
     "rollup-plugin-multi-input": "1.4.1",

@@ -1,6 +1,6 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { NavLinkPageObject } from './-navigation';
+import { NavLinkPageObject } from './-navigation.ts';
 
 import type { ElementLike } from 'fractal-page-object';
 

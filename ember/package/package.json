@@ -27,12 +27,13 @@
       "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./registry": {
+      "types": "./declarations/registry.d.ts",
+      "default": "./dist/registry.js"
+    },
     "./test-support": {
       "types": "./declarations/test-support/index.d.ts",
       "default": "./dist/test-support/index.js"
-    },
-    "./lib": {
-      "require": "./lib/index.js"
     },
     "./addon-main.cjs": "./addon-main.cjs",
     "./package.json": "./package.json",
@@ -69,6 +70,7 @@
     "decorator-transforms": "^2.3.0",
     "ember-aria-voyager": "^0.2.4",
     "ember-stargate": "^1.0.1",
+    "ember-strict-application-resolver": "^0.1.0",
     "tracked-built-ins": "^4.0.0"
   },
   "peerDependencies": {
@@ -131,7 +133,6 @@
     "ember-link": "3.5.0",
     "ember-modifier": "4.2.2",
     "ember-qunit": "^9.0.3",
-    "ember-resolver": "^13.1.1",
     "ember-set-helper": "^3.0.1",
     "ember-source": "6.6.0",
     "ember-template-imports": "4.3.0",

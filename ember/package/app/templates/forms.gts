@@ -1,4 +1,3 @@
-import RouteTemplate from 'ember-route-template';
 import * as v from 'valibot';
 
 import { Form, SectionedPage } from '#src';
@@ -66,98 +65,96 @@ const validateConfirmPassword: FieldValidationHandler<Data> = ({ value, form }) 
   return;
 };
 
-export default RouteTemplate(
-  <template>
-    <SectionedPage @title="Forms" @description="All sorts of inputs">
-      <Form @data={{data}} @submit={{submit}} as |f|>
-        <f.Text @name="givenName" @label="Vorname" autocomplete="given-name" @disabled={{true}} />
+<template>
+  <SectionedPage @title="Forms" @description="All sorts of inputs">
+    <Form @data={{data}} @submit={{submit}} as |f|>
+      <f.Text @name="givenName" @label="Vorname" autocomplete="given-name" @disabled={{true}} />
 
-        <f.Text
-          @name="familyName"
-          @label="Nachname"
-          autocomplete="family-name"
-          required
-          data-bwignore
-        />
+      <f.Text
+        @name="familyName"
+        @label="Nachname"
+        autocomplete="family-name"
+        required
+        data-bwignore
+      />
 
-        <f.Password
-          @name="password"
-          @label="Password"
-          @validate={{passwordSchema}}
-          required
-          data-bwignore
-        >
-          <:rules as |Rule|>
-            <Rule @key="type" @value="min_length">must be at least 8 characters</Rule>
-            <Rule @key="message" @value="upper">must contain at least one uppercase letter</Rule>
-            <Rule @key="message" @value="lower">must contain at least one lowercase letter</Rule>
-            <Rule @key="message" @value="number">must contain at least one number</Rule>
-            <Rule @key="message" @value="special">must contain at least one special character</Rule>
-          </:rules>
-        </f.Password>
-        <f.Password
-          @name="confirm_password"
-          @label="Confirm Password"
-          @linkedField="password"
-          @revalidateOn="input"
-          @validate={{validateConfirmPassword}}
-          data-bwignore
-        />
+      <f.Password
+        @name="password"
+        @label="Password"
+        @validate={{passwordSchema}}
+        required
+        data-bwignore
+      >
+        <:rules as |Rule|>
+          <Rule @key="type" @value="min_length">must be at least 8 characters</Rule>
+          <Rule @key="message" @value="upper">must contain at least one uppercase letter</Rule>
+          <Rule @key="message" @value="lower">must contain at least one lowercase letter</Rule>
+          <Rule @key="message" @value="number">must contain at least one number</Rule>
+          <Rule @key="message" @value="special">must contain at least one special character</Rule>
+        </:rules>
+      </f.Password>
+      <f.Password
+        @name="confirm_password"
+        @label="Confirm Password"
+        @linkedField="password"
+        @revalidateOn="input"
+        @validate={{validateConfirmPassword}}
+        data-bwignore
+      />
 
-        <f.Date
-          @name="birthday"
-          @label="Geburtstag"
-          @description="Wann bist du geboren?"
-          autocomplete="bday"
-          data-bwignore
-        />
+      <f.Date
+        @name="birthday"
+        @label="Geburtstag"
+        @description="Wann bist du geboren?"
+        autocomplete="bday"
+        data-bwignore
+      />
 
-        <f.Phone @name="phone" @label="Telefon" autocomplete="tel" data-bwignore />
+      <f.Phone @name="phone" @label="Telefon" autocomplete="tel" data-bwignore />
 
-        <f.Email @name="email" @label="Email" autocomplete="email" data-bwignore />
+      <f.Email @name="email" @label="Email" autocomplete="email" data-bwignore />
 
-        <f.Text @name="receiptNumber" @label="Rechnungsnr" placeholder="XY-1234" data-bwignore />
+      <f.Text @name="receiptNumber" @label="Rechnungsnr" placeholder="XY-1234" data-bwignore />
 
-        <hr />
+      <hr />
 
-        <f.Currency @name="price" @label="Price" @disabled={{true}} data-bwignore />
+      <f.Currency @name="price" @label="Price" @disabled={{true}} data-bwignore />
 
-        <f.Select @name="fruit" @label="Favorite Fruit" as |s|>
-          <s.Option @value="Apple" />
-          <s.Option @value="Banana" />
-          <s.Option @value="Pear">🍐 Pear</s.Option>
-        </f.Select>
+      <f.Select @name="fruit" @label="Favorite Fruit" as |s|>
+        <s.Option @value="Apple" />
+        <s.Option @value="Banana" />
+        <s.Option @value="Pear">🍐 Pear</s.Option>
+      </f.Select>
 
-        <f.Range @name="fruitAmount" @label="How many fruits do you want?" min={{1}} max={{5}} />
+      <f.Range @name="fruitAmount" @label="How many fruits do you want?" min={{1}} max={{5}} />
 
-        <f.List @name="pokemon" @label="Starter Pokemon" as |l|>
-          <l.Option @value="Bulbasaur">🟢 Bulbasaur</l.Option>
-          <l.Option @value="Charmander">🔴 Charmander</l.Option>
-          <l.Option @value="Squirtle">🔵 Squirtle</l.Option>
-        </f.List>
+      <f.List @name="pokemon" @label="Starter Pokemon" as |l|>
+        <l.Option @value="Bulbasaur">🟢 Bulbasaur</l.Option>
+        <l.Option @value="Charmander">🔴 Charmander</l.Option>
+        <l.Option @value="Squirtle">🔵 Squirtle</l.Option>
+      </f.List>
 
-        <f.SingularChoice @label="Abschluss" @name="graduation" as |r|>
-          <r.Option @value="doctor" @label="Doktor" required />
-          <r.Option @value="diploma" @label="Diplom" />
-          <r.Option @value="master" @label="Master" />
-          <r.Option @value="bachelor" @label="Bachelor" />
-          <r.Option @value="apprenticeship" @label="Ausbildung" />
-          <r.Option @value="matura" @label="Abitur" />
-        </f.SingularChoice>
+      <f.SingularChoice @label="Abschluss" @name="graduation" as |r|>
+        <r.Option @value="doctor" @label="Doktor" required />
+        <r.Option @value="diploma" @label="Diplom" />
+        <r.Option @value="master" @label="Master" />
+        <r.Option @value="bachelor" @label="Bachelor" />
+        <r.Option @value="apprenticeship" @label="Ausbildung" />
+        <r.Option @value="matura" @label="Abitur" />
+      </f.SingularChoice>
 
-        <f.MultipleChoice @label="Welche Haustiere hast du?" @name="pets" as |r|>
-          <r.Option @value="rhino" @label="Rhino" required />
-          <r.Option @value="tiger" @label="Tiger" disabled />
-          <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
-          <r.Option @value="kangaroo" @label="Kangaroo" />
-        </f.MultipleChoice>
+      <f.MultipleChoice @label="Welche Haustiere hast du?" @name="pets" as |r|>
+        <r.Option @value="rhino" @label="Rhino" required />
+        <r.Option @value="tiger" @label="Tiger" disabled />
+        <r.Option @value="crocodile" @label="Crocodile" @description="Like a dinosaur" />
+        <r.Option @value="kangaroo" @label="Kangaroo" />
+      </f.MultipleChoice>
 
-        <f.TextArea @name="note" @label="Notiz" />
+      <f.TextArea @name="note" @label="Notiz" />
 
-        <f.Checkbox @name="terms" @label="Bitte AGB zustimmen" required />
+      <f.Checkbox @name="terms" @label="Bitte AGB zustimmen" required />
 
-        <f.Submit>Send</f.Submit>
-      </Form>
-    </SectionedPage>
-  </template>
-);
+      <f.Submit>Send</f.Submit>
+    </Form>
+  </SectionedPage>
+</template>

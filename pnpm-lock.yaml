@@ -285,9 +285,6 @@ importers:
       ember-resolver:
         specifier: ^13.1.1
         version: 13.1.1
-      ember-route-template:
-        specifier: ^1.0.3
-        version: 1.0.3
       ember-set-helper:
         specifier: ^3.0.1
         version: 3.0.1(@babel/core@7.28.3)

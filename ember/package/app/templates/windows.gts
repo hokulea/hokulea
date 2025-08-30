@@ -1,8 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import RouteTemplate from 'ember-route-template';
-
 import {
   Button,
   Form,
@@ -13,7 +11,7 @@ import {
   SectionedPage
 } from '#src';
 
-export class ActionsRoute extends Component {
+export default class ActionsRoute extends Component {
   @tracked data = {
     position: 'top-start'
   };
@@ -61,5 +59,3 @@ export class ActionsRoute extends Component {
     </SectionedPage>
   </template>
 }
-
-export default RouteTemplate(ActionsRoute);

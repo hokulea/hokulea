@@ -1,8 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import PhChartLine from '~icons/ph/chart-line';
-import PhGear from '~icons/ph/gear';
-import PhUser from '~icons/ph/user';
+import { getIconSvg } from '../-stories.ts';
 
 export default {
   title: 'Components/Navigation/NavigationList',
@@ -29,9 +27,9 @@ export const Showcase = {
     `,
     context: {
       icons: {
-        dashboard: PhChartLine,
-        profile: PhUser,
-        settings: PhGear
+        dashboard: getIconSvg('chart-line'),
+        profile: getIconSvg('user'),
+        settings: getIconSvg('gear')
       }
     }
   })

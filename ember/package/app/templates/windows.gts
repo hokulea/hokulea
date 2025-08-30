@@ -3,7 +3,15 @@ import { tracked } from '@glimmer/tracking';
 
 import RouteTemplate from 'ember-route-template';
 
-import { Button, Form, type FormValidationHandler, Page, Popover, popover, Section } from '#src';
+import {
+  Button,
+  Form,
+  type FormValidationHandler,
+  Popover,
+  popover,
+  Section,
+  SectionedPage
+} from '#src';
 
 export class ActionsRoute extends Component {
   @tracked data = {
@@ -18,7 +26,7 @@ export class ActionsRoute extends Component {
   };
 
   <template>
-    <Page @title="Windows">
+    <SectionedPage @title="Windows">
       <Section @title="Popovers">
         <div class="cols">
           <div class="popover">
@@ -50,7 +58,7 @@ export class ActionsRoute extends Component {
           </Form>
         </div>
       </Section>
-    </Page>
+    </SectionedPage>
   </template>
 }
 

@@ -1,7 +1,7 @@
 import RouteTemplate from 'ember-route-template';
 import * as v from 'valibot';
 
-import { Form, Page } from '#src';
+import { Form, SectionedPage } from '#src';
 
 import type { FieldValidationHandler } from '#src';
 
@@ -68,7 +68,7 @@ const validateConfirmPassword: FieldValidationHandler<Data> = ({ value, form }) 
 
 export default RouteTemplate(
   <template>
-    <Page @title="Forms">
+    <SectionedPage @title="Forms" @description="All sorts of inputs">
       <Form @data={{data}} @submit={{submit}} as |f|>
         <f.Text @name="givenName" @label="Vorname" autocomplete="given-name" @disabled={{true}} />
 
@@ -158,6 +158,6 @@ export default RouteTemplate(
 
         <f.Submit>Send</f.Submit>
       </Form>
-    </Page>
+    </SectionedPage>
   </template>
 );

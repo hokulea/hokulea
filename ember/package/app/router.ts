@@ -17,5 +17,9 @@ Router.map(function () {
   this.route('forms');
   this.route('icons');
   this.route('windows');
+  this.route('navigation', function () {
+    this.route('list');
+    this.route('app-header');
+  });
   /* eslint-enable @typescript-eslint/no-invalid-this */
 });

@@ -1,6 +1,7 @@
 import { classicEmberSupport, ember, extensions } from '@embroider/vite';
 
 import { babel } from '@rollup/plugin-babel';
+import { scopedCSS } from 'glimmer-scoped-css/rollup';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vite';
@@ -25,6 +26,7 @@ export default defineConfig({
   plugins: [
     ...(isCompat ? [classicEmberSupport()] : []),
     ember(),
+    scopedCSS('app'),
     babel({
       babelHelpers: 'inline',
       extensions

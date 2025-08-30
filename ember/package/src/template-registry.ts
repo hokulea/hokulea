@@ -12,6 +12,7 @@ import type IconButton from './components/icon-button.gts';
 import type InputBuilder from './components/input-builder.gts';
 import type List from './components/list.gts';
 import type Menu from './components/menu.gts';
+import type NavigationList from './components/navigation-list.gts';
 import type NumberInput from './components/number-input.gts';
 import type Page from './components/page.gts';
 import type PasswordInput from './components/password-input.gts';
@@ -39,6 +40,7 @@ export default interface HokuleaRegistry {
   IconButton: typeof IconButton;
   List: typeof List;
   Menu: typeof Menu;
+  NavigationList: typeof NavigationList;
   NumberInput: typeof NumberInput;
   Page: typeof Page;
   PasswordInput: typeof PasswordInput;

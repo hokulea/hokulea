@@ -5,10 +5,6 @@ import { AppHeader, Icon } from '#src';
 import GearIcon from '~icons/ph/gear';
 // import TIcon from '~icons/ph/text-t';
 
-function noop() {
-  console.log('noop');
-}
-
 export default RouteTemplate(
   <template>
     <AppHeader @position="center" @home={{link "application"}}>
@@ -16,7 +12,7 @@ export default RouteTemplate(
       <:nav as |n|>
         <n.Item @push={{link "actions"}}>Actions</n.Item>
         <n.Item @push={{link "content"}}>Content</n.Item>
-        <n.Item>lalala</n.Item>
+        <n.Item @push={{link "navigation"}}>Navigation</n.Item>
         <n.Item @push={{link "controls"}}>Controls</n.Item>
         <n.Item @push={{link "forms"}}>Forms</n.Item>
         <n.Item @push={{link "icons"}}>Icons</n.Item>
@@ -27,7 +23,7 @@ export default RouteTemplate(
             <m.Item @push={{link "actions"}}>Actions</m.Item>
             <m.Item @push={{link "content"}}>Content</m.Item>
             <hr />
-            <m.Item @push={{noop}}>lalala</m.Item>
+            <n.Item @push={{link "content"}}>Navigation</n.Item>
             <hr />
             <m.Item @push={{link "controls"}}>Controls</m.Item>
             <m.Item @push={{link "forms"}}>Forms</m.Item>

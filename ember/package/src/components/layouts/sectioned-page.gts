@@ -1,5 +1,3 @@
-import { on } from '@ember/modifier';
-
 import { element } from 'ember-element-helper';
 
 // eslint-disable-next-line import-x/no-duplicates
@@ -8,28 +6,11 @@ import styles from '@hokulea/core/layouts.module.css';
 import typo from '@hokulea/core/typography.module.css';
 
 import { or } from '../../-private/helpers.ts';
+import { NavLink } from '../navigation/nav-link.gts';
 import { pageDestructor, pageElement } from './pages.ts';
 
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
-import type { Link } from 'ember-link';
-
-interface NavLinkSignature {
-  Args: {
-    link: Link;
-  };
-  Blocks: {
-    default: [];
-  };
-}
-
-const NavLink: TOC<NavLinkSignature> = <template>
-  <a href={{@link.url}} {{on "click" @link.open}} aria-current={{if @link.isActive "page"}}>
-    <span>
-      {{yield}}
-    </span>
-  </a>
-</template>;
 
 interface SectionedPageSignature {
   Element: HTMLElement;

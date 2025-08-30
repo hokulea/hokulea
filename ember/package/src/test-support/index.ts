@@ -17,6 +17,7 @@ export type { InputBuilderPageObject } from './page-objects/input-builder.ts';
 export { CurrencyInputPageObject } from './page-objects/input-builder.ts';
 export { ListPageObject } from './page-objects/list.ts';
 export { MenuPageObject } from './page-objects/menu.ts';
+export { NavigationListPageObject } from './page-objects/navigation-list.ts';
 export { PagePageObject, SectionedPagePageObject } from './page-objects/page.ts';
 export { PillButtonPageObject } from './page-objects/pill-button.ts';
 export { PopoverPageObject } from './page-objects/popover.ts';

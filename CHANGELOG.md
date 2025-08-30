@@ -1,5 +1,30 @@
 # Changelog
 
+## Release (2025-08-30)
+
+* @hokulea/ember 0.9.0 (minor)
+* @hokulea/core 0.6.0 (minor)
+* @hokulea/theme-moana 0.2.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`
+  * [#432](https://github.com/hokulea/hokulea/pull/432) Use strict application resolver and provide registry ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`, `@hokulea/core`, `@hokulea/theme-moana`
+  * [#422](https://github.com/hokulea/hokulea/pull/422) New Component: `<NavigationList>` ([@gossi](https://github.com/gossi))
+  * [#420](https://github.com/hokulea/hokulea/pull/420) `<Page>`, `<SectionedPage>` + `<FocusPage>` ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`
+  * [#425](https://github.com/hokulea/hokulea/pull/425) Fix NavItem in aux area when in popup menu ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#431](https://github.com/hokulea/hokulea/pull/431) Remove `ember-route-template` ([@gossi](https://github.com/gossi))
+  * [#428](https://github.com/hokulea/hokulea/pull/428) Reorganized Components by topic ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-08-25)
 
 * @hokulea/ember 0.8.0 (minor)

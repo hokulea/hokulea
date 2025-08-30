@@ -65,13 +65,13 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: 'light-dark(#37444a, #d4dcdf)',
+        value: 'light-dark(#37444a, #b7c4c9)',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: 'light-dark(#37444a, #d4dcdf)',
+        value: 'light-dark(#37444a, #b7c4c9)',
         features: {
           'color-scheme': 'dark'
         }
@@ -3062,6 +3062,101 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
+  'navigation-links-base': {
+    name: 'navigation-links-base',
+    description: '',
+    value: [
+      {
+        value: 'light-dark(#098bc3, #66d1ff)',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: 'light-dark(#098bc3, #66d1ff)',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'navigation-links-hover': {
+    name: 'navigation-links-hover',
+    description: '',
+    value: [
+      {
+        value: 'light-dark(#076892, #0caef3)',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: 'light-dark(#076892, #0caef3)',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'navigation-links-active': {
+    name: 'navigation-links-active',
+    description: '',
+    value: [
+      {
+        value: 'light-dark(#076892, #098bc3)',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: 'light-dark(#076892, #098bc3)',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'navigation-item-hover-background': {
+    name: 'navigation-item-hover-background',
+    description: '',
+    value: [
+      {
+        value: '#e9edee',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#262f32',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'navigation-item-active-background': {
+    name: 'navigation-item-active-background',
+    description: '',
+    value: [
+      {
+        value: '#e3e8ea',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#1d2427',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
   'shape-stroke-color': {
     name: 'shape-stroke-color',
     description: '',
@@ -3130,7 +3225,7 @@ export const tokens: Tokens = {
         }
       },
       {
-        value: '#d4dcdf',
+        value: '#b7c4c9',
         features: {
           'color-scheme': 'dark'
         }
@@ -3200,13 +3295,13 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: 'light-dark(#37444a, #d4dcdf)',
+        value: 'light-dark(#37444a, #b7c4c9)',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: 'light-dark(#37444a, #d4dcdf)',
+        value: 'light-dark(#37444a, #b7c4c9)',
         features: {
           'color-scheme': 'dark'
         }

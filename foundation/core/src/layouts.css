@@ -4,46 +4,51 @@
 
 @import './layouts/page.css';
 
-.page {
-  --max-content-width: var(--max-width, var(--layout-page-max-content-width));
+.base {
+  &:not(:has(header)) {
+    padding-block-start: var(--spacing-container0);
+  }
 
   & > header {
-    p {
-      color: var(--typography-subtle);
+    padding-block-start: var(--spacing-container0);
 
-      &:not(:has(+ nav)) {
-        padding-block-end: var(--spacing-container0);
+    h1 {
+      &:has( + p) {
+        padding-block-end: var(--spacing-container-4);
       }
     }
 
-    h1 {
-      padding-block: var(--spacing-container-3);
+    p {
+      color: var(--typography-subtle);
     }
 
-    :is(h1, p):not(:has(+ *)) {
-      padding-block-end: 0;
-    }
-  }
-
-  & > [part="content"] {
-    padding-block: var(--spacing-container0);
-
-    & > main:has(header) + *:not(:empty) {
-      /* Can't use prop here, as it will cascade its value, something we don't want */
-
-      /* --flow-space: 2em; */
-
-      margin-block-start: 2em;
+    &:not(:has(nav)) {
+      padding-block-end: var(--spacing-container0);
     }
   }
+
+  .base {
+    padding-block-start: 0;
+
+    & > header {
+      padding-block-start: 0;
+    }
+  }
+}
+
+.page {
+  --🔒-max-content-width: var(--max-width, var(--layout-page-max-content-width));
+
+  composes: base;
 }
 
 .focus-page {
   --🔒-max-content-width: var(--max-width, var(--layout-page-max-narrow-content-width));
 
-  composes: page;
+  composes: base;
 
-  & header {
+  /* stylelint-disable-next-line no-descending-specificity */
+  & > header {
     text-align: center;
   }
 
@@ -55,24 +60,16 @@
 .sectioned-page {
   --🔒-max-content-width: var(--max-width, var(--layout-page-max-content-width));
 
+  composes: base;
+
+  /* stylelint-disable-next-line no-descending-specificity */
   & > header {
+    margin-block-end: var(--spacing-container0);
     background-color: var(--surface-container);
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &:has(nav) {
       box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
-    }
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    p {
-      color: var(--typography-subtle);
-
-      &:not(:has(+ nav)) {
-        padding-block-end: var(--spacing-container0);
-      }
-    }
-
-    h1 {
-      padding-block: var(--spacing-container-3);
     }
 
     nav {
@@ -127,34 +124,13 @@
     }
   }
 
-  /* section& > header :is(h1, p):not(:has(+ *)) {
-    padding-block-end: 0;
-  } */
+  > [part="content"] > section {
+    display: grid;
+    grid-template-columns: subgrid;
 
-
-    > [part="content"] > section {
-      display: grid;
+    > :is([part="content"], header) {
       grid-template-columns: subgrid;
-
-      > :is([part="content"], header) {
-        grid-template-columns: subgrid;
-      }
-    }
-
-    > [part="content"] > section > header h1 {
-      padding-block-start: 0;
-    }
-
-
-  & > [part="content"] {
-    padding-block: var(--spacing-container0);
-
-    & > main:has(header) + *:not(:empty) {
-      /* Can't use prop here, as it will cascade its value, something we don't want */
-
-      /* --flow-space: 2em; */
-
-      margin-block-start: 2em;
     }
   }
 }
+

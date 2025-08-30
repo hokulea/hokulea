@@ -155,6 +155,9 @@ importers:
       ember-stargate:
         specifier: ^1.0.1
         version: 1.0.1(@babel/core@7.28.3)(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)
+      ember-strict-application-resolver:
+        specifier: ^0.1.0
+        version: 0.1.0(@babel/core@7.28.3)
       tracked-built-ins:
         specifier: ^4.0.0
         version: 4.0.0(@babel/core@7.28.3)
@@ -282,9 +285,6 @@ importers:
       ember-qunit:
         specifier: ^9.0.3
         version: 9.0.3(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)(qunit@2.24.1)
-      ember-resolver:
-        specifier: ^13.1.1
-        version: 13.1.1
       ember-set-helper:
         specifier: ^3.0.1
         version: 3.0.1(@babel/core@7.28.3)
@@ -5949,10 +5949,6 @@ packages:
       ember-source:
         optional: true
 
-  ember-resolver@13.1.1:
-    resolution: {integrity: sha512-rA4RDuTm/F9AzYX2+g7EY3QWU48kyF9+Ck8IE8VQipnlwv2Q42kdRWiw7hfeQbRxx6XoSZCak6nzAG9ePd/+Ug==}
-    engines: {node: 14.* || 16.* || >= 18}
-
   ember-resources@7.0.7:
     resolution: {integrity: sha512-0tEfLTi9hHNwZaBsTjLf+by+YXHL4Zj2VITLfFkcqJiwHIIsBnOddxtTSrjRmYLJd6L3JXfaMcVdUwT+B050Ww==}
     peerDependencies:
@@ -6009,6 +6005,9 @@ packages:
     resolution: {integrity: sha512-wlXzRm/qF5qE1kb6RvVVkS3rWfROwhP+TGGKE8JX4gZ53l2zMAtOA0t3WaX/ueUlRGQkXbd5l54W5uOd4fYFww==}
     peerDependencies:
       '@glimmer/component': ^2.0.0
+
+  ember-strict-application-resolver@0.1.0:
+    resolution: {integrity: sha512-dmVJPLDoltiB5PN4xhUmg9JrUMPJxdeIlwqUtRBvIHpOLrbi069m7AvXGEh0b+Pq7g1HkLwt/lMm6ouHVry7hQ==}
 
   ember-style-modifier@4.5.1:
     resolution: {integrity: sha512-ReVGW9fZmDIsCWsuJGH4joiiHOv9aF9Yv4lUZUjXjQyR9SEAae7RWjZcjPgmEJwpN7yDSyy4PIwdJa0smT2A3g==}
@@ -9700,7 +9699,6 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qs@1.0.2:
@@ -13927,6 +13925,7 @@ snapshots:
       ember-link: 3.5.0(@babel/core@7.28.3)(@ember/test-helpers@5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2)
       ember-modifier: 4.2.2(@babel/core@7.28.3)
       ember-stargate: 1.0.1(@babel/core@7.28.3)(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)
+      ember-strict-application-resolver: 0.1.0(@babel/core@7.28.3)
       tracked-built-ins: 4.0.0(@babel/core@7.28.3)
     optionalDependencies:
       '@ember/test-helpers': 5.2.2(@babel/core@7.28.3)(@glint/template@1.6.0-alpha.2)
@@ -18284,12 +18283,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-resolver@13.1.1:
-    dependencies:
-      ember-cli-babel: 7.26.11
-    transitivePeerDependencies:
-      - supports-color
-
   ember-resources@7.0.7(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2):
     dependencies:
       '@embroider/addon-shim': 1.10.0
@@ -18501,6 +18494,14 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
       - '@glint/template'
+      - supports-color
+
+  ember-strict-application-resolver@0.1.0(@babel/core@7.28.3):
+    dependencies:
+      '@embroider/addon-shim': 1.10.0
+      decorator-transforms: 2.3.0(@babel/core@7.28.3)
+    transitivePeerDependencies:
+      - '@babel/core'
       - supports-color
 
   ember-style-modifier@4.5.1(@babel/core@7.28.3)(@ember/string@4.0.1):

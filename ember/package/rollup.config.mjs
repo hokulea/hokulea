@@ -87,6 +87,7 @@ export default {
       'test-support/index.js',
       // from here on, it is only required for classic ember builds
       'template-registry.js',
+      'registry.js',
       ...modules
     ]),
 

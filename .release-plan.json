@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.7.2",
-      "newVersion": "0.8.0",
+      "oldVersion": "0.8.0",
+      "newVersion": "0.9.0",
       "tagName": "latest",
       "constraints": [
         {
@@ -13,19 +13,31 @@
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
       "impact": "minor",
-      "oldVersion": "0.4.0",
-      "newVersion": "0.5.0",
+      "oldVersion": "0.5.0",
+      "newVersion": "0.6.0",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
@@ -34,8 +46,18 @@
       "oldVersion": "0.1.1"
     },
     "@hokulea/theme-moana": {
-      "oldVersion": "0.1.0"
+      "impact": "minor",
+      "oldVersion": "0.1.0",
+      "newVersion": "0.2.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        }
+      ],
+      "pkgJSONPath": "./themes/moana/package.json"
     }
   },
-  "description": "## Release (2025-08-25)\n\n* @hokulea/ember 0.8.0 (minor)\n* @hokulea/core 0.5.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#419](https://github.com/hokulea/hokulea/pull/419) Provide form rules with `@hokulea/pahu` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-08-30)\n\n* @hokulea/ember 0.9.0 (minor)\n* @hokulea/core 0.6.0 (minor)\n* @hokulea/theme-moana 0.2.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#432](https://github.com/hokulea/hokulea/pull/432) Use strict application resolver and provide registry ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/theme-moana`\n  * [#422](https://github.com/hokulea/hokulea/pull/422) New Component: `<NavigationList>` ([@gossi](https://github.com/gossi))\n  * [#420](https://github.com/hokulea/hokulea/pull/420) `<Page>`, `<SectionedPage>` + `<FocusPage>` ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#425](https://github.com/hokulea/hokulea/pull/425) Fix NavItem in aux area when in popup menu ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#431](https://github.com/hokulea/hokulea/pull/431) Remove `ember-route-template` ([@gossi](https://github.com/gossi))\n  * [#428](https://github.com/hokulea/hokulea/pull/428) Reorganized Components by topic ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

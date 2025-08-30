@@ -9,9 +9,9 @@ import { AppHeaderPageObject } from '#test-support';
 
 import { linkFor, setupLink } from 'ember-link/test-support';
 
-import { setContainerWidth } from '../-helpers.ts';
+import { setContainerWidth } from '../../-helpers.ts';
 
-module('Rendering | <AppHeader>', (hooks) => {
+module('Rendering | Navigation | <AppHeader>', (hooks) => {
   setupRenderingTest(hooks);
   setupLink(hooks);
 
@@ -250,6 +250,35 @@ module('Rendering | <AppHeader>', (hooks) => {
 
       await click(appHeader.$nav.$item[0] as Target);
       assert.ok(appHeader.$nav.$item[0]?.expanded);
+    });
+
+    test('aux menu items can have a popup and can be opened', async (assert) => {
+      await render(
+        <template>
+          <AppHeader>
+            <:brand>Donaudampfschifffarhtskaptiänsbindenfüllfederhalter</:brand>
+            <:aux as |n|>
+              <n.Item>
+                <:label>Options</:label>
+                <:menu>
+                  Theme Options will be here<br />needs ButtonGroup
+                </:menu>
+              </n.Item>
+            </:aux>
+          </AppHeader>
+        </template>
+      );
+
+      const appHeader = new AppHeaderPageObject();
+
+      assert.dom(appHeader.$menu).exists();
+      assert.notOk(appHeader.$menu.$popover.expanded);
+
+      await click(appHeader.$menu.$toggle);
+      assert.ok(appHeader.$menu.$popover.expanded);
+
+      await click(appHeader.$aux.$item[0] as Target);
+      assert.ok(appHeader.$aux.$item[0]?.expanded);
     });
   });
 });

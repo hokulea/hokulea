@@ -16,6 +16,8 @@ import { NavLink } from './nav-link.gts';
 
 import type { MenuItemSignature } from '../-menu';
 import type { TOC } from '@ember/component/template-only';
+import type { Placement } from '@floating-ui/dom';
+import type { ComponentLike } from '@glint/template';
 import type { Link } from 'ember-link';
 
 const asLink = (value: unknown): Link => {
@@ -25,6 +27,7 @@ const asLink = (value: unknown): Link => {
 interface NavItemSignature extends MenuItemSignature {
   Args: MenuItemSignature['Args'] & {
     href?: string;
+    position?: Placement;
   };
 }
 
@@ -32,7 +35,7 @@ const NavItem: TOC<NavItemSignature> = <template>
   {{#if (has-block)}}
     <NavLink @push={{asLink @push}} @href={{@href}}>{{yield}}</NavLink>
   {{else if (and (has-block "menu") (has-block "label"))}}
-    {{#let (popover position="bottom-start") as |p|}}
+    {{#let (popover position=(if @position @position "bottom-start")) as |p|}}
       <button type="button" aria-haspopup="menu" part="item" {{p.trigger}}>
         <span>{{yield to="label"}}</span>
       </button>
@@ -78,7 +81,7 @@ interface AppHeaderSignature {
   Blocks: {
     brand?: [];
     nav?: [{ Item: typeof NavItem }];
-    aux?: [{ Item: typeof NavItem }];
+    aux?: [{ Item: ComponentLike<typeof NavItem> }];
   };
 }
 
@@ -142,7 +145,8 @@ export default class AppHeader extends Component<AppHeaderSignature> {
         .some(
           (target: EventTarget) =>
             (target as HTMLElement | null)?.tagName &&
-            ['a', 'button'].includes((target as HTMLElement).tagName.toLowerCase())
+            ['a', 'button'].includes((target as HTMLElement).tagName.toLowerCase()) &&
+            !(target as HTMLElement).getAttribute('aria-haspopup')
         );
 
       if (hitALink) {
@@ -208,7 +212,7 @@ export default class AppHeader extends Component<AppHeaderSignature> {
 
                     {{#if (has-block "aux")}}
                       <span part="aux">
-                        {{yield (hash Item=PopoverNavItem) to="aux"}}
+                        {{yield (hash Item=(component NavItem position="top-start")) to="aux"}}
                       </span>
                     {{/if}}
                   </div>

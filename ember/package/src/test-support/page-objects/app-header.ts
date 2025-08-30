@@ -70,7 +70,7 @@ export class AppHeaderPageObject extends PageObject<HTMLElement> {
   }
 
   get $aux() {
-    return sel<HTMLSpanElement>(`${this.#prefix} [part="aux"]`);
+    return sel(`${this.#prefix} [part="aux"]`, AppNavPageObject);
   }
 
   $menu = sel(

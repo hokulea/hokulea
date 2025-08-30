@@ -180,27 +180,37 @@ a:active {
         padding-inline: var(--spacing-container0);
       }
 
-      [part="aux"] {
-        margin-block-start: auto;
-        padding: var(--spacing-container0);
-      }
-
-      :not(header) [part="item"] {
+      [part="item"] {
         display: list-item;
         padding-block: var(--spacing-container-4);
+        text-align: start;
         list-style-position: inside;
 
         /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
         &::marker {
           margin: 0;
         }
+
+        &:is(a, button, span) {
+          /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+          text-indent: 0.85em;
+          list-style-type: none;
+        }
       }
 
-      :not(header) :is(a, span, button) {
-        text-align: start;
-        /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-        text-indent: 0.85em;
-        list-style-type: none;
+      [part="aux"] {
+        margin-block-start: auto;
+        padding: var(--spacing-container0);
+
+        :is(a,button) {
+          display: inline-flex;
+
+          &[aria-haspopup="menu"]::after {
+            --chevron-up: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 165.66a8 8 0 0 1-11.32 0L128 91.31l-74.34 74.35a8 8 0 0 1-11.32-11.32l80-80a8 8 0 0 1 11.32 0l80 80a8 8 0 0 1 0 11.32"/></svg>');
+
+            mask: var(--chevron-up) center center / 100% auto no-repeat;
+          }
+        }
       }
 
       details > div {

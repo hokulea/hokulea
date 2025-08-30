@@ -231,6 +231,7 @@ a:active {
     font-weight: 450;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   > [part="item"] {
     position: relative;
     border-radius: var(--shape-radius-primitive);
@@ -259,6 +260,7 @@ a:active {
       }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &:active, &:hover {
       color: var(--typography-main);
       background-color: var(--navigation-item-hover-background);

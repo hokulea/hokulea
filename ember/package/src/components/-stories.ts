@@ -12,8 +12,6 @@ export function getIconSvg(iconName: string) {
   // @ts-ignore
   const icon = (ph as PhIcons).icons[iconName] as IconifyIcon | undefined;
 
-  console.log('icon', iconName, icon);
-
   if (!icon) return;
 
   const { body } = icon;

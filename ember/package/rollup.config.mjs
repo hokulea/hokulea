@@ -36,7 +36,6 @@ export default {
       'test-support/index.js',
       // from here on, it is only required for classic ember builds
       'template-registry.js',
-      'components/app-header.js',
       'components/box.js',
       'components/button.js',
       'components/card.js',
@@ -61,6 +60,10 @@ export default {
       'components/text-area.js',
       'components/form.js',
       'components/popover.js',
+      // navigation
+      'components/app-header.js',
+      'components/navigation-list.js',
+      // layouts
       'components/page.js',
       'components/focus-page.js',
       'components/sectioned-page.js',
@@ -72,7 +75,6 @@ export default {
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
     addon.appReexports([
-      'components/app-header.js',
       'components/box.js',
       'components/button.js',
       'components/card.js',
@@ -97,6 +99,10 @@ export default {
       'components/text-area.js',
       'components/form.js',
       'components/popover.js',
+      // navigation
+      'components/app-header.js',
+      'components/navigation-list.js',
+      // layouts
       'components/page.js',
       'components/focus-page.js',
       'components/sectioned-page.js',

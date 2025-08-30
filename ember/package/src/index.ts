@@ -12,12 +12,14 @@ export { default as DateInput } from './components/date-input.gts';
 export { default as EmailInput } from './components/email-input.gts';
 export { default as InputBuilder } from './components/input-builder.gts';
 export { default as List } from './components/list.gts';
+export { default as Menu } from './components/menu.gts';
 export { default as NumberInput } from './components/number-input.gts';
 export { default as PasswordInput } from './components/password-input.gts';
 export { default as PhoneInput } from './components/phone-input.gts';
 export { default as Radio } from './components/radio.gts';
 export { default as RangeInput } from './components/range-input.gts';
 export { default as Select } from './components/select.gts';
+export { default as Tabs } from './components/tabs.gts';
 export { default as TextArea } from './components/text-area.gts';
 export { default as TextInput } from './components/text-input.gts';
 
@@ -33,9 +35,8 @@ export type {
 export { Form } from './components/form/index.ts';
 
 // navigation
-export { default as AppHeader } from './components/app-header.gts';
-export { default as Menu } from './components/menu.gts';
-export { default as Tabs } from './components/tabs.gts';
+export { default as AppHeader } from './components/navigation/app-header.gts';
+export { NavigationList } from './components/navigation/navigation-list.gts';
 
 // layouts
 export { default as FocusPage } from './components/focus-page.gts';

@@ -15,10 +15,8 @@ export interface IconSignature {
   };
 }
 
-const Icon: TOC<IconSignature> = <template>
+export const Icon: TOC<IconSignature> = <template>
   <span class={{styles.icon}} data-test-icon ...attributes>
     {{htmlSafe @icon}}
   </span>
 </template>;
-
-export default Icon;

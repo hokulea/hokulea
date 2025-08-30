@@ -2,13 +2,13 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../-private/stories.ts';
+import { parseOptionalBooleanArg } from '../../-private/stories.ts';
 
 import type { InputArgs } from './-input.ts';
 
 export default {
-  title: 'Components/Controls/Select',
-  component: 'Select',
+  title: 'Components/Controls/EmailInput',
+  component: 'Card',
   parameters: {
     options: {
       showPanel: true,
@@ -29,26 +29,28 @@ function parseArgs(args: Args) {
 
 export const Showcase = {
   render: (args: Args) => ({
-    template: hbs`
-      <Select @update={{this.update}} @disabled={{this.disabled}} as |l|>
-        {{#each (array 'Apple' 'Banana' 'Pineapple') as |i|}}
-          <l.Option @value={{i}}>{{i}}</l.Option>
-        {{/each}}
-      </Select>
-    `,
+    template: hbs`<EmailInput @value={{this.value}} @update={{this.update}} @disabled={{this.disabled}} placeholder={{this.placeholder}}/>`,
     context: {
       ...parseArgs(args),
       update: action('update')
     }
   }),
   argTypes: {
-    // value: {
-    //   name: 'Value',
-    //   control: 'text'
-    // },
+    value: {
+      name: 'Value',
+      control: 'text'
+    },
+    placeholder: {
+      name: 'Placeholder',
+      control: 'text'
+    },
     disabled: {
       name: 'Disabled',
       control: 'boolean'
     }
+  },
+  args: {
+    value: '',
+    placeholder: ''
   }
 };

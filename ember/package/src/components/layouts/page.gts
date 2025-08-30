@@ -26,7 +26,7 @@ interface PageSignature {
   };
 }
 
-const Page: TOC<PageSignature> = <template>
+export const Page: TOC<PageSignature> = <template>
   {{#let (if @element @element (element (pageElement))) as |Element|}}
     <Element class={{styles.page}} {{pageDestructor}} ...attributes data-test-page>
       {{#if
@@ -63,5 +63,3 @@ const Page: TOC<PageSignature> = <template>
     </Element>
   {{/let}}
 </template>;
-
-export default Page;

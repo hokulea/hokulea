@@ -6,11 +6,11 @@ import { element } from 'ember-element-helper';
 import styles from '@hokulea/core/forms.module.css';
 
 import { eq } from '../../../-private/helpers.ts';
-import Radio from '../../radio.gts';
-import Description from '../description.gts';
-import Label from '../label.gts';
+import { Radio } from '../../controls/radio.gts';
+import { Description } from '../description.gts';
+import { Label } from '../label.gts';
 
-import type { RadioSignature } from '../../radio.gts';
+import type { RadioSignature } from '../../controls/radio.gts';
 import type { BoundField, FieldArgs, FieldBlock } from '../field';
 import type { AttrValue, WithBoundArgs } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -97,7 +97,7 @@ export interface SingularChoiceFieldSignature<
   };
 }
 
-export default class SingularChoiceField<
+export class SingularChoiceField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

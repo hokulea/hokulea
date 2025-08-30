@@ -1,27 +1,27 @@
 // icons
-export { default as Icon } from './components/icon.gts';
+export { Icon } from './components/graphics/icon.gts';
 
 // actions
-export { default as Button } from './components/button.gts';
-export { default as IconButton } from './components/icon-button.gts';
+export { Button } from './components/actions/button.gts';
+export { IconButton } from './components/actions/icon-button.gts';
 
 // controls
-export { default as Checkbox } from './components/checkbox.gts';
-export { default as CurrencyInput } from './components/currency-input.gts';
-export { default as DateInput } from './components/date-input.gts';
-export { default as EmailInput } from './components/email-input.gts';
-export { default as InputBuilder } from './components/input-builder.gts';
-export { default as List } from './components/list.gts';
-export { default as Menu } from './components/menu.gts';
-export { default as NumberInput } from './components/number-input.gts';
-export { default as PasswordInput } from './components/password-input.gts';
-export { default as PhoneInput } from './components/phone-input.gts';
-export { default as Radio } from './components/radio.gts';
-export { default as RangeInput } from './components/range-input.gts';
-export { default as Select } from './components/select.gts';
-export { default as Tabs } from './components/tabs.gts';
-export { default as TextArea } from './components/text-area.gts';
-export { default as TextInput } from './components/text-input.gts';
+export { Checkbox } from './components/controls/checkbox.gts';
+export { CurrencyInput } from './components/controls/currency-input.gts';
+export { DateInput } from './components/controls/date-input.gts';
+export { EmailInput } from './components/controls/email-input.gts';
+export { InputBuilder } from './components/controls/input-builder.gts';
+export { List } from './components/controls/list.gts';
+export { Menu } from './components/controls/menu.gts';
+export { NumberInput } from './components/controls/number-input.gts';
+export { PasswordInput } from './components/controls/password-input.gts';
+export { PhoneInput } from './components/controls/phone-input.gts';
+export { Radio } from './components/controls/radio.gts';
+export { RangeInput } from './components/controls/range-input.gts';
+export { Select } from './components/controls/select.gts';
+export { Tabs } from './components/controls/tabs.gts';
+export { TextArea } from './components/controls/text-area.gts';
+export { TextInput } from './components/controls/text-input.gts';
 
 // forms
 export type {
@@ -35,24 +35,22 @@ export type {
 export { Form } from './components/form/index.ts';
 
 // navigation
-export { default as AppHeader } from './components/navigation/app-header.gts';
+export { AppHeader } from './components/navigation/app-header.gts';
 export { NavigationList } from './components/navigation/navigation-list.gts';
 
 // layouts
-export { default as FocusPage } from './components/focus-page.gts';
-export { default as Page } from './components/page.gts';
-export { default as SectionedPage } from './components/sectioned-page.gts';
+export { FocusPage } from './components/layouts/focus-page.gts';
+export { Page } from './components/layouts/page.gts';
+export { SectionedPage } from './components/layouts/sectioned-page.gts';
 
 // content
-export { default as Box } from './components/box.gts';
-export { default as Card } from './components/card.gts';
-export { default as Section } from './components/section.gts';
+export { Box } from './components/content/box.gts';
+export { Card } from './components/content/card.gts';
+export { Section } from './components/content/section.gts';
 
 // window
-export { default as Popover } from './components/popover.gts';
-
-// behavior
-export { default as popover } from './helpers/popover.ts';
+export { Popover } from './components/windows/popover.gts';
+export { popover } from './helpers/popover.ts';
 
 // - internal
 export {

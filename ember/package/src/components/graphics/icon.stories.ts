@@ -1,6 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { getIconSvg, listIcons } from './-stories';
+import { getIconSvg, listIcons } from '../../-private/stories.ts';
 
 const iconNames = listIcons();
 
@@ -14,7 +14,7 @@ interface IconSignature {
 }
 
 export default {
-  title: 'Components/Icons/Icon',
+  title: 'Components/Graphics/Icon',
   component: 'icon',
   parameters: {
     options: {

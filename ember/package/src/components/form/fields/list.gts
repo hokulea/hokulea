@@ -3,11 +3,11 @@ import { uniqueId } from '@ember/helper';
 
 import { element } from 'ember-element-helper';
 
-import List from '../../list.gts';
-import Label from '../label.gts';
+import { List } from '../../controls/list.gts';
+import { Label } from '../label.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { ListSignature } from '../../list.gts';
+import type { ListSignature } from '../../controls/list.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { TOC } from '@ember/component/template-only';
 import type { AttrValue } from '@glint/template';
@@ -40,7 +40,7 @@ export interface ListFieldSignature<
   Blocks: ListSignature<FieldValue<DATA, NAME, VALUE>>['Blocks'];
 }
 
-export default class ListField<
+export class ListField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

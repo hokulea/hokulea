@@ -16,7 +16,7 @@ class State {
   @tracked opened = false;
 }
 
-const popover = helper((_, { position, opened, closed }: PopoverArgs) => {
+export const popover = helper((_, { position, opened, closed }: PopoverArgs) => {
   const state = new State();
   let triggerElement: HTMLElement | undefined;
   let targetElement: HTMLElement | undefined;

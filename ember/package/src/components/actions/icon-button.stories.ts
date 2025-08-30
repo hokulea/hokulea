@@ -4,7 +4,7 @@ import { action } from 'storybook/actions';
 
 import { Importance, Intent, Spacing } from '@hokulea/tokens';
 
-import { getIconSvg, listIcons } from './-stories.ts';
+import { getIconSvg, listIcons } from '../../-private/stories.ts';
 
 import type { Importances, Intents, Spacings } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';

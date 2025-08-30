@@ -2,12 +2,12 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../-private/stories.ts';
+import { parseOptionalBooleanArg } from '../../-private/stories.ts';
 
 import type { InputArgs } from './-input.ts';
 
 export default {
-  title: 'Components/Controls/Radio',
+  title: 'Components/Controls/TextArea',
   component: 'Card',
   parameters: {
     options: {
@@ -18,28 +18,31 @@ export default {
   controls: { hideNoControlsWarning: true }
 };
 
-type Args = InputArgs<boolean> & { disabled: boolean | string; checked: boolean | string };
+type Args = InputArgs<boolean> & { disabled: boolean | string };
 
 function parseArgs(args: Args) {
   return {
     ...args,
-    disabled: parseOptionalBooleanArg(args.disabled),
-    checked: parseOptionalBooleanArg(args.checked)
+    disabled: parseOptionalBooleanArg(args.disabled)
   };
 }
 
 export const Showcase = {
   render: (args: Args) => ({
-    template: hbs`<Radio @value={{this.checked}} @update={{this.update}} @disabled={{this.disabled}}/>`,
+    template: hbs`<TextArea @value={{this.value}} @update={{this.update}} @disabled={{this.disabled}} placeholder={{this.placeholder}}/>`,
     context: {
       ...parseArgs(args),
       update: action('update')
     }
   }),
   argTypes: {
-    checked: {
-      name: 'Checked',
-      control: 'boolean'
+    value: {
+      name: 'Value',
+      control: 'text'
+    },
+    placeholder: {
+      name: 'Placeholder',
+      control: 'text'
     },
     disabled: {
       name: 'Disabled',

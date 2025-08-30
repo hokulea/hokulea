@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import Icon from '../icon.gts';
+import { Icon } from '../graphics/icon.gts';
 
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
@@ -73,7 +73,7 @@ export interface RulesSignature {
   };
 }
 
-export default class Rules extends Component<RulesSignature> {
+export class Rules extends Component<RulesSignature> {
   constructor(owner: Owner, args: RulesSignature['Args']) {
     super(owner, args);
 

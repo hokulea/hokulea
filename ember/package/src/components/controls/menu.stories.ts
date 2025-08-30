@@ -1,6 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { parseOptionalBooleanArg } from '../-private/stories.ts';
+import { parseOptionalBooleanArg } from '../../-private/stories.ts';
 
 export default {
   title: 'Components/Controls/Menu',

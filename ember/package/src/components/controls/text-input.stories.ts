@@ -2,12 +2,12 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../-private/stories.ts';
+import { parseOptionalBooleanArg } from '../../-private/stories.ts';
 
 import type { InputArgs } from './-input.ts';
 
 export default {
-  title: 'Components/Controls/PhoneInput',
+  title: 'Components/Controls/TextInput',
   component: 'Card',
   parameters: {
     options: {
@@ -29,7 +29,7 @@ function parseArgs(args: Args) {
 
 export const Showcase = {
   render: (args: Args) => ({
-    template: hbs`<PhoneInput @value={{this.value}} @update={{this.update}} @disabled={{this.disabled}} placeholder={{this.placeholder}}/>`,
+    template: hbs`<TextInput @value={{this.value}} @update={{this.update}} @disabled={{this.disabled}} placeholder={{this.placeholder}}/>`,
     context: {
       ...parseArgs(args),
       update: action('update')

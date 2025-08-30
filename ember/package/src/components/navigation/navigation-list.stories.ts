@@ -1,6 +1,6 @@
 import { hbs } from 'ember-cli-htmlbars';
 
-import { getIconSvg } from '../-stories.ts';
+import { getIconSvg } from '../../-private/stories.ts';
 
 export default {
   title: 'Components/Navigation/NavigationList',

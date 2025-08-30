@@ -5,13 +5,13 @@ import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/forms.module.css';
 
-import Checkbox from '../../checkbox.gts';
-import Description from '../description.gts';
-import Errors from '../errors.gts';
-import Label from '../label.gts';
+import { Checkbox } from '../../controls/checkbox.gts';
+import { Description } from '../description.gts';
+import { Errors } from '../errors.gts';
+import { Label } from '../label.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { RadioSignature } from '../../radio.gts';
+import type { RadioSignature } from '../../controls/radio.gts';
 import type { BoundField, FieldArgs, FieldBlock, MultipleFieldBlock } from '../field';
 import type { AttrValue, WithBoundArgs } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -133,7 +133,7 @@ export interface MultipleChoiceFieldSignature<
   };
 }
 
-export default class MultipleChoiceField<
+export class MultipleChoiceField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

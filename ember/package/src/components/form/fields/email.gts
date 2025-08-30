@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asString } from '../../../-private/helpers.ts';
-import EmailInput from '../../email-input.gts';
+import { EmailInput } from '../../controls/email-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { EmailInputSignature } from '../../email-input.gts';
+import type { EmailInputSignature } from '../../controls/email-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -21,7 +21,7 @@ export interface EmailFieldSignature<
     };
 }
 
-export default class EmailField<
+export class EmailField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

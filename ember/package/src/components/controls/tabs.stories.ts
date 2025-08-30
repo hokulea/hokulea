@@ -2,7 +2,7 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../-private/stories.ts';
+import { parseOptionalBooleanArg } from '../../-private/stories.ts';
 
 import type { InputArgs } from './-input.ts';
 import type { Orientation, TablistBehavior } from 'ember-aria-voyager';

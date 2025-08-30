@@ -3,9 +3,9 @@ import { on } from '@ember/modifier';
 import { CommandElement } from 'ember-command';
 import { Link, link } from 'ember-link';
 
-import Icon from '../icon.gts';
+import { Icon } from '../graphics/icon.gts';
 
-import type { MenuItemArgs, MenuItemBlocks } from '../-menu';
+import type { MenuItemArgs, MenuItemBlocks } from '../controls/-menu';
 import type { TOC } from '@ember/component/template-only';
 import type { CommandAction } from 'ember-command';
 

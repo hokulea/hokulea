@@ -26,7 +26,7 @@ interface FocusPageSignature {
   };
 }
 
-const FocusPage: TOC<FocusPageSignature> = <template>
+export const FocusPage: TOC<FocusPageSignature> = <template>
   {{#let (if @element @element (element (pageElement))) as |Element|}}
     <Element class={{styles.focusPage}} {{pageDestructor}} ...attributes data-test-page>
       {{#if
@@ -63,5 +63,3 @@ const FocusPage: TOC<FocusPageSignature> = <template>
     </Element>
   {{/let}}
 </template>;
-
-export default FocusPage;

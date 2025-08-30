@@ -8,10 +8,10 @@ import { element } from 'ember-element-helper';
 import styles from '@hokulea/core/forms.module.css';
 
 import { and } from '../../-private/helpers.ts';
-import Description from './description.gts';
-import Errors from './errors.gts';
-import Label from './label.gts';
-import Rules from './rules.gts';
+import { Description } from './description.gts';
+import { Errors } from './errors.gts';
+import { Label } from './label.gts';
+import { Rules } from './rules.gts';
 
 import type { LabelSignature } from './label.gts';
 import type { AttrValue, ComponentLike, WithBoundArgs } from '@glint/template';
@@ -155,7 +155,7 @@ export interface FieldSignature<
   };
 }
 
-export default class Field<
+export class Field<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

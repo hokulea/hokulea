@@ -2,7 +2,7 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../-private/stories';
+import { parseOptionalBooleanArg } from '../../-private/stories';
 
 import type { InputArgs } from './-input.ts';
 

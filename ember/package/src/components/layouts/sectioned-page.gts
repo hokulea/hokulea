@@ -28,7 +28,7 @@ interface SectionedPageSignature {
   };
 }
 
-const SectionedPage: TOC<SectionedPageSignature> = <template>
+export const SectionedPage: TOC<SectionedPageSignature> = <template>
   {{#let (if @element @element (element (pageElement))) as |Element|}}
     <Element class={{styles.sectionedPage}} {{pageDestructor}} ...attributes data-test-page>
       {{#if
@@ -71,5 +71,3 @@ const SectionedPage: TOC<SectionedPageSignature> = <template>
     </Element>
   {{/let}}
 </template>;
-
-export default SectionedPage;

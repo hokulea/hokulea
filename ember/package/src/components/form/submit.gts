@@ -28,7 +28,7 @@ export interface SubmitSignature {
   };
 }
 
-const Submit: TOC<SubmitSignature> = <template>
+export const Submit: TOC<SubmitSignature> = <template>
   <button
     type="submit"
     class={{styles.button}}
@@ -62,5 +62,3 @@ const Submit: TOC<SubmitSignature> = <template>
     {{/if}}
   </button>
 </template>;
-
-export default Submit;

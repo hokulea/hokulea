@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asNumber } from '../../../-private/helpers.ts';
-import CurrencyInput from '../../currency-input.gts';
+import { CurrencyInput } from '../../controls/currency-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { CurrencyInputSignature } from '../../currency-input.gts';
+import type { CurrencyInputSignature } from '../../controls/currency-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -21,7 +21,7 @@ export interface CurrencyFieldSignature<
     };
 }
 
-export default class CurrencyField<
+export class CurrencyField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

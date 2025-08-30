@@ -15,12 +15,10 @@ export interface LabelSignature {
   };
 }
 
-const Label: TOC<LabelSignature> = <template>
+export const Label: TOC<LabelSignature> = <template>
   {{#let (if @element @element (element "label")) as |Element|}}
     <Element class={{styles.label}} data-test-label ...attributes>
       {{yield}}
     </Element>
   {{/let}}
 </template>;
-
-export default Label;

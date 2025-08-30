@@ -28,7 +28,7 @@ export interface ResetSignature {
   };
 }
 
-const Reset: TOC<ResetSignature> = <template>
+export const Reset: TOC<ResetSignature> = <template>
   <button
     type="reset"
     class={{styles.button}}
@@ -62,5 +62,3 @@ const Reset: TOC<ResetSignature> = <template>
     {{/if}}
   </button>
 </template>;
-
-export default Reset;

@@ -9,12 +9,12 @@ import { modifier } from 'ember-modifier';
 import styles from '@hokulea/core/navigation.module.css';
 
 import { and, not, or } from '../../-private/helpers.ts';
-import popover from '../../helpers/popover.ts';
-import IconButton from '../icon-button.gts';
-import Menu from '../menu.gts';
+import { popover } from '../../helpers/popover.ts';
+import { IconButton } from '../actions/icon-button.gts';
+import { Menu } from '../controls/menu.gts';
 import { NavLink } from './nav-link.gts';
 
-import type { MenuItemSignature } from '../-menu';
+import type { MenuItemSignature } from '../controls/-menu';
 import type { TOC } from '@ember/component/template-only';
 import type { Placement } from '@floating-ui/dom';
 import type { ComponentLike } from '@glint/template';
@@ -85,7 +85,7 @@ interface AppHeaderSignature {
   };
 }
 
-export default class AppHeader extends Component<AppHeaderSignature> {
+export class AppHeader extends Component<AppHeaderSignature> {
   @tracked topNavShown = true;
   @tracked sensing = false;
 

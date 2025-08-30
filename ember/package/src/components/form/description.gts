@@ -9,10 +9,8 @@ export interface DescriptionSignature {
   };
 }
 
-const Description: TOC<DescriptionSignature> = <template>
+export const Description: TOC<DescriptionSignature> = <template>
   <p class={{styles.description}} data-test-description ...attributes>
     {{yield}}
   </p>
 </template>;
-
-export default Description;

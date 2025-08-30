@@ -1,2 +1,2 @@
 // this is for storybook
-export { default } from './form/form.gts';
+export { Form as default } from './form/form.gts';

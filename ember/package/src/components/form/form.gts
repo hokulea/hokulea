@@ -4,23 +4,23 @@ import { hash } from '@ember/helper';
 import styles from '@hokulea/core/forms.module.css';
 import { createForm } from '@hokulea/ember-pahu';
 
-import Field from './field.gts';
-import CheckboxField from './fields/checkbox.gts';
-import CurrencyField from './fields/currency.gts';
-import DateField from './fields/date.gts';
-import EmailField from './fields/email.gts';
-import ListField from './fields/list.gts';
-import MultipleChoiceField from './fields/multiple-choice.gts';
-import NumberField from './fields/number.gts';
-import PasswordField from './fields/password.gts';
-import PhoneField from './fields/phone.gts';
-import RangeField from './fields/range.gts';
-import SelectField from './fields/select.gts';
-import SingularChoiceField from './fields/singular-choice.gts';
-import TextField from './fields/text.gts';
-import TextAreaField from './fields/text-area.gts';
-import Reset from './reset.gts';
-import Submit from './submit.gts';
+import { Field } from './field.gts';
+import { CheckboxField } from './fields/checkbox.gts';
+import { CurrencyField } from './fields/currency.gts';
+import { DateField } from './fields/date.gts';
+import { EmailField } from './fields/email.gts';
+import { ListField } from './fields/list.gts';
+import { MultipleChoiceField } from './fields/multiple-choice.gts';
+import { NumberField } from './fields/number.gts';
+import { PasswordField } from './fields/password.gts';
+import { PhoneField } from './fields/phone.gts';
+import { RangeField } from './fields/range.gts';
+import { SelectField } from './fields/select.gts';
+import { SingularChoiceField } from './fields/singular-choice.gts';
+import { TextField } from './fields/text.gts';
+import { TextAreaField } from './fields/text-area.gts';
+import { Reset } from './reset.gts';
+import { Submit } from './submit.gts';
 
 import type { BoundField } from './field.gts';
 import type { WithBoundArgs } from '@glint/template';
@@ -77,7 +77,7 @@ export interface FormSignature<DATA extends UserData> {
   };
 }
 
-export default class Form<DATA extends UserData> extends Component<FormSignature<DATA>> {
+export class Form<DATA extends UserData> extends Component<FormSignature<DATA>> {
   Field = Field<DATA>;
   CheckboxField = CheckboxField<DATA>;
   CurrencyField = CurrencyField<DATA>;

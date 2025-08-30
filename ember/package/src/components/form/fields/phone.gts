@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asString } from '../../../-private/helpers.ts';
-import PhoneInput from '../../phone-input.gts';
+import { PhoneInput } from '../../controls/phone-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { PhoneInputSignature } from '../../phone-input.gts';
+import type { PhoneInputSignature } from '../../controls/phone-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { RulesBlock } from '../rules.gts';
 import type { AttrValue } from '@glint/template';
@@ -23,7 +23,7 @@ export interface PhoneFieldSignature<
   Blocks: RulesBlock;
 }
 
-export default class PhoneField<
+export class PhoneField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

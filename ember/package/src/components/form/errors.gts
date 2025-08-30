@@ -24,7 +24,7 @@ export interface ErrorsSignature {
   };
 }
 
-const Errors: TOC<ErrorsSignature> = <template>
+export const Errors: TOC<ErrorsSignature> = <template>
   <div id={{@id}} aria-live="assertive" class={{styles.errors}} ...attributes>
     {{! <span><Icon @icon='dismiss-circle' @style='filled' /></span> }}
     {{#if (has-block)}}
@@ -44,5 +44,3 @@ const Errors: TOC<ErrorsSignature> = <template>
     {{/if}}
   </div>
 </template>;
-
-export default Errors;

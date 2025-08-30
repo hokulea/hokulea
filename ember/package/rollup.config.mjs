@@ -13,6 +13,57 @@ const configs = {
   ts: resolve(import.meta.dirname, './tsconfig.publish.json')
 };
 
+const modules = [
+  // actions
+  'components/button.js',
+  'components/icon-button.js',
+
+  // content
+  'components/box.js',
+  'components/card.js',
+  'components/section.js',
+
+  // controls
+  'components/checkbox.js',
+  'components/currency-input.js',
+  'components/date-input.js',
+  'components/email-input.js',
+  'components/input-builder.js',
+  'components/list.js',
+  'components/menu.js',
+  'components/number-input.js',
+  'components/password-input.js',
+  'components/phone-input.js',
+  'components/radio.js',
+  'components/range-input.js',
+  'components/select.js',
+  'components/tabs.js',
+  'components/text-area.js',
+  'components/text-input.js',
+
+  // form
+  'components/form.js',
+
+  // graphics
+  'components/icon.js',
+
+  // navigation
+  'components/app-header.js',
+  'components/navigation-list.js',
+
+  // layouts
+  'components/page.js',
+  'components/focus-page.js',
+  'components/sectioned-page.js',
+
+  // windows
+  'components/popover.js',
+  'helpers/popover.js',
+
+  // other
+  'services/-hokulea.js'
+];
+
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
   // You can augment this if you need to.
@@ -36,79 +87,13 @@ export default {
       'test-support/index.js',
       // from here on, it is only required for classic ember builds
       'template-registry.js',
-      'components/box.js',
-      'components/button.js',
-      'components/card.js',
-      'components/icon-button.js',
-      'components/icon.js',
-      'components/list.js',
-      'components/menu.js',
-      'components/text-input.js',
-      'components/phone-input.js',
-      'components/date-input.js',
-      'components/number-input.js',
-      'components/currency-input.js',
-      'components/email-input.js',
-      'components/password-input.js',
-      'components/range-input.js',
-      'components/section.js',
-      'components/select.js',
-      'components/radio.js',
-      'components/checkbox.js',
-      'components/input-builder.js',
-      'components/tabs.js',
-      'components/text-area.js',
-      'components/form.js',
-      'components/popover.js',
-      // navigation
-      'components/app-header.js',
-      'components/navigation-list.js',
-      // layouts
-      'components/page.js',
-      'components/focus-page.js',
-      'components/sectioned-page.js',
-      'helpers/popover.js',
-      'services/-hokulea.js'
+      ...modules
     ]),
 
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
-    addon.appReexports([
-      'components/box.js',
-      'components/button.js',
-      'components/card.js',
-      'components/icon-button.js',
-      'components/icon.js',
-      'components/list.js',
-      'components/menu.js',
-      'components/text-input.js',
-      'components/phone-input.js',
-      'components/date-input.js',
-      'components/number-input.js',
-      'components/currency-input.js',
-      'components/email-input.js',
-      'components/password-input.js',
-      'components/range-input.js',
-      'components/section.js',
-      'components/select.js',
-      'components/radio.js',
-      'components/checkbox.js',
-      'components/input-builder.js',
-      'components/tabs.js',
-      'components/text-area.js',
-      'components/form.js',
-      'components/popover.js',
-      // navigation
-      'components/app-header.js',
-      'components/navigation-list.js',
-      // layouts
-      'components/page.js',
-      'components/focus-page.js',
-      'components/sectioned-page.js',
-      'helpers/popover.js',
-      'services/-hokulea.js'
-    ]),
+    addon.appReexports(modules),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
     // `dependencies` and `peerDependencies` as well as standard Ember-provided

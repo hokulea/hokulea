@@ -1,2 +1,2 @@
 // this is for storybook
-export { default } from './navigation/app-header.gts';
+export { AppHeader as default } from './navigation/app-header.gts';

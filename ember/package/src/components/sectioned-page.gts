@@ -1,2 +1,2 @@
 // this is for storybook
-export { default } from './layouts/sectioned-page.gts';
+export { SectionedPage as default } from './layouts/sectioned-page.gts';

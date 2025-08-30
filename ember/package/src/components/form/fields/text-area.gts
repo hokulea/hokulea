@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asString } from '../../../-private/helpers.ts';
-import TextArea from '../../text-area.gts';
+import { TextArea } from '../../controls/text-area.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { TextAreaSignature } from '../../text-area.gts';
+import type { TextAreaSignature } from '../../controls/text-area.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -21,7 +21,7 @@ export interface TextAreaFieldSignature<
     };
 }
 
-export default class TextAreaField<
+export class TextAreaField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

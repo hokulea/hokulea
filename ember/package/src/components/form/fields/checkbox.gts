@@ -3,12 +3,12 @@ import Component from '@glimmer/component';
 import styles from '@hokulea/core/forms.module.css';
 
 import { asBoolean } from '../../../-private/helpers.ts';
-import Checkbox from '../../checkbox.gts';
-import Description from '../description.gts';
-import Label from '../label.gts';
+import { Checkbox } from '../../controls/checkbox.gts';
+import { Description } from '../description.gts';
+import { Label } from '../label.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { CheckboxSignature } from '../../checkbox.gts';
+import type { CheckboxSignature } from '../../controls/checkbox.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -25,7 +25,7 @@ export interface CheckboxFieldSignature<
     };
 }
 
-export default class CheckboxField<
+export class CheckboxField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

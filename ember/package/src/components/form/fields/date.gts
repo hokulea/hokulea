@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asString } from '../../../-private/helpers.ts';
-import DateInput from '../../date-input.gts';
+import { DateInput } from '../../controls/date-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { DateInputSignature } from '../../date-input.gts';
+import type { DateInputSignature } from '../../controls/date-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -21,7 +21,7 @@ export interface DateFieldSignature<
     };
 }
 
-export default class DateField<
+export class DateField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

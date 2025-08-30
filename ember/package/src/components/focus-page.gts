@@ -1,2 +1,2 @@
 // this is for storybook
-export { default } from './layouts/focus-page.gts';
+export { FocusPage as default } from './layouts/focus-page.gts';

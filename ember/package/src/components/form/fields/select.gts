@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asString } from '../../../-private/helpers.ts';
-import Select from '../../select.gts';
+import { Select } from '../../controls/select.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { SelectSignature, Value } from '../../select.gts';
+import type { SelectSignature, Value } from '../../controls/select.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -22,7 +22,7 @@ export interface SelectFieldSignature<
   Blocks: SelectSignature['Blocks'];
 }
 
-export default class SelectField<
+export class SelectField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

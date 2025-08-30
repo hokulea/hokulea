@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asNumber } from '../../../-private/helpers.ts';
-import RangeInput from '../../range-input.gts';
+import { RangeInput } from '../../controls/range-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { RangeInputSignature } from '../../range-input.gts';
+import type { RangeInputSignature } from '../../controls/range-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -21,7 +21,7 @@ export interface RangeFieldSignature<
     };
 }
 
-export default class RangeField<
+export class RangeField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

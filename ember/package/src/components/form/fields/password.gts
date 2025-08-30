@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asString } from '../../../-private/helpers.ts';
-import PasswordInput from '../../password-input.gts';
+import { PasswordInput } from '../../controls/password-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { PasswordInputSignature } from '../../password-input.gts';
+import type { PasswordInputSignature } from '../../controls/password-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { RulesBlock } from '../rules.gts';
 import type { AttrValue } from '@glint/template';
@@ -23,7 +23,7 @@ export interface PasswordFieldSignature<
   Blocks: RulesBlock;
 }
 
-export default class PasswordField<
+export class PasswordField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

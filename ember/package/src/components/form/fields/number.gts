@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 
 import { asNumber } from '../../../-private/helpers.ts';
-import NumberInput from '../../number-input.gts';
+import { NumberInput } from '../../controls/number-input.gts';
 import { manageValidation } from '../manage-validation.ts';
 
-import type { NumberInputSignature } from '../../number-input.gts';
+import type { NumberInputSignature } from '../../controls/number-input.gts';
 import type { BoundField, FieldArgs } from '../field.gts';
 import type { AttrValue } from '@glint/template';
 import type { FieldNames, FieldValue, UserData } from '@hokulea/ember-pahu';
@@ -21,7 +21,7 @@ export interface NumberFieldSignature<
     };
 }
 
-export default class NumberField<
+export class NumberField<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue

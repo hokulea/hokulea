@@ -46,7 +46,7 @@
     "prettier": "^3.6.2",
     "rollup": "4.49.0",
     "rollup-plugin-css-only": "4.5.2",
-    "rollup-plugin-delete": "2.2.0",
+    "rollup-plugin-delete": "3.0.1",
     "rollup-plugin-multi-input": "1.4.1",
     "stylelint": "16.23.1"
   },

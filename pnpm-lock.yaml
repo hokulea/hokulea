@@ -522,7 +522,7 @@ importers:
         version: 3.0.1(@babel/core@7.28.3)
       ember-sinon-qunit:
         specifier: 7.5.0
-        version: 7.5.0(@babel/core@7.28.3)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))(qunit@2.24.1)(sinon@19.0.5)
+        version: 7.5.0(@babel/core@7.28.3)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))(qunit@2.24.1)(sinon@21.0.0)
       ember-source:
         specifier: 5.12.0
         version: 5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3)
@@ -569,8 +569,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       sinon:
-        specifier: 19.0.5
-        version: 19.0.5
+        specifier: 21.0.0
+        version: 21.0.0
       stylelint:
         specifier: 16.23.1
         version: 16.23.1(typescript@5.9.2)
@@ -18423,14 +18423,14 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-sinon-qunit@7.5.0(@babel/core@7.28.3)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))(qunit@2.24.1)(sinon@19.0.5):
+  ember-sinon-qunit@7.5.0(@babel/core@7.28.3)(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))(qunit@2.24.1)(sinon@21.0.0):
     dependencies:
       '@embroider/addon-shim': 1.10.0
       '@types/sinon': 17.0.4
       decorator-transforms: 2.3.0(@babel/core@7.28.3)
       ember-source: 5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3)
       qunit: 2.24.1
-      sinon: 19.0.5
+      sinon: 21.0.0
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color

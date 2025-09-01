@@ -16,7 +16,7 @@ jobs:
         uses: ./.github/actions/setup
         env:
           COVERAGE: true
-      - uses: qltysh/qlty-action/coverage@v1
+      - uses: qltysh/qlty-action/coverage@v2
         with:
           token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
           files: ${{github.workspace}}/ember/package/coverage/lcov.info

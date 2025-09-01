@@ -101,7 +101,7 @@
     "qunit-dom": "^3.4.0",
     "sinon": "21.0.0",
     "stylelint": "16.23.1",
-    "tracked-built-ins": "3.4.0",
+    "tracked-built-ins": "4.0.0",
     "typescript": "5.9.2",
     "unplugin-icons": "^22.2.0",
     "webpack": "5.101.3"

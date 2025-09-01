@@ -575,8 +575,8 @@ importers:
         specifier: 16.23.1
         version: 16.23.1(typescript@5.9.2)
       tracked-built-ins:
-        specifier: 3.4.0
-        version: 3.4.0(@babel/core@7.28.3)
+        specifier: 4.0.0
+        version: 4.0.0(@babel/core@7.28.3)
       typescript:
         specifier: 5.9.2
         version: 5.9.2

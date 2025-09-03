@@ -36,6 +36,7 @@ export { Form } from './components/form/index.ts';
 
 // navigation
 export { AppHeader } from './components/navigation/app-header.gts';
+export { Link } from './components/navigation/link.gts';
 export { NavigationList } from './components/navigation/navigation-list.gts';
 
 // layouts

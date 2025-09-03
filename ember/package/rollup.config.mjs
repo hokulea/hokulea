@@ -45,6 +45,7 @@ const modules = [
   'components/form.js',
 
   // graphics
+  'components/avatar.js',
   'components/icon.js',
 
   // navigation

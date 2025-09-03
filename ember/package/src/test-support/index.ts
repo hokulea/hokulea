@@ -1,4 +1,5 @@
 export { AppHeaderPageObject } from './page-objects/app-header.ts';
+export { AvatarPageObject } from './page-objects/avatar.ts';
 export { ButtonPageObject } from './page-objects/button.ts';
 export { CheckboxPageObject, RadioPageObject } from './page-objects/choice.ts';
 export { type FieldError, FormPageObject, type OptionPageObject } from './page-objects/form.ts';

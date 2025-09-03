@@ -1,6 +1,6 @@
 import { htmlSafe } from '@ember/template';
 
-import styles from '@hokulea/core/icons.module.css';
+import styles from '@hokulea/core/graphics.module.css';
 
 import type { TOC } from '@ember/component/template-only';
 

@@ -8,25 +8,25 @@ import GearIcon from '~icons/ph/gear';
   <AppHeader @position="center" @home={{link "application"}}>
     <:brand>Hokulea</:brand>
     <:nav as |n|>
-      <n.Item @push={{link "actions"}}>Actions</n.Item>
-      <n.Item @push={{link "content"}}>Content</n.Item>
-      <n.Item @push={{link "navigation"}}>Navigation</n.Item>
-      <n.Item @push={{link "controls"}}>Controls</n.Item>
-      <n.Item @push={{link "forms"}}>Forms</n.Item>
-      <n.Item @push={{link "icons"}}>Icons</n.Item>
-      <n.Item @push={{link "windows"}}>Windows</n.Item>
+      <n.Item @href="/actions">Actions</n.Item>
+      <n.Item @href="/content">Content</n.Item>
+      <n.Item @href="/navigation">Navigation</n.Item>
+      <n.Item @href="/controls">Controls</n.Item>
+      <n.Item @href="/forms">Forms</n.Item>
+      <n.Item @href="/graphics">Graphics</n.Item>
+      <n.Item @href="/windows">Windows</n.Item>
       <n.Item>
         <:label>Let's go down</:label>
         <:menu as |m|>
-          <m.Item @push={{link "actions"}}>Actions</m.Item>
-          <m.Item @push={{link "content"}}>Content</m.Item>
+          <m.Item @href="/actions">Actions</m.Item>
+          <m.Item @href="/content">Content</m.Item>
           <hr />
-          <n.Item @push={{link "content"}}>Navigation</n.Item>
+          <m.Item @href="/navigation">Navigation</m.Item>
           <hr />
-          <m.Item @push={{link "controls"}}>Controls</m.Item>
-          <m.Item @push={{link "forms"}}>Forms</m.Item>
-          <m.Item @push={{link "icons"}}>Icons</m.Item>
-          <m.Item @push={{link "windows"}}>Windows</m.Item>
+          <m.Item @href="/controls">Controls</m.Item>
+          <m.Item @href="/forms">Forms</m.Item>
+          <m.Item @href="/graphics">Graphics</m.Item>
+          <m.Item @href="/windows">Windows</m.Item>
           <m.Item>
             <:label>Down down</:label>
             <:menu as |mm|>

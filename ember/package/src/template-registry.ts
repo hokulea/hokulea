@@ -1,5 +1,6 @@
 import type { Button } from './components/actions/button.gts';
 import type { IconButton } from './components/actions/icon-button.gts';
+import type Avatar from './components/avatar.gts';
 import type { Box } from './components/content/box.gts';
 import type { Card } from './components/content/card.gts';
 import type { Section } from './components/content/section.gts';
@@ -24,6 +25,7 @@ import type { Icon } from './components/graphics/icon.gts';
 import type { FocusPage } from './components/layouts/focus-page.gts';
 import type { Page } from './components/layouts/page.gts';
 import type { SectionedPage } from './components/layouts/sectioned-page.gts';
+import type Link from './components/link.gts';
 import type { AppHeader } from './components/navigation/app-header.gts';
 import type { NavigationList } from './components/navigation/navigation-list.gts';
 import type { Popover } from './components/windows/popover.gts';
@@ -60,16 +62,18 @@ export default interface HokuleaRegistry {
   // forms
   Form: typeof Form;
 
+  // graphics
+  Avatar: typeof Avatar;
+  Icon: typeof Icon;
+
   // layouts
   Page: typeof Page;
   FocusPage: typeof FocusPage;
   SectionedPage: typeof SectionedPage;
 
-  // graphics
-  Icon: typeof Icon;
-
   // navigation
   AppHeader: typeof AppHeader;
+  Link: typeof Link;
   NavigationList: typeof NavigationList;
 
   // windows

@@ -6,7 +6,7 @@ import { Link, link } from 'ember-link';
 
 import type { TOC } from '@ember/component/template-only';
 
-const isActive = (commandable: CommandAction) => {
+export const isActive = (commandable: CommandAction) => {
   return commandable instanceof Link && commandable.isActive;
 };
 

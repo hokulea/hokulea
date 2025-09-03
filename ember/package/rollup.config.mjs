@@ -49,6 +49,7 @@ const modules = [
 
   // navigation
   'components/app-header.js',
+  'components/link.js',
   'components/navigation-list.js',
 
   // layouts

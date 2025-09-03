@@ -1,23 +1,21 @@
 import Component from '@glimmer/component';
 import { assert } from '@ember/debug';
 
-import CommandElement from 'ember-command/components/command-element';
 import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
-import { not } from '../../-private/helpers.ts';
+import { and, asBoolean, not } from '../../-private/helpers.ts';
 import disabled from '../../-private/modifiers/disabled.ts';
+import { type PushArgs, PushElement } from '../../-private/push.gts';
 import { Icon } from '../graphics/icon.gts';
 import { isLink } from './-button.ts';
 
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
-import type { CommandAction } from 'ember-command';
 
 export interface IconButtonSignature {
   Element: HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement;
-  Args: {
-    push?: CommandAction;
+  Args: PushArgs & {
     intent?: Intent | Intents;
     importance?: Importance | Importances;
     spacing?: Spacing | Spacings;
@@ -38,19 +36,21 @@ export class IconButton extends Component<IconButtonSignature> {
   get label() {
     assert(
       'Please provide a `@label` to `<IconButton>` for accessibility reasons.',
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+
       this.args.label !== undefined
     );
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return this.args.label;
   }
 
   <template>
-    <CommandElement
+    <PushElement
+      @push={{@push}}
+      @href={{@href}}
       @element={{element "button"}}
-      @command={{@push}}
       class="{{styles.iconButton}}"
-      type={{if (not (isLink @push)) "button"}}
+      type={{if (and (not (isLink @push)) (not (asBoolean @href))) "button"}}
       data-intent={{if @intent @intent "action"}}
       data-importance={{if @importance @importance "supreme"}}
       data-spacing={{@spacing}}
@@ -60,6 +60,6 @@ export class IconButton extends Component<IconButtonSignature> {
       ...attributes
     >
       <Icon @icon={{@icon}} data-test-icon-button="icon" />
-    </CommandElement>
+    </PushElement>
   </template>
 }

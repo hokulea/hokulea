@@ -1,11 +1,10 @@
 import { element } from 'ember-element-helper';
 
-import { and, asBoolean, not } from '#src/-private/helpers.ts';
-import { type PushArgs, PushElement } from '#src/-private/push.gts';
-
 import styles from '@hokulea/core/actions.module.css';
 
+import { and, asBoolean, not } from '../../-private/helpers.ts';
 import disabled from '../../-private/modifiers/disabled.ts';
+import { type PushArgs, PushElement } from '../../-private/push.gts';
 import { isLink } from './-button.ts';
 
 import type { TOC } from '@ember/component/template-only';

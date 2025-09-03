@@ -14,26 +14,20 @@ import { IconButton } from '../actions/icon-button.gts';
 import { Menu } from '../controls/menu.gts';
 import { NavLink } from './nav-link.gts';
 
-import type { MenuItemSignature } from '../controls/-menu';
+import type { MenuItemArgs, MenuItemSignature } from '../controls/-menu.gts';
 import type { TOC } from '@ember/component/template-only';
 import type { Placement } from '@floating-ui/dom';
 import type { ComponentLike } from '@glint/template';
-import type { Link } from 'ember-link';
-
-const asLink = (value: unknown): Link => {
-  return value as Link;
-};
 
 interface NavItemSignature extends MenuItemSignature {
-  Args: MenuItemSignature['Args'] & {
-    href?: string;
+  Args: MenuItemArgs & {
     position?: Placement;
   };
 }
 
 const NavItem: TOC<NavItemSignature> = <template>
   {{#if (has-block)}}
-    <NavLink @push={{asLink @push}} @href={{@href}}>{{yield}}</NavLink>
+    <NavLink @push={{@push}} @href={{@href}}>{{yield}}</NavLink>
   {{else if (and (has-block "menu") (has-block "label"))}}
     {{#let (popover position=(if @position @position "bottom-start")) as |p|}}
       <button type="button" aria-haspopup="menu" part="item" {{p.trigger}}>
@@ -49,7 +43,7 @@ const NavItem: TOC<NavItemSignature> = <template>
 
 const PopoverNavItem: TOC<NavItemSignature> = <template>
   {{#if (has-block)}}
-    <NavLink @push={{asLink @push}} @href={{@href}}>{{yield}}</NavLink>
+    <NavLink @push={{@push}} @href={{@href}}>{{yield}}</NavLink>
   {{else if (and (has-block "menu") (has-block "label"))}}
     <details>
       <summary part="item">{{yield to="label"}}</summary>

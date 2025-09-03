@@ -1,20 +1,18 @@
-import { CommandElement } from 'ember-command';
 import { element } from 'ember-element-helper';
 
 import styles from '@hokulea/core/actions.module.css';
 
-import { not } from '../../-private/helpers.ts';
+import { and, asBoolean, not } from '../../-private/helpers.ts';
 import disabled from '../../-private/modifiers/disabled.ts';
+import { type PushArgs, PushElement } from '../../-private/push.gts';
 import { isLink } from './-button.ts';
 
 import type { TOC } from '@ember/component/template-only';
 import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
-import type { CommandAction } from 'ember-command';
 
 export interface ButtonSignature {
   Element: HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement;
-  Args: {
-    push?: CommandAction;
+  Args: PushArgs & {
     intent?: Intent | Intents;
     importance?: Importance | Importances;
     spacing?: Spacing | Spacings;
@@ -36,11 +34,12 @@ export interface ButtonSignature {
 }
 
 export const Button: TOC<ButtonSignature> = <template>
-  <CommandElement
+  <PushElement
+    @push={{@push}}
+    @href={{@href}}
     @element={{element "button"}}
-    @command={{@push}}
     class="{{styles.button}}"
-    type={{if (not (isLink @push)) "button"}}
+    type={{if (and (not (isLink @push)) (not (asBoolean @href))) "button"}}
     data-intent={{if @intent @intent "action"}}
     data-importance={{if @importance @importance "supreme"}}
     data-spacing={{@spacing}}
@@ -69,5 +68,5 @@ export const Button: TOC<ButtonSignature> = <template>
         {{yield to="after"}}
       </span>
     {{/if}}
-  </CommandElement>
+  </PushElement>
 </template>;

@@ -7,15 +7,15 @@ import { service } from '@ember/service';
 import { htmlSafe } from '@ember/template';
 
 import { ariaMenu } from 'ember-aria-voyager';
-import { CommandElement } from 'ember-command';
 import { TrackedArray } from 'tracked-built-ins';
 
 import styles from '@hokulea/core/controls.module.css';
 
 import disabled from '../../-private/modifiers/disabled.ts';
+import { PushElement } from '../../-private/push.gts';
 import { popover } from '../../helpers/popover.ts';
 
-import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu.ts';
+import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu.gts';
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
 import type FastBoot from 'ember-cli-fastboot/services/fastboot';
@@ -78,9 +78,11 @@ class MenuItem extends Component<MenuItemSignature> {
   constructor(owner: Owner, args: MenuItemSignature['Args']) {
     super(owner, args);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     args.registerItem(this);
 
     registerDestructor(this, () => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       args.unregisterItem(this);
     });
   }
@@ -103,13 +105,14 @@ class MenuItem extends Component<MenuItemSignature> {
         </Menu>
       {{/let}}
     {{else}}
-      <CommandElement
-        @command={{@push}}
+      <PushElement
+        @push={{@push}}
+        @href={{@href}}
         {{disabled when=(if @disabled @disabled false)}}
         role="menuitem"
       >
         {{~yield~}}
-      </CommandElement>
+      </PushElement>
     {{/if}}
   </template>
 }

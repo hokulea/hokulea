@@ -1,10 +1,9 @@
+import type { PushArgs } from '../../-private/push.gts';
 import type { ComponentLike } from '@glint/template';
-import type { CommandAction } from 'ember-command';
 
 export type MenuItemElement = HTMLAnchorElement | HTMLButtonElement | HTMLSpanElement;
 
-export type MenuItemArgs = {
-  push?: CommandAction;
+export type MenuItemArgs = PushArgs & {
   disabled?: boolean;
 };
 

@@ -25,6 +25,7 @@ import type { Icon } from './components/graphics/icon.gts';
 import type { FocusPage } from './components/layouts/focus-page.gts';
 import type { Page } from './components/layouts/page.gts';
 import type { SectionedPage } from './components/layouts/sectioned-page.gts';
+import type Link from './components/link.gts';
 import type { AppHeader } from './components/navigation/app-header.gts';
 import type { NavigationList } from './components/navigation/navigation-list.gts';
 import type { Popover } from './components/windows/popover.gts';
@@ -72,7 +73,7 @@ export default interface HokuleaRegistry {
 
   // navigation
   AppHeader: typeof AppHeader;
-  // Link: typeof Link;
+  Link: typeof Link;
   NavigationList: typeof NavigationList;
 
   // windows

@@ -41,7 +41,7 @@ Router.map(function () {
     this.route('composites');
   });
   this.route('forms');
-  this.route('icons');
+  this.route('graphics');
   this.route('windows');
   this.route('navigation', function () {
     this.route('list');

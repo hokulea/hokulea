@@ -1,0 +1,70 @@
+/**
+References:
+
+- https://every-layout.dev/layouts/icon/
+- https://archive.hankchizljaw.com/links/121/
+
+The `.icon` is applied to a `<span>` element and can be a citizen within prose
+text or can be put into a flexbox layout. Therefore it has a height of `1em` to
+match the height of its neighbouring elements/texts. The span itself is an
+inline-flexbox and aligns its items center. That is when the icon is used in a
+flexbox layout, the actual icon is positioned appropriately.
+
+The `svg` element inside then receives the sizing for the _actual_ icon itself.
+*/
+
+.icon {
+  transform: translateY(.1cap);
+  display: inline-flex;
+  aspect-ratio: 1;
+  height: 1.2cap;
+}
+
+.avatar {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1;
+  height: 1.4em;
+  margin-block: -1em;
+  padding-block: 1em;
+  border-radius: 50%;
+
+
+  line-height: 1;
+  letter-spacing: -2.5px;
+  vertical-align: middle;
+
+  background-color: var(--control-background);
+
+  /* box-shadow: 0 0 0 1px rgb(0 0 0 / 10%); */
+  box-shadow: 0 0 0 1px var(--control-border-color);
+
+  /* box-shadow: 0 0 0 1px rgb(from var(--control-border-color) r g b / 40%); */
+
+  &:has(img) {
+    height: 2em;
+    padding-block: 0;
+  }
+
+  &:has(span) {
+    /* border: 1px solid var(--control-border-color); */
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  span {
+    color: var(--typography-muted);
+  }
+
+  svg {
+    scale: 1.35;
+    color: var(--control-border-color);
+
+    /* color: var(--control-disabled-background); */
+  }
+}

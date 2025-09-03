@@ -1,6 +1,3 @@
-// icons
-export { Icon } from './components/graphics/icon.gts';
-
 // actions
 export { Button } from './components/actions/button.gts';
 export { IconButton } from './components/actions/icon-button.gts';
@@ -33,6 +30,10 @@ export type {
   ValidationResult
 } from './components/form/index.ts';
 export { Form } from './components/form/index.ts';
+
+// graphics
+export { Avatar } from './components/graphics/avatar.gts';
+export { Icon } from './components/graphics/icon.gts';
 
 // navigation
 export { AppHeader } from './components/navigation/app-header.gts';

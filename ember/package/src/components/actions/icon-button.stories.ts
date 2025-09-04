@@ -6,7 +6,6 @@ import { Importance, Intent, Spacing } from '@hokulea/tokens';
 
 import { getIconSvg, listIcons } from '../../-private/stories.ts';
 
-import type { Importances, Intents, Spacings } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
 
 const iconNames = listIcons();
@@ -16,9 +15,9 @@ interface IconButtonSignature {
   Element: HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement;
   Args: {
     push?: CommandAction;
-    intent?: Intent | Intents;
-    importance?: Importance | Importances;
-    spacing?: Spacing | Spacings;
+    intent?: Intent;
+    importance?: Importance;
+    spacing?: Spacing;
     disabled?: boolean;
     label: string;
     /** The name of the icon */

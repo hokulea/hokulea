@@ -8,14 +8,14 @@ import { type PushArgs, PushElement } from '../../-private/push.gts';
 import { isLink } from './-button.ts';
 
 import type { TOC } from '@ember/component/template-only';
-import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
+import type { Importance, Intent, Spacing } from '@hokulea/tokens';
 
 export interface ButtonSignature {
   Element: HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement;
   Args: PushArgs & {
-    intent?: Intent | Intents;
-    importance?: Importance | Importances;
-    spacing?: Spacing | Spacings;
+    intent?: Intent;
+    importance?: Importance;
+    spacing?: Spacing;
     disabled?: boolean;
   };
   Blocks: {

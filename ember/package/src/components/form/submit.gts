@@ -3,14 +3,14 @@ import styles from '@hokulea/core/actions.module.css';
 import disabled from '../../-private/modifiers/disabled.ts';
 
 import type { TOC } from '@ember/component/template-only';
-import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
+import type { Importance, Intent, Spacing } from '@hokulea/tokens';
 
 export interface SubmitSignature {
   Element: HTMLButtonElement;
   Args: {
-    intent?: Intent | Intents;
-    importance?: Importance | Importances;
-    spacing?: Spacing | Spacings;
+    intent?: Intent;
+    importance?: Importance;
+    spacing?: Spacing;
     disabled?: boolean;
   };
   Blocks: {

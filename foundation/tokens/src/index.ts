@@ -6,43 +6,43 @@ export interface Token extends BaseToken {
 
 // Intents
 
-export enum Intent {
-  Action = 'action',
-  Alternative = 'alternative',
-  Highlight = 'highlight',
-  Danger = 'danger'
-}
+export const Intent = {
+  Action: 'action',
+  Alternative: 'alternative',
+  Highlight: 'highlight',
+  Danger: 'danger'
+} as const;
 
-export type Intents = `${Intent}`;
+export type Intent = (typeof Intent)[keyof typeof Intent];
 
 // Importances
 
-export enum Importance {
-  Supreme = 'supreme',
-  Subtle = 'subtle',
-  Plain = 'plain'
-}
+export const Importance = {
+  Supreme: 'supreme',
+  Subtle: 'subtle',
+  Plain: 'plain'
+} as const;
 
-export type Importances = `${Importance}`;
+export type Importance = (typeof Intent)[keyof typeof Intent];
 
 // Indicators
 
-export enum Indicator {
-  Info = 'info',
-  Success = 'success',
-  Warning = 'warning',
-  Error = 'error'
-}
+export const Indicator = {
+  Info: 'info',
+  Success: 'success',
+  Warning: 'warning',
+  Error: 'error'
+} as const;
 
-export type Indicators = `${Indicator}`;
+export type Indicator = (typeof Indicator)[keyof typeof Indicator];
 
 // Spacing
 
-export enum Spacing {
-  Zero = '0',
-  MinusOne = '-1'
-}
+export const Spacing = {
+  Zero: '0',
+  MinusOne: '-1'
+} as const;
 
-export type Spacings = `${Spacing}`;
+export type Spacing = (typeof Spacing)[keyof typeof Spacing];
 
 export { tokens } from './tokens';

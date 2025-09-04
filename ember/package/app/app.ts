@@ -46,6 +46,7 @@ Router.map(function () {
   this.route('navigation', function () {
     this.route('list');
     this.route('app-header');
+    this.route('pagination');
   });
   /* eslint-enable @typescript-eslint/no-invalid-this */
 });

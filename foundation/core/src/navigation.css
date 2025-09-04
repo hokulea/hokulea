@@ -295,3 +295,22 @@ a:active {
     background-color: var(--control-border-color);
   }
 }
+
+.pagination {
+  display: flex;
+  background: var(--surface-container1);
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  > span {
+    padding: var(--spacing-container-4);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:not(:first-child) {
+      border-inline-start: var(--shape-stroke);
+    }
+  }
+
+  [part="items"] {
+    flex-grow: 1;
+  }
+}

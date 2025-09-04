@@ -39,6 +39,7 @@ export { Icon } from './components/graphics/icon.gts';
 export { AppHeader } from './components/navigation/app-header.gts';
 export { Link } from './components/navigation/link.gts';
 export { NavigationList } from './components/navigation/navigation-list.gts';
+export { Pagination } from './components/navigation/pagination.gts';
 
 // layouts
 export { FocusPage } from './components/layouts/focus-page.gts';

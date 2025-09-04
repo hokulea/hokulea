@@ -23,7 +23,7 @@ export const Importance = {
   Plain: 'plain'
 } as const;
 
-export type Importance = (typeof Intent)[keyof typeof Intent];
+export type Importance = (typeof Importance)[keyof typeof Importance];
 
 // Indicators
 

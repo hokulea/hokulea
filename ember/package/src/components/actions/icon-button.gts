@@ -11,14 +11,14 @@ import { type PushArgs, PushElement } from '../../-private/push.gts';
 import { Icon } from '../graphics/icon.gts';
 import { isLink } from './-button.ts';
 
-import type { Importance, Importances, Intent, Intents, Spacing, Spacings } from '@hokulea/tokens';
+import type { Importance, Intent, Spacing } from '@hokulea/tokens';
 
 export interface IconButtonSignature {
   Element: HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement;
   Args: PushArgs & {
-    intent?: Intent | Intents;
-    importance?: Importance | Importances;
-    spacing?: Spacing | Spacings;
+    intent?: Intent;
+    importance?: Importance;
+    spacing?: Spacing;
     disabled?: boolean;
     label: string;
     /**

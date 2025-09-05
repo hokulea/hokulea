@@ -2,6 +2,7 @@ export { AppHeaderPageObject } from './page-objects/app-header.ts';
 export { AvatarPageObject } from './page-objects/avatar.ts';
 export { ButtonPageObject } from './page-objects/button.ts';
 export { CheckboxPageObject, RadioPageObject } from './page-objects/choice.ts';
+export { DataTablePageObject } from './page-objects/data-table.ts';
 export { type FieldError, FormPageObject, type OptionPageObject } from './page-objects/form.ts';
 export { IconPageObject } from './page-objects/icon.ts';
 export { IconButtonPageObject } from './page-objects/icon-button.ts';

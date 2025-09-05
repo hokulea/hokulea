@@ -20,6 +20,9 @@ export { Tabs } from './components/controls/tabs.gts';
 export { TextArea } from './components/controls/text-area.gts';
 export { TextInput } from './components/controls/text-input.gts';
 
+// data
+export { DataTable } from './components/data/data-table.gts';
+
 // forms
 export type {
   FieldValidationHandler,

@@ -40,6 +40,7 @@ Router.map(function () {
   this.route('controls', function () {
     this.route('composites');
   });
+  this.route('data');
   this.route('forms');
   this.route('graphics');
   this.route('windows');

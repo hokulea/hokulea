@@ -299,7 +299,7 @@ a:active {
 .pagination {
   display: flex;
   align-items: stretch;
-  background: var(--surface-container1);
+  background: var(--surface-container);
 
   /* stylelint-disable-next-line no-descending-specificity */
   > span {
@@ -340,20 +340,20 @@ a:active {
       border-radius: 0;
 
       &:hover {
-        background-color: var(--surface-container);
+        background-color: var(--surface-container1);
       }
     }
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   :is([part="page-size"], [part="page"]) > :is(span, input) {
-    border-color: var(--surface-container1);
+    border-color: var(--surface-container);
     border-radius: 0;
-    background: var(--surface-container1);
+    background: var(--surface-container);
 
     &:hover {
-      border-color: var(--surface-container);
-      background-color: var(--surface-container);
+      border-color: var(--surface-container1);
+      background-color: var(--surface-container1);
     }
   }
 

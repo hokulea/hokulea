@@ -10,6 +10,7 @@ import GearIcon from '~icons/ph/gear';
     <:nav as |n|>
       <n.Item @href="/actions">Actions</n.Item>
       <n.Item @href="/content">Content</n.Item>
+      <n.Item @href="/data">Data</n.Item>
       <n.Item @href="/navigation">Navigation</n.Item>
       <n.Item @href="/controls">Controls</n.Item>
       <n.Item @href="/forms">Forms</n.Item>
@@ -21,6 +22,7 @@ import GearIcon from '~icons/ph/gear';
           <m.Item @href="/actions">Actions</m.Item>
           <m.Item @href="/content">Content</m.Item>
           <hr />
+          <m.Item @href="/data">Data</m.Item>
           <m.Item @href="/navigation">Navigation</m.Item>
           <hr />
           <m.Item @href="/controls">Controls</m.Item>

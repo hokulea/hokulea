@@ -20,6 +20,7 @@ import type { Select } from './components/controls/select.gts';
 import type { Tabs } from './components/controls/tabs.gts';
 import type { TextArea } from './components/controls/text-area.gts';
 import type { TextInput } from './components/controls/text-input.gts';
+import type DataTable from './components/data-table.gts';
 import type { Form } from './components/form/form.gts';
 import type { Icon } from './components/graphics/icon.gts';
 import type { FocusPage } from './components/layouts/focus-page.gts';
@@ -59,6 +60,9 @@ export default interface HokuleaRegistry {
   Tabs: typeof Tabs;
   TextArea: typeof TextArea;
   TextInput: typeof TextInput;
+
+  // data
+  DataTable: typeof DataTable;
 
   // forms
   Form: typeof Form;

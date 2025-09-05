@@ -1,0 +1,35 @@
+.data-table {
+  border-collapse: collapse;
+
+  thead {
+    background: var(--surface-container1);
+  }
+
+  tfoot {
+    background: var(--surface-container);
+  }
+
+  thead, tbody, tfoot {
+    border: 1px solid var(--shape-stroke-color);
+  }
+
+  th {
+    text-align: left;
+  }
+
+  th, td {
+    padding: 0.5rem 0.75rem;
+
+    &:first-child {
+      border-inline-end: 1px solid var(--shape-stroke-color);
+    }
+
+    &:last-child {
+      border-inline-start: 1px solid var(--shape-stroke-color);
+    }
+
+    &[data-pagination] {
+      padding: 0;
+    }
+  }
+}

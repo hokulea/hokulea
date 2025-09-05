@@ -41,6 +41,9 @@ const modules = [
   'components/text-area.js',
   'components/text-input.js',
 
+  // data
+  'components/data-table.js',
+
   // form
   'components/form.js',
 

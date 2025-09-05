@@ -3,44 +3,58 @@ import { tracked } from '@glimmer/tracking';
 
 import styles from '@hokulea/core/navigation.module.css';
 
+import { asNumber, gt, range } from '../../-private/helpers.ts';
 import { IconButton } from '../actions/icon-button.gts';
+import { NumberInput } from '../controls/number-input.gts';
 import { Select } from '../controls/select.gts';
-
-const FirstIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M200 48v160a8 8 0 0 1-13.66 5.66l-80-80a8 8 0 0 1 0-11.32l80-80A8 8 0 0 1 200 48M72 40a8 8 0 0 0-8 8v160a8 8 0 0 0 16 0V48a8 8 0 0 0-8-8"/></svg>`;
-const PrevIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M168 48v160a8 8 0 0 1-13.66 5.66l-80-80a8 8 0 0 1 0-11.32l80-80A8 8 0 0 1 168 48"/></svg>`;
-const NextIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256"
-height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m181.66
-133.66l-80 80A8 8 0 0 1 88 208V48a8 8 0 0 1 13.66-5.66l80 80a8 8 0 0 1 0
-11.32"/></svg>`;
-const LastIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M149.66 122.34a8 8 0 0 1 0 11.32l-80 80A8 8 0 0 1 56 208V48a8 8 0 0 1 13.66-5.66ZM184 40a8 8 0 0 0-8 8v160a8 8 0 0 0 16 0V48a8 8 0 0 0-8-8"/></svg>`;
-
-const DEFAULTS = {
-  backwardLabel: 'Previous page',
-  firstLabel: 'First page',
-  forwardLabel: 'Next page',
-  lastLabel: 'Last page',
-  itemPerPage: 'Items per page:',
-  itemRangeLabel: (min: number, max: number, total: number) => `${min} - ${max} of ${total} items`,
-  itemLabel: (min: number, max: number) => `${min}–${max} items`,
-  pageLabel: (page: number) => `page ${page}`,
-  pageNumberLabel: 'Page Number'
-};
+import { LABELS, NextIcon, PrevIcon } from './-pagination';
 
 interface PaginationSignature {
   Element: HTMLElement;
   Args: {
     backwardLabel?: string;
-    firstLabel?: string;
+
     forwardLabel?: string;
-    lastLabel?: string;
+
+    change?: (value: { page: number; pageSize: number }) => void;
+
+    /**
+     * The translatable text indicating the number of items per page.
+     */
     itemsPerPageLabel?: string;
+    /**
+     * The function returning a translatable text showing where the current page is,
+     * in a manner of the range of items.
+     */
     itemRangeLabel?: (min: number, max: number, total: number) => string;
     itemLabel?: (min: number, max: number) => string;
+
+    /**
+     * The current page.
+     */
     page?: number;
+
+    /**
+     * The number dictating how many items a page contains.
+     */
     pageSize: number;
+
+    /**
+     * The choices for `pageSize`.
+     */
     pageSizes?: number[] | { label: string; value: number }[];
+    /**
+     * The translatable text showing the current page.
+     */
     pageLabel?: (page: number) => string;
+    /**
+     * A function returning PII showing where the current page is.
+     */
+    pageRangeLabel?: (total: number) => string;
     pageNumberLabel?: string;
+    /**
+     * The total number of items.
+     */
     totalItems?: number;
   };
 }
@@ -53,12 +67,12 @@ export class Pagination extends Component<PaginationSignature> {
   }
 
   get maxItems() {
-    return this.page * (this.args.pageSize + 1);
+    return this.page * this.args.pageSize;
   }
 
   get pages(): number | undefined {
     if (this.args.totalItems) {
-      Math.ceil(this.args.totalItems / this.args.pageSize);
+      return Math.ceil(this.args.totalItems / this.args.pageSize);
     }
 
     return undefined;
@@ -69,27 +83,31 @@ export class Pagination extends Component<PaginationSignature> {
   }
 
   get itemsPerPageLabel() {
-    return this.args.itemsPerPageLabel ?? DEFAULTS.itemPerPage;
+    return this.args.itemsPerPageLabel ?? LABELS.itemPerPage;
   }
 
   get itemRangeLabel() {
-    return (this.args.itemRangeLabel ?? DEFAULTS.itemRangeLabel)(
+    return (this.args.itemRangeLabel ?? LABELS.itemRange)(
       this.minItems,
       this.maxItems,
-      this.total
+      this.args.totalItems ?? 1
     );
   }
 
   get itemLabel() {
-    return (this.args.itemLabel ?? DEFAULTS.itemLabel)(this.minItems, this.maxItems);
+    return (this.args.itemLabel ?? LABELS.item)(this.minItems, this.maxItems);
   }
 
   get pageLabel() {
-    return (this.args.pageLabel ?? DEFAULTS.pageLabel)(this.page);
+    return (this.args.pageLabel ?? LABELS.page)(this.page);
   }
 
   get pageNumberLabel() {
-    return this.args.pageNumberLabel ?? DEFAULTS.pageNumberLabel;
+    return this.args.pageNumberLabel ?? LABELS.pageNumber;
+  }
+
+  get pageRangeLabel() {
+    return (this.args.pageRangeLabel ?? LABELS.pageRange)(this.pages ?? 0);
   }
 
   get pageSizeOptions() {
@@ -99,28 +117,53 @@ export class Pagination extends Component<PaginationSignature> {
   }
 
   get backwardLabel() {
-    return this.args.backwardLabel ?? DEFAULTS.backwardLabel;
+    return this.args.backwardLabel ?? LABELS.backward;
   }
 
   get forwardLabel() {
-    return this.args.forwardLabel ?? DEFAULTS.forwardLabel;
+    return this.args.forwardLabel ?? LABELS.forward;
   }
 
-  get firstLabel() {
-    return this.args.firstLabel ?? DEFAULTS.firstLabel;
-  }
+  changePage = (page?: number) => {
+    if (page) {
+      this.args.change?.({
+        page: this.pages ? Math.min(page, this.pages) : page,
+        pageSize: this.args.pageSize
+      });
+    }
+  };
 
-  get lastLabel() {
-    return this.args.lastLabel ?? DEFAULTS.lastLabel;
-  }
+  changePageSize = (pageSize: string) => {
+    this.args.change?.({
+      page: this.page,
+      pageSize: Number.parseInt(pageSize)
+    });
+  };
+
+  prev = () => {
+    if (this.page > 1) {
+      this.changePage(this.page - 1);
+    }
+  };
+
+  next = () => {
+    if (this.pages) {
+      if (this.page < this.pages) {
+        this.changePage(this.page + 1);
+      }
+    } else {
+      this.changePage(this.page + 1);
+    }
+  };
 
   <template>
-    <div class={{styles.pagination}}>
+    <div class={{styles.pagination}} data-test-pagination>
       {{#if @pageSizes}}
-        <span>
+        <span part="page-size">
           {{this.itemsPerPageLabel}}
 
-          <Select @spacing="-1" as |s|>
+          {{! @glint-ignore }}
+          <Select @spacing="-1" @value={{@pageSize}} @update={{this.changePageSize}} as |s|>
             {{#each this.pageSizeOptions as |o|}}
               <s.Option @value={{o.value}}>{{o.label}}</s.Option>
             {{/each}}
@@ -134,21 +177,39 @@ export class Pagination extends Component<PaginationSignature> {
           {{this.itemLabel}}
         {{/if}}
       </span>
-      <span>
-
+      <span part="page">
+        {{#if @totalItems}}
+          {{#if (gt this.pages 20)}}
+            <NumberInput @spacing="-1" @value={{this.page}} @update={{this.changePage}} />
+          {{else}}
+            {{! @glint-ignore }}
+            <Select @spacing="-1" @value={{this.page}} @update={{this.changePage}} as |s|>
+              {{#each (range (asNumber this.pages)) as |p|}}
+                <s.Option @value={{p}}>{{p}}</s.Option>
+              {{/each}}
+            </Select>
+          {{/if}}
+          {{this.pageRangeLabel}}
+        {{else}}
+          {{this.pageLabel}}
+        {{/if}}
       </span>
-      <span>
+      <span part="nav">
         <IconButton
+          @push={{this.prev}}
           @icon={{PrevIcon}}
           @label={{this.backwardLabel}}
           @importance="plain"
           @spacing="-1"
+          data-test-prev
         />
         <IconButton
+          @push={{this.next}}
           @icon={{NextIcon}}
           @label={{this.forwardLabel}}
           @importance="plain"
           @spacing="-1"
+          data-test-next
         />
       </span>
     </div>

@@ -12,6 +12,10 @@ export class SelectPageObject extends PageObject<HTMLSelectElement> {
     super(selector ?? SelectPageObject.SELECTOR, parent, index);
   }
 
+  get spacing(): string | null | undefined {
+    return this.element?.getAttribute('data-spacing');
+  }
+
   get control() {
     return this.element as HTMLSelectElement;
   }

@@ -19,6 +19,7 @@ export const NumberInput: TOC<NumberInputSignature> = <template>
     type="number"
     value={{@value}}
     disabled={{@disabled}}
+    data-spacing={{@spacing}}
     data-test-input
     {{on "input" (pick "target.value" (pickAsNumber @update)) capture=true}}
     ...attributes

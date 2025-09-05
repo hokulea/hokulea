@@ -17,6 +17,7 @@ export const TextArea: TOC<TextAreaSignature> = <template>
     class={{styles.textarea}}
     type="text"
     disabled={{@disabled}}
+    data-spacing={{@spacing}}
     data-test-textarea
     {{on "input" (pick "target.value" @update) capture=true}}
     ...attributes

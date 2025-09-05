@@ -17,7 +17,6 @@
 
   font-weight: 500;
   line-height: 1;
-  vertical-align: middle;
 
   &, &:is(a, span, button) {
     border-color: var(--button-base-border);

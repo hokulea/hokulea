@@ -18,6 +18,7 @@ export const PhoneInput: TOC<PhoneInputSignature> = <template>
     type="tel"
     value={{@value}}
     disabled={{@disabled}}
+    data-spacing={{@spacing}}
     data-test-input
     {{on "input" (pick "target.value" @update) capture=true}}
     ...attributes

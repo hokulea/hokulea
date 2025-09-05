@@ -2,6 +2,7 @@ import { hash } from '@ember/helper';
 
 import styles from '@hokulea/core/controls.module.css';
 
+import type { ShapeArgs } from '../../-private/shapes.ts';
 import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
 
@@ -20,7 +21,7 @@ const Affix: TOC<AffixSignature> = <template>
 </template>;
 
 export interface InputBuilderSignature {
-  Args: {
+  Args: ShapeArgs & {
     disabled?: boolean;
   };
   Blocks: {
@@ -39,6 +40,7 @@ export const InputBuilder: TOC<InputBuilderSignature> = <template>
   <span
     class={{styles.inputBuilder}}
     aria-disabled={{if @disabled "true"}}
+    data-spacing={{@spacing}}
     data-input-builder
     data-test-input-builder
   >

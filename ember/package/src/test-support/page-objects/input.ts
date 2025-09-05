@@ -16,6 +16,10 @@ export class InputPageObject extends PageObject<HTMLInputElement> implements Inp
   get control() {
     return this.element as HTMLInputElement;
   }
+
+  get spacing(): string | null | undefined {
+    return this.element?.getAttribute('data-spacing');
+  }
 }
 
 export class RangeInputPageObject extends InputPageObject {
@@ -23,6 +27,7 @@ export class RangeInputPageObject extends InputPageObject {
     return this.control.dataset.orientation;
   }
 }
+
 export const NumberInputPageObject = InputPageObject;
 export const TextInputPageObject = InputPageObject;
 export const PhoneInputPageObject = InputPageObject;

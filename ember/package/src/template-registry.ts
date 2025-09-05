@@ -28,6 +28,7 @@ import type { SectionedPage } from './components/layouts/sectioned-page.gts';
 import type Link from './components/link.gts';
 import type { AppHeader } from './components/navigation/app-header.gts';
 import type { NavigationList } from './components/navigation/navigation-list.gts';
+import type Pagination from './components/pagination.gts';
 import type { Popover } from './components/windows/popover.gts';
 import type { popover } from './helpers/popover.ts';
 
@@ -75,6 +76,7 @@ export default interface HokuleaRegistry {
   AppHeader: typeof AppHeader;
   Link: typeof Link;
   NavigationList: typeof NavigationList;
+  Pagination: typeof Pagination;
 
   // windows
   Popover: typeof Popover;

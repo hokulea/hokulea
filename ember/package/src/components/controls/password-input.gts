@@ -18,6 +18,7 @@ export const PasswordInput: TOC<PasswordInputSignature> = <template>
     type="password"
     value={{@value}}
     disabled={{@disabled}}
+    data-spacing={{@spacing}}
     data-test-input
     {{on "input" (pick "target.value" @update) capture=true}}
     ...attributes

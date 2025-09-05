@@ -1,6 +1,6 @@
 import { PageObject, selector as sel } from 'fractal-page-object';
 
-import { PaginationPageObject } from './pagination';
+import { PaginationPageObject } from './pagination.ts';
 
 import type { ElementLike } from 'fractal-page-object';
 

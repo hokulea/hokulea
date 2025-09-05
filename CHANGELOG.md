@@ -1,5 +1,27 @@
 # Changelog
 
+## Release (2025-09-05)
+
+* @hokulea/ember 0.10.0 (minor)
+* @hokulea/core 0.7.0 (minor)
+* @hokulea/tokens 0.1.2 (patch)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`
+  * [#445](https://github.com/hokulea/hokulea/pull/445) New Component: `<DataTable>` ([@gossi](https://github.com/gossi))
+  * [#444](https://github.com/hokulea/hokulea/pull/444) New Component: `<Pagination>` ([@gossi](https://github.com/gossi))
+  * [#442](https://github.com/hokulea/hokulea/pull/442) New Component: `<Avatar>` ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#441](https://github.com/hokulea/hokulea/pull/441) New Component: `<Link>` ([@gossi](https://github.com/gossi))
+  * [#440](https://github.com/hokulea/hokulea/pull/440) Provide convenient `@href` next to `@push` ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/ember`, `@hokulea/tokens`
+  * [#443](https://github.com/hokulea/hokulea/pull/443) Fix token types for `Intent`, `Importance` and `Spacing` (swap enum for const) ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-08-30)
 
 * @hokulea/ember 0.9.0 (minor)

@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.8.0",
-      "newVersion": "0.9.0",
+      "oldVersion": "0.9.0",
+      "newVersion": "0.10.0",
       "tagName": "latest",
       "constraints": [
         {
@@ -16,10 +16,6 @@
         },
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
           "reason": "Appears in changelog section :house: Internal"
         }
       ],
@@ -27,37 +23,33 @@
     },
     "@hokulea/core": {
       "impact": "minor",
-      "oldVersion": "0.5.0",
-      "newVersion": "0.6.0",
+      "oldVersion": "0.6.0",
+      "newVersion": "0.7.0",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
-      "oldVersion": "0.1.1"
-    },
-    "@hokulea/theme-moana": {
-      "impact": "minor",
-      "oldVersion": "0.1.0",
-      "newVersion": "0.2.0",
+      "impact": "patch",
+      "oldVersion": "0.1.1",
+      "newVersion": "0.1.2",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
-      "pkgJSONPath": "./themes/moana/package.json"
+      "pkgJSONPath": "./foundation/tokens/package.json"
+    },
+    "@hokulea/theme-moana": {
+      "oldVersion": "0.2.0"
     }
   },
-  "description": "## Release (2025-08-30)\n\n* @hokulea/ember 0.9.0 (minor)\n* @hokulea/core 0.6.0 (minor)\n* @hokulea/theme-moana 0.2.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#432](https://github.com/hokulea/hokulea/pull/432) Use strict application resolver and provide registry ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/theme-moana`\n  * [#422](https://github.com/hokulea/hokulea/pull/422) New Component: `<NavigationList>` ([@gossi](https://github.com/gossi))\n  * [#420](https://github.com/hokulea/hokulea/pull/420) `<Page>`, `<SectionedPage>` + `<FocusPage>` ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#425](https://github.com/hokulea/hokulea/pull/425) Fix NavItem in aux area when in popup menu ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#431](https://github.com/hokulea/hokulea/pull/431) Remove `ember-route-template` ([@gossi](https://github.com/gossi))\n  * [#428](https://github.com/hokulea/hokulea/pull/428) Reorganized Components by topic ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-09-05)\n\n* @hokulea/ember 0.10.0 (minor)\n* @hokulea/core 0.7.0 (minor)\n* @hokulea/tokens 0.1.2 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#445](https://github.com/hokulea/hokulea/pull/445) New Component: `<DataTable>` ([@gossi](https://github.com/gossi))\n  * [#444](https://github.com/hokulea/hokulea/pull/444) New Component: `<Pagination>` ([@gossi](https://github.com/gossi))\n  * [#442](https://github.com/hokulea/hokulea/pull/442) New Component: `<Avatar>` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#441](https://github.com/hokulea/hokulea/pull/441) New Component: `<Link>` ([@gossi](https://github.com/gossi))\n  * [#440](https://github.com/hokulea/hokulea/pull/440) Provide convenient `@href` next to `@push` ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`, `@hokulea/tokens`\n  * [#443](https://github.com/hokulea/hokulea/pull/443) Fix token types for `Intent`, `Importance` and `Spacing` (swap enum for const) ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

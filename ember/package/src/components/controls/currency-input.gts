@@ -15,7 +15,7 @@ export interface CurrencyInputSignature {
 }
 
 export const CurrencyInput: TOC<CurrencyInputSignature> = <template>
-  <InputBuilder @disabled={{@disabled}} as |b|>
+  <InputBuilder @disabled={{@disabled}} @spacing={{@spacing}} as |b|>
     <input
       class="{{styles.input}} {{styles.currency}}"
       type="text"

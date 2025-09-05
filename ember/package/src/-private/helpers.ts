@@ -24,6 +24,13 @@ const not = (a: boolean) => !a;
 
 const notEq = (a: unknown, b: unknown) => a !== b;
 
+const gt = (left: unknown, right: unknown) => {
+  return (left as number) > (right as number);
+};
+
+// eslint-disable-next-line unicorn/no-new-array
+const range = (amount: number) => [...new Array(amount).keys()].map((i) => i + 1);
+
 const asString = (value: unknown): string => {
   return value as string;
 };
@@ -36,4 +43,4 @@ const asBoolean = (value: unknown): boolean => {
   return value as boolean;
 };
 
-export { and, asBoolean, asNumber, asString, eq, not, notEq, or, pick };
+export { and, asBoolean, asNumber, asString, eq, gt, not, notEq, or, pick, range };

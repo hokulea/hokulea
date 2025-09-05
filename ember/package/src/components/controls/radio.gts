@@ -18,6 +18,7 @@ export const Radio: TOC<RadioSignature> = <template>
     type="radio"
     checked={{@value}}
     disabled={{@disabled}}
+    data-spacing={{@spacing}}
     data-test-choice
     {{on "input" (pick "target.checked" @update) capture=true}}
     ...attributes

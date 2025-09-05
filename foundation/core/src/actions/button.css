@@ -1,13 +1,7 @@
 .button {
   composes: base-button from './actions/base.css';
-  padding-block: var(--spacing-primitive0);
-  padding-inline: var(--spacing-primitive3);
+  composes: primitive-spacing-rectangle from './shapes.css';
   border-radius: var(--shape-radius-primitive);
-
-  &[data-spacing="-1"] {
-    padding-block: var(--spacing-primitive-1);
-    padding-inline: var(--spacing-primitive2);
-  }
 
   & > span {
     display: inline-flex;

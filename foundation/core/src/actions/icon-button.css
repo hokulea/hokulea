@@ -1,9 +1,10 @@
 .icon-button {
   composes: base-button from './actions/base.css';
-  padding: var(--spacing-primitive0);
+  composes: primitive-spacing-square from './shapes.css';
   border-radius: var(--shape-radius-primitive);
+  vertical-align: -0.13em;
 
-  &[data-spacing="-1"] {
-    padding: var(--spacing-primitive-1);
+  > span {
+    height: 1em;
   }
 }

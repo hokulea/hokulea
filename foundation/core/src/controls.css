@@ -50,6 +50,7 @@
 .input {
   composes: control;
   composes: focus;
+  composes: primitive-spacing-square from './shapes.css';
 
   height: 1em;
 
@@ -257,16 +258,28 @@
     all: unset;
 
     width: 100%;
-    padding-block: var(--spacing-primitive0);
+
+    /* padding-block: var(--spacing-primitive0); */
+
+    padding-block: calc(var(--spacing-primitive0) - var(--control-border-width));
     padding-inline-end: calc(1em + var(--spacing-primitive-4));
 
     appearance: none;
+  }
+
+  &[data-spacing="-1"] {
+    padding-inline: var(--spacing-primitive-1);
+
+    select {
+      padding-block: var(--spacing-primitive-1);
+    }
   }
 }
 
 .textarea {
   composes: focus;
   composes: control;
+  composes: primitive-spacing-square from './shapes.css';
   white-space: pre-wrap; /* This is for Firefox - "all: unset" apparently disables line-breaks */
 }
 

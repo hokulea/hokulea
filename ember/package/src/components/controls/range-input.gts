@@ -33,7 +33,7 @@ const progressStyle = modifier((element: HTMLInputElement, [value]: [number?]) =
 
 export interface RangeInputSignature {
   Element: HTMLInputElement;
-  Args: InputArgs<number> & {
+  Args: Omit<InputArgs<number>, 'spacing'> & {
     min?: number;
     max?: number;
     step?: number | 'any';

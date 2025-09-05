@@ -1,0 +1,18 @@
+.primitive-spacing-rectangle {
+  padding-block: var(--spacing-primitive0);
+  padding-inline: var(--spacing-primitive3);
+
+  &[data-spacing="-1"] {
+    padding-block: var(--spacing-primitive-1);
+    padding-inline: var(--spacing-primitive2);
+  }
+}
+
+.primitive-spacing-square {
+  padding: var(--spacing-primitive0);
+
+  &[data-spacing="-1"] {
+    padding: var(--spacing-primitive-1);
+  }
+}
+

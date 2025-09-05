@@ -7,7 +7,7 @@ import { asNumber, gt, range } from '../../-private/helpers.ts';
 import { IconButton } from '../actions/icon-button.gts';
 import { NumberInput } from '../controls/number-input.gts';
 import { Select } from '../controls/select.gts';
-import { LABELS, NextIcon, PrevIcon } from './-pagination';
+import { LABELS, NextIcon, PrevIcon } from './-pagination.ts';
 
 interface PaginationSignature {
   Element: HTMLElement;

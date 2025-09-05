@@ -112,7 +112,7 @@ export class Pagination extends Component<PaginationSignature> {
 
   get pageSizeOptions() {
     return (this.args.pageSizes ?? []).map((i) =>
-      typeof i === 'number' ? { value: i, label: i } : i
+      typeof i === 'object' ? i : { value: i, label: i }
     );
   }
 

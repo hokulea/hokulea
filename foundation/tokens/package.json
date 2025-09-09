@@ -49,7 +49,7 @@
     "@theemo/style-dictionary": "^1.0.1",
     "@theemo/tokens": "^1.0.1",
     "@types/eslint": "8.56.12",
-    "eslint": "^9.31.0",
+    "eslint": "^9.35.0",
     "prettier": "^3.6.2",
     "style-dictionary": "5.0.0",
     "stylelint": "16.23.1",

@@ -26,7 +26,9 @@ import Pulse from '~icons/ph/pulse';
       <br/>
       <Avatar />
       <Avatar @name="K G" />
-      Next <Avatar @name="K G" /> Line of Text<br>
+      Next
+      <Avatar @name="K G" />
+      Line of Text<br>
       Another line of text
     </p>
 

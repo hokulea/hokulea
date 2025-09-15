@@ -31,9 +31,7 @@ export const Avatar: TOC<AvatarSignature> = <template>
     {{#if @src}}
       <img src={{@src}} alt={{@name}} />
     {{else if @name}}
-      <span>
-        {{getInitials @name}}
-      </span>
+      {{getInitials @name}}
     {{else}}
       {{htmlSafe UserIcon}}
     {{/if}}

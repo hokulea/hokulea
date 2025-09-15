@@ -22,49 +22,44 @@ The `svg` element inside then receives the sizing for the _actual_ icon itself.
 
 .avatar {
   overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-grid;
+  place-content: center;
 
   aspect-ratio: 1;
-  height: 1.4em;
-  margin-block: -1em;
-  padding-block: 1em;
+  height: 1lh;
+  margin-block: -0.5em;
   border-radius: 50%;
 
-
-  line-height: 1;
+  font-size: 0.7em;
+  line-height: 1.6em;
+  color: var(--typography-muted);
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  text-indent: -0.2ch;
+  text-overflow: clip;
   letter-spacing: -2.5px;
-  vertical-align: middle;
+  white-space: nowrap;
 
   background-color: var(--control-background);
-
-  /* box-shadow: 0 0 0 1px rgb(0 0 0 / 10%); */
   box-shadow: 0 0 0 1px var(--control-border-color);
 
-  /* box-shadow: 0 0 0 1px rgb(from var(--control-border-color) r g b / 40%); */
-
   &:has(img) {
-    height: 2em;
-    padding-block: 0;
-  }
-
-  &:has(span) {
-    /* border: 1px solid var(--control-border-color); */
+    vertical-align: middle;
   }
 
   img {
     object-fit: contain;
   }
 
-  span {
-    color: var(--typography-muted);
+  &:has(svg) {
+    translate: -0.1em .45em;
+    margin-inline: 0.075em;
+    padding: 0;
   }
 
   svg {
-    scale: 1.35;
+    scale: 1.45;
+    aspect-ratio: 1;
+    width: 100%;
     color: var(--control-border-color);
-
-    /* color: var(--control-disabled-background); */
   }
 }

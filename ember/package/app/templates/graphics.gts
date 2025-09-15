@@ -21,6 +21,25 @@ import Pulse from '~icons/ph/pulse';
       <Avatar @src="https://avatars.githubusercontent.com/u/283700?v=4" @name="Thomas Gossmann" />
       <Avatar @name="Thomas Gossmann" />
       <Avatar />
+      <Avatar @name="K G" />
+      Some Text
+      <br/>
+      <Avatar />
+      <Avatar @name="K G" />
+      Next <Avatar @name="K G" /> Line of Text<br>
+      Another line of text
+    </p>
+
+    <p>
+      <Avatar @src="https://avatars.githubusercontent.com/u/283700?v=4" @name="Thomas Gossmann" />
+      <Avatar @name="Thomas Gossmann" />
+      <Avatar />
+      <Avatar @name="K G" />
+      Some Text
+    </p>
+
+    <p>
+      Next paragraph
     </p>
   </Page>
 </template>

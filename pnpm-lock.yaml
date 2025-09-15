@@ -461,8 +461,8 @@ importers:
         specifier: 2.10.0
         version: 2.10.0(@glint/template@1.6.0-alpha.2)(webpack@5.101.3)
       ember-cli:
-        specifier: 6.6.0
-        version: 6.6.0
+        specifier: 6.7.0
+        version: 6.7.0
       ember-cli-app-version:
         specifier: 7.0.0
         version: 7.0.0(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))
@@ -474,7 +474,7 @@ importers:
         version: 3.1.0(@embroider/compat@3.9.1(@embroider/core@3.5.7(@glint/template@1.6.0-alpha.2))(@glint/template@1.6.0-alpha.2))(@embroider/core@3.5.7(@glint/template@1.6.0-alpha.2))
       ember-cli-dependency-checker:
         specifier: 3.3.3
-        version: 3.3.3(ember-cli@6.6.0)
+        version: 3.3.3(ember-cli@6.7.0)
       ember-cli-fastboot:
         specifier: 4.1.5
         version: 4.1.5(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))
@@ -714,8 +714,8 @@ importers:
         specifier: 2.10.0
         version: 2.10.0(@glint/template@1.6.0-alpha.2)(webpack@5.101.3)
       ember-cli:
-        specifier: 6.6.0
-        version: 6.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.7.0
+        version: 6.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ember-cli-app-version:
         specifier: 7.0.0
         version: 7.0.0(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.2)(rsvp@4.8.5)(webpack@5.101.3))
@@ -724,7 +724,7 @@ importers:
         version: 8.2.0(@babel/core@7.28.4)
       ember-cli-dependency-checker:
         specifier: 3.3.3
-        version: 3.3.3(ember-cli@6.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.3.3(ember-cli@6.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       ember-cli-htmlbars:
         specifier: 6.3.0
         version: 6.3.0
@@ -2034,6 +2034,18 @@ packages:
 
   '@ember-data/rfc395-data@0.0.4':
     resolution: {integrity: sha512-tGRdvgC9/QMQSuSuJV45xoyhI0Pzjm7A9o/MVVA3HakXIImJbbzx/k/6dO9CUEQXIyS2y0fW6C1XaYOG7rY0FQ==}
+
+  '@ember-tooling/blueprint-blueprint@0.0.2':
+    resolution: {integrity: sha512-W0Ulvny2PT+80qy2X9wSlNTobgfobI3cNfxoDgIlEr1f5ifyUg6rydyErl9RUupPxfsvuya6ss9TV6y86+qOjA==}
+
+  '@ember-tooling/blueprint-model@0.0.2':
+    resolution: {integrity: sha512-mZ6GZQE3zNfldN0qpZ8qAwCKH2fog60af72yppQueraYqRgL1SSd46An7sxRb1ur60+xlCMZAlj3086Fk1cKuQ==}
+
+  '@ember-tooling/classic-build-addon-blueprint@6.7.0':
+    resolution: {integrity: sha512-wNWXdVWy6N9jNtN7dKeZe9IClOWoqJzuPjZSW6+7GTi1JSN8kMmKUQzhvJEAeBne5KStGUyVGlc3073kI7d3Cw==}
+
+  '@ember-tooling/classic-build-app-blueprint@6.7.0':
+    resolution: {integrity: sha512-Y6vaSlLOOfZtLBHUISZ0LWhiUyEpYaZLe8LHA7m5K7mJ0kkA3GO/YN1VGjrtlEd6yL2aWU4CYYT0tZjDH/UiAw==}
 
   '@ember/app-tsconfig@1.0.3':
     resolution: {integrity: sha512-dw+/F68xvBw8JYLpyFmAcnF5d/vZqlP6GkEde+XIuPPPn6PIakrh0jtP0/tPxBw8tVuc6eD+H+8CWSsSFrGuiA==}
@@ -5852,8 +5864,8 @@ packages:
     resolution: {integrity: sha512-rk7GY+FmLn/2e22HsZs0Ycrz8HQ1W3Fv+2TFOuEFW9optnDXDgkntPBIl6gact/LHsfBM5RKbM3dHsIIeLgl0Q==}
     engines: {node: 10.* || >= 12.*}
 
-  ember-cli@6.6.0:
-    resolution: {integrity: sha512-YwiOuzB/qlTGsiSjsfPATi9YUm3j4SqOK7h9POw9tgLeFu34g7UPVver5MUIRQV8eQGVJ3TbgqRg8iXyNClgZQ==}
+  ember-cli@6.7.0:
+    resolution: {integrity: sha512-E+8WK/BMzSoJmE8FIokFiTuayCs5CgusZuhk+Mpha8zcoTh9s7+tahuSnaypifSR0/NiJh7oixxZXzPmw9iuEg==}
     engines: {node: '>= 20.11'}
     hasBin: true
 
@@ -7165,8 +7177,8 @@ packages:
   header-case@2.0.4:
     resolution: {integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==}
 
-  heimdalljs-fs-monitor@1.1.1:
-    resolution: {integrity: sha512-BHB8oOXLRlrIaON0MqJSEjGVPDyqt2Y6gu+w2PaEZjrCxeVtZG7etEZp7M4ZQ80HNvnr66KIQ2lot2qdeG8HgQ==}
+  heimdalljs-fs-monitor@1.1.2:
+    resolution: {integrity: sha512-M7OPf3Tu+ybhAXdiC07O1vUYFyhCgfew4L3vaG2nn4Be05xzNvtBcU6IKMTfHJ9AxWFa3w9rrmiJovkxHhpopw==}
 
   heimdalljs-graph@1.0.0:
     resolution: {integrity: sha512-v2AsTERBss0ukm/Qv4BmXrkwsT5x6M1V5Om6E8NcDQ/ruGkERsfsuLi5T8jx8qWzKMGYlwzAd7c/idymxRaPzA==}
@@ -12913,6 +12925,42 @@ snapshots:
 
   '@ember-data/rfc395-data@0.0.4': {}
 
+  '@ember-tooling/blueprint-blueprint@0.0.2': {}
+
+  '@ember-tooling/blueprint-model@0.0.2':
+    dependencies:
+      chalk: 4.1.2
+      diff: 7.0.0
+      isbinaryfile: 5.0.4
+      lodash: 4.17.21
+      promise.hash.helper: 1.0.8
+      quick-temp: 0.1.8
+      silent-error: 1.1.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@ember-tooling/classic-build-addon-blueprint@6.7.0':
+    dependencies:
+      '@ember-tooling/blueprint-model': 0.0.2
+      chalk: 4.1.2
+      ember-cli-normalize-entity-name: 1.0.0
+      ember-cli-string-utils: 1.1.0
+      fs-extra: 11.3.1
+      lodash: 4.17.21
+      silent-error: 1.1.1
+      sort-package-json: 2.15.1
+      walk-sync: 3.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@ember-tooling/classic-build-app-blueprint@6.7.0':
+    dependencies:
+      '@ember-tooling/blueprint-model': 0.0.2
+      chalk: 4.1.2
+      ember-cli-string-utils: 1.1.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@ember/app-tsconfig@1.0.3': {}
 
   '@ember/edition-utils@1.2.0': {}
@@ -17603,19 +17651,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-dependency-checker@3.3.3(ember-cli@6.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  ember-cli-dependency-checker@3.3.3(ember-cli@6.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       chalk: 2.4.2
-      ember-cli: 6.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      ember-cli: 6.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       find-yarn-workspace-root: 2.0.0
       is-git-url: 1.0.0
       resolve: 1.22.10
       semver: 5.7.2
 
-  ember-cli-dependency-checker@3.3.3(ember-cli@6.6.0):
+  ember-cli-dependency-checker@3.3.3(ember-cli@6.7.0):
     dependencies:
       chalk: 2.4.2
-      ember-cli: 6.6.0
+      ember-cli: 6.7.0
       find-yarn-workspace-root: 2.0.0
       is-git-url: 1.0.0
       resolve: 1.22.10
@@ -17845,8 +17893,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli@6.6.0:
+  ember-cli@6.7.0:
     dependencies:
+      '@ember-tooling/blueprint-blueprint': 0.0.2
+      '@ember-tooling/blueprint-model': 0.0.2
+      '@ember-tooling/classic-build-addon-blueprint': 6.7.0
+      '@ember-tooling/classic-build-app-blueprint': 6.7.0
       '@pnpm/find-workspace-dir': 1000.1.2
       babel-remove-types: 1.0.1
       broccoli: 3.5.2
@@ -17891,7 +17943,7 @@ snapshots:
       git-repo-info: 2.1.1
       glob: 8.1.0
       heimdalljs: 0.2.6
-      heimdalljs-fs-monitor: 1.1.1
+      heimdalljs-fs-monitor: 1.1.2
       heimdalljs-graph: 1.0.0
       heimdalljs-logger: 0.1.10
       http-proxy: 1.18.1
@@ -17986,8 +18038,12 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@6.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  ember-cli@6.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
+      '@ember-tooling/blueprint-blueprint': 0.0.2
+      '@ember-tooling/blueprint-model': 0.0.2
+      '@ember-tooling/classic-build-addon-blueprint': 6.7.0
+      '@ember-tooling/classic-build-app-blueprint': 6.7.0
       '@pnpm/find-workspace-dir': 1000.1.2
       babel-remove-types: 1.0.1
       broccoli: 3.5.2
@@ -18032,7 +18088,7 @@ snapshots:
       git-repo-info: 2.1.1
       glob: 8.1.0
       heimdalljs: 0.2.6
-      heimdalljs-fs-monitor: 1.1.1
+      heimdalljs-fs-monitor: 1.1.2
       heimdalljs-graph: 1.0.0
       heimdalljs-logger: 0.1.10
       http-proxy: 1.18.1
@@ -20171,7 +20227,7 @@ snapshots:
       capital-case: 1.0.4
       tslib: 2.8.1
 
-  heimdalljs-fs-monitor@1.1.1:
+  heimdalljs-fs-monitor@1.1.2:
     dependencies:
       callsites: 3.1.0
       clean-stack: 2.2.0

@@ -1,55 +1,41 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "minor",
-      "oldVersion": "0.9.0",
-      "newVersion": "0.10.0",
+      "impact": "patch",
+      "oldVersion": "0.10.0",
+      "newVersion": "0.10.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         },
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @hokulea/core"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "minor",
-      "oldVersion": "0.6.0",
-      "newVersion": "0.7.0",
+      "impact": "patch",
+      "oldVersion": "0.7.0",
+      "newVersion": "0.7.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
-      "impact": "patch",
-      "oldVersion": "0.1.1",
-      "newVersion": "0.1.2",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./foundation/tokens/package.json"
+      "oldVersion": "0.1.2"
     },
     "@hokulea/theme-moana": {
       "oldVersion": "0.2.0"
     }
   },
-  "description": "## Release (2025-09-05)\n\n* @hokulea/ember 0.10.0 (minor)\n* @hokulea/core 0.7.0 (minor)\n* @hokulea/tokens 0.1.2 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#445](https://github.com/hokulea/hokulea/pull/445) New Component: `<DataTable>` ([@gossi](https://github.com/gossi))\n  * [#444](https://github.com/hokulea/hokulea/pull/444) New Component: `<Pagination>` ([@gossi](https://github.com/gossi))\n  * [#442](https://github.com/hokulea/hokulea/pull/442) New Component: `<Avatar>` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#441](https://github.com/hokulea/hokulea/pull/441) New Component: `<Link>` ([@gossi](https://github.com/gossi))\n  * [#440](https://github.com/hokulea/hokulea/pull/440) Provide convenient `@href` next to `@push` ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`, `@hokulea/tokens`\n  * [#443](https://github.com/hokulea/hokulea/pull/443) Fix token types for `Intent`, `Importance` and `Spacing` (swap enum for const) ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-09-15)\n\n* @hokulea/ember 0.10.1 (patch)\n* @hokulea/core 0.7.1 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#457](https://github.com/hokulea/hokulea/pull/457) Improved Styling for Avatar to suit better into context ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

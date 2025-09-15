@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2025-09-15)
+
+* @hokulea/ember 0.10.1 (patch)
+* @hokulea/core 0.7.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`
+  * [#457](https://github.com/hokulea/hokulea/pull/457) Improved Styling for Avatar to suit better into context ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-09-05)
 
 * @hokulea/ember 0.10.0 (minor)

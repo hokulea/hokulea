@@ -32,8 +32,9 @@ module('Rendering | Graphics | <Avatar>', (hooks) => {
     const avatar = new AvatarPageObject();
 
     assert.dom(avatar).exists();
-    assert.dom(avatar.$span).exists();
-    assert.dom(avatar.$span).containsText('T G');
+    assert.dom(avatar).containsText('T G');
+    assert.dom(avatar.$img).doesNotExist();
+    assert.dom(avatar.$svg).doesNotExist();
   });
 
   test('it renders fallback svg', async (assert) => {

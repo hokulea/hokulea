@@ -11,5 +11,4 @@ export class AvatarPageObject extends PageObject<HTMLSpanElement> {
 
   $svg = sel<SVGSVGElement>('svg');
   $img = sel<HTMLImageElement>('img');
-  $span = sel<HTMLElement>('span');
 }

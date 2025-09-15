@@ -23,12 +23,12 @@ import Pulse from '~icons/ph/pulse';
       <Avatar />
       <Avatar @name="K G" />
       Some Text
-      <br/>
+      <br />
       <Avatar />
       <Avatar @name="K G" />
       Next
       <Avatar @name="K G" />
-      Line of Text<br>
+      Line of Text<br />
       Another line of text
     </p>
 

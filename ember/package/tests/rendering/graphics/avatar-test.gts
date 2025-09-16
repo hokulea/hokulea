@@ -45,4 +45,12 @@ module('Rendering | Graphics | <Avatar>', (hooks) => {
     assert.dom(avatar).exists();
     assert.dom(avatar.$svg).exists();
   });
+
+  test('adding attributes', async (assert) => {
+    await render(<template><Avatar data-something /></template>);
+
+    const avatar = new AvatarPageObject();
+
+    assert.dom(avatar).hasAttribute('data-something');
+  });
 });

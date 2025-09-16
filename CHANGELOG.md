@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-09-16)
+
+* @hokulea/ember 0.10.2 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`
+  * [#458](https://github.com/hokulea/hokulea/pull/458) Allow HTML attributes on `<Avatar>` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-09-15)
 
 * @hokulea/ember 0.10.1 (patch)

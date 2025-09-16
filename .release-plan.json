@@ -2,33 +2,19 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "patch",
-      "oldVersion": "0.10.0",
-      "newVersion": "0.10.1",
+      "oldVersion": "0.10.1",
+      "newVersion": "0.10.2",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @hokulea/core"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "patch",
-      "oldVersion": "0.7.0",
-      "newVersion": "0.7.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        }
-      ],
-      "pkgJSONPath": "./foundation/core/package.json"
+      "oldVersion": "0.7.1"
     },
     "@hokulea/tokens": {
       "oldVersion": "0.1.2"
@@ -37,5 +23,5 @@
       "oldVersion": "0.2.0"
     }
   },
-  "description": "## Release (2025-09-15)\n\n* @hokulea/ember 0.10.1 (patch)\n* @hokulea/core 0.7.1 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#457](https://github.com/hokulea/hokulea/pull/457) Improved Styling for Avatar to suit better into context ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-09-16)\n\n* @hokulea/ember 0.10.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`\n  * [#458](https://github.com/hokulea/hokulea/pull/458) Allow HTML attributes on `<Avatar>` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

@@ -372,6 +372,9 @@ importers:
       '@hokulea/tokens':
         specifier: workspace:*
         version: link:../../foundation/tokens
+    dependenciesMeta:
+      '@hokulea/ember':
+        injected: true
     devDependencies:
       '@babel/core':
         specifier: 7.28.4
@@ -586,9 +589,6 @@ importers:
       webpack:
         specifier: 5.101.3
         version: 5.101.3
-    dependenciesMeta:
-      '@hokulea/ember':
-        injected: true
 
   explorer:
     dependencies:

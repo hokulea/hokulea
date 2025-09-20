@@ -142,7 +142,7 @@
     "eslint-plugin-storybook": "^9.1.5",
     "fractal-page-object": "1.0.0",
     "glimmer-scoped-css": "^0.8.1",
-    "iconify-icon": "^3.0.0",
+    "iconify-icon": "^3.0.1",
     "postcss": "8.5.6",
     "prettier": "^3.6.2",
     "qunit": "^2.24.1",

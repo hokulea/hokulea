@@ -783,8 +783,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(@glint/template@1.6.0-alpha.3)
       ember-truth-helpers:
-        specifier: 4.0.3
-        version: 4.0.3(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.3)(rsvp@4.8.5)(webpack@5.101.3(esbuild@0.25.6)))
+        specifier: 5.0.0
+        version: 5.0.0
       eslint:
         specifier: ^9.35.0
         version: 9.35.0(jiti@2.5.1)
@@ -5870,10 +5870,6 @@ packages:
     resolution: {integrity: sha512-0iKTZ+/wH6UB/VTWKvGuXlmwiE8HSIGcxHamwNhEC5x1mN3z8RfvsFZdQWYUzIWFN2Tek0gmepGRPTwWdBYl/A==}
     engines: {node: 10.* || >= 12.*}
 
-  ember-cli-typescript@5.3.0:
-    resolution: {integrity: sha512-gFA+ZwmsvvFwo2Jz/B9GMduEn+fPoGb69qWGP0Tp3+Tu5xypDtIKVSZ5086I3Cr19cLXD4HkrOR3YQvdUKzAkQ==}
-    engines: {node: '>= 12.*'}
-
   ember-cli-version-checker@2.2.0:
     resolution: {integrity: sha512-G+KtYIVlSOWGcNaTFHk76xR4GdzDLzAS4uxZUKdASuFX0KJE43C6DaqL+y3VTpUFLI2FIkAS6HZ4I1YBi+S3hg==}
     engines: {node: '>= 4'}
@@ -5941,12 +5937,6 @@ packages:
     peerDependenciesMeta:
       '@typescript-eslint/parser':
         optional: true
-
-  ember-functions-as-helper-polyfill@2.1.2:
-    resolution: {integrity: sha512-yvW6xykvZEIYzzwlrC/g9yu6LtLkkj5F+ho6U+BDxN1uREMgoMOZnji7sSILn5ITVpaJ055DPcO+utEFD7IZOA==}
-    engines: {node: '>= 14.0.0'}
-    peerDependencies:
-      ember-source: ^3.25.0 || >=4.0.0
 
   ember-get-config@2.1.1:
     resolution: {integrity: sha512-uNmv1cPG/4qsac8oIf5txJ2FZ8p88LEpG4P3dNcjsJS98Y8hd0GPMFwVqpnzI78Lz7VYRGQWY4jnE4qm5R3j4g==}
@@ -6088,10 +6078,8 @@ packages:
     resolution: {integrity: sha512-eL7lZat68E6P/D7b9UoTB5bB5Oh/0aju0Z7PCMi3aTwhaydRaxloE7TGrTRYU+NdJuyNVZXeGyxFxn2frvd3TA==}
     engines: {node: 12.* || >= 14}
 
-  ember-truth-helpers@4.0.3:
-    resolution: {integrity: sha512-T6Ogd3pk9FxYiZfSxdjgn3Hb3Ksqgw7CD23V9qfig9jktNdkNEHo4+3PA3cSD/+3a2kdH3KmNvKyarVuzdtEkA==}
-    peerDependencies:
-      ember-source: '>=3.28.0'
+  ember-truth-helpers@5.0.0:
+    resolution: {integrity: sha512-PnQd6D6hvlNC3k6gBu0SC2cvfXX6wH6W0nToomIIoxqyrD5cllk0zBh/j/1H0KsczVCWeuF9PWj5xJgL4jQAGg==}
 
   ember-try-config@4.0.0:
     resolution: {integrity: sha512-jAv7fqYJK7QYYekPc/8Nr7KOqDpv/asqM6F8xcRnbmf9UrD35BkSffY63qUuiD9e0aR5qiMNBIQzH8f65rGDqw==}
@@ -17980,21 +17968,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-typescript@5.3.0:
-    dependencies:
-      ansi-to-html: 0.6.15
-      broccoli-stew: 3.0.0
-      debug: 4.4.1(supports-color@8.1.1)
-      execa: 4.1.0
-      fs-extra: 9.1.0
-      resolve: 1.22.10
-      rsvp: 4.8.5
-      semver: 7.7.2
-      stagehand: 1.0.1
-      walk-sync: 2.2.0
-    transitivePeerDependencies:
-      - supports-color
-
   ember-cli-version-checker@2.2.0:
     dependencies:
       resolve: 1.22.10
@@ -18391,15 +18364,6 @@ snapshots:
       '@typescript-eslint/parser': 8.36.0(eslint@9.35.0(jiti@2.5.1))(typescript@5.9.2)
     transitivePeerDependencies:
       - eslint
-
-  ember-functions-as-helper-polyfill@2.1.2(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.3)(rsvp@4.8.5)(webpack@5.101.3(esbuild@0.25.6))):
-    dependencies:
-      ember-cli-babel: 7.26.11
-      ember-cli-typescript: 5.3.0
-      ember-cli-version-checker: 5.1.2
-      ember-source: 5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.3)(rsvp@4.8.5)(webpack@5.101.3(esbuild@0.25.6))
-    transitivePeerDependencies:
-      - supports-color
 
   ember-get-config@2.1.1(@glint/template@1.6.0-alpha.3):
     dependencies:
@@ -18802,11 +18766,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-truth-helpers@4.0.3(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.3)(rsvp@4.8.5)(webpack@5.101.3(esbuild@0.25.6))):
+  ember-truth-helpers@5.0.0:
     dependencies:
       '@embroider/addon-shim': 1.10.0
-      ember-functions-as-helper-polyfill: 2.1.2(ember-source@5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.3)(rsvp@4.8.5)(webpack@5.101.3(esbuild@0.25.6)))
-      ember-source: 5.12.0(@glimmer/component@2.0.0)(@glint/template@1.6.0-alpha.3)(rsvp@4.8.5)(webpack@5.101.3(esbuild@0.25.6))
     transitivePeerDependencies:
       - supports-color
 

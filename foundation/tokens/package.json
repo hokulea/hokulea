@@ -54,7 +54,7 @@
     "style-dictionary": "5.0.0",
     "stylelint": "16.24.0",
     "tsdown": "^0.12.9",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": "^20.11.0 || >=22"

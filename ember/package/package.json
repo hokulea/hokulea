@@ -116,7 +116,7 @@
     "@hokulea/theme-moana": "workspace:*",
     "@hokulea/tokens": "workspace:*",
     "@iconify-json/ph": "^1.2.2",
-    "@rollup/plugin-babel": "6.0.4",
+    "@rollup/plugin-babel": "6.1.0",
     "@storybook/types": "^8.6.14",
     "@theemo/ember": "^1.0.1",
     "@theemo/vite": "^1.0.1",

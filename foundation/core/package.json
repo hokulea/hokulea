@@ -39,7 +39,7 @@
     "@gossi/config-targets": "^1.1.0",
     "@hokulea/config-postcss": "workspace:*",
     "@hokulea/rollup-plugin-postcss": "workspace:*",
-    "@rollup/plugin-commonjs": "28.0.6",
+    "@rollup/plugin-commonjs": "28.0.9",
     "eslint": "^9.35.0",
     "fast-glob": "3.3.3",
     "postcss": "8.5.6",

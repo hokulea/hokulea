@@ -101,7 +101,7 @@
     "stylelint": "16.24.0",
     "tracked-built-ins": "4.0.0",
     "typescript": "5.9.3",
-    "unplugin-icons": "^22.2.0",
+    "unplugin-icons": "^22.5.0",
     "webpack": "5.101.3"
   },
   "engines": {

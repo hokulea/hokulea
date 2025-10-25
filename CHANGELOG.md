@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-10-25)
+
+* @hokulea/ember 0.10.3 (patch)
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#484](https://github.com/hokulea/hokulea/pull/484) Glint v2 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-09-16)
 
 * @hokulea/ember 0.10.2 (patch)

@@ -8,12 +8,6 @@
     "**/*.stories.ts",
     "app"
   ],
-  "glint": {
-    "environment": [
-      "ember-loose",
-      "ember-template-imports"
-    ]
-  },
   "compilerOptions": {
     "allowJs": true,
     "declarationDir": "declarations",

@@ -5,7 +5,7 @@ const theemoPlugin = require('ember-theemo/lib/webpack');
 const packageJson = require('./package');
 const sideWatch = require('@embroider/broccoli-side-watch');
 const { GlimmerScopedCSSWebpackPlugin } = require('glimmer-scoped-css/webpack');
-const icons = require('unplugin-icons/webpack').default;
+const icons = require('unplugin-icons/webpack');
 const { FileSystemIconLoader } = require('unplugin-icons/loaders');
 
 const iconCollection = {

@@ -62,7 +62,7 @@
     "babel-plugin-htmlbars-inline-precompile": "^5.3.1",
     "broccoli-asset-rev": "3.0.0",
     "case": "1.6.3",
-    "chromatic": "13.2.1",
+    "chromatic": "13.3.2",
     "ember-auto-import": "2.10.1",
     "ember-cli": "6.7.0",
     "ember-cli-app-version": "7.0.0",

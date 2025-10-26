@@ -37,4 +37,20 @@ module('Rendering | Graphics | <Icon>', (hooks) => {
     assert.dom(icon).exists();
     assert.dom(icon.$svg).hasAttribute('data-name', 'custom:unicycle');
   });
+
+  test('icon as string', async (assert) => {
+    const ListIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="256"
+      height="256" data-test="string-icon" viewBox="0 0
+      256 256"><path fill="currentColor" d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1
+      0-16h176a8 8 0 0 1 8 8M40 72h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16m176 112H40a8
+      8 0 0 0 0 16h176a8 8 0 0 0 0-16"/></svg>
+    `;
+
+    await render(<template><Icon @icon={{ListIcon}} /></template>);
+
+    const icon = new IconPageObject();
+
+    assert.dom(icon).exists();
+    assert.dom(icon.$svg).hasAttribute('data-test', 'string-icon');
+  });
 });

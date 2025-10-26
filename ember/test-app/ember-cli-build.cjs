@@ -13,7 +13,7 @@ const iconCollection = {
 };
 const iconify = icons({
   autoInstall: true,
-  compiler: 'raw',
+  compiler: 'ember',
   customCollections: iconCollection,
   // this is for testing purposes
   iconCustomizer(collection, icon, props) {

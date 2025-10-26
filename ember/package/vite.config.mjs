@@ -36,7 +36,7 @@ export default defineConfig({
     }),
     icons({
       autoInstall: true,
-      compiler: 'raw',
+      compiler: 'ember',
       customCollections: {
         custom: FileSystemIconLoader('./assets/icons')
       },

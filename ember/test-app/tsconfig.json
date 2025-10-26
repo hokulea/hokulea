@@ -13,7 +13,8 @@
     },
     "types": [
       "ember-source/types",
-      "@glint/ember-tsc/types"
+      "@glint/ember-tsc/types",
+      "unplugin-icons/types/ember"
     ]
   },
   "include": [

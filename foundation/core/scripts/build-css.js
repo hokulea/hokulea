@@ -23,7 +23,7 @@ function applyMixin(name) {
 
 const { code } = bundle({
   filename: config.input,
-  minify: true,
+  minify: false, // the explorer with auto-import errors on reading the minified file
   exclude: Features.Nesting,
   customAtRules: {
     mixin: {

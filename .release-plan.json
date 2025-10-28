@@ -1,27 +1,55 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.10.1",
-      "newVersion": "0.10.2",
+      "impact": "minor",
+      "oldVersion": "0.10.2",
+      "newVersion": "0.11.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "oldVersion": "0.7.1"
+      "impact": "minor",
+      "oldVersion": "0.7.1",
+      "newVersion": "0.8.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        }
+      ],
+      "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
       "oldVersion": "0.1.2"
     },
     "@hokulea/theme-moana": {
-      "oldVersion": "0.2.0"
+      "impact": "minor",
+      "oldVersion": "0.2.0",
+      "newVersion": "0.3.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        }
+      ],
+      "pkgJSONPath": "./themes/moana/package.json"
     }
   },
-  "description": "## Release (2025-09-16)\n\n* @hokulea/ember 0.10.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`\n  * [#458](https://github.com/hokulea/hokulea/pull/458) Allow HTML attributes on `<Avatar>` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-10-28)\n\n* @hokulea/ember 0.11.0 (minor)\n* @hokulea/core 0.8.0 (minor)\n* @hokulea/theme-moana 0.3.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/theme-moana`\n  * [#505](https://github.com/hokulea/hokulea/pull/505) Switch from CSS Modules to CSS with `@layer` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#496](https://github.com/hokulea/hokulea/pull/496) Support ember compiler for iconify ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* Other\n  * [#506](https://github.com/hokulea/hokulea/pull/506) Cleanup: Remove unused rollup plugin (and other minor removals) ([@gossi](https://github.com/gossi))\n  * [#489](https://github.com/hokulea/hokulea/pull/489) Support Trusted Publishing ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#484](https://github.com/hokulea/hokulea/pull/484) Glint v2 ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

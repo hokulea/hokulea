@@ -98,8 +98,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(prettier@3.6.2)
       '@theemo/cli':
-        specifier: ^1.0.1
-        version: 1.0.1(typescript@5.9.3)
+        specifier: ^1.0.2
+        version: 1.0.2(typescript@5.9.3)
       '@theemo/figma':
         specifier: ^1.0.1
         version: 1.0.1
@@ -3236,18 +3236,9 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@theemo/build@1.0.1':
-    resolution: {integrity: sha512-+KtWz+3GUUXGK9uFiZXTiXMahrtypzNQCiuH4EW8znlAk6DSehd66jwtkRTf6w8GGfMAuFHk/eYoVjfBK5Fv5A==}
-    engines: {node: ^20.11.0 || >=22}
-
   '@theemo/build@1.1.0':
     resolution: {integrity: sha512-N56b/4MCxdHDQ2yk9e6uIT01SN4YgowVbCxgc7oUk/2DI0QWAYJ5lTYLcVQj/bS8IoPfaA1m5e/H3SAqJYWmcA==}
     engines: {node: ^20.11.0 || >=22}
-
-  '@theemo/cli@1.0.1':
-    resolution: {integrity: sha512-VUbyBBtd/vSs/GUUZ7hjxui+2tUByvLdn9/+8ObcabFro8RZJTUD9pZhzpzaze4W89+3FIkHmoC3KwCFxGEpBw==}
-    engines: {node: ^20.11.0 || >=22}
-    hasBin: true
 
   '@theemo/cli@1.0.2':
     resolution: {integrity: sha512-iL8BpTHkbuJ+l+y64qIhjwoulQ0x6uWxSMkcDm9/H9aa7le0bT7DAvUH4cN44d2OwLHbJfKMqexw77TXP5cn2g==}
@@ -14748,28 +14739,11 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@theemo/build@1.0.1':
-    dependencies:
-      lightningcss: 1.30.1
-      read-pkg: 9.0.1
-      write-package: 7.1.0
-
   '@theemo/build@1.1.0':
     dependencies:
       lightningcss: 1.30.1
       read-pkg: 9.0.1
       write-package: 7.1.0
-
-  '@theemo/cli@1.0.1(typescript@5.9.3)':
-    dependencies:
-      '@theemo/build': 1.0.1
-      '@theemo/sync': 1.0.1
-      commander: 14.0.0
-      cosmiconfig: 9.0.0(typescript@5.9.3)
-      dotenv: 17.2.0
-      read-pkg-up: 11.0.0
-    transitivePeerDependencies:
-      - typescript
 
   '@theemo/cli@1.0.2(typescript@5.9.3)':
     dependencies:

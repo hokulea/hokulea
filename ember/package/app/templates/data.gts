@@ -5,7 +5,7 @@ import { DataTable, Page, Pagination } from '#src';
 import type { TOC } from '@ember/component/template-only';
 
 const Tag: TOC<{ Blocks: { default: [] } }> = <template>
-  <style>
+  <style scoped>
     .tag {
       padding: 0.25em;
 

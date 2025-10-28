@@ -6,6 +6,10 @@ declare module '@glint/template/-private/dsl/elements' {
       ['part']: AttrValue;
     }
 
+    interface HTMLStyleElementAttributes {
+      ['scoped']: AttrValue;
+    }
+
     interface HTMLTextAreaElementAttributes {
       ['type']: AttrValue;
     }

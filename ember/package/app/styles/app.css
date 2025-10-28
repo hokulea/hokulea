@@ -14,15 +14,6 @@
   src: url("/assets/InterDisplay.var.woff2?3.13") format("woff2-variations");
 }
 
-
-
-.popover {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 .cols {
   display: grid;
   grid-template-columns: auto max-content;

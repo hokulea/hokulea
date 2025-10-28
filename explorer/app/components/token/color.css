@@ -15,8 +15,6 @@
 
 .content {
   --flow-space: var(--s-5);
-
-  composes: flow from "@hokulea/core/layouts.css";
 }
 
 .value {

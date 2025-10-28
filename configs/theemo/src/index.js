@@ -207,7 +207,7 @@ export function theemoConfig(figmaFileIds) {
     build: {
       outDir: 'dist',
       files: ['build/properties.css', 'build/vars.css'],
-      layerName: 'foundation',
+      layerName: 'tokens',
       features: [
         {
           name: 'color-scheme',

@@ -1,14 +1,11 @@
 import { hash } from '@ember/helper';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import type { ShapeArgs } from '../../-private/shapes.ts';
 import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
 
 interface AffixSignature {
   Args: {
-    class: string;
     identity: 'prefix' | 'affix' | 'suffix';
   };
   Blocks: {
@@ -17,7 +14,7 @@ interface AffixSignature {
 }
 
 const Affix: TOC<AffixSignature> = <template>
-  <span class={{@class}} data-test-input-builder={{@identity}}>{{yield}}</span>
+  <span class="input-{{@identity}}" data-test-input-builder={{@identity}}>{{yield}}</span>
 </template>;
 
 export interface InputBuilderSignature {
@@ -27,9 +24,9 @@ export interface InputBuilderSignature {
   Blocks: {
     default: [
       {
-        Affix: WithBoundArgs<typeof Affix, 'class' | 'identity'>;
-        Prefix: WithBoundArgs<typeof Affix, 'class' | 'identity'>;
-        Suffix: WithBoundArgs<typeof Affix, 'class' | 'identity'>;
+        Affix: WithBoundArgs<typeof Affix, 'identity'>;
+        Prefix: WithBoundArgs<typeof Affix, 'identity'>;
+        Suffix: WithBoundArgs<typeof Affix, 'identity'>;
       }
     ];
   };
@@ -38,7 +35,7 @@ export interface InputBuilderSignature {
 export const InputBuilder: TOC<InputBuilderSignature> = <template>
   {{! template-lint-disable no-unsupported-role-attributes }}
   <span
-    class={{styles.inputBuilder}}
+    class="input-builder"
     aria-disabled={{if @disabled "true"}}
     data-spacing={{@spacing}}
     data-input-builder
@@ -46,9 +43,9 @@ export const InputBuilder: TOC<InputBuilderSignature> = <template>
   >
     {{yield
       (hash
-        Prefix=(component Affix class=styles.prefix identity="prefix")
-        Affix=(component Affix class=styles.affix identity="affix")
-        Suffix=(component Affix class=styles.suffix identity="suffix")
+        Prefix=(component Affix identity="prefix")
+        Affix=(component Affix identity="affix")
+        Suffix=(component Affix identity="suffix")
       )
     }}
   </span>

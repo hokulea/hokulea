@@ -1,7 +1,5 @@
 import { on } from '@ember/modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { pick } from '../../-private/helpers.ts';
 
 import type { InputArgs } from './-input.ts';
@@ -14,7 +12,7 @@ export interface TextInputSignature {
 
 export const TextInput: TOC<TextInputSignature> = <template>
   <input
-    class={{styles.input}}
+    class="input"
     type="text"
     value={{@value}}
     disabled={{@disabled}}

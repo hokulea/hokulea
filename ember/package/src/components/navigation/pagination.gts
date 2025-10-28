@@ -1,8 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import styles from '@hokulea/core/navigation.module.css';
-
 import { asNumber, gt, range } from '../../-private/helpers.ts';
 import { IconButton } from '../actions/icon-button.gts';
 import { NumberInput } from '../controls/number-input.gts';
@@ -157,7 +155,7 @@ export class Pagination extends Component<PaginationSignature> {
   };
 
   <template>
-    <div class={{styles.pagination}} data-test-pagination>
+    <div class="pagination" data-test-pagination>
       {{#if @pageSizes}}
         <span part="page-size">
           {{this.itemsPerPageLabel}}

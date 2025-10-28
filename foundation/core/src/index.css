@@ -1,0 +1,43 @@
+@layer reset, tokens, foundation, layout, components, app;
+
+/*
+Load mixins first; layer-free
+
+The way lightningcss works in a way it associates files (and its imports) to
+layers resolves in errors, for various reasons:
+
+- one file can end up in multiple layers that lightningcss doesn't know how to
+  resolve.
+- lightningcss does not know these files turn empty
+- These are not official CSS mixins (those would stay in code and not be
+  compiled away)
+
+To address this, the mixins are loaded at the top, so they can be used later on.
+*/
+
+@import "./foundation/shapes.css";
+@import "./layouts/-mixins.css";
+@import "./controls/control.css";
+@import "./controls/focus.css";
+
+/* Foundation */
+@import "./foundation/reset.css" layer(reset);
+@import "./foundation/tokens.css" layer(foundation);
+@import "./foundation/base.css" layer(foundation);
+@import "./foundation/typography.css" layer(foundation);
+@import "./foundation/navigation.css" layer(foundation);
+
+/* Layout */
+@import "./layouts/elements.css" layer(foundation);
+@import "./layouts/flow.css" layer(layout);
+@import "./layouts/page.css" layer(layout);
+
+/* Components */
+@import "./navigation.css" layer(components);
+@import "./content.css" layer(components);
+@import "./graphics.css" layer(components);
+@import "./controls.css" layer(components);
+@import "./actions.css" layer(components);
+@import "./forms.css" layer(components);
+@import "./windows.css" layer(components);
+@import "./data.css" layer(components);

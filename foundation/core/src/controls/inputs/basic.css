@@ -1,0 +1,46 @@
+.input:not([type="range"], [type="checkbox"], [type="radio"]) {
+  @apply --control;
+  @apply --focus;
+  @apply --spacing-primitive-square;
+
+  height: 1em;
+  line-height: 1em;
+  vertical-align: middle;
+
+  &::placeholder {
+    color: var(--control-placeholder);
+  }
+
+  &[type="number"], &[type="date"] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  &[type="date"]::-webkit-calendar-picker-indicator,
+  &[type="date"]::-webkit-datetime-edit {
+    align-self: center;
+  }
+
+  /* &[type="date"]::-webkit-datetime-edit {
+    height: 1em;
+  } */
+}
+
+.textarea {
+  @apply --control;
+  @apply --focus;
+  @apply --spacing-primitive-square;
+
+  white-space: pre-wrap; /* This is for Firefox - "all: unset" apparently disables line-breaks */
+}
+
+.input[type="checkbox"], input[type="radio"] {
+  transform: translateY(0.1em);
+
+  aspect-ratio: 1;
+  height: 0.9em;
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
+
+  accent-color: var(--control-accent);
+  background: var(--control-background);
+}

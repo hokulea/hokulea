@@ -1,0 +1,20 @@
+@import './inputs/basic.css';
+@import './inputs/input-builder.css';
+@import './inputs/range.css';
+@import './inputs/select.css';
+
+/* Validation States - where they'd go? form? basic? Idk! */
+
+.input:not([type="radio"], [type="checkbox"])[aria-invalid="true"],
+.select[aria-invalid="true"],
+.textarea[aria-invalid="true"],
+.input-builder[data-invalid="true"] {
+  border-color: var(--indicator-error-supreme-border);
+}
+
+/* .input:not([type="radio"], [type="checkbox"])[aria-invalid="false"],
+.select[aria-invalid="false"],
+.textarea[aria-invalid="false"],
+.input-builder[data-invalid="false"] {
+  border-color: var(--indicator-success-supreme-border);
+} */

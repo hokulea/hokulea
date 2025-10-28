@@ -3,8 +3,6 @@ import { assert } from '@ember/debug';
 
 import { element } from 'ember-element-helper';
 
-import styles from '@hokulea/core/actions.module.css';
-
 import { and, asBoolean, not } from '../../-private/helpers.ts';
 import disabled from '../../-private/modifiers/disabled.ts';
 import { type PushArgs, PushElement } from '../../-private/push.gts';
@@ -49,7 +47,7 @@ export class IconButton extends Component<IconButtonSignature> {
       @push={{@push}}
       @href={{@href}}
       @element={{element "button"}}
-      class="{{styles.iconButton}}"
+      class="icon-button"
       type={{if (and (not (isLink @push)) (not (asBoolean @href))) "button"}}
       data-intent={{if @intent @intent "action"}}
       data-importance={{if @importance @importance "supreme"}}

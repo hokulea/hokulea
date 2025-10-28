@@ -1,6 +1,7 @@
 .icon-button {
-  composes: base-button from './actions/base.css';
-  composes: primitive-spacing-square from './shapes.css';
+  @apply --base-button;
+  @apply --spacing-primitive-square;
+
   border-radius: var(--shape-radius-primitive);
   vertical-align: -0.13em;
 

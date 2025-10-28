@@ -1,5 +1,3 @@
-import styles from '@hokulea/core/actions.module.css';
-
 import disabled from '../../-private/modifiers/disabled.ts';
 
 import type { TOC } from '@ember/component/template-only';
@@ -31,7 +29,7 @@ export interface SubmitSignature {
 export const Submit: TOC<SubmitSignature> = <template>
   <button
     type="submit"
-    class={{styles.button}}
+    class="button"
     data-intent={{if @intent @intent "action"}}
     data-importance={{if @importance @importance "supreme"}}
     data-spacing={{@spacing}}

@@ -1,0 +1,43 @@
+.avatar {
+  overflow: hidden;
+  display: inline-grid;
+  place-content: center;
+
+  aspect-ratio: 1;
+  height: 1lh;
+  margin-block: -0.5em;
+  border-radius: 50%;
+
+  font-size: 0.7em;
+  line-height: 1.6em;
+  color: var(--typography-muted);
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  text-indent: -0.2ch;
+  text-overflow: clip;
+  letter-spacing: -2.5px;
+  white-space: nowrap;
+
+  background-color: var(--control-background);
+  box-shadow: 0 0 0 1px var(--control-border-color);
+
+  &:has(img) {
+    vertical-align: middle;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  &:has(svg) {
+    translate: -0.1em .45em;
+    margin-inline: 0.075em;
+    padding: 0;
+  }
+
+  svg {
+    scale: 1.45;
+    aspect-ratio: 1;
+    width: 100%;
+    color: var(--control-border-color);
+  }
+}

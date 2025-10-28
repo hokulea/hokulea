@@ -1,7 +1,5 @@
 import { on } from '@ember/modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { pick } from '../../-private/helpers.ts';
 import { pickAsNumber } from './-input.ts';
 
@@ -15,7 +13,7 @@ export interface NumberInputSignature {
 
 export const NumberInput: TOC<NumberInputSignature> = <template>
   <input
-    class={{styles.input}}
+    class="input"
     type="number"
     value={{@value}}
     disabled={{@disabled}}

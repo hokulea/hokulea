@@ -1,0 +1,67 @@
+@mixin --affix {
+  display: inline-block;
+  padding-inline: var(--spacing-primitive0);
+  line-height: 1em;
+}
+
+@mixin --prefix {
+  @apply --affix;
+
+  border-inline-end: var(--control-border);
+}
+
+@mixin --suffix {
+  @apply --affix;
+
+  border-inline-start: var(--control-border);
+}
+
+.input-affix {
+  @apply --affix;
+}
+
+.input-prefix {
+  @apply --prefix;
+}
+
+.input-suffix {
+  @apply --suffix;
+}
+
+.input-builder {
+  @apply --control;
+  @apply --focus-within;
+
+  display: inline-flex;
+  align-items: center;
+
+  height: auto;
+  padding: 0;
+
+  vertical-align: middle;
+
+  & > .input {
+    flex-grow: 1;
+    border: unset;
+    background: unset;
+
+    /* Reset this for safari */
+    @supports (-webkit-hyphens:none) {
+      height: 1em;
+    }
+
+    &:focus {
+      outline: unset;
+    }
+  }
+
+  & > .input-affix + .input,
+  & > .input + .input-affix,
+  & > .input-affix:not(.input-suffix, .input-prefix) + .input-affix:not(.input-suffix, .input-prefix) {
+    padding-inline-start: 0;
+  }
+
+  & > * {
+    padding-block: var(--spacing-primitive0);
+  }
+}

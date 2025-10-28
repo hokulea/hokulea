@@ -2,8 +2,6 @@ import Component from '@glimmer/component';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
 import type { Spacing } from '@hokulea/tokens';
@@ -70,7 +68,7 @@ export class Select extends Component<SelectSignature> {
   }
 
   <template>
-    <span class={{styles.select}} data-spacing={{this.spacing}}>
+    <span class="select" data-spacing={{this.spacing}}>
       <select
         disabled={{@disabled}}
         data-test-select

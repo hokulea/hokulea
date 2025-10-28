@@ -24,10 +24,18 @@ export default class ActionsRoute extends Component {
   };
 
   <template>
+    <style scoped>
+      .popover-area {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
     <SectionedPage @title="Windows">
       <Section @title="Popovers">
         <div class="cols">
-          <div class="popover">
+          <div class="popover-area">
             {{#let (popover position=this.data.position) as |p|}}
               <Button {{p.trigger}}>Hello there</Button>
 

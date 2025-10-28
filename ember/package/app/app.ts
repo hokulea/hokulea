@@ -24,7 +24,7 @@ import EmberRouter from '@ember/routing/router';
 
 import EmberApp from 'ember-strict-application-resolver';
 
-import '@hokulea/core/index.css';
+import '@hokulea/core/style.css';
 
 import { hokuleaRegistry } from '../src/registry';
 

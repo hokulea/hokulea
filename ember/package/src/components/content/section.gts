@@ -2,11 +2,6 @@ import { assert } from '@ember/debug';
 
 import { element } from 'ember-element-helper';
 
-// eslint-disable-next-line import-x/no-duplicates
-import styles from '@hokulea/core/content.module.css';
-// eslint-disable-next-line import-x/no-duplicates
-import layouts from '@hokulea/core/layouts.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 
 export interface SectionSignature {
@@ -34,12 +29,12 @@ function elementForLevel(level?: string) {
 }
 
 export const Section: TOC<SectionSignature> = <template>
-  <section class="{{styles.section}} {{layouts.flow}}" data-test-section ...attributes>
+  <section class="section flow" data-test-section ...attributes>
     {{#if @title}}
       <header data-test-section="header" part="header">
         {{#if @title}}
           {{#let (element (elementForLevel @level)) as |Headline|}}
-            <Headline data-test-section="title" class={{styles.sectionTitle}}>{{@title}}</Headline>
+            <Headline data-test-section="title" part="title">{{@title}}</Headline>
           {{/let}}
         {{/if}}
       </header>

@@ -3,8 +3,6 @@ import { hash, uniqueId } from '@ember/helper';
 
 import { element } from 'ember-element-helper';
 
-import styles from '@hokulea/core/forms.module.css';
-
 import { eq } from '../../../-private/helpers.ts';
 import { Radio } from '../../controls/radio.gts';
 import { Description } from '../description.gts';
@@ -51,7 +49,7 @@ class Option<
 
   <template>
     {{#let (uniqueId) as |id|}}
-      <div class={{styles.choice}} data-test-option>
+      <div class="form-choice" data-test-option>
         <span>
           <Radio
             @value={{eq @field.value @value}}
@@ -120,7 +118,7 @@ export class SingularChoiceField<
       @validated={{@validated}}
       as |f|
     >
-      <div class={{styles.choices}} data-test-choices>
+      <div class="form-choices" data-test-choices>
         {{yield (hash Option=(component this.Option field=f name=@name disabled=@disabled))}}
       </div>
     </this.Field>

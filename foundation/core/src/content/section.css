@@ -3,10 +3,10 @@
   header + * {
     margin-block-start: var(--spacing-container0);
   }
-}
 
-.section-title {
-  margin: 0;
-  font-weight: 500;
-  color: var(--typography-main);
+  [part="title"] {
+    margin: 0;
+    font-weight: 500;
+    color: var(--typography-main);
+  }
 }

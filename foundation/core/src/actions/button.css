@@ -1,6 +1,7 @@
 .button {
-  composes: base-button from './actions/base.css';
-  composes: primitive-spacing-rectangle from './shapes.css';
+  @apply --base-button;
+  @apply --spacing-primitive-rectangle;
+
   border-radius: var(--shape-radius-primitive);
 
   & > span {

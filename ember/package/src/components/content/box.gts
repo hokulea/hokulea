@@ -2,8 +2,6 @@ import Component from '@glimmer/component';
 
 import { element } from 'ember-element-helper';
 
-import styles from '@hokulea/core/layouts.module.css';
-
 import type { ComponentLike } from '@glint/template';
 
 export interface BoxSignature<E extends Element = HTMLDivElement> {
@@ -19,7 +17,7 @@ export interface BoxSignature<E extends Element = HTMLDivElement> {
 export class Box<E extends Element = HTMLDivElement> extends Component<BoxSignature<E>> {
   <template>
     {{#let (if @element @element (element "div")) as |Element|}}
-      <Element class={{styles.container}} ...attributes>
+      <Element class="container" ...attributes>
         {{yield}}
       </Element>
     {{/let}}

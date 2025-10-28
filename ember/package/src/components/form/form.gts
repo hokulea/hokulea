@@ -1,7 +1,6 @@
 import Component from '@glimmer/component';
 import { hash } from '@ember/helper';
 
-import styles from '@hokulea/core/forms.module.css';
 import { createForm } from '@hokulea/ember-pahu';
 
 import { Field } from './field.gts';
@@ -107,7 +106,7 @@ export class Form<DATA extends UserData> extends Component<FormSignature<DATA>> 
       )
       as |f|
     }}
-      <form novalidate class={{styles.form}} data-test-form ...attributes {{f.registerElement}}>
+      <form novalidate class="form" data-test-form ...attributes {{f.registerElement}}>
         {{#let (component this.Field form=f) as |WiredField|}}
           {{yield
             (hash

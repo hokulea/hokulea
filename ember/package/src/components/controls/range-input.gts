@@ -2,8 +2,6 @@ import { on } from '@ember/modifier';
 
 import { modifier } from 'ember-modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { pick } from '../../-private/helpers.ts';
 import { pickAsNumber } from './-input.ts';
 
@@ -43,7 +41,7 @@ export interface RangeInputSignature {
 
 export const RangeInput: TOC<RangeInputSignature> = <template>
   <input
-    class={{styles.range}}
+    class="input"
     type="range"
     value={{@value}}
     disabled={{@disabled}}

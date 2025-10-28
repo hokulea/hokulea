@@ -1,4 +1,4 @@
-.primitive-spacing-rectangle {
+@mixin --spacing-primitive-rectangle {
   padding-block: var(--spacing-primitive0);
   padding-inline: var(--spacing-primitive3);
 
@@ -8,7 +8,7 @@
   }
 }
 
-.primitive-spacing-square {
+@mixin --spacing-primitive-square {
   padding: var(--spacing-primitive0);
 
   &[data-spacing="-1"] {
@@ -16,3 +16,6 @@
   }
 }
 
+@mixin --spacing-container {
+  padding: var(--spacing-container0);
+}

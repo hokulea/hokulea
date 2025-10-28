@@ -10,7 +10,7 @@ import PhStack from '~icons/ph/stack';
 import PhTextAlignCenter from '~icons/ph/text-align-center';
 
 <template>
-  <style>
+  <style scoped>
     .navigation {
       display: grid;
       grid-template-columns: 30% auto;

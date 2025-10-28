@@ -1,14 +1,15 @@
 .primitive {
-  padding: var(--spacing-primitive0);
+  @apply --spacing-primitive-rectangle;
+
   border: var(--shape-stroke-information);
   border-radius: var(--shape-radius-primitive);
 }
 
 .container {
-  padding: var(--spacing-container0);
+  @apply --spacing-container;
+
   border: var(--shape-stroke-information);
   border-radius: var(--shape-radius-container);
-
   background-color: var(--surface-container);
   box-shadow: var(--shape-shadow-container);
 }

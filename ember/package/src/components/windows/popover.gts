@@ -1,5 +1,3 @@
-import styles from '@hokulea/core/windows.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 
 export interface PopoverSignature {
@@ -10,7 +8,7 @@ export interface PopoverSignature {
 }
 
 export const Popover: TOC<PopoverSignature> = <template>
-  <div class={{styles.popover}} data-test-popover ...attributes>
+  <div class="popover" data-test-popover ...attributes>
     {{yield}}
   </div>
 </template>;

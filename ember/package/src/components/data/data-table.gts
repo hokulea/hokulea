@@ -1,5 +1,3 @@
-import styles from '@hokulea/core/data.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike, ContentValue } from '@glint/template';
 
@@ -24,7 +22,7 @@ function get(haystack: Record<string, ContentValue | ComponentLike>, key: string
 }
 
 export const DataTable: TOC<DataTableSignature> = <template>
-  <table class={{styles.dataTable}} data-test-data-table>
+  <table class="data-table" data-test-data-table>
     <thead>
       <tr>
         {{#each @header as |header|}}

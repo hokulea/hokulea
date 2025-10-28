@@ -1,5 +1,3 @@
-import styles from '@hokulea/core/forms.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 // import Icon from '../../../components/icon';
 import type { Issue } from '@hokulea/ember-pahu';
@@ -25,7 +23,7 @@ export interface ErrorsSignature {
 }
 
 export const Errors: TOC<ErrorsSignature> = <template>
-  <div id={{@id}} aria-live="assertive" class={{styles.errors}} ...attributes>
+  <div id={{@id}} aria-live="assertive" class="form-errors" ...attributes>
     {{! <span><Icon @icon='dismiss-circle' @style='filled' /></span> }}
     {{#if (has-block)}}
       {{yield @errors}}

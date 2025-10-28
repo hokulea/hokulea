@@ -1,0 +1,215 @@
+.app-header {
+  --🔒-max-content-width: var(--max-width, var(--layout-page-max-content-width));
+
+  @apply --page-content;
+
+  position: sticky;
+  z-index: 1;
+  top: 0;
+
+  background: var(--surface-container);
+  box-shadow: var(--shape-shadow-container);
+
+  & > div {
+    display: flex;
+    gap: var(--spacing-container1);
+    align-items: baseline;
+
+    & > * {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      min-width: 0;
+    }
+
+    [part="brand"] {
+      align-items: center;
+      padding-block: var(--spacing-container0);
+      font-size: var(--s0);
+      font-weight: bold;
+
+      &, a&:link, a&:visited {
+        color: var(--navigation-links-base);
+      }
+
+      a&:hover {
+        color: var(--navigation-links-hover);
+      }
+
+      a&:active {
+        color: var(--navigation-links-active);
+      }
+    }
+
+    &[data-sensing] > :is(nav, [part="aux"]) {
+      visibility: hidden;
+    }
+
+    & > nav {
+      flex-grow: 1;
+
+      &[data-position="center"] {
+        justify-content: center;
+      }
+
+      &[data-position="end"] {
+        justify-content: end;
+      }
+    }
+
+    :is(a,button) {
+      display: inline-flex;
+      gap: var(--spacing-primitive-4);
+
+      color: var(--typography-main);
+      text-decoration: none;
+
+      background: transparent;
+
+      &:hover, &[aria-current="page"] {
+        color: var(--navigation-links-base);
+      }
+
+      &:focus-visible {
+        outline: none;
+
+        span {
+          outline: var(--control-focus-stroke);
+          outline-offset: var(--spacing-primitive-4);
+        }
+      }
+
+      &[aria-haspopup="menu"]::after {
+        --chevron-down: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>');
+
+        content: '';
+
+        display: block;
+        align-self: center;
+
+        width: 1rem;
+        height: 1rem;
+
+        background: currentcolor;
+
+        mask: var(--chevron-down) center center / 100% auto no-repeat;
+      }
+    }
+
+    & > :is(nav, [part="menu"], [part="aux"]) > [part="item"] {
+      flex-shrink: 0;
+
+      min-width: 0;
+      padding-block: var(--spacing-container0);
+      padding-inline: var(--spacing-container-4);
+
+      white-space: nowrap;
+
+      /* This is an attempt to hide this during SSR */
+
+      /* &[aria-haspopup="menu"] + [role="menu"] {
+        display: none;
+      } */
+    }
+
+    & > :is([part="aux"],[part="menu"]) {
+      margin-inline-start: auto;
+    }
+
+    /* Popover menu */
+
+    & > [part="menu"] > [popover] {
+      pointer-events: none;
+
+      flex-direction: column;
+
+      width: 100vw;
+      height: 100vh;
+
+      background-color: transparent;
+
+      &:popover-open {
+        display: flex;
+      }
+
+      & > [data-menu-header] {
+        pointer-events: none;
+
+        display: flex;
+
+        padding-inline: var(--spacing-container0);
+
+        visibility: hidden;
+        background: var(--surface-container);
+      }
+
+      & > [data-menu-content] {
+        pointer-events: auto;
+
+        overflow: auto;
+        overscroll-behavior: contain;
+        display: grid;
+        grid-template-columns: minmax(var(--spacing-container0),1fr) minmax(200px, 66vw) minmax(var(--spacing-container0),1fr);
+        flex-grow: 1;
+
+        padding-block: var(--spacing-container4);
+
+        color: var(--typography-main);
+
+        background-color: var(--surface-base);
+
+        > * {
+          grid-column: 2 / 3;
+        }
+      }
+
+      nav {
+        padding-block: var(--spacing-container-4);
+        padding-inline: var(--spacing-container0);
+      }
+
+      [part="item"] {
+        display: list-item;
+        padding-block: var(--spacing-container-4);
+        text-align: start;
+        list-style-position: inside;
+
+        /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+        &::marker {
+          margin: 0;
+        }
+
+        &:is(a, button, span) {
+          /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+          text-indent: 0.85em;
+          list-style-type: none;
+        }
+      }
+
+      [part="aux"] {
+        margin-block-start: auto;
+        padding: var(--spacing-container0);
+
+        :is(a,button) {
+          display: inline-flex;
+
+          &[aria-haspopup="menu"]::after {
+            --chevron-up: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66 165.66a8 8 0 0 1-11.32 0L128 91.31l-74.34 74.35a8 8 0 0 1-11.32-11.32l80-80a8 8 0 0 1 11.32 0l80 80a8 8 0 0 1 0 11.32"/></svg>');
+
+            mask: var(--chevron-up) center center / 100% auto no-repeat;
+          }
+        }
+      }
+
+      details > div {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0.85em;
+      }
+
+      *:focus-visible {
+        outline: var(--control-focus-stroke);
+      }
+    }
+  }
+}

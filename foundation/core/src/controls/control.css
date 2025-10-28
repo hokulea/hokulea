@@ -1,0 +1,23 @@
+@mixin --control {
+  all: unset;
+
+  display: inline-block; /* Safari needs to set display explicitely when `all: unset` is given */
+
+  padding: var(--spacing-primitive0);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-primitive);
+
+  color: var(--control-text);
+
+  background-color: var(--control-background);
+
+  /* Reset this for safari */
+  @supports (-webkit-hyphens:none) {
+    height: auto;
+  }
+
+  &:disabled, &[aria-disabled="true"] {
+    color: var(--control-disabled-text);
+    background-color: var(--control-disabled-background);
+  }
+}

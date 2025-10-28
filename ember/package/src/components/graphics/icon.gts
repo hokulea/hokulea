@@ -1,7 +1,5 @@
 import { htmlSafe } from '@ember/template';
 
-import styles from '@hokulea/core/graphics.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 
@@ -22,7 +20,7 @@ function isString(icon: string | ComponentLike) {
 }
 
 export const Icon: TOC<IconSignature> = <template>
-  <span class={{styles.icon}} data-test-icon ...attributes>
+  <span class="icon" data-test-icon ...attributes>
     {{#if (isString @icon)}}
       {{htmlSafe @icon}}
     {{else}}

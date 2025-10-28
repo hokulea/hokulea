@@ -1,7 +1,7 @@
 import { classicEmberSupport, ember, extensions } from '@embroider/vite';
 
 import { babel } from '@rollup/plugin-babel';
-import { scopedCSS } from 'glimmer-scoped-css/rollup';
+import { scopedCSS } from 'ember-scoped-css/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vite';

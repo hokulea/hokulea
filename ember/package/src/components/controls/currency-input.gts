@@ -1,7 +1,5 @@
 import { on } from '@ember/modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { pick } from '../../-private/helpers.ts';
 import { pickAsNumber } from './-input.ts';
 import { InputBuilder } from './input-builder.gts';
@@ -17,7 +15,7 @@ export interface CurrencyInputSignature {
 export const CurrencyInput: TOC<CurrencyInputSignature> = <template>
   <InputBuilder @disabled={{@disabled}} @spacing={{@spacing}} as |b|>
     <input
-      class="{{styles.input}} {{styles.currency}}"
+      class="input"
       type="text"
       inputmode="decimal"
       value={{@value}}

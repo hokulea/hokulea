@@ -8,8 +8,6 @@
 
 .article {
   --flow-space: var(--ls0);
-
-  composes: flow from '@hokulea/core/layouts.css';
 }
 
 .toc {

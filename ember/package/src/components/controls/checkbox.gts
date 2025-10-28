@@ -1,7 +1,5 @@
 import { on } from '@ember/modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { pick } from '../../-private/helpers.ts';
 
 import type { InputArgs } from './-input.ts';
@@ -14,7 +12,7 @@ export interface CheckboxSignature {
 
 export const Checkbox: TOC<CheckboxSignature> = <template>
   <input
-    class={{styles.choice}}
+    class="input"
     type="checkbox"
     checked={{@value}}
     disabled={{@disabled}}

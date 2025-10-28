@@ -1,5 +1,3 @@
-import styles from '@hokulea/core/forms.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 
 export interface DescriptionSignature {
@@ -10,7 +8,7 @@ export interface DescriptionSignature {
 }
 
 export const Description: TOC<DescriptionSignature> = <template>
-  <p class={{styles.description}} data-test-description ...attributes>
+  <p class="form-description" data-test-description ...attributes>
     {{yield}}
   </p>
 </template>;

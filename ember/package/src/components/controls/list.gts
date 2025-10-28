@@ -7,8 +7,6 @@ import { next } from '@ember/runloop';
 import { ariaListbox } from 'ember-aria-voyager';
 import { TrackedArray } from 'tracked-built-ins';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
 
@@ -90,7 +88,7 @@ export class List<V> extends Component<ListSignature<V>> {
 
   <template>
     <div
-      class={{styles.list}}
+      class="list"
       data-test-list
       ...attributes
       {{ariaListbox

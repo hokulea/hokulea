@@ -1,8 +1,6 @@
 import { type TOC } from '@ember/component/template-only';
 import { htmlSafe } from '@ember/template';
 
-import styles from '@hokulea/core/graphics.module.css';
-
 function getInitials(name: string) {
   const parts = name.split(' ');
 
@@ -28,7 +26,7 @@ interface AvatarSignature {
 }
 
 export const Avatar: TOC<AvatarSignature> = <template>
-  <span class={{styles.avatar}} data-test-avatar ...attributes>
+  <span class="avatar" data-test-avatar ...attributes>
     {{#if @src}}
       <img src={{@src}} alt={{@name}} />
     {{else if @name}}

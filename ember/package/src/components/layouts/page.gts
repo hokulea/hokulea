@@ -1,10 +1,5 @@
 import { element } from 'ember-element-helper';
 
-// eslint-disable-next-line import-x/no-duplicates
-import styles from '@hokulea/core/layouts.module.css';
-// eslint-disable-next-line import-x/no-duplicates
-import typo from '@hokulea/core/typography.module.css';
-
 import { or } from '../../-private/helpers.ts';
 import { pageDestructor, pageElement } from './pages.ts';
 
@@ -28,12 +23,12 @@ interface PageSignature {
 
 export const Page: TOC<PageSignature> = <template>
   {{#let (if @element @element (element (pageElement))) as |Element|}}
-    <Element class={{styles.page}} {{pageDestructor}} ...attributes data-test-page>
+    <Element class="page" {{pageDestructor}} ...attributes data-test-page>
       {{#if
         (or @title @description (has-block "title") (has-block "description") (has-block "nav"))
       }}
-        <header class={{styles.pageContent}}>
-          <h1 class={{typo.display}}>
+        <header class="page-content">
+          <h1 class="typography-display">
             {{#if (has-block "title")}}
               {{yield to="title"}}
             {{else if @title}}
@@ -53,7 +48,7 @@ export const Page: TOC<PageSignature> = <template>
         </header>
       {{/if}}
 
-      <div class="{{styles.pageContent}} {{styles.flow}}" part="content">
+      <div class="page-content flow" part="content">
         {{#if (has-block "content")}}
           {{yield to="content"}}
         {{else if (has-block)}}

@@ -5,8 +5,6 @@ import { next } from '@ember/runloop';
 
 import { element } from 'ember-element-helper';
 
-import styles from '@hokulea/core/forms.module.css';
-
 import { and } from '../../-private/helpers.ts';
 import { Description } from './description.gts';
 import { Errors } from './errors.gts';
@@ -218,7 +216,7 @@ export class Field<
       (component Rules useRules=this.useRules)
       as |fieldId errorId Element field WiredRules|
     }}
-      <Element class={{styles.field}} data-test-field={{@name}}>
+      <Element class="form-field" data-test-field={{@name}}>
         {{#if @label}}
           {{#let (if @labelComponent @labelComponent Label) as |L|}}
             <L for={{unless @labelComponent fieldId}}>{{@label}}</L>

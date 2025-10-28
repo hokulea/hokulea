@@ -1,7 +1,5 @@
 import { hash } from '@ember/helper';
 
-import styles from '@hokulea/core/navigation.module.css';
-
 import { NavLink } from './nav-link.gts';
 
 import type { TOC } from '@ember/component/template-only';
@@ -18,7 +16,7 @@ export interface NavigationListSignature {
 }
 
 export const NavigationList: TOC<NavigationListSignature> = <template>
-  <nav class={{styles.navigationList}} data-test-navigation-list ...attributes>
+  <nav class="navigation-list" data-test-navigation-list ...attributes>
     {{yield (hash Item=NavLink Title=Title)}}
   </nav>
 </template>;

@@ -11,8 +11,6 @@ import Portal from 'ember-stargate/components/portal';
 import PortalTarget from 'ember-stargate/components/portal-target';
 import { TrackedArray } from 'tracked-built-ins';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { eq, not } from '../../-private/helpers.ts';
 
 import type Owner from '@ember/owner';
@@ -171,7 +169,7 @@ export class Tabs extends Component<TabsSignature> {
   };
 
   <template>
-    <div class={{styles.tabs}} data-test-tabs>
+    <div class="tabs" data-test-tabs>
       {{#let (uniqueId) as |tablistId|}}
         <PortalTarget
           @name={{tablistId}}

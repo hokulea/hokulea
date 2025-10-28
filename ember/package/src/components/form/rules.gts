@@ -1,7 +1,5 @@
 import Component from '@glimmer/component';
 
-import styles from '@hokulea/core/forms.module.css';
-
 import { Icon } from '../graphics/icon.gts';
 
 import type Owner from '@ember/owner';
@@ -81,7 +79,7 @@ export class Rules extends Component<RulesSignature> {
   }
 
   <template>
-    <div id={{@id}} aria-live="assertive" class={{styles.rules}} ...attributes>
+    <div id={{@id}} aria-live="assertive" class="form-rules" ...attributes>
       {{yield (component Rule errors=@errors)}}
     </div>
   </template>

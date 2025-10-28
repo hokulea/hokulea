@@ -1,7 +1,5 @@
 import { element } from 'ember-element-helper';
 
-import styles from '@hokulea/core/forms.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 
@@ -17,7 +15,7 @@ export interface LabelSignature {
 
 export const Label: TOC<LabelSignature> = <template>
   {{#let (if @element @element (element "label")) as |Element|}}
-    <Element class={{styles.label}} data-test-label ...attributes>
+    <Element class="form-label" data-test-label ...attributes>
       {{yield}}
     </Element>
   {{/let}}

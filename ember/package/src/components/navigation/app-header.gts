@@ -6,8 +6,6 @@ import { type CommandAction, CommandElement } from 'ember-command';
 import { keepLatestTask, timeout } from 'ember-concurrency';
 import { modifier } from 'ember-modifier';
 
-import styles from '@hokulea/core/navigation.module.css';
-
 import { and, not, or } from '../../-private/helpers.ts';
 import { popover } from '../../helpers/popover.ts';
 import { IconButton } from '../actions/icon-button.gts';
@@ -157,8 +155,8 @@ export class AppHeader extends Component<AppHeaderSignature> {
 
   <template>
     {{#let (uniqueId) as |brandId|}}
-      <header class={{styles.appHeader}} data-test-app-header ...attributes>
-        <div class={{styles.appHeaderContent}} data-sensing={{this.sensing}} {{this.flipflop}}>
+      <header class="app-header" data-test-app-header ...attributes>
+        <div data-sensing={{this.sensing}} {{this.flipflop}}>
           {{#if (has-block "brand")}}
             <CommandElement @command={{@home}} part="brand" id={{brandId}}>
               {{yield to="brand"}}

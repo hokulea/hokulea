@@ -9,8 +9,6 @@ import { htmlSafe } from '@ember/template';
 import { ariaMenu } from 'ember-aria-voyager';
 import { TrackedArray } from 'tracked-built-ins';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import disabled from '../../-private/modifiers/disabled.ts';
 import { PushElement } from '../../-private/push.gts';
 import { popover } from '../../helpers/popover.ts';
@@ -153,7 +151,7 @@ export class Menu extends Component<MenuSignature> {
 
   <template>
     <div
-      class={{styles.menu}}
+      class="menu"
       data-test-menu
       ...attributes
       {{ariaMenu items=this.items disabled=@disabled}}

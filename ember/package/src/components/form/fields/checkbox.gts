@@ -1,7 +1,5 @@
 import Component from '@glimmer/component';
 
-import styles from '@hokulea/core/forms.module.css';
-
 import { asBoolean } from '../../../-private/helpers.ts';
 import { Checkbox } from '../../controls/checkbox.gts';
 import { Description } from '../description.gts';
@@ -48,8 +46,8 @@ export class CheckboxField<
       @validated={{@validated}}
       as |f|
     >
-      <div class={{styles.choices}}>
-        <div class={{styles.choice}}>
+      <div class="form-choices">
+        <div class="form-choice">
           <span>
             <Checkbox
               @value={{asBoolean f.value}}

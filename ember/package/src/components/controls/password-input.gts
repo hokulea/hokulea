@@ -1,7 +1,5 @@
 import { on } from '@ember/modifier';
 
-import styles from '@hokulea/core/controls.module.css';
-
 import { pick } from '../../-private/helpers.ts';
 
 import type { InputArgs } from './-input.ts';
@@ -14,7 +12,7 @@ export interface PasswordInputSignature {
 
 export const PasswordInput: TOC<PasswordInputSignature> = <template>
   <input
-    class={{styles.input}}
+    class="input"
     type="password"
     value={{@value}}
     disabled={{@disabled}}

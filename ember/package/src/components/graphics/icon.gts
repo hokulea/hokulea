@@ -22,7 +22,7 @@ function isString(icon: string | ComponentLike) {
 }
 
 export const Icon: TOC<IconSignature> = <template>
-  <span class={{styles.icon}} data-test-icon ...attributes>
+  <span class="icon" data-test-icon ...attributes>
     {{#if (isString @icon)}}
       {{htmlSafe @icon}}
     {{else}}

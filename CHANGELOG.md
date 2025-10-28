@@ -1,5 +1,27 @@
 # Changelog
 
+## Release (2025-10-28)
+
+* @hokulea/ember 0.11.0 (minor)
+* @hokulea/core 0.8.0 (minor)
+* @hokulea/theme-moana 0.3.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`, `@hokulea/theme-moana`
+  * [#505](https://github.com/hokulea/hokulea/pull/505) Switch from CSS Modules to CSS with `@layer` ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#496](https://github.com/hokulea/hokulea/pull/496) Support ember compiler for iconify ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* Other
+  * [#506](https://github.com/hokulea/hokulea/pull/506) Cleanup: Remove unused rollup plugin (and other minor removals) ([@gossi](https://github.com/gossi))
+  * [#489](https://github.com/hokulea/hokulea/pull/489) Support Trusted Publishing ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#484](https://github.com/hokulea/hokulea/pull/484) Glint v2 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-09-16)
 
 * @hokulea/ember 0.10.2 (patch)

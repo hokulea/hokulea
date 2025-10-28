@@ -1,0 +1,11 @@
+a, a:link, a:visited {
+  color: var(--navigation-links-base);
+}
+
+a:hover {
+  color: var(--navigation-links-hover);
+}
+
+a:active {
+  color: var(--navigation-links-active);
+}

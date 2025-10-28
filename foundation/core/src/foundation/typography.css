@@ -72,7 +72,7 @@ code {
   background-color: var(--typography-code-background);
 }
 
-.display {
+.typography-display {
   font-family: var(--typography-display-family);
   font-feature-settings: var(--typography-display-feature-settings);
   font-weight: var(--typography-display-weight, initial);

@@ -4,6 +4,7 @@ export default {
   ...config,
   rules: {
     ...config.rules,
+    'at-rule-empty-line-before': undefined,
     'property-no-unknown': [
       true,
       {
@@ -16,7 +17,7 @@ export default {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: [...config.rules['at-rule-no-unknown'][1].ignoreAtRules, 'each']
+        ignoreAtRules: [...config.rules['at-rule-no-unknown'][1].ignoreAtRules, 'mixin']
       }
     ],
     'custom-property-pattern': [

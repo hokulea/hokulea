@@ -1,7 +1,5 @@
-/* stylelint-disable custom-property-pattern */
-
-.base-button {
-  composes: focus from '../controls.css';
+@mixin --base-button {
+  @apply --focus;
 
   all: unset;
 
@@ -46,24 +44,256 @@
     background-color: var(--button-disabled-background);
   }
 
-  @each $intent in action, alternative, highlight, danger {
-    &[data-intent="$intent"] {
-      @each $importance in supreme, subtle, muted, plain {
-        &[data-importance="$importance"] {
-          --button-base-background: var(--intent-$(intent)-$(importance)-base-background, transparent);
-          --button-base-border: var(--intent-$(intent)-$(importance)-base-border, transparent);
-          --button-base-text: var(--intent-$(intent)-$(importance)-base-text, transparent);
-          --button-hover-background: var(--intent-$(intent)-$(importance)-hover-background, transparent);
-          --button-hover-border: var(--intent-$(intent)-$(importance)-hover-border, transparent);
-          --button-hover-text: var(--intent-$(intent)-$(importance)-hover-text, transparent);
-          --button-active-background: var(--intent-$(intent)-$(importance)-active-background, transparent);
-          --button-active-border: var(--intent-$(intent)-$(importance)-active-border, transparent);
-          --button-active-text: var(--intent-$(intent)-$(importance)-active-text, transparent);
-          --button-disabled-background: var(--intent-$(intent)-$(importance)-disabled-background, transparent);
-          --button-disabled-border: var(--intent-$(intent)-$(importance)-disabled-border, transparent);
-          --button-disabled-text: var(--intent-$(intent)-$(importance)-disabled-text, transparent);
-        }
-      }
-    }
+  /*
+  Use mixins with parameters here
+  See: https://css.oddbird.net/sasslike/mixins-functions/
+  */
+
+  /* --- */
+
+  &[data-intent="action"][data-importance="supreme"] {
+    --button-base-background: var(--intent-action-supreme-base-background, transparent);
+    --button-base-border: var(--intent-action-supreme-base-border, transparent);
+    --button-base-text: var(--intent-action-supreme-base-text, transparent);
+    --button-hover-background: var(--intent-action-supreme-hover-background, transparent);
+    --button-hover-border: var(--intent-action-supreme-hover-border, transparent);
+    --button-hover-text: var(--intent-action-supreme-hover-text, transparent);
+    --button-active-background: var(--intent-action-supreme-active-background, transparent);
+    --button-active-border: var(--intent-action-supreme-active-border, transparent);
+    --button-active-text: var(--intent-action-supreme-active-text, transparent);
+    --button-disabled-background: var(--intent-action-supreme-disabled-background, transparent);
+    --button-disabled-border: var(--intent-action-supreme-disabled-border, transparent);
+    --button-disabled-text: var(--intent-action-supreme-disabled-text, transparent);
+  }
+
+  &[data-intent="action"][data-importance="subtle"] {
+    --button-base-background: var(--intent-action-subtle-base-background, transparent);
+    --button-base-border: var(--intent-action-subtle-base-border, transparent);
+    --button-base-text: var(--intent-action-subtle-base-text, transparent);
+    --button-hover-background: var(--intent-action-subtle-hover-background, transparent);
+    --button-hover-border: var(--intent-action-subtle-hover-border, transparent);
+    --button-hover-text: var(--intent-action-subtle-hover-text, transparent);
+    --button-active-background: var(--intent-action-subtle-active-background, transparent);
+    --button-active-border: var(--intent-action-subtle-active-border, transparent);
+    --button-active-text: var(--intent-action-subtle-active-text, transparent);
+    --button-disabled-background: var(--intent-action-subtle-disabled-background, transparent);
+    --button-disabled-border: var(--intent-action-subtle-disabled-border, transparent);
+    --button-disabled-text: var(--intent-action-subtle-disabled-text, transparent);
+  }
+
+  &[data-intent="action"][data-importance="muted"] {
+    --button-base-background: var(--intent-action-muted-base-background, transparent);
+    --button-base-border: var(--intent-action-muted-base-border, transparent);
+    --button-base-text: var(--intent-action-muted-base-text, transparent);
+    --button-hover-background: var(--intent-action-muted-hover-background, transparent);
+    --button-hover-border: var(--intent-action-muted-hover-border, transparent);
+    --button-hover-text: var(--intent-action-muted-hover-text, transparent);
+    --button-active-background: var(--intent-action-muted-active-background, transparent);
+    --button-active-border: var(--intent-action-muted-active-border, transparent);
+    --button-active-text: var(--intent-action-muted-active-text, transparent);
+    --button-disabled-background: var(--intent-action-muted-disabled-background, transparent);
+    --button-disabled-border: var(--intent-action-muted-disabled-border, transparent);
+    --button-disabled-text: var(--intent-action-muted-disabled-text, transparent);
+  }
+
+  &[data-intent="action"][data-importance="plain"] {
+    --button-base-background: var(--intent-action-plain-base-background, transparent);
+    --button-base-border: var(--intent-action-plain-base-border, transparent);
+    --button-base-text: var(--intent-action-plain-base-text, transparent);
+    --button-hover-background: var(--intent-action-plain-hover-background, transparent);
+    --button-hover-border: var(--intent-action-plain-hover-border, transparent);
+    --button-hover-text: var(--intent-action-plain-hover-text, transparent);
+    --button-active-background: var(--intent-action-plain-active-background, transparent);
+    --button-active-border: var(--intent-action-plain-active-border, transparent);
+    --button-active-text: var(--intent-action-plain-active-text, transparent);
+    --button-disabled-background: var(--intent-action-plain-disabled-background, transparent);
+    --button-disabled-border: var(--intent-action-plain-disabled-border, transparent);
+    --button-disabled-text: var(--intent-action-plain-disabled-text, transparent);
+  }
+
+  /* --- */
+
+  &[data-intent="alternative"][data-importance="supreme"] {
+    --button-base-background: var(--intent-alternative-supreme-base-background, transparent);
+    --button-base-border: var(--intent-alternative-supreme-base-border, transparent);
+    --button-base-text: var(--intent-alternative-supreme-base-text, transparent);
+    --button-hover-background: var(--intent-alternative-supreme-hover-background, transparent);
+    --button-hover-border: var(--intent-alternative-supreme-hover-border, transparent);
+    --button-hover-text: var(--intent-alternative-supreme-hover-text, transparent);
+    --button-active-background: var(--intent-alternative-supreme-active-background, transparent);
+    --button-active-border: var(--intent-alternative-supreme-active-border, transparent);
+    --button-active-text: var(--intent-alternative-supreme-active-text, transparent);
+    --button-disabled-background: var(--intent-alternative-supreme-disabled-background, transparent);
+    --button-disabled-border: var(--intent-alternative-supreme-disabled-border, transparent);
+    --button-disabled-text: var(--intent-alternative-supreme-disabled-text, transparent);
+  }
+
+  &[data-intent="alternative"][data-importance="subtle"] {
+    --button-base-background: var(--intent-alternative-subtle-base-background, transparent);
+    --button-base-border: var(--intent-alternative-subtle-base-border, transparent);
+    --button-base-text: var(--intent-alternative-subtle-base-text, transparent);
+    --button-hover-background: var(--intent-alternative-subtle-hover-background, transparent);
+    --button-hover-border: var(--intent-alternative-subtle-hover-border, transparent);
+    --button-hover-text: var(--intent-alternative-subtle-hover-text, transparent);
+    --button-active-background: var(--intent-alternative-subtle-active-background, transparent);
+    --button-active-border: var(--intent-alternative-subtle-active-border, transparent);
+    --button-active-text: var(--intent-alternative-subtle-active-text, transparent);
+    --button-disabled-background: var(--intent-alternative-subtle-disabled-background, transparent);
+    --button-disabled-border: var(--intent-alternative-subtle-disabled-border, transparent);
+    --button-disabled-text: var(--intent-alternative-subtle-disabled-text, transparent);
+  }
+
+  &[data-intent="alternative"][data-importance="muted"] {
+    --button-base-background: var(--intent-alternative-muted-base-background, transparent);
+    --button-base-border: var(--intent-alternative-muted-base-border, transparent);
+    --button-base-text: var(--intent-alternative-muted-base-text, transparent);
+    --button-hover-background: var(--intent-alternative-muted-hover-background, transparent);
+    --button-hover-border: var(--intent-alternative-muted-hover-border, transparent);
+    --button-hover-text: var(--intent-alternative-muted-hover-text, transparent);
+    --button-active-background: var(--intent-alternative-muted-active-background, transparent);
+    --button-active-border: var(--intent-alternative-muted-active-border, transparent);
+    --button-active-text: var(--intent-alternative-muted-active-text, transparent);
+    --button-disabled-background: var(--intent-alternative-muted-disabled-background, transparent);
+    --button-disabled-border: var(--intent-alternative-muted-disabled-border, transparent);
+    --button-disabled-text: var(--intent-alternative-muted-disabled-text, transparent);
+  }
+
+  &[data-intent="alternative"][data-importance="plain"] {
+    --button-base-background: var(--intent-alternative-plain-base-background, transparent);
+    --button-base-border: var(--intent-alternative-plain-base-border, transparent);
+    --button-base-text: var(--intent-alternative-plain-base-text, transparent);
+    --button-hover-background: var(--intent-alternative-plain-hover-background, transparent);
+    --button-hover-border: var(--intent-alternative-plain-hover-border, transparent);
+    --button-hover-text: var(--intent-alternative-plain-hover-text, transparent);
+    --button-active-background: var(--intent-alternative-plain-active-background, transparent);
+    --button-active-border: var(--intent-alternative-plain-active-border, transparent);
+    --button-active-text: var(--intent-alternative-plain-active-text, transparent);
+    --button-disabled-background: var(--intent-alternative-plain-disabled-background, transparent);
+    --button-disabled-border: var(--intent-alternative-plain-disabled-border, transparent);
+    --button-disabled-text: var(--intent-alternative-plain-disabled-text, transparent);
+  }
+
+  /* --- */
+
+  &[data-intent="highlight"][data-importance="supreme"] {
+    --button-base-background: var(--intent-highlight-supreme-base-background, transparent);
+    --button-base-border: var(--intent-highlight-supreme-base-border, transparent);
+    --button-base-text: var(--intent-highlight-supreme-base-text, transparent);
+    --button-hover-background: var(--intent-highlight-supreme-hover-background, transparent);
+    --button-hover-border: var(--intent-highlight-supreme-hover-border, transparent);
+    --button-hover-text: var(--intent-highlight-supreme-hover-text, transparent);
+    --button-active-background: var(--intent-highlight-supreme-active-background, transparent);
+    --button-active-border: var(--intent-highlight-supreme-active-border, transparent);
+    --button-active-text: var(--intent-highlight-supreme-active-text, transparent);
+    --button-disabled-background: var(--intent-highlight-supreme-disabled-background, transparent);
+    --button-disabled-border: var(--intent-highlight-supreme-disabled-border, transparent);
+    --button-disabled-text: var(--intent-highlight-supreme-disabled-text, transparent);
+  }
+
+  &[data-intent="highlight"][data-importance="subtle"] {
+    --button-base-background: var(--intent-highlight-subtle-base-background, transparent);
+    --button-base-border: var(--intent-highlight-subtle-base-border, transparent);
+    --button-base-text: var(--intent-highlight-subtle-base-text, transparent);
+    --button-hover-background: var(--intent-highlight-subtle-hover-background, transparent);
+    --button-hover-border: var(--intent-highlight-subtle-hover-border, transparent);
+    --button-hover-text: var(--intent-highlight-subtle-hover-text, transparent);
+    --button-active-background: var(--intent-highlight-subtle-active-background, transparent);
+    --button-active-border: var(--intent-highlight-subtle-active-border, transparent);
+    --button-active-text: var(--intent-highlight-subtle-active-text, transparent);
+    --button-disabled-background: var(--intent-highlight-subtle-disabled-background, transparent);
+    --button-disabled-border: var(--intent-highlight-subtle-disabled-border, transparent);
+    --button-disabled-text: var(--intent-highlight-subtle-disabled-text, transparent);
+  }
+
+  &[data-intent="highlight"][data-importance="muted"] {
+    --button-base-background: var(--intent-highlight-muted-base-background, transparent);
+    --button-base-border: var(--intent-highlight-muted-base-border, transparent);
+    --button-base-text: var(--intent-highlight-muted-base-text, transparent);
+    --button-hover-background: var(--intent-highlight-muted-hover-background, transparent);
+    --button-hover-border: var(--intent-highlight-muted-hover-border, transparent);
+    --button-hover-text: var(--intent-highlight-muted-hover-text, transparent);
+    --button-active-background: var(--intent-highlight-muted-active-background, transparent);
+    --button-active-border: var(--intent-highlight-muted-active-border, transparent);
+    --button-active-text: var(--intent-highlight-muted-active-text, transparent);
+    --button-disabled-background: var(--intent-highlight-muted-disabled-background, transparent);
+    --button-disabled-border: var(--intent-highlight-muted-disabled-border, transparent);
+    --button-disabled-text: var(--intent-highlight-muted-disabled-text, transparent);
+  }
+
+  &[data-intent="highlight"][data-importance="plain"] {
+    --button-base-background: var(--intent-highlight-plain-base-background, transparent);
+    --button-base-border: var(--intent-highlight-plain-base-border, transparent);
+    --button-base-text: var(--intent-highlight-plain-base-text, transparent);
+    --button-hover-background: var(--intent-highlight-plain-hover-background, transparent);
+    --button-hover-border: var(--intent-highlight-plain-hover-border, transparent);
+    --button-hover-text: var(--intent-highlight-plain-hover-text, transparent);
+    --button-active-background: var(--intent-highlight-plain-active-background, transparent);
+    --button-active-border: var(--intent-highlight-plain-active-border, transparent);
+    --button-active-text: var(--intent-highlight-plain-active-text, transparent);
+    --button-disabled-background: var(--intent-highlight-plain-disabled-background, transparent);
+    --button-disabled-border: var(--intent-highlight-plain-disabled-border, transparent);
+    --button-disabled-text: var(--intent-highlight-plain-disabled-text, transparent);
+  }
+
+  /* --- */
+
+  &[data-intent="danger"][data-importance="supreme"] {
+    --button-base-background: var(--intent-danger-supreme-base-background, transparent);
+    --button-base-border: var(--intent-danger-supreme-base-border, transparent);
+    --button-base-text: var(--intent-danger-supreme-base-text, transparent);
+    --button-hover-background: var(--intent-danger-supreme-hover-background, transparent);
+    --button-hover-border: var(--intent-danger-supreme-hover-border, transparent);
+    --button-hover-text: var(--intent-danger-supreme-hover-text, transparent);
+    --button-active-background: var(--intent-danger-supreme-active-background, transparent);
+    --button-active-border: var(--intent-danger-supreme-active-border, transparent);
+    --button-active-text: var(--intent-danger-supreme-active-text, transparent);
+    --button-disabled-background: var(--intent-danger-supreme-disabled-background, transparent);
+    --button-disabled-border: var(--intent-danger-supreme-disabled-border, transparent);
+    --button-disabled-text: var(--intent-danger-supreme-disabled-text, transparent);
+  }
+
+  &[data-intent="danger"][data-importance="subtle"] {
+    --button-base-background: var(--intent-danger-subtle-base-background, transparent);
+    --button-base-border: var(--intent-danger-subtle-base-border, transparent);
+    --button-base-text: var(--intent-danger-subtle-base-text, transparent);
+    --button-hover-background: var(--intent-danger-subtle-hover-background, transparent);
+    --button-hover-border: var(--intent-danger-subtle-hover-border, transparent);
+    --button-hover-text: var(--intent-danger-subtle-hover-text, transparent);
+    --button-active-background: var(--intent-danger-subtle-active-background, transparent);
+    --button-active-border: var(--intent-danger-subtle-active-border, transparent);
+    --button-active-text: var(--intent-danger-subtle-active-text, transparent);
+    --button-disabled-background: var(--intent-danger-subtle-disabled-background, transparent);
+    --button-disabled-border: var(--intent-danger-subtle-disabled-border, transparent);
+    --button-disabled-text: var(--intent-danger-subtle-disabled-text, transparent);
+  }
+
+  &[data-intent="danger"][data-importance="muted"] {
+    --button-base-background: var(--intent-danger-muted-base-background, transparent);
+    --button-base-border: var(--intent-danger-muted-base-border, transparent);
+    --button-base-text: var(--intent-danger-muted-base-text, transparent);
+    --button-hover-background: var(--intent-danger-muted-hover-background, transparent);
+    --button-hover-border: var(--intent-danger-muted-hover-border, transparent);
+    --button-hover-text: var(--intent-danger-muted-hover-text, transparent);
+    --button-active-background: var(--intent-danger-muted-active-background, transparent);
+    --button-active-border: var(--intent-danger-muted-active-border, transparent);
+    --button-active-text: var(--intent-danger-muted-active-text, transparent);
+    --button-disabled-background: var(--intent-danger-muted-disabled-background, transparent);
+    --button-disabled-border: var(--intent-danger-muted-disabled-border, transparent);
+    --button-disabled-text: var(--intent-danger-muted-disabled-text, transparent);
+  }
+
+  &[data-intent="danger"][data-importance="plain"] {
+    --button-base-background: var(--intent-danger-plain-base-background, transparent);
+    --button-base-border: var(--intent-danger-plain-base-border, transparent);
+    --button-base-text: var(--intent-danger-plain-base-text, transparent);
+    --button-hover-background: var(--intent-danger-plain-hover-background, transparent);
+    --button-hover-border: var(--intent-danger-plain-hover-border, transparent);
+    --button-hover-text: var(--intent-danger-plain-hover-text, transparent);
+    --button-active-background: var(--intent-danger-plain-active-background, transparent);
+    --button-active-border: var(--intent-danger-plain-active-border, transparent);
+    --button-active-text: var(--intent-danger-plain-active-text, transparent);
+    --button-disabled-background: var(--intent-danger-plain-disabled-background, transparent);
+    --button-disabled-border: var(--intent-danger-plain-disabled-border, transparent);
+    --button-disabled-text: var(--intent-danger-plain-disabled-text, transparent);
   }
 }

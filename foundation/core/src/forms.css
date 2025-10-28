@@ -4,7 +4,7 @@
   gap: var(--spacing-container0);
 }
 
-.label {
+.form-label {
   font-weight: 550; /* Non-Chrome Browsers (Safari, FF) display font-weight: 500 as "normal" */
   color: var(--typography-main);
 
@@ -17,17 +17,17 @@
   }
 }
 
-.description {
+.form-description {
   color: var(--typography-subtle);
 }
 
-.field {
+.form-field {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-container-3);
 }
 
-fieldset.field {
+fieldset.form-field {
   display: block;
   border: 0;
 
@@ -36,7 +36,7 @@ fieldset.field {
   }
 }
 
-.errors {
+.form-errors {
   display: flex;
   gap: var(--spacing-primitive-3);
   align-items: flex-start;
@@ -56,13 +56,13 @@ fieldset.field {
   }
 }
 
-.choices {
+.form-choices {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-container-3);
 }
 
-.choice {
+.form-choice {
   display: flex;
   gap: var(--spacing-primitive-2);
   align-items: flex-start;
@@ -80,12 +80,12 @@ fieldset.field {
     flex-direction: column;
   }
 
-  .label {
+  .form-label {
     font-weight: 400;
   }
 }
 
-.rules {
+.form-rules {
   display: flex;
   flex-direction: column;
   gap: .125em;

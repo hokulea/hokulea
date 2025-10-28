@@ -1,0 +1,55 @@
+.select {
+  @apply --control;
+  @apply --focus-within;
+
+  user-select: none;
+
+  position: relative;
+
+  display: inline-flex;
+  gap: var(--spacing-primitive-4);
+
+  padding-block: 0;
+  padding-inline: var(--spacing-primitive0);
+
+  &::after {
+    --chevron-up-down: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z"></path></svg>');
+
+    pointer-events: none;
+    content: '';
+
+    position: absolute;
+    right: var(--spacing-primitive0);
+
+    display: block;
+    align-self: center;
+
+    width: 1rem;
+    height: 1rem;
+
+    background: currentcolor;
+
+    mask: var(--chevron-up-down) center center / 100% auto no-repeat;
+  }
+
+  select {
+    all: unset;
+
+    width: 100%;
+
+    /* padding-block: var(--spacing-primitive0); */
+
+    padding-block: calc(var(--spacing-primitive0) - var(--control-border-width));
+    padding-inline-end: calc(1em + var(--spacing-primitive-4));
+
+    appearance: none;
+  }
+
+  &[data-spacing="-1"] {
+    padding-inline: var(--spacing-primitive-1);
+
+    select {
+      padding-block: var(--spacing-primitive-1);
+    }
+  }
+}

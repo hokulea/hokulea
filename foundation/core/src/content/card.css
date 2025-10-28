@@ -2,31 +2,28 @@
   border: var(--shape-stroke);
   border-radius: var(--shape-radius-container);
   background-color: var(--surface-container);
-}
 
-.item {
-  padding: var(--spacing-container0);
-}
+  [part="header"] {
+    @apply --spacing-container;
 
-.header {
-  composes: item;
+    border: var(--shape-stroke);
+    border-width: 0;
+    border-block-end-width: var(--shape-stroke-width);
+    border-start-start-radius: var(--shape-radius-container);
+    border-start-end-radius: var(--shape-radius-container);
 
-  border: var(--shape-stroke);
-  border-width: 0;
-  border-block-end-width: var(--shape-stroke-width);
-  border-start-start-radius: var(--shape-radius-container);
-  border-start-end-radius: var(--shape-radius-container);
+    background-color: var(--surface-container1);
+  }
 
-  background-color: var(--surface-container1);
-}
+  [part="body"] {
+    @apply --spacing-container;
+  }
 
-.body {
-  composes: item;
-}
+  [part="footer"] {
+    @apply --spacing-container;
 
-.footer {
-  composes: item;
-  border: var(--shape-stroke);
-  border-width: 0;
-  border-block-start-width: var(--shape-stroke-width);
+    border: var(--shape-stroke);
+    border-width: 0;
+    border-block-start-width: var(--shape-stroke-width);
+  }
 }

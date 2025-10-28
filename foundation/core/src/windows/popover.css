@@ -1,0 +1,9 @@
+.popover {
+  padding: var(--spacing-container-3);
+  border: var(--control-border);
+  border-radius: var(--shape-radius-container);
+
+  color: var(--control-text);
+
+  background-color: var(--surface-popover);
+}

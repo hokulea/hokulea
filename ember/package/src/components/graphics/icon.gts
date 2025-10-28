@@ -1,7 +1,5 @@
 import { htmlSafe } from '@ember/template';
 
-import styles from '@hokulea/core/graphics.module.css';
-
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 

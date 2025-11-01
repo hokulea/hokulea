@@ -696,8 +696,8 @@ importers:
         specifier: 1.6.3
         version: 1.6.3
       chromatic:
-        specifier: 13.3.2
-        version: 13.3.2
+        specifier: 13.3.3
+        version: 13.3.3
       ember-auto-import:
         specifier: 2.11.1
         version: 2.11.1(@glint/template@1.6.2)(webpack@5.102.1)
@@ -4632,8 +4632,8 @@ packages:
       '@chromatic-com/playwright':
         optional: true
 
-  chromatic@13.3.2:
-    resolution: {integrity: sha512-hBxbElFH8twWq7GHP52twqmduBkzB7EQZPIrzZA7iD9ZQ2P0Cbo1CDyeVsLz7FdywAKO86YvuXGxaOf7Z0n5eA==}
+  chromatic@13.3.3:
+    resolution: {integrity: sha512-89w0hiFzIRqLbwGSkqSQzhbpuqaWpXYZuevSIF+570Wb+T/apeAkp3px8nMJcFw+zEdqw/i6soofkJtfirET1Q==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -16365,7 +16365,7 @@ snapshots:
 
   chromatic@12.2.0: {}
 
-  chromatic@13.3.2: {}
+  chromatic@13.3.3: {}
 
   chrome-trace-event@1.0.3: {}
 

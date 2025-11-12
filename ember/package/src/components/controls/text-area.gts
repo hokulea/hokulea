@@ -13,7 +13,6 @@ export interface TextAreaSignature {
 export const TextArea: TOC<TextAreaSignature> = <template>
   <textarea
     class="textarea"
-    type="text"
     disabled={{@disabled}}
     data-spacing={{@spacing}}
     data-test-textarea

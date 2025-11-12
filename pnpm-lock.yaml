@@ -144,8 +144,8 @@ importers:
         specifier: workspace:*
         version: link:../../foundation/core
       '@hokulea/ember-pahu':
-        specifier: ^0.0.1
-        version: 0.0.1(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.6.2)
+        specifier: ^0.0.2
+        version: 0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.6.2)
       decorator-transforms:
         specifier: ^2.3.0
         version: 2.3.0(@babel/core@7.28.5)
@@ -2552,8 +2552,8 @@ packages:
     resolution: {integrity: sha512-D76vKOZFEGA9v6g0rZTYTQDUXNopCblW1Zeas3EEVrbdeh8gWrCEO9/goocKmcgtqAwv1Md76p58UQp7HeFTEw==}
     engines: {node: ^18 || ^20 || ^22 || >=24}
 
-  '@hokulea/ember-pahu@0.0.1':
-    resolution: {integrity: sha512-NhV9wOc1sP8WdfA2WB9LD+s3fJQJpachuy9fsjTZAzvc9lqS8Kg6feNtFSk3jwg4RDmbrE10MDQYhTTA5ZKPJw==}
+  '@hokulea/ember-pahu@0.0.2':
+    resolution: {integrity: sha512-K7BQ48nmXEXzbUv4lLW4ae4slpTflUsOMkChTExBKTmW602isLJ+xAT78BUkVQXnLb1tkNwVKXpVXGDYFgUGZw==}
     engines: {node: ^20.11.0 || >=22}
 
   '@hokulea/ember@file:ember/package':
@@ -2573,8 +2573,8 @@ packages:
       fractal-page-object:
         optional: true
 
-  '@hokulea/pahu@0.0.1':
-    resolution: {integrity: sha512-wZnZjr01I/IP7LL47eWowMtZBldoRDUstsOyzT6AtAFhJPku12SlXZjVSRPIbljZUuqB1xH62VexkbCNKOIgng==}
+  '@hokulea/pahu@0.1.0':
+    resolution: {integrity: sha512-mer1HHpxz08xBJ/D8pt8PmOdYSfa0uw0PWHKAfyt5+BptDNfSCAQcsDFAaZ1ld4d/zXqpK8LqAguF0F6fY9WDQ==}
     engines: {node: ^20.11.0 || >=22}
 
   '@humanfs/core@0.19.1':
@@ -13727,9 +13727,9 @@ snapshots:
 
   '@handlebars/parser@2.2.1': {}
 
-  '@hokulea/ember-pahu@0.0.1(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.6.2)':
+  '@hokulea/ember-pahu@0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.6.2)':
     dependencies:
-      '@hokulea/pahu': 0.0.1
+      '@hokulea/pahu': 0.1.0
       ember-modifier: 4.2.2(@babel/core@7.28.5)
       ember-resources: 7.0.7(@glimmer/component@2.0.0)(@glint/template@1.6.2)
     transitivePeerDependencies:
@@ -13743,7 +13743,7 @@ snapshots:
       '@embroider/addon-shim': 1.10.0
       '@floating-ui/dom': 1.7.2
       '@hokulea/core': link:foundation/core
-      '@hokulea/ember-pahu': 0.0.1(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.6.2)
+      '@hokulea/ember-pahu': 0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.6.2)
       decorator-transforms: 2.3.0(@babel/core@7.28.5)
       ember-aria-voyager: 0.2.4(@babel/core@7.28.5)(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.6.2))
       ember-command: 2.0.7(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.6.2))(@glimmer/component@2.0.0)(@glint/template@1.6.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.5)(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.6.2))(@glint/template@1.6.2))
@@ -13763,7 +13763,7 @@ snapshots:
       - '@glint/template'
       - supports-color
 
-  '@hokulea/pahu@0.0.1':
+  '@hokulea/pahu@0.1.0':
     dependencies:
       '@standard-schema/spec': 1.0.0
       dot-prop: 9.0.0

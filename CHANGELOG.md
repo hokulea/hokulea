@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-11-12)
+
+* @hokulea/ember 0.11.1 (patch)
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#514](https://github.com/hokulea/hokulea/pull/514) Update Pahu for Better Type Support on Forms ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-10-28)
 
 * @hokulea/ember 0.11.0 (minor)

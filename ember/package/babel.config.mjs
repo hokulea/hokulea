@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 import emberCliCodeCoverage from 'ember-cli-code-coverage';
 import emberConcurrency from 'ember-concurrency/async-arrow-task-transform';
-import * as scopedCSS from 'ember-scoped-css/build';
+import { scopedCSS } from 'ember-scoped-css/babel';
 
 const macros = buildMacros();
 
@@ -27,7 +27,7 @@ export default {
       {
         transforms: [
           ...(compatBuild ? templateCompatSupport() : macros.templateMacros),
-          scopedCSS.templatePlugin({
+          scopedCSS.template({
             layerName: 'app'
           })
         ]

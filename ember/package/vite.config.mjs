@@ -26,7 +26,7 @@ export default defineConfig({
   plugins: [
     ...(isCompat ? [classicEmberSupport()] : []),
     ember(),
-    scopedCSS('app'),
+    scopedCSS({ layerName: 'app' }),
     babel({
       babelHelpers: 'inline',
       extensions

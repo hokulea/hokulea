@@ -280,8 +280,8 @@ importers:
         specifier: ^9.0.4
         version: 9.0.4(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.7.2))(@glint/template@1.7.2)(qunit@2.24.2)
       ember-scoped-css:
-        specifier: ^1.1.1
-        version: 1.1.1(ember-template-lint@7.9.3)(webpack@5.102.1(esbuild@0.25.6))
+        specifier: ^2.0.1
+        version: 2.0.1(ember-template-lint@7.9.3)(webpack@5.102.1(esbuild@0.25.6))
       ember-set-helper:
         specifier: ^3.1.0
         version: 3.1.0(@babel/core@7.28.5)
@@ -5876,8 +5876,8 @@ packages:
     resolution: {integrity: sha512-89oVHVJwmLDvGvAUWgS87KpBoRhy3aZ6U0Ql6HOmU4TrPkyaa8pM0W81wj9cIwjYprcQtN9EwzZMHnq46+oUyw==}
     engines: {node: 8.* || 10.* || >= 12}
 
-  ember-scoped-css@1.1.1:
-    resolution: {integrity: sha512-Bj+35j9FHMty18qJVHuKDmtsTvGZOHUzS5c9CTrP42i0Vy03n3x5hyPflKSpVYPFdU6CUsTA+EAMjXMJps/4iA==}
+  ember-scoped-css@2.0.1:
+    resolution: {integrity: sha512-H3NShXN4yMSMCGA7or1Jf9cVV3dmYikJcPhYwRgrpTS1AwOWNIRt1gUqNzfOt7mxz5w7gJDHaZxxG3/vyvRySw==}
     engines: {node: '>= 22.16'}
     peerDependencies:
       ember-template-lint: '>= 5.7.2'
@@ -18077,7 +18077,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-scoped-css@1.1.1(ember-template-lint@7.9.3)(webpack@5.102.1(esbuild@0.25.6)):
+  ember-scoped-css@2.0.1(ember-template-lint@7.9.3)(webpack@5.102.1(esbuild@0.25.6)):
     dependencies:
       '@babel/parser': 7.28.5
       '@embroider/addon-shim': 1.10.0

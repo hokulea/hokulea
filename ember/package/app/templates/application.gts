@@ -14,6 +14,7 @@ import GearIcon from '~icons/ph/gear';
       <n.Item @href="/navigation">Navigation</n.Item>
       <n.Item @href="/controls">Controls</n.Item>
       <n.Item @href="/forms">Forms</n.Item>
+      <n.Item @href="/feedback">Feedback</n.Item>
       <n.Item @href="/graphics">Graphics</n.Item>
       <n.Item @href="/windows">Windows</n.Item>
       <n.Item>
@@ -27,6 +28,7 @@ import GearIcon from '~icons/ph/gear';
           <hr />
           <m.Item @href="/controls">Controls</m.Item>
           <m.Item @href="/forms">Forms</m.Item>
+          <m.Item @href="/feedback">Feedback</m.Item>
           <m.Item @href="/graphics">Graphics</m.Item>
           <m.Item @href="/windows">Windows</m.Item>
           <m.Item>

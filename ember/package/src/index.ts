@@ -23,6 +23,9 @@ export { TextInput } from './components/controls/text-input.gts';
 // data
 export { DataTable } from './components/data/data-table.gts';
 
+// feedback
+export { Alert } from './components/feedback/alert.gts';
+
 // forms
 export type {
   FieldValidationHandler,

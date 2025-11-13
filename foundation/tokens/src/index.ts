@@ -28,6 +28,7 @@ export type Importance = (typeof Importance)[keyof typeof Importance];
 // Indicators
 
 export const Indicator = {
+  Neutral: 'neutral',
   Info: 'info',
   Success: 'success',
   Warning: 'warning',

@@ -14,13 +14,15 @@ import { Alert, Button, Page } from '#src';
       </:actions>
     </Alert>
 
+    <h2>Combinations</h2>
+
     {{! -- }}
 
     <Alert @title="Title" @importance="supreme">
       Some Information
     </Alert>
 
-    <Alert @title="Title">
+    <Alert @title="Title" @importance="subtle">
       Some Information
     </Alert>
 

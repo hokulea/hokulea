@@ -25,7 +25,7 @@ module('Rendering | Feedback | <Alert>', function (hooks) {
     assert.dom(alert.$content).hasText('Hello World');
 
     assert.strictEqual(alert.indicator, Indicator.Neutral);
-    assert.strictEqual(alert.importance, Importance.Subtle);
+    assert.strictEqual(alert.importance, Importance.Supreme);
   });
 
   test('it can take a title', async function (assert) {

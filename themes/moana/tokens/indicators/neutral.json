@@ -1,7 +1,7 @@
 {
   "indicator": {
     "neutral": {
-      "supreme": {
+      "subtle": {
         "background": {
           "$value": [
             {
@@ -57,7 +57,7 @@
           "$type": "color"
         }
       },
-      "subtle": {
+      "supreme": {
         "background": {
           "$value": [
             {
@@ -67,7 +67,7 @@
               }
             },
             {
-              "value": "#4d5f67",
+              "value": "#6e8892",
               "features": {
                 "color-scheme": "dark"
               }
@@ -85,7 +85,7 @@
               }
             },
             {
-              "value": "#c6d0d4",
+              "value": "#262f32",
               "features": {
                 "color-scheme": "dark"
               }
@@ -103,7 +103,7 @@
               }
             },
             {
-              "value": "#6e8892",
+              "value": "#262f32",
               "features": {
                 "color-scheme": "dark"
               }

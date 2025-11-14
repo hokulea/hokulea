@@ -96,7 +96,7 @@ export class Alert<E extends Element = HTMLDivElement> extends Component<AlertSi
         role={{this.role}}
         aria-labelledby={{if titlePresent titleId}}
         data-indicator={{if @indicator @indicator "neutral"}}
-        data-importance={{if @importance @importance "subtle"}}
+        data-importance={{if @importance @importance "supreme"}}
         data-test-feedback
         ...attributes
       >

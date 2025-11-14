@@ -1,7 +1,7 @@
 {
   "indicator": {
     "warning": {
-      "subtle": {
+      "supreme": {
         "background": {
           "$value": [
             {
@@ -57,7 +57,7 @@
           "$type": "color"
         }
       },
-      "supreme": {
+      "subtle": {
         "background": {
           "$value": [
             {

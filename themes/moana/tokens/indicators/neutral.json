@@ -103,7 +103,7 @@
               }
             },
             {
-              "value": "#262f32",
+              "value": "#6e8892",
               "features": {
                 "color-scheme": "dark"
               }
@@ -117,7 +117,7 @@
         "text": {
           "$value": [
             {
-              "value": "#262f32",
+              "value": "#37444a",
               "features": {
                 "color-scheme": "light"
               }
@@ -135,7 +135,7 @@
         "border": {
           "$value": [
             {
-              "value": "#1d2427",
+              "value": "#37444a",
               "features": {
                 "color-scheme": "light"
               }

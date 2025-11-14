@@ -2,8 +2,7 @@
   @apply --spacing-container;
 
   display: grid;
-  grid-template-columns: max-content max-content;
-  grid-template-rows: max-content max-content;
+  grid-template-columns: max-content 1fr;
   gap: 0.15em var(--s-3);
 
   border-color: var(--🔒-alert-border, transparent);

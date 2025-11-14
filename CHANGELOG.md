@@ -1,5 +1,23 @@
 # Changelog
 
+## Release (2025-11-14)
+
+* @hokulea/ember 0.12.0 (minor)
+* @hokulea/core 0.9.0 (minor)
+* @hokulea/tokens 0.2.0 (minor)
+* @hokulea/theme-moana 0.4.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`
+  * [#515](https://github.com/hokulea/hokulea/pull/515) New Component: `<Alert>` ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/theme-moana`
+  * [#517](https://github.com/hokulea/hokulea/pull/517) Adjust colors for alert ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-11-12)
 
 * @hokulea/ember 0.11.1 (patch)

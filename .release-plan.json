@@ -1,27 +1,73 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.11.0",
-      "newVersion": "0.11.1",
+      "impact": "minor",
+      "oldVersion": "0.11.1",
+      "newVersion": "0.12.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Has dependency `workspace:*` on @hokulea/tokens"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "oldVersion": "0.8.0"
+      "impact": "minor",
+      "oldVersion": "0.8.0",
+      "newVersion": "0.9.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        }
+      ],
+      "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
-      "oldVersion": "0.1.2"
+      "impact": "minor",
+      "oldVersion": "0.1.2",
+      "newVersion": "0.2.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        }
+      ],
+      "pkgJSONPath": "./foundation/tokens/package.json"
     },
     "@hokulea/theme-moana": {
-      "oldVersion": "0.3.0"
+      "impact": "minor",
+      "oldVersion": "0.3.0",
+      "newVersion": "0.4.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        }
+      ],
+      "pkgJSONPath": "./themes/moana/package.json"
     }
   },
-  "description": "## Release (2025-11-12)\n\n* @hokulea/ember 0.11.1 (patch)\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#514](https://github.com/hokulea/hokulea/pull/514) Update Pahu for Better Type Support on Forms ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-11-14)\n\n* @hokulea/ember 0.12.0 (minor)\n* @hokulea/core 0.9.0 (minor)\n* @hokulea/tokens 0.2.0 (minor)\n* @hokulea/theme-moana 0.4.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`\n  * [#515](https://github.com/hokulea/hokulea/pull/515) New Component: `<Alert>` ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/theme-moana`\n  * [#517](https://github.com/hokulea/hokulea/pull/517) Adjust colors for alert ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

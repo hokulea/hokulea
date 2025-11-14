@@ -1,6 +1,6 @@
 {
   "name": "@hokulea/ember",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "description": "Hokulea Design System for Ember",
   "license": "MIT",
   "keywords": [
@@ -167,6 +167,7 @@
     "type": "addon",
     "main": "addon-main.cjs",
     "app-js": {
+      "./components/alert.js": "./dist/_app_/components/alert.js",
       "./components/app-header.js": "./dist/_app_/components/app-header.js",
       "./components/avatar.js": "./dist/_app_/components/avatar.js",
       "./components/box.js": "./dist/_app_/components/box.js",

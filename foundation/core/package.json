@@ -31,7 +31,7 @@
     "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",
     "lint:css": "stylelint 'src/**/*.css' --allow-empty-input --cache",
     "lint:css:fix": "stylelint 'src/**/*.css' --allow-empty-input --fix",
-    "start": "chokidar 'src/**/*.css' -c 'pnpm css'"
+    "start": "pnpm build && chokidar 'src/**/*.css' -c 'pnpm build'"
   },
   "devDependencies": {
     "@gossi/config-eslint": "^1.3.1",

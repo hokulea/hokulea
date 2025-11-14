@@ -1,0 +1,132 @@
+.alert {
+  @apply --spacing-container;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content max-content;
+  gap: 0.15em var(--s-3);
+
+  border-color: var(--🔒-alert-border, transparent);
+  border-style: var(--shape-stroke-style);
+  border-width: var(--shape-stroke-width);
+  border-radius: var(--shape-radius-container);
+
+  color: var(--🔒-alert-text, inherit);
+
+  background-color: var(--🔒-alert-background, transparent);
+
+  [part="icon"] {
+    translate: 0 calc(var(--ls1) * -1 / 10);
+    grid-row: 1/-1;
+    font-size: var(--ls2);
+  }
+
+  [part="title"] {
+    font-weight: bold;
+  }
+
+  [part="actions"] {
+    display: flex;
+    gap: var(--spacing-primitive-4);
+  }
+
+  /* --- */
+
+  &[data-indicator="neutral"]&[data-importance="supreme"] {
+    --🔒-alert-background: var(--indicator-neutral-supreme-background);
+    --🔒-alert-border: var(--indicator-neutral-supreme-border);
+    --🔒-alert-text: var(--indicator-neutral-supreme-text);
+  }
+
+  &[data-indicator="neutral"]&[data-importance="subtle"] {
+    --🔒-alert-background: var(--indicator-neutral-subtle-background);
+    --🔒-alert-border: var(--indicator-neutral-subtle-border);
+    --🔒-alert-text: var(--indicator-neutral-subtle-text);
+  }
+
+  &[data-indicator="neutral"]&[data-importance="plain"] {
+    --🔒-alert-background: var(--indicator-neutral-plain-background);
+    --🔒-alert-border: var(--indicator-neutral-plain-border);
+    --🔒-alert-text: var(--indicator-neutral-plain-text);
+  }
+
+  /* --- */
+
+  &[data-indicator="info"]&[data-importance="supreme"] {
+    --🔒-alert-background: var(--indicator-info-supreme-background);
+    --🔒-alert-border: var(--indicator-info-supreme-border);
+    --🔒-alert-text: var(--indicator-info-supreme-text);
+  }
+
+  &[data-indicator="info"]&[data-importance="subtle"] {
+    --🔒-alert-background: var(--indicator-info-subtle-background);
+    --🔒-alert-border: var(--indicator-info-subtle-border);
+    --🔒-alert-text: var(--indicator-info-subtle-text);
+  }
+
+  &[data-indicator="info"]&[data-importance="plain"] {
+    --🔒-alert-background: var(--indicator-info-plain-background);
+    --🔒-alert-border: var(--indicator-info-plain-border);
+    --🔒-alert-text: var(--indicator-info-plain-text);
+  }
+
+  /* --- */
+
+  &[data-indicator="success"]&[data-importance="supreme"] {
+    --🔒-alert-background: var(--indicator-success-supreme-background);
+    --🔒-alert-border: var(--indicator-success-supreme-border);
+    --🔒-alert-text: var(--indicator-success-supreme-text);
+  }
+
+  &[data-indicator="success"]&[data-importance="subtle"] {
+    --🔒-alert-background: var(--indicator-success-subtle-background);
+    --🔒-alert-border: var(--indicator-success-subtle-border);
+    --🔒-alert-text: var(--indicator-success-subtle-text);
+  }
+
+  &[data-indicator="success"]&[data-importance="plain"] {
+    --🔒-alert-background: var(--indicator-success-plain-background);
+    --🔒-alert-border: var(--indicator-success-plain-border);
+    --🔒-alert-text: var(--indicator-success-plain-text);
+  }
+
+  /* --- */
+
+  &[data-indicator="warning"]&[data-importance="supreme"] {
+    --🔒-alert-background: var(--indicator-warning-supreme-background);
+    --🔒-alert-border: var(--indicator-warning-supreme-border);
+    --🔒-alert-text: var(--indicator-warning-supreme-text);
+  }
+
+  &[data-indicator="warning"]&[data-importance="subtle"] {
+    --🔒-alert-background: var(--indicator-warning-subtle-background);
+    --🔒-alert-border: var(--indicator-warning-subtle-border);
+    --🔒-alert-text: var(--indicator-warning-subtle-text);
+  }
+
+  &[data-indicator="warning"]&[data-importance="plain"] {
+    --🔒-alert-background: var(--indicator-warning-plain-background);
+    --🔒-alert-border: var(--indicator-warning-plain-border);
+    --🔒-alert-text: var(--indicator-warning-plain-text);
+  }
+
+  /* --- */
+
+  &[data-indicator="error"]&[data-importance="supreme"] {
+    --🔒-alert-background: var(--indicator-error-supreme-background);
+    --🔒-alert-border: var(--indicator-error-supreme-border);
+    --🔒-alert-text: var(--indicator-error-supreme-text);
+  }
+
+  &[data-indicator="error"]&[data-importance="subtle"] {
+    --🔒-alert-background: var(--indicator-error-subtle-background);
+    --🔒-alert-border: var(--indicator-error-subtle-border);
+    --🔒-alert-text: var(--indicator-error-subtle-text);
+  }
+
+  &[data-indicator="error"]&[data-importance="plain"] {
+    --🔒-alert-background: var(--indicator-error-plain-background);
+    --🔒-alert-border: var(--indicator-error-plain-border);
+    --🔒-alert-text: var(--indicator-error-plain-text);
+  }
+}

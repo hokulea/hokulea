@@ -1,35 +1,17 @@
 {
   "indicator": {
-    "success": {
-      "subtle": {
+    "neutral": {
+      "supreme": {
         "background": {
           "$value": [
             {
-              "value": "#abede2",
+              "value": "#6e8892",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#6be0cb",
-              "features": {
-                "color-scheme": "dark"
-              }
-            }
-          ],
-          "$description": "",
-          "$type": "color"
-        },
-        "border": {
-          "$value": [
-            {
-              "value": "#125449",
-              "features": {
-                "color-scheme": "light"
-              }
-            },
-            {
-              "value": "#125449",
+              "value": "#37444a",
               "features": {
                 "color-scheme": "dark"
               }
@@ -41,13 +23,31 @@
         "text": {
           "$value": [
             {
-              "value": "#125449",
+              "value": "#171c1e",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#125449",
+              "value": "#b7c4c9",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": [
+            {
+              "value": "#6e8892",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#37444a",
               "features": {
                 "color-scheme": "dark"
               }
@@ -57,35 +57,17 @@
           "$type": "color"
         }
       },
-      "supreme": {
+      "subtle": {
         "background": {
           "$value": [
             {
-              "value": "#125449",
+              "value": "#b7c4c9",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#125449",
-              "features": {
-                "color-scheme": "dark"
-              }
-            }
-          ],
-          "$description": "",
-          "$type": "color"
-        },
-        "border": {
-          "$value": [
-            {
-              "value": "#125449",
-              "features": {
-                "color-scheme": "light"
-              }
-            },
-            {
-              "value": "#125449",
+              "value": "#4d5f67",
               "features": {
                 "color-scheme": "dark"
               }
@@ -97,13 +79,31 @@
         "text": {
           "$value": [
             {
-              "value": "#e9edee",
+              "value": "#2c373b",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#e9edee",
+              "value": "#c6d0d4",
+              "features": {
+                "color-scheme": "dark"
+              }
+            }
+          ],
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": [
+            {
+              "value": "#9aacb3",
+              "features": {
+                "color-scheme": "light"
+              }
+            },
+            {
+              "value": "#6e8892",
               "features": {
                 "color-scheme": "dark"
               }
@@ -114,16 +114,16 @@
         }
       },
       "plain": {
-        "border": {
+        "text": {
           "$value": [
             {
-              "value": "#125449",
+              "value": "#37444a",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#6be0cb",
+              "value": "#b7c4c9",
               "features": {
                 "color-scheme": "dark"
               }
@@ -132,16 +132,16 @@
           "$description": "",
           "$type": "color"
         },
-        "text": {
+        "border": {
           "$value": [
             {
-              "value": "#125449",
+              "value": "#37444a",
               "features": {
                 "color-scheme": "light"
               }
             },
             {
-              "value": "#6be0cb",
+              "value": "#b7c4c9",
               "features": {
                 "color-scheme": "dark"
               }

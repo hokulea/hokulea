@@ -44,6 +44,9 @@ const modules = [
   // data
   'components/data-table.js',
 
+  // feedback
+  'components/alert.js',
+
   // form
   'components/form.js',
 

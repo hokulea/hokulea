@@ -2,6 +2,18 @@
 
 ## Release (2025-11-14)
 
+* @hokulea/ember 0.12.1 (patch)
+* @hokulea/core 0.9.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/core`
+  * [#518](https://github.com/hokulea/hokulea/pull/518) Fix Alert Styling ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2025-11-14)
+
 * @hokulea/ember 0.12.0 (minor)
 * @hokulea/core 0.9.0 (minor)
 * @hokulea/tokens 0.2.0 (minor)

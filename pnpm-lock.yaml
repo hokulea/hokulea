@@ -146,6 +146,9 @@ importers:
       '@hokulea/ember-pahu':
         specifier: ^0.0.2
         version: 0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)
+      '@hokulea/tokens':
+        specifier: workspace:*
+        version: link:../../foundation/tokens
       decorator-transforms:
         specifier: ^2.3.0
         version: 2.3.0(@babel/core@7.28.5)
@@ -228,9 +231,6 @@ importers:
       '@hokulea/theme-moana':
         specifier: workspace:*
         version: link:../../themes/moana
-      '@hokulea/tokens':
-        specifier: workspace:*
-        version: link:../../foundation/tokens
       '@iconify-json/ph':
         specifier: ^1.2.2
         version: 1.2.2
@@ -13788,6 +13788,7 @@ snapshots:
       '@floating-ui/dom': 1.7.2
       '@hokulea/core': link:foundation/core
       '@hokulea/ember-pahu': 0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)
+      '@hokulea/tokens': link:foundation/tokens
       decorator-transforms: 2.3.0(@babel/core@7.28.5)
       ember-aria-voyager: 0.2.4(@babel/core@7.28.5)(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.7.2))
       ember-command: 2.0.7(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.7.2))(@glimmer/component@2.0.0)(@glint/template@1.7.2)(ember-element-helper@0.8.8)(ember-link@3.5.0(@babel/core@7.28.5)(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.7.2))(@glint/template@1.7.2))

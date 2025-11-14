@@ -231,75 +231,18 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-error-subtle-background': {
-    name: 'indicator-error-subtle-background',
-    description: '',
-    value: [
-      {
-        value: '#ee9696',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#ee9696',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-subtle-border': {
-    name: 'indicator-error-subtle-border',
-    description: '',
-    value: [
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#b41d1d',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-error-subtle-text': {
-    name: 'indicator-error-subtle-text',
-    description: '',
-    value: [
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#911818',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
   'indicator-error-supreme-background': {
     name: 'indicator-error-supreme-background',
     description: '',
     value: [
       {
-        value: '#b41d1d',
+        value: '#ee9696',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: '#b41d1d',
+        value: '#ee9696',
         features: {
           'color-scheme': 'dark'
         }
@@ -328,6 +271,63 @@ export const tokens: Tokens = {
   },
   'indicator-error-supreme-text': {
     name: 'indicator-error-supreme-text',
+    description: '',
+    value: [
+      {
+        value: '#911818',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#911818',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-error-subtle-background': {
+    name: 'indicator-error-subtle-background',
+    description: '',
+    value: [
+      {
+        value: '#b41d1d',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#b41d1d',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-error-subtle-border': {
+    name: 'indicator-error-subtle-border',
+    description: '',
+    value: [
+      {
+        value: '#b41d1d',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#b41d1d',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-error-subtle-text': {
+    name: 'indicator-error-subtle-text',
     description: '',
     value: [
       {
@@ -383,75 +383,18 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-subtle-background': {
-    name: 'indicator-info-subtle-background',
-    description: '',
-    value: [
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#66d1ff',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-info-subtle-border': {
-    name: 'indicator-info-subtle-border',
-    description: '',
-    value: [
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#098bc3',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-info-subtle-text': {
-    name: 'indicator-info-subtle-text',
-    description: '',
-    value: [
-      {
-        value: '#054661',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#054661',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
   'indicator-info-supreme-background': {
     name: 'indicator-info-supreme-background',
     description: '',
     value: [
       {
-        value: '#076892',
+        value: '#66d1ff',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: '#076892',
+        value: '#3cbef6',
         features: {
           'color-scheme': 'dark'
         }
@@ -464,6 +407,44 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
+        value: '#098bc3',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#098bc3',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-info-supreme-text': {
+    name: 'indicator-info-supreme-text',
+    description: '',
+    value: [
+      {
+        value: '#054661',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#054661',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-info-subtle-background': {
+    name: 'indicator-info-subtle-background',
+    description: '',
+    value: [
+      {
         value: '#076892',
         features: {
           'color-scheme': 'light'
@@ -478,8 +459,27 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-info-supreme-text': {
-    name: 'indicator-info-supreme-text',
+  'indicator-info-subtle-border': {
+    name: 'indicator-info-subtle-border',
+    description: '',
+    value: [
+      {
+        value: '#076892',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#076892',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-info-subtle-text': {
+    name: 'indicator-info-subtle-text',
     description: '',
     value: [
       {
@@ -535,18 +535,18 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-subtle-background': {
-    name: 'indicator-success-subtle-background',
+  'indicator-neutral-subtle-background': {
+    name: 'indicator-neutral-subtle-background',
     description: '',
     value: [
       {
-        value: '#abede2',
+        value: '#6e8892',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: '#abede2',
+        value: '#37444a',
         features: {
           'color-scheme': 'dark'
         }
@@ -554,18 +554,18 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-subtle-border': {
-    name: 'indicator-success-subtle-border',
+  'indicator-neutral-subtle-text': {
+    name: 'indicator-neutral-subtle-text',
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#171c1e',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: '#125449',
+        value: '#b7c4c9',
         features: {
           'color-scheme': 'dark'
         }
@@ -573,18 +573,113 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
-  'indicator-success-subtle-text': {
-    name: 'indicator-success-subtle-text',
+  'indicator-neutral-subtle-border': {
+    name: 'indicator-neutral-subtle-border',
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#6e8892',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: '#125449',
+        value: '#37444a',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-neutral-supreme-background': {
+    name: 'indicator-neutral-supreme-background',
+    description: '',
+    value: [
+      {
+        value: '#b7c4c9',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#6e8892',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-neutral-supreme-text': {
+    name: 'indicator-neutral-supreme-text',
+    description: '',
+    value: [
+      {
+        value: '#2c373b',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#262f32',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-neutral-supreme-border': {
+    name: 'indicator-neutral-supreme-border',
+    description: '',
+    value: [
+      {
+        value: '#9aacb3',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#262f32',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-neutral-plain-text': {
+    name: 'indicator-neutral-plain-text',
+    description: '',
+    value: [
+      {
+        value: '#37444a',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#b7c4c9',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-neutral-plain-border': {
+    name: 'indicator-neutral-plain-border',
+    description: '',
+    value: [
+      {
+        value: '#37444a',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#b7c4c9',
         features: {
           'color-scheme': 'dark'
         }
@@ -597,13 +692,13 @@ export const tokens: Tokens = {
     description: '',
     value: [
       {
-        value: '#125449',
+        value: '#abede2',
         features: {
           'color-scheme': 'light'
         }
       },
       {
-        value: '#125449',
+        value: '#6be0cb',
         features: {
           'color-scheme': 'dark'
         }
@@ -632,6 +727,63 @@ export const tokens: Tokens = {
   },
   'indicator-success-supreme-text': {
     name: 'indicator-success-supreme-text',
+    description: '',
+    value: [
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-success-subtle-background': {
+    name: 'indicator-success-subtle-background',
+    description: '',
+    value: [
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-success-subtle-border': {
+    name: 'indicator-success-subtle-border',
+    description: '',
+    value: [
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#125449',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-success-subtle-text': {
+    name: 'indicator-success-subtle-text',
     description: '',
     value: [
       {
@@ -687,12 +839,69 @@ export const tokens: Tokens = {
     ],
     type: 'color'
   },
+  'indicator-warning-supreme-background': {
+    name: 'indicator-warning-supreme-background',
+    description: '',
+    value: [
+      {
+        value: '#ffe299',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#ffcc4d',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-warning-supreme-border': {
+    name: 'indicator-warning-supreme-border',
+    description: '',
+    value: [
+      {
+        value: '#b28000',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#b28000',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
+  'indicator-warning-supreme-text': {
+    name: 'indicator-warning-supreme-text',
+    description: '',
+    value: [
+      {
+        value: '#664900',
+        features: {
+          'color-scheme': 'light'
+        }
+      },
+      {
+        value: '#664900',
+        features: {
+          'color-scheme': 'dark'
+        }
+      }
+    ],
+    type: 'color'
+  },
   'indicator-warning-subtle-background': {
     name: 'indicator-warning-subtle-background',
     description: '',
     value: [
       {
-        value: '#ffe299',
+        value: '#ffb700',
         features: {
           'color-scheme': 'light'
         }
@@ -727,63 +936,6 @@ export const tokens: Tokens = {
   },
   'indicator-warning-subtle-text': {
     name: 'indicator-warning-subtle-text',
-    description: '',
-    value: [
-      {
-        value: '#664900',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#0c0e10',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-warning-supreme-background': {
-    name: 'indicator-warning-supreme-background',
-    description: '',
-    value: [
-      {
-        value: '#ffb700',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#ffe299',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-warning-supreme-border': {
-    name: 'indicator-warning-supreme-border',
-    description: '',
-    value: [
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'light'
-        }
-      },
-      {
-        value: '#b28000',
-        features: {
-          'color-scheme': 'dark'
-        }
-      }
-    ],
-    type: 'color'
-  },
-  'indicator-warning-supreme-text': {
-    name: 'indicator-warning-supreme-text',
     description: '',
     value: [
       {

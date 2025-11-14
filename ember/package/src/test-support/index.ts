@@ -1,3 +1,4 @@
+export { AlertPageObject } from './page-objects/alert.ts';
 export { AppHeaderPageObject } from './page-objects/app-header.ts';
 export { AvatarPageObject } from './page-objects/avatar.ts';
 export { ButtonPageObject } from './page-objects/button.ts';

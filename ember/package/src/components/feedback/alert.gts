@@ -97,12 +97,13 @@ export class Alert<E extends Element = HTMLDivElement> extends Component<AlertSi
         aria-labelledby={{if titlePresent titleId}}
         data-indicator={{if @indicator @indicator "neutral"}}
         data-importance={{if @importance @importance "subtle"}}
+        data-test-feedback
         ...attributes
       >
         <Icon @icon={{this.icon}} part="icon" />
 
         {{#if titlePresent}}
-          <span part="title">
+          <span part="title" id={{titleId}}>
             {{#if (has-block "title")}}
               {{yield to="title"}}
             {{else if @title}}
@@ -111,7 +112,7 @@ export class Alert<E extends Element = HTMLDivElement> extends Component<AlertSi
           </span>
         {{/if}}
 
-        <div>
+        <div part="content">
           {{#if (has-block "content")}}
             {{yield to="content"}}
           {{else}}

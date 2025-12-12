@@ -35,3 +35,5 @@ export class FormPageObject extends PageObject<HTMLFormElement> {
     await triggerEvent(this.element as HTMLFormElement, 'reset');
   }
 }
+
+export { type Error as FieldError } from './-private/error.ts';

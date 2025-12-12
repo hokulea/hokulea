@@ -1,8 +1,9 @@
 import Component from '@glimmer/component';
-import { hash } from '@ember/helper';
+import { hash, uniqueId } from '@ember/helper';
 
 import { createForm } from '@hokulea/ember-pahu';
 
+import { Errors } from './errors.gts';
 import { Field } from './field.gts';
 import { CheckboxField } from './fields/checkbox.gts';
 import { CurrencyField } from './fields/currency.gts';
@@ -22,8 +23,15 @@ import { Reset } from './reset.gts';
 import { Submit } from './submit.gts';
 
 import type { BoundField } from './field.gts';
+import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
-import type { FormAPI, FormConfig, UserData } from '@hokulea/ember-pahu';
+import type { FormAPI, FormConfig, Issue, UserData } from '@hokulea/ember-pahu';
+
+const FormErrors: TOC<{ Args: { errors: Issue[] } }> = <template>
+  {{#if @errors}}
+    <Errors @errors={{@errors}} @id={{(uniqueId)}} />
+  {{/if}}
+</template>;
 
 export interface FormBuilder<DATA extends UserData> {
   Checkbox: WithBoundArgs<typeof CheckboxField<DATA>, 'Field'>;
@@ -41,6 +49,7 @@ export interface FormBuilder<DATA extends UserData> {
   Text: WithBoundArgs<typeof TextField<DATA>, 'Field'>;
   TextArea: WithBoundArgs<typeof TextAreaField<DATA>, 'Field'>;
   Field: BoundField<DATA>;
+  Errors: WithBoundArgs<typeof FormErrors, 'errors'>;
   Submit: typeof Submit;
   Reset: typeof Reset;
 
@@ -63,9 +72,6 @@ export interface FormBuilder<DATA extends UserData> {
    * Trigger validation on the form
    */
   validate: FormAPI<DATA>['validate'];
-
-  /* @TODO: Remove, for debug only */
-  form: ReturnType<typeof createForm<DATA>>;
 }
 
 export interface FormSignature<DATA extends UserData> {
@@ -127,9 +133,9 @@ export class Form<DATA extends UserData> extends Component<FormSignature<DATA>> 
               SingularChoice=(component this.SingularChoiceField Field=WiredField)
               TextArea=(component this.TextAreaField Field=WiredField)
               Text=(component this.TextField Field=WiredField)
+              Errors=(component FormErrors errors=f.issues)
               Submit=Submit
               Reset=Reset
-              form=f
             )
           }}
         {{/let}}

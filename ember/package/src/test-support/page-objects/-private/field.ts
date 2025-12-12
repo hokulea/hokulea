@@ -7,19 +7,10 @@ import { ListPageObject } from '../list.ts';
 import { SelectPageObject } from '../select.ts';
 import { TextAreaPageObject } from '../text-area.ts';
 import { ChoicesPageObject } from './choices.ts';
+import { Error } from './error.ts';
 
 import type { RangeInputPageObject } from '../input';
 import type { ElementLike } from 'fractal-page-object';
-
-export class FieldError extends PageObject<HTMLDivElement> {
-  get type() {
-    return this.element?.getAttribute('data-test-error-type');
-  }
-
-  get value() {
-    return this.element?.getAttribute('data-test-error-value');
-  }
-}
 
 export class FieldRule extends PageObject<HTMLParagraphElement> {
   get invalid() {
@@ -50,7 +41,7 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
   private $list = sel(ListPageObject.SELECTOR, ListPageObject);
 
   $choices = sel(ChoicesPageObject.SELECTOR, ChoicesPageObject);
-  $errors = sel('[data-test-error]', FieldError);
+  $errors = sel(Error.SELECTOR, Error);
   $rules = sel('[data-test-rule]', FieldRule);
 
   get $control():

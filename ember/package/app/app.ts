@@ -42,7 +42,9 @@ Router.map(function () {
   });
   this.route('data');
   this.route('feedback');
-  this.route('forms');
+  this.route('forms', function () {
+    this.route('with-errors');
+  });
   this.route('graphics');
   this.route('windows');
   this.route('navigation', function () {

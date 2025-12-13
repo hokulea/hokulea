@@ -1,11 +1,13 @@
-import { render } from '@ember/test-helpers';
+import { fillIn, render } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { Form } from '#src';
+import { Form, Page, type SubmitHandler } from '#src';
 import { FormPageObject } from '#test-support';
 
 import { Importance, Intent } from '@hokulea/tokens';
+
+import type { FieldPageObject } from '#src/test-support/page-objects/-private/field.ts';
 
 module('Rendering | Form | <Form>', function (hooks) {
   setupRenderingTest(hooks);
@@ -60,5 +62,48 @@ module('Rendering | Form | <Form>', function (hooks) {
     assert.dom(form.$reset).exists();
     assert.strictEqual(form.$reset.intent, Intent.Action);
     assert.strictEqual(form.$reset.importance, Importance.Supreme);
+  });
+
+  test('form errors', async (assert) => {
+    const submit: SubmitHandler = (value) => {
+      return {
+        success: false,
+        value,
+        issues: [
+          {
+            message: 'Login Credentials are wrong'
+          }
+        ]
+      };
+    };
+
+    await render(
+      <template>
+        <Page @title="Form with Errors">
+          <Form @submit={{submit}} as |f|>
+            <f.Errors />
+
+            <f.Text @name="email" @label="Email" autocomplete="email" required data-bwignore />
+            <f.Password @name="password" @label="Password" required data-bwignore />
+
+            <f.Submit>Login</f.Submit>
+          </Form>
+        </Page>
+      </template>
+    );
+
+    const form = new FormPageObject();
+
+    assert.dom(form.$errors).doesNotExist();
+
+    const emailField = form.$fields[0] as unknown as FieldPageObject;
+    const passwordField = form.$fields[1] as unknown as FieldPageObject;
+
+    await fillIn(emailField.$control, 'hello@localhost');
+    await fillIn(passwordField.$control, 'SuperSecretPassword');
+    await form.submit();
+
+    assert.dom(form.$errors).exists();
+    assert.dom(form.$errors[0]).hasText('Login Credentials are wrong');
   });
 });

@@ -759,8 +759,8 @@ importers:
         specifier: 4.5.1
         version: 4.5.1(@babel/core@7.28.5)(@ember/string@4.0.1)
       ember-svg-jar:
-        specifier: 2.7.0
-        version: 2.7.0(@glint/template@1.7.2)
+        specifier: 2.7.1
+        version: 2.7.1(@glint/template@1.7.2)
       ember-template-imports:
         specifier: 4.3.0
         version: 4.3.0
@@ -5931,8 +5931,8 @@ packages:
     peerDependencies:
       '@ember/string': ^3.1.1 || ^4.0.0
 
-  ember-svg-jar@2.7.0:
-    resolution: {integrity: sha512-tghuJ8loGNGrTl2B2sJxN/PrYw/oxghitEZS8tTyBJbAet79Sz+mto36rBO+nVhI7HdeLQfLrFLI1KlHUjCNhQ==}
+  ember-svg-jar@2.7.1:
+    resolution: {integrity: sha512-Y957CMG/IlpdrIu+Gl5KMYBZN6zL2Eyz2CQl2RRfpExFA3uJpv1+Br8vbtxLEs1OoPTlR+YYHcUXfgqS7dHaXw==}
     engines: {node: 12.* || 14.* || >= 16}
 
   ember-sweet-owner@1.0.1:
@@ -18293,7 +18293,7 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-svg-jar@2.7.0(@glint/template@1.7.2):
+  ember-svg-jar@2.7.1(@glint/template@1.7.2):
     dependencies:
       '@embroider/macros': 1.19.4(@glint/template@1.7.2)
       broccoli-caching-writer: 3.0.3

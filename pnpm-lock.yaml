@@ -144,8 +144,8 @@ importers:
         specifier: workspace:*
         version: link:../../foundation/core
       '@hokulea/ember-pahu':
-        specifier: ^0.0.2
-        version: 0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)
+        specifier: ^0.0.3
+        version: 0.0.3(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)
       '@hokulea/tokens':
         specifier: workspace:*
         version: link:../../foundation/tokens
@@ -2552,8 +2552,8 @@ packages:
     resolution: {integrity: sha512-D76vKOZFEGA9v6g0rZTYTQDUXNopCblW1Zeas3EEVrbdeh8gWrCEO9/goocKmcgtqAwv1Md76p58UQp7HeFTEw==}
     engines: {node: ^18 || ^20 || ^22 || >=24}
 
-  '@hokulea/ember-pahu@0.0.2':
-    resolution: {integrity: sha512-K7BQ48nmXEXzbUv4lLW4ae4slpTflUsOMkChTExBKTmW602isLJ+xAT78BUkVQXnLb1tkNwVKXpVXGDYFgUGZw==}
+  '@hokulea/ember-pahu@0.0.3':
+    resolution: {integrity: sha512-HnQEoOgM6p8/2uNXatjZgrDY45aiAUaNyISsM/QWbmH6vRTIcOhIkYrqGKBRiJFxNTzlPJWMyffvisW2v7IESQ==}
     engines: {node: ^20.11.0 || >=22}
 
   '@hokulea/ember@file:ember/package':
@@ -2573,8 +2573,8 @@ packages:
       fractal-page-object:
         optional: true
 
-  '@hokulea/pahu@0.1.0':
-    resolution: {integrity: sha512-mer1HHpxz08xBJ/D8pt8PmOdYSfa0uw0PWHKAfyt5+BptDNfSCAQcsDFAaZ1ld4d/zXqpK8LqAguF0F6fY9WDQ==}
+  '@hokulea/pahu@0.2.0':
+    resolution: {integrity: sha512-sUnMMy56Hea2gNMspI875I2yXJQHS4J5xWqOWerOqbDtXoKO5slyCoUWy+Iz/yH8/Qzl72APuFFYhoNqSHWK/w==}
     engines: {node: ^20.11.0 || >=22}
 
   '@humanfs/core@0.19.1':
@@ -9497,6 +9497,7 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qs@1.0.2:
@@ -9543,6 +9544,7 @@ packages:
   raw-body@1.1.7:
     resolution: {integrity: sha512-WmJJU2e9Y6M5UzTOkHaM7xJGAPQD8PNzx3bAd2+uhZAim6wDk6dAZxPVYLF67XhbR4hmKGh33Lpmh4XWrCH5Mg==}
     engines: {node: '>= 0.8.0'}
+    deprecated: No longer maintained. Please upgrade to a stable version.
 
   raw-body@2.5.2:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
@@ -13771,9 +13773,9 @@ snapshots:
 
   '@handlebars/parser@2.2.1': {}
 
-  '@hokulea/ember-pahu@0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)':
+  '@hokulea/ember-pahu@0.0.3(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)':
     dependencies:
-      '@hokulea/pahu': 0.1.0
+      '@hokulea/pahu': 0.2.0
       ember-modifier: 4.2.2(@babel/core@7.28.5)
       ember-resources: 7.0.7(@glimmer/component@2.0.0)(@glint/template@1.7.2)
     transitivePeerDependencies:
@@ -13787,7 +13789,7 @@ snapshots:
       '@embroider/addon-shim': 1.10.0
       '@floating-ui/dom': 1.7.2
       '@hokulea/core': link:foundation/core
-      '@hokulea/ember-pahu': 0.0.2(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)
+      '@hokulea/ember-pahu': 0.0.3(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.2)
       '@hokulea/tokens': link:foundation/tokens
       decorator-transforms: 2.3.0(@babel/core@7.28.5)
       ember-aria-voyager: 0.2.4(@babel/core@7.28.5)(@ember/test-helpers@5.4.0(@babel/core@7.28.5)(@glint/template@1.7.2))
@@ -13808,7 +13810,7 @@ snapshots:
       - '@glint/template'
       - supports-color
 
-  '@hokulea/pahu@0.1.0':
+  '@hokulea/pahu@0.2.0':
     dependencies:
       '@standard-schema/spec': 1.0.0
       dot-prop: 9.0.0

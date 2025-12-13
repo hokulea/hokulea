@@ -67,7 +67,7 @@
     "@floating-ui/dom": "^1.7.1",
     "@hokulea/core": "workspace:*",
     "@hokulea/tokens": "workspace:*",
-    "@hokulea/ember-pahu": "^0.0.2",
+    "@hokulea/ember-pahu": "^0.0.3",
     "decorator-transforms": "^2.3.0",
     "ember-aria-voyager": "^0.2.4",
     "ember-stargate": "^1.0.1",

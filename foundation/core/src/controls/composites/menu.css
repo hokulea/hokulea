@@ -1,5 +1,5 @@
 .menu:is(:not([popover]),[popover]:popover-open) {
-  all: unset;
+  /* all: unset; */
 
   user-select: none;
 

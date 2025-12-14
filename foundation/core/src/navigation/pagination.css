@@ -1,0 +1,66 @@
+.pagination {
+  display: flex;
+  align-items: stretch;
+  background: var(--surface-container);
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  > span {
+    align-content: center;
+
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:not(:first-child) {
+      border-inline-start: var(--shape-stroke);
+    }
+  }
+
+  [part="page-size"] {
+    padding-inline-start: var(--spacing-container-2);
+  }
+
+  [part="items"] {
+    flex-grow: 1;
+    padding-inline: var(--spacing-container-2);
+  }
+
+  [part="page"] {
+    padding-inline: var(--spacing-container-2);
+
+    &:has(span), &:has(input) {
+      padding-inline-start: 0;
+    }
+
+    > input {
+      max-width: 5ch;
+
+      field-sizing: content;
+    }
+  }
+
+  [part="nav"] {
+    > button {
+      border-radius: 0;
+
+      &:hover {
+        background-color: var(--surface-container1);
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  :is([part="page-size"], [part="page"]) > :is(span, input) {
+    border-color: var(--surface-container);
+    border-radius: 0;
+    background: var(--surface-container);
+
+    &:hover {
+      border-color: var(--surface-container1);
+      background-color: var(--surface-container1);
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  :is([part="page-size"], [part="page"]) > span {
+    border: 0;
+  }
+}

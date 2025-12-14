@@ -1,6 +1,4 @@
 .alert {
-  @apply --spacing-container;
-
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 0.15em var(--s-3);
@@ -14,19 +12,12 @@
 
   background-color: var(--🔒-alert-background, transparent);
 
-  [part="icon"] {
-    translate: 0 calc(var(--ls1) * -1 / 10);
-    grid-row: 1/-1;
-    font-size: var(--ls2);
+  &:is(:has([part="actions"]), :has([part="title"]) [part="icon"] {
+    grid-row: 1 / span 2;
   }
 
-  [part="title"] {
-    font-weight: bold;
-  }
-
-  [part="actions"] {
-    display: flex;
-    gap: var(--spacing-primitive-4);
+  &:has([part="actions"]):has([part="title"]) [part="icon"] {
+    grid-row: 1 / span 3;
   }
 
   /* --- */
@@ -128,4 +119,20 @@
     --🔒-alert-border: var(--indicator-error-plain-border);
     --🔒-alert-text: var(--indicator-error-plain-text);
   }
-}
+};
+
+  [part="icon"] {
+    translate: 0 calc(var(--ls1) * -1 / 10);
+    font-size: var(--ls2);
+  }
+
+  [part="title"] {
+    font-weight: bold;
+  }
+
+  [part="actions"] {
+    display: flex;
+    gap: var(--spacing-primitive-4);
+  }
+  @apply --spacing-container;
+}}

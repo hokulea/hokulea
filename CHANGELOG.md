@@ -1,5 +1,27 @@
 # Changelog
 
+## Release (2025-12-14)
+
+* @hokulea/ember 0.13.0 (minor)
+* @hokulea/core 0.9.1 (patch)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`
+  * [#539](https://github.com/hokulea/hokulea/pull/539) Export `IconAsset` type ([@gossi](https://github.com/gossi))
+  * [#536](https://github.com/hokulea/hokulea/pull/536) Export `MenuBuilder` type ([@gossi](https://github.com/gossi))
+  * [#522](https://github.com/hokulea/hokulea/pull/522) Display errors for a Form ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`
+  * [#547](https://github.com/hokulea/hokulea/pull/547) More resilient CSS by removing `all: unset` ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#535](https://github.com/hokulea/hokulea/pull/535) Fix MenuItem: Don't destroy label when it contains HTML elements ([@gossi](https://github.com/gossi))
+* `@hokulea/core`
+  * [#518](https://github.com/hokulea/hokulea/pull/518) Fix Alert Styling ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-11-14)
 
 * @hokulea/ember 0.12.0 (minor)

@@ -16,8 +16,15 @@
 
   [part="icon"] {
     translate: 0 calc(var(--ls1) * -1 / 10);
-    grid-row: 1/-1;
     font-size: var(--ls2);
+  }
+
+  &:is(:has([part="actions"]), :has([part="title"])) [part="icon"] {
+    grid-row: 1 / span 2;
+  }
+
+  &:has([part="actions"]):has([part="title"]) [part="icon"] {
+    grid-row: 1 / span 3;
   }
 
   [part="title"] {

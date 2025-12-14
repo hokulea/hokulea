@@ -1,8 +1,9 @@
 @mixin --control {
-  all: unset;
+  /* all: unset; */
 
   display: inline-block; /* Safari needs to set display explicitely when `all: unset` is given */
 
+  box-sizing: content-box;
   padding: var(--spacing-primitive0);
   border: var(--control-border);
   border-radius: var(--shape-radius-primitive);

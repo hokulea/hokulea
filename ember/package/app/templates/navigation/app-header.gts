@@ -1,8 +1,7 @@
 import { Page } from '#src';
 
 <template>
-  <Page>
-    <h1>App Header</h1>
+  <Page @title="App Header">
     <p>see above</p>
   </Page>
 </template>

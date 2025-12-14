@@ -4,10 +4,21 @@ import { Alert, Button, Page } from '#src';
   <Page @title="Feedback">
     <h1>Alerts</h1>
     <Alert>
+      Most minimal Alert
+    </Alert>
+
+    <Alert @title="With Title">
       Some Information
     </Alert>
 
     <Alert>
+      <:content>Some Information</:content>
+      <:actions>
+        <Button @spacing="-1">Hullo?</Button>
+      </:actions>
+    </Alert>
+
+    <Alert @title="Full Example">
       <:content>Some Information</:content>
       <:actions>
         <Button @spacing="-1">Hullo?</Button>

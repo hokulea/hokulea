@@ -15,26 +15,3 @@
     outline-offset: var(--control-focus-stroke-offset);
   }
 }
-
-/* .focus:focus-visible {
-  outline: var(--control-focus-stroke);
-  outline-offset: var(--control-focus-stroke-offset);
-} */
-
-/* .focus-within {
-  &:focus-within {
-    outline: var(--control-focus-stroke);
-    outline-offset: var(--control-focus-stroke-offset);
-  }
-
-  @supports selector(:has(*)) {
-    &:focus-within {
-      outline: none;
-    }
-
-    &:has(:focus-visible) {
-      outline: var(--control-focus-stroke);
-      outline-offset: var(--control-focus-stroke-offset);
-    }
-  }
-} */

@@ -56,7 +56,7 @@
     "@storybook/ember": "9.1.16",
     "@storybook/ember-cli-storybook": "0.6.1",
     "@types/loader-utils": "^2.0.6",
-    "@types/qunit": "2.19.12",
+    "@types/qunit": "2.19.13",
     "@types/rsvp": "4.0.9",
     "babel-loader": "10.0.0",
     "babel-plugin-htmlbars-inline-precompile": "^5.3.1",

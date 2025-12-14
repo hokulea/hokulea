@@ -15,12 +15,12 @@ export interface MenuItemSignature {
 
 export type MenuItemLike = ComponentLike<MenuItemSignature>;
 
-export type MenuBlock = {
+export type MenuBuilder = {
   Item: MenuItemLike;
 };
 
 export type MenuItemBlocks = {
   default?: [];
   label?: [];
-  menu?: [MenuBlock];
+  menu?: [MenuBuilder];
 };

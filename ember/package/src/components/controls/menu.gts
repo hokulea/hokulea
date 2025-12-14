@@ -167,3 +167,5 @@ export class Menu extends Component<MenuSignature> {
     </div>
   </template>
 }
+
+export type { MenuBuilder } from './-menu.gts';

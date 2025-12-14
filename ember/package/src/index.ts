@@ -9,6 +9,7 @@ export { DateInput } from './components/controls/date-input.gts';
 export { EmailInput } from './components/controls/email-input.gts';
 export { InputBuilder } from './components/controls/input-builder.gts';
 export { List } from './components/controls/list.gts';
+export type { MenuBuilder } from './components/controls/menu.gts';
 export { Menu } from './components/controls/menu.gts';
 export { NumberInput } from './components/controls/number-input.gts';
 export { PasswordInput } from './components/controls/password-input.gts';

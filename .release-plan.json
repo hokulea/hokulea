@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.11.1",
-      "newVersion": "0.12.0",
+      "oldVersion": "0.12.0",
+      "newVersion": "0.13.0",
       "tagName": "latest",
       "constraints": [
         {
@@ -12,62 +12,34 @@
         },
         {
           "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @hokulea/core"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @hokulea/tokens"
-        },
-        {
-          "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "minor",
-      "oldVersion": "0.8.0",
-      "newVersion": "0.9.0",
+      "impact": "patch",
+      "oldVersion": "0.9.0",
+      "newVersion": "0.9.1",
       "tagName": "latest",
       "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        }
-      ],
-      "pkgJSONPath": "./foundation/core/package.json"
-    },
-    "@hokulea/tokens": {
-      "impact": "minor",
-      "oldVersion": "0.1.2",
-      "newVersion": "0.2.0",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        }
-      ],
-      "pkgJSONPath": "./foundation/tokens/package.json"
-    },
-    "@hokulea/theme-moana": {
-      "impact": "minor",
-      "oldVersion": "0.3.0",
-      "newVersion": "0.4.0",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
-      "pkgJSONPath": "./themes/moana/package.json"
+      "pkgJSONPath": "./foundation/core/package.json"
+    },
+    "@hokulea/tokens": {
+      "oldVersion": "0.2.0"
+    },
+    "@hokulea/theme-moana": {
+      "oldVersion": "0.4.0"
     }
   },
-  "description": "## Release (2025-11-14)\n\n* @hokulea/ember 0.12.0 (minor)\n* @hokulea/core 0.9.0 (minor)\n* @hokulea/tokens 0.2.0 (minor)\n* @hokulea/theme-moana 0.4.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`, `@hokulea/theme-moana`\n  * [#515](https://github.com/hokulea/hokulea/pull/515) New Component: `<Alert>` ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/theme-moana`\n  * [#517](https://github.com/hokulea/hokulea/pull/517) Adjust colors for alert ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-12-14)\n\n* @hokulea/ember 0.13.0 (minor)\n* @hokulea/core 0.9.1 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#539](https://github.com/hokulea/hokulea/pull/539) Export `IconAsset` type ([@gossi](https://github.com/gossi))\n  * [#536](https://github.com/hokulea/hokulea/pull/536) Export `MenuBuilder` type ([@gossi](https://github.com/gossi))\n  * [#522](https://github.com/hokulea/hokulea/pull/522) Display errors for a Form ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#547](https://github.com/hokulea/hokulea/pull/547) More resilient CSS by removing `all: unset` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#535](https://github.com/hokulea/hokulea/pull/535) Fix MenuItem: Don't destroy label when it contains HTML elements ([@gossi](https://github.com/gossi))\n* `@hokulea/core`\n  * [#518](https://github.com/hokulea/hokulea/pull/518) Fix Alert Styling ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

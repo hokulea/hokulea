@@ -95,7 +95,7 @@ class MenuItem extends Component<MenuItemSignature> {
           {{disabled when=(if @disabled @disabled false)}}
           {{p.trigger}}
         >
-          {{~yield to="label"~}}
+          <span>{{~yield to="label"~}}</span>
         </button>
 
         <Menu {{p.target}} as |m|>
@@ -109,7 +109,7 @@ class MenuItem extends Component<MenuItemSignature> {
         {{disabled when=(if @disabled @disabled false)}}
         role="menuitem"
       >
-        {{~yield~}}
+        <span>{{~yield~}}</span>
       </PushElement>
     {{/if}}
   </template>

@@ -4,6 +4,7 @@ import { Importance, Indicator } from '@hokulea/tokens';
 
 import { getIconSvg, listIcons } from '../../-private/stories.ts';
 
+import type { IconAsset } from '../graphics/icon.gts';
 import type { ComponentLike } from '@glint/template';
 
 const iconNames = listIcons();
@@ -14,7 +15,7 @@ export interface AlertSignature<E extends Element = HTMLDivElement> {
     element?: ComponentLike<{ Element: HTMLElement }>;
     indicator?: Indicator;
     importance?: Importance;
-    icon?: string | ComponentLike;
+    icon?: IconAsset;
     title?: string;
   };
   Blocks: {

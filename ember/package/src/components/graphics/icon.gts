@@ -3,6 +3,12 @@ import { htmlSafe } from '@ember/template';
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 
+export type IconAsset =
+  | string
+  | ComponentLike<{
+      Element: SVGElement;
+    }>;
+
 export interface IconSignature {
   Element: HTMLSpanElement;
   Args: {
@@ -11,11 +17,11 @@ export interface IconSignature {
      *
      * Make sure to use `currentColor` to comply with the styling
      */
-    icon: string | ComponentLike;
+    icon: IconAsset;
   };
 }
 
-function isString(icon: string | ComponentLike) {
+function isString(icon: IconAsset) {
   return typeof icon === 'string';
 }
 

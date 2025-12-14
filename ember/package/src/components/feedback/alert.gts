@@ -5,7 +5,7 @@ import { element } from 'ember-element-helper';
 
 import { type Importance, Indicator } from '@hokulea/tokens';
 
-import { Icon } from '../graphics/icon.gts';
+import { Icon, type IconAsset } from '../graphics/icon.gts';
 
 import type { ComponentLike } from '@glint/template';
 
@@ -40,7 +40,7 @@ export interface AlertSignature<E extends Element = HTMLDivElement> {
     element?: ComponentLike<{ Element: HTMLElement }>;
     indicator?: Indicator;
     importance?: Importance;
-    icon?: string | ComponentLike;
+    icon?: IconAsset;
     title?: string;
   };
   Blocks: {
@@ -54,6 +54,7 @@ export interface AlertSignature<E extends Element = HTMLDivElement> {
 export class Alert<E extends Element = HTMLDivElement> extends Component<AlertSignature<E>> {
   get icon() {
     if (this.args.icon) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return this.args.icon;
     }
 

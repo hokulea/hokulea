@@ -39,6 +39,7 @@ export { Form } from './components/form/index.ts';
 
 // graphics
 export { Avatar } from './components/graphics/avatar.gts';
+export type { IconAsset } from './components/graphics/icon.gts';
 export { Icon } from './components/graphics/icon.gts';
 
 // navigation

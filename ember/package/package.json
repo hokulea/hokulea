@@ -147,7 +147,7 @@
     "qunit-dom": "^3.5.0",
     "rollup": "4.54.0",
     "sinon": "^21.0.1",
-    "storybook": "^9.1.16",
+    "storybook": "^9.1.17",
     "stylelint": "16.26.1",
     "testem": "^3.17.0",
     "type-fest": "^5.3.1",

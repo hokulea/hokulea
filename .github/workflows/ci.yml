@@ -12,7 +12,7 @@ jobs:
     name: lint:js
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - run: pnpm run -r --parallel --aggregate-output lint:js
@@ -21,7 +21,7 @@ jobs:
     name: lint:css
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - run: pnpm run -r --parallel --aggregate-output lint:css
@@ -30,7 +30,7 @@ jobs:
     name: lint:hbs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - run: pnpm run -r --parallel --aggregate-output lint:hbs
@@ -39,7 +39,7 @@ jobs:
     name: lint:types
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - run: pnpm run -r --parallel --aggregate-output lint:types
@@ -50,7 +50,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - name: Test
@@ -73,7 +73,7 @@ jobs:
           - SSR
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - name: Try Scenario
@@ -90,7 +90,7 @@ jobs:
       matrix: ${{fromJson(needs.test.outputs.matrix)}}
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup
         uses: ./.github/actions/setup
       - name: Apply Scenario

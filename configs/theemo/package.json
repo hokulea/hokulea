@@ -23,8 +23,8 @@
     "@theemo/cli": "^1.0.2",
     "@theemo/figma": "^1.0.1",
     "@theemo/style-dictionary": "^1.0.1",
-    "eslint": "^9.38.0",
-    "prettier": "^3.6.2"
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4"
   },
   "engines": {
     "node": "^20.11.0 || >=22"

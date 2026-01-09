@@ -163,7 +163,7 @@ importers:
         version: 0.1.0(@babel/core@7.28.5)
       tracked-built-ins:
         specifier: ^4.0.0
-        version: 4.0.0(@babel/core@7.28.5)
+        version: 4.1.0(@babel/core@7.28.5)
     devDependencies:
       '@babel/core':
         specifier: 7.28.5
@@ -566,8 +566,8 @@ importers:
         specifier: 16.26.1
         version: 16.26.1(typescript@5.9.3)
       tracked-built-ins:
-        specifier: 4.0.0
-        version: 4.0.0(@babel/core@7.28.5)
+        specifier: 4.1.0
+        version: 4.1.0(@babel/core@7.28.5)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -10902,8 +10902,8 @@ packages:
   tracked-built-ins@3.4.0:
     resolution: {integrity: sha512-aRwWQXC3VkY50oYxS7wKZiavkjf3uaN+UYUH30D5gxUqbxDN2LnNsfWyDfckmxHUGw4gJDH5lpRS0jX/tim0vw==}
 
-  tracked-built-ins@4.0.0:
-    resolution: {integrity: sha512-0Jl43A1SDZd+yYCJvXfgDSn4Wk/zcawkyFTBPqOETU5UJRngnVEnQ8oOjawqPRg6qja3sKjIQ8z6X9xJzcUTUA==}
+  tracked-built-ins@4.1.0:
+    resolution: {integrity: sha512-v1+jca3sD3LgbAFVsontSONTv7HsZll3yeUB00L6KPwLilFRrY77gvgptDe35fTalk9ea7mmrM2wABD56pTvuw==}
 
   tree-dump@1.0.3:
     resolution: {integrity: sha512-il+Cv80yVHFBwokQSfd4bldvr1Md951DpgAGfmhydt04L+YzHgubm2tQ7zueWDcGENKHq0ZvGFR/hjvNXilHEg==}
@@ -14046,7 +14046,7 @@ snapshots:
       ember-modifier: 4.2.2(@babel/core@7.28.5)
       ember-stargate: 1.0.1(@babel/core@7.28.5)(@glimmer/component@2.0.0)(@glint/template@1.7.3)
       ember-strict-application-resolver: 0.1.0(@babel/core@7.28.5)
-      tracked-built-ins: 4.0.0(@babel/core@7.28.5)
+      tracked-built-ins: 4.1.0(@babel/core@7.28.5)
     optionalDependencies:
       '@ember/test-helpers': 5.4.1(@babel/core@7.28.5)(@glint/template@1.7.3)
       fractal-page-object: 1.0.0
@@ -24691,7 +24691,7 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  tracked-built-ins@4.0.0(@babel/core@7.28.5):
+  tracked-built-ins@4.1.0(@babel/core@7.28.5):
     dependencies:
       '@embroider/addon-shim': 1.10.2
       decorator-transforms: 2.3.0(@babel/core@7.28.5)

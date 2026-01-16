@@ -69,7 +69,7 @@
     "@hokulea/tokens": "workspace:*",
     "@hokulea/ember-pahu": "^0.0.3",
     "decorator-transforms": "^2.3.0",
-    "ember-aria-voyager": "^0.2.4",
+    "ember-aria-voyager": "^0.2.5",
     "ember-stargate": "^1.0.1",
     "ember-strict-application-resolver": "^0.1.0",
     "tracked-built-ins": "^4.0.0"

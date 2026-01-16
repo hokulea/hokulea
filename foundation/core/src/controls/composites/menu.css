@@ -46,7 +46,8 @@
       color: var(--control-disabled-text);
     }
 
-    &:focus {
+    &:focus-visible,
+    &:hover {
       background-color: var(--control-hover-background);
       outline: none;
     }

@@ -145,7 +145,7 @@
     "prettier": "^3.6.2",
     "qunit": "^2.25.0",
     "qunit-dom": "^3.5.0",
-    "rollup": "4.54.0",
+    "rollup": "4.56.0",
     "sinon": "^21.0.1",
     "storybook": "^9.1.17",
     "stylelint": "16.26.1",

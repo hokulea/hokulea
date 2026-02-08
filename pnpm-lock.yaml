@@ -810,8 +810,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3
       markdown-it-highlightjs:
-        specifier: 4.2.0
-        version: 4.2.0
+        specifier: 4.3.0
+        version: 4.3.0
       markdown-it-ins:
         specifier: 4.0.0
         version: 4.0.0
@@ -8675,8 +8675,8 @@ packages:
   markdown-it-ember@0.0.3:
     resolution: {integrity: sha512-S8uYugCl5TY8JrLrChdIciDduyGVB2ogp2SPV3AikyV9gb0F53QQn4FTbKNBuZ8SfEtly1XoUqkWoQ62LLhQwQ==}
 
-  markdown-it-highlightjs@4.2.0:
-    resolution: {integrity: sha512-NC7pXE8KkOl6xWJVRNt8p6wgJVznXKsE0HgYGdk6DD2tn1l4L9f0ALf3VIoGVkotNU1uGQatSxfBF1zZPUMmuQ==}
+  markdown-it-highlightjs@4.3.0:
+    resolution: {integrity: sha512-dTEXpTV2J9WJiO8TA/FJ4DxidrYtTNcfBAdl+CLjQ3UFWj8s4dJyCPTcvoXNLmN5U5ZTCGu7TSkSvBvi4fUqkQ==}
 
   markdown-it-ins@4.0.0:
     resolution: {integrity: sha512-sWbjK2DprrkINE4oYDhHdCijGT+MIDhEupjSHLXe5UXeVr5qmVxs/nTUVtgi0Oh/qtF+QKV0tNWDhQBEPxiMew==}
@@ -22191,7 +22191,7 @@ snapshots:
 
   markdown-it-ember@0.0.3: {}
 
-  markdown-it-highlightjs@4.2.0:
+  markdown-it-highlightjs@4.3.0:
     dependencies:
       highlight.js: 11.9.0
 

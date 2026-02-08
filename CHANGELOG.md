@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2026-02-08)
+
+* @hokulea/ember 0.13.1 (patch)
+* @hokulea/core 0.9.2 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`
+  * [#576](https://github.com/hokulea/hokulea/pull/576) Update aria-voyager to improve menu for mouse handling ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-12-14)
 
 * @hokulea/ember 0.13.0 (minor)

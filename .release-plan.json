@@ -1,15 +1,11 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "minor",
-      "oldVersion": "0.12.0",
-      "newVersion": "0.13.0",
+      "impact": "patch",
+      "oldVersion": "0.13.0",
+      "newVersion": "0.13.1",
       "tagName": "latest",
       "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
@@ -23,8 +19,8 @@
     },
     "@hokulea/core": {
       "impact": "patch",
-      "oldVersion": "0.9.0",
-      "newVersion": "0.9.1",
+      "oldVersion": "0.9.1",
+      "newVersion": "0.9.2",
       "tagName": "latest",
       "constraints": [
         {
@@ -41,5 +37,5 @@
       "oldVersion": "0.4.0"
     }
   },
-  "description": "## Release (2025-12-14)\n\n* @hokulea/ember 0.13.0 (minor)\n* @hokulea/core 0.9.1 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#539](https://github.com/hokulea/hokulea/pull/539) Export `IconAsset` type ([@gossi](https://github.com/gossi))\n  * [#536](https://github.com/hokulea/hokulea/pull/536) Export `MenuBuilder` type ([@gossi](https://github.com/gossi))\n  * [#522](https://github.com/hokulea/hokulea/pull/522) Display errors for a Form ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#547](https://github.com/hokulea/hokulea/pull/547) More resilient CSS by removing `all: unset` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#535](https://github.com/hokulea/hokulea/pull/535) Fix MenuItem: Don't destroy label when it contains HTML elements ([@gossi](https://github.com/gossi))\n* `@hokulea/core`\n  * [#518](https://github.com/hokulea/hokulea/pull/518) Fix Alert Styling ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2026-02-08)\n\n* @hokulea/ember 0.13.1 (patch)\n* @hokulea/core 0.9.2 (patch)\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#576](https://github.com/hokulea/hokulea/pull/576) Update aria-voyager to improve menu for mouse handling ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

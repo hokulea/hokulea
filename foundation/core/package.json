@@ -1,6 +1,6 @@
 {
   "name": "@hokulea/core",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Hokulea generic core layer (CSS + JS)",
   "license": "MIT",
   "author": "Thomas Gossmann",

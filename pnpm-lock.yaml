@@ -801,8 +801,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       markdown-it-custom-block:
-        specifier: 0.1.2
-        version: 0.1.2
+        specifier: 1.0.0
+        version: 1.0.0
       markdown-it-deflist:
         specifier: 3.0.0
         version: 3.0.0
@@ -8665,9 +8665,9 @@ packages:
   markdown-it-compiler@0.1.0:
     resolution: {integrity: sha512-qJsYPtkOk3jk9TV3O1dICgJgOyFrBUNz7/dbZKGUtwSCbETakIXWgSq090ld//hPPtRbv3NrzvKpr6RFv6Qoow==}
 
-  markdown-it-custom-block@0.1.2:
-    resolution: {integrity: sha512-MfsADPwZTWikDW7SY81iNrd7Sm5u9si2Y2lIpKfz9GpfRV2uiNh+/YIhb0zApqmvR0nC/c8MpmsdRTzzs8miMA==}
-    engines: {node: '>= 6.0.0'}
+  markdown-it-custom-block@1.0.0:
+    resolution: {integrity: sha512-FuG/hKf5sEpL/r77lPH9FEIcz/i2doV5ZvMbFmEV25Ge3TYAup9hv1NcfeIodlbr1486YOYPQI7YfFpTO07iow==}
+    engines: {node: '>= 20.0.0'}
 
   markdown-it-deflist@3.0.0:
     resolution: {integrity: sha512-OxPmQ/keJZwbubjiQWOvKLHwpV2wZ5I3Smc81OjhwbfJsjdRrvD5aLTQxmZzzePeO0kbGzAo3Krk4QLgA8PWLg==}
@@ -22185,7 +22185,7 @@ snapshots:
       markdown-it: 10.0.0
       markdown-toc: 1.2.0
 
-  markdown-it-custom-block@0.1.2: {}
+  markdown-it-custom-block@1.0.0: {}
 
   markdown-it-deflist@3.0.0: {}
 

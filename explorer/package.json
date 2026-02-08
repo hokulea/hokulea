@@ -92,7 +92,7 @@
     "eslint-plugin-ember": "^12.7.4",
     "eslint-plugin-qunit": "^8.2.5",
     "eslint-plugin-storybook": "^9.1.16",
-    "loader-utils": "2.0.4",
+    "loader-utils": "3.3.1",
     "loader.js": "4.7.0",
     "markdown-it-abbr": "2.0.0",
     "markdown-it-anchor": "9.2.0",

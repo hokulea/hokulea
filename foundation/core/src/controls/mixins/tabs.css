@@ -1,17 +1,21 @@
+:root {
+    /* stylelint-disable-next-line custom-property-pattern */
+  --🔒-tablist-border: var(--shape-stroke-width) var(--control-border-style) var(--control-border-color);
+  --🔒-tablist-box-shadow-horizontal: 0 1px 0 rgb(0 0 0 / 6%);
+  --🔒-tablist-box-shadow-vertical: 0 1px 0 rgb(0 0 0 / 6%);
+}
+
 @mixin --tablist {
   @apply --scroll-snap-inline;
-
-  /* stylelint-disable-next-line custom-property-pattern */
-  --🔒-tabbar-border: var(--shape-stroke-width) var(--control-border-style) var(--control-border-color);
 
   display: flex;
   flex-direction: row;
   align-items: center;
 
   /* stylelint-disable-next-line custom-property-pattern */
-  border-block-end: var(--🔒-tabbar-border);
+  border-block-end: var(--🔒-tablist-border);
 
-  box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
+  box-shadow: var(--🔒-tablist-box-shadow-horizontal);
 
   &[aria-orientation="vertical"] {
     @apply --scroll-snap-block;
@@ -21,9 +25,9 @@
 
     border-block-end: 0;
     /* stylelint-disable-next-line custom-property-pattern */
-    border-inline-end: var(--🔒-tabbar-border);
+    border-inline-end: var(--🔒-tablist-border);
 
-    box-shadow: 1px 0 0 rgb(0 0 0 / 6%);
+    box-shadow: var(--🔒-tablist-box-shadow-vertical);
   }
 }
 

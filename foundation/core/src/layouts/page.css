@@ -77,7 +77,9 @@
     }
 
     nav {
-      @apply --tablist;
+      --🔒-tablist-border: 0;
+      --🔒-tablist-box-shadow-horizontal: none;
+      --🔒-tablist-box-shadow-vertical: none;
 
       margin-right: calc(var(--spacing-primitive-1) * -1);
       margin-left: calc(var(--spacing-primitive-1) * -1);
@@ -85,19 +87,8 @@
       box-shadow: none;
 
       a {
-        @apply --tab;
-
         &[aria-current="page"] {
           @apply --tab-selected;
-        }
-
-        &:focus-visible  {
-          outline: none;
-
-          span {
-            outline: var(--control-focus-stroke);
-            outline-offset: var(--spacing-primitive-4);
-          }
         }
       }
     }

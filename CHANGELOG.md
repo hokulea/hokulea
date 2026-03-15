@@ -1,5 +1,30 @@
 # Changelog
 
+## Release (2026-03-15)
+
+* @hokulea/ember 0.14.0 (minor)
+* @hokulea/core 0.10.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`
+  * [#602](https://github.com/hokulea/hokulea/pull/602) Use CSS Anchor Positioning ([@gossi](https://github.com/gossi))
+  * [#598](https://github.com/hokulea/hokulea/pull/598) New Component: `<TabNav>` ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`
+  * [#605](https://github.com/hokulea/hokulea/pull/605) Misc fixes ([@gossi](https://github.com/gossi))
+  * [#576](https://github.com/hokulea/hokulea/pull/576) Update aria-voyager to improve menu for mouse handling ([@gossi](https://github.com/gossi))
+* `@hokulea/core`
+  * [#600](https://github.com/hokulea/hokulea/pull/600) fix tabs for sectioned page ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/ember`, `@hokulea/core`
+  * [#605](https://github.com/hokulea/hokulea/pull/605) Misc fixes ([@gossi](https://github.com/gossi))
+  * [#596](https://github.com/hokulea/hokulea/pull/596) Scroll snap for tabs ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-12-14)
 
 * @hokulea/ember 0.13.0 (minor)

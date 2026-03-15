@@ -2,8 +2,33 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.12.0",
-      "newVersion": "0.13.0",
+      "oldVersion": "0.13.0",
+      "newVersion": "0.14.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember/package/package.json"
+    },
+    "@hokulea/core": {
+      "impact": "minor",
+      "oldVersion": "0.9.1",
+      "newVersion": "0.10.0",
       "tagName": "latest",
       "constraints": [
         {
@@ -16,20 +41,7 @@
         },
         {
           "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @hokulea/core"
-        }
-      ],
-      "pkgJSONPath": "./ember/package/package.json"
-    },
-    "@hokulea/core": {
-      "impact": "patch",
-      "oldVersion": "0.9.0",
-      "newVersion": "0.9.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
@@ -41,5 +53,5 @@
       "oldVersion": "0.4.0"
     }
   },
-  "description": "## Release (2025-12-14)\n\n* @hokulea/ember 0.13.0 (minor)\n* @hokulea/core 0.9.1 (patch)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`\n  * [#539](https://github.com/hokulea/hokulea/pull/539) Export `IconAsset` type ([@gossi](https://github.com/gossi))\n  * [#536](https://github.com/hokulea/hokulea/pull/536) Export `MenuBuilder` type ([@gossi](https://github.com/gossi))\n  * [#522](https://github.com/hokulea/hokulea/pull/522) Display errors for a Form ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#547](https://github.com/hokulea/hokulea/pull/547) More resilient CSS by removing `all: unset` ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#535](https://github.com/hokulea/hokulea/pull/535) Fix MenuItem: Don't destroy label when it contains HTML elements ([@gossi](https://github.com/gossi))\n* `@hokulea/core`\n  * [#518](https://github.com/hokulea/hokulea/pull/518) Fix Alert Styling ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2026-03-15)\n\n* @hokulea/ember 0.14.0 (minor)\n* @hokulea/core 0.10.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#602](https://github.com/hokulea/hokulea/pull/602) Use CSS Anchor Positioning ([@gossi](https://github.com/gossi))\n  * [#598](https://github.com/hokulea/hokulea/pull/598) New Component: `<TabNav>` ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`\n  * [#605](https://github.com/hokulea/hokulea/pull/605) Misc fixes ([@gossi](https://github.com/gossi))\n  * [#576](https://github.com/hokulea/hokulea/pull/576) Update aria-voyager to improve menu for mouse handling ([@gossi](https://github.com/gossi))\n* `@hokulea/core`\n  * [#600](https://github.com/hokulea/hokulea/pull/600) fix tabs for sectioned page ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`, `@hokulea/core`\n  * [#605](https://github.com/hokulea/hokulea/pull/605) Misc fixes ([@gossi](https://github.com/gossi))\n  * [#596](https://github.com/hokulea/hokulea/pull/596) Scroll snap for tabs ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

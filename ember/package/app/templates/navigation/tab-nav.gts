@@ -5,6 +5,7 @@ import { Page, TabNav } from '#src';
     <TabNav as |n|>
       <n.Item @href="/actions">Actions</n.Item>
       <n.Item @href="/content">Content</n.Item>
+      <n.Item>Nothing</n.Item>
       <n.Item @href="/data">Data</n.Item>
       <n.Item @href="/navigation">Navigation</n.Item>
       <n.Item @href="/navigation/tab-nav">Tab Nav</n.Item>

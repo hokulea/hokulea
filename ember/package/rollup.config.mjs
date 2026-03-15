@@ -59,6 +59,7 @@ const modules = [
   'components/link.js',
   'components/navigation-list.js',
   'components/pagination.js',
+  'components/tab-nav.js',
 
   // layouts
   'components/page.js',

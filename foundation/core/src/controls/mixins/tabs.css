@@ -1,0 +1,65 @@
+@mixin --tabbar {
+  @apply --scroll-snap-inline;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &[aria-orientation="vertical"] {
+    @apply --scroll-snap-block;
+
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+}
+
+@mixin --tabitem {
+  position: relative;
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  min-width: fit-content;
+  padding: var(--spacing-primitive0) var(--spacing-primitive-1);
+  border: 0;
+
+  color: var(--typography-main);
+  text-decoration: none;
+  text-wrap: nowrap;
+
+  appearance: none;
+  background: 0 0;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    right: var(--spacing-primitive-1);
+    bottom: 0;
+    left: var(--spacing-primitive-1);
+
+    height: 2px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px 1px 0 0;
+  }
+}
+
+@mixin --tabitem-vertical {
+  width: 100%;
+  padding: var(--spacing-primitive-1) var(--spacing-primitive0);
+  padding-inline-start: 0;
+  text-align: start;
+
+  &::after {
+    inset: var(--spacing-primitive-1) 0 var(--spacing-primitive-1) auto;
+    width: 2px;
+    height: auto;
+  }
+}
+
+@mixin --tabitem-selected {
+  color: var(--navigation-links-base);
+
+  &::after {
+    border-color: var(--navigation-links-base);
+  }
+}

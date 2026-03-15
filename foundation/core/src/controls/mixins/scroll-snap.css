@@ -1,0 +1,22 @@
+@mixin --🔒-scroll-snap {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  scrollbar-width: none;
+  overflow: auto;
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}
+
+
+@mixin --scroll-snap-inline {
+  @apply --🔒-scroll-snap;
+
+  scroll-snap-type: inline proximity;
+}
+
+@mixin --scroll-snap-block {
+  @apply --🔒-scroll-snap;
+
+  scroll-snap-type: block proximity;
+}

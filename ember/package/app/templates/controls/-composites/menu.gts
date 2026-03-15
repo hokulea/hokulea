@@ -14,7 +14,7 @@ function noop() {
 
 const DemoMenu: TOC<{ Args: { m: MenuBuilder } }> = <template>
   <@m.Item @push={{noop}}><Icon @icon={{PhHouse}} /> Home</@m.Item>
-  <@m.Item><Icon @icon={{PhIdentificationCard}} />About</@m.Item>
+  <@m.Item><Icon @icon={{PhIdentificationCard}} /> About</@m.Item>
   <@m.Item>
     <:label><Icon @icon={{PhTreeView}} /> Nested</:label>
     <:menu as |nm|>

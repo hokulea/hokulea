@@ -13,7 +13,8 @@ import {
 
 export default class ActionsRoute extends Component {
   @tracked data = {
-    position: 'top'
+    position: 'top',
+    fallback: 'none'
   };
 
   changePosition: FormValidationHandler<typeof this.data> = ({ data }) => {
@@ -36,7 +37,7 @@ export default class ActionsRoute extends Component {
       <Section @title="Popovers">
         <div class="cols">
           <div class="popover-area">
-            {{#let (popover position=this.data.position) as |p|}}
+            {{#let (popover position=this.data.position fallback=this.data.fallback) as |p|}}
               <Button {{p.trigger}}>Hello there</Button>
 
               <Popover {{p.target}}>

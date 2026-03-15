@@ -196,6 +196,7 @@
       "./components/section.js": "./dist/_app_/components/section.js",
       "./components/sectioned-page.js": "./dist/_app_/components/sectioned-page.js",
       "./components/select.js": "./dist/_app_/components/select.js",
+      "./components/tab-nav.js": "./dist/_app_/components/tab-nav.js",
       "./components/tabs.js": "./dist/_app_/components/tabs.js",
       "./components/text-area.js": "./dist/_app_/components/text-area.js",
       "./components/text-input.js": "./dist/_app_/components/text-input.js",

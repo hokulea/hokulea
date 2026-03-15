@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { next } from '@ember/runloop';
 
 import {
   Button,
@@ -67,8 +66,8 @@ export default class ActionsRoute extends Component {
               <c.Option @value="none" @label="none" />
               <c.Option @value="flip-inline" @label="flip-inline" />
               <c.Option @value="flip-block" @label="flip-block" />
+              <c.Option @value="flip-start" @label="flip-start" />
             </f.SingularChoice>
-            {{! <f.Text @label="Custom" @name="position" /> }}
           </Form>
         </div>
       </Section>

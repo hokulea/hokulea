@@ -1,19 +1,33 @@
-@mixin --tabbar {
+@mixin --tablist {
   @apply --scroll-snap-inline;
+
+  /* stylelint-disable-next-line custom-property-pattern */
+  --🔒-tabbar-border: var(--shape-stroke-width) var(--control-border-style) var(--control-border-color);
 
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  /* stylelint-disable-next-line custom-property-pattern */
+  border-block-end: var(--🔒-tabbar-border);
+
+  box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
 
   &[aria-orientation="vertical"] {
     @apply --scroll-snap-block;
 
     flex-direction: column;
     flex-shrink: 0;
+
+    border-block-end: 0;
+    /* stylelint-disable-next-line custom-property-pattern */
+    border-inline-end: var(--🔒-tabbar-border);
+
+    box-shadow: 1px 0 0 rgb(0 0 0 / 6%);
   }
 }
 
-@mixin --tabitem {
+@mixin --tab {
   position: relative;
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   min-width: fit-content;
@@ -43,7 +57,7 @@
   }
 }
 
-@mixin --tabitem-vertical {
+@mixin --tab-vertical {
   width: 100%;
   padding: var(--spacing-primitive-1) var(--spacing-primitive0);
   padding-inline-start: 0;
@@ -56,7 +70,7 @@
   }
 }
 
-@mixin --tabitem-selected {
+@mixin --tab-selected {
   color: var(--navigation-links-base);
 
   &::after {

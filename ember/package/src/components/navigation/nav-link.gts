@@ -21,6 +21,8 @@ interface NavLinkSignature {
 export const NavLink: TOC<NavLinkSignature> = <template>
   <PushElement @push={{@push}} @href={{@href}} part="item" ...attributes>
     <MaybeIcon @icon={{@icon}} />
-    {{yield}}
+    <span>
+      {{yield}}
+    </span>
   </PushElement>
 </template>;

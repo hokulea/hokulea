@@ -77,20 +77,18 @@
     }
 
     nav {
-      @apply --tabbar;
+      @apply --tablist;
 
       margin-right: calc(var(--spacing-primitive-1) * -1);
       margin-left: calc(var(--spacing-primitive-1) * -1);
+      border-block-end: 0;
+      box-shadow: none;
 
       a {
-        @apply --tabitem;
+        @apply --tab;
 
         &[aria-current="page"] {
-          color: var(--navigation-links-base);
-
-          &::after {
-            border-color: var(--navigation-links-base);
-          }
+          @apply --tab-selected;
         }
 
         &:focus-visible  {

@@ -73,7 +73,7 @@
       &:focus-visible {
         outline: none;
 
-        span {
+        & > span {
           outline: var(--control-focus-stroke);
           outline-offset: var(--spacing-primitive-4);
         }
@@ -209,6 +209,10 @@
 
       *:focus-visible {
         outline: var(--control-focus-stroke);
+
+        & > span {
+          outline: none;
+        }
       }
     }
   }

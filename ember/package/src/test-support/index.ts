@@ -27,5 +27,6 @@ export { PillButtonPageObject } from './page-objects/pill-button.ts';
 export { PopoverPageObject } from './page-objects/popover.ts';
 export { SectionPageObject } from './page-objects/section.ts';
 export { SelectPageObject } from './page-objects/select.ts';
+export { TabNavPageObject } from './page-objects/tab-nav.ts';
 export { TabsPageObject } from './page-objects/tabs.ts';
 export { TextAreaPageObject } from './page-objects/text-area.ts';

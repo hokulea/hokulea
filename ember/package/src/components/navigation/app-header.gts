@@ -159,7 +159,7 @@ export class AppHeader extends Component<AppHeaderSignature> {
         <div data-sensing={{this.sensing}} {{this.flipflop}}>
           {{#if (has-block "brand")}}
             <CommandElement @command={{@home}} part="brand" id={{brandId}}>
-              {{yield to="brand"}}
+              <span>{{yield to="brand"}}</span>
             </CommandElement>
           {{/if}}
 

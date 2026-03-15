@@ -3,8 +3,6 @@ import { tracked } from '@glimmer/tracking';
 import { registerDestructor } from '@ember/destroyable';
 import { hash } from '@ember/helper';
 import { next } from '@ember/runloop';
-import { service } from '@ember/service';
-import { htmlSafe } from '@ember/template';
 
 import { ariaMenu } from 'ember-aria-voyager';
 import { TrackedArray } from 'tracked-built-ins';
@@ -16,7 +14,6 @@ import { popover } from '../../helpers/popover.ts';
 import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu.gts';
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
-import type FastBoot from 'ember-cli-fastboot/services/fastboot';
 
 export type MenuDefaultBlock = {
   Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
@@ -87,7 +84,7 @@ class MenuItem extends Component<MenuItemSignature> {
 
   <template>
     {{#if (has-block "menu")}}
-      {{#let (popover position="right-start") as |p|}}
+      {{#let (popover position="right span-bottom" fallback="flip-inline") as |p|}}
         <button
           type="button"
           role="menuitem"
@@ -127,13 +124,7 @@ export interface MenuSignature {
 }
 
 export class Menu extends Component<MenuSignature> {
-  @service declare fastboot?: FastBoot;
-
   @tracked items: MenuItem[] = new TrackedArray();
-
-  get hideInSSR() {
-    return this.fastboot?.isFastBoot;
-  }
 
   registerItem = (item: MenuItem) => {
     // eslint-disable-next-line ember/no-runloop
@@ -150,13 +141,7 @@ export class Menu extends Component<MenuSignature> {
   };
 
   <template>
-    <div
-      class="menu"
-      data-test-menu
-      ...attributes
-      {{ariaMenu items=this.items disabled=@disabled}}
-      style={{if this.hideInSSR (htmlSafe "display: none")}}
-    >
+    <div class="menu" data-test-menu ...attributes {{ariaMenu items=this.items disabled=@disabled}}>
       {{yield
         (hash
           Item=(component

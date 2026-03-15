@@ -13,7 +13,7 @@ import {
 
 export default class ActionsRoute extends Component {
   @tracked data = {
-    position: 'top-start'
+    position: 'top'
   };
 
   changePosition: FormValidationHandler<typeof this.data> = ({ data }) => {
@@ -48,18 +48,25 @@ export default class ActionsRoute extends Component {
           </div>
           <Form @data={{this.data}} @validateOn="input" @validate={{this.changePosition}} as |f|>
             <f.SingularChoice @name="position" @label="Position" as |c|>
-              <c.Option @value="top-start" @label="top-start" />
+              <c.Option @value="top span-right" @label="top span-right" />
               <c.Option @value="top" @label="top" />
-              <c.Option @value="top-end" @label="top-end" />
-              <c.Option @value="right-start" @label="right-start" />
+              <c.Option @value="top span-left" @label="top span-left" />
+              <c.Option @value="right span-bottom" @label="right span-bottom" />
               <c.Option @value="right" @label="right" />
-              <c.Option @value="right-end" @label="right-end" />
-              <c.Option @value="bottom-start" @label="bottom-start" />
+              <c.Option @value="right span-top" @label="right span-top" />
+              <c.Option @value="bottom span-right" @label="bottom span-right" />
               <c.Option @value="bottom" @label="bottom" />
-              <c.Option @value="bottom-end" @label="bottom-end" />
-              <c.Option @value="left-start" @label="left-start" />
+              <c.Option @value="bottom span-left" @label="bottom span-left" />
+              <c.Option @value="left span-bottom" @label="left span-bottom" />
               <c.Option @value="left" @label="left" />
-              <c.Option @value="left-end" @label="left-end" />
+              <c.Option @value="left span-top" @label="left span-top" />
+            </f.SingularChoice>
+
+            <f.SingularChoice @name="fallback" @label="Fallback" as |c|>
+              <c.Option @value="none" @label="none" />
+              <c.Option @value="flip-inline" @label="flip-inline" />
+              <c.Option @value="flip-block" @label="flip-block" />
+              <c.Option @value="flip-start" @label="flip-start" />
             </f.SingularChoice>
           </Form>
         </div>

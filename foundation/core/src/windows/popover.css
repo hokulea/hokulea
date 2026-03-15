@@ -7,3 +7,36 @@
 
   background-color: var(--surface-popover);
 }
+
+[popover][data-position] {
+  position: absolute;
+  inset: auto;
+}
+
+[popover][data-position~="top"] {
+  margin-block-end: var(--popover-distance);
+}
+
+[popover][data-position~="left"] {
+  margin-inline-end: var(--popover-distance);
+}
+
+[popover][data-position~="right"] {
+  margin-inline-start: var(--popover-distance);
+}
+
+[popover][data-position~="bottom"] {
+  margin-block-start: var(--popover-distance);
+}
+
+[popover][data-fallback="flip-inline"] {
+  position-try: flip-inline;
+}
+
+[popover][data-fallback="flip-block"] {
+  position-try: flip-block;
+}
+
+[popover][data-fallback="flip-start"] {
+  position-try: flip-start;
+}

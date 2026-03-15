@@ -2,12 +2,38 @@ import { tracked } from '@glimmer/tracking';
 import { helper } from '@ember/component/helper';
 import { uniqueId } from '@ember/helper';
 
-import { computePosition, flip, type Placement } from '@floating-ui/dom';
 import { modifier } from 'ember-modifier';
 
+import type { PositionArea } from './-position';
+
+type Fallback = 'none' | 'flip-inline' | 'flip-block' | 'flip-start';
+
 interface PopoverArgs {
-  position?: Placement;
+  /**
+   * The position for the popover target.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-area
+   */
+  position?: PositionArea;
+
+  /**
+   * The fallback strategy, when position is not a good fit
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-try
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-try-fallbacks
+   *
+   * @default `none`
+   */
+  fallback?: Fallback;
+
+  /**
+   * Callback, when the popover is opened
+   */
   opened?: () => void;
+
+  /**
+   * Callback, when the popover is closed
+   */
   closed?: () => void;
 }
 
@@ -16,43 +42,36 @@ class State {
   @tracked opened = false;
 }
 
-export const popover = helper((_, { position, opened, closed }: PopoverArgs) => {
+export const popover = helper((_, { position, fallback = 'none', opened, closed }: PopoverArgs) => {
   const state = new State();
-  let triggerElement: HTMLElement | undefined;
   let targetElement: HTMLElement | undefined;
 
   return {
     trigger: modifier((element: HTMLElement) => {
       element.setAttribute('popovertarget', state.id);
-      triggerElement = element;
+      // @ts-expect-error doesn't know that CSS yet
+      element.style.positionAnchor = `--${state.id}`;
     }),
     target: modifier((element: HTMLElement, __, { manual }: { manual?: boolean }) => {
-      element.setAttribute('popover', manual ? 'manual' : '');
-      targetElement = element;
-
       if (element.id) {
         state.id = element.id;
       } else {
         element.id = state.id;
       }
 
+      element.setAttribute('popover', manual ? 'manual' : '');
+      element.dataset.position = position;
+      element.dataset.fallback = fallback;
+      // @ts-expect-error doesn't know that CSS yet
+      element.style.anchorName = `--${state.id}`;
+      // @ts-expect-error doesn't know that CSS yet
+      element.style.positionArea = position;
+      targetElement = element;
+
       const toggleHandler = (event: ToggleEvent) => {
         state.opened = event.newState === 'open';
 
         if (event.newState === 'open') {
-          if (position && triggerElement) {
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            computePosition(triggerElement, element, {
-              placement: position,
-              middleware: [flip()]
-            }).then(({ x, y }): void => {
-              Object.assign(element.style, {
-                left: `${String(x)}px`,
-                top: `${String(y)}px`
-              });
-            });
-          }
-
           opened?.();
         } else if (event.newState === 'closed') {
           closed?.();

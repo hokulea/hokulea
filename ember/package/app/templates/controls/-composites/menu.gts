@@ -39,7 +39,7 @@ const MenuComposite: TOC<object> = <template>
     </p>
 
     <p>
-      {{#let (popover position="bottom-start") as |p|}}
+      {{#let (popover position="bottom span-right" fallback="flip-block") as |p|}}
         <Button {{p.trigger}}>Toggle Menu</Button>
         <Menu {{p.target}} as |m|>
           <m.Item @push={{noop}}><Icon @icon={{PhHouse}} /> Home</m.Item>

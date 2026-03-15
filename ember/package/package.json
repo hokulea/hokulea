@@ -64,7 +64,6 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.10.0",
-    "@floating-ui/dom": "^1.7.1",
     "@hokulea/core": "workspace:*",
     "@hokulea/tokens": "workspace:*",
     "@hokulea/ember-pahu": "^0.0.3",
@@ -123,7 +122,6 @@
     "@types/qunit": "2.19.13",
     "@types/sinon": "^17.0.4",
     "ember-cli-code-coverage": "3.1.0",
-    "ember-cli-fastboot": "4.1.5",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-command": "2.0.8",
     "ember-concurrency": "5.1.0",

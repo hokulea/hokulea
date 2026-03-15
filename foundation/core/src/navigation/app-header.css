@@ -57,7 +57,7 @@
       }
     }
 
-    :is(a,button) {
+    :is(a,button):not([role]) {
       display: inline-flex;
       gap: var(--spacing-primitive-4);
 

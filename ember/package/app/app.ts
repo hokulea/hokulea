@@ -51,6 +51,7 @@ Router.map(function () {
     this.route('list');
     this.route('app-header');
     this.route('pagination');
+    this.route('tab-nav');
   });
   /* eslint-enable @typescript-eslint/no-invalid-this */
 });

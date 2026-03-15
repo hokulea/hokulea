@@ -4,13 +4,12 @@ import { NavLinkPageObject } from './-navigation.ts';
 
 import type { ElementLike } from 'fractal-page-object';
 
-export class NavigationListPageObject extends PageObject<HTMLElement> {
-  static SELECTOR = '[data-test-navigation-list]';
+export class TabNavPageObject extends PageObject<HTMLElement> {
+  static SELECTOR = '[data-test-tab-nav]';
 
   constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
-    super(selector ?? NavigationListPageObject.SELECTOR, parent, index);
+    super(selector ?? TabNavPageObject.SELECTOR, parent, index);
   }
 
   $items = sel('[part="item"]', NavLinkPageObject);
-  $titles = sel<HTMLElement>('[part="title"]');
 }

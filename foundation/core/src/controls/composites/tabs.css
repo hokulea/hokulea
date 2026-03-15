@@ -8,20 +8,13 @@
   }
 
   [role="tablist"] {
-    @apply --tabbar;
-
-    /* stylelint-disable-next-line custom-property-pattern */
-    --_border: var(--shape-stroke-width) var(--control-border-style) var(--control-border-color);
-
-    /* stylelint-disable-next-line custom-property-pattern */
-    border-block-end: var(--_border);
-    box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
+    @apply --tablist;
 
     [role="tab"] {
-      @apply --tabitem;
+      @apply --tab;
 
       &[aria-selected="true"] {
-        @apply --tabitem-selected;
+        @apply --tab-selected;
       }
 
       &:focus-visible  {
@@ -35,13 +28,8 @@
     }
 
     &[aria-orientation="vertical"] {
-      border-block-end: 0;
-      /* stylelint-disable-next-line custom-property-pattern */
-      border-inline-end: var(--_border);
-      box-shadow: 1px 0 0 rgb(0 0 0 / 6%);
-
       [role="tab"] {
-        @apply --tabitem-vertical;
+        @apply --tab-vertical;
       }
     }
 

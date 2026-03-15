@@ -1,9 +1,10 @@
 import { element } from 'ember-element-helper';
 
 import { or } from '../../-private/helpers.ts';
-import { NavLink } from '../navigation/nav-link.gts';
+import TabNav from '../tab-nav.gts';
 import { pageDestructor, pageElement } from './pages.ts';
 
+import type { NavLink } from '../navigation/nav-link.gts';
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 
@@ -49,9 +50,9 @@ export const SectionedPage: TOC<SectionedPageSignature> = <template>
           {{/if}}
 
           {{#if (has-block "nav")}}
-            <nav>
-              {{yield NavLink to="nav"}}
-            </nav>
+            <TabNav as |n|>
+              {{yield n.Item to="nav"}}
+            </TabNav>
           {{/if}}
         </header>
       {{/if}}

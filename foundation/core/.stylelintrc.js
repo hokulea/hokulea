@@ -25,6 +25,8 @@ export default {
       {
         message: (name) => `Expected custom property name "${name}" to be kebab-case`
       }
-    ]
+    ],
+    'nesting-selector-no-missing-scoping-root': [true, { ignoreAtRules: ['mixin'] }],
+    'no-invalid-position-declaration': [true, { ignoreAtRules: ['mixin'] }]
   }
 };

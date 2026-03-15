@@ -60,11 +60,11 @@ body {
   /* Allow percentage-based heights in the application */
   min-block-size: 100%;
 
-  /* Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-
   /* https://marco.org/2012/11/15/text-rendering-optimize-legibility */
   text-rendering: optimizespeed;
+
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter#example_2 */
 

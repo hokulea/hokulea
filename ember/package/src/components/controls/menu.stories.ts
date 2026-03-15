@@ -73,7 +73,7 @@ export const Menu = {
 export const ButtonMenu = {
   render: (args: Args) => ({
     template: hbs`
-      {{#let (popover position='bottom-start') as |p|}}
+      {{#let (popover position='bottom span-right') as |p|}}
         <Button {{p.trigger}}>Open Menu</Button>
         <Menu @disabled={{this.disabled}} {{p.target}} as |m|>
           <m.Item>Rename Symbol</m.Item>

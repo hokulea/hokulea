@@ -64,7 +64,6 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.10.0",
-    "@floating-ui/dom": "^1.7.1",
     "@hokulea/core": "workspace:*",
     "@hokulea/tokens": "workspace:*",
     "@hokulea/ember-pahu": "^0.0.3",

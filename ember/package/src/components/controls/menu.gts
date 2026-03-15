@@ -87,7 +87,7 @@ class MenuItem extends Component<MenuItemSignature> {
 
   <template>
     {{#if (has-block "menu")}}
-      {{#let (popover position="right-start") as |p|}}
+      {{#let (popover position="right span-bottom" fallback="flip-inline") as |p|}}
         <button
           type="button"
           role="menuitem"

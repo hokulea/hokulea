@@ -14,12 +14,12 @@ import { NavLink } from './nav-link.gts';
 
 import type { MenuItemArgs, MenuItemSignature } from '../controls/-menu.gts';
 import type { TOC } from '@ember/component/template-only';
-import type { Placement } from '@floating-ui/dom';
 import type { ComponentLike } from '@glint/template';
+import type { PositionArea } from '#src/helpers/-position.ts';
 
 interface NavItemSignature extends MenuItemSignature {
   Args: MenuItemArgs & {
-    position?: Placement;
+    position?: PositionArea;
   };
 }
 
@@ -27,7 +27,7 @@ const NavItem: TOC<NavItemSignature> = <template>
   {{#if (has-block)}}
     <NavLink @push={{@push}} @href={{@href}}>{{yield}}</NavLink>
   {{else if (and (has-block "menu") (has-block "label"))}}
-    {{#let (popover position=(if @position @position "bottom-start")) as |p|}}
+    {{#let (popover position=(if @position @position "bottom span-right")) as |p|}}
       <button type="button" aria-haspopup="menu" part="item" {{p.trigger}}>
         <span>{{yield to="label"}}</span>
       </button>
@@ -204,7 +204,7 @@ export class AppHeader extends Component<AppHeaderSignature> {
 
                     {{#if (has-block "aux")}}
                       <span part="aux">
-                        {{yield (hash Item=(component NavItem position="top-start")) to="aux"}}
+                        {{yield (hash Item=(component NavItem position="top span-right")) to="aux"}}
                       </span>
                     {{/if}}
                   </div>

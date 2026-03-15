@@ -1,5 +1,6 @@
 .menu:is(:not([popover]),[popover]:popover-open) {
   /* all: unset; */
+  --popover-distance: var(--s-4);
 
   user-select: none;
 
@@ -41,6 +42,7 @@
     border-radius: calc(var(--shape-radius-container) - var(--spacing-container-3) / 2);
 
     color: var(--control-text);
+    text-wrap: nowrap;
 
     &[aria-disabled="disabled"] {
       color: var(--control-disabled-text);

@@ -49,10 +49,8 @@ module('Acceptance | a11y', function (hooks) {
     test('form passes a11y audit after validation', async function (assert) {
       await visit('/forms');
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
       const form = new FormPageObject();
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
       await form.submit();
 
       setRunOptions({

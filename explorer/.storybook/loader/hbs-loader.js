@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable unicorn/prefer-module */
 const { precompile } = require('ember-source/dist/ember-template-compiler');
 
 module.exports = {

@@ -13,7 +13,7 @@ export class SelectPageObject extends PageObject<HTMLSelectElement> {
   }
 
   get spacing(): string | null | undefined {
-    return this.element?.getAttribute('data-spacing');
+    return this.element?.dataset.spacing;
   }
 
   get control() {

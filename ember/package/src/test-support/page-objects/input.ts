@@ -18,7 +18,7 @@ export class InputPageObject extends PageObject<HTMLInputElement> implements Inp
   }
 
   get spacing(): string | null | undefined {
-    return this.element?.getAttribute('data-spacing');
+    return this.element?.dataset.spacing;
   }
 }
 

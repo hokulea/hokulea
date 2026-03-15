@@ -14,15 +14,15 @@ export class ButtonPageObject extends PageObject<
   }
 
   get intent(): string | null | undefined {
-    return this.element?.getAttribute('data-intent');
+    return this.element?.dataset.intent;
   }
 
   get importance(): string | null | undefined {
-    return this.element?.getAttribute('data-importance');
+    return this.element?.dataset.importance;
   }
 
   get spacing(): string | null | undefined {
-    return this.element?.getAttribute('data-spacing');
+    return this.element?.dataset.spacing;
   }
 
   $before = sel<HTMLSpanElement>('[data-test-button="before"]');

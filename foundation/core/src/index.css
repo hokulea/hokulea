@@ -17,8 +17,10 @@ To address this, the mixins are loaded at the top, so they can be used later on.
 
 @import "./foundation/shapes.css";
 @import "./layouts/-mixins.css";
-@import "./controls/control.css";
-@import "./controls/focus.css";
+@import "./controls/mixins/scroll-snap.css";
+@import "./controls/mixins/tabs.css";
+@import "./controls/mixins/control.css";
+@import "./controls/mixins/focus.css";
 
 /* Foundation */
 @import "./foundation/reset.css" layer(reset);

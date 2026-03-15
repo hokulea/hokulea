@@ -7,8 +7,9 @@ export interface Menu<ElementType extends Element = MenuElement> extends PageObj
   $item: MenuItem | undefined;
 }
 
-export interface MenuItem<ElementType extends Element = MenuItemElement>
-  extends PageObject<ElementType> {
+export interface MenuItem<
+  ElementType extends Element = MenuItemElement
+> extends PageObject<ElementType> {
   disabled: boolean;
   expanded: boolean;
   $menu: Menu | undefined;

@@ -14,7 +14,7 @@ import type { ElementLike } from 'fractal-page-object';
 
 export class FieldRule extends PageObject<HTMLParagraphElement> {
   get invalid() {
-    return Boolean(this.element?.getAttribute('data-test-rule-invalid'));
+    return Boolean(this.element?.dataset.testRuleInvalid);
   }
 }
 
@@ -83,6 +83,6 @@ export class FieldPageObject extends PageObject<HTMLDivElement | HTMLFieldSetEle
   }
 
   get name() {
-    return this.element?.getAttribute('data-test-field');
+    return this.element?.dataset.testField;
   }
 }

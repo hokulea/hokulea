@@ -82,7 +82,7 @@ export default {
     },
     icon: {
       name: 'Icon',
-      options: iconNames.sort(),
+      options: iconNames.toSorted(),
       control: 'select'
     }
   }

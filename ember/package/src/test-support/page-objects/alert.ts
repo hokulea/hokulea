@@ -12,11 +12,11 @@ export class AlertPageObject extends PageObject<
   }
 
   get indicator(): string | null | undefined {
-    return this.element?.getAttribute('data-indicator');
+    return this.element?.dataset.indicator;
   }
 
   get importance(): string | null | undefined {
-    return this.element?.getAttribute('data-importance');
+    return this.element?.dataset.importance;
   }
 
   $icon = sel<HTMLSpanElement>('[part="icon"]');

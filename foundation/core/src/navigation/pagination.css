@@ -31,9 +31,8 @@
     }
 
     > input {
-      max-width: 5ch;
-
       field-sizing: content;
+      max-width: 5ch;
     }
   }
 

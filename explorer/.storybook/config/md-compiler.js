@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable unicorn/prefer-module */
 const customBlock = require('markdown-it-custom-block');
 
 module.exports = {

@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable unicorn/prefer-module */
 const { getOptions } = require('loader-utils');
 
 const { compileMarkdown } = require('./md-compiler');

@@ -124,7 +124,7 @@
     "ember-cli-code-coverage": "3.1.0",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-command": "2.0.8",
-    "ember-concurrency": "5.1.0",
+    "ember-concurrency": "5.2.0",
     "ember-element-helper": "^0.8.8",
     "ember-link": "3.5.0",
     "ember-modifier": "4.2.2",

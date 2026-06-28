@@ -158,6 +158,68 @@ module('Rendering | Actions | <IconButton>', (hooks) => {
     /**
      * Re-activate this, when `<CommandElement>` can be disabled itself.
      */
+  module('Pressed', function () {
+    test('it does not have aria-pressed when @pressed is not given', async (assert) => {
+      await render(<template><IconButton @icon={{Acorn}} @label="Pressed" /></template>);
+
+      const button = new IconButtonPageObject();
+
+      assert.dom(button).doesNotHaveAria('pressed');
+    });
+
+    test('it has aria-pressed when @pressed={{true}}', async (assert) => {
+      await render(
+        <template><IconButton @icon={{Acorn}} @label="Pressed" @pressed={{true}} /></template>
+      );
+
+      const button = new IconButtonPageObject();
+
+      assert.dom(button).hasAria('pressed', 'true');
+    });
+
+    test('it does not have aria-pressed when @pressed={{false}}', async (assert) => {
+      await render(
+        <template><IconButton @icon={{Acorn}} @label="Pressed" @pressed={{false}} /></template>
+      );
+
+      const button = new IconButtonPageObject();
+
+      assert.dom(button).doesNotHaveAria('pressed');
+    });
+
+    test('it toggles @pressed from true to false on click', async (assert) => {
+      const push = sinon.spy();
+
+      await render(
+        <template>
+          <IconButton @icon={{Acorn}} @label="Pressed" @push={{push}} @pressed={{true}} />
+        </template>
+      );
+
+      const button = new IconButtonPageObject();
+
+      await button.push();
+
+      assert.ok(push.calledOnceWith(false));
+    });
+
+    test('it toggles @pressed from false to true on click', async (assert) => {
+      const push = sinon.spy();
+
+      await render(
+        <template>
+          <IconButton @icon={{Acorn}} @label="Pressed" @push={{push}} @pressed={{false}} />
+        </template>
+      );
+
+      const button = new IconButtonPageObject();
+
+      await button.push();
+
+      assert.ok(push.calledOnceWith(true));
+    });
+  });
+
     skip('it will not invoke functions when disabled', async (assert) => {
       const push = sinon.spy();
 

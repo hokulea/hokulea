@@ -1,0 +1,38 @@
+.button-group {
+  position: relative;
+  display: flex;
+  gap: 0;
+
+  .button,
+  .icon-button {
+    /* Maybe activate this, when stroke width is too thick in tokens and this here becomes a problem */
+
+    /* margin-inline-start: calc(var(--shape-stroke-width) / 2); */
+    position: relative;
+    border-radius: 0;
+
+    &+&::before {
+      content: "";
+
+      position: absolute;
+      inset-block: calc(var(--shape-stroke-width) * 2 * -1);
+      inset-inline-start: calc(var(--shape-stroke-width) * 2 * -1);
+
+      border-inline-start: var(--shape-stroke);
+    }
+
+    &:is(:hover, :focus) {
+      z-index: 1;
+    }
+
+    &:first-child {
+      border-start-start-radius: var(--shape-radius-primitive);
+      border-end-start-radius: var(--shape-radius-primitive);
+    }
+
+    &:last-child {
+      border-start-end-radius: var(--shape-radius-primitive);
+      border-end-end-radius: var(--shape-radius-primitive);
+    }
+  }
+}

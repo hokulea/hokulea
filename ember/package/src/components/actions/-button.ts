@@ -1,5 +1,6 @@
 import { Link } from 'ember-link';
 
+import type { Importance, Intent, Spacing } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
 
 const LINK_PROPERTIES = [
@@ -43,4 +44,49 @@ export function isLink(commandable?: CommandAction): commandable is Link {
   // https://github.com/gossi/ember-command/issues/23
   // so, there is another duck-type check for the link
   return commandable instanceof Link || LINK_PROPERTIES.every((prop) => props.includes(prop));
+}
+
+export interface ButtonArgs {
+  intent?: Intent;
+  importance?: Importance;
+  spacing?: Spacing;
+  disabled?: boolean;
+}
+
+export interface IconButtonArgs {
+  label: string;
+  /**
+   * A string containing a `<svg>` element.
+   * Make sure to use `currentColor` to comply with the styling
+   */
+  icon: string;
+}
+
+export interface ButtonBlocks {
+  /** The label for the button */
+  default: [];
+
+  /** The label for the button */
+  label: [];
+
+  /** A slot in front of the label */
+  before: [];
+
+  /** A slot after the label */
+  after: [];
+}
+
+export type ToggleFn = (value: boolean) => void;
+
+export interface PressedButtonArgs {
+  push?: ToggleFn;
+  pressed?: boolean;
+}
+
+export function pushOrToggle(push?: ToggleFn | CommandAction, press?: boolean) {
+  if (press !== undefined) {
+    return () => (push as ToggleFn)(!press);
+  }
+
+  return push;
 }

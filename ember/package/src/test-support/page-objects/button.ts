@@ -7,7 +7,7 @@ import type { ElementLike } from 'fractal-page-object';
 export class ButtonPageObject extends PageObject<
   HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement
 > {
-  static SELECTOR = '[data-test-button]';
+  static SELECTOR = '[data-test-button=""]';
 
   constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
     super(selector ?? ButtonPageObject.SELECTOR, parent, index);

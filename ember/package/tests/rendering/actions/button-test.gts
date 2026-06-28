@@ -133,6 +133,56 @@ module('Rendering | Actions | <Button>', function (hooks) {
     });
   });
 
+  module('Pressed', function () {
+    test('it does not have aria-pressed when @pressed is not given', async function (assert) {
+      await render(<template><Button>text</Button></template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button).doesNotHaveAria('pressed');
+    });
+
+    test('it has aria-pressed when @pressed={{true}}', async function (assert) {
+      await render(<template><Button @pressed={{true}}>text</Button></template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button).hasAria('pressed', 'true');
+    });
+
+    test('it does not have aria-pressed when @pressed={{false}}', async function (assert) {
+      await render(<template><Button @pressed={{false}}>text</Button></template>);
+
+      const button = new ButtonPageObject();
+
+      assert.dom(button).doesNotHaveAria('pressed');
+    });
+
+    test('it toggles @pressed from true to false on click', async function (assert) {
+      const push = sinon.spy();
+
+      await render(<template><Button @push={{push}} @pressed={{true}}>Toggle</Button></template>);
+
+      const button = new ButtonPageObject();
+
+      await button.push();
+
+      assert.ok(push.calledOnceWith(false));
+    });
+
+    test('it toggles @pressed from false to true on click', async function (assert) {
+      const push = sinon.spy();
+
+      await render(<template><Button @push={{push}} @pressed={{false}}>Toggle</Button></template>);
+
+      const button = new ButtonPageObject();
+
+      await button.push();
+
+      assert.ok(push.calledOnceWith(true));
+    });
+  });
+
   module('Slots', function () {
     test('it has a before slot', async function (assert) {
       await render(

@@ -1,6 +1,8 @@
 // actions
 export { Button } from './components/actions/button.gts';
+export { ButtonGroup } from './components/actions/button-group.gts';
 export { IconButton } from './components/actions/icon-button.gts';
+export { RadioButtonGroup } from './components/actions/radio-button-group.gts';
 
 // controls
 export type { MenuBuilder } from './components/controls/-menu.gts';

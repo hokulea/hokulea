@@ -1,5 +1,7 @@
 import type { Button } from './components/actions/button.gts';
+import type { ButtonGroup } from './components/actions/button-group.gts';
 import type { IconButton } from './components/actions/icon-button.gts';
+import type { RadioButtonGroup } from './components/actions/radio-button-group.gts';
 import type Avatar from './components/avatar.gts';
 import type { Box } from './components/content/box.gts';
 import type { Card } from './components/content/card.gts';
@@ -38,6 +40,8 @@ export default interface HokuleaRegistry {
   // actions
   Button: typeof Button;
   IconButton: typeof IconButton;
+  ButtonGroup: typeof ButtonGroup;
+  RadioButtonGroup: typeof RadioButtonGroup;
 
   // content
   Box: typeof Box;

@@ -38,6 +38,12 @@
     }
   }
 
+  :is(&[aria-pressed="true"], &[aria-checked="true"]) {
+    border-color: var(--button-active-border);
+    color: var(--button-active-text);
+    background-color: var(--button-active-background);
+  }
+
   &[aria-disabled="true"] {
     border-color: var(--button-disabled-border);
     color: var(--button-disabled-text);

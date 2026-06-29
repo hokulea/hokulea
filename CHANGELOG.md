@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2026-06-29)
+
+* @hokulea/ember 0.15.0 (minor)
+* @hokulea/core 0.11.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`
+  * [#609](https://github.com/hokulea/hokulea/pull/609) Add `<ButtonGroup>` and `<RadioButtonGroup>` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2026-03-15)
 
 * @hokulea/ember 0.14.0 (minor)

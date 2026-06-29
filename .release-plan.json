@@ -1,34 +1,20 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "minor",
-      "oldVersion": "0.14.0",
-      "newVersion": "0.15.0",
+      "impact": "patch",
+      "oldVersion": "0.15.0",
+      "newVersion": "0.15.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
           "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @hokulea/core"
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "impact": "minor",
-      "oldVersion": "0.10.0",
-      "newVersion": "0.11.0",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        }
-      ],
-      "pkgJSONPath": "./foundation/core/package.json"
+      "oldVersion": "0.11.0"
     },
     "@hokulea/tokens": {
       "oldVersion": "0.2.0"
@@ -37,5 +23,5 @@
       "oldVersion": "0.4.0"
     }
   },
-  "description": "## Release (2026-06-29)\n\n* @hokulea/ember 0.15.0 (minor)\n* @hokulea/core 0.11.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#609](https://github.com/hokulea/hokulea/pull/609) Add `<ButtonGroup>` and `<RadioButtonGroup>` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2026-06-29)\n\n* @hokulea/ember 0.15.1 (patch)\n\n#### :house: Internal\n* Other\n  * [#611](https://github.com/hokulea/hokulea/pull/611) Use `@service` over `@inject` for ember v7 ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#610](https://github.com/hokulea/hokulea/pull/610) Update to `ember-stargate` to `v1.0.2` for ember v7 ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

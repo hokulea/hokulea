@@ -2,6 +2,19 @@
 
 ## Release (2026-06-29)
 
+* @hokulea/ember 0.15.1 (patch)
+
+#### :house: Internal
+* Other
+  * [#611](https://github.com/hokulea/hokulea/pull/611) Use `@service` over `@inject` for ember v7 ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#610](https://github.com/hokulea/hokulea/pull/610) Update to `ember-stargate` to `v1.0.2` for ember v7 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2026-06-29)
+
 * @hokulea/ember 0.15.0 (minor)
 * @hokulea/core 0.11.0 (minor)
 

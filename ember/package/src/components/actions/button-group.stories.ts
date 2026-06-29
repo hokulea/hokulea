@@ -14,7 +14,7 @@ export default {
 };
 
 export const Showcase = {
-  render: {
+  render: () => ({
     template: hbs`
       <ButtonGroup @disabled={{this.disabled}}>
         <Button @push={{this.push}}>First</Button>
@@ -25,7 +25,7 @@ export const Showcase = {
     context: {
       push: action('button pushed')
     }
-  }
+  })
 };
 
 export const Stack = {

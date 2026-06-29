@@ -35,7 +35,9 @@ class Router extends EmberRouter {
 
 Router.map(function () {
   /* eslint-disable @typescript-eslint/no-invalid-this */
-  this.route('actions');
+  this.route('actions', function () {
+    this.route('groups');
+  });
   this.route('content');
   this.route('controls', function () {
     this.route('composites');

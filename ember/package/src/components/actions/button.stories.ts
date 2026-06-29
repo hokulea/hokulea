@@ -66,6 +66,10 @@ const baseArgTypes = {
       }
     }
   },
+  pressed: {
+    name: 'Pressed',
+    control: 'boolean'
+  },
   label: {
     name: 'Label',
     control: 'text'

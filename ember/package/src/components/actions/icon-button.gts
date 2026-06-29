@@ -7,24 +7,27 @@ import { and, asBoolean, not } from '../../-private/helpers.ts';
 import disabled from '../../-private/modifiers/disabled.ts';
 import { type PushArgs, PushElement } from '../../-private/push.gts';
 import { Icon } from '../graphics/icon.gts';
-import { isLink } from './-button.ts';
+import {
+  type ButtonArgs,
+  type IconButtonArgs,
+  isLink,
+  type PressedButtonArgs,
+  pushOrToggle,
+  type ToggleFn
+} from './-button.ts';
 
-import type { Importance, Intent, Spacing } from '@hokulea/tokens';
+import type { CommandAction } from 'ember-command';
+import type { Simplify } from 'type-fest';
 
 export interface IconButtonSignature {
   Element: HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement;
-  Args: PushArgs & {
-    intent?: Intent;
-    importance?: Importance;
-    spacing?: Spacing;
-    disabled?: boolean;
-    label: string;
-    /**
-     * A string containing a `<svg>` element.
-     * Make sure to use `currentColor` to comply with the styling
-     */
-    icon: string;
-  };
+  Args: Simplify<
+    Omit<PushArgs, 'push'> &
+      Omit<PressedButtonArgs, 'push'> &
+      ButtonArgs & {
+        push?: ToggleFn | CommandAction;
+      } & IconButtonArgs
+  >;
   Blocks: {
     default: [];
   };
@@ -35,20 +38,21 @@ export class IconButton extends Component<IconButtonSignature> {
     assert(
       'Please provide a `@label` to `<IconButton>` for accessibility reasons.',
 
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       this.args.label !== undefined
     );
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return this.args.label;
   }
 
   <template>
     <PushElement
-      @push={{@push}}
+      @push={{pushOrToggle @push @pressed}}
       @href={{@href}}
       @element={{element "button"}}
       class="icon-button"
       type={{if (and (not (isLink @push)) (not (asBoolean @href))) "button"}}
+      aria-pressed={{if @pressed (if @pressed "true" "false")}}
       data-intent={{if @intent @intent "action"}}
       data-importance={{if @importance @importance "supreme"}}
       data-spacing={{@spacing}}

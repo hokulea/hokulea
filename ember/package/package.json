@@ -10,7 +10,6 @@
   "repository": "https://github.com/hokulea/hokulea",
   "files": [
     "addon-main.cjs",
-    "lib",
     "dist",
     "declarations"
   ],
@@ -68,7 +67,7 @@
     "@hokulea/tokens": "workspace:*",
     "@hokulea/ember-pahu": "^0.0.3",
     "decorator-transforms": "^2.3.0",
-    "ember-aria-voyager": "^0.2.5",
+    "ember-aria-voyager": "^1.2.1",
     "ember-stargate": "^1.0.1",
     "ember-strict-application-resolver": "^0.1.0",
     "tracked-built-ins": "^4.0.0"
@@ -169,6 +168,7 @@
       "./components/app-header.js": "./dist/_app_/components/app-header.js",
       "./components/avatar.js": "./dist/_app_/components/avatar.js",
       "./components/box.js": "./dist/_app_/components/box.js",
+      "./components/button-group.js": "./dist/_app_/components/button-group.js",
       "./components/button.js": "./dist/_app_/components/button.js",
       "./components/card.js": "./dist/_app_/components/card.js",
       "./components/checkbox.js": "./dist/_app_/components/checkbox.js",
@@ -191,6 +191,7 @@
       "./components/password-input.js": "./dist/_app_/components/password-input.js",
       "./components/phone-input.js": "./dist/_app_/components/phone-input.js",
       "./components/popover.js": "./dist/_app_/components/popover.js",
+      "./components/radio-button-group.js": "./dist/_app_/components/radio-button-group.js",
       "./components/radio.js": "./dist/_app_/components/radio.js",
       "./components/range-input.js": "./dist/_app_/components/range-input.js",
       "./components/section.js": "./dist/_app_/components/section.js",

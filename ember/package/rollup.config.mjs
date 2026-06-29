@@ -16,7 +16,9 @@ const configs = {
 const modules = [
   // actions
   'components/button.js',
+  'components/button-group.js',
   'components/icon-button.js',
+  'components/radio-button-group.js',
 
   // content
   'components/box.js',

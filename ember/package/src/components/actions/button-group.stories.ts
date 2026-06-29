@@ -2,19 +2,6 @@ import { hbs } from 'ember-cli-htmlbars';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
-
-// import type { ButtonGroupSignature } from './button-group';
-interface ButtonGroupSignature {
-  Element: HTMLDivElement;
-  Args: {
-    disabled?: boolean;
-  };
-  Blocks: {
-    default: [];
-  };
-}
-
 export default {
   title: 'Components/Actions/ButtonGroup',
   component: 'button-group',
@@ -26,38 +13,19 @@ export default {
   }
 };
 
-type Args = Partial<ButtonGroupSignature['Args']>;
-
-function parseArgs(args: Args): Args {
-  return {
-    ...args,
-    disabled: parseOptionalBooleanArg(args.disabled as boolean | string)
-  };
-}
-
-const Template = (args: Args) => ({
-  template: hbs`
-    <ButtonGroup @disabled={{this.disabled}}>
-      <Button @push={{this.push}}>First</Button>
-      <Button @push={{this.push}}>Second</Button>
-      <Button @push={{this.push}}>Third</Button>
-    </ButtonGroup>
-  `,
-  context: {
-    ...parseArgs(args),
-    push: action('button pushed')
-  }
-});
-
 export const Showcase = {
-  render: Template.bind({}),
-  argTypes: {
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
+  render: {
+    template: hbs`
+      <ButtonGroup @disabled={{this.disabled}}>
+        <Button @push={{this.push}}>First</Button>
+        <Button @push={{this.push}}>Second</Button>
+        <Button @push={{this.push}}>Third</Button>
+      </ButtonGroup>
+    `,
+    context: {
+      push: action('button pushed')
     }
-  },
-  args: {}
+  }
 };
 
 export const Stack = {
@@ -72,16 +40,10 @@ export const Stack = {
           <Button @push={{this.push}}>Third</Button>
         </ButtonGroup>
 
-        <h3>Disabled</h3>
-        <ButtonGroup @disabled={{true}}>
-          <Button @push={{this.push}}>First</Button>
-          <Button @push={{this.push}}>Second</Button>
-          <Button @push={{this.push}}>Third</Button>
-        </ButtonGroup>
 
         <h3>Mixed Intents</h3>
         <ButtonGroup>
-          <Button @push={{this.push}} @intent="action">Action</Button>
+          <Button @push={{this.push}} @intent="alternative">Alternative</Button>
           <Button @push={{this.push}} @intent="danger">Danger</Button>
         </ButtonGroup>
 

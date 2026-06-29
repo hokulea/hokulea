@@ -106,42 +106,4 @@ module('Rendering | Actions | <RadioButtonGroup>', function (hooks) {
       assert.ok(update.calledOnceWith('b'));
     });
   });
-
-  module('Disabled', function () {
-    test('it can be disabled', async function (assert) {
-      await render(
-        <template>
-          <RadioButtonGroup @value="a" @disabled={{true}} as |rg|>
-            <rg.Button @value="a">A</rg.Button>
-          </RadioButtonGroup>
-        </template>
-      );
-
-      const radioButtonGroup = new RadioButtonGroupPageObject();
-
-      assert.dom(radioButtonGroup).hasAria('disabled', 'true');
-    });
-
-    test('it prevents selection when disabled', async function (assert) {
-      const update = sinon.spy();
-
-      await render(
-        <template>
-          <RadioButtonGroup @value="a" @disabled={{true}} @update={{update}} as |rg|>
-            <rg.Button @value="a">A</rg.Button>
-            <rg.Button @value="b">B</rg.Button>
-          </RadioButtonGroup>
-        </template>
-      );
-
-      const radioButtonGroup = new RadioButtonGroupPageObject();
-
-      const radio = radioButtonGroup.$option[1]?.element;
-
-      radio?.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
-      await settled();
-
-      assert.notOk(update.called);
-    });
-  });
 });

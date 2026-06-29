@@ -30,7 +30,7 @@ function parseArgs(args: Args) {
 export const Showcase = {
   render: (args: Args) => ({
     template: hbs`
-      <RadioButtonGroup @value={{this.value}} @update={{this.update}} @disabled={{this.disabled}} as |rg|>
+      <RadioButtonGroup @value={{this.value}} @update={{this.update}} as |rg|>
         <rg.Button @value="left">Left</rg.Button>
         <rg.Button @value="center">Center</rg.Button>
         <rg.Button @value="right">Right</rg.Button>
@@ -47,10 +47,6 @@ export const Showcase = {
       name: 'Value',
       options: ['left', 'center', 'right', 'justify'],
       control: 'radio'
-    },
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
     }
   },
   args: {
@@ -65,14 +61,6 @@ export const Stack = {
       <div style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;">
         <h3>Radio Button Group</h3>
         <RadioButtonGroup @value="center" @update={{this.update}} as |rg|>
-          <rg.Button @value="left">Left</rg.Button>
-          <rg.Button @value="center">Center</rg.Button>
-          <rg.Button @value="right">Right</rg.Button>
-          <rg.Button @value="justified">Justified</rg.Button>
-        </RadioButtonGroup>
-
-        <h3>Disabled</h3>
-        <RadioButtonGroup @value="center" @disabled={{true}} as |rg|>
           <rg.Button @value="left">Left</rg.Button>
           <rg.Button @value="center">Center</rg.Button>
           <rg.Button @value="right">Right</rg.Button>

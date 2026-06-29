@@ -131,7 +131,6 @@ type RadioButtonGroupSignature<V> = {
   Args: {
     value: V;
     update?: (value: V) => void;
-    disabled?: boolean;
   };
   Blocks: {
     default: [
@@ -167,7 +166,7 @@ export class RadioButtonGroup<V> extends Component<RadioButtonGroupSignature<V>>
   };
 
   isChecked = (value: V) => {
-    return !this.args.disabled && this.args.value === value;
+    return this.args.value === value;
   };
 
   select = (value: V) => {
@@ -180,7 +179,7 @@ export class RadioButtonGroup<V> extends Component<RadioButtonGroupSignature<V>>
   <template>
     <div
       class="button-group"
-      {{ariaRadioGroup items=this.items disabled=@disabled selection=@value select=this.select}}
+      {{ariaRadioGroup items=this.items selection=@value select=this.select}}
     >
       {{yield
         (hash

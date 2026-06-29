@@ -2,13 +2,14 @@ import Component from '@glimmer/component';
 import { assert } from '@ember/debug';
 import { registerDestructor } from '@ember/destroyable';
 import { hash } from '@ember/helper';
-import { trackedArray } from '@ember/reactive/collections';
 import { next } from '@ember/runloop';
 
 import { ariaRadioGroup } from 'ember-aria-voyager';
+// at some point this. For compatibility reasons, this isn't used yet
+// import { trackedArray } from '@ember/reactive/collections';
+import { TrackedArray } from 'tracked-built-ins';
 
-import disabled from '#src/-private/modifiers/disabled.ts';
-
+import disabled from '../../-private/modifiers/disabled.ts';
 import { Icon } from '../graphics/icon.gts';
 
 import type { ButtonArgs, ButtonBlocks, IconButtonArgs } from './-button.ts';
@@ -106,8 +107,6 @@ class RadioIconButton<V> extends Component<RadioIconButtonSignature<V>> {
   }
 
   <template>
-    https://github.com/ember-template-lint/ember-template-lint/blob/master/docs/rule/require-presentational-childre
-    n.md
     <button
       type="button"
       role="radio"
@@ -121,6 +120,7 @@ class RadioIconButton<V> extends Component<RadioIconButtonSignature<V>> {
       data-test-icon-button
       ...attributes
     >
+      {{! role="presentation" to make glint happy for no reason }}
       <Icon @icon={{@icon}} role="presentation" data-test-icon-button="icon" />
     </button>
   </template>
@@ -150,7 +150,7 @@ export class RadioButtonGroup<V> extends Component<RadioButtonGroupSignature<V>>
   Button = RadioButton<V>;
   IconButton = RadioIconButton<V>;
 
-  items: V[] = trackedArray();
+  items: V[] = new TrackedArray();
 
   register = (item: V) => {
     // eslint-disable-next-line ember/no-runloop

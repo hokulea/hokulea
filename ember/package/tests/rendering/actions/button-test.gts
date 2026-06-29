@@ -135,7 +135,11 @@ module('Rendering | Actions | <Button>', function (hooks) {
 
   module('Pressed', function () {
     test('it does not have aria-pressed when @pressed is not given', async function (assert) {
-      await render(<template><Button>text</Button></template>);
+      await render(
+        <template>
+          <Button>text</Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -143,7 +147,11 @@ module('Rendering | Actions | <Button>', function (hooks) {
     });
 
     test('it has aria-pressed when @pressed={{true}}', async function (assert) {
-      await render(<template><Button @pressed={{true}}>text</Button></template>);
+      await render(
+        <template>
+          <Button @pressed={{true}}>text</Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -151,7 +159,11 @@ module('Rendering | Actions | <Button>', function (hooks) {
     });
 
     test('it does not have aria-pressed when @pressed={{false}}', async function (assert) {
-      await render(<template><Button @pressed={{false}}>text</Button></template>);
+      await render(
+        <template>
+          <Button @pressed={{false}}>text</Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -161,7 +173,11 @@ module('Rendering | Actions | <Button>', function (hooks) {
     test('it toggles @pressed from true to false on click', async function (assert) {
       const push = sinon.spy();
 
-      await render(<template><Button @push={{push}} @pressed={{true}}>Toggle</Button></template>);
+      await render(
+        <template>
+          <Button @push={{push}} @pressed={{true}}>Toggle</Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 
@@ -173,7 +189,11 @@ module('Rendering | Actions | <Button>', function (hooks) {
     test('it toggles @pressed from false to true on click', async function (assert) {
       const push = sinon.spy();
 
-      await render(<template><Button @push={{push}} @pressed={{false}}>Toggle</Button></template>);
+      await render(
+        <template>
+          <Button @push={{push}} @pressed={{false}}>Toggle</Button>
+        </template>
+      );
 
       const button = new ButtonPageObject();
 

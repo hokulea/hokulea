@@ -153,8 +153,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(@babel/core@7.29.0)(@ember/test-helpers@5.4.1(@babel/core@7.29.0)(@glint/template@1.7.3))(sinon@21.0.2)
       ember-stargate:
-        specifier: ^1.0.1
-        version: 1.0.1(@babel/core@7.29.0)(@glimmer/component@2.0.0)(@glint/template@1.7.3)
+        specifier: ^1.0.2
+        version: 1.0.2(@babel/core@7.29.0)(@glimmer/component@2.0.0)(@glint/template@1.7.3)
       ember-strict-application-resolver:
         specifier: ^0.1.0
         version: 0.1.0(@babel/core@7.29.0)
@@ -6269,8 +6269,8 @@ packages:
     peerDependencies:
       '@glimmer/component': ^2.0.0
 
-  ember-stargate@1.0.1:
-    resolution: {integrity: sha512-wlXzRm/qF5qE1kb6RvVVkS3rWfROwhP+TGGKE8JX4gZ53l2zMAtOA0t3WaX/ueUlRGQkXbd5l54W5uOd4fYFww==}
+  ember-stargate@1.0.2:
+    resolution: {integrity: sha512-tZkctWX0QySv5sTzpajT19OlK0RivQvXxtq+XGXhQJvVdGzKy/7W9MK4RbhpxDbvDrzXOXJSYKZnKrdwJFyrdg==}
     peerDependencies:
       '@glimmer/component': ^2.0.0
 
@@ -11184,9 +11184,6 @@ packages:
     resolution: {integrity: sha512-hdF5ZgjTqgAntKkklYw0R03MG2x/bSzTtkxmIRw/sTNV8YXsCJ1tfLAX23lhxhHJlEf3CRCOCGGWw3vI3GaSPw==}
     engines: {node: '>=18'}
 
-  tracked-built-ins@3.4.0:
-    resolution: {integrity: sha512-aRwWQXC3VkY50oYxS7wKZiavkjf3uaN+UYUH30D5gxUqbxDN2LnNsfWyDfckmxHUGw4gJDH5lpRS0jX/tim0vw==}
-
   tracked-built-ins@4.1.0:
     resolution: {integrity: sha512-v1+jca3sD3LgbAFVsontSONTv7HsZll3yeUB00L6KPwLilFRrY77gvgptDe35fTalk9ea7mmrM2wABD56pTvuw==}
 
@@ -14336,7 +14333,7 @@ snapshots:
       ember-element-helper: 0.8.8
       ember-link: 3.5.0(@babel/core@7.29.0)(@ember/test-helpers@5.4.1(@babel/core@7.29.0)(@glint/template@1.7.3))(@glint/template@1.7.3)
       ember-modifier: 4.2.2(@babel/core@7.29.0)
-      ember-stargate: 1.0.1(@babel/core@7.29.0)(@glimmer/component@2.0.0)(@glint/template@1.7.3)
+      ember-stargate: 1.0.2(@babel/core@7.29.0)(@glimmer/component@2.0.0)(@glint/template@1.7.3)
       ember-strict-application-resolver: 0.1.0(@babel/core@7.29.0)
       tracked-built-ins: 4.1.0(@babel/core@7.29.0)
     optionalDependencies:
@@ -19100,14 +19097,14 @@ snapshots:
       - rsvp
       - supports-color
 
-  ember-stargate@1.0.1(@babel/core@7.29.0)(@glimmer/component@2.0.0)(@glint/template@1.7.3):
+  ember-stargate@1.0.2(@babel/core@7.29.0)(@glimmer/component@2.0.0)(@glint/template@1.7.3):
     dependencies:
       '@embroider/addon-shim': 1.10.2
       '@glimmer/component': 2.0.0
       decorator-transforms: 2.3.0(@babel/core@7.29.0)
       ember-modifier: 4.2.2(@babel/core@7.29.0)
       ember-resources: 7.0.7(@glimmer/component@2.0.0)(@glint/template@1.7.3)
-      tracked-built-ins: 3.4.0(@babel/core@7.29.0)
+      tracked-built-ins: 4.1.0(@babel/core@7.29.0)
     transitivePeerDependencies:
       - '@babel/core'
       - '@glint/template'
@@ -25200,15 +25197,6 @@ snapshots:
   tr46@5.1.1:
     dependencies:
       punycode: 2.3.1
-
-  tracked-built-ins@3.4.0(@babel/core@7.29.0):
-    dependencies:
-      '@embroider/addon-shim': 1.10.2
-      decorator-transforms: 2.3.0(@babel/core@7.29.0)
-      ember-tracked-storage-polyfill: 1.0.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - supports-color
 
   tracked-built-ins@4.1.0(@babel/core@7.29.0):
     dependencies:

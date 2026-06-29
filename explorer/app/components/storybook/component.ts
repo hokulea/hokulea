@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 // eslint-disable-next-line ember/no-classic-components
 import EmberComponent from '@ember/component';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 
 import type Owner from '@ember/owner';
 import type { TheemoService } from 'ember-theemo';

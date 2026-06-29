@@ -106,6 +106,8 @@ class RadioIconButton<V> extends Component<RadioIconButtonSignature<V>> {
   }
 
   <template>
+    https://github.com/ember-template-lint/ember-template-lint/blob/master/docs/rule/require-presentational-childre
+    n.md
     <button
       type="button"
       role="radio"
@@ -119,8 +121,7 @@ class RadioIconButton<V> extends Component<RadioIconButtonSignature<V>> {
       data-test-icon-button
       ...attributes
     >
-      {{! template-lint-disable require-presentational-children }}
-      <Icon @icon={{@icon}} data-test-icon-button="icon" />
+      <Icon @icon={{@icon}} role="presentation" data-test-icon-button="icon" />
     </button>
   </template>
 }

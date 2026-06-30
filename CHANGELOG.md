@@ -2,6 +2,17 @@
 
 ## Release (2026-06-30)
 
+* @hokulea/ember 0.16.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`
+  * [#618](https://github.com/hokulea/hokulea/pull/618) `...attributes` for `<InputBuilder>` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2026-06-30)
+
 * @hokulea/ember 0.16.0 (minor)
 * @hokulea/core 0.12.0 (minor)
 * @hokulea/tokens 0.3.0 (minor)

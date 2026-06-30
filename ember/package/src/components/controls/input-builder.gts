@@ -23,6 +23,7 @@ const Affix: TOC<AffixSignature> = <template>
 </template>;
 
 export interface InputBuilderSignature {
+  Element: HTMLSpanElement;
   Args: ShapeArgs & {
     disabled?: boolean;
   };
@@ -45,6 +46,7 @@ export const InputBuilder: TOC<InputBuilderSignature> = <template>
     data-spacing={{@spacing}}
     data-input-builder
     data-test-input-builder
+    ...attributes
   >
     {{yield
       (hash

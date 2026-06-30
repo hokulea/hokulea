@@ -1,5 +1,24 @@
 # Changelog
 
+## Release (2026-06-30)
+
+* @hokulea/ember 0.16.0 (minor)
+* @hokulea/core 0.12.0 (minor)
+* @hokulea/tokens 0.3.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`
+  * [#617](https://github.com/hokulea/hokulea/pull/617) Adjust spacing and apply baseline styling to button and listitem ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`
+  * [#615](https://github.com/hokulea/hokulea/pull/615) `...attributes` for `<InputBuilder>` Affixes ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`
+  * [#617](https://github.com/hokulea/hokulea/pull/617) Adjust spacing and apply baseline styling to button and listitem ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2026-06-29)
 
 * @hokulea/ember 0.15.1 (patch)

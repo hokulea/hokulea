@@ -38,18 +38,18 @@ import Bike from '~icons/ph/person-simple-bike';
     <Section @title="Button with Icons">
       <p>
         lalala
-        <Button>
+        <Button @spacing="-1">
           <:before><Icon @icon={{ArrowRight}} /></:before>
           <:label>Here</:label>
         </Button>
 
-        <Button @intent="highlight" @spacing="-1">
+        <Button @intent="highlight">
           <:before><Icon @icon={{Unicycle}} /></:before>
           <:label>greater</:label>
           <:after><Icon @icon={{Bike}} /></:after>
         </Button>
 
-        <Button @intent="alternative">
+        <Button @intent="alternative" @spacing="1">
           <:label>Next</:label>
           <:after><Icon @icon={{ArrowRight}} /></:after>
         </Button>

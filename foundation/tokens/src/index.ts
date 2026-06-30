@@ -40,6 +40,7 @@ export type Indicator = (typeof Indicator)[keyof typeof Indicator];
 // Spacing
 
 export const Spacing = {
+  One: '1',
   Zero: '0',
   MinusOne: '-1'
 } as const;

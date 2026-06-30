@@ -1,18 +1,27 @@
 @mixin --spacing-primitive-rectangle {
-  padding-block: var(--spacing-primitive0);
-  padding-inline: var(--spacing-primitive3);
+  padding-block: var(--spacing-primitive-1);
+  padding-inline: var(--spacing-primitive1);
 
   &[data-spacing="-1"] {
-    padding-block: var(--spacing-primitive-1);
+    padding-block: var(--spacing-primitive-2);
+    padding-inline: var(--spacing-primitive0);
+  }
+
+  &[data-spacing="1"] {
+    padding-block: var(--spacing-primitive0);
     padding-inline: var(--spacing-primitive2);
   }
 }
 
 @mixin --spacing-primitive-square {
-  padding: var(--spacing-primitive0);
+  padding: var(--spacing-primitive-1);
 
   &[data-spacing="-1"] {
-    padding: var(--spacing-primitive-1);
+    padding: var(--spacing-primitive-2);
+  }
+
+  &[data-spacing="1"] {
+    padding: var(--spacing-primitive0);
   }
 }
 

@@ -1,6 +1,6 @@
 @mixin --affix {
   display: inline-block;
-  padding-inline: var(--spacing-primitive0);
+  padding-inline: var(--spacing-primitive-1);
   line-height: 1em;
 }
 
@@ -62,6 +62,6 @@
   }
 
   & > * {
-    padding-block: var(--spacing-primitive0);
+    padding-block: var(--spacing-primitive-1); /* @apply --spacing-primitive; for searches */
   }
 }

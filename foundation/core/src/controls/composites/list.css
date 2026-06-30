@@ -19,6 +19,7 @@
   [role="option"] {
     display: inline-flex;
     gap: var(--spacing-primitive-3);
+    align-items: baseline;
 
     padding-block: var(--spacing-primitive-4);
     padding-inline: var(--spacing-primitive-3);

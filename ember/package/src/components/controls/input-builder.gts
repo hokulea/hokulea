@@ -5,6 +5,7 @@ import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
 
 interface AffixSignature {
+  Element: HTMLSpanElement;
   Args: {
     identity: 'prefix' | 'affix' | 'suffix';
   };
@@ -14,7 +15,11 @@ interface AffixSignature {
 }
 
 const Affix: TOC<AffixSignature> = <template>
-  <span class="input-{{@identity}}" data-test-input-builder={{@identity}}>{{yield}}</span>
+  <span
+    class="input-{{@identity}}"
+    data-test-input-builder={{@identity}}
+    ...attributes
+  >{{yield}}</span>
 </template>;
 
 export interface InputBuilderSignature {

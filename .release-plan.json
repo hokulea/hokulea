@@ -1,27 +1,67 @@
 {
   "solution": {
     "@hokulea/ember": {
-      "impact": "patch",
-      "oldVersion": "0.15.0",
-      "newVersion": "0.15.1",
+      "impact": "minor",
+      "oldVersion": "0.15.1",
+      "newVersion": "0.16.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Has dependency `workspace:*` on @hokulea/core"
+        },
+        {
+          "impact": "patch",
+          "reason": "Has dependency `workspace:*` on @hokulea/tokens"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./ember/package/package.json"
     },
     "@hokulea/core": {
-      "oldVersion": "0.11.0"
+      "impact": "minor",
+      "oldVersion": "0.11.0",
+      "newVersion": "0.12.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        }
+      ],
+      "pkgJSONPath": "./foundation/core/package.json"
     },
     "@hokulea/tokens": {
-      "oldVersion": "0.2.0"
+      "impact": "minor",
+      "oldVersion": "0.2.0",
+      "newVersion": "0.3.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        }
+      ],
+      "pkgJSONPath": "./foundation/tokens/package.json"
     },
     "@hokulea/theme-moana": {
       "oldVersion": "0.4.0"
     }
   },
-  "description": "## Release (2026-06-29)\n\n* @hokulea/ember 0.15.1 (patch)\n\n#### :house: Internal\n* Other\n  * [#611](https://github.com/hokulea/hokulea/pull/611) Use `@service` over `@inject` for ember v7 ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#610](https://github.com/hokulea/hokulea/pull/610) Update to `ember-stargate` to `v1.0.2` for ember v7 ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2026-06-30)\n\n* @hokulea/ember 0.16.0 (minor)\n* @hokulea/core 0.12.0 (minor)\n* @hokulea/tokens 0.3.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`\n  * [#617](https://github.com/hokulea/hokulea/pull/617) Adjust spacing and apply baseline styling to button and listitem ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`\n  * [#615](https://github.com/hokulea/hokulea/pull/615) `...attributes` for `<InputBuilder>` Affixes ([@gossi](https://github.com/gossi))\n\n#### :bug: Bug Fix\n* `@hokulea/ember`, `@hokulea/core`, `@hokulea/tokens`\n  * [#617](https://github.com/hokulea/hokulea/pull/617) Adjust spacing and apply baseline styling to button and listitem ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

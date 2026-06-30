@@ -7,7 +7,7 @@
 
   display: inline-flex;
   gap: var(--spacing-primitive-3);
-  align-items: center;
+  align-items: baseline; /* Apparently works better with icons */
   justify-content: center;
 
   border: var(--control-border);

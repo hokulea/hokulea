@@ -15,14 +15,14 @@ export default defineConfig({
   define: {
     __CI__: JSON.stringify(process.env.CI === 'true')
   },
-  resolve: {
-    alias: [
-      {
-        find: '@hokulea/ember',
-        replacement: `${import.meta.dirname}/src`
-      }
-    ]
-  },
+  // resolve: {
+  //   alias: [
+  //     {
+  //       find: '@hokulea/ember',
+  //       replacement: `${import.meta.dirname}/src`
+  //     }
+  //   ]
+  // },
   plugins: [
     ...(isCompat ? [classicEmberSupport()] : []),
     ember(),

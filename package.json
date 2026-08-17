@@ -42,5 +42,8 @@
       "@glimmer/component": "^2.0.0",
       "ember-resources": "7.0.7"
     }
+  },
+  "dependencies": {
+    "ember-storybook": "link:../../ember-integrations/ember-storybook/ember-storybook"
   }
 }

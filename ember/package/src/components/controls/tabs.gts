@@ -108,7 +108,7 @@ class Tab extends Component<TabSignature> {
   </template>
 }
 
-interface TabsSignature {
+export interface TabsSignature {
   Element: HTMLDivElement;
   Args: {
     disabled?: boolean;

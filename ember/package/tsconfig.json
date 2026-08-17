@@ -4,10 +4,12 @@
     "app",
     "src/**/*",
     "tests/**/*",
-    "types/**/*"
+    "types/**/*",
+    ".storybook/**/*"
   ],
   "compilerOptions": {
     "rootDir": ".",
+    "allowImportingTsExtensions": true,
     "paths": {
       "#app/*": [
         "./app/*"

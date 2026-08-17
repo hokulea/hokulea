@@ -11,10 +11,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      ember-storybook:
-        specifier: link:../../ember-integrations/ember-storybook/ember-storybook
-        version: link:../../ember-integrations/ember-storybook/ember-storybook
     devDependencies:
       release-plan:
         specifier: 0.17.4

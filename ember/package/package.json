@@ -46,7 +46,7 @@
     "build-storybook": "storybook build",
     "build": "pnpm run '/^build:.*/'",
     "build:js": "rollup --config",
-    "build:declarations": "ember-tsc --declaration --project tsconfig.publish.json",
+    "_build:declarations": "ember-tsc --declaration --project tsconfig.publish.json",
     "dev": "vite dev",
     "lint": "pnpm run '/^lint:(?!.*(fix)).*$/'",
     "lint:fix": "pnpm run '/^lint:[^:]*:fix/'",

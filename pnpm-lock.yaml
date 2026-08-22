@@ -339,6 +339,12 @@ importers:
       type-fest:
         specifier: ^5.4.4
         version: 5.4.4
+      typedoc:
+        specifier: ^0.28.20
+        version: 0.28.20(typescript@5.9.3)
+      typedoc-plugin-ember:
+        specifier: ^0.0.1
+        version: 0.0.1(typedoc@0.28.20(typescript@5.9.3))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -11894,6 +11900,12 @@ packages:
 
   typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
+
+  typedoc-plugin-ember@0.0.1:
+    resolution: {integrity: sha512-73ydVq/3vZoW/dCo0ufyy5XOYvfbYZNd4fY2W4Po0xC6NpEvPSDCfLiy6LuDPrVWWJ5mOG1rtFpS6SZoXmABnw==}
+    peerDependencies:
+      typedoc: '>=0.28.0'
+      typescript: '>=5.0.0'
 
   typedoc@0.28.20:
     resolution: {integrity: sha512-uSKqkh8Cr48vllnEy+jdaAgOeR6Y+QCBW7usgUsKj7gJEfR7stw9U/fE49LBnj2tPRKPY0c0EBJSWe9Appmplg==}
@@ -26223,6 +26235,12 @@ snapshots:
       reflect.getprototypeof: 1.0.10
 
   typedarray@0.0.6: {}
+
+  typedoc-plugin-ember@0.0.1(typedoc@0.28.20(typescript@5.9.3))(typescript@5.9.3):
+    dependencies:
+      content-tag: 4.1.0
+      typedoc: 0.28.20(typescript@5.9.3)
+      typescript: 5.9.3
 
   typedoc@0.28.20(typescript@5.9.3):
     dependencies:

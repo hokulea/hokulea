@@ -7,3 +7,8 @@ command = "pnpm install --frozen-lockfile && pnpm build:storybook && pnpm --dir 
 from = "/ember/*"
 to = "/ember/:splat"
 status = 200
+
+[[headers]]
+for = "/ember/index.json"
+[headers.values]
+Access-Control-Allow-Origin = "*"

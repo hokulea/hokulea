@@ -64,12 +64,13 @@
   "dependencies": {
     "@embroider/addon-shim": "^1.10.0",
     "@hokulea/core": "workspace:*",
-    "@hokulea/tokens": "workspace:*",
     "@hokulea/ember-pahu": "^0.0.3",
+    "@hokulea/tokens": "workspace:*",
     "decorator-transforms": "^2.3.0",
     "ember-aria-voyager": "^1.2.1",
     "ember-stargate": "^1.0.2",
     "ember-strict-application-resolver": "^0.1.0",
+    "kolay": "^5.4.0",
     "tracked-built-ins": "^4.0.0"
   },
   "peerDependencies": {
@@ -157,7 +158,7 @@
     "edition": "octane"
   },
   "engines": {
-    "node": "^20.11.0 || >=22"
+    "node": ">=24"
   },
   "ember-addon": {
     "version": 2,

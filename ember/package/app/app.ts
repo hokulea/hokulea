@@ -23,10 +23,12 @@ type RenderModifier = ModifierLike<{
 import EmberRouter from '@ember/routing/router';
 
 import EmberApp from 'ember-strict-application-resolver';
+import { addRoutes } from 'kolay';
 
 import '@hokulea/core/style.css';
 
 import { hokuleaRegistry } from '../src/registry';
+import ApplicationRoute from './routes/application';
 
 class Router extends EmberRouter {
   location = 'history';
@@ -55,12 +57,15 @@ Router.map(function () {
     this.route('pagination');
     this.route('tab-nav');
   });
+
+  addRoutes(this);
   /* eslint-enable @typescript-eslint/no-invalid-this */
 });
 
 export default class App extends EmberApp {
   modules = {
     './router': { default: Router },
+    './routes/application': { default: ApplicationRoute },
 
     // ...import.meta.glob('./services/**/*', { eager: true }),
     // ...import.meta.glob('./routes/*', { eager: true }),

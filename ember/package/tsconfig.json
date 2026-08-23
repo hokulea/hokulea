@@ -33,7 +33,8 @@
       "@glint/ember-tsc/types",
       "unplugin-icons/types/ember",
       "vite/client",
-      "@embroider/core/virtual"
+      "@embroider/core/virtual",
+      "kolay/virtual"
     ]
   }
 }

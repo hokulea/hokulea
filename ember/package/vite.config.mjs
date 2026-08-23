@@ -2,6 +2,7 @@ import { classicEmberSupport, ember, extensions } from '@embroider/vite';
 
 import { babel } from '@rollup/plugin-babel';
 import { scopedCSS } from 'ember-scoped-css/vite';
+import { apiDocs, docs } from 'kolay/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vite';
@@ -34,6 +35,8 @@ export default defineConfig({
     theemo({
       defaultTheme: 'moana'
     }),
+    docs('guides', { src: import.meta.resolve('./docs') }),
+    apiDocs(['@hokulea/ember']),
     icons({
       autoInstall: true,
       compiler: 'ember',
@@ -53,5 +56,8 @@ export default defineConfig({
         index: 'index.html'
       }
     }
+  },
+  optimizeDeps: {
+    exclude: ['kolay']
   }
 });

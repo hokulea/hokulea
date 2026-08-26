@@ -135,7 +135,7 @@
     "ember-scoped-css": "^1.1.0",
     "ember-set-helper": "^3.1.0",
     "ember-source": "6.10.0",
-    "ember-storybook": "^0.1.4",
+    "ember-storybook": "^0.1.6",
     "ember-template-imports": "4.4.0",
     "ember-template-lint": "^7.9.3",
     "eslint": "^9.39.4",
@@ -154,8 +154,6 @@
     "testem": "^3.17.0",
     "type-fest": "^5.4.4",
     "typescript": "5.9.3",
-    "typedoc": "^0.28.20",
-    "typedoc-plugin-ember": "^0.0.1",
     "unplugin-icons": "^22.5.0",
     "valibot": "^1.2.0",
     "vite": "^7.3.1"

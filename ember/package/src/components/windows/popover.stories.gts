@@ -11,18 +11,18 @@ export default {
     position: {
       name: 'Position',
       options: [
-        'top-start',
+        'top span-right',
         'top',
-        'top-end',
-        'right-start',
+        'top span-left',
+        'right span-bottom',
         'right',
-        'right-end',
-        'bottom-start',
+        'right span-top',
+        'bottom span-right',
         'bottom',
-        'bottom-end',
-        'left-start',
+        'bottom span-left',
+        'left span-bottom',
         'left',
-        'left-end'
+        'left span-top'
       ],
       control: {
         type: 'radio'

@@ -12,15 +12,12 @@ export default {
   },
   argTypes: {
     title: {
-      name: 'Title',
       control: 'text'
     },
     description: {
-      name: 'Description',
       control: 'text'
     },
     content: {
-      name: 'Content',
       control: 'text'
     }
   }

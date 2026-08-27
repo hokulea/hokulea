@@ -18,7 +18,10 @@ export default {
       control: 'text'
     },
     content: {
-      control: 'text'
+      control: 'text',
+      table: {
+        category: 'Demo'
+      }
     }
   }
 } satisfies Meta;

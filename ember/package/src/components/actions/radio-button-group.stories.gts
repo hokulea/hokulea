@@ -10,7 +10,6 @@ export default {
   component: RadioButtonGroup,
   argTypes: {
     value: {
-      name: 'Value',
       options: ['left', 'center', 'right', 'justify'],
       control: 'radio'
     }

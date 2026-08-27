@@ -33,7 +33,7 @@ export default {
 
 export const Default: StoryObj = {
   render: (args) => <template>
-    <div style="display: grid; width: 100%; height: 100vh; place-items: center;">
+    <div style="display: grid; width: 100%; height: min(100vh, 300px); place-items: center;">
       {{#let (popover position=args.position) as |p|}}
         <Button {{p.trigger}}>Hello there</Button>
 

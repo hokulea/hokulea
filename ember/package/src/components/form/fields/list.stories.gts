@@ -7,7 +7,7 @@ import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
-  title: 'Form/List',
+  title: 'Form/ListField',
   component: Form,
   argTypes: baseArgTypes
 } satisfies Meta;

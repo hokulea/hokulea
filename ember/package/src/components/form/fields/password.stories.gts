@@ -19,7 +19,7 @@ const passwordSchema = v.pipe(
 );
 
 export default {
-  title: 'Form/Password',
+  title: 'Form/PasswordField',
   component: Form,
   argTypes: argTypesWithPlaceholder
 } satisfies Meta;

@@ -11,15 +11,12 @@ import type { InputType } from 'storybook/internal/types';
 const rangeArgTypes: Record<string, InputType> = {
   ...baseArgTypes,
   min: {
-    name: 'min',
     control: 'number'
   },
   max: {
-    name: 'max',
     control: 'number'
   },
   step: {
-    name: 'step',
     control: 'text'
   }
 };
@@ -32,7 +29,7 @@ function parseArgs(args: Args): Args {
 }
 
 export default {
-  title: 'Form/Range',
+  title: 'Form/RangeField',
   component: Form,
   argTypes: rangeArgTypes
 } satisfies Meta;

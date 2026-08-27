@@ -19,7 +19,6 @@ export default {
   component: Icon,
   argTypes: {
     icon: {
-      name: 'Icon',
       options: iconNames.toSorted(),
       control: 'select'
     }

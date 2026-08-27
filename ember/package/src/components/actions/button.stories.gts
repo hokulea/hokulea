@@ -17,7 +17,6 @@ export default {
   component: Button,
   argTypes: {
     intent: {
-      name: 'Intent',
       options: Object.values(Intent),
       control: {
         type: 'radio',
@@ -28,7 +27,6 @@ export default {
       }
     },
     importance: {
-      name: 'Importance',
       options: Object.values(Importance),
       control: {
         type: 'radio',
@@ -40,7 +38,6 @@ export default {
       }
     },
     spacing: {
-      name: 'Spacing',
       options: Object.values(Spacing),
       control: {
         type: 'radio',
@@ -51,15 +48,15 @@ export default {
       }
     },
     pressed: {
-      name: 'Pressed',
       control: 'boolean'
     },
     label: {
-      name: 'Label',
-      control: 'text'
+      control: 'text',
+      table: {
+        category: 'Demo'
+      }
     },
     disabled: {
-      name: 'Disabled',
       control: 'boolean'
     }
   }

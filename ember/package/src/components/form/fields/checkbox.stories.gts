@@ -1,14 +1,15 @@
 import { hash } from '@ember/helper';
 
 import { Form } from '../form.gts';
+import { CheckboxField } from './checkbox.gts';
 import { baseArgTypes, parseArgs } from './stories-utils.ts';
 
 import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
-  title: 'Form/Checkbox',
-  component: Form,
+  title: 'Form/CheckboxField',
+  component: CheckboxField,
   argTypes: baseArgTypes
 } satisfies Meta;
 

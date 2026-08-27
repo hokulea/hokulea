@@ -14,27 +14,22 @@ export interface FieldArgs {
 }
 
 const labelArgType: InputType = {
-  name: 'Label',
   control: 'text'
 };
 
 const descriptionArgType: InputType = {
-  name: 'Description',
   control: 'text'
 };
 
 const disabledArgType: InputType = {
-  name: 'Disabled',
   control: 'boolean'
 };
 
 const requiredArgType: InputType = {
-  name: 'Required',
   control: 'boolean'
 };
 
 const placeholderArgType: InputType = {
-  name: 'Placeholder',
   control: 'text'
 };
 

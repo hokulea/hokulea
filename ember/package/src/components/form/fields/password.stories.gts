@@ -3,6 +3,7 @@ import { hash } from '@ember/helper';
 import * as v from 'valibot';
 
 import { Form } from '../form.gts';
+import { PasswordField } from './password.gts';
 import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
 
 import type { FieldArgs } from './stories-utils.ts';
@@ -20,7 +21,7 @@ const passwordSchema = v.pipe(
 
 export default {
   title: 'Form/PasswordField',
-  component: Form,
+  component: PasswordField,
   argTypes: argTypesWithPlaceholder
 } satisfies Meta;
 

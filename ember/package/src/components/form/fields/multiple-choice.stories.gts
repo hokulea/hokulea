@@ -1,6 +1,7 @@
 import { hash } from '@ember/helper';
 
 import { Form } from '../form.gts';
+import { MultipleChoiceField } from './multiple-choice.gts';
 import { baseArgTypes, parseArgs } from './stories-utils.ts';
 
 import type { FieldArgs } from './stories-utils.ts';
@@ -8,7 +9,7 @@ import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/MultipleChoiceField',
-  component: Form,
+  component: MultipleChoiceField,
   argTypes: baseArgTypes
 } satisfies Meta;
 

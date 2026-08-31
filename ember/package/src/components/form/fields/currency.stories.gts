@@ -1,6 +1,7 @@
 import { hash } from '@ember/helper';
 
 import { Form } from '../form.gts';
+import { CurrencyField } from './currency.gts';
 import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
 
 import type { FieldArgs } from './stories-utils.ts';
@@ -8,7 +9,7 @@ import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/CurrencyField',
-  component: Form,
+  component: CurrencyField,
   argTypes: argTypesWithPlaceholder
 } satisfies Meta;
 

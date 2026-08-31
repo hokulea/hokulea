@@ -2,13 +2,14 @@ import { hash } from '@ember/helper';
 
 import { Form } from '../form.gts';
 import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
+import { TextAreaField } from './text-area.gts';
 
 import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/TextAreaField',
-  component: Form,
+  component: TextAreaField,
   argTypes: argTypesWithPlaceholder
 } satisfies Meta;
 

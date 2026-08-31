@@ -1,6 +1,7 @@
 import { hash } from '@ember/helper';
 
 import { Form } from '../form.gts';
+import { PhoneField } from './phone.gts';
 import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
 
 import type { FieldArgs } from './stories-utils.ts';
@@ -8,7 +9,7 @@ import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/PhoneField',
-  component: Form,
+  component: PhoneField,
   argTypes: argTypesWithPlaceholder
 } satisfies Meta;
 

@@ -1,6 +1,7 @@
 import { hash } from '@ember/helper';
 
 import { Form } from '../form.gts';
+import { RangeField } from './range.gts';
 import { baseArgTypes, parseArgs as _parseArgs } from './stories-utils.ts';
 
 import type { RangeInputSignature } from '../../controls/range-input.gts';
@@ -30,7 +31,7 @@ function parseArgs(args: Args): Args {
 
 export default {
   title: 'Form/RangeField',
-  component: Form,
+  component: RangeField,
   argTypes: rangeArgTypes
 } satisfies Meta;
 

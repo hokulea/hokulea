@@ -1,11 +1,8 @@
-import { Importance, Indicator } from '@hokulea/tokens';
+import { getIconSvg, ICON_ARG_TYPES, IMPORTANCE_ARG_TYPES, INDICATOR_ARG_TYPES } from '#storybook';
 
-import { getIconSvg, listIcons } from '../../-private/stories.ts';
 import { Alert, type AlertSignature } from './alert.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
-
-const iconNames = listIcons();
 
 type AlertArgs = Partial<AlertSignature['Args']> & { content: string };
 
@@ -20,44 +17,14 @@ export default {
   title: 'Feedback/Alert',
   component: Alert,
   argTypes: {
-    indicator: {
-      name: 'Indicator',
-      options: Object.values(Indicator),
-      control: {
-        type: 'radio',
-        labels: {
-          [Indicator.Neutral]: 'neutral (default)',
-          [Indicator.Info]: 'info',
-          [Indicator.Success]: 'success',
-          [Indicator.Warning]: 'warning',
-          [Indicator.Error]: 'error'
-        }
-      }
-    },
-    importance: {
-      name: 'Importance',
-      options: Object.values(Importance),
-      control: {
-        type: 'radio',
-        labels: {
-          [Importance.Supreme]: 'supreme',
-          [Importance.Subtle]: 'subtle (default)',
-          [Importance.Plain]: 'plain'
-        }
-      }
-    },
+    ...INDICATOR_ARG_TYPES,
+    ...IMPORTANCE_ARG_TYPES,
+    ...ICON_ARG_TYPES,
     title: {
-      name: 'Title',
       control: 'text'
     },
     content: {
-      name: 'Content',
       control: 'text'
-    },
-    icon: {
-      name: 'Icon',
-      options: iconNames.toSorted(),
-      control: 'select'
     }
   }
 } satisfies Meta;

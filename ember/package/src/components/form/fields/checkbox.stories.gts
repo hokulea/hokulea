@@ -1,16 +1,16 @@
 import { hash } from '@ember/helper';
 
+import { type FieldArgs, fieldArgTypes, parseFieldArgs } from '#storybook';
+
 import { Form } from '../form.gts';
 import { CheckboxField } from './checkbox.gts';
-import { baseArgTypes, parseArgs } from './stories-utils.ts';
 
-import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/CheckboxField',
   component: CheckboxField,
-  argTypes: baseArgTypes
+  argTypes: fieldArgTypes
 } satisfies Meta;
 
 export const Showcase: StoryObj<FieldArgs> = {
@@ -30,7 +30,7 @@ export const Showcase: StoryObj<FieldArgs> = {
     label: 'I agree to Terms and Conditions'
   },
 
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story(parseFieldArgs(args))]
 };
 
 export const Description: StoryObj = {

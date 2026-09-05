@@ -4,7 +4,7 @@ import { on } from '@ember/modifier';
 
 import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
-import type { Spacing } from '@hokulea/tokens';
+import type { ShapeArgs } from '#src/-private/shapes.ts';
 
 export type Value = string | number;
 
@@ -31,11 +31,10 @@ const Option: TOC<OptionSignature> = <template>
 
 export interface SelectSignature {
   Element: HTMLSelectElement;
-  Args: {
+  Args: ShapeArgs & {
     value?: Value | Value[];
     update?: (value: Value | Value[]) => void;
     disabled?: boolean;
-    spacing?: Spacing;
   };
   Blocks: {
     default: [

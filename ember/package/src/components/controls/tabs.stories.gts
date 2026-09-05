@@ -1,6 +1,7 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import { DISABLED_ARG_TYPE, ORIENTATION_ARG_TYPE, parseOptionalBooleanArg } from '#storybook';
+
 import { Tabs, type TabsSignature } from './tabs.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -9,20 +10,13 @@ export default {
   title: 'Controls/Tabs',
   component: Tabs,
   argTypes: {
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
-    },
-    orientation: {
-      name: 'Orientation',
-      options: ['horizontal', 'vertical'],
-      control: 'radio'
-    },
+    ...DISABLED_ARG_TYPE,
+    ...ORIENTATION_ARG_TYPE,
     selection: {
       table: {
         category: 'Behavior'
       },
-      name: 'Selection',
+      name: 'selection',
       options: ['automatic', 'manual'],
       control: 'radio'
     }

@@ -1,16 +1,16 @@
 import { hash } from '@ember/helper';
 
+import { type FieldArgs, fieldArgTypesWithPlaceholder, parseFieldArgs } from '#storybook';
+
 import { Form } from '../form.gts';
 import { EmailField } from './email.gts';
-import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
 
-import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/EmailField',
   component: EmailField,
-  argTypes: argTypesWithPlaceholder
+  argTypes: fieldArgTypesWithPlaceholder
 } satisfies Meta;
 
 export const Default: StoryObj<FieldArgs> = {
@@ -31,7 +31,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Email'
   },
 
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story(parseFieldArgs(args))]
 };
 
 export const Description: StoryObj = {

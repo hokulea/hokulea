@@ -1,6 +1,12 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import {
+  DISABLED_ARG_TYPE,
+  parseOptionalBooleanArg,
+  PLACEHOLDER_ARG_TYPE,
+  SPACING_ARG_TYPE
+} from '#storybook';
+
 import { TextInput, type TextInputSignature } from './text-input.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -9,17 +15,11 @@ export default {
   title: 'Controls/TextInput',
   component: TextInput,
   argTypes: {
+    ...DISABLED_ARG_TYPE,
+    ...PLACEHOLDER_ARG_TYPE,
+    ...SPACING_ARG_TYPE,
     value: {
-      name: 'Value',
       control: 'text'
-    },
-    placeholder: {
-      name: 'Placeholder',
-      control: 'text'
-    },
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
     }
   }
 } satisfies Meta;

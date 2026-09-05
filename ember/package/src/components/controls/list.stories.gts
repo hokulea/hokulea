@@ -2,7 +2,8 @@ import { array } from '@ember/helper';
 
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import { DISABLED_ARG_TYPE, parseOptionalBooleanArg } from '#storybook';
+
 import { List, type ListSignature } from './list.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -11,13 +12,9 @@ export default {
   title: 'Controls/List',
   component: List,
   argTypes: {
+    ...DISABLED_ARG_TYPE,
     value: {
-      name: 'Value',
       control: 'text'
-    },
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
     }
   }
 } satisfies Meta;

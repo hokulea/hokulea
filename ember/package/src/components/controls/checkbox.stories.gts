@@ -1,6 +1,7 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories';
+import { DISABLED_ARG_TYPE, parseOptionalBooleanArg } from '#storybook';
+
 import { Checkbox, type CheckboxSignature } from './checkbox.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -9,12 +10,8 @@ export default {
   title: 'Controls/Checkbox',
   component: Checkbox,
   argTypes: {
+    ...DISABLED_ARG_TYPE,
     value: {
-      name: 'Checked',
-      control: 'boolean'
-    },
-    disabled: {
-      name: 'Disabled',
       control: 'boolean'
     }
   }

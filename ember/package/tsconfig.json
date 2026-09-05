@@ -20,6 +20,9 @@
       "#src/*": [
         "./src/*"
       ],
+      "#storybook": [
+        "./src/-internal/storybook.ts"
+      ],
       "#test-support": [
         "./src/test-support/index.ts"
       ],

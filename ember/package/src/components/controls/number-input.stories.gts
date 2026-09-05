@@ -1,6 +1,12 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import {
+  DISABLED_ARG_TYPE,
+  parseOptionalBooleanArg,
+  PLACEHOLDER_ARG_TYPE,
+  SPACING_ARG_TYPE
+} from '#storybook';
+
 import { NumberInput, type NumberInputSignature } from './number-input.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -9,17 +15,11 @@ export default {
   title: 'Controls/NumberInput',
   component: NumberInput,
   argTypes: {
+    ...DISABLED_ARG_TYPE,
+    ...PLACEHOLDER_ARG_TYPE,
+    ...SPACING_ARG_TYPE,
     value: {
-      name: 'Value',
       control: 'number'
-    },
-    placeholder: {
-      name: 'Placeholder',
-      control: 'text'
-    },
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
     }
   }
 } satisfies Meta;

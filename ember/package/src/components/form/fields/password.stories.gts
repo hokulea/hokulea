@@ -2,11 +2,11 @@ import { hash } from '@ember/helper';
 
 import * as v from 'valibot';
 
+import { type FieldArgs, fieldArgTypesWithPlaceholder, parseFieldArgs } from '#storybook';
+
 import { Form } from '../form.gts';
 import { PasswordField } from './password.gts';
-import { argTypesWithPlaceholder, parseArgs } from './stories-utils.ts';
 
-import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 const passwordSchema = v.pipe(
@@ -22,7 +22,7 @@ const passwordSchema = v.pipe(
 export default {
   title: 'Form/PasswordField',
   component: PasswordField,
-  argTypes: argTypesWithPlaceholder
+  argTypes: fieldArgTypesWithPlaceholder
 } satisfies Meta;
 
 export const Default: StoryObj<FieldArgs> = {
@@ -43,7 +43,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Your Password'
   },
 
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story(parseFieldArgs(args))]
 };
 
 export const Description: StoryObj = {

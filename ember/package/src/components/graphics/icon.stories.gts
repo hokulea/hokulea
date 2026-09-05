@@ -1,9 +1,8 @@
-import { getIconSvg, listIcons } from '../../-private/stories.ts';
+import { getIconSvg, ICON_ARG_TYPES } from '#storybook';
+
 import { Icon, type IconSignature } from './icon.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
-
-const iconNames = listIcons();
 
 type IconArgs = IconSignature['Args'];
 
@@ -18,15 +17,11 @@ export default {
   title: 'Graphics/Icon',
   component: Icon,
   argTypes: {
-    icon: {
-      options: iconNames.toSorted(),
-      control: 'select'
-    }
+    ...ICON_ARG_TYPES
   }
 } satisfies Meta;
 
 export const Showcase: StoryObj<IconArgs> = {
-  render: (args) => <template><Icon @icon={{args.icon}} /></template>,
   args: {
     icon: 'acorn'
   },

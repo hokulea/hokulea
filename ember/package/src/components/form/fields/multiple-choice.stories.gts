@@ -1,16 +1,16 @@
 import { hash } from '@ember/helper';
 
+import { type FieldArgs, fieldArgTypes, parseFieldArgs } from '#storybook';
+
 import { Form } from '../form.gts';
 import { MultipleChoiceField } from './multiple-choice.gts';
-import { baseArgTypes, parseArgs } from './stories-utils.ts';
 
-import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/MultipleChoiceField',
   component: MultipleChoiceField,
-  argTypes: baseArgTypes
+  argTypes: fieldArgTypes
 } satisfies Meta;
 
 export const Default: StoryObj<FieldArgs> = {
@@ -35,7 +35,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Which Pets do you own?'
   },
 
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story(parseFieldArgs(args))]
 };
 
 export const Description: StoryObj = {

@@ -1,6 +1,7 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import { DISABLED_ARG_TYPE, ORIENTATION_ARG_TYPE, parseOptionalBooleanArg } from '#storybook';
+
 import { RangeInput, type RangeInputSignature } from './range-input.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -9,13 +10,10 @@ export default {
   title: 'Controls/RangeInput',
   component: RangeInput,
   argTypes: {
+    ...DISABLED_ARG_TYPE,
+    ...ORIENTATION_ARG_TYPE,
     value: {
-      name: 'Value',
       control: 'number'
-    },
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
     },
     min: {
       name: 'min',

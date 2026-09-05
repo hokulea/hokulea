@@ -1,6 +1,7 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import { DISABLED_ARG_TYPE, parseOptionalBooleanArg } from '#storybook';
+
 import { Radio, type RadioSignature } from './radio.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -9,12 +10,8 @@ export default {
   title: 'Controls/Radio',
   component: Radio,
   argTypes: {
+    ...DISABLED_ARG_TYPE,
     value: {
-      name: 'Checked',
-      control: 'boolean'
-    },
-    disabled: {
-      name: 'Disabled',
       control: 'boolean'
     }
   }

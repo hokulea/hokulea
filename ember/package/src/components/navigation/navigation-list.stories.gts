@@ -5,10 +5,7 @@ import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Navigation/NavigationList',
-  component: NavigationList,
-  parameters: {
-    layout: 'fullscreen'
-  }
+  component: NavigationList
 } satisfies Meta;
 
 export const Showcase: StoryObj = {

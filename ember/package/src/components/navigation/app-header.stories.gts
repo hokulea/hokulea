@@ -15,7 +15,6 @@ export default {
   component: AppHeader,
   argTypes: {
     position: {
-      name: 'Position',
       options: ['start', 'center', 'end'],
       control: {
         type: 'radio'

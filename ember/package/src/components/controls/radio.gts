@@ -7,7 +7,7 @@ import type { TOC } from '@ember/component/template-only';
 
 export interface RadioSignature {
   Element: HTMLInputElement;
-  Args: InputArgs<boolean>;
+  Args: Omit<InputArgs<boolean>, 'spacing'>;
 }
 
 export const Radio: TOC<RadioSignature> = <template>
@@ -16,7 +16,6 @@ export const Radio: TOC<RadioSignature> = <template>
     type="radio"
     checked={{@value}}
     disabled={{@disabled}}
-    data-spacing={{@spacing}}
     data-test-choice
     {{on "input" (pick "target.checked" @update) capture=true}}
     ...attributes

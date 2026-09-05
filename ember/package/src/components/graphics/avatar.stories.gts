@@ -9,11 +9,9 @@ export default {
   component: Avatar,
   argTypes: {
     src: {
-      name: 'src',
       control: 'text'
     },
     name: {
-      name: 'name',
       control: 'text'
     }
   }

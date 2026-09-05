@@ -1,38 +1,35 @@
 import { hash } from '@ember/helper';
 
+import { type FieldArgs, fieldArgTypes, parseFieldArgs } from '#storybook';
+
 import { Form } from '../form.gts';
 import { RangeField } from './range.gts';
-import { baseArgTypes, parseArgs as _parseArgs } from './stories-utils.ts';
 
 import type { RangeInputSignature } from '../../controls/range-input.gts';
-import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
-import type { InputType } from 'storybook/internal/types';
-
-const rangeArgTypes: Record<string, InputType> = {
-  ...baseArgTypes,
-  min: {
-    control: 'number'
-  },
-  max: {
-    control: 'number'
-  },
-  step: {
-    control: 'text'
-  }
-};
 
 type RangeArgs = Pick<RangeInputSignature['Args'], 'min' | 'max' | 'step'>;
 type Args = FieldArgs & RangeArgs;
 
 function parseArgs(args: Args): Args {
-  return _parseArgs(args) as Args;
+  return parseFieldArgs(args) as Args;
 }
 
 export default {
   title: 'Form/RangeField',
   component: RangeField,
-  argTypes: rangeArgTypes
+  argTypes: {
+    ...fieldArgTypes,
+    min: {
+      control: 'number'
+    },
+    max: {
+      control: 'number'
+    },
+    step: {
+      control: 'text'
+    }
+  }
 } satisfies Meta;
 
 export const Default: StoryObj<Args> = {

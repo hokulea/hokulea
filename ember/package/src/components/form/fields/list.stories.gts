@@ -1,16 +1,16 @@
 import { hash } from '@ember/helper';
 
+import { type FieldArgs, fieldArgTypes, parseFieldArgs } from '#storybook';
+
 import { Form } from '../form.gts';
 import { ListField } from './list.gts';
-import { baseArgTypes, parseArgs } from './stories-utils.ts';
 
-import type { FieldArgs } from './stories-utils.ts';
 import type { Meta, StoryObj } from 'ember-storybook';
 
 export default {
   title: 'Form/ListField',
   component: ListField,
-  argTypes: baseArgTypes
+  argTypes: fieldArgTypes
 } satisfies Meta;
 
 export const Default: StoryObj<FieldArgs> = {
@@ -34,7 +34,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Favorite Fruit'
   },
 
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story(parseFieldArgs(args))]
 };
 
 export const Description: StoryObj = {

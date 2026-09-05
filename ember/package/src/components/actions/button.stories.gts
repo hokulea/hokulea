@@ -1,8 +1,12 @@
 import { action } from 'storybook/actions';
 
-import { parseOptionalBooleanArg } from '#src/-private/stories.ts';
-
-import { Importance, Intent, Spacing } from '@hokulea/tokens';
+import {
+  DISABLED_ARG_TYPE,
+  IMPORTANCE_ARG_TYPES,
+  INTENT_ARG_TYPES,
+  parseOptionalBooleanArg,
+  SPACING_ARG_TYPE
+} from '#storybook';
 
 import { Button, type ButtonSignature } from './button.gts';
 
@@ -16,48 +20,15 @@ export default {
   title: 'Actions/Button',
   component: Button,
   argTypes: {
-    intent: {
-      options: Object.values(Intent),
-      control: {
-        type: 'radio',
-        labels: {
-          [Intent.Action]: 'action (default)',
-          [Intent.Danger]: 'danger'
-        }
-      }
-    },
-    importance: {
-      options: Object.values(Importance),
-      control: {
-        type: 'radio',
-        labels: {
-          [Importance.Supreme]: 'supreme (default)',
-          [Importance.Subtle]: 'subtle',
-          [Importance.Plain]: 'plain'
-        }
-      }
-    },
-    spacing: {
-      options: Object.values(Spacing),
-      control: {
-        type: 'radio',
-        labels: {
-          [Spacing.Zero]: '0 (default)',
-          [Spacing.MinusOne]: '-1'
-        }
-      }
-    },
-    pressed: {
-      control: 'boolean'
-    },
+    ...INTENT_ARG_TYPES,
+    ...IMPORTANCE_ARG_TYPES,
+    ...SPACING_ARG_TYPE,
+    ...DISABLED_ARG_TYPE,
     label: {
       control: 'text',
       table: {
         category: 'Demo'
       }
-    },
-    disabled: {
-      control: 'boolean'
     }
   }
 } satisfies Meta;

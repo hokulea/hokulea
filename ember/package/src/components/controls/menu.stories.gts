@@ -1,4 +1,5 @@
-import { parseOptionalBooleanArg } from '../../-private/stories.ts';
+import { DISABLED_ARG_TYPE, parseOptionalBooleanArg } from '#storybook';
+
 import { popover } from '../../helpers/popover.ts';
 import { Button } from '../actions/button.gts';
 import { Menu, type MenuSignature } from './menu.gts';
@@ -19,10 +20,7 @@ export default {
   title: 'Controls/Menu',
   component: Menu,
   argTypes: {
-    disabled: {
-      name: 'Disabled',
-      control: 'boolean'
-    }
+    ...DISABLED_ARG_TYPE
   },
   // @ts-expect-error huh, what's this?
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument

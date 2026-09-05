@@ -1,0 +1,14 @@
+[build]
+publish = "publish"
+command = "pnpm install --frozen-lockfile && pnpm build:storybook && pnpm --dir ember/package run build-storybook && node scripts/netlify-stage.mjs"
+
+# Serve the Explorer storybook at the site root and the ember package at /ember
+[[redirects]]
+from = "/ember/*"
+to = "/ember/:splat"
+status = 200
+
+[[headers]]
+for = "/ember/index.json"
+[headers.values]
+Access-Control-Allow-Origin = "*"

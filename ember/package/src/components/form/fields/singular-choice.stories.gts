@@ -1,0 +1,76 @@
+import { hash } from '@ember/helper';
+
+import { type FieldArgs, fieldArgTypes, parseFieldArgs } from '#storybook';
+
+import { Form } from '../form.gts';
+import { SingularChoiceField } from './singular-choice.gts';
+
+import type { Meta, StoryObj } from 'ember-storybook';
+
+export default {
+  title: 'Form/SingularChoiceField',
+  component: SingularChoiceField,
+  argTypes: fieldArgTypes
+} satisfies Meta;
+
+export const Default: StoryObj<FieldArgs> = {
+  render: (args) => <template>
+    <Form @data={{hash graduation=undefined}} @submit={{args.submit}} as |f|>
+      <f.SingularChoice
+        @name="graduation"
+        @label={{args.label}}
+        @description={{args.description}}
+        @disabled={{args.disabled}}
+        as |r|
+      >
+        <r.Option @value="doctor" @label="Doktor" required={{args.required}} />
+        <r.Option @value="diploma" @label="Diplom" />
+        <r.Option @value="master" @label="Master" />
+        <r.Option @value="bachelor" @label="Bachelor" />
+        <r.Option @value="apprenticeship" @label="Ausbildung" />
+        <r.Option @value="matura" @label="Abitur" />
+      </f.SingularChoice>
+      <f.Submit>Send</f.Submit>
+    </Form>
+  </template>,
+  args: {
+    label: 'Graduation'
+  },
+
+  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+};
+
+export const Description: StoryObj = {
+  render: () => <template>
+    <Form @data={{hash graduation=""}} as |f|>
+      <f.SingularChoice
+        @name="graduation"
+        @label="Graduation"
+        @description="Which degree have you graduated in?"
+        as |r|
+      >
+        <r.Option @value="doctor" @label="Doktor" required={{true}} />
+        <r.Option @value="diploma" @label="Diplom" />
+        <r.Option @value="master" @label="Master" />
+        <r.Option @value="bachelor" @label="Bachelor" />
+        <r.Option @value="apprenticeship" @label="Ausbildung" />
+        <r.Option @value="matura" @label="Abitur" />
+      </f.SingularChoice>
+    </Form>
+  </template>
+};
+
+export const Disabled: StoryObj = {
+  render: () => <template>
+    <Form @data={{hash graduation=""}} as |f|>
+      <f.SingularChoice @name="graduation" @label="Graduation" @disabled={{true}} as |r|>
+        <r.Option @value="doctor" @label="Doktor" required={{true}} />
+        <r.Option @value="diploma" @label="Diplom" />
+        <r.Option @value="master" @label="Master" />
+        <r.Option @value="bachelor" @label="Bachelor" />
+        <r.Option @value="apprenticeship" @label="Ausbildung" />
+        <r.Option @value="matura" @label="Abitur" />
+      </f.SingularChoice>
+    </Form>
+  </template>
+};

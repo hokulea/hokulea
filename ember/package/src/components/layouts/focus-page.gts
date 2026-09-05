@@ -6,7 +6,7 @@ import { pageDestructor, pageElement } from './pages.ts';
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 
-interface FocusPageSignature {
+export interface FocusPageSignature {
   Element: HTMLElement;
   Args: {
     title?: string;

@@ -8,7 +8,7 @@ import type { NavLink } from '../navigation/nav-link.gts';
 import type { TOC } from '@ember/component/template-only';
 import type { ComponentLike } from '@glint/template';
 
-interface SectionedPageSignature {
+export interface SectionedPageSignature {
   Element: HTMLElement;
   Args: {
     title?: string;

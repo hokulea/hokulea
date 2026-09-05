@@ -126,7 +126,7 @@ class RadioIconButton<V> extends Component<RadioIconButtonSignature<V>> {
   </template>
 }
 
-type RadioButtonGroupSignature<V> = {
+export type RadioButtonGroupSignature<V> = {
   Element: HTMLDivElement;
   Args: {
     value: V;

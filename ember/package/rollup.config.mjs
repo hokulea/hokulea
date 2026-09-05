@@ -2,6 +2,7 @@ import { Addon } from '@embroider/addon-dev/rollup';
 import { resolve } from 'node:path';
 
 import { babel } from '@rollup/plugin-babel';
+import { defineConfig } from 'rollup';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -76,7 +77,7 @@ const modules = [
   'services/-hokulea.js'
 ];
 
-export default {
+export default defineConfig({
   // This provides defaults that work well alongside `publicEntrypoints` below.
   // You can augment this if you need to.
   output: addon.output(),
@@ -149,4 +150,4 @@ export default {
     // Remove leftover build artifacts when starting a new build.
     addon.clean()
   ]
-};
+});

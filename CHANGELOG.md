@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-09-06)
+
+* @hokulea/ember 0.16.2 (patch)
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#623](https://github.com/hokulea/hokulea/pull/623) storybook v10 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2026-06-30)
 
 * @hokulea/ember 0.16.1 (patch)

@@ -7,7 +7,7 @@ import type { TOC } from '@ember/component/template-only';
 
 export interface CheckboxSignature {
   Element: HTMLInputElement;
-  Args: InputArgs<boolean>;
+  Args: Omit<InputArgs<boolean>, 'spacing'>;
 }
 
 export const Checkbox: TOC<CheckboxSignature> = <template>

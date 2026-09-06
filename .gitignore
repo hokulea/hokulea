@@ -4,6 +4,7 @@ dist/
 tmp/
 .next/
 .turbo/
+storybook-static/
 
 # dependencies
 node_modules/

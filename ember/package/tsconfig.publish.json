@@ -6,6 +6,7 @@
   ],
   "exclude": [
     "**/*.stories.ts",
+    "**/*.stories.gts",
     "app"
   ],
   "compilerOptions": {

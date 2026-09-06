@@ -7,6 +7,7 @@ import { pickAsNumber } from './-input.ts';
 
 import type { InputArgs } from './-input.ts';
 import type { TOC } from '@ember/component/template-only';
+import type { Orientation } from 'ember-aria-voyager';
 
 function applyProgressStyle(range: HTMLInputElement, value?: number) {
   const min = Number.parseFloat(range.min) || 0;
@@ -35,7 +36,7 @@ export interface RangeInputSignature {
     min?: number;
     max?: number;
     step?: number | 'any';
-    orientation?: 'horizontal' | 'vertical';
+    orientation?: Orientation;
   };
 }
 

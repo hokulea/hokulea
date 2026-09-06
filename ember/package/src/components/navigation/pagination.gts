@@ -7,7 +7,7 @@ import { NumberInput } from '../controls/number-input.gts';
 import { Select } from '../controls/select.gts';
 import { LABELS, NextIcon, PrevIcon } from './-pagination.ts';
 
-interface PaginationSignature {
+export interface PaginationSignature {
   Element: HTMLElement;
   Args: {
     backwardLabel?: string;

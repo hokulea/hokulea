@@ -15,5 +15,16 @@ export default {
       }
     },
     'no-forbidden-elements': ['meta', 'html', 'script']
-  }
+  },
+
+  overrides: [
+    ...config.overrides,
+    {
+      files: ['src/**/*.stories.gts'],
+      rules: {
+        'no-args-paths': false,
+        'no-inline-styles': false
+      }
+    }
+  ]
 };

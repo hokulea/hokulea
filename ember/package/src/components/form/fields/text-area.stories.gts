@@ -31,7 +31,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Comment'
   },
 
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

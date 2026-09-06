@@ -18,16 +18,15 @@ export default {
   component: Icon,
   argTypes: {
     ...ICON_ARG_TYPES
-  }
-} satisfies Meta;
-
-export const Showcase: StoryObj<IconArgs> = {
+  },
   args: {
     icon: 'acorn'
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  decorators: [(story, { args }) => story(parseArgs(args))]
-};
+  // @ts-expect-error this is before casting
+  decorators: [(story, { args }) => story({ args: parseArgs(args) })]
+} satisfies Meta;
+
+export const Showcase: StoryObj<IconArgs> = {};
 
 export const WithText: StoryObj<IconArgs> = {
   render: (args) => <template>
@@ -35,10 +34,5 @@ export const WithText: StoryObj<IconArgs> = {
       <Icon @icon={{args.icon}} />
       Text next to the icon
     </p>
-  </template>,
-  args: {
-    icon: 'acorn'
-  },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  </template>
 };

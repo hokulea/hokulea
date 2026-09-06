@@ -37,7 +37,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Graduation'
   },
 
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

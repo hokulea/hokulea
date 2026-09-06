@@ -34,5 +34,5 @@ export const Showcase: StoryObj<Args> = {
     update: action('update')
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseArgs(args) })]
 };

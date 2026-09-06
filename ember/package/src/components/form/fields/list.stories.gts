@@ -34,7 +34,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Favorite Fruit'
   },
 
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

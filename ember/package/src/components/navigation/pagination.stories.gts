@@ -9,21 +9,6 @@ type Args = PaginationSignature['Args'];
 export default {
   title: 'Navigation/Pagination',
   component: Pagination,
-  parameters: {
-    layout: 'fullscreen'
-  }
-} satisfies Meta;
-
-export const Showcase: StoryObj<Args> = {
-  render: (args) => <template>
-    <Pagination
-      @pageSize={{args.pageSize}}
-      @pageSizes={{args.pageSizes}}
-      @page={{args.page}}
-      @totalItems={{args.totalItems}}
-      @change={{args.change}}
-    />
-  </template>,
   argTypes: {
     pageSize: {
       control: { type: 'number' }
@@ -38,6 +23,12 @@ export const Showcase: StoryObj<Args> = {
       control: { type: 'number' }
     }
   },
+  parameters: {
+    layout: 'fullscreen'
+  }
+} satisfies Meta;
+
+export const Showcase: StoryObj<Args> = {
   args: {
     pageSize: 10,
     change: action('change')

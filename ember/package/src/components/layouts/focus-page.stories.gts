@@ -20,7 +20,7 @@ export default {
     content: {
       control: 'text',
       table: {
-        category: 'Demo'
+        category: 'Block'
       }
     }
   }

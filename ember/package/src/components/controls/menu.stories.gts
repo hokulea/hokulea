@@ -23,8 +23,7 @@ export default {
     ...DISABLED_ARG_TYPE
   },
   // @ts-expect-error huh, what's this?
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseArgs(args) })]
 } satisfies Meta;
 
 export const M: StoryObj<Args> = {

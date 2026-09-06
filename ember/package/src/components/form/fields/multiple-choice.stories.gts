@@ -35,7 +35,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'Which Pets do you own?'
   },
 
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

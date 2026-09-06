@@ -45,6 +45,5 @@ export const Showcase: StoryObj<IconButtonArgs> = {
     icon: 'acorn',
     push: action('button pushed')
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseArgs(args) })]
 };

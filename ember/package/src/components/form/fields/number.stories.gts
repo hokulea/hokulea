@@ -31,7 +31,7 @@ export const Default: StoryObj<FieldArgs> = {
     label: 'How old are you?'
   },
 
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

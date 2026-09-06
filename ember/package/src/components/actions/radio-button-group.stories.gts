@@ -31,13 +31,16 @@ export const Showcase: StoryObj = {
   }
 };
 
+const leftIcon = getIconSvg('text-align-left') as string;
+const centerIcon = getIconSvg('text-align-center') as string;
+const rightIcon = getIconSvg('text-align-right') as string;
+const justifiedIcon = getIconSvg('text-align-justify') as string;
+
 export const Stack: StoryObj = {
   render: (args) => <template>
-    <div
-      style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;"
-    >
+    <div class="flow">
       <h3>Radio Button Group</h3>
-      <RadioButtonGroup @value="center" @update={{args.update}} as |rg|>
+      <RadioButtonGroup @value={{args.value}} @update={{args.update}} as |rg|>
         <rg.Button @value="left">Left</rg.Button>
         <rg.Button @value="center">Center</rg.Button>
         <rg.Button @value="right">Right</rg.Button>
@@ -45,19 +48,16 @@ export const Stack: StoryObj = {
       </RadioButtonGroup>
 
       <h3>Icon Button Group</h3>
-      <RadioButtonGroup @value="center" @update={{args.update}} as |rg|>
-        <rg.IconButton @value="left" @icon={{args.leftIcon}} @label="Align left" />
-        <rg.IconButton @value="center" @icon={{args.centerIcon}} @label="Align center" />
-        <rg.IconButton @value="right" @icon={{args.rightIcon}} @label="Align right" />
-        <rg.IconButton @value="justified" @icon={{args.justifiedIcon}} @label="Align justified" />
+      <RadioButtonGroup @value={{args.value}} @update={{args.update}} as |rg|>
+        <rg.IconButton @value="left" @icon={{leftIcon}} @label="Align left" />
+        <rg.IconButton @value="center" @icon={{centerIcon}} @label="Align center" />
+        <rg.IconButton @value="right" @icon={{rightIcon}} @label="Align right" />
+        <rg.IconButton @value="justified" @icon={{justifiedIcon}} @label="Align justified" />
       </RadioButtonGroup>
     </div>
   </template>,
   args: {
-    update: action('update'),
-    leftIcon: getIconSvg('text-align-left'),
-    centerIcon: getIconSvg('text-align-center'),
-    rightIcon: getIconSvg('text-align-right'),
-    justifiedIcon: getIconSvg('text-align-justify')
+    value: 'center',
+    update: action('update')
   }
 };

@@ -25,9 +25,7 @@ export const Showcase: StoryObj = {
 
 export const Stack: StoryObj = {
   render: (args) => <template>
-    <div
-      style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;"
-    >
+    <div class="flow">
       <h3>Default</h3>
       <ButtonGroup>
         <Button @push={{args.push}}>First</Button>

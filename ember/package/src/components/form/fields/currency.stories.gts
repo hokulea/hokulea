@@ -30,8 +30,7 @@ export const Default: StoryObj<FieldArgs> = {
   args: {
     label: 'Price'
   },
-
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

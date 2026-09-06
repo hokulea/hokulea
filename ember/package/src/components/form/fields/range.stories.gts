@@ -11,10 +11,6 @@ import type { Meta, StoryObj } from 'ember-storybook';
 type RangeArgs = Pick<RangeInputSignature['Args'], 'min' | 'max' | 'step'>;
 type Args = FieldArgs & RangeArgs;
 
-function parseArgs(args: Args): Args {
-  return parseFieldArgs(args) as Args;
-}
-
 export default {
   title: 'Form/RangeField',
   component: RangeField,
@@ -53,7 +49,7 @@ export const Default: StoryObj<Args> = {
     label: 'How many fruits do you want?'
   },
 
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

@@ -46,6 +46,6 @@ export const Default: StoryObj = {
     </div>
   </template>,
   args: {
-    position: 'top-start'
+    position: 'top span-right'
   }
 };

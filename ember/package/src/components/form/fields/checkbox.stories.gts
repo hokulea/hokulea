@@ -29,8 +29,7 @@ export const Showcase: StoryObj<FieldArgs> = {
   args: {
     label: 'I agree to Terms and Conditions'
   },
-
-  decorators: [(story, { args }) => story(parseFieldArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseFieldArgs(args) })]
 };
 
 export const Description: StoryObj = {

@@ -20,11 +20,11 @@ export default {
     ...INDICATOR_ARG_TYPES,
     ...IMPORTANCE_ARG_TYPES,
     ...ICON_ARG_TYPES,
-    title: {
-      control: 'text'
-    },
     content: {
-      control: 'text'
+      control: 'text',
+      table: {
+        category: 'Block'
+      }
     }
   }
 } satisfies Meta;
@@ -45,5 +45,5 @@ export const Showcase: StoryObj<AlertArgs> = {
     content: 'Your message'
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseArgs(args) })]
 };

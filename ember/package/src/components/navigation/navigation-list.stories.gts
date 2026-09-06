@@ -8,20 +8,17 @@ export default {
   component: NavigationList
 } satisfies Meta;
 
+const dashboard = getIconSvg('chart-line') as string;
+const profile = getIconSvg('user') as string;
+const settings = getIconSvg('gear') as string;
+
 export const Showcase: StoryObj = {
-  render: (args) => <template>
+  render: () => <template>
     <NavigationList as |n|>
-      <n.Item @icon={{args.icons.dashboard}}>Dashboard</n.Item>
+      <n.Item @icon={{dashboard}}>Dashboard</n.Item>
       <n.Title>User</n.Title>
-      <n.Item @icon={{args.icons.profile}}>Profile</n.Item>
-      <n.Item @icon={{args.icons.settings}}>Settings</n.Item>
+      <n.Item @icon={{profile}}>Profile</n.Item>
+      <n.Item @icon={{settings}}>Settings</n.Item>
     </NavigationList>
-  </template>,
-  args: {
-    icons: {
-      dashboard: getIconSvg('chart-line'),
-      profile: getIconSvg('user'),
-      settings: getIconSvg('gear')
-    }
-  }
+  </template>
 };

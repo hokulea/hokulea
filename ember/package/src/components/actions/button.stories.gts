@@ -2,12 +2,15 @@ import { action } from 'storybook/actions';
 
 import {
   DISABLED_ARG_TYPE,
+  getIconSvg,
+  ICON_ARG_TYPES,
   IMPORTANCE_ARG_TYPES,
   INTENT_ARG_TYPES,
   parseOptionalBooleanArg,
   SPACING_ARG_TYPE
 } from '#storybook';
 
+import { Icon } from '../graphics/icon.gts';
 import { Button, type ButtonSignature } from './button.gts';
 
 import type { Meta, StoryObj } from 'ember-storybook';
@@ -27,7 +30,7 @@ export default {
     label: {
       control: 'text',
       table: {
-        category: 'Demo'
+        category: 'Block'
       }
     }
   }
@@ -41,6 +44,13 @@ function parseArgs(args: StoryArgs): StoryArgs {
   };
 }
 
+function parseArgsWithIcon(args: StoryArgs & { icon: string }): StoryArgs & { icon: string } {
+  return {
+    ...parseArgs(args),
+    icon: getIconSvg(args.icon as string) as string
+  };
+}
+
 export const Showcase: StoryObj<StoryArgs> = {
   render: (args) => <template>
     <Button
@@ -49,6 +59,7 @@ export const Showcase: StoryObj<StoryArgs> = {
       @importance={{args.importance}}
       @spacing={{args.spacing}}
       @disabled={{args.disabled}}
+      @pressed={{args.pressed}}
     >
       {{args.label}}
     </Button>
@@ -67,13 +78,34 @@ export const Showcase: StoryObj<StoryArgs> = {
     ]
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
-  decorators: [(story, { args }) => story(parseArgs(args))]
+  decorators: [(story, { args }) => story({ args: parseArgs(args) })]
+};
+
+export const WithIcon: StoryObj = {
+  render: (args) => <template>
+    <Button>
+      <:before>
+        <Icon @icon={{args.icon}} />
+      </:before>
+      <:label>
+        Label
+      </:label>
+    </Button>
+  </template>,
+  argTypes: {
+    ...ICON_ARG_TYPES
+  },
+  args: {
+    icon: 'acorn'
+  },
+  // @ts-expect-error some types are confused
+  decorators: [(story, { args }) => story({ args: parseArgsWithIcon(args) })]
 };
 
 export const Stack: StoryObj = {
   render: () => <template>
     <div
-      style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-gap-block-1); margin: auto;"
+      style="display: flex; width: 50%; flex-direction: column; gap: var(--spacing-container-1); margin: auto;"
     >
       <Button @importance="supreme">
         Supreme

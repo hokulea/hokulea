@@ -28,11 +28,11 @@
     "@hokulea/tokens": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "7.29.0",
-    "@babel/eslint-parser": "7.28.6",
+    "@babel/core": "7.29.7",
+    "@babel/eslint-parser": "7.29.9",
     "@babel/plugin-proposal-class-properties": "7.18.6",
-    "@babel/plugin-proposal-decorators": "7.29.0",
-    "@babel/preset-typescript": "7.28.5",
+    "@babel/plugin-proposal-decorators": "7.29.7",
+    "@babel/preset-typescript": "7.29.7",
     "@chromatic-com/storybook": "4.1.3",
     "@ember/optional-features": "2.3.0",
     "@ember/string": "4.0.1",

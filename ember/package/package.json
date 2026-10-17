@@ -123,7 +123,7 @@
     "@storybook/addon-docs": "^10.5.10",
     "@theemo/ember": "^1.0.1",
     "@theemo/vite": "^1.0.1",
-    "@types/qunit": "2.19.13",
+    "@types/qunit": "2.19.14",
     "@types/sinon": "^17.0.4",
     "ember-cli-code-coverage": "3.1.0",
     "ember-cli-htmlbars": "^6.3.0",

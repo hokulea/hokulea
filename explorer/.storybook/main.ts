@@ -21,7 +21,7 @@ const config: StorybookConfig = {
     '../app/**/*.stories.ts',
     '../../documentation/**/*.md',
     // '../../api/*.md',
-    '../../ember/package/src/**/*.stories.ts'
+    '../../ember/src/**/*.stories.ts'
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-designs', '@chromatic-com/storybook'],
   framework: {

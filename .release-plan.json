@@ -11,7 +11,7 @@
           "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
-      "pkgJSONPath": "./ember/package/package.json"
+      "pkgJSONPath": "./ember/package.json"
     },
     "@hokulea/core": {
       "oldVersion": "0.14.0"

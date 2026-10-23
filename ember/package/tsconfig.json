@@ -10,7 +10,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "allowImportingTsExtensions": true,
-    "lib": ["es2025", "esnext"],
+    "lib": ["esnext", "dom", "dom.iterable", "webworker.importscripts", "scripthost"],
     "paths": {
       "#app/*": [
         "./app/*"

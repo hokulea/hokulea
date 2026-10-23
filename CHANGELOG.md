@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2026-10-23)
+
+* @hokulea/ember 0.17.0 (minor)
+* @hokulea/core 0.13.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`
+  * [#628](https://github.com/hokulea/hokulea/pull/628) Add check and radio menu items ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#623](https://github.com/hokulea/hokulea/pull/623) storybook v10 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2026-06-30)
 
 * @hokulea/ember 0.16.1 (patch)

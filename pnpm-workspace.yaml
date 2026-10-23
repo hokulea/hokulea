@@ -2,5 +2,5 @@ packages:
   - configs/*
   - foundation/*
   - explorer
-  - ember/*
+  - ember
   - themes/*

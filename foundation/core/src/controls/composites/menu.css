@@ -28,14 +28,14 @@
     background-color: var(--control-border-color);
   }
 
-  [role="menuitem"] {
+  :where([role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"]) {
     all: unset;
 
     cursor: default;
 
     display: inline-flex;
+    grid-template-columns: subgrid;
     gap: var(--spacing-primitive-3);
-    justify-content: space-between;
 
     padding-block: var(--spacing-primitive-4);
     padding-inline: var(--spacing-primitive-3);
@@ -59,16 +59,54 @@
 
       content: '';
 
-      display: block;
       align-self: center;
 
       width: 1rem;
       height: 1rem;
+      margin-inline-start: auto;
 
       background: currentcolor;
 
       mask: var(--chevron-right) center center / 100% auto no-repeat;
     }
+  }
+
+  [role="menuitemcheckbox"] {
+    --checkmark: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m40 144 56 56L224 72"/></svg>');
+  }
+
+  [role="menuitemradio"] {
+    --checkmark: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path d="M0 0h15v15H0z" fill="none" /><path fill="currentColor" d="M4.5 7.5a3 3 0 1 0 6 0a3 3 0 1 0-6 0" /></svg>');
+  }
+
+  :is([role="menuitemcheckbox"], [role="menuitemradio"]) {
+    &::before {
+      content: '';
+
+      display: block;
+      grid-area: checkmark;
+      align-self: center;
+
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &[aria-checked="true"]::before {
+      background: currentcolor;
+      mask: var(--checkmark) center / 100% no-repeat;
+    }
+  }
+
+  /* ── checkmark present ── */
+  &:has(
+    :where([role="menuitemcheckbox"], [role="menuitemradio"]):not(
+      & [role="menu"] :where([role="menuitemcheckbox"], [role="menuitemradio"])
+    )
+  )
+  [role="menuitem"]:not(
+    & [role="menu"] :where([role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"])
+  ) {
+    padding-inline-start: calc(var(--spacing-primitive-3) + 1em + var(--spacing-primitive-3)); /* padding + checkmark + gap */
   }
 
   &[aria-disabled="true"] {

@@ -15,9 +15,20 @@ import type { MenuItemArgs, MenuItemBlocks, MenuItemElement } from './-menu.gts'
 import type Owner from '@ember/owner';
 import type { WithBoundArgs } from '@glint/template';
 
-export type MenuDefaultBlock = {
-  Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
+type RadioGroupArgs<V> = {
+  value?: V | V[];
+  update?: (selection: V | V[]) => void;
 };
+
+type MenuGroupBlock<V> = {
+  Radio: WithBoundArgs<typeof MenuItemRadio<V>, 'registerItem' | 'unregisterItem' | 'group'>;
+};
+
+export type MenuDefaultBlock<V> = {
+  Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
+  Checkbox: WithBoundArgs<typeof MenuItemCheckbox, 'registerItem' | 'unregisterItem'>;
+  Group: WithBoundArgs<typeof MenuGroup<V>, 'registerItem' | 'unregisterItem'>;
+} & MenuGroupBlock<V>;
 
 export interface MenuItemSignature {
   Element: MenuItemElement;
@@ -26,7 +37,7 @@ export interface MenuItemSignature {
     unregisterItem: (item: MenuItem) => void;
   };
   Blocks: MenuItemBlocks & {
-    menu?: [MenuDefaultBlock];
+    menu?: [MenuDefaultBlock<unknown>];
   };
 }
 
@@ -113,39 +124,243 @@ class MenuItem extends Component<MenuItemSignature> {
 }
 /* eslint-enable @typescript-eslint/no-use-before-define */
 
-export interface MenuSignature {
-  Element: HTMLDivElement;
-  Args: {
-    disabled?: boolean;
+export interface MenuItemCheckboxSignature {
+  Element: MenuItemElement;
+  Args: Pick<MenuItemArgs, 'disabled'> & {
+    push?: (checked: boolean) => void;
+    checked?: boolean;
+    registerItem: (item: MenuItemCheckbox) => void;
+    unregisterItem: (item: MenuItemCheckbox) => void;
   };
   Blocks: {
-    default: [MenuDefaultBlock];
+    default: [];
   };
 }
 
-export class Menu extends Component<MenuSignature> {
-  @tracked items: MenuItem[] = new TrackedArray();
+class MenuItemCheckbox extends Component<MenuItemCheckboxSignature> {
+  constructor(owner: Owner, args: MenuItemCheckboxSignature['Args']) {
+    super(owner, args);
 
-  registerItem = (item: MenuItem) => {
+    args.registerItem(this);
+
+    registerDestructor(this, () => {
+      args.unregisterItem(this);
+    });
+  }
+
+  check(checked: boolean) {
+    this.args.push?.(checked);
+  }
+
+  <template>
+    <span
+      role="menuitemcheckbox"
+      aria-checked={{if @checked (if @checked "true" "false") "false"}}
+      {{disabled when=(if @disabled @disabled false)}}
+    >
+      <span>{{~yield~}}</span>
+    </span>
+  </template>
+}
+
+export interface MenuItemRadioSignature<V> {
+  Element: MenuItemElement;
+  Args: Pick<MenuItemArgs, 'disabled'> & {
+    value: V;
+    group: Group<V>;
+    registerItem: (item: MenuItemRadio<V>) => void;
+    unregisterItem: (item: MenuItemRadio<V>) => void;
+  };
+  Blocks: {
+    default: [];
+  };
+}
+
+class MenuItemRadio<V> extends Component<MenuItemRadioSignature<V>> {
+  constructor(owner: Owner, args: MenuItemRadioSignature<V>['Args']) {
+    super(owner, args);
+
+    args.registerItem(this);
+
+    registerDestructor(this, () => {
+      args.unregisterItem(this);
+    });
+  }
+
+  get value() {
+    return this.args.value;
+  }
+
+  get group() {
+    return this.args.group;
+  }
+
+  <template>
+    <span
+      role="menuitemradio"
+      aria-checked={{if (@group.isSelected @value) "true" "false"}}
+      {{disabled when=(if @disabled @disabled false)}}
+    >
+      <span>{{~yield~}}</span>
+    </span>
+  </template>
+}
+
+type MenuItemChildren<V> = MenuItem | MenuItemCheckbox | MenuItemRadio<V>;
+
+class Group<V> {
+  @tracked selection: V[];
+
+  getUpdate: () => ((value: V | V[]) => void) | undefined;
+
+  constructor(callback: () => ((value: V | V[]) => void) | undefined, value?: V | V[]) {
+    this.getUpdate = callback;
+
+    this.selection = value === undefined ? [] : Array.isArray(value) ? [...value] : [value];
+  }
+
+  isSelected = (value: V) => {
+    return this.selection.includes(value);
+  };
+
+  select(value: V[]) {
+    this.selection = value;
+
+    this.getUpdate()?.(
+      this.selection.length === 1 ? (this.selection[0] ?? this.selection) : this.selection
+    );
+  }
+}
+
+export interface MenuGroupSignature<V> {
+  Element: MenuItemElement;
+  Args: {
+    disabled?: boolean;
+    registerItem: (item: MenuItemChildren<V>) => void;
+    unregisterItem: (item: MenuItemChildren<V>) => void;
+  } & RadioGroupArgs<V>;
+  Blocks: {
+    default: [MenuGroupBlock<V>];
+  };
+}
+
+class MenuGroup<V> extends Component<MenuGroupSignature<V>> {
+  MenuItemRadio = MenuItemRadio<V>;
+
+  group = new Group<V>(() => this.args.update, this.args.value);
+
+  <template>
+    <div role="group">
+      {{yield
+        (hash
+          Radio=(component
+            this.MenuItemRadio
+            registerItem=@registerItem
+            unregisterItem=@unregisterItem
+            group=this.group
+          )
+        )
+      }}
+    </div>
+  </template>
+}
+
+export interface MenuSignature<V = unknown> {
+  Element: HTMLDivElement;
+  Args: {
+    disabled?: boolean;
+  } & RadioGroupArgs<V>;
+  Blocks: {
+    default: [MenuDefaultBlock<V>];
+  };
+}
+
+export class Menu<V = unknown> extends Component<MenuSignature<V>> {
+  MenuItemRadio = MenuItemRadio<V>;
+  MenuItemGroup = MenuGroup<V>;
+
+  group = new Group<V>(() => this.args.update, this.args.value);
+  @tracked items: MenuItemChildren<V>[] = new TrackedArray();
+  checked: Set<MenuItemCheckbox> = new Set<MenuItemCheckbox>();
+
+  registerItem = (item: MenuItemChildren<V>) => {
     // eslint-disable-next-line ember/no-runloop
     next(() => {
       this.items.push(item);
     });
   };
 
-  unregisterItem = (item: MenuItem) => {
+  unregisterItem = (item: MenuItemChildren<V>) => {
     // eslint-disable-next-line ember/no-runloop
     next(() => {
       this.items.splice(this.items.indexOf(item), 1);
     });
   };
 
+  select = (selection: MenuItemChildren<V>[]) => {
+    const groups = new Map<Group<V>, V[]>();
+
+    for (const item of selection) {
+      if (!(item instanceof MenuItemRadio)) {
+        continue;
+      }
+
+      const radio = item;
+
+      if (!groups.has(radio.group)) {
+        groups.set(radio.group, []);
+      }
+
+      groups.get(radio.group)?.push(radio.value);
+    }
+
+    for (const [group, values] of groups) {
+      group.select(values);
+    }
+  };
+
+  check = (items: MenuItemChildren<V>[]) => {
+    const checked = new Set(
+      items.filter((item): item is MenuItemCheckbox => item instanceof MenuItemCheckbox)
+    );
+
+    const added = checked.difference(this.checked);
+    const removed = this.checked.difference(checked);
+
+    for (const item of added) {
+      item.check(true);
+    }
+
+    for (const item of removed) {
+      item.check(false);
+    }
+
+    this.checked = checked;
+  };
+
   <template>
-    <div class="menu" data-test-menu ...attributes {{ariaMenu items=this.items disabled=@disabled}}>
+    <div
+      class="menu"
+      data-test-menu
+      ...attributes
+      {{ariaMenu items=this.items disabled=@disabled select=this.select check=this.check}}
+    >
       {{yield
         (hash
           Item=(component
             MenuItem registerItem=this.registerItem unregisterItem=this.unregisterItem
+          )
+          Checkbox=(component
+            MenuItemCheckbox registerItem=this.registerItem unregisterItem=this.unregisterItem
+          )
+          Radio=(component
+            this.MenuItemRadio
+            registerItem=this.registerItem
+            unregisterItem=this.unregisterItem
+            group=this.group
+          )
+          Group=(component
+            this.MenuItemGroup registerItem=this.registerItem unregisterItem=this.unregisterItem
           )
         )
       }}

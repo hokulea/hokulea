@@ -11,6 +11,7 @@
   ],
   "compilerOptions": {
     "allowJs": true,
+    "lib": ["esnext", "dom", "dom.iterable", "webworker.importscripts", "scripthost"],
     "declarationDir": "declarations",
     /**
       https://www.typescriptlang.org/tsconfig#rootDir

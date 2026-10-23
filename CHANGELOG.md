@@ -2,6 +2,17 @@
 
 ## Release (2026-10-23)
 
+* @hokulea/ember 0.18.1 (patch)
+
+#### :bug: Bug Fix
+* `@hokulea/ember`
+  * [#631](https://github.com/hokulea/hokulea/pull/631) Fix `@icon` arg for Buttons ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2026-10-23)
+
 * @hokulea/ember 0.18.0 (minor)
 * @hokulea/core 0.14.0 (minor)
 

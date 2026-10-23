@@ -1,5 +1,6 @@
 import { Link } from 'ember-link';
 
+import type { IconAsset } from '../graphics/icon.gts';
 import type { Importance, Intent, Spacing } from '@hokulea/tokens';
 import type { CommandAction } from 'ember-command';
 
@@ -56,10 +57,9 @@ export interface ButtonArgs {
 export interface IconButtonArgs {
   label: string;
   /**
-   * A string containing a `<svg>` element.
-   * Make sure to use `currentColor` to comply with the styling
+   * The icon to render. Will be forwarded to `<Icon>` component.
    */
-  icon: string;
+  icon: IconAsset;
 }
 
 export interface ButtonBlocks {

@@ -4,6 +4,8 @@ import { focus, render, rerender, triggerEvent, triggerKeyEvent } from '@ember/t
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
+import sinon from 'sinon';
+
 import { Menu } from '#src';
 import { MenuPageObject } from '#test-support';
 
@@ -134,19 +136,13 @@ module('Rendering | Controls | <Menu>', function (hooks) {
     });
 
     test('checkbox items toggle with keyboard', async function (assert) {
-      const context = new (class {
-        toggles: boolean[] = [];
-
-        push = (checked: boolean) => {
-          this.toggles.push(checked);
-        };
-      })();
+      const push = sinon.spy();
 
       await render(
         <template>
           <Menu as |m|>
-            <m.Checkbox @push={{context.push}}>English</m.Checkbox>
-            <m.Checkbox @push={{context.push}}>German</m.Checkbox>
+            <m.Checkbox @push={{push}}>English</m.Checkbox>
+            <m.Checkbox @push={{push}}>German</m.Checkbox>
           </Menu>
         </template>
       );
@@ -159,30 +155,24 @@ module('Rendering | Controls | <Menu>', function (hooks) {
       assert
         .dom(menu.$checkbox[0])
         .hasAria('checked', 'true', '`Space` checks the active checkbox');
-      assert.deepEqual(context.toggles, [true], 'checked checkbox pushes its state');
+      assert.true(push.calledOnceWith(true), 'checked checkbox pushes its state');
 
       await triggerKeyEvent(menu, 'keydown', ' ');
 
       assert
         .dom(menu.$checkbox[0])
         .hasAria('checked', 'false', '`Space` again unchecks the checkbox');
-      assert.deepEqual(context.toggles, [true, false], 'unchecked checkbox pushes its state');
+      assert.true(push.calledWith(false), 'unchecked checkbox pushes its state');
     });
 
     test('checkbox items toggle with pointer', async function (assert) {
-      const context = new (class {
-        toggles: boolean[] = [];
-
-        push = (checked: boolean) => {
-          this.toggles.push(checked);
-        };
-      })();
+      const push = sinon.spy();
 
       await render(
         <template>
           <Menu as |m|>
-            <m.Checkbox @push={{context.push}}>English</m.Checkbox>
-            <m.Checkbox @push={{context.push}}>German</m.Checkbox>
+            <m.Checkbox @push={{push}}>English</m.Checkbox>
+            <m.Checkbox @push={{push}}>German</m.Checkbox>
           </Menu>
         </template>
       );
@@ -198,17 +188,15 @@ module('Rendering | Controls | <Menu>', function (hooks) {
       assert
         .dom(menu.$checkbox[1])
         .hasAria('checked', 'true', 'clicking checks the second checkbox');
-      assert.deepEqual(
-        context.toggles,
-        [true, true],
-        'only the toggled checkbox pushes its state on each interaction'
-      );
+      assert.true(push.calledTwice, 'only the toggled checkbox pushes its state');
+      assert.true(push.calledWith(true), '... and pushes it as checked');
 
       await triggerEvent(menu.$checkbox[0] as MenuCheckItem, 'pointerup');
 
       assert.dom(menu.$checkbox[0]).hasAria('checked', 'false', 'clicking again unchecks it');
       assert.dom(menu.$checkbox[1]).hasAria('checked', 'true', 'the other checkbox stays checked');
-      assert.deepEqual(context.toggles, [true, true, false]);
+      assert.true(push.calledThrice, 'unchecking pushes once more');
+      assert.true(push.calledWith(false), '... and pushes it as unchecked');
     });
   });
 
@@ -253,17 +241,11 @@ module('Rendering | Controls | <Menu>', function (hooks) {
     });
 
     test('radio items are selectable via keyboard', async function (assert) {
-      const context = new (class {
-        selections: (string | string[])[] = [];
-
-        select = (selection: string | string[]) => {
-          this.selections.push(selection);
-        };
-      })();
+      const update = sinon.spy();
 
       await render(
         <template>
-          <Menu @value="en" @update={{context.select}} as |m|>
+          <Menu @value="en" @update={{update}} as |m|>
             <m.Radio @value="en">English</m.Radio>
             <m.Radio @value="de">German</m.Radio>
             <m.Radio @value="ja">Japanese</m.Radio>
@@ -273,7 +255,7 @@ module('Rendering | Controls | <Menu>', function (hooks) {
 
       const menu = new MenuPageObject();
 
-      assert.deepEqual(context.selections, [], 'the setup does not invoke `@update`');
+      assert.notOk(update.called, 'the setup does not invoke `@update`');
 
       await focus(menu.$radio[0] as MenuCheckItem);
       await triggerKeyEvent(menu, 'keydown', 'ArrowDown');
@@ -281,21 +263,15 @@ module('Rendering | Controls | <Menu>', function (hooks) {
 
       assert.dom(menu.$radio[1]).hasAria('checked', 'true', '`Space` selects the active radio');
       assert.dom(menu.$radio[0]).hasAria('checked', 'false', '... and deselects the previous one');
-      assert.deepEqual(context.selections, ['de'], '`@update` receives the selected value');
+      assert.true(update.calledOnceWith('de'), '`@update` receives the selected value');
     });
 
     test('radio items are selectable via pointer', async function (assert) {
-      const context = new (class {
-        selections: (string | string[])[] = [];
-
-        select = (selection: string | string[]) => {
-          this.selections.push(selection);
-        };
-      })();
+      const update = sinon.spy();
 
       await render(
         <template>
-          <Menu @value="en" @update={{context.select}} as |m|>
+          <Menu @value="en" @update={{update}} as |m|>
             <m.Radio @value="en">English</m.Radio>
             <m.Radio @value="de">German</m.Radio>
             <m.Radio @value="ja">Japanese</m.Radio>
@@ -309,7 +285,7 @@ module('Rendering | Controls | <Menu>', function (hooks) {
 
       assert.dom(menu.$radio[2]).hasAria('checked', 'true', 'clicking selects a radio item');
       assert.dom(menu.$radio[0]).hasAria('checked', 'false', '... and deselects the other one');
-      assert.deepEqual(context.selections, ['ja'], '`@update` receives the selected value');
+      assert.true(update.calledOnceWith('ja'), '`@update` receives the selected value');
     });
 
     test('radio groups select independently', async function (assert) {
@@ -346,6 +322,32 @@ module('Rendering | Controls | <Menu>', function (hooks) {
       assert.dom(menu.$radio[2]).hasAria('checked', 'true', 'the other group is unaffected');
       assert.dom(menu.$radio[3]).hasAria('checked', 'false', 'the other group is unaffected');
     });
+  });
+
+  test('radio groups receive their own selection updates', async function (assert) {
+    const update = sinon.spy();
+
+    await render(
+      <template>
+        <Menu as |m|>
+          <m.Group @value="a" @update={{update}} as |g|>
+            <g.Radio @value="a">A</g.Radio>
+            <g.Radio @value="b">B</g.Radio>
+          </m.Group>
+        </Menu>
+      </template>
+    );
+
+    const menu = new MenuPageObject();
+
+    assert.dom(menu.$radio[0]).hasAria('checked', 'true', 'the group `@value` seeds the selection');
+    assert.notOk(update.called, 'the setup does not invoke `@update`');
+
+    await triggerEvent(menu.$radio[1] as MenuCheckItem, 'pointerup');
+
+    assert.dom(menu.$radio[1]).hasAria('checked', 'true', 'clicking selects a radio');
+    assert.dom(menu.$radio[0]).hasAria('checked', 'false');
+    assert.true(update.calledOnceWith('b'), 'the group reports its own selection via `@update`');
   });
 
   test('it supports keyboard navigation', async function (assert) {

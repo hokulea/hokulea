@@ -57,9 +57,7 @@ export interface ButtonArgs {
 export interface IconButtonArgs {
   label: string;
   /**
-   * The icon to render — same contract as `<Icon @icon>`: an SVG string or
-   * an icon component (e.g. from `unplugin-icons`). `IconButton` forwards
-   * `@icon` straight to `Icon`.
+   * The icon to render. Will be forwarded to `<Icon>` component.
    */
   icon: IconAsset;
 }

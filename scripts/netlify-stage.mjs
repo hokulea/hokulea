@@ -6,7 +6,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const publishDir = resolve(root, 'publish');
 const explorer = resolve(root, 'explorer/storybook-static');
-const ember = resolve(root, 'ember/package/storybook-static');
+const ember = resolve(root, 'ember/storybook-static');
 
 rmSync(publishDir, { recursive: true, force: true });
 mkdirSync(publishDir, { recursive: true });

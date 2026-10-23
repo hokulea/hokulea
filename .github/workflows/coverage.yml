@@ -19,4 +19,4 @@ jobs:
       - uses: qltysh/qlty-action/coverage@v2
         with:
           token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-          files: ${{github.workspace}}/ember/package/coverage/lcov.info
+          files: ${{github.workspace}}/ember/coverage/lcov.info

@@ -10,7 +10,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "allowImportingTsExtensions": true,
-    "lib": ["es2025"],
+    "lib": ["es2025", "esnext"],
     "paths": {
       "#app/*": [
         "./app/*"

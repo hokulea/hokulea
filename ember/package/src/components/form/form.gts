@@ -22,7 +22,7 @@ import { TextAreaField } from './fields/text-area.gts';
 import { Reset } from './reset.gts';
 import { Submit } from './submit.gts';
 
-import type { BoundField } from './field.gts';
+import type { BoundField, FieldComponent } from './field.gts';
 import type { TOC } from '@ember/component/template-only';
 import type { WithBoundArgs } from '@glint/template';
 import type { FormAPI, FormConfig, Issue, UserData } from '@hokulea/ember-pahu';
@@ -48,7 +48,7 @@ export interface FormBuilder<DATA extends UserData> {
   SingularChoice: WithBoundArgs<typeof SingularChoiceField<DATA>, 'Field'>;
   Text: WithBoundArgs<typeof TextField<DATA>, 'Field'>;
   TextArea: WithBoundArgs<typeof TextAreaField<DATA>, 'Field'>;
-  Field: BoundField<DATA>;
+  Field: FieldComponent<DATA>;
   Errors: WithBoundArgs<typeof FormErrors, 'errors'>;
   Submit: typeof Submit;
   Reset: typeof Reset;
@@ -99,6 +99,24 @@ export class Form<DATA extends UserData> extends Component<FormSignature<DATA>> 
   TextAreaField = TextAreaField<DATA>;
   TextField = TextField<DATA>;
 
+  /**
+   * Identity function used to type the yielded form builder.
+   *
+   * The `component` helper binds `form` onto `Field`, which statically erases
+   * its generic call signature (`WithBoundArgs` collapses generic signatures).
+   * At runtime the instance still infers `NAME`/`VALUE` from `@name`, so the
+   * yielded builder is typed with the precise {@link FieldComponent} contract,
+   * while the hash itself is checked against the collapsed {@link BoundField}
+   * shape.
+   *
+   * @internal
+   */
+  private asFormBuilder(
+    builder: Omit<FormBuilder<DATA>, 'Field'> & { Field: BoundField<DATA> }
+  ): FormBuilder<DATA> {
+    return builder as FormBuilder<DATA>;
+  }
+
   <template>
     {{#let
       (createForm
@@ -115,27 +133,29 @@ export class Form<DATA extends UserData> extends Component<FormSignature<DATA>> 
       <form novalidate class="form" data-test-form ...attributes {{f.registerElement}}>
         {{#let (component this.Field form=f) as |WiredField|}}
           {{yield
-            (hash
-              invalid=f.invalid
-              submit=f.submit
-              Field=WiredField
-              Checkbox=(component this.CheckboxField Field=WiredField)
-              Currency=(component this.CurrencyField Field=WiredField)
-              Date=(component this.DateField Field=WiredField)
-              Email=(component this.EmailField Field=WiredField)
-              List=(component this.ListField Field=WiredField)
-              MultipleChoice=(component this.MultipleChoiceField Field=WiredField)
-              Number=(component this.NumberField Field=WiredField)
-              Password=(component this.PasswordField Field=WiredField)
-              Phone=(component this.PhoneField Field=WiredField)
-              Range=(component this.RangeField Field=WiredField)
-              Select=(component this.SelectField Field=WiredField)
-              SingularChoice=(component this.SingularChoiceField Field=WiredField)
-              TextArea=(component this.TextAreaField Field=WiredField)
-              Text=(component this.TextField Field=WiredField)
-              Errors=(component FormErrors errors=f.issues)
-              Submit=Submit
-              Reset=Reset
+            (this.asFormBuilder
+              (hash
+                invalid=f.invalid
+                submit=f.submit
+                Field=WiredField
+                Checkbox=(component this.CheckboxField Field=WiredField)
+                Currency=(component this.CurrencyField Field=WiredField)
+                Date=(component this.DateField Field=WiredField)
+                Email=(component this.EmailField Field=WiredField)
+                List=(component this.ListField Field=WiredField)
+                MultipleChoice=(component this.MultipleChoiceField Field=WiredField)
+                Number=(component this.NumberField Field=WiredField)
+                Password=(component this.PasswordField Field=WiredField)
+                Phone=(component this.PhoneField Field=WiredField)
+                Range=(component this.RangeField Field=WiredField)
+                Select=(component this.SelectField Field=WiredField)
+                SingularChoice=(component this.SingularChoiceField Field=WiredField)
+                TextArea=(component this.TextAreaField Field=WiredField)
+                Text=(component this.TextField Field=WiredField)
+                Errors=(component FormErrors errors=f.issues)
+                Submit=Submit
+                Reset=Reset
+              )
             )
           }}
         {{/let}}

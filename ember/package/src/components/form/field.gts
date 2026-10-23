@@ -29,6 +29,33 @@ export type BoundField<
   VALUE = NAME extends keyof DATA ? DATA[NAME] : AttrValue
 > = WithBoundArgs<typeof Field<DATA, NAME, VALUE>, 'form'>;
 
+export type NameValue<DATA extends UserData, NAME extends string> = NAME extends keyof DATA
+  ? DATA[NAME]
+  : NAME extends `${infer Key}.${infer Rest}`
+    ? Key extends keyof DATA
+      ? NameValue<Extract<DATA[Key], object>, Rest>
+      : AttrValue
+    : AttrValue;
+
+/**
+ * A yielded `Field` whose `NAME` is inferred from `@name` at each invocation,
+ * so value/validate types resolve against the actual form data. Uses the
+ * documented public "Type Parameters" recipe (abstract new + InstanceType),
+ * because `WithBoundArgs` collapses generic class signatures.
+ */
+export type FieldComponent<DATA extends UserData> = abstract new <
+  NAME extends FieldNames<DATA> | (string & {}),
+  VALUE = NameValue<DATA, NAME>
+>() => InstanceType<
+  ComponentLike<{
+    Element: HTMLDivElement;
+    Args: Omit<FieldSignature<DATA, NAME, VALUE>['Args'], 'form'> & {
+      form?: FormAPI<DATA>;
+    };
+    Blocks: FieldSignature<DATA, NAME, VALUE>['Blocks'];
+  }>
+>;
+
 export type FieldArgs<
   DATA extends UserData,
   NAME extends string = FieldNames<DATA> | (string & {}),

@@ -27,6 +27,7 @@ type MenuGroupBlock<V> = {
 export type MenuDefaultBlock<V> = {
   Item: WithBoundArgs<typeof MenuItem, 'registerItem' | 'unregisterItem'>;
   Checkbox: WithBoundArgs<typeof MenuItemCheckbox, 'registerItem' | 'unregisterItem'>;
+  Group: WithBoundArgs<typeof MenuGroup<V>, 'registerItem' | 'unregisterItem'>;
 } & MenuGroupBlock<V>;
 
 export interface MenuItemSignature {
@@ -167,7 +168,6 @@ export interface MenuItemRadioSignature<V> {
   Args: Pick<MenuItemArgs, 'disabled'> & {
     value: V;
     group: Group<V>;
-    isSelected: (value: V) => boolean;
     registerItem: (item: MenuItemRadio<V>) => void;
     unregisterItem: (item: MenuItemRadio<V>) => void;
   };
@@ -209,12 +209,14 @@ class MenuItemRadio<V> extends Component<MenuItemRadioSignature<V>> {
 type MenuItemChildren<V> = MenuItem | MenuItemCheckbox | MenuItemRadio<V>;
 
 class Group<V> {
-  @tracked selection: V[] = [];
+  @tracked selection: V[];
 
   getUpdate: () => ((value: V | V[]) => void) | undefined;
 
-  constructor(callback: () => ((value: V | V[]) => void) | undefined) {
+  constructor(callback: () => ((value: V | V[]) => void) | undefined, value?: V | V[]) {
     this.getUpdate = callback;
+
+    this.selection = value === undefined ? [] : Array.isArray(value) ? [...value] : [value];
   }
 
   isSelected = (value: V) => {
@@ -224,7 +226,9 @@ class Group<V> {
   select(value: V[]) {
     this.selection = value;
 
-    this.getUpdate()?.(this.selection.length === 1 ? this.selection[0] : this.selection);
+    this.getUpdate()?.(
+      this.selection.length === 1 ? (this.selection[0] ?? this.selection) : this.selection
+    );
   }
 }
 
@@ -243,7 +247,7 @@ export interface MenuGroupSignature<V> {
 class MenuGroup<V> extends Component<MenuGroupSignature<V>> {
   MenuItemRadio = MenuItemRadio<V>;
 
-  group = new Group<V>(() => this.args.update);
+  group = new Group<V>(() => this.args.update, this.args.value);
 
   <template>
     <div role="group">
@@ -261,7 +265,7 @@ class MenuGroup<V> extends Component<MenuGroupSignature<V>> {
   </template>
 }
 
-export interface MenuSignature<V> {
+export interface MenuSignature<V = unknown> {
   Element: HTMLDivElement;
   Args: {
     disabled?: boolean;
@@ -271,10 +275,11 @@ export interface MenuSignature<V> {
   };
 }
 
-export class Menu<V> extends Component<V> {
+export class Menu<V = unknown> extends Component<MenuSignature<V>> {
   MenuItemRadio = MenuItemRadio<V>;
+  MenuItemGroup = MenuGroup<V>;
 
-  group = new Group<V>(() => this.args.update);
+  group = new Group<V>(() => this.args.update, this.args.value);
   @tracked items: MenuItemChildren<V>[] = new TrackedArray();
   checked: Set<MenuItemCheckbox> = new Set<MenuItemCheckbox>();
 
@@ -292,15 +297,21 @@ export class Menu<V> extends Component<V> {
     });
   };
 
-  select = (selection: MenuItemRadio<V>[]) => {
+  select = (selection: MenuItemChildren<V>[]) => {
     const groups = new Map<Group<V>, V[]>();
 
     for (const item of selection) {
-      if (!groups.has(item.group)) {
-        groups.set(item.group, []);
+      if (!(item instanceof MenuItemRadio)) {
+        continue;
       }
 
-      groups.get(item.group)?.push(item.value);
+      const radio = item;
+
+      if (!groups.has(radio.group)) {
+        groups.set(radio.group, []);
+      }
+
+      groups.get(radio.group)?.push(radio.value);
     }
 
     for (const [group, values] of groups) {
@@ -308,10 +319,10 @@ export class Menu<V> extends Component<V> {
     }
   };
 
-  check = (items: MenuItemCheckbox[]) => {
-    console.log('check', items);
-
-    const checked = new Set(items);
+  check = (items: MenuItemChildren<V>[]) => {
+    const checked = new Set(
+      items.filter((item): item is MenuItemCheckbox => item instanceof MenuItemCheckbox)
+    );
 
     const added = checked.difference(this.checked);
     const removed = this.checked.difference(checked);
@@ -349,7 +360,7 @@ export class Menu<V> extends Component<V> {
             group=this.group
           )
           Group=(component
-            MenuGroup registerItem=this.registerItem unregisterItem=this.unregisterItem
+            this.MenuItemGroup registerItem=this.registerItem unregisterItem=this.unregisterItem
           )
         )
       }}

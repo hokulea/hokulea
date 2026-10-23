@@ -1,7 +1,43 @@
 import { globalSelector, PageObject, selector as sel } from 'fractal-page-object';
 
-import type { Menu, MenuElement, MenuItem, MenuItemElement } from './-menu.ts';
+import type {
+  Menu,
+  MenuCheckItem,
+  MenuElement,
+  MenuItem,
+  MenuItemCheckElement,
+  MenuItemElement
+} from './-menu.ts';
 import type { ElementLike } from 'fractal-page-object';
+
+export class MenuCheckItemPageObject
+  extends PageObject<MenuItemCheckElement>
+  implements MenuCheckItem
+{
+  get disabled() {
+    return this.element?.getAttribute('aria-disabled') === 'true';
+  }
+
+  get checked() {
+    return this.element?.getAttribute('aria-checked') === 'true';
+  }
+}
+
+export class MenuCheckboxPageObject extends MenuCheckItemPageObject {
+  static SELECTOR = '[role="menuitemcheckbox"]';
+
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
+    super(selector ?? MenuCheckboxPageObject.SELECTOR, parent, index);
+  }
+}
+
+export class MenuRadioPageObject extends MenuCheckItemPageObject {
+  static SELECTOR = '[role="menuitemradio"]';
+
+  constructor(selector?: string, parent?: PageObject | ElementLike | null, index?: number | null) {
+    super(selector ?? MenuRadioPageObject.SELECTOR, parent, index);
+  }
+}
 
 export class MenuItemPageObject extends PageObject<MenuItemElement> implements MenuItem {
   static SELECTOR = '[role="menuitem"]';
@@ -50,4 +86,14 @@ export class MenuPageObject extends PageObject<MenuElement> implements Menu {
   }
 
   $item = sel<MenuItemElement, MenuItem>(MenuItemPageObject.SELECTOR, MenuItemPageObject);
+
+  $checkbox = sel<MenuItemCheckElement, MenuCheckItem>(
+    MenuCheckboxPageObject.SELECTOR,
+    MenuCheckboxPageObject
+  );
+
+  $radio = sel<MenuItemCheckElement, MenuCheckItem>(
+    MenuRadioPageObject.SELECTOR,
+    MenuRadioPageObject
+  );
 }

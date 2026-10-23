@@ -36,9 +36,12 @@ const DemoMenu: TOC<{ Args: { m: MenuBuilder } }> = <template>
 class MenuComposite extends Component<object> {
   @tracked lang = 'en';
 
-  selectLang = (lang: string) => {
+  selectLang = (lang: string | string[]) => {
+    if (Array.isArray(lang)) {
+      return;
+    }
+
     this.lang = lang;
-    console.log('selectLang', lang);
   };
 
   <template>

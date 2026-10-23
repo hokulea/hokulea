@@ -2,7 +2,7 @@ import path from 'node:path';
 
 import Case from 'case';
 // @ts-expect-error its a js file
-import emberTemplateCompiler from 'ember-source/dist/ember-template-compiler.js';
+import * as emberTemplateCompiler from 'ember-source/dist/ember-template-compiler.js';
 
 // @ts-expect-error its a js file
 import markdownCompilerConfig from './config/md-compiler.js';
@@ -42,7 +42,7 @@ const config: StorybookConfig = {
     presets: [['@babel/preset-typescript']],
     plugins: [
       [
-        import.meta.resolve('babel-plugin-htmlbars-inline-precompile'),
+        require.resolve('babel-plugin-htmlbars-inline-precompile'),
         {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           precompile,
@@ -64,7 +64,7 @@ const config: StorybookConfig = {
       test: /\/documentation\/.*\.md$/,
       createIndex: (fileName: string) => {
         const nav = path
-          .relative(path.resolve(import.meta.dirname, '../../documentation'), fileName)
+          .relative(path.resolve(__dirname, '../../documentation'), fileName)
           .replace('.md', '')
           .split('/')
           .map((name) => Case.capital(name));
@@ -99,10 +99,10 @@ const config: StorybookConfig = {
       use: [
         hbsBabelLoader,
         {
-          loader: path.resolve(import.meta.dirname, 'loader/doc-loader'),
+          loader: path.resolve(__dirname, 'loader/doc-loader'),
           options: {
             root: 'Documentation',
-            dir: path.resolve(import.meta.dirname, '../../documentation'),
+            dir: path.resolve(__dirname, '../../documentation'),
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             compiler: markdownCompilerConfig
           }

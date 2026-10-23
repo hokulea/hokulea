@@ -2,8 +2,8 @@
   "solution": {
     "@hokulea/ember": {
       "impact": "minor",
-      "oldVersion": "0.16.1",
-      "newVersion": "0.17.0",
+      "oldVersion": "0.17.0",
+      "newVersion": "0.18.0",
       "tagName": "latest",
       "constraints": [
         {
@@ -23,13 +23,17 @@
     },
     "@hokulea/core": {
       "impact": "minor",
-      "oldVersion": "0.12.0",
-      "newVersion": "0.13.0",
+      "oldVersion": "0.13.0",
+      "newVersion": "0.14.0",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./foundation/core/package.json"
@@ -41,5 +45,5 @@
       "oldVersion": "0.4.0"
     }
   },
-  "description": "## Release (2026-10-23)\n\n* @hokulea/ember 0.17.0 (minor)\n* @hokulea/core 0.13.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#628](https://github.com/hokulea/hokulea/pull/628) Add check and radio menu items ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@hokulea/ember`\n  * [#623](https://github.com/hokulea/hokulea/pull/623) storybook v10 ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2026-10-23)\n\n* @hokulea/ember 0.18.0 (minor)\n* @hokulea/core 0.14.0 (minor)\n\n#### :rocket: Enhancement\n* `@hokulea/ember`, `@hokulea/core`\n  * [#628](https://github.com/hokulea/hokulea/pull/628) Add check and radio menu items ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* Other\n  * [#629](https://github.com/hokulea/hokulea/pull/629) set node runtime to v24 ([@gossi](https://github.com/gossi))\n* `@hokulea/ember`, `@hokulea/core`\n  * [#624](https://github.com/hokulea/hokulea/pull/624) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n* `@hokulea/ember`\n  * [#623](https://github.com/hokulea/hokulea/pull/623) storybook v10 ([@gossi](https://github.com/gossi))\n\n#### Committers: 2\n- GitHub Actions [Bot] ([@github-actions](https://github.com/apps/github-actions))\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }

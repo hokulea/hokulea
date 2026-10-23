@@ -2,6 +2,27 @@
 
 ## Release (2026-10-23)
 
+* @hokulea/ember 0.18.0 (minor)
+* @hokulea/core 0.14.0 (minor)
+
+#### :rocket: Enhancement
+* `@hokulea/ember`, `@hokulea/core`
+  * [#628](https://github.com/hokulea/hokulea/pull/628) Add check and radio menu items ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* Other
+  * [#629](https://github.com/hokulea/hokulea/pull/629) set node runtime to v24 ([@gossi](https://github.com/gossi))
+* `@hokulea/ember`, `@hokulea/core`
+  * [#624](https://github.com/hokulea/hokulea/pull/624) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))
+* `@hokulea/ember`
+  * [#623](https://github.com/hokulea/hokulea/pull/623) storybook v10 ([@gossi](https://github.com/gossi))
+
+#### Committers: 2
+- GitHub Actions [Bot] ([@github-actions](https://github.com/apps/github-actions))
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2026-10-23)
+
 * @hokulea/ember 0.17.0 (minor)
 * @hokulea/core 0.13.0 (minor)
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-11-11)
+
+* @hokulea/ember 0.18.2 (patch)
+
+#### :house: Internal
+* `@hokulea/ember`
+  * [#634](https://github.com/hokulea/hokulea/pull/634) Remove test-app ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2026-10-23)
 
 * @hokulea/ember 0.18.1 (patch)
